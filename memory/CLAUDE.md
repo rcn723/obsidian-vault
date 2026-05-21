@@ -2,7 +2,7 @@
 
 ## On Session Start
 
-Read all files in `/Users/ryannortham/Documents/MyVault/memory/` before responding to anything:
+Read all files in `/Users/ryannortham/MyVault/memory/` before responding to anything:
 
 1. `about-me.md` — Authoritative self-description. Wins over all other files on conflicts.
 2. `voice.md` — Authoritative voice and communication rules. Wins over all other files on conflicts.

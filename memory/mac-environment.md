@@ -1,7 +1,7 @@
 # Mac Environment Reference — Ryan's MacBook Pro
 
 *For Claude to reference before recommending installs, PATH changes, or system configuration.*
-*Last updated: 2026-05-08*
+*Last updated: 2026-05-21*
 
 ---
 
@@ -118,9 +118,10 @@ This is already done. Verify anytime with `npm config get prefix` — should ret
 
 *Separate from system installs — captured here for completeness.*
 
-- Vault path: `/Users/ryannortham/Documents/MyVault`
+- Vault path: `/Users/ryannortham/MyVault` (moved from `~/Documents/MyVault` on 2026-05-21)
+- Claude project folder: `/Users/ryannortham/Claude` (moved from `~/Documents/Claude` on 2026-05-21)
 - Claude Desktop MCP config: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - MCP server uses `/usr/local/bin/npx` → `@modelcontextprotocol/server-filesystem` → vault path
 - GitHub repo: `github.com/rcn723/obsidian-vault`
 - Obsidian Git plugin handles daily auto-commit and push
-- Memory files live in `/Users/ryannortham/Documents/MyVault/memory/`
+- Memory files live in `/Users/ryannortham/MyVault/memory/`

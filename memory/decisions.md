@@ -1,6 +1,6 @@
 # decisions.md — Prior Decisions and Resolved Questions
 
-_Last updated: 2026-04-22_
+_Last updated: 2026-05-21_
 
 ## Format
 
@@ -53,4 +53,11 @@ Removed redundant user.md and preferences.md (derivatives of about-me.md and voi
 Canonical memory files moved from Desktop/Claude/ to /Users/ryannortham/Documents/MyVault/memory/.
 Five keeper files: about-me.md, voice.md, CLAUDE.md, decisions.md, people.md.
 CLAUDE.md updated with full absolute path.
+_Status: [SUPERSEDED] — see below._
+
+**[2026-05-21] Vault and Claude project folder moved to home directory**
+MyVault moved from `~/Documents/MyVault` to `~/MyVault`.
+Claude project folder moved from `~/Documents/Claude` to `~/Claude`.
+Canonical memory path is now `/Users/ryannortham/MyVault/memory/`.
+All skill files, Obsidian app config, Claude Desktop MCP config, and Antigravity docs updated.
 _Status: Complete._
