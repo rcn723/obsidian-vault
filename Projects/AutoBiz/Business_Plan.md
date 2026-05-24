@@ -1,183 +1,576 @@
 ---
-title: DataBrief — Autonomous AI Business Plan
+title: GR3NB — Full Business Plan v3
 project: AutoBiz
 type: business-plan
-updated: 2026-05-21
-tags: [business, saas, autonomous, ai, startup]
+updated: 2026-05-22
+tags: [business, saas, autonomous, ai, startup, multi-channel, ecommerce]
 ---
 
-# DataBrief — Autonomous AI Reporting SaaS
+# GR3NB LLC — Multi-Channel AI Business Intelligence SaaS
 
-> A fully automated B2B SaaS that connects to small business data sources and delivers AI-written weekly intelligence reports. Zero employees. Zero manual work after launch.
+> **Holding Entity:** GR3NB LLC (Wyoming Series LLC)
+> G=Grace/Grant · R3=Ryan · N=Northam · B=Brock
+>
+> **Product 1:** Autonomous AI-written weekly business intelligence reports
+> for small sellers who sell across multiple platforms — Etsy, WooCommerce,
+> Shopify, and beyond. One report. Every Monday. Zero manual work.
 
 ---
 
 ## Executive Summary
 
-**Business:** DataBrief
-**Model:** B2B SaaS subscription
-**Target:** Small businesses, Shopify store owners, marketing agencies
-**Revenue:** $49/mo (Basic) · $149/mo (Pro) · $499/mo (Agency)
-**Capital Required:** ~$500 to launch · ~$100/mo to operate
-**Break-even:** 3 paying customers
-**Tax Entity:** Single-Member LLC → S-Corp election at $60k ARR
-**Timeline to launch:** 30 days
-
----
-
-## The Business Concept
-
-Small businesses generate enormous amounts of data — sales, traffic, ad spend, inventory — but lack the time or expertise to turn it into actionable intelligence. They pay consultants thousands of dollars for reports that take hours to produce.
-
-DataBrief automates this entirely. Customers connect their data sources once (Shopify, Google Analytics, Meta Ads, QuickBooks via API or CSV upload), and every Monday morning they receive a polished AI-written report with:
-
-- Key metrics vs. prior period
-- Trend analysis and anomaly flags
-- Plain-English AI narrative with recommended actions
-- Custom branded PDF + email delivery
-
-**The system runs completely on autopilot.** A cron job pulls data, sends it to the Claude API, formats the output, and delivers it via email — no human in the loop.
-
----
-
-## Why This Works
-
-| Factor | DataBrief Advantage |
+| | |
 |---|---|
-| Recurring revenue | Monthly subscriptions = predictable cash |
-| No inventory | Pure software, zero COGS beyond API costs |
-| Self-serve | Stripe Checkout handles signup, billing, cancellation |
-| No support overhead | AI-generated FAQ + Intercom bot handles 90% of questions |
-| Scales to $0 variable cost per user | Claude API cost ~$0.10–0.50/report |
-| No sales team | SEO + ProductHunt + Reddit drive inbound |
+| **Holding Entity** | GR3NB LLC (Wyoming Series LLC) |
+| **Product 1 Brand** | TBD — DBA under GR3NB |
+| **Core Value Prop** | One AI-written weekly report unifying all selling channels |
+| **Primary ICP** | Multi-channel small sellers: Etsy + WooCommerce + Shopify |
+| **Geographic Scope** | US, Canada, Australia, UK only (EU excluded at launch) |
+| **Revenue Model** | Monthly + Annual SaaS subscription, self-serve |
+| **Pricing (Monthly)** | $19 · $49 · $99 · $299/mo |
+| **Pricing (Annual)** | $182 · $470 · $950 · $2,870/yr (20% discount) |
+| **Capital to Launch** | ~$500 total |
+| **Monthly OpEx** | ~$100/mo |
+| **Break-even** | 6 paying customers |
+| **Tax Entity** | GR3NB LLC pass-through → S-Corp at $60k ARR |
+| **Launch Timeline** | 6 weeks |
+| **Name Cleared** | GR3NB — zero conflicts across all channels |
+| **Domain** | gr3nb.io |
 
 ---
 
-## Market & Pricing
+## The Core Problem
 
-**Target customers:**
-- Shopify store owners (5M+ stores globally)
-- Local service businesses with Google Ads
-- Marketing agencies managing client accounts
+Small sellers don't sell on one platform anymore. A typical Etsy seller also
+has a Shopify store. A WooCommerce store owner also sells on Etsy and fulfils
+through Printify. Every Monday morning they log into 3–4 different dashboards,
+manually copy numbers into a spreadsheet, and spend 2 hours trying to figure
+out what happened last week. Most give up and fly blind.
 
-**Pricing tiers:**
+**The existing tools fail them:**
+- Analytics tools exist per-platform — Etsy-only, Shopify-only, WooCommerce-only
+- Enterprise tools (Triple Whale $149+, Northbeam $1,000+) are priced for
+  DTC brands doing $1M+ revenue
+- All existing tools show dashboards and raw numbers — none write a
+  plain-English narrative telling the seller what happened, why, and what
+  to do next
 
-| Tier | Price | Included | Claude API cost/mo |
+**The gap:** Nothing in the $19–$99/mo range delivers AI-written, cross-platform,
+plain-English weekly business intelligence to multi-channel small sellers.
+
+---
+
+## The Solution
+
+Every Sunday night the system automatically:
+
+1. Pulls last 7 days of data from every platform the customer sells on
+2. Compares to the prior period
+3. Runs sanity checks — flags anomalies before they corrupt the report
+4. Sends a structured data payload to Claude API
+5. Claude generates a modular analysis per source, then synthesises
+6. Report renders to mobile-optimised HTML (email body) + PDF (attachment)
+7. Delivered by Monday 6am in the customer's local timezone
+8. Stripe bills automatically on renewal date
+
+**Sample report excerpt:**
+> "Your Etsy shop had its strongest week of Q2 — $4,200 in revenue, up 23%
+> vs last week. Your 'Sage Wedding Wreath' listing drove 38% of that with a
+> 6.8% conversion rate, well above your 3.1% average. Your Shopify store
+> dipped 11% — traffic held steady but cart abandonment rose to 74%.
+> This week: run Etsy's thank-you coupon to wreath buyers (they repeat at
+> 2.4x the rate of other products), and audit your Shopify checkout for
+> friction — that abandonment rate suggests a payment or shipping issue."
+
+---
+
+## SWOT Analysis
+
+### Strengths
+- **Near-zero marginal cost per customer** — adding customer 100 costs the same as customer 1
+- **95–97% gross margins** — infrastructure scales without proportional cost growth
+- **Confirmed whitespace** — zero competitors at $19–$99/mo doing AI-narrative multi-platform reports
+- **4-path data ingestion** — no single approval gatekeeper can kill the business
+- **Self-serve end-to-end** — no sales team, no account managers
+- **Recurring revenue** — predictable, compounding cash flow
+- **Vast TAM** — Etsy (8.13M) + WooCommerce (4.5M) + Shopify (5.5M)
+- **Founder can build it** — no outsourcing or technical co-founder needed
+- **GR3NB Series LLC** — future business lines add at zero extra cost
+- **Strong community distribution** — r/Etsy (1.2M), Etsy Facebook groups, r/woocommerce
+- **AI narrative = new category** — not another dashboard; tells sellers what to do
+
+### Weaknesses
+- Zero brand recognition at launch
+- Solo operator — support, iteration, bugs, marketing all on one person
+- No paid marketing budget
+- Product name still TBD
+- Report quality depends entirely on customer's data quality
+- Claude API dependency — outages affect all customers simultaneously
+- Etsy sellers are price-sensitive — $19/mo may feel like a stretch for hobbyists
+- No annual plan (now fixed — see pricing section)
+- API approval timelines (Etsy, Shopify) outside our control
+
+### Opportunities
+- Etsy seller communities — one viral post = hundreds of signups
+- WooCommerce plugin directory — passive discovery by 4.5M store owners
+- Agency tier — one agency = 10–20 client reports = $299/mo
+- TikTok Shop (15M sellers) — first mover when API opens
+- Annual pricing — dramatically lowers churn, improves cash flow
+- Affiliate program — sellers recommend to sellers, zero CAC
+- Report history as switching cost — 6 months of data = customer stays
+- Excluding EU simplifies compliance; US + CA + AU + UK = large enough market
+- Expansion to adjacent verticals: POD, creator economy, indie wholesale
+
+### Threats
+- Etsy or Shopify builds better native analytics (closes the gap)
+- VC-funded competitor enters with marketing budget
+- Claude API price increase or deprecation
+- Platform API terms change — data access cut off overnight
+- Stripe account freeze (new businesses flagged occasionally)
+- Economic downturn — small sellers cancel subscriptions first
+- Large acquirer bundles competitor tool for free
+- Anthropic outage on Sunday night — all reports fail (now mitigated)
+- Google changes Sheets export format — breaks GA4 bridge
+
+---
+
+## Geographic Scope
+
+### In Scope at Launch
+| Market | Privacy Law | Complexity | Status |
 |---|---|---|---|
-| Basic | $49/mo | 1 data source, weekly report | ~$2 |
-| Pro | $149/mo | 5 sources, daily + weekly report | ~$8 |
-| Agency | $499/mo | 20 client accounts, white-label | ~$30 |
+| 🇺🇸 United States | CCPA (California only) | Low | ✅ Primary |
+| 🇨🇦 Canada | PIPEDA | Low-Medium | ✅ Included |
+| 🇦🇺 Australia | Privacy Act 1988 | Low-Medium | ✅ Included |
+| 🇬🇧 United Kingdom | UK GDPR (post-Brexit) | Medium | ✅ Included |
 
-**Unit economics at 50 customers (mixed tier, avg $89/mo):**
-- MRR: ~$4,450
-- API + hosting costs: ~$250
-- Gross margin: ~94%
+### Out of Scope at Launch
+| Market | Reason |
+|---|---|
+| 🇪🇺 EU27 | Full GDPR — DPO requirement, data residency, SCCs, too complex at launch |
+| All others | Default exclude until deliberately expanded |
+
+### Technical Enforcement
+- **Vercel Edge Middleware** — IP geolocation block at signup (5 lines of code)
+- **Country selector at signup** — EU country selected → "Not available in your region yet — join the waitlist"
+- **Stripe billing address check** — reject EU billing addresses
+- **Landing page footer** — "Available in US, Canada, Australia and UK. EU coming soon."
+- **Waitlist capture** — EU visitors added to a waitlist email list for future expansion
+
+---
+
+## Environmental Scan Summary
+
+### Platform Landscape
+
+| Platform | Active Sellers | Analytics Gap | Our Opportunity |
+|---|---|---|---|
+| **Etsy** | 8.13M | Massive — views/revenue only, zero reporting tools | ⭐⭐⭐⭐⭐ |
+| **WooCommerce** | 4.5M+ | Massive — 15-50% revenue underreporting, no LTV | ⭐⭐⭐⭐⭐ |
+| **Shopify** | 5.5M | Medium — tools exist but $149+/mo | ⭐⭐⭐⭐ |
+| **TikTok Shop** | 15M+ | Massive — API gated in 2026 | ⭐⭐⭐⭐ (wait) |
+| **Gumroad** | 100k+ | Medium — basic sales only | ⭐⭐⭐ |
+| **eBay** | 17M | Moderate | ⭐⭐⭐ |
+| **Redbubble/Society6/Zazzle** | Unknown | N/A — sellers have zero data access | ❌ |
+
+### Competitive Landscape
+
+| Tool | Price | Gap We Exploit |
+|---|---|---|
+| **Triple Whale** | $149–$2,500+/mo | Too expensive, Shopify-only, no narrative |
+| **Northbeam** | $1,000+/mo | Enterprise only |
+| **Metorik** | $20–$100/mo | WooCommerce-only, no AI narrative |
+| **Marmalead/eRank** | $10–20/mo | Etsy SEO only — zero reporting |
+| **Polar Analytics** | $300+/mo | Too expensive, too complex |
+| **Putler** | $20–50/mo | Single platform, no AI narrative |
+
+**The gap in one line:** Nothing under $149/mo writes plain-English
+cross-platform weekly reports for multi-channel small sellers. We own that.
+
+---
+
+## Target Customer (ICP)
+
+**Primary:** Multi-channel small seller, US/CA/AU/UK
+
+- Sells on 2+ platforms simultaneously (Etsy + Shopify, or WooCommerce + Etsy)
+- $3k–$50k/mo combined revenue across all channels
+- Spends 2–4 hours/week manually pulling and comparing data across dashboards
+- Has tried each platform's native analytics, given up on GA4
+- Active in seller communities (Reddit, Facebook groups)
+- Would pay $49–99/mo to reclaim those hours and make smarter decisions
+
+**Secondary:** Marketing agencies and VAs managing ecommerce clients ($299/mo Agency tier)
+
+**Segmentation by channel:**
+
+| Segment | Primary Channel | Message |
+|---|---|---|
+| Etsy-only sellers | r/Etsy, Etsy Facebook groups | "Stop logging into Etsy analytics manually" |
+| WooCommerce stores | r/woocommerce, WP forums | "Your WooCommerce reports, automated and explained" |
+| Multi-channel sellers | r/Entrepreneur, podcasts | "One report for every platform you sell on" |
+| Agencies/VAs | LinkedIn, agency directories | "White-label AI reports for your ecommerce clients" |
+
+Each segment gets its own landing page variant and community-targeted messaging.
+
+---
+
+## Platform & Integration Strategy
+
+### Why We Dropped Google Analytics & Meta Direct APIs
+
+Both require platform approval processes with high rejection rates for new
+companies, 4–8 week timelines, and ongoing revocation risk. Replaced with
+4-path model — zero gatekeeper dependency.
+
+### Four Data Ingestion Paths
+
+**Path 1 — Direct API**
+Etsy (submit Day 1), WooCommerce (WordPress plugin — no approval),
+Stripe (easy approval), Gumroad (Month 2)
+
+**Path 2 — Google Sheets Bridge**
+GA4 official Sheets add-on → customer shares sheet → we read via Sheets API
+(lower sensitivity scope, easier approval). Customer sets up once, auto-refreshes weekly.
+
+**Path 3 — CSV Upload**
+Universal fallback. Auto-detects format for top 10 platforms. Column mapping
+UI for unrecognised formats. Remembered for next upload.
+
+**Path 4 — Make Templates**
+Pre-configured Make scenarios for Meta Ads, TikTok, and 1,500+ others.
+Customer authenticates through Make (already approved). Data flows to our webhook.
+
+### Platform Rollout
+
+```
+TIER 1 — LAUNCH (Month 1)
+├── Etsy API (submit Day 1)
+├── WooCommerce WordPress plugin (no approval)
+├── Stripe API (easy, launch day)
+├── CSV Upload (zero dependency)
+└── Google Sheets bridge (GA4 data)
+
+TIER 2 — EXPAND (Month 2–3)
+├── Shopify Partner (submit Day 1, ~4–8 weeks approval)
+├── Gumroad API
+├── Make templates (Meta + TikTok)
+└── eBay API
+
+TIER 3 — WATCH (Month 4+)
+├── TikTok Shop (API gated — revisit)
+└── Patreon, Pinterest
+
+NEVER
+├── Redbubble / Society6 / Zazzle (sellers have no data)
+├── Google Analytics direct (use Sheets bridge)
+└── Meta Ads direct (use Make templates)
+```
+
+---
+
+## Pricing
+
+### Monthly Tiers
+
+| Tier | Price | Platforms | Reports | Best For |
+|---|---|---|---|---|
+| **Starter** | $19/mo | 1 | Weekly | Etsy-only or WooCommerce-only sellers |
+| **Pro** | $49/mo | 3 | Weekly | Sellers on 2–3 platforms |
+| **Multi** | $99/mo | Unlimited | Weekly + monthly summary | Serious multi-channel sellers |
+| **Agency** | $299/mo | 10 client accounts | White-label, weekly per client | Agencies, VAs |
+
+### Annual Tiers (20% discount — 2 months free)
+
+| Tier | Annual Price | Monthly Equivalent | Savings |
+|---|---|---|---|
+| **Starter Annual** | $182/yr | $15.17/mo | $46/yr |
+| **Pro Annual** | $470/yr | $39.17/mo | $118/yr |
+| **Multi Annual** | $950/yr | $79.17/mo | $238/yr |
+| **Agency Annual** | $2,870/yr | $239.17/mo | $718/yr |
+
+Annual customers churn at 3–5x lower rates than monthly.
+Present annual as default on pricing page — monthly as secondary option.
+
+### Unit Economics
+
+| Tier | Monthly Price | Claude API cost | Gross Margin |
+|---|---|---|---|
+| Starter | $19 | ~$0.50 | 97% |
+| Pro | $49 | ~$1.50 | 97% |
+| Multi | $99 | ~$3.50 | 96% |
+| Agency | $299 | ~$15.00 | 95% |
+
+### Free Trial
+**14-day free trial, credit card required.**
+Card-required trials convert at 3–5x the rate of no-card trials.
+14 days = two Monday reports = enough value to decide.
+No charge until Day 15. Cancel anytime during trial with no charge.
 
 ---
 
 ## Legal & Tax Structure
 
-### Step 1 — Form a Wyoming LLC
+### GR3NB LLC — Wyoming Series LLC
 
-Wyoming is the best state for a solo operator:
-- No state income tax
-- No publication requirement
-- $100 filing fee + $60/year renewal
-- Strong LLC privacy laws
-- Can operate from any state
+| Requirement | Detail |
+|---|---|
+| Filing fee | $100 one-time |
+| Annual renewal | $60/year |
+| State income tax | None |
+| Residency required | No |
+| Registered Agent | Northwest Registered Agent — $39/year |
+| Series LLC | Yes — each future business = protected cell |
 
-**Action:** File online at wyomingllc.com or directly at sos.wyo.gov (~$100, same day).
+### Steps (In Order)
 
-**LLC Name:** DataBrief LLC *(check availability at sos.wyo.gov)*
+1. Register gr3nb.io on Namecheap (~$15)
+2. File GR3NB LLC as Wyoming Series LLC at sos.wyo.gov ($100)
+3. Engage Northwest Registered Agent ($39/year)
+4. Apply for EIN at IRS.gov (free, 15 min)
+5. Create Operating Agreement (Rocket Lawyer free template)
+6. Open Mercury Bank account
+7. Create Stripe account + enable Stripe Tax
+8. Generate Privacy Policy + ToS + DPA via Termly ($30/mo, cancel after)
 
-### Step 2 — Get an EIN (Free, 15 minutes)
+### Liability Disclaimer
 
-Apply at IRS.gov/EIN — free, instant. You need this before opening a bank account.
+Add to Terms of Service and footer of every report:
 
-### Step 3 — Operating Agreement
+> *"Reports are generated from data provided by your connected platforms.
+> GR3NB LLC does not guarantee the accuracy of underlying platform data
+> and accepts no liability for business decisions made based on report
+> content. Always verify key figures against your platform dashboards.
+> Data freshness is shown at the top of every report."*
 
-A single-member LLC needs a simple operating agreement for legal protection. Use a free template from LegalZoom or Rocket Lawyer — takes 20 minutes.
+Every report includes a data freshness stamp:
+`Data pulled Sun 11:43pm PST · Etsy ✅ · WooCommerce ✅ · GA4 (Sheets) ✅`
 
-### Step 4 — Business Bank Account
+### Data Retention & Portability Policy
 
-Open at **Mercury Bank** (mercury.com):
-- Free, fully online
-- No minimums
-- Integrates with Stripe and QuickBooks
+- Report history retained for **12 months** after account cancellation
+- Customers can export all reports as ZIP at any time (one button, dashboard)
+- Raw API/platform data deleted after report generation — never stored long-term
+- Automated Supabase cleanup job deletes expired data on schedule
+- Stated clearly in Privacy Policy and on cancellation confirmation screen
 
-### Step 5 — Tax Treatment
+### Tax Treatment
 
-**At launch:** Single-member LLC is a "disregarded entity" — income flows to your personal Schedule C. You pay self-employment tax (15.3%) on all profit.
+**At launch:** Single-member LLC — income flows to Schedule C.
+Pay self-employment tax (15.3%). File quarterly estimated taxes via IRS Direct Pay.
 
-**At ~$60k ARR:** File IRS Form 2553 to elect **S-Corp status**. You then:
-- Pay yourself a reasonable salary (~$40k)
-- Take remaining profit as distributions (no SE tax)
-- Saves ~$6,000–15,000/year in SE tax above that threshold
+**At ~$60k ARR:** File IRS Form 2553 → S-Corp election.
+Pay yourself reasonable salary (~$40k). Remaining profit = distributions (no SE tax).
+Saves $6,000–15,000/year above that threshold.
 
-**Stripe Tax** handles sales tax collection automatically across all US states (SaaS tax varies by state — Stripe manages this for you).
+**Stripe Tax** handles US sales tax automatically across all states.
+Hire a CPA for Year 1 (~$400). Worth it.
 
-**Recommended accountant timing:** Hire a CPA for your first tax year ($300–600 for a simple return). File quarterly estimated taxes yourself via IRS Direct Pay.
-
-### Annual compliance costs
+### Annual Compliance Costs
 
 | Item | Cost |
 |---|---|
 | Wyoming LLC renewal | $60/year |
-| Registered agent (required) | $0–$50/year |
-| Business bank account | $0 (Mercury) |
-| Accounting software | $0 (Wave, free) |
-| CPA (first year) | ~$400 one-time |
-| **Total** | **~$510/year** |
+| Northwest Registered Agent | $39/year |
+| Mercury Bank | $0 |
+| Wave accounting | $0 |
+| CPA (Year 1 only) | ~$400 |
+| **Total Year 1** | **~$499** |
+| **Total Year 2+** | **~$99/year** |
 
 ---
 
 ## Technology Stack
 
-Everything runs on managed services — no servers to maintain.
+| Component | Tool | Cost | Notes |
+|---|---|---|---|
+| Backend + cron | Railway (Node.js) | $5–20/mo | Built-in scheduler |
+| Database | Supabase (Postgres) | $0–25/mo | Auth + DB + real-time |
+| Job queue | BullMQ (Redis) | $0–10/mo | Concurrency control, retries |
+| AI reports | Claude API (claude-sonnet-4-6) | Usage-based | Modular prompt architecture |
+| Email delivery | Resend | $0–20/mo | HTML + PDF delivery |
+| PDF rendering | Puppeteer (self-hosted) | $0 | HTML → PDF |
+| Payments (primary) | Stripe | 2.9% + $0.30 | Billing, dunning, tax, portal |
+| Payments (backup) | Lemon Squeezy | 5% + $0.50 | Standby if Stripe freezes |
+| Frontend | Next.js on Vercel | $0/mo | Edge Middleware for geo-block |
+| Auth | Supabase Auth | $0 | Built-in |
+| Token monitor | Custom daily cron | $0 | Proactive expiry alerts |
+| Error monitoring | Sentry (free tier) | $0 | Silent failure detection |
+| Uptime monitoring | Uptime Robot | $0 | Cron job alerts |
+| Geo-blocking | Vercel Edge Middleware | $0 | EU IP block at signup |
 
-| Component | Tool | Cost |
-|---|---|---|
-| Backend / automation | Railway or Render (Node.js) | $5–20/mo |
-| Database | Supabase (Postgres) | $0–25/mo |
-| AI reports | Claude API (claude-sonnet-4-6) | Usage-based |
-| Email delivery | Resend | $0–20/mo |
-| Payments | Stripe | 2.9% + $0.30/txn |
-| Frontend / landing page | Next.js on Vercel | $0/mo |
-| Scheduling | Built-in cron (Railway) | Included |
-| Auth | Clerk or Supabase Auth | $0/mo |
-| Monitoring | Uptime Robot | $0/mo |
-
-**Total monthly infrastructure:** ~$50–100 at launch, scales gradually.
+**Total monthly infrastructure at launch: ~$50–100**
 
 ---
 
-## How It Runs Itself (Automation Map)
+## How It Runs Itself (Complete Automation Map)
 
+### Acquisition
 ```
-[Customer signs up via Stripe Checkout]
-        ↓
-[Webhook → Supabase: create account, store API keys]
-        ↓
-[Welcome email auto-sent via Resend template]
-        ↓
-[Cron job (every Sunday 11pm)]
-        ↓
-[Pull data from connected integrations via API]
-        ↓
-[Format data → send to Claude API with report prompt]
-        ↓
-[Claude generates narrative + recommendations]
-        ↓
-[Render to PDF → send via Resend to customer]
-        ↓
-[Log delivery to Supabase]
-        ↓
-[Stripe auto-bills on renewal date]
-        ↓
-[Failed payment → Stripe dunning emails → auto-cancel]
+SEO / Reddit / ProductHunt / Affiliate → Landing Page
+    → EU IP detected: waitlist capture, not signup
+    → US/CA/AU/UK: Stripe Checkout (14-day trial, card required)
 ```
 
-**Human touchpoints after launch: ~0 per week for healthy customers.**
+### Onboarding
+```
+Stripe webhook: checkout.session.completed
+    → Supabase: create customer row
+    → Resend: trigger 5-email onboarding sequence (see below)
+    → Customer directed to Connections Hub dashboard
+    → Connects platforms via guided wizards
+    → New connection: data confirmation step fires
+      "We found X orders — does this look right? [Yes] [No]"
+```
+
+### Onboarding Email Sequence (Automated via Resend)
+```
+Day 0:  Welcome + "Connect your first platform" CTA
+Day 2:  "Your first report arrives in X days" + sample report preview
+Day 5:  "Report generates tonight — make sure you're connected" reminder
+Day 7:  First report delivered (Monday 6am local time)
+Day 8:  "How was your first report?" → NPS prompt + feedback link
+```
+
+### Weekly Report Generation (Sunday, Per Customer Timezone)
+```
+BullMQ job queue triggers per customer (max 10 concurrent)
+    → Pull data from connected sources (APIs / Sheets / CSVs)
+    → Pre-flight sanity checks:
+        - Revenue = $0 and last week > $0? → anomaly alert, halt
+        - Any metric >300% deviation? → anomaly alert, halt
+        - All sources returning data? → partial fallback if not
+    → Structure data payload per source
+    → Claude API Pass 1: per-source mini-analysis
+        (Etsy analysis, WooCommerce analysis, GA4 analysis — separately)
+    → Claude API Pass 2: synthesise into unified narrative
+    → Add data freshness stamp + liability disclaimer footer
+    → Render:
+        A) Mobile-optimised HTML (email body — primary reading experience)
+        B) Full PDF (attachment — desktop/archive)
+    → Resend delivers both by 6am customer local time
+    → Log delivery + metrics to Supabase
+    → Append 👍 / 👎 feedback links to email footer
+```
+
+### Claude API Fallback (New)
+```
+If Claude API call fails:
+    → Retry at +2 hours, +4 hours
+    → If still failing by 5am local time:
+        → Send automated delay email:
+          "Your report is delayed due to a temporary service issue.
+           It will arrive by Tuesday morning. No action needed."
+    → Retry once more Tuesday 11pm
+    → Log all retry attempts in Supabase
+```
+
+### Feedback Loop
+```
+Customer clicks 👍 or 👎 in report email
+    → Tracked link → Supabase logs sentiment + customer + report date
+    → 👍: no action (log only)
+    → 👎 twice in a row:
+        → Trigger automated "personal" email from ryan@gr3nb.io:
+          "Hi [Name] — I noticed the last two reports didn't hit the mark.
+           What could be better? I read every reply."
+        → Flag customer in Supabase for manual review
+```
+
+### Token Health Monitor (Daily)
+```
+Daily cron (2am UTC):
+    → Query Supabase: all OAuth tokens + expiry dates
+    → 7 days before expiry: send re-auth email with one-click link
+    → 3 days before: second re-auth email
+    → Day of expiry: deliver partial report with explanation
+    → Token expired: flag in dashboard, prompt re-auth on next login
+```
+
+### Billing (Stripe)
+```
+Day 14: Trial ends → Stripe charges card
+    → Success: subscription active
+    → Failure: 3 dunning emails over 7 days
+        → Card updated: billing resumes
+        → No update: cancel, revoke access, update Supabase
+Monthly: auto-charge on renewal date
+Annual: auto-charge on anniversary date
+All: customer self-serves upgrades/downgrades/cancellations via Stripe Portal
+```
+
+### Data Export (Customer Self-Serve)
+```
+Customer clicks "Export My Data" in dashboard settings
+    → Supabase query: all reports for this customer (up to 12 months)
+    → Generate ZIP: one PDF per report + CSV of all metrics
+    → Resend delivers download link (expires 48 hours)
+    → Log export event in Supabase
+```
+
+### Post-Cancellation
+```
+Customer cancels via Stripe Portal
+    → Stripe webhook → Supabase: mark inactive, log cancellation date
+    → Resend: cancellation confirmation + export reminder
+      "Your reports and data are available for 12 months.
+       Download your archive anytime before [date]."
+    → Schedule Supabase deletion job for 12 months out
+    → No reports generated after cancellation date
+```
+
+**Human time required weekly: ~15 minutes**
+Sentry error check · Uptime Robot · Stripe MRR dashboard · Support inbox
+
+---
+
+## Connections Hub — Report Power Feature
+
+### Design Principles
+1. Value before effort — show what they unlock before asking them to connect
+2. Branch on their situation — screen complexity before showing OAuth
+3. Never dead-end — always offer an alternative path (CSV upload)
+4. Confirm data immediately — show real numbers after connecting
+5. Read-only always — state explicitly on every card
+
+### Report Power Score
+```
+████████░░░░░░░░░░  40% — Basic Coverage
+"Connect 2 more sources to unlock full clarity."
+```
+
+### In-Report Gap Callouts (Not Blurred Previews)
+Instead of hiding content behind a blur, reports include contextual gap callouts:
+> *"We can see 847 orders this week but not where those customers came from.
+> Connect Google Analytics (via Sheets) to add Traffic Source to next week's report →"*
+
+Helpful, not manipulative. Shows the gap without withholding paid-for content.
+
+### Guided Setup Wizards
+Each integration has a branching wizard pre-screening setup complexity:
+- **Etsy:** OAuth → 2 clicks → done
+- **WooCommerce:** Plugin install → API key → done
+- **GA4:** Install Sheets add-on → share link → Sheets OAuth → done
+- **Meta:** "Do you use Business Manager?" branch → Make template → done
+- **CSV:** Drag and drop → auto-detect → column confirm → done
+
+---
+
+## Data Quality & Safety Systems
+
+| System | What It Does |
+|---|---|
+| Pre-report sanity check | Revenue = $0 and last week > $0 → anomaly alert, halt report |
+| Spike detection | >300% week-over-week deviation → hold report, alert customer |
+| New customer data confirmation | After connection: "We found X orders — correct?" |
+| Modular prompt architecture | Each source analysed separately then synthesised |
+| Explicit uncertainty instruction | Claude prompted: "If cause is unclear, say so. Do not speculate." |
+| Timezone-aware scheduling | Cron fires per customer timezone, not a global blast |
+| Job queue concurrency cap | Max 10 simultaneous — prevents API rate limit collisions |
+| Partial report fallback | If one source fails, deliver available data + explanation |
+| Claude API retry logic | Fail → retry +2hr, +4hr → delay email if still failing by 5am |
+| Data freshness stamp | Every report shows which sources pulled and at what time |
+| Liability disclaimer | In every report footer and in Terms of Service |
 
 ---
 
@@ -185,107 +578,211 @@ Everything runs on managed services — no servers to maintain.
 
 | Item | Cost |
 |---|---|
-| Wyoming LLC filing | $100 |
-| Domain name (1 year) | $15 |
-| First month hosting | $30 |
-| Stripe fees (first sales) | $0 upfront |
-| Logo / branding (Canva) | $0–15 |
-| **Total to launch** | **~$150–160** |
+| gr3nb.io domain (1 year) | $15 |
+| Wyoming Series LLC filing | $100 |
+| Northwest Registered Agent (Year 1) | $39 |
+| Termly — Privacy Policy/ToS/DPA (1 month) | $30 |
+| First month hosting (Railway + Supabase) | $30 |
+| **Total to launch** | **~$214** |
 
-Reserve $500 total for first 3 months of runway. That's it.
+Reserve **$500 total** for 3 months of runway.
 
 ---
 
 ## Revenue Projections
 
-| Month | Customers | MRR | Expenses | Net |
-|---|---|---|---|---|
-| Month 1 | 0–3 | $0–150 | $100 | -$100 |
-| Month 2 | 5–10 | $250–500 | $100 | +$150 |
-| Month 3 | 10–20 | $500–1,000 | $120 | +$380 |
-| Month 6 | 30–50 | $1,500–2,500 | $200 | +$1,300 |
-| Month 12 | 80–150 | $4,000–8,000 | $400 | +$3,600 |
+Conservative. Organic only. No paid ads. Mixed monthly/annual.
 
-*Conservative assumptions, no paid ads, organic only.*
+| Month | Customers | Avg Revenue | MRR Equiv | OpEx | Net |
+|---|---|---|---|---|---|
+| 1 | 0–5 | $19–49 | $0–150 | $100 | -$100 |
+| 2 | 5–15 | $39 avg | $200–600 | $100 | $100–500 |
+| 3 | 15–30 | $49 avg | $600–1,500 | $120 | $480–1,380 |
+| 6 | 40–80 | $65 avg | $2,600–5,200 | $200 | $2,400–5,000 |
+| 12 | 100–200 | $75 avg | $7,500–15,000 | $400 | $7,100–14,600 |
+
+---
+
+## Risk Register
+
+| Risk | Severity | Status | Remediation |
+|---|---|---|---|
+| Etsy/Shopify API approval delays | 🔴 Critical | ✅ Mitigated | Submit Day 1. WooCommerce + CSV launch while waiting. |
+| OAuth token expiry → silent failure | 🔴 Critical | ✅ Mitigated | Daily token monitor. Proactive re-auth emails. Partial fallback. |
+| Dirty data → wrong report | 🔴 Critical | ✅ Mitigated | Sanity checks. Spike detection. Customer confirmation step. |
+| Claude API outage Sunday night | 🔴 Critical | ✅ Mitigated | 2-hour retry logic. Automated delay email by 5am. Tuesday retry. |
+| GDPR / EU data complexity | 🟠 High | ✅ Mitigated | Europe excluded at launch. IP block + Stripe address check. |
+| GA4/Meta direct API rejection | 🟠 High | ✅ Mitigated | Sheets bridge + Make templates replace direct APIs entirely. |
+| Report accuracy liability | 🟠 High | ✅ Mitigated | Disclaimer in ToS + every report footer. Data freshness stamp. |
+| Stripe account freeze | 🟠 High | ✅ Mitigated | Lemon Squeezy as backup. 3-month cash reserve in Mercury. |
+| Blurred upsell feels manipulative | 🟠 High | ✅ Mitigated | Replaced with in-report gap callouts (helpful, not manipulative). |
+| No mobile report experience | 🟠 High | ✅ Mitigated | Mobile-optimised HTML email body is primary. PDF is secondary. |
+| No customer feedback loop | 🟠 High | ✅ Mitigated | 👍/👎 in every report. Two 👎 in a row → personal follow-up email. |
+| High churn from monthly-only pricing | 🟠 High | ✅ Mitigated | Annual tiers at 20% discount, presented as default on pricing page. |
+| No data portability on cancellation | 🟠 High | ✅ Mitigated | Self-serve ZIP export. 12-month retention. Deletion job scheduled. |
+| Cron pileup at scale | 🟡 Medium | ✅ Mitigated | BullMQ queue, max 10 concurrent, timezone-aware. |
+| Prompt hallucination | 🟡 Medium | ✅ Mitigated | Modular prompts. Explicit uncertainty instructions. |
+| Agency access dead end | 🟡 Medium | ✅ Mitigated | Agency invite flow (direct email invite to agency). |
+| Platform concentration risk | 🟡 Medium | ⚠️ Ongoing | No single platform >40% of integrations. Monitor Etsy changelog monthly. |
+| Claude API cost spike | 🟡 Medium | ✅ Mitigated | Per-customer cost cap in code. Alert at 2x expected. |
+| No onboarding sequence | 🟡 Medium | ✅ Mitigated | 5-email automated sequence (Day 0, 2, 5, 7, 8). |
+| No EU waitlist | 🟢 Low | ✅ Mitigated | EU visitors see waitlist capture, not hard rejection. |
+| Copycat competitor | 🟢 Low | ⚠️ Ongoing | Moat = integrations + historical data + community trust. |
 
 ---
 
 ## Launch Milestones
 
-### Week 1–2: Build
-- [ ] Form Wyoming LLC + EIN + Mercury account
-- [ ] Build core automation pipeline (data pull → Claude → email)
-- [ ] Set up Stripe Checkout with Basic + Pro tiers
-- [ ] Deploy landing page on Vercel
+### Phase 0 — Pre-Build (Before Writing Code)
+- [ ] Register gr3nb.io domain (Namecheap, ~$15)
+- [ ] File GR3NB Wyoming Series LLC (sos.wyo.gov, $100)
+- [ ] Apply for EIN (IRS.gov, free, 15 min)
+- [ ] Submit Etsy developer application (etsy.com/developers)
+- [ ] Submit Shopify Partner application (partners.shopify.com)
+- [ ] Engage Northwest Registered Agent ($39/yr)
+- [ ] Open Mercury Bank account
+- [ ] Generate Privacy Policy + ToS + DPA via Termly
+- [ ] Create Operating Agreement (Rocket Lawyer free template)
+- [ ] Choose SaaS product brand name (DBA under GR3NB)
 
-### Week 3: Validate
-- [ ] Launch on ProductHunt
-- [ ] Post in r/Entrepreneur, r/smallbusiness, relevant Slack groups
-- [ ] Offer 3 free beta users in exchange for testimonials
-- [ ] Iterate on report format based on feedback
+### Phase 1 — Core Pipeline (Week 1–2)
+- [ ] Supabase schema (customers, integrations, reports, jobs, token_health, feedback)
+- [ ] Stripe Checkout + webhook handler (all events)
+- [ ] Annual pricing tiers configured in Stripe
+- [ ] BullMQ job queue on Railway (max 10 concurrent, timezone-aware)
+- [ ] WooCommerce WordPress plugin
+- [ ] CSV upload + format auto-detection
+- [ ] Claude API modular prompt pipeline (per-source → synthesis)
+- [ ] Mobile-optimised HTML email template (primary report format)
+- [ ] Puppeteer PDF renderer (attachment/archive format)
+- [ ] Resend email delivery (timezone-aware 6am Monday)
+- [ ] Pre-report sanity check system
+- [ ] Claude API retry logic (2hr, 4hr) + delay email fallback
+- [ ] Token health monitor (daily cron + proactive expiry emails)
+- [ ] Sentry + Uptime Robot
+- [ ] Partial report fallback system
+- [ ] Data freshness stamp in every report
+- [ ] Liability disclaimer in report footer
 
-### Week 4: Go Live
+### Phase 2 — Connections Hub (Week 3)
+- [ ] Report Power score UI
+- [ ] Integration cards (connected / locked states)
+- [ ] In-report gap callouts (not blurred previews)
+- [ ] Etsy OAuth wizard (or API key fallback if not yet approved)
+- [ ] Google Sheets OAuth wizard (GA4 bridge)
+- [ ] Make template wizard for Meta Ads
+- [ ] CSV upload wizard
+- [ ] New customer data confirmation step
+
+### Phase 3 — Landing Page + Geo-Block (Week 4)
+- [ ] Next.js landing page on Vercel
+- [ ] Vercel Edge Middleware EU IP geo-block
+- [ ] EU waitlist capture page (not hard rejection)
+- [ ] Stripe billing address EU check
+- [ ] "Available in US, CA, AU, UK" footer note
+- [ ] Pricing page (annual as default, monthly as toggle)
+- [ ] Sample report embedded (anonymised, mobile-optimised)
+- [ ] Segment landing pages (Etsy / WooCommerce / Multi-channel / Agency)
+- [ ] Privacy Policy + ToS + DPA pages
+- [ ] FAQ (data security, read-only, supported platforms, geographic availability)
+- [ ] Lemon Squeezy account created as payment backup
+
+### Phase 4 — Automation & Retention (Week 4, parallel)
+- [ ] 5-email onboarding sequence in Resend
+- [ ] 👍/👎 feedback links in report email footer
+- [ ] Feedback sentiment logging in Supabase
+- [ ] Two consecutive 👎 → automated personal follow-up email
+- [ ] Data export (ZIP) self-serve button in dashboard settings
+- [ ] Cancellation confirmation email with export reminder
+- [ ] 12-month data retention + scheduled deletion job
+- [ ] Stripe Portal configured (upgrades, downgrades, cancellations)
+- [ ] Annual → monthly downgrade flow
+- [ ] Agency invite flow (direct email invite for third-party account access)
+
+### Phase 5 — Validate (Week 5)
+- [ ] Recruit 3 beta users (Etsy or WooCommerce sellers, US/CA/AU/UK only)
+- [ ] Confirm reports accurate against their real data
+- [ ] Confirm mobile HTML email renders correctly on iOS/Android
+- [ ] Confirm PDF renders correctly
+- [ ] Confirm 👍/👎 tracking works
+- [ ] Confirm onboarding sequence fires correctly
+- [ ] Iterate on report format and tone
+
+### Phase 6 — Launch (Week 6)
 - [ ] Enable paid signups
-- [ ] Set up Stripe dunning and cancellation flows
-- [ ] Write 3 SEO blog posts targeting "automated business reports"
-- [ ] Configure error monitoring + alert if cron job fails
+- [ ] Post in r/Etsy, r/woocommerce, r/Entrepreneur, r/smallbusiness
+- [ ] Post in Etsy Seller Facebook groups
+- [ ] ProductHunt launch
+- [ ] SEO post: "Etsy weekly report automated"
+- [ ] SEO post: "WooCommerce business intelligence small store"
+- [ ] SEO post: "Multi-channel ecommerce analytics affordable"
 
-### Month 2–3: Growth
-- [ ] Add Shopify integration (highest-demand connector)
-- [ ] Launch affiliate program (20% commission via Rewardful)
-- [ ] Submit to SaaS directories (SaaSHub, G2, Capterra)
-
----
-
-## Risk & Mitigation
-
-| Risk | Mitigation |
-|---|---|
-| Claude API cost spike | Per-user cost caps, alert threshold in code |
-| Data integration breaks | Webhook retries, customer email on failure |
-| Stripe dispute / chargeback | Clear refund policy, 14-day free trial |
-| Low conversion | A/B test pricing, offer annual discount |
-| Copycat competitors | Moat = integrations + customer data history |
+### Month 2–3 — Expand
+- [ ] Shopify integration (if Partner approval granted)
+- [ ] Gumroad API integration
+- [ ] Make templates (Meta Ads + TikTok CSV)
+- [ ] Affiliate program (20% recurring via Rewardful)
+- [ ] Submit to SaaSHub, G2, Capterra
+- [ ] Transfer Stripe balance to Mercury weekly (Stripe concentration risk)
+- [ ] File IRS Form 2553 when ARR hits $60k
 
 ---
 
 ## What You Build, What Runs Itself
 
-**You build once (30 days):**
-- The integration connectors (Shopify API, Google Analytics API, etc.)
-- The Claude prompting pipeline + report template
-- The Stripe checkout + webhook handler
-- The landing page
+**You build once (~6 weeks):**
+WooCommerce plugin · Etsy connector · Claude modular pipeline ·
+Stripe checkout + webhook · BullMQ queue · Connections hub ·
+5-email onboarding sequence · Feedback loop · Mobile HTML report ·
+PDF renderer · EU geo-block · Data export · Landing page
 
-**Stripe runs itself:**
-- Billing, dunning, refunds, tax collection
+**Runs itself:**
+Stripe — billing, dunning, tax, portal, annual renewals
+Railway — job queue, cron, retries
+Claude API — report generation, per-source analysis, synthesis
+Resend — Monday delivery, onboarding sequence, token alerts, delay emails
+Supabase — database, auth, deletion jobs
+Uptime Robot + Sentry — monitoring and alerts
 
-**Railway/Render runs itself:**
-- Weekly cron jobs, error retries
+**You check in weekly (~15 min):**
+Sentry errors · Uptime Robot · Stripe MRR · Support inbox · 👎 flags
 
-**Claude API runs itself:**
-- Report generation
+---
 
-**Resend runs itself:**
-- Email delivery
+## Future Business Lines Under GR3NB
 
-**You check in weekly (15 min):**
-- Review error logs
-- Read new customer emails
-- Monitor MRR dashboard
+| Cell | Concept | Trigger |
+|---|---|---|
+| GR3NB Agency Tools | White-label version for ecommerce agencies | When Agency tier has 10+ customers |
+| GR3NB Maker Intelligence | Etsy/POD deep analytics (listing optimisation, seasonal forecasting) | When Etsy base is 200+ customers |
+| GR3NB Wholesale | Faire/wholesale channel reporting for indie brands | Month 6+ evaluation |
 
 ---
 
 ## Next Steps (In Order)
 
-1. Confirm business name: **DataBrief** (or your preferred name)
-2. File Wyoming LLC at sos.wyo.gov ($100)
-3. Apply for EIN at IRS.gov (free, 15 min)
-4. Open Mercury bank account (1–2 business days)
-5. I build the core automation stack with Claude Code
-6. Launch
+1. ✅ Holding company name confirmed: **GR3NB LLC**
+2. ✅ Name cleared across all channels
+3. ✅ Environmental scan + competitive landscape complete
+4. ✅ Integration strategy: 4-path model, no Google/Meta dependency
+5. ✅ Risk register: 20 risks, all with remediations
+6. ✅ SWOT analysis complete
+7. ✅ All gaps identified and fixed in plan
+8. ✅ Geographic scope: US, CA, AU, UK — EU excluded with waitlist
+9. [ ] **Register gr3nb.io** (Namecheap, ~$15) — Ryan
+10. [ ] **File GR3NB Wyoming Series LLC** (sos.wyo.gov, $100) — Ryan
+11. [ ] **Apply for EIN** (IRS.gov, free, 15 min) — Ryan
+12. [ ] **Submit Etsy developer app** — Ryan
+13. [ ] **Submit Shopify Partner app** — Ryan
+14. [ ] **Open Mercury Bank** — Ryan
+15. [ ] **Name the SaaS product** (DBA) — Ryan + Claude
+16. [ ] **Build** — Claude Code
 
 ---
 
-*Plan drafted by Claude Code · 2026-05-21*
-*See [[Projects/AutoBiz/State]] and [[Projects/AutoBiz/Tasks]]*
+*Plan v3 — all gaps addressed · Claude Code · 2026-05-22*
+*Incorporates: SWOT, geographic scope, annual pricing, mobile email,*
+*Claude API fallback, 5-email onboarding, feedback loop, liability disclaimer,*
+*data retention + portability, Stripe backup, customer segmentation,*
+*platform concentration monitoring, EU geo-block + waitlist*
+*See [[Projects/AutoBiz/State]] · [[Projects/AutoBiz/Tasks]]*

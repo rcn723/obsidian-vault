@@ -2,7 +2,7 @@
 title: Rust & Rainbow Tasks
 project: rust-and-rainbow
 type: tasks
-updated: 2026-05-21
+updated: 2026-05-22
 tags: [etsy, printify, social-media]
 ---
 
@@ -17,7 +17,11 @@ See [[Projects/Rust_and_Rainbow/State]] for platform status, pillars, and cron d
 
 ## Low Priority
 
-- [ ] Fix run_monitor() — `sales` field hardcoded 0. Needs `GET /v1/shops/{shop_id}/orders.json` Printify order API call to pull real sales counts and update designs_log.json [owner:: antigravity] [priority:: low] [status:: open]
+- [x] Fix run_monitor() — `sales` hardcoded 0. Resolved via new `--mode report` (see below) [owner:: claude] [priority:: low] [status:: done]
+- [ ] Add ANTHROPIC_API_KEY to .env — required to run `--mode report` [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Activate Etsy API keys in .env after Etsy developer app approved — run etsy_auth.py, fills ETSY_ACCESS_TOKEN + ETSY_SHOP_ID automatically [owner:: ryan] [priority:: medium] [status:: open]
+- [x] Load report cron — `com.rustandrainbow.report` confirmed active in launchctl (exit 0) [owner:: ryan] [priority:: high] [status:: done]
+- [x] Fix stale plists — generate/market/monitor plists point to ~/Documents/Claude/... but project is at ~/Claude/... Update all run_*.sh and plist paths [owner:: claude] [priority:: medium] [status:: done]
 
 ## Related
 - [[Projects/Rust_and_Rainbow/State]]

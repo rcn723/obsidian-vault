@@ -89,6 +89,7 @@ This is already done. Verify anytime with `npm config get prefix` — should ret
 | npx | current | `/usr/local/bin/npx` | Works fine |
 | Claude Code | 2.1.133 | `~/.npm-global/bin/claude` | Installed and authenticated 2026-05-08 |
 | Ruflo | 3.6.x | `~/ruflo-test/` | Initialized and MCP registered 2026-05-08 |
+| anthropic (Python) | 0.104.1 | `~/Library/Python/3.9/` | `pip3 install anthropic` — 2026-05-22 |
 
 ---
 
