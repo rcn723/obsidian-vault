@@ -1,14 +1,14 @@
 ---
-title: GR3NB — Full Business Plan v3
+title: GR3NB — Full Business Plan v5
 project: AutoBiz
 type: business-plan
-updated: 2026-05-22
+updated: 2026-05-30
 tags: [business, saas, autonomous, ai, startup, multi-channel, ecommerce]
 ---
 
 # GR3NB LLC — Multi-Channel AI Business Intelligence SaaS
 
-> **Holding Entity:** GR3NB LLC (Wyoming Series LLC)
+> **Holding Entity:** GR3NB LLC (Oregon LLC)
 > G=Grace/Grant · R3=Ryan · N=Northam · B=Brock
 >
 > **Product 1:** Autonomous AI-written weekly business intelligence reports
@@ -21,8 +21,8 @@ tags: [business, saas, autonomous, ai, startup, multi-channel, ecommerce]
 
 | | |
 |---|---|
-| **Holding Entity** | GR3NB LLC (Wyoming Series LLC) |
-| **Product 1 Brand** | TBD — DBA under GR3NB |
+| **Holding Entity** | GR3NB LLC (Oregon LLC) |
+| **Product 1 Brand** | **Welra** — DBA under GR3NB |
 | **Core Value Prop** | One AI-written weekly report unifying all selling channels |
 | **Primary ICP** | Multi-channel small sellers: Etsy + WooCommerce + Shopify |
 | **Geographic Scope** | US, Canada, Australia, UK only (EU excluded at launch) |
@@ -35,7 +35,7 @@ tags: [business, saas, autonomous, ai, startup, multi-channel, ecommerce]
 | **Tax Entity** | GR3NB LLC pass-through → S-Corp at $60k ARR |
 | **Launch Timeline** | 6 weeks |
 | **Name Cleared** | GR3NB — zero conflicts across all channels |
-| **Domain** | gr3nb.io |
+| **Domain** | gr3nb.com |
 
 ---
 
@@ -95,7 +95,7 @@ Every Sunday night the system automatically:
 - **Recurring revenue** — predictable, compounding cash flow
 - **Vast TAM** — Etsy (8.13M) + WooCommerce (4.5M) + Shopify (5.5M)
 - **Founder can build it** — no outsourcing or technical co-founder needed
-- **GR3NB Series LLC** — future business lines add at zero extra cost
+- **GR3NB Oregon LLC** — simple, low-cost structure; scale to child LLCs per venture as revenue warrants
 - **Strong community distribution** — r/Etsy (1.2M), Etsy Facebook groups, r/woocommerce
 - **AI narrative = new category** — not another dashboard; tells sellers what to do
 
@@ -103,7 +103,6 @@ Every Sunday night the system automatically:
 - Zero brand recognition at launch
 - Solo operator — support, iteration, bugs, marketing all on one person
 - No paid marketing budget
-- Product name still TBD
 - Report quality depends entirely on customer's data quality
 - Claude API dependency — outages affect all customers simultaneously
 - Etsy sellers are price-sensitive — $19/mo may feel like a stretch for hobbyists
@@ -311,22 +310,54 @@ No charge until Day 15. Cancel anytime during trial with no charge.
 
 ## Legal & Tax Structure
 
-### GR3NB LLC — Wyoming Series LLC
+### GR3NB LLC — Oregon LLC
+
+**Decision (2026-05-28):** Oregon LLC chosen over Wyoming Series LLC after thorough analysis.
+Wyoming would require Oregon Foreign LLC registration on top of Wyoming fees (you operate from Oregon),
+netting zero tax savings, ~$250+/year in extra cost, and legally unsettled Series LLC liability
+protection in Oregon courts. Oregon is simpler, cheaper, and fully adequate for this stage.
 
 | Requirement | Detail |
 |---|---|
-| Filing fee | $100 one-time |
-| Annual renewal | $60/year |
-| State income tax | None |
-| Residency required | No |
-| Registered Agent | Northwest Registered Agent — $39/year |
-| Series LLC | Yes — each future business = protected cell |
+| Filing fee | $100 one-time (sos.oregon.gov) |
+| Annual renewal | $100/year |
+| Oregon income tax | Pass-through — taxed on personal return (Schedule C → S-Corp at $60k ARR) |
+| Sales tax | None — Oregon has no state sales tax |
+| Registered Agent | Not required — Ryan acts as own RA |
+| DBA (Assumed Business Name) | $50 per ABN, valid 2 years ($50 renewal) |
+
+### Entity Structure
+
+**Phase 1 (now):** One Oregon LLC + two DBAs
+
+```
+GR3NB LLC (Oregon LLC)
+├── DBA: "Welra"          ← SaaS product ($50 ABN)
+└── DBA: "Rust & Rainbow" ← POD/Etsy business ($50 ABN)
+```
+One annual report. One tax return. One bank account. Total cost: ~$200 to set up.
+
+**Phase 2 (when Welra has paying customers):** Spin Welra into its own Oregon child LLC,
+owned 100% by GR3NB LLC. Each LLC is a separate legal entity with independent liability.
+Cost: $100 to form, $100/year — worth it once real contracts and customers exist.
+
+**Phase 3+ (if 4+ ventures):** Revisit Wyoming Series LLC with an Oregon business attorney
+at that time, with current case law in hand. Not needed now.
+
+### Why Not Wyoming Series LLC
+
+- You operate from Oregon → Oregon "doing business" test applies regardless of formation state
+- Wyoming LLC requires Oregon Foreign LLC registration ($275 initial + $100/yr) on top of Wyoming fees ($60/yr + $39/yr RA)
+- Net extra cost vs Oregon LLC: ~$274/year with **zero** Oregon income tax savings
+- Oregon doesn't recognize Series LLCs — liability separation between series in Oregon court is legally unsettled
+- For two businesses, two Oregon LLCs costs less than one Wyoming Series LLC + Oregon foreign registration
+- Wyoming Series LLC makes sense at 5+ ventures; premature at 2
 
 ### Steps (In Order)
 
-1. Register gr3nb.io on Namecheap (~$15)
-2. File GR3NB LLC as Wyoming Series LLC at sos.wyo.gov ($100)
-3. Engage Northwest Registered Agent ($39/year)
+1. Register gr3nb.com on Namecheap (~$15)
+2. File GR3NB LLC in Oregon at sos.oregon.gov ($100 — act as own registered agent)
+3. File Assumed Business Names: "Welra" + "Rust & Rainbow" at Oregon SOS (~$50 each = $100)
 4. Apply for EIN at IRS.gov (free, 15 min)
 5. Create Operating Agreement (Rocket Lawyer free template)
 6. Open Mercury Bank account
@@ -370,13 +401,14 @@ Hire a CPA for Year 1 (~$400). Worth it.
 
 | Item | Cost |
 |---|---|
-| Wyoming LLC renewal | $60/year |
-| Northwest Registered Agent | $39/year |
+| Oregon LLC annual renewal | $100/year |
+| Registered Agent | $0 (self) |
+| DBA renewals (2 ABNs, every 2 years) | ~$50/year average |
 | Mercury Bank | $0 |
 | Wave accounting | $0 |
 | CPA (Year 1 only) | ~$400 |
-| **Total Year 1** | **~$499** |
-| **Total Year 2+** | **~$99/year** |
+| **Total Year 1** | **~$550** |
+| **Total Year 2+** | **~$150/year** |
 
 ---
 
@@ -384,22 +416,27 @@ Hire a CPA for Year 1 (~$400). Worth it.
 
 | Component | Tool | Cost | Notes |
 |---|---|---|---|
-| Backend + cron | Railway (Node.js) | $5–20/mo | Built-in scheduler |
+| Backend + cron | Railway (Node.js/TypeScript) | $5–20/mo | Built-in scheduler |
 | Database | Supabase (Postgres) | $0–25/mo | Auth + DB + real-time |
 | Job queue | BullMQ (Redis) | $0–10/mo | Concurrency control, retries |
-| AI reports | Claude API (claude-sonnet-4-6) | Usage-based | Modular prompt architecture |
+| AI reports | Claude API (claude-haiku-4-5) | Usage-based | Modular prompt architecture |
 | Email delivery | Resend | $0–20/mo | HTML + PDF delivery |
 | PDF rendering | Puppeteer (self-hosted) | $0 | HTML → PDF |
 | Payments (primary) | Stripe | 2.9% + $0.30 | Billing, dunning, tax, portal |
 | Payments (backup) | Lemon Squeezy | 5% + $0.50 | Standby if Stripe freezes |
-| Frontend | Next.js on Vercel | $0/mo | Edge Middleware for geo-block |
-| Auth | Supabase Auth | $0 | Built-in |
+| Frontend | Next.js 14 on Vercel | $0/mo | Edge Middleware for geo-block |
+| Auth | Supabase Auth | $0 | Built-in, email + Google OAuth |
 | Token monitor | Custom daily cron | $0 | Proactive expiry alerts |
 | Error monitoring | Sentry (free tier) | $0 | Silent failure detection |
 | Uptime monitoring | Uptime Robot | $0 | Cron job alerts |
 | Geo-blocking | Vercel Edge Middleware | $0 | EU IP block at signup |
+| **iOS App (Phase 7)** | React Native + Expo | $0 | Shares backend — JS/TS monorepo |
+| **IAP management** | RevenueCat | Free <$2.5k MRR | Apple IAP + Google Play abstraction |
+| **Push notifications** | Expo Notifications | $0 | Monday report + anomaly alerts |
+| **App Store** | Apple Developer Program | $99/yr | Required for iOS distribution |
 
 **Total monthly infrastructure at launch: ~$50–100**
+**Monorepo structure:** `apps/web` + `apps/api` + `apps/mobile` — shared types and utils
 
 ---
 
@@ -471,9 +508,9 @@ Customer clicks 👍 or 👎 in report email
     → Tracked link → Supabase logs sentiment + customer + report date
     → 👍: no action (log only)
     → 👎 twice in a row:
-        → Trigger automated "personal" email from ryan@gr3nb.io:
+        → Trigger automated "personal" email from ryan@gr3nb.com:
           "Hi [Name] — I noticed the last two reports didn't hit the mark.
-           What could be better? I read every reply."
+           What could be better? I read every reply." (sent from ryan@gr3nb.com)
         → Flag customer in Supabase for manual review
 ```
 
@@ -578,12 +615,12 @@ Each integration has a branching wizard pre-screening setup complexity:
 
 | Item | Cost |
 |---|---|
-| gr3nb.io domain (1 year) | $15 |
-| Wyoming Series LLC filing | $100 |
-| Northwest Registered Agent (Year 1) | $39 |
+| gr3nb.com domain (1 year) | $15 |
+| Oregon LLC filing (sos.oregon.gov) | $100 |
+| DBA filings: Welra + Rust & Rainbow ($50 each) | $100 |
 | Termly — Privacy Policy/ToS/DPA (1 month) | $30 |
 | First month hosting (Railway + Supabase) | $30 |
-| **Total to launch** | **~$214** |
+| **Total to launch** | **~$275** |
 
 Reserve **$500 total** for 3 months of runway.
 
@@ -634,16 +671,16 @@ Conservative. Organic only. No paid ads. Mixed monthly/annual.
 ## Launch Milestones
 
 ### Phase 0 — Pre-Build (Before Writing Code)
-- [ ] Register gr3nb.io domain (Namecheap, ~$15)
-- [ ] File GR3NB Wyoming Series LLC (sos.wyo.gov, $100)
+- [x] Register gr3nb.com domain — registered ✅
+- [ ] File GR3NB LLC in Oregon (sos.oregon.gov, $100 — act as own registered agent)
+- [ ] File DBAs: "Welra" + "Rust & Rainbow" at Oregon SOS (~$50 each)
 - [ ] Apply for EIN (IRS.gov, free, 15 min)
 - [ ] Submit Etsy developer application (etsy.com/developers)
 - [ ] Submit Shopify Partner application (partners.shopify.com)
-- [ ] Engage Northwest Registered Agent ($39/yr)
 - [ ] Open Mercury Bank account
 - [ ] Generate Privacy Policy + ToS + DPA via Termly
 - [ ] Create Operating Agreement (Rocket Lawyer free template)
-- [ ] Choose SaaS product brand name (DBA under GR3NB)
+- [x] Choose SaaS product brand name (DBA under GR3NB) — **Welra**, welra.io registered
 
 ### Phase 1 — Core Pipeline (Week 1–2)
 - [ ] Supabase schema (customers, integrations, reports, jobs, token_health, feedback)
@@ -726,6 +763,84 @@ Conservative. Organic only. No paid ads. Mixed monthly/annual.
 - [ ] Transfer Stripe balance to Mercury weekly (Stripe concentration risk)
 - [ ] File IRS Form 2553 when ARR hits $60k
 
+### Phase 7 — Welra iOS App (Month 4–6)
+*Trigger: web app has 10+ paying customers and proven retention.*
+- [ ] Apple Developer Program enrollment ($99/yr)
+- [ ] React Native + Expo project scaffolded (monorepo — shared backend)
+- [ ] RevenueCat integration (Apple IAP abstraction layer)
+- [ ] Mobile IAP pricing: Starter $24.99/mo, Pro $59.99/mo, Multi $119.99/mo
+  (30% Apple premium to cover Apple's 30% cut — web subscribers log in free)
+- [ ] Core screens: Dashboard · Weekly Report · Platforms · History · Settings
+- [ ] Push notifications via Expo (Monday morning "Your report is ready")
+- [ ] Anomaly push alerts ("Revenue down 40% vs last week")
+- [ ] Token expiry push alerts ("Reconnect your Etsy in 3 days")
+- [ ] Offline report caching (read last 4 reports without internet)
+- [ ] App Store assets: screenshots, preview video, icon, description
+- [ ] Beta via TestFlight (existing web customers first)
+- [ ] App Store submission + review (1–7 days)
+- [ ] App Store launch: notify all existing customers
+
+### Phase 8 — Android + Growth (Month 7+)
+- [ ] Android Play Store version (React Native — mostly free from iOS build)
+- [ ] WooCommerce widget (WordPress admin sidebar mini-report)
+- [ ] Welra Shopify App Store listing
+- [ ] Welra Etsy App (if Etsy opens app ecosystem)
+- [ ] Agency white-label mobile app (custom branding per agency)
+- [ ] TikTok Shop integration (when API opens)
+
+---
+
+## Multi-Growth Strategy
+
+Welra is designed as a **platform**, not a single product. Each growth lever compounds the others.
+
+```
+GROWTH VECTOR 1 — Web SaaS (Months 1–3)
+  welra.io web app → $19–$299/mo subscriptions
+  Foundation: backend, integrations, report engine, customer base
+
+GROWTH VECTOR 2 — iOS App (Months 4–6)
+  Native iPhone app → distribution + push notifications + App Store SEO
+  Monetisation: Apple IAP at slight premium to cover 30% cut
+  Web subscribers: log in free (no IAP required)
+  New subscribers: IAP available in-app
+
+GROWTH VECTOR 3 — Android App (Month 7+)
+  Minimal marginal cost — React Native shares 95% of iOS code
+  Doubles addressable market overnight
+
+GROWTH VECTOR 4 — Platform Marketplace Listings (Month 6+)
+  Shopify App Store listing → passive discovery
+  WooCommerce plugin directory → passive discovery
+  Each listing is permanent distribution with no ongoing cost
+
+GROWTH VECTOR 5 — Affiliate + Community (Months 2+)
+  20% recurring affiliate (Rewardful)
+  Seller-to-seller referral in communities (r/Etsy, FB groups)
+  Zero CAC — referrer gets paid, we acquire customer
+
+GROWTH VECTOR 6 — Agency White-Label (Month 3+)
+  $299/mo Agency tier → one customer = 10–20 client reports
+  Custom branding per agency (logo, color scheme in report)
+  Agency mobile app (Phase 8) — agencies love offering branded apps
+```
+
+### Why This Sequencing Works
+1. **Web first** — validates product before investing in App Store approval process
+2. **iOS before Android** — iOS users pay more, convert better, churn less
+3. **Marketplace listings** — permanent passive distribution, compound over time
+4. **Affiliate last** — only works once product is proven (you need happy customers to refer)
+
+### Revenue Model at Scale (Month 12 Target)
+
+| Channel | Customers | Avg Rev | MRR Contribution |
+|---|---|---|---|
+| Web (monthly) | 60 | $55 | $3,300 |
+| Web (annual, MRR equiv) | 40 | $65 | $2,600 |
+| iOS (new via App Store) | 20 | $35 (after Apple cut) | $700 |
+| Agency tier | 5 | $299 | $1,495 |
+| **Total** | **125** | | **~$8,095 MRR** |
+
 ---
 
 ## What You Build, What Runs Itself
@@ -769,20 +884,22 @@ Sentry errors · Uptime Robot · Stripe MRR · Support inbox · 👎 flags
 6. ✅ SWOT analysis complete
 7. ✅ All gaps identified and fixed in plan
 8. ✅ Geographic scope: US, CA, AU, UK — EU excluded with waitlist
-9. [ ] **Register gr3nb.io** (Namecheap, ~$15) — Ryan
-10. [ ] **File GR3NB Wyoming Series LLC** (sos.wyo.gov, $100) — Ryan
-11. [ ] **Apply for EIN** (IRS.gov, free, 15 min) — Ryan
-12. [ ] **Submit Etsy developer app** — Ryan
-13. [ ] **Submit Shopify Partner app** — Ryan
-14. [ ] **Open Mercury Bank** — Ryan
-15. [ ] **Name the SaaS product** (DBA) — Ryan + Claude
-16. [ ] **Build** — Claude Code
+9. ✅ **gr3nb.com registered** — done
+10. [ ] **File GR3NB LLC in Oregon** (sos.oregon.gov, $100 — self as RA) — Ryan
+11. [ ] **File DBAs: Welra + Rust & Rainbow** (Oregon SOS, ~$50 each) — Ryan
+12. [ ] **Apply for EIN** (IRS.gov, free, 15 min) — Ryan
+13. [ ] **Submit Etsy developer app** — Ryan
+14. [ ] **Submit Shopify Partner app** — Ryan
+15. [ ] **Open Mercury Bank** — Ryan
+16. ✅ **SaaS product brand name chosen: Welra** (welra.io registered)
+17. [ ] **Build** — Claude Code
 
 ---
 
-*Plan v3 — all gaps addressed · Claude Code · 2026-05-22*
-*Incorporates: SWOT, geographic scope, annual pricing, mobile email,*
+*Plan v4 — Oregon LLC structure · Claude Code · 2026-05-28*
+*v3 incorporated: SWOT, geographic scope, annual pricing, mobile email,*
 *Claude API fallback, 5-email onboarding, feedback loop, liability disclaimer,*
 *data retention + portability, Stripe backup, customer segmentation,*
 *platform concentration monitoring, EU geo-block + waitlist*
+*v4: Wyoming Series LLC → Oregon LLC after legal structure analysis (see Legal section)*
 *See [[Projects/AutoBiz/State]] · [[Projects/AutoBiz/Tasks]]*

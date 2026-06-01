@@ -1,12 +1,374 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-05-22
+updated: 2026-05-31
 ---
 
 # To Antigravity
 
 *Inbox for handoffs from Claude Code to Antigravity.*
+
+---
+
+## 2026-05-31 — Welra Integrations, Hashtag Overhaul, Sunday Assessment Scheduled
+
+**From:** Claude Code
+**Read:** ☐
+
+Large session across R&R and Welra. All changes are live.
+
+### Sunday 9am Welra Assessment — Now Automated
+New launchd agent `com.rustandrainbow.welra_assessment` fires every Sunday at 9:00am. Invokes Claude Code CLI to autonomously assess R&R vs Welra, implement fixes, and update the vault. Script: `run_welra_assessment.sh`. Log: `welra_assessment.log`. macOS notification on completion. (Remote CCR agents can't access local files — local launchd + CLI is the right pattern here.)
+
+### Welra — Printify + Instagram Integrations Built
+- `integrations/printify.ts` — page-based order pagination, WoW deltas, top products. Incorporates the `?limit=400` gotcha from R&R experience.
+- `integrations/instagram.ts` — followers, week posts, engagement, reach/impressions (gracefully 0 when `instagram_manage_insights` scope absent).
+- Both added to `@welra/types` and wired into `reportGenerator.ts`.
+- Prompt caching added to both Claude API calls in the report generator — system prompts cached with `cache_control: ephemeral`.
+
+### R&R — Hashtag Strategy Overhauled
+- TikTok title = pure hook. Hashtags moved to `tiktokSettings.description` (4000 chars, was entirely unused). Now sending 30–42 TikTok tags including `#dogtok #fyp #foryoupage`.
+- Instagram expanded from ~18 to 30–42 tags with broad-reach layer added (`#dogsofinstagram` etc.).
+- Pinterest left alone — hashtags don't drive discovery there.
+
+### R&R — Weekly Report Native Format
+`--mode report` now outputs clean structured markdown for Claude Code narrative. No more "no API key" message. WoW deltas and signed numbers included.
+
+### Ryan's Open Actions
+1. Refresh META_ACCESS_TOKEN by June 25 (expires 2026-07-01)
+2. Delete May 11 Gay Dog Dad Retro in Printify dashboard (ID: `6a025e07...`)
+3. Complete Phase 0B to deploy Welra (Supabase → Railway → Vercel)
+
+---
+
+## 2026-05-30 — Welra: Build Started + iOS Growth Strategy Added
+
+**From:** Claude Code
+**Read:** ☐
+
+Major session. Business plan updated to v5, iOS app added as Phase 7 growth vector, and the actual Welra product codebase has been scaffolded.
+
+### Business Plan v5 Changes
+- Brand name TBD → **Welra** throughout all references
+- iOS App added as Phase 7 (Month 4–6) with full cost/strategy analysis
+- Android + marketplace expansion added as Phase 8
+- Multi-Growth Strategy section added (6 growth vectors, sequencing rationale)
+- Revenue model at scale table: ~$8k MRR at Month 12
+- Tech stack updated to include React Native + Expo + RevenueCat
+- Monorepo architecture documented
+
+### iOS App Strategy (key points for future sessions)
+- Stack: React Native + Expo (shares backend with web — same TS codebase)
+- Apple's 30% cut: charge $24.99/$59.99/$119.99 on mobile vs $19/$49/$99 web
+- Web subscribers log in free — no IAP required for existing customers
+- New mobile subscribers: Apple IAP available
+- RevenueCat abstracts Apple IAP + Google Play (free under $2.5k MRR)
+- Trigger to build: 10+ paying web customers with proven retention
+- Expo handles push notifications (Monday report alerts, anomaly alerts, token expiry)
+
+### Codebase Built
+Location: `~/Claude/Projects/side business/Welra/`
+
+```
+Welra/ (monorepo — npm workspaces)
+├── packages/types/src/index.ts       ← ALL shared TypeScript types
+├── apps/api/                          ← Fastify backend (Railway)
+│   ├── src/server.ts                  ← entry point
+│   ├── src/lib/env.ts                 ← Zod env validation
+│   ├── src/lib/supabase.ts            ← Supabase client
+│   ├── src/lib/redis.ts               ← BullMQ Redis
+│   ├── src/lib/db/schema.sql          ← FULL Supabase schema ⭐
+│   ├── src/services/reportGenerator.ts ← Claude API pipeline ⭐
+│   ├── src/services/reportRenderer.ts  ← HTML email renderer ⭐
+│   ├── src/services/pdfRenderer.ts     ← Puppeteer PDF
+│   ├── src/services/emailService.ts    ← Resend (all emails)
+│   ├── src/jobs/worker.ts              ← BullMQ worker (concurrency: 10)
+│   ├── src/jobs/reportSchedulerCron.ts ← Sunday 11pm scheduler
+│   ├── src/jobs/tokenHealthCron.ts     ← Daily token expiry monitor
+│   ├── src/routes/webhooks.ts          ← Stripe webhooks (all events)
+│   ├── src/routes/feedback.ts          ← 👍/👎 feedback handler
+│   ├── src/routes/health.ts            ← /health endpoint
+│   └── src/integrations/              ← etsy.ts (partial), stubs for others
+└── apps/web/                           ← Next.js 14 (Vercel)
+    ├── src/middleware.ts               ← EU geo-block + auth guard ⭐
+    ├── src/app/layout.tsx              ← root layout + SEO metadata
+    ├── src/app/page.tsx                ← landing page (full) ⭐
+    └── src/app/dashboard/page.tsx      ← dashboard (full) ⭐
+```
+
+### What's Built vs What's Stub
+
+| Component | Status |
+|---|---|
+| Supabase schema | ✅ Complete — ready to deploy |
+| Shared TypeScript types | ✅ Complete |
+| Report generator (Claude API) | ✅ Complete logic, needs real integration data |
+| BullMQ worker + retry logic | ✅ Complete |
+| Report scheduler cron | ✅ Complete |
+| Token health cron | ✅ Complete |
+| Stripe webhook handler | ✅ Complete (all events) |
+| Email service (all emails) | ✅ Complete |
+| HTML report renderer | ✅ Complete |
+| PDF renderer | ✅ Complete |
+| Feedback route (👍/👎) | ✅ Complete |
+| EU geo-block middleware | ✅ Complete |
+| Landing page | ✅ Complete (pricing, CTAs, copy) |
+| Dashboard page | ✅ Complete |
+| Etsy integration | 🟡 Partial (full fetch logic, needs real API key) |
+| Shopify integration | ⬜ Stub |
+| WooCommerce integration | ⬜ Stub |
+| Stripe integration | ⬜ Stub |
+| Connections Hub UI | ⬜ Next |
+| Auth pages (login/signup) | ⬜ Next |
+| Report view page | ⬜ Next |
+
+### Ryan's Setup Tasks (to activate the build)
+1. Create Supabase project → paste schema.sql into SQL Editor → run
+2. Create Railway project → deploy apps/api → set env vars from .env.example
+3. Deploy apps/web to Vercel → set env vars from .env.example
+4. Create Stripe account → create 8 products (4 tiers × 2 intervals) → paste price IDs to .env
+5. Create Resend account → verify welra.io domain → add API key to .env
+6. Add Anthropic API key to .env
+
+### Next Build Session Priorities
+1. Auth pages (login, signup, Supabase auth flow)
+2. Connections Hub UI (integration cards, OAuth wizards)
+3. Etsy OAuth flow (full implementation)
+4. WooCommerce integration (REST API — no approval needed → launch blocker)
+5. Report view page in dashboard
+6. Onboarding email sequence triggers
+
+---
+
+## 2026-05-30 — GR3NB: Oregon LLC Filed + EIN Obtained
+
+**From:** Claude Code
+**Read:** ☐
+
+Ryan completed two major Phase 0 legal steps today.
+
+### Oregon LLC — Filed
+- GR3NB LLC Articles of Organization submitted to Oregon SOS
+- Status: Pending approval (1–3 business days)
+- $100 filing fee paid
+- When approval arrives: save Articles PDF to `Legal/Articles_of_Organization_GR3NB_LLC_2026.pdf`
+- DBAs ("Welra" + "Rust & Rainbow") will be filed once LLC is approved
+
+### EIN — Obtained
+- **EIN: 42-2858110**
+- Confirmation saved to `Legal/EIN_Confirmation_GR3NB_LLC.pdf`
+- CP575 letter will arrive by mail in ~4 weeks — save when received
+- EIN added to: README.md, Tax_Reference.md, DOCUMENT_CHECKLIST.md, Tasks.md
+
+### Files Updated
+- `Documents/GR3NB/README.md` — EIN filled in
+- `Documents/GR3NB/Legal/DOCUMENT_CHECKLIST.md` — EIN marked ✅, date updated
+- `Projects/AutoBiz/Tax_Reference.md` — EIN filled in
+- `Projects/AutoBiz/Tasks.md` — EIN tasks marked done
+
+### Ryan's Next Steps (when Oregon SOS approval email arrives)
+1. Save Articles of Organization PDF → `Legal/` + `Tax/2026/Receipts/Formation/`
+2. Go back to Oregon SOS → file DBA "Welra" ($50)
+3. File DBA "Rust & Rainbow" ($50)
+4. Open Mercury Bank (mercury.com) — needs EIN + Articles of Organization
+
+---
+
+## 2026-05-28 — GR3NB: Receipt Filing Complete (All 6 Receipts → PDF)
+
+**From:** Claude Code
+**Read:** ☐
+
+All Gmail receipts for GR3NB LLC have been found, converted to PDF, and filed in the correct tax folders. The formation receipt filing is now 100% complete.
+
+### What Was Filed This Session
+
+**Formation receipts:**
+- `namecheap-gr3nb-com-2026.pdf` — gr3nb.com domain, $11.48, Order# 203248328
+- `namecheap-welra-io-2026.pdf` — welra.io domain, $34.98, Order# 203246865
+- Both filed to: `Tax/2026/Receipts/Formation/`
+- Both `.txt` placeholders deleted
+
+**Software receipts (filed in previous session):**
+- `Invoice-VWOHUY-00004.pdf` + `Receipt-VWOHUY-00004.pdf` — Netlify $9.00
+- `ideogram-ai-invoice-2026-05.pdf` + `ideogram-ai-receipt-2026-05.pdf` — Ideogram AI $20.00
+- Both filed to: `Tax/2026/Receipts/Software/`
+
+### Current GR3NB Filing State
+```
+Tax/2026/Receipts/Formation/
+  namecheap-gr3nb-com-2026.pdf   ✅ $11.48
+  namecheap-welra-io-2026.pdf    ✅ $34.98
+
+Tax/2026/Receipts/Software/
+  Invoice-VWOHUY-00004.pdf       ✅ $9.00 (Netlify)
+  Receipt-VWOHUY-00004.pdf       ✅ $9.00 (Netlify)
+  ideogram-ai-invoice-2026-05.pdf ✅ $20.00 (Ideogram)
+  ideogram-ai-receipt-2026-05.pdf ✅ $20.00 (Ideogram)
+```
+
+### Files Updated
+- `Legal/DOCUMENT_CHECKLIST.md` — domain entries updated from `.txt` → `.pdf ✅`
+- `Tax/2026/GR3NB_Expense_Log_2026.csv` — Receipt Saved column updated to "YES - PDF filed"
+
+### Still Pending (Ryan must do)
+- File Oregon LLC ($100 at sos.oregon.gov) → save receipt to `Receipts/Formation/`
+- File DBA "Welra" ($50) → save receipt
+- File DBA "Rust & Rainbow" ($50) → save receipt
+- Apply for EIN (free, IRS.gov) → print confirmation immediately
+- Open Mercury Bank → save account confirmation PDF
+- Generate Privacy Policy + ToS + DPA via Termly ($30)
+- Take home office workspace photo → `Home_Office/workspace_photo_2026.jpg`
+- Complete Home Office Worksheet with sq ft numbers
+
+---
+
+## 2026-05-28 — Rust & Rainbow: Scheduler Fixed, TikTok Music Added, Duplicate Cleaned
+
+**From:** Claude Code
+**Read:** ☐
+
+Session 7 complete. Here's what changed today.
+
+### May 27 Post Was Missed — Mac Was Asleep
+The Wednesday post didn't fire because the Mac was sleeping at 10:00am. Both launchd and cron silently skip missed jobs when the Mac is asleep. The watchdog at 10:10am would have notified Ryan if he was at his Mac.
+
+**Fix:** Ran the missed post manually — **Rainbow Heart Vizsla** posted to Instagram, TikTok, and Pinterest. All three platforms confirmed ✓.
+
+### Dual Scheduler Bug Removed
+Discovered that both cron AND launchd were running the market post job simultaneously. On any week both fired, designs would post twice. The cron market line has been removed. **launchd is now the sole scheduler.** The watchdog cron (10:10am M/W/F) remains — it's different, just checks the log and notifies.
+
+### Watchdog Updated
+`watchdog.sh` was monitoring the old cron log at `~/Library/Logs/rust_rainbow_market.log`. Updated to monitor the correct launchd log at `market.log` in the project directory.
+
+### TikTok Trending Music Enabled
+Added `autoAddMusic: true` to the Zernio TikTok post payload in `agent.py`. TikTok will now automatically attach recommended/trending music to every photo post. This is the maximum the API allows — there's no way to specify a particular song by ID.
+
+Also added the required consent fields (`contentPreviewConfirmed`, `expressConsentGiven`) that were missing from all previous posts. Without these, TikTok can silently reject posts.
+
+### designs_log.json Duplicate Cleaned
+The Gay Dog Dad Retro May 11 entry (Printify ID: `6a025e0754291b828c064667`) has been removed from `designs_log.json`. The May 14 entry (ID: `6a0654c3e556c763050faeed`) with the stable S3 mockup URL is now the only active entry and will post next in rotation.
+
+**Ryan still needs to:** Delete the May 11 Printify product from the Printify dashboard manually — it's still listed there. Deleting it in Printify will auto-unpublish from Etsy.
+
+### Ryan's Open Tasks (priority order)
+1. **By June 25** — Refresh META_ACCESS_TOKEN at developers.facebook.com (expires 2026-07-01)
+2. Delete the May 11 Gay Dog Dad Retro product in Printify dashboard (ID: `6a025e07...`)
+3. Add `ANTHROPIC_API_KEY` to `.env` — enables AI narrative in weekly report
+4. Run `etsy_auth.py` after Etsy developer app approved
+
+### Files Updated This Session
+- `Projects/Rust_and_Rainbow/State.md` — scheduling architecture, TikTok music, duplicate cleanup
+- `Projects/Rust_and_Rainbow/Tasks.md` — new done items, Ryan's task clarified with Printify IDs
+- `memory/Learnings_and_Conventions.md` — Zernio TikTok payload, dual scheduler risk, Mac sleep pattern
+- `Worklogs/Claude_Log.md` — session 7 logged
+
+---
+
+## 2026-05-28 — GR3NB: Tax Infrastructure Built
+
+**From:** Claude Code
+**Read:** ☐
+
+Tax documentation infrastructure created for GR3NB LLC. Everything is in place for clean bookkeeping and CPA handoff.
+
+### Mac Folder Structure Created
+`~/Documents/GR3NB/` — all business files live here going forward.
+
+```
+GR3NB/
+├── README.md                    ← monthly habits + key dates
+├── Legal/
+│   ├── DOCUMENT_CHECKLIST.md    ← tracks what's been filed/saved
+│   └── (formation docs go here as Ryan completes Phase 0)
+├── Tax/
+│   ├── 2026/
+│   │   ├── GR3NB_Expense_Log_2026.csv   ← pre-filled with known costs
+│   │   ├── Receipts/Formation/          ← LLC, DBA, domain receipts
+│   │   ├── Receipts/Software/           ← hosting, API, tools
+│   │   ├── Receipts/Services/           ← CPA, Termly
+│   │   ├── Income/Stripe/               ← monthly payout reports
+│   │   ├── Income/Printify/             ← R&R earnings
+│   │   └── Quarterly_Taxes/             ← IRS payment confirmations
+│   └── 2027/
+├── Bank_Statements/2026/        ← Mercury monthly statements
+├── Contracts/                   ← future customer/vendor contracts
+└── Home_Office/
+    ├── Home_Office_Worksheet_2026.md    ← fill out for CPA
+    └── workspace_photo_2026.jpg        ← Ryan needs to take this
+```
+
+### Expense Log Pre-Filled
+`GR3NB_Expense_Log_2026.csv` has all known startup costs already entered:
+gr3nb.com ($15), Oregon LLC ($100), 2×DBAs ($100), Termly ($30), EIN (free)
+Total startup costs: ~$245 — all deductible under IRS Section 195 in 2026.
+
+### Vault Files Created/Updated
+- `Projects/AutoBiz/Tax_Reference.md` — NEW: quarterly deadlines, deduction categories, S-Corp trigger, CPA talking points
+- `Projects/AutoBiz/Tasks.md` — receipt-saving tasks added to every Phase 0 step
+- `Projects/AutoBiz/State.md` — Tax_Reference linked
+
+### Ryan's Monthly Habit (10 min, 1st of month)
+Download: Mercury statement, Stripe payout, all software invoices
+Add to: GR3NB_Expense_Log_2026.csv
+File to: matching Tax/2026/Receipts/ subfolder
+
+### Key Tax Dates to Calendar
+- April 15, 2027 — Q1 estimated tax (IRS Direct Pay)
+- June 16, 2027 — Q2 estimated tax
+- September 15, 2027 — Q3 estimated tax
+- January 15, 2028 — Q4 estimated tax
+- ~May 2027 — Oregon LLC annual renewal ($100)
+
+---
+
+## 2026-05-28 — Welra/GR3NB: LLC Structure Changed Oregon (Wyoming dropped)
+
+**From:** Claude Code
+**Read:** ☐
+
+Ryan asked Claude and Gemini to evaluate the Wyoming Series LLC decision. After analysis, the structure has been changed to **Oregon LLC**. All vault files updated (Business Plan v4, State v4, Tasks v4).
+
+### Decision Summary
+
+**Wyoming Series LLC → Oregon LLC**
+
+Reason: Ryan operates from Oregon, which means Oregon's "doing business" test applies regardless of formation state. A Wyoming LLC would require Oregon Foreign LLC registration ($275 initial + $100/yr) on top of Wyoming fees ($60/yr + $39/yr registered agent) — netting ~$274/year extra with zero income tax savings. Additionally, Oregon doesn't recognize Series LLCs, making the liability separation between series legally unsettled in Oregon courts.
+
+### New Structure
+
+**Phase 1 (now):**
+```
+GR3NB LLC (Oregon LLC — $100 filing, self as RA)
+├── DBA: "Welra"           ← $50 ABN
+└── DBA: "Rust & Rainbow"  ← $50 ABN
+```
+One annual report, one tax return, one bank account. ~$200 total setup.
+
+**Phase 2 (when Welra has paying customers):** Spin Welra into Oregon child LLC owned by GR3NB LLC.
+**Phase 3 (if 4+ ventures):** Revisit Wyoming Series LLC at that time with current case law.
+
+### Files Updated
+- `Projects/AutoBiz/Business_Plan.md` → v4 (Legal section completely rewritten, all Wyoming refs removed)
+- `Projects/AutoBiz/State.md` → v4 (structure decision documented)
+- `Projects/AutoBiz/Tasks.md` → v4 (Phase 0: Wyoming + NW Registered Agent removed; Oregon LLC + 2 DBA tasks added)
+
+### Ryan's Updated Phase 0 Tasks
+
+| Task | Cost | Where |
+|---|---|---|
+| Register gr3nb.com | ~$15 | Namecheap |
+| File GR3NB LLC (Oregon) | $100 | sos.oregon.gov |
+| File DBA "Welra" | $50 | Oregon SOS |
+| File DBA "Rust & Rainbow" | $50 | Oregon SOS |
+| Apply for EIN | Free | IRS.gov |
+| Submit Etsy developer app | Free | etsy.com/developers |
+| Submit Shopify Partner app | Free | partners.shopify.com |
+| Open Mercury Bank | Free | mercury.com |
+| Generate Privacy Policy + ToS + DPA | $30 (1 mo) | Termly |
+| Create Operating Agreement | Free | Rocket Lawyer |
+
+Northwest Registered Agent engagement **removed** from task list — not needed for Oregon LLC.
 
 ---
 
@@ -205,7 +567,7 @@ The last open planning decision is resolved. The SaaS product (GR3NB LLC's first
 
 ### What this means
 All planning is now complete. **No open decisions remain.** Ryan just needs to complete Phase 0 legal tasks before build starts:
-1. Register gr3nb.io (~$15 Namecheap)
+1. Register gr3nb.com (~$15 Namecheap)
 2. File GR3NB Wyoming Series LLC ($100)
 3. Apply for EIN (free)
 4. Submit Etsy developer app
@@ -283,7 +645,7 @@ Technical enforcement: Vercel Edge Middleware + Stripe address check.
 SaaS product brand name (DBA — what customers see, separate from GR3NB LLC). Not chosen yet.
 
 ### Ryan's action items before build
-1. Register gr3nb.io (~$15)
+1. Register gr3nb.com (~$15)
 2. File GR3NB Wyoming Series LLC ($100)
 3. Apply for EIN (free)
 4. Submit Etsy developer app
@@ -312,7 +674,7 @@ Ryan's family encoded in the name: G=Grace+Grant, R3=Ryan (childhood nickname), 
 
 **Structure:** Wyoming Series LLC (not regular LLC). Each future business Ryan builds is a protected Series cell — one LLC, one renewal fee, separate liability per business. Perfect for a portfolio of autonomous businesses.
 
-**Domain to register:** gr3nb.io (~$15 Namecheap)
+**Domain to register:** gr3nb.com (~$15 Namecheap)
 
 ---
 
@@ -403,7 +765,7 @@ Key ones Antigravity should know about if working on this:
 ### What Ryan still needs to decide
 
 1. **SaaS product brand name** — the LLC is GR3NB, but the product customers see needs its own name (DBA). Not decided yet.
-2. **Domain** — gr3nb.io needs to be registered (~$15 Namecheap)
+2. **Domain** — gr3nb.com needs to be registered (~$15 Namecheap)
 3. **Legal setup** — file Wyoming Series LLC, get EIN, open Mercury Bank (all Ryan's tasks, see Tasks.md)
 4. **Beta customers** — target Etsy-only or WooCommerce-only sellers first?
 

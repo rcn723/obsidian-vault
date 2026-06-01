@@ -1,8 +1,8 @@
 ---
-title: AutoBiz State v3
+title: AutoBiz State v5
 project: AutoBiz
 type: state
-updated: 2026-05-22
+updated: 2026-05-31
 brand: Welra
 tags: [business, saas, autonomous, multi-channel]
 ---
@@ -10,13 +10,22 @@ tags: [business, saas, autonomous, multi-channel]
 # AutoBiz — Project State
 
 ## Current Phase
-Planning complete (v3) → Ready to execute. All gaps addressed.
+**BUILDING** — Phase 1 scaffold complete. Supabase schema, API backend, and Next.js frontend scaffolded.
+iOS app added to business plan as Phase 7 growth vector. Multi-growth strategy documented.
 
 ## Holding Company
-**GR3NB LLC** — Wyoming Series LLC
+**GR3NB LLC** — Oregon LLC (not Wyoming — see Legal Structure decision below)
 G=Grace/Grant · R3=Ryan · N=Northam · B=Brock
 Name cleared — zero conflicts across all channels
-Domain to register: gr3nb.io
+Domain to register: gr3nb.com
+
+## Legal Structure Decision (2026-05-28)
+Switched from Wyoming Series LLC to **Oregon LLC** after analysis:
+- Operating from Oregon → must register Wyoming LLC as Foreign LLC anyway (~$275 + $100/yr extra)
+- Net extra cost of Wyoming: ~$274/year with zero income tax savings
+- Oregon Series LLC doesn't exist; Wyoming Series liability protection unsettled in OR courts
+- Oregon LLC + DBAs covers both businesses at Phase 1 ($200 total setup)
+- Revisit child LLCs when Welra has paying customers; revisit Series LLC if 4+ ventures
 
 ## Product 1
 AI-written weekly business intelligence reports for multi-channel small sellers.
@@ -69,19 +78,51 @@ Annual presented as default on pricing page
 - [x] Business plan v3 complete
 - [x] Tasks.md fully populated (6 phases, 80+ tasks)
 
-## Execution Milestones (Not Yet Started)
-- [ ] gr3nb.io domain registered
-- [ ] Wyoming Series LLC filed
-- [ ] EIN obtained
+## Execution Milestones
+- [x] gr3nb.com domain registered ✅
+- [x] welra.io domain registered ✅
+- [x] Oregon LLC filed (pending approval) ✅ 2026-05-30
+- [x] EIN obtained — **42-2858110** ✅ 2026-05-30
+- [ ] DBAs filed: Welra + Rust & Rainbow (~$50 each) — waiting on LLC approval
 - [ ] Etsy developer app submitted
 - [ ] Shopify Partner app submitted
 - [ ] Mercury Bank account opened
-- [ ] Privacy Policy + ToS + DPA generated
-- [x] SaaS product brand name chosen: **Welra** (welra.io registered)
-- [ ] Build started
+- [ ] Privacy Policy + ToS + DPA generated (Termly)
+- [x] SaaS product brand name chosen: **Welra** (welra.io registered) ✅
+- [x] **BUILD STARTED** ✅ 2026-05-30
+  - Monorepo: `~/Claude/Projects/side business/Welra/`
+  - Supabase schema: complete (`schema.sql`)
+  - API backend (Fastify + TypeScript): scaffolded
+  - Report generator + Claude API pipeline: built (prompt caching added 2026-05-31)
+  - BullMQ worker + retry logic: built
+  - Token health cron: built
+  - Report scheduler cron: built
+  - Stripe webhook handler: built
+  - Email service (Resend): built
+  - Report HTML renderer: built
+  - PDF renderer (Puppeteer): built
+  - Next.js frontend: scaffolded (landing page + dashboard)
+  - Shared types package: complete
+  - Printify integration: built 2026-05-31 (`integrations/printify.ts`)
+  - Instagram integration: built 2026-05-31 (`integrations/instagram.ts`)
+- [ ] Supabase project created + schema deployed
+- [ ] Railway project created + API deployed
+- [ ] Etsy integration: full implementation
+- [ ] WooCommerce integration: full implementation
+- [ ] Stripe integration: full implementation
+- [ ] Connections Hub UI
 - [ ] Beta users onboarded (target: 3)
 - [ ] Paid signups live
 - [ ] First paying customer
+
+## iOS App (Phase 7 — Month 4–6)
+Added to business plan v5 as growth vector.
+Stack: React Native + Expo + RevenueCat
+Trigger: 10+ paying web customers with proven retention
+- [ ] Apple Developer Program enrollment ($99/yr)
+- [ ] React Native + Expo scaffold
+- [ ] IAP pricing configured (30% premium over web)
+- [ ] App Store submission
 
 ## Key Open Decisions
 - None — all planning decisions resolved. Ryan's pre-build legal tasks are next (see Tasks.md Phase 0).
@@ -89,3 +130,4 @@ Annual presented as default on pricing page
 ## Links
 - [[Projects/AutoBiz/Business_Plan]]
 - [[Projects/AutoBiz/Tasks]]
+- [[Projects/AutoBiz/Tax_Reference]]

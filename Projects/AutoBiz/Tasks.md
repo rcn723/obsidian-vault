@@ -1,8 +1,8 @@
 ---
-title: AutoBiz Tasks v3
+title: AutoBiz Tasks v5
 project: AutoBiz
 type: tasks
-updated: 2026-05-22
+updated: 2026-05-30
 tags: [business, tasks, saas]
 ---
 
@@ -12,18 +12,94 @@ tags: [business, tasks, saas]
 
 ## Phase 0 — Pre-Build (Ryan — Before Writing Code)
 
-- [ ] Register gr3nb.io domain on Namecheap (~$15) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] File GR3NB Wyoming Series LLC at sos.wyo.gov ($100) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Apply for EIN at IRS.gov (free, 15 min) [owner:: ryan] [priority:: high] [status:: open]
+- [x] Register gr3nb.com domain — registered ✅ [owner:: ryan] [priority:: high] [status:: done]
+- [x] Save gr3nb.com domain receipt → ~/Documents/GR3NB/Tax/2026/Receipts/Formation/ — PDF filed ✅ [owner:: ryan] [priority:: high] [status:: done]
+- [x] File GR3NB LLC in Oregon at sos.oregon.gov ($100 — act as own registered agent) — filed ✅ 2026-05-30, pending approval [owner:: ryan] [priority:: high] [status:: done]
+- [ ] Save Oregon LLC receipt + Articles of Organization PDF → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
+- [ ] File DBA "Welra" as Assumed Business Name at Oregon SOS (~$50) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] File DBA "Rust & Rainbow" as Assumed Business Name at Oregon SOS (~$50) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Save both DBA confirmation PDFs → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
+- [x] Apply for EIN at IRS.gov (free, 15 min) — EIN: 42-2858110 ✅ 2026-05-30 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Print/screenshot EIN confirmation page immediately → ~/Documents/GR3NB/Legal/EIN_Confirmation_GR3NB_LLC.pdf ✅ 2026-05-30 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Add EIN to ~/Documents/GR3NB/README.md (top line) ✅ 2026-05-30 [owner:: claude] [priority:: high] [status:: done]
 - [ ] Submit Etsy developer application at etsy.com/developers [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Submit Shopify Partner application at partners.shopify.com [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Engage Northwest Registered Agent ($39/year) [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Open Mercury Bank account (mercury.com) [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Generate Privacy Policy + ToS + DPA via Termly ($30/mo, cancel after) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Save Termly receipt → Tax/2026/Receipts/Services/ and all 3 PDFs → Legal/ [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Create Operating Agreement (Rocket Lawyer free template) [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Save signed Operating Agreement PDF → ~/Documents/GR3NB/Legal/ [owner:: ryan] [priority:: medium] [status:: open]
 - [x] Choose SaaS product brand name (DBA under GR3NB) — **Welra**, welra.io registered [owner:: ryan] [priority:: high] [status:: done]
+- [x] Save welra.io domain receipt → Tax/2026/Receipts/Formation/ — PDF filed ✅ [owner:: ryan] [priority:: high] [status:: done]
 - [ ] File USPTO trademark for WELRA (~$350, tmsearch.uspto.gov to confirm clear, then file via USPTO Trademark Center) [owner:: ryan] [priority:: medium] [status:: open]
 - [ ] Create Lemon Squeezy account (payment backup, standby only) [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Complete Home Office Worksheet → ~/Documents/GR3NB/Home_Office/Home_Office_Worksheet_2026.md [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Take photo of workspace → ~/Documents/GR3NB/Home_Office/workspace_photo_2026.jpg [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Add GR3NB expense log habit to calendar: 1st of every month, 10 min [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Set calendar reminders for quarterly IRS estimated tax payments (Apr 15 / Jun 16 / Sep 15 / Jan 15) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Set calendar reminder for Oregon LLC annual renewal (~May 2027, $100) [owner:: ryan] [priority:: medium] [status:: open]
+
+---
+
+## Phase 0B — Infrastructure Activation (Ryan — Do These to Launch the Build)
+*The codebase is scaffolded at `~/Claude/Projects/side business/Welra/`. These accounts and credentials activate it.*
+
+### Supabase (Database + Auth)
+- [ ] Create project at supabase.com (free tier is fine) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] In Supabase Dashboard → SQL Editor → paste contents of `apps/api/src/lib/db/schema.sql` → Run [owner:: ryan] [priority:: high] [status:: open]
+- [ ] In Supabase Dashboard → Storage → Create bucket named `reports` (private, 10MB limit) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Copy `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from Project Settings → API → add to `apps/api/.env` [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Copy `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` → add to `apps/web/.env.local` [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Save Supabase credentials to ~/Documents/GR3NB/README.md (private notes section) [owner:: ryan] [priority:: high] [status:: open]
+
+### Railway (Backend API hosting)
+- [ ] Create account at railway.app (free tier to start) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Create new project → "Deploy from GitHub" → connect `apps/api` folder [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Add Railway Redis plugin (needed for BullMQ job queue) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Set all env vars from `apps/api/.env.example` in Railway dashboard [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Copy Railway deployment URL → add as `NEXT_PUBLIC_API_URL` in Vercel env vars [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Confirm `/health` endpoint returns `{"status":"healthy"}` [owner:: ryan] [priority:: high] [status:: open]
+
+### Vercel (Frontend hosting)
+- [ ] Create account at vercel.com (free tier) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Import project → connect `apps/web` folder [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Set all env vars from `apps/web/.env.example` in Vercel dashboard [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Add custom domain: welra.io → point DNS from Namecheap to Vercel nameservers [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Confirm landing page loads at welra.io [owner:: ryan] [priority:: high] [status:: open]
+
+### Stripe (Payments)
+- [ ] Create account at stripe.com → complete business verification (GR3NB LLC, EIN 42-2858110) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Create 8 products in Stripe Dashboard (Products → Add product): [owner:: ryan] [priority:: high] [status:: open]
+  - Welra Starter Monthly — $19/mo recurring
+  - Welra Starter Annual — $182/yr recurring
+  - Welra Pro Monthly — $49/mo recurring
+  - Welra Pro Annual — $470/yr recurring
+  - Welra Multi Monthly — $99/mo recurring
+  - Welra Multi Annual — $950/yr recurring
+  - Welra Agency Monthly — $299/mo recurring
+  - Welra Agency Annual — $2,870/yr recurring
+- [ ] Enable 14-day free trial on all products (Stripe Dashboard → product → trial period) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Enable Stripe Tax (automatic sales tax collection) [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Configure Stripe Customer Portal (Settings → Billing → Customer portal) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Add all 8 Stripe Price IDs to `apps/api/.env` (STRIPE_PRICE_* vars) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Set up Stripe webhook → point to `https://api.welra.io/webhooks/stripe` → copy signing secret to .env [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Create Lemon Squeezy account (standby backup — don't configure yet) [owner:: ryan] [priority:: medium] [status:: open]
+
+### Resend (Email delivery)
+- [ ] Create account at resend.com (free tier: 3k emails/mo) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Add and verify domain: welra.io (add DNS TXT records in Namecheap) [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Copy API key → add `RESEND_API_KEY` to `apps/api/.env` [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Send test email to confirm welra.io domain is verified [owner:: ryan] [priority:: high] [status:: open]
+
+### Anthropic API Key
+- [ ] Go to console.anthropic.com → API Keys → Create key [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Add `ANTHROPIC_API_KEY` to `apps/api/.env` [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Set `REPORT_DRY_RUN=true` initially — set to `false` only when ready to send real emails [owner:: ryan] [priority:: high] [status:: open]
+
+### Git Setup
+- [ ] Create GitHub repo: `gr3nb/welra` (private) [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] `cd "~/Claude/Projects/side business/Welra" && git init && git add . && git commit -m "Initial scaffold"` [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Push to GitHub → connect Railway and Vercel to repo for auto-deploy [owner:: ryan] [priority:: medium] [status:: open]
 
 ---
 
