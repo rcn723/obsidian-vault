@@ -2,7 +2,7 @@
 title: AutoBiz Tasks v5
 project: AutoBiz
 type: tasks
-updated: 2026-05-30
+updated: 2026-06-04
 tags: [business, tasks, saas]
 ---
 
@@ -14,10 +14,10 @@ tags: [business, tasks, saas]
 
 - [x] Register gr3nb.com domain — registered ✅ [owner:: ryan] [priority:: high] [status:: done]
 - [x] Save gr3nb.com domain receipt → ~/Documents/GR3NB/Tax/2026/Receipts/Formation/ — PDF filed ✅ [owner:: ryan] [priority:: high] [status:: done]
-- [x] File GR3NB LLC in Oregon at sos.oregon.gov ($100 — act as own registered agent) — filed ✅ 2026-05-30, pending approval [owner:: ryan] [priority:: high] [status:: done]
-- [ ] Save Oregon LLC receipt + Articles of Organization PDF → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
-- [ ] File DBA "Welra" as Assumed Business Name at Oregon SOS (~$50) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] File DBA "Rust & Rainbow" as Assumed Business Name at Oregon SOS (~$50) [owner:: ryan] [priority:: high] [status:: open]
+- [x] File GR3NB LLC in Oregon at sos.oregon.gov ($100 — act as own registered agent) — **APPROVED** ✅ 2026-06-01 · Registry #258223198 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Save Oregon LLC receipt + Articles of Organization PDF → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
+- [x] File DBA "Welra" as Assumed Business Name at Oregon SOS (~$50) — submitted 2026-06-04, awaiting approval [owner:: ryan] [priority:: high] [status:: done]
+- [x] File DBA "Rust & Rainbow" as Assumed Business Name at Oregon SOS (~$50) — submitted 2026-06-04, awaiting approval [owner:: ryan] [priority:: high] [status:: done]
 - [ ] Save both DBA confirmation PDFs → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
 - [x] Apply for EIN at IRS.gov (free, 15 min) — EIN: 42-2858110 ✅ 2026-05-30 [owner:: ryan] [priority:: high] [status:: done]
 - [x] Print/screenshot EIN confirmation page immediately → ~/Documents/GR3NB/Legal/EIN_Confirmation_GR3NB_LLC.pdf ✅ 2026-05-30 [owner:: ryan] [priority:: high] [status:: done]

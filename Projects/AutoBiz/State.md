@@ -2,7 +2,7 @@
 title: AutoBiz State v5
 project: AutoBiz
 type: state
-updated: 2026-05-31
+updated: 2026-06-01
 brand: Welra
 tags: [business, saas, autonomous, multi-channel]
 ---
@@ -16,6 +16,7 @@ iOS app added to business plan as Phase 7 growth vector. Multi-growth strategy d
 ## Holding Company
 **GR3NB LLC** — Oregon LLC (not Wyoming — see Legal Structure decision below)
 G=Grace/Grant · R3=Ryan · N=Northam · B=Brock
+Registry #258223198 · Approved 2026-06-01
 Name cleared — zero conflicts across all channels
 Domain to register: gr3nb.com
 
@@ -81,7 +82,7 @@ Annual presented as default on pricing page
 ## Execution Milestones
 - [x] gr3nb.com domain registered ✅
 - [x] welra.io domain registered ✅
-- [x] Oregon LLC filed (pending approval) ✅ 2026-05-30
+- [x] Oregon LLC **APPROVED** ✅ 2026-06-01 — Registry #258223198
 - [x] EIN obtained — **42-2858110** ✅ 2026-05-30
 - [ ] DBAs filed: Welra + Rust & Rainbow (~$50 each) — waiting on LLC approval
 - [ ] Etsy developer app submitted
