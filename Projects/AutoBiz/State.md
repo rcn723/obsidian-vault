@@ -2,7 +2,7 @@
 title: AutoBiz State v5
 project: AutoBiz
 type: state
-updated: 2026-06-01
+updated: 2026-06-07
 brand: Welra
 tags: [business, saas, autonomous, multi-channel]
 ---
@@ -84,11 +84,16 @@ Annual presented as default on pricing page
 - [x] welra.io domain registered ✅
 - [x] Oregon LLC **APPROVED** ✅ 2026-06-01 — Registry #258223198
 - [x] EIN obtained — **42-2858110** ✅ 2026-05-30
-- [ ] DBAs filed: Welra + Rust & Rainbow (~$50 each) — waiting on LLC approval
+- [x] DBAs filed and **APPROVED** ✅ 2026-06-05
+  - Welra DBA Registry #258497594
+  - Rust and Rainbow DBA Registry #258496893
 - [ ] Etsy developer app submitted
 - [ ] Shopify Partner app submitted
-- [ ] Mercury Bank account opened
-- [ ] Privacy Policy + ToS + DPA generated (Termly)
+- [x] Mercury Bank account opened ✅ 2026-06-04
+- [x] Privacy Policy + ToS + DPA generated ✅ 2026-06-05
+  - HTML embed codes saved to ~/Documents/GR3NB/Legal/
+  - Custom DPA written from scratch (Termly doesn't offer DPA) → Welra_DPA.md
+  - Termly Pro+ cancelled after saving all three documents
 - [x] SaaS product brand name chosen: **Welra** (welra.io registered) ✅
 - [x] **BUILD STARTED** ✅ 2026-05-30
   - Monorepo: `~/Claude/Projects/side business/Welra/`
@@ -106,8 +111,8 @@ Annual presented as default on pricing page
   - Shared types package: complete
   - Printify integration: built 2026-05-31 (`integrations/printify.ts`)
   - Instagram integration: built 2026-05-31 (`integrations/instagram.ts`)
-- [ ] Supabase project created + schema deployed
-- [ ] Railway project created + API deployed
+- [x] Supabase project created + schema deployed ✅ 2026-06-06 · project: ozhekoiehpajeytwltrv · reports bucket created
+- [x] Railway project created + API deployed ✅ 2026-06-07 — deploy green after 6 deploys (BullMQ lazy-init, Stripe lazy-init, Node 22 for Supabase realtime-js WebSocket, env.ts crash fixes)
 - [ ] Etsy integration: full implementation
 - [ ] WooCommerce integration: full implementation
 - [ ] Stripe integration: full implementation

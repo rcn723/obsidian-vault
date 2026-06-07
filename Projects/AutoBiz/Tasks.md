@@ -2,7 +2,7 @@
 title: AutoBiz Tasks v5
 project: AutoBiz
 type: tasks
-updated: 2026-06-04
+updated: 2026-06-07
 tags: [business, tasks, saas]
 ---
 
@@ -16,19 +16,22 @@ tags: [business, tasks, saas]
 - [x] Save gr3nb.com domain receipt → ~/Documents/GR3NB/Tax/2026/Receipts/Formation/ — PDF filed ✅ [owner:: ryan] [priority:: high] [status:: done]
 - [x] File GR3NB LLC in Oregon at sos.oregon.gov ($100 — act as own registered agent) — **APPROVED** ✅ 2026-06-01 · Registry #258223198 [owner:: ryan] [priority:: high] [status:: done]
 - [x] Save Oregon LLC receipt + Articles of Organization PDF → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
-- [x] File DBA "Welra" as Assumed Business Name at Oregon SOS (~$50) — submitted 2026-06-04, awaiting approval [owner:: ryan] [priority:: high] [status:: done]
-- [x] File DBA "Rust & Rainbow" as Assumed Business Name at Oregon SOS (~$50) — submitted 2026-06-04, awaiting approval [owner:: ryan] [priority:: high] [status:: done]
-- [ ] Save both DBA confirmation PDFs → ~/Documents/GR3NB/Legal/ AND Tax/2026/Receipts/Formation/ [owner:: ryan] [priority:: high] [status:: open]
+- [x] File DBA "Welra" as Assumed Business Name at Oregon SOS (~$50) — **APPROVED** ✅ 2026-06-05 · Registry #258497594 [owner:: ryan] [priority:: high] [status:: done]
+- [x] File DBA "Rust & Rainbow" as Assumed Business Name at Oregon SOS (~$50) — **APPROVED** ✅ 2026-06-05 · Registry #258496893 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Save both DBA confirmation PDFs → ~/Documents/GR3NB/Legal/ ✅ 2026-06-05 (DBA_Welra_2026.pdf + DBA_Rust_and_Rainbow_2026.pdf) [owner:: ryan] [priority:: high] [status:: done]
 - [x] Apply for EIN at IRS.gov (free, 15 min) — EIN: 42-2858110 ✅ 2026-05-30 [owner:: ryan] [priority:: high] [status:: done]
 - [x] Print/screenshot EIN confirmation page immediately → ~/Documents/GR3NB/Legal/EIN_Confirmation_GR3NB_LLC.pdf ✅ 2026-05-30 [owner:: ryan] [priority:: high] [status:: done]
 - [x] Add EIN to ~/Documents/GR3NB/README.md (top line) ✅ 2026-05-30 [owner:: claude] [priority:: high] [status:: done]
 - [ ] Submit Etsy developer application at etsy.com/developers [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Submit Shopify Partner application at partners.shopify.com [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Open Mercury Bank account (mercury.com) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Generate Privacy Policy + ToS + DPA via Termly ($30/mo, cancel after) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Save Termly receipt → Tax/2026/Receipts/Services/ and all 3 PDFs → Legal/ [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Create Operating Agreement (Rocket Lawyer free template) [owner:: ryan] [priority:: medium] [status:: open]
-- [ ] Save signed Operating Agreement PDF → ~/Documents/GR3NB/Legal/ [owner:: ryan] [priority:: medium] [status:: open]
+- [x] Open Mercury Bank account (mercury.com) — **APPROVED** ✅ 2026-06-04 · confirmation saved to Legal/Mercury_Account_Opening_2026.pdf [owner:: ryan] [priority:: high] [status:: done]
+- [x] Generate Privacy Policy via Termly — published 2026-06-05 ✅ [owner:: ryan] [priority:: high] [status:: done]
+- [x] Generate Terms of Service via Termly — published 2026-06-05 ✅ [owner:: ryan] [priority:: high] [status:: done]
+- [x] Generate DPA — custom written (Termly doesn't offer DPA) — saved as Welra_DPA.md ✅ 2026-06-05 [owner:: claude] [priority:: high] [status:: done]
+- [x] Save all 3 legal documents → ~/Documents/GR3NB/Legal/ ✅ 2026-06-05 (privacy_policy.html, terms_of_service.html, cookie_policy.html, Welra_DPA.md) [owner:: ryan] [priority:: high] [status:: done]
+- [x] Save Termly receipt → Tax/2026/Receipts/Services/ ✅ 2026-06-05 (termly-pro-plus-2026-06.pdf · $16 paid) [owner:: ryan] [priority:: medium] [status:: done]
+- [x] Create Operating Agreement — drafted by Claude ✅ 2026-06-05 · saved to Legal/Operating_Agreement_GR3NB_LLC_2026.md [owner:: claude] [priority:: medium] [status:: done]
+- [ ] Sign and date the Operating Agreement → ~/Documents/GR3NB/Legal/Operating_Agreement_GR3NB_LLC_2026.md [owner:: ryan] [priority:: medium] [status:: open]
 - [x] Choose SaaS product brand name (DBA under GR3NB) — **Welra**, welra.io registered [owner:: ryan] [priority:: high] [status:: done]
 - [x] Save welra.io domain receipt → Tax/2026/Receipts/Formation/ — PDF filed ✅ [owner:: ryan] [priority:: high] [status:: done]
 - [ ] File USPTO trademark for WELRA (~$350, tmsearch.uspto.gov to confirm clear, then file via USPTO Trademark Center) [owner:: ryan] [priority:: medium] [status:: open]
@@ -45,11 +48,11 @@ tags: [business, tasks, saas]
 *The codebase is scaffolded at `~/Claude/Projects/side business/Welra/`. These accounts and credentials activate it.*
 
 ### Supabase (Database + Auth)
-- [ ] Create project at supabase.com (free tier is fine) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] In Supabase Dashboard → SQL Editor → paste contents of `apps/api/src/lib/db/schema.sql` → Run [owner:: ryan] [priority:: high] [status:: open]
-- [ ] In Supabase Dashboard → Storage → Create bucket named `reports` (private, 10MB limit) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Copy `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from Project Settings → API → add to `apps/api/.env` [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Copy `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` → add to `apps/web/.env.local` [owner:: ryan] [priority:: high] [status:: open]
+- [x] Create project at supabase.com (free tier is fine) ✅ 2026-06-06 · project ID: ozhekoiehpajeytwltrv [owner:: ryan] [priority:: high] [status:: done]
+- [x] In Supabase Dashboard → SQL Editor → paste contents of `apps/api/src/lib/db/schema.sql` → Run ✅ 2026-06-06 [owner:: ryan] [priority:: high] [status:: done]
+- [x] In Supabase Dashboard → Storage → Create bucket named `reports` (private, 10MB limit) ✅ 2026-06-06 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Copy `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from Project Settings → API → add to `apps/api/.env` ✅ 2026-06-06 [owner:: claude] [priority:: high] [status:: done]
+- [x] Copy `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` → add to `apps/web/.env.local` ✅ 2026-06-06 [owner:: claude] [priority:: high] [status:: done]
 - [ ] Save Supabase credentials to ~/Documents/GR3NB/README.md (private notes section) [owner:: ryan] [priority:: high] [status:: open]
 
 ### Railway (Backend API hosting)
@@ -86,22 +89,27 @@ tags: [business, tasks, saas]
 - [ ] Create Lemon Squeezy account (standby backup — don't configure yet) [owner:: ryan] [priority:: medium] [status:: open]
 
 ### Resend (Email delivery)
-- [ ] Create account at resend.com (free tier: 3k emails/mo) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Add and verify domain: welra.io (add DNS TXT records in Namecheap) [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Copy API key → add `RESEND_API_KEY` to `apps/api/.env` [owner:: ryan] [priority:: high] [status:: open]
+- [x] Create account at resend.com (free tier: 3k emails/mo) ✅ 2026-06-06 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Add and verify domain: welra.io (add DNS TXT records in Namecheap) ✅ 2026-06-06 · DKIM live, SPF propagating [owner:: ryan] [priority:: high] [status:: done]
+- [x] Copy API key → add `RESEND_API_KEY` to `apps/api/.env` ✅ 2026-06-06 [owner:: claude] [priority:: high] [status:: done]
 - [ ] Send test email to confirm welra.io domain is verified [owner:: ryan] [priority:: high] [status:: open]
 
 ### Anthropic API Key
-- [ ] Go to console.anthropic.com → API Keys → Create key [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Add `ANTHROPIC_API_KEY` to `apps/api/.env` [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Set `REPORT_DRY_RUN=true` initially — set to `false` only when ready to send real emails [owner:: ryan] [priority:: high] [status:: open]
+- [x] Go to console.anthropic.com → API Keys → Create key ✅ 2026-06-06 [owner:: ryan] [priority:: high] [status:: done]
+- [x] Add `ANTHROPIC_API_KEY` to `apps/api/.env` ✅ 2026-06-06 [owner:: claude] [priority:: high] [status:: done]
+- [x] Set `REPORT_DRY_RUN=true` initially — set to `false` only when ready to send real emails ✅ pre-set in .env [owner:: claude] [priority:: high] [status:: done]
 
 ### Git Setup
-- [ ] Create GitHub repo: `gr3nb/welra` (private) [owner:: ryan] [priority:: medium] [status:: open]
-- [ ] `cd "~/Claude/Projects/side business/Welra" && git init && git add . && git commit -m "Initial scaffold"` [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Create GitHub repo: `welra` (private) [owner:: ryan] [priority:: medium] [status:: open]
+- [x] `git init && git add . && git commit -m "Initial scaffold"` ✅ 2026-06-06 · 38 files committed on main [owner:: claude] [priority:: medium] [status:: done]
 - [ ] Push to GitHub → connect Railway and Vercel to repo for auto-deploy [owner:: ryan] [priority:: medium] [status:: open]
 
 ---
+
+## Code Quality / Pre-Launch Fixes
+
+- [ ] Decide: rename PlanTier 'growth' → 'multi' in code (packages/types/src/index.ts, reportGenerator.ts TIER_CONFIG, schema, all references) OR rename product tier 'Multi' → 'Growth' in business plan and pricing page. Currently the code says 'growth' but State.md / pricing say 'Multi'. Pick one and apply consistently before any Stripe product is created. [owner:: ryan] [priority:: high] [status:: open]
+- [x] Fix Welra anomaly detector false-positive: zero-revenue check now only fires when revenue drops FROM positive to $0 (not for stores that always had $0). Fixed 2026-06-07. [owner:: claude] [priority:: high] [status:: done]
 
 ## Phase 1 — Core Pipeline (Claude — Week 1–2)
 

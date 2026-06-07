@@ -2,7 +2,7 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-05-31
+updated: 2026-06-07
 tags: [etsy, printify, social-media, python, automation]
 ---
 
@@ -10,6 +10,8 @@ tags: [etsy, printify, social-media, python, automation]
 
 Automated Vizsla/LGBTQ+ niche product business. Generates designs, publishes to Printify/Etsy, posts to 3 social platforms.
 Path: `~/Claude/Projects/side business/Rust & Rainbow/`
+GitHub: `https://github.com/GR3NB/rustandrainbow` (transferred from rcn723 2026-06-06)
+GitHub Pages (legal docs): `https://gr3nb.github.io/rustandrainbow/`
 
 See [[Projects/Rust_and_Rainbow/Tasks]] for open items.
 
@@ -18,11 +20,16 @@ See [[Projects/Rust_and_Rainbow/Tasks]] for open items.
 - 3-platform posting: ✅ Instagram + TikTok + Pinterest all working
 - TikTok music: ✅ `autoAddMusic: true` enabled 2026-05-28 — TikTok adds trending music automatically
 - TikTok hashtags: ✅ Moved to `tiktokSettings.description` (4000 chars) — title is now pure hook
-- Instagram hashtags: ✅ Expanded to 30–42 tags (added broad reach: #dogsofinstagram etc.)
+- Instagram hashtags: ✅ Capped at 28 (brand tag #rustandrainbow always first; 2-tag safety margin under API's 30-tag hard limit). Tag pool is 30–42 per pillar before trimming.
 - All 5 content pillars: ✅ Covered as of 2026-05-21
 - Etsy listings: 16+ new as of 2026-05-21
 - Monitoring (sales): ✅ Fixed via `--mode report` (Printify orders API)
 - Weekly report: ✅ `--mode report` — runs Mon 7:00am, outputs structured data for Claude Code narrative
+- TikTok developer app: ⏳ Pending review (3rd submission 2026-06-06) — reframed as Content Posting API for original product publishing, not Display API. Monitor at developers.tiktok.com
+- Etsy developer app: 🚫 Banned — do not recreate. Printify handles all publishing. Shop unaffected.
+- GitHub org: ✅ Migrated to GR3NB — both Welra and rustandrainbow repos now under github.com/GR3NB
+- GitHub Pages legal docs: ✅ Live at https://gr3nb.github.io/rustandrainbow/legal/
+- Platform URLs updated: ✅ Meta updated. TikTok updated (pending review). Etsy app not needed.
 - META token: ⚠️ Expires 2026-07-01 — must refresh by June 25
 - designs_log.json: ✅ Duplicate Gay Dog Dad Retro (May 11 entry) removed 2026-05-28
 - Sunday assessment: ✅ `com.rustandrainbow.welra_assessment` launchd agent — every Sun 9:00am
@@ -74,6 +81,14 @@ Self-learning loop added 2026-05-22. Runs Mon 7:00am via launchd.
 - History tracked in: `performance_log.json` (appended weekly — never delete)
 - Without `ANTHROPIC_API_KEY`: saves data-only report, paste into Claude.ai for narrative
 - `instagram_manage_insights` permission NOT in current token — reach/impressions unavailable; follower count + posts still tracked
+
+## Week of 2026-06-01 — Post Results
+| Date | Design | IG | TikTok | Pinterest |
+|------|--------|-----|--------|-----------|
+| Jun 1 | Oregon Vizsla (pnw_dog_life) | ✗ Too many tags (pre-fix) | ✓ | ✓ |
+| Jun 3 | Vizsla Puppy Sticker (velcro_dog) | ✓ | ✓ | ✓ |
+| Jun 5 | Pride Flag Vizsla (gay_dog_dad) | ✓ | ✓ | ✓ |
+**June 1 Instagram failure**: trim code was not yet capping at 28 — 36 tags sent, API rejected. Fix applied 2026-06-07 — cap reduced to 28, #rustandrainbow placed first.
 
 ## Key Platform Limits & Notes
 - TikTok photo posts: 90-char title limit (`content` field) — keep as pure hook, no hashtags

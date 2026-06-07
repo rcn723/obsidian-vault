@@ -1,12 +1,229 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-05-31
+updated: 2026-06-07
 ---
 
 # To Antigravity
 
 *Inbox for handoffs from Claude Code to Antigravity.*
+
+---
+
+## 2026-06-07 — Weekly R&R vs Welra Sunday Assessment
+
+**From:** Claude Code (Sunday Assessment launchd job)
+**Read:** ☐
+
+### This Week's Post Results (R&R)
+| Date | Design | Instagram | TikTok | Pinterest |
+|------|--------|-----------|--------|-----------|
+| Jun 1 (Mon) | Oregon Vizsla | ✗ Too many tags | ✓ | ✓ |
+| Jun 3 (Wed) | Vizsla Puppy Sticker | ✓ | ✓ | ✓ |
+| Jun 5 (Fri) | Pride Flag Vizsla | ✓ | ✓ | ✓ |
+
+June 1 Instagram failure was the last instance of the old pre-cap code sending 36 tags. Fixed this session.
+
+### Report Status
+Report ran as scheduled on Monday 2026-06-01 at 7:00am. Next report: 2026-06-08. No gap.
+
+### Bugs Fixed This Session
+
+**1. R&R — Instagram hashtag cap (agent.py)**
+- Lowered cap 30 → 28 (2-tag safety margin)
+- `#rustandrainbow` now placed first so it's never trimmed
+- Root cause of June 1 failure: 36 tags sent without trim guard in place
+
+**2. R&R — Claude model IDs outdated (agent.py)**
+- `claude-opus-4-5` → `claude-sonnet-4-6` (weekly report narrative)
+- `claude-haiku-4-5` → `claude-haiku-4-5-20251001` (Etsy SEO rewrites)
+
+**3. Welra — Anomaly detector false-positive (reportGenerator.ts)**
+- Was: fires whenever any platform has $0 revenue (breaks every new customer on first report)
+- Now: only fires when revenue DROPS from positive to $0
+
+### Gaps Flagged for Ryan
+
+**PlanTier naming mismatch (needs Ryan decision before Stripe setup)**
+Code uses `'growth'` tier throughout (types, reportGenerator, TIER_CONFIG). Business plan/pricing says the third tier is called "Multi". These must match before Stripe products are created. Ryan decides: rename in code, or rename in product. Task added to AutoBiz Tasks.md.
+
+**R&R partial post retry (medium priority)**
+When one platform fails (e.g. Instagram), the design still gets `last_posted` stamped and moves to back of queue. That platform's post is silently skipped forever. No auto-retry. Ryan to decide architecture (retry file + `--mode retry` command). Task added to R&R Tasks.md.
+
+### Vault Files Updated
+- `Projects/Rust_and_Rainbow/State.md` — hashtag cap status, week-of-June-1 post table
+- `Projects/AutoBiz/State.md` — Railway milestone marked done
+- `Projects/Rust_and_Rainbow/Tasks.md` — partial-post retry task added
+- `Projects/AutoBiz/Tasks.md` — PlanTier naming task added, anomaly fix marked done
+- `Worklogs/Claude_Log.md` — this assessment logged
+
+---
+
+## 2026-06-07 — Welra: Railway Deploy Green ✅ + Knowledge Base Created (Session 15)
+
+**From:** Claude Code
+**Read:** ☐
+
+Big session. Railway is finally deploying green. 6 deploys and 5 root-cause fixes to get there. Full detail below.
+
+### GitHub MCP Connected
+- `@modelcontextprotocol/server-github` added to Claude Desktop config with GR3NB PAT
+- Both repos visible and writable: `GR3NB/welra` (private), `GR3NB/rustandrainbow` (public)
+
+### Welra Railway Deploy — Green ✅
+**Commit:** `74d1e18` — `node:20-slim` → `node:22-slim`
+
+Root causes fixed in order (6 deploys total):
+1. Missing Railway env vars — set SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY, RESEND_API_KEY, JWT_SECRET in Railway Variables
+2. BullMQ `new Queue()` at module level threw when redis was null — lazy-init pattern applied to all 3 job files
+3. Fastify `/health` vs `/health/` trailing-slash mismatch — `ignoreTrailingSlash: true` added + railway.json updated
+4. `new Stripe('')` at module level — Stripe SDK throws on empty key at construction — lazy `getStripe()` getter applied
+5. Zero stdout/stderr mystery — **root cause: `@supabase/realtime-js` requires Node 22+ for native WebSocket**. On Node 20 the Supabase client threw at module load, silent crash, port never bound. Fixed by upgrading Dockerfile to `node:22-slim`.
+
+**Current Railway state:**
+- API: ✅ deploying and healthy (commit 74d1e18)
+- Redis: ✅ Railway Redis plugin connected — BullMQ workers active
+- Stripe: ⏳ empty keys — webhooks return 503 until Stripe products created
+- Vercel (web): ⏳ not yet deployed
+
+### Knowledge Base Created
+New file: `Knowledge_Base/Learnings_and_Conventions.md` — cross-project deployment conventions, Node version requirements, lazy SDK init pattern, BullMQ Queue pattern, boot trace pattern, Railway env var rules, vault conventions. **Read this before starting any new infrastructure build.**
+
+### Bug Pattern Library Updated
+`feedback_scaffold_quality.md` now has 12 patterns (was 8). 4 new patterns added from this session.
+`arch-review/SKILL.md` updated with: Node 22 requirement, Railway Logs tab, module-level SDK init, BullMQ lazy init.
+
+### What's Next (Next Session)
+1. **Remove debug [BOOT] trace lines** from server.ts (diagnostic only — not needed now deploy is green)
+2. **Stripe setup** — create 8 products (Starter/Pro/Multi/Agency × monthly/annual) at dashboard.stripe.com, paste all 8 price IDs + keys to Claude → fill Railway + .env
+3. **Vercel deploy** — `apps/web` to Vercel, set env vars, connect welra.io domain
+
+### Ryan's Action Items
+- [ ] Stripe: create 8 products + paste price IDs and secret key to Claude [owner:: ryan] [priority:: high]
+- [ ] META_ACCESS_TOKEN: refresh by June 25 at developers.facebook.com (expires 2026-07-01) [owner:: ryan] [priority:: high]
+
+---
+
+## 2026-06-06 — Phase 0B: Infrastructure Activation (Partial — Session 14)
+
+**From:** Claude Code
+**Read:** ☐
+
+Phase 0B infrastructure activation started. Stopped mid-session. Here's the exact state.
+
+### Completed This Session
+
+| Service | Status | Notes |
+|---|---|---|
+| Git | ✅ Done | 38 files committed on `main` at `~/Claude/Projects/side business/Welra/` |
+| `.env` files | ✅ Done | `apps/api/.env` + `apps/web/.env.local` created with all known values |
+| Supabase | ✅ Done | Project `ozhekoiehpajeytwltrv` · schema deployed · `reports` bucket created · all keys in .env |
+| Anthropic | ✅ Done | API key in `apps/api/.env` |
+| Resend | ✅ Done | Account created · welra.io domain added · DKIM live · SPF propagating · API key in .env |
+| DNS (Namecheap) | ✅ Done | DKIM TXT + SPF TXT added to welra.io · DKIM confirmed via dig |
+
+### Still Needed to Complete Phase 0B
+
+| Service | Next Action | Owner |
+|---|---|---|
+| GitHub | Create private repo `welra` → paste URL to Claude → Claude pushes | Ryan |
+| Railway | New project → add Redis plugin → connect GitHub repo → set env vars | Ryan |
+| Stripe | Sign in → create 8 products → paste 8 price IDs + 2 keys to Claude | Ryan |
+| Vercel | Import GitHub repo → set env vars → add welra.io domain | Ryan |
+| Resend test | Send a test email once SPF propagates to confirm domain verified | Ryan |
+| Supabase credentials | Save to ~/Documents/GR3NB/README.md | Ryan |
+
+### .env Status
+`apps/api/.env` — filled: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY, RESEND_API_KEY, JWT_SECRET, RESEND_FROM_EMAIL, RESEND_REPLY_TO, ALLOWED_ORIGINS, SUPABASE_STORAGE_BUCKET, REPORT_DRY_RUN. Placeholders remain for: STRIPE_* (×10), REDIS_URL, ETSY/SHOPIFY/GOOGLE OAuth.
+`apps/web/.env.local` — filled: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY. Placeholders remain for: STRIPE keys, NEXT_PUBLIC_API_URL.
+
+### Next Session Start
+Pick up at GitHub repo creation → push → Railway → Stripe → Vercel. All tabs are already open in Chrome.
+
+---
+
+## 2026-06-06 — Amazon Review Agent: 26 Reviews Posted (Session 13)
+
+**From:** Claude Code
+**Read:** ☐
+
+Short session — context had been exhausted mid-run in the previous session. Resumed for handoff only; all work was already complete.
+
+### What Happened
+The weekly Amazon review agent ran for the week of 2026-05-30. Ryan approved all 26 unreviewed items. Claude verified no duplicate reviews existed (checked power bank order page directly — Amazon review list URLs return 404), then posted all 26 reviews via browser automation.
+
+### Tracking File
+`~/Desktop/Claude/amazon-reviews/reviewed_items.json` — now 31 entries (5 prior + 26 new).
+
+### Next Run
+LaunchAgent `com.ryannortham.amazon-review-agent` fires automatically every Sunday at 9am. No action needed.
+
+### No Vault Changes
+Amazon review tracking lives outside the vault — nothing in `Projects/` was modified this session.
+
+---
+
+## 2026-06-06 — GR3NB: Phase 0 Complete, Session Handoff Produced
+
+**From:** Claude Code
+**Read:** ☐
+
+Short session. Context was restored from prior session summary. All Phase 0 work confirmed intact.
+
+### What Was Verified / Updated
+- `Projects/AutoBiz/Tasks.md` — Operating Agreement task corrected: Claude-drafted entry marked [x], new open task added for Ryan to sign and date the file at `~/Documents/GR3NB/Legal/Operating_Agreement_GR3NB_LLC_2026.md`
+- `Worklogs/Claude_Log.md` — Session 12 logged
+- Session handoff block produced for context continuity into next session
+
+### Phase 0 Status — Final
+All Claude-completable tasks done. Ryan's remaining action items:
+1. Sign the Operating Agreement (fill date, print + sign)
+2. Add Welra (#258497594) and Rust & Rainbow (#258496893) DBAs to Mercury — Settings → Business Profile → DBA section
+3. Submit Etsy developer application (etsy.com/developers)
+4. Submit Shopify Partner application (partners.shopify.com)
+5. USPTO trademark for WELRA (~$350 at USPTO.gov)
+
+### Next Phase
+Phase 0B — Infrastructure activation: Supabase → Railway → Vercel. Ryan leads setup; Claude builds anything needed during deployment.
+
+---
+
+## 2026-06-05 — GR3NB: Phase 0 Legal Complete
+
+**From:** Claude Code
+**Read:** ☐
+
+Phase 0 legal setup for GR3NB LLC is now fully complete. All documents filed and saved.
+
+### DBA Registrations — Approved
+Both DBAs came back approved same day (filed + approved 2026-06-05):
+- **Welra** — Oregon DBA Registry #258497594
+- **Rust and Rainbow** — Oregon DBA Registry #258496893
+- PDFs saved to `~/Documents/GR3NB/Legal/DBA_Welra_2026.pdf` and `DBA_Rust_and_Rainbow_2026.pdf`
+- Registry numbers added to DOCUMENT_CHECKLIST.md and Welra_DPA.md
+
+### Legal Documents — Saved
+All three Termly documents saved as HTML embed codes to `~/Documents/GR3NB/Legal/`:
+- `privacy_policy.html` (23.9 KB)
+- `terms_of_service.html` (~47 KB)
+- `cookie_policy.html` (15.1 KB — phone number 5035025360 removed before saving)
+- `Welra_DPA.md` — custom DPA written from scratch (Termly Pro+ doesn't offer a DPA template)
+
+Termly Pro+ can now be cancelled — all documents are preserved locally.
+
+### Vault Files Updated This Session
+- `Projects/AutoBiz/State.md` — DBAs marked approved with registry numbers; legal docs marked done
+- `Projects/AutoBiz/Tasks.md` — DBA and legal doc tasks marked `[x]` with registry numbers and dates
+
+### Ryan's Remaining Phase 0 Tasks
+1. Save Termly receipt → `Tax/2026/Receipts/Services/`
+2. Submit Etsy developer application (etsy.com/developers)
+3. Submit Shopify Partner application (partners.shopify.com)
+4. Open Mercury Bank (mercury.com) — DBA approvals now in hand, unblocked
+5. Create Operating Agreement (Rocket Lawyer free template)
+
+### What's Unblocked
+Mercury Bank was previously blocked pending DBA approvals. Both DBAs are now approved — Ryan can apply at mercury.com with: GR3NB LLC, Oregon LLC #258223198, EIN 42-2858110, DBAs #258497594 (Welra) and #258496893 (Rust and Rainbow).
 
 ---
 

@@ -2,7 +2,7 @@
 title: Rust & Rainbow Tasks
 project: rust-and-rainbow
 type: tasks
-updated: 2026-05-31
+updated: 2026-06-07
 tags: [etsy, printify, social-media]
 ---
 
@@ -12,13 +12,18 @@ See [[Projects/Rust_and_Rainbow/State]] for platform status, pillars, and cron d
 
 ## High Priority
 
+- [x] Update GitHub Pages privacy/terms URLs in platform registrations — Meta updated, TikTok updated, Etsy app banned (not needed — Printify handles publishing). GitHub Pages live at gr3nb.github.io/rustandrainbow/legal/ [owner:: ryan] [priority:: high] [status:: done]
+- [ ] Monitor TikTok developer app review — 3rd submission 2026-06-06. App ID: 7638050043181959175. Check developers.tiktok.com weekly. If approved, evaluate switching from Zernio to direct TikTok Content Posting API. If rejected again, document reason and stay on Zernio permanently. [owner:: ryan] [priority:: high] [status:: in-progress]
+
 - [ ] Delete duplicate Gay Dog Dad Retro listing in Printify dashboard — May 11 product (ID: 6a025e0754291b828c064667) is the stale one; May 14 product (ID: 6a0654c3e556c763050faeed) is the keeper with stable S3 mockup. Deleting in Printify auto-unpublishes from Etsy. designs_log.json duplicate already removed 2026-05-28. [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Refresh META_ACCESS_TOKEN at developers.facebook.com — expires 2026-07-01, must refresh by June 25 or Instagram/Facebook posts fail silently [owner:: ryan] [priority:: high] [status:: open] [due:: 2026-06-25]
 - [ ] Add ANTHROPIC_API_KEY to .env — required to run `--mode report` with AI narrative [owner:: ryan] [priority:: high] [status:: open]
 
+- [ ] Add retry mechanism for partial platform post failures — when Instagram fails but TikTok/Pinterest succeed, the design still gets last_posted stamped and Instagram is silently skipped. Consider: on IG failure, log the design ID to a retry file; add a --mode retry that re-attempts failed IG posts. [owner:: ryan] [priority:: medium] [status:: open]
+
 ## Medium Priority
 
-- [ ] Activate Etsy API keys in .env after Etsy developer app approved — run etsy_auth.py, fills ETSY_ACCESS_TOKEN + ETSY_SHOP_ID automatically [owner:: ryan] [priority:: medium] [status:: open]
+- [x] Etsy developer app — banned 2026-06-06, do not recreate. Etsy's API terms restrict AI automation. Printify handles all publishing to Etsy natively. Weekly report loses views/favs analytics but shop is fully operational. [owner:: ryan] [priority:: medium] [status:: done]
 
 ## Done
 

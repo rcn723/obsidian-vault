@@ -1,6 +1,67 @@
 # Claude Worklog
 
+## 2026-06-07 (Sunday Assessment) — Weekly R&R vs Welra Assessment
+
+- Read all orientation files: R&R State, AutoBiz State, R&R Tasks, AutoBiz Tasks, Learnings_and_Conventions
+- **Report check**: Most recent report is 2026-06-01.md (Monday 7am as scheduled). Next report runs 2026-06-08. No gap — week of June 1 had a report.
+- **Market log review** — 3 posts this week:
+  - Jun 1 (Oregon Vizsla): Instagram ✗ "Too many tags" (36 tags, pre-fix code) | TikTok ✓ | Pinterest ✓
+  - Jun 3 (Vizsla Puppy Sticker): All 3 platforms ✓
+  - Jun 5 (Pride Flag Vizsla): All 3 platforms ✓
+- **Bug fixed — Instagram hashtag cap**: Lowered from 30 → 28, and moved `#rustandrainbow` to position 0 so it's never trimmed by the cap. The June 1 failure was sending 36 tags (trim code was not yet in place or malfunctioned). Current code now sends max 28. `agent.py` patched.
+- **Bug fixed — Claude model IDs outdated**: Updated `claude-opus-4-5` → `claude-sonnet-4-6` (weekly report narrative) and `claude-haiku-4-5` → `claude-haiku-4-5-20251001` (Etsy SEO rewrites). `agent.py` patched.
+- **Bug fixed — Welra anomaly detector false-positive**: `detectAnomalies()` was flagging any platform with $0 revenue as an anomaly — including stores that always had $0. Fixed to only flag when revenue drops FROM positive to $0 (`revenueChange < 0` guard added). `reportGenerator.ts` patched.
+- **Gap found — Welra PlanTier naming mismatch**: Code uses `'growth'` tier; business plan/pricing says `'Multi'`. Needs Ryan decision before Stripe products are created. Task added to AutoBiz Tasks.md.
+- **Gap found — no retry for partial post failures**: When Instagram fails but TikTok/Pinterest succeed, design still gets `last_posted` stamped and Instagram is silently skipped forever. Task added to R&R Tasks.md for Ryan.
+- **Vault updated**: R&R State.md (hashtag cap, week-of-June-1 post table), AutoBiz State.md (Railway green milestone), R&R Tasks.md (retry task), AutoBiz Tasks.md (PlanTier naming task + anomaly fix done)
+
+## 2026-06-07 (Session 15) — Welra: Railway deploy green ✅ + GitHub MCP
+
+- Configured GitHub MCP: added `@modelcontextprotocol/server-github` to Claude Desktop config with GR3NB PAT. Verified connection sees both repos (GR3NB/welra, GR3NB/rustandrainbow).
+- **Railway healthcheck: 6 deploys to get green.** Root causes found and fixed in order:
+  1. Missing Railway env vars (SUPABASE_URL, ANTHROPIC_API_KEY, RESEND_API_KEY, JWT_SECRET, NODE_ENV) — operational fix
+  2. BullMQ `new Queue()` at module level threw when `redis` was null — lazy-init pattern applied to all 3 job files
+  3. Fastify trailing-slash mismatch (`/health` vs `/health/`) — added `ignoreTrailingSlash: true` + updated railway.json
+  4. `new Stripe('')` at module level in webhooks.ts — Stripe SDK throws on empty key at construction — lazy `getStripe()` getter
+  5. `pino-pretty` missing from dependencies — added to prod deps (belt-and-suspenders; not the root cause)
+  6. **Root cause: Supabase realtime-js throws on Node 20 — no native WebSocket** — upgraded Dockerfile `node:20-slim` → `node:22-slim`. Deploy went green immediately.
+- 3-agent adversarial workflow run (37 subagents) identified the Stripe + env var crashes. Node/WebSocket crash was found via boot trace logs added to server.ts.
+- Prevention: boot trace `[BOOT]` lines + `uncaughtException`/`unhandledRejection` handlers added permanently. 4 new bug patterns added to `feedback_scaffold_quality.md`.
+- **Next: remove debug [BOOT] trace lines, then move to Stripe setup.**
+- **Root cause diagnosed**: Railway healthcheck was 503-looping because `env.ts` called `process.exit(1)` on 4 unset vars (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `REDIS_URL`, `TOKEN_ENCRYPTION_KEY`) before Fastify ever bound its port.
+- **Fix applied** (commit 6235cfd, pushed to GR3NB/welra):
+  - `env.ts`: Stripe defaults to `''` (validated at call-site); `REDIS_URL` removes url() validation; `TOKEN_ENCRYPTION_KEY` uses zero-key default; runtime warnings emitted for each degraded service
+  - `redis.ts`: exports `IORedis | null` — null when REDIS_URL absent
+  - `server.ts`: BullMQ workers gated on `REDIS_URL` presence
+  - `health.ts`: unconfigured services report `'disabled'` not `'error'`; 200 returned when no errors
+- Generated and stored `TOKEN_ENCRYPTION_KEY` in `apps/api/.env`
+- Added new bug pattern to `feedback_scaffold_quality.md`: "env validation crashes Railway before Fastify starts"
+- **Prevention rule**: After every Railway push, confirm green deploy badge before closing session. Never push and assume.
+- Railway is redeploying commit 6235cfd — confirm green before next step (Stripe setup)
+
+## 2026-06-06 (Session 14) — Phase 0B: Infrastructure Activation (Partial)
+
+- Git repo initialized at `~/Claude/Projects/side business/Welra/` — 38 files committed on `main` branch
+- Created `apps/api/.env` and `apps/web/.env.local` with all non-secret values pre-filled (JWT secret generated)
+- **Supabase**: Project created (ozhekoiehpajeytwltrv), schema.sql deployed (7 tables + triggers + RLS), `reports` storage bucket created. All 3 credentials filled into both .env files.
+- **Anthropic**: API key created and filled into `apps/api/.env`
+- **Resend**: Account created, welra.io domain added, DKIM DNS record verified live (dig confirmed), SPF propagating. API key filled into `apps/api/.env`. DNS records added to Namecheap by Ryan.
+- Opened all service tabs in Chrome: Supabase, Resend, Anthropic, Railway, Stripe, GitHub, Vercel
+- Session stopped before: GitHub repo creation/push, Railway setup, Stripe products, Vercel deploy
+
 *Log of tasks completed by Claude.*
+
+## 2026-06-06 (Session 13) — Amazon Review Agent
+- Continued from previous session (context limit reached mid-run). All work was complete; session resumed for handoff only.
+- Confirmed: 26 Amazon reviews posted (reviewed_date: 2026-05-30), tracking file updated to 31 total entries.
+- No vault state changes required — Amazon reviews are tracked in `~/Desktop/Claude/amazon-reviews/reviewed_items.json`, not the vault.
+- LaunchAgent `com.ryannortham.amazon-review-agent` will fire automatically next Sunday 9am.
+
+## 2026-06-06 (Session 12)
+- Continued from Session 11 (context limit). Resumed post-summary: verified all Phase 0 documents and vault state were consistent.
+- Updated AutoBiz/Tasks.md — Operating Agreement task split into two: Claude drafted it (done) and Ryan still needs to sign it (open).
+- All Phase 0 tasks that Claude can complete autonomously are done. No new files created this session.
+- Produced session handoff for context continuity.
 
 ## 2026-05-31 (Session 10)
 - Flagged remote CCR agent limitation — remote agents can't access local files; Sunday assessment must run locally via Claude Code CLI.
