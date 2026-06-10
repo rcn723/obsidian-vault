@@ -1,12 +1,252 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-06-07
+updated: 2026-06-10
 ---
 
 # To Antigravity
 
 *Inbox for handoffs from Claude Code to Antigravity.*
+
+---
+
+## 2026-06-10 — Welra Session 7 (day): WooCommerce live + retention job shipped
+
+**From:** Claude Code
+**Read:** ☐
+
+1. **Real WooCommerce integration shipped + deployed green** (commit c67d799) — second working ingestion path after CSV. Woo beta users can now connect directly: read-only API key, `access_token="ck_…:cs_…"`, `shop_id=store URL`.
+2. **Latent cross-service bug fixed:** the report worker passed raw snake_case DB rows cast as the camelCase `Integration` type and never decrypted tokens — every token-based fetcher silently read undefined (CSV masked it). New boundary mapper in lib/integrationRow.ts; printify/instagram contracts fixed too.
+3. **Retention/deletion job live** (privacy-audit promise #2): daily 3am UTC cron — tokens + CSV order data scrubbed on cancellation, reports + PDFs deleted 12mo post-cancellation. arch-review caught a blocker pre-deploy: `canceled_at` was never cleared on re-subscribe → stale timestamp could have irreversibly deleted a customer's report history early. Webhooks now manage canceled_at on every status transition.
+4. **🔴 Still blocked on Ryan: Anthropic credits remain ZERO** (re-verified by live API call this morning). Ryan's list unchanged: credits → `npm run eval` → Etsy/Shopify dev apps → PAT `workflow` scope + `git push` (the CI commit is already in) → Sentry DSN.
+5. Bug pattern library now 27 (+2 this session: DB-row-cast-to-domain-type; deletion-job-keyed-on-unmaintained-timestamp).
+6. **Afternoon batch:** /auth/me + /reports + ZIP export shipped (privacy promise #3 done); brand identity created (radar-sweep icon + navy/teal/amber palette → [[Projects/Welra/Brand_Identity]]); $0 marketing/beta-recruitment plan → [[Projects/Welra/Marketing_Campaign_2026-06]]; Etsy/Shopify application walkthrough → [[Projects/Welra/Etsy_Shopify_Developer_Applications]] (Etsy personal access = 5 shops immediately — beta unblocked).
+
+Full detail: [[Projects/Welra/State]] session 7, [[Projects/Welra/Tasks]], [[Worklogs/Claude_Log]].
+
+---
+
+## 2026-06-10 — Welra Session 6 (overnight): CSV path SHIPPED, API credits EMPTY
+
+**From:** Claude Code
+**Read:** ☐
+
+Autonomous overnight run. Headlines:
+
+1. **CSV upload ingestion shipped + deployed green** — the first WORKING commerce data path. Discovery: etsy/shopify/woocommerce/stripe integration modules are 5-line stubs returning null; CSV is currently the only way data gets in. Beta can proceed on CSV from any platform.
+2. **🔴 BLOCKER FOR RYAN: Anthropic API account has zero credits** (both keys, verified by live call). All report generation fails until topped up. #1 morning item.
+3. Also fixed: /integrations routes 401'd unconditionally (auth helper never existed). Also shipped: eval harness, EU billing rejection, Sentry wiring, synthesis-model A/B toggle. CI written but the GitHub PAT lacks `workflow` scope to push it.
+4. Risk register re-audited (several "Mitigated" rows were prose, now corrected) + privacy audit found 3 unimplemented policy promises → [[Projects/Welra/Privacy_Audit_2026-06-10]].
+5. META token belongs to Rust & Rainbow, not Welra — already tracked there.
+
+Full detail: [[Projects/Welra/State]] session 6, [[Projects/Welra/Tasks]], [[Worklogs/Claude_Log]].
+
+---
+
+## 2026-06-09 — Welra Session 5: Strategy Review — critical path RESET
+
+**From:** Claude Code
+**Read:** ☐
+
+Full business/pricing/architecture review with adversarial agent validation. Headlines:
+
+1. **3 pre-live bugs fixed + deployed** (REPORT_DRY_RUN flag would have silently no-opped at launch; failed payments got access; all PDF links were 403s). Commit a75c7b3, deploy green.
+2. **Pricing source of truth = implementation:** $19/$69/$129 Starter/Pro/Growth (Agency deferred). Growth annual 25% off is DELIBERATE — don't "correct" it. Business plan updated to match.
+3. **Critical path reset:** Etsy + Shopify developer apps must be submitted NOW (4–8 wk lead, free, never submitted) → CSV upload (unbuilt!) → 3–5 free beta users → THEN Stripe live. Live mode is not the gating item; report quality on real data is.
+4. **New docs:** [[Projects/Welra/Strategy_Review_2026-06-09]] (full report), [[Projects/Welra/Tasks]] (new eng source of truth — AutoBiz tracks business/legal only now).
+5. **Watch:** Sunday 6/14 the report scheduler fires for the first time ever (test customer, dry-run on) — check Railway logs Monday.
+
+---
+
+## 2026-06-09 — Welra Session 4: E2E Test-Mode Validation COMPLETE ✅
+
+**From:** Claude Code
+**Read:** ☐
+
+The webhook confirmation step from session 3 is done — with a twist.
+
+### Key finding
+The "new" Stripe webhook endpoint from session 3 **never actually existed**. The Stripe API showed only the old endpoint pointing at the dead Railway URL, and the signing secret in Railway matched no endpoint. Resending from the dashboard would not have worked.
+
+### What was done
+- Created the webhook endpoint properly via Stripe API (`we_1TgdoUHQhXwdEcI9y0HXZsGM` → welra-production.up.railway.app), captured the secret from the API response, set it in Railway, redeployed green
+- Replayed the missed `checkout.session.completed` event via the `/v1/events/{id}/retry` API
+- **Confirmed:** Railway logs processed the event; Supabase `customers` row for the test user now has `stripe_customer_id`, `stripe_subscription_id`, status `trialing` (ends 2026-06-24); idempotency row in `stripe_events`
+- Disabled the old dead-URL endpoint
+
+### State
+**Stripe live-mode switch is now unblocked.** Ryan's move: create live products/prices and provide live keys. Full details in [[Projects/Welra/State]] and [[Worklogs/Claude_Log]].
+
+---
+
+## 2026-06-09 — Welra Session 3: Infra Fixed, Checkout Live, E2E Partial
+
+**From:** Claude Code
+**Read:** ☐
+
+Session 3 complete. Checkout flow is working end-to-end up to the webhook confirmation step.
+
+### What's Done
+- RLS enabled on 4 missing tables
+- Login hang fixed (2-part: hard redirect + missing cookies.get())
+- Railway domain sorted: `welra-production.up.railway.app`
+- `NEXT_PUBLIC_API_URL` updated in Vercel + redeployed
+- Stripe webhook updated to new Railway URL + new signing secret set in Railway
+- Checkout 404 fixed — `railway up` forced a fresh Docker build (GitHub auto-deploy was never wired)
+- `WEB_URL` updated to `https://www.welra.io` to fix SSL cert mismatch on Stripe redirect
+- Test card `4242 4242 4242 4242` checkout completed successfully ✅
+
+### One Step Left to Confirm E2E
+The `checkout.session.completed` webhook was sent to the **old dead URL** when the test checkout ran. It needs a manual resend:
+1. Stripe Dashboard → Developers → Webhooks → `welra-production.up.railway.app` endpoint
+2. Find the `checkout.session.completed` event
+3. Click **Resend**
+4. Then check Railway logs + Supabase `customers` table for `stripe_subscription_id`
+
+### Critical Gotcha Going Forward
+**Railway does NOT auto-deploy on git push.** GitHub integration was never wired. Every API code change requires: `railway up --service welra` from the project root. This is documented in `feedback_scaffold_quality.md` and `State.md`.
+
+### 3 New Bug Patterns Logged
+`~/.claude/projects/.../memory/feedback_scaffold_quality.md` now has 15 patterns. New additions:
+1. Railway GitHub auto-deploy not wired — git push silent, must use `railway up`
+2. WEB_URL apex domain SSL cert mismatch on Stripe redirect
+3. `NEXT_PUBLIC_*` vars baked at build time — redeploy required after Vercel update
+
+### Vault Files Updated
+- [[Projects/Welra/State.md]]
+- [[Worklogs/Claude_Log.md]]
+
+---
+
+## 2026-06-08 — Welra: 44-Agent E2E Audit + 13 Bugs Fixed + Docs Updated
+
+**From:** Claude Code
+**Read:** ☐
+
+Major session. Full e2e test strategy designed, 44 agents deployed across 3 phases (audit + live API tests + adversarial verify), 13 confirmed bugs fixed, all learnings documented.
+
+### Bugs Fixed
+
+| Severity | Bug | Fix |
+|---|---|---|
+| BLOCKER | Checkout endpoint accepted userId from request body — no auth | JWT verification added; userId derived from token |
+| BLOCKER | Webhook `.update()` silently affected 0 rows — null passed to sendWelcomeEmail | Replaced with `.upsert({ onConflict: 'id' })` + null guard |
+| BLOCKER | SELECT+INSERT idempotency race — concurrent Stripe retries could double-process | Replaced with atomic `INSERT ON CONFLICT DO NOTHING` + count check |
+| HIGH | DB trigger dropped `plan` field — every signup defaulted to 'starter' | Trigger updated to read `raw_user_meta_data->>'plan'` |
+| HIGH | CHECK constraint had 'multi' but code uses 'growth' — insert would fail | Constraint updated: 'multi' → 'growth' |
+| HIGH | `session.url` could be null — returned 200 with null to client | Null check added; returns 500 if Stripe returns no URL |
+| HIGH | success/cancel URL derived from ALLOWED_ORIGINS — broke in all non-prod envs | Replaced with dedicated `WEB_URL` env var |
+| HIGH | `sendWelcomeEmail` called with null customer after failed upsert | Explicit null guard added post-upsert |
+| HIGH | Dashboard looked up customer by email — should be user.id | Changed to `.eq('id', user.id)` |
+| HIGH | SubscribeButton sent no auth header — checkout endpoint was unprotected | Now sends `Authorization: Bearer <token>` |
+| HIGH | `ANTHROPIC_API_KEY` required at boot — crashed Railway if unset | Made optional in Zod; validated at call-site |
+
+### Supabase SQL — Ryan must run these
+```sql
+-- Fix trigger to save plan from signup metadata
+CREATE OR REPLACE FUNCTION handle_new_auth_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO customers (id, email, name, plan)
+  VALUES (NEW.id, NEW.email, COALESCE(NEW.raw_user_meta_data->>'full_name', NULL), COALESCE(NEW.raw_user_meta_data->>'plan', 'starter'))
+  ON CONFLICT (id) DO NOTHING;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Fix CHECK constraint: 'multi' → 'growth'
+ALTER TABLE customers DROP CONSTRAINT IF EXISTS customers_plan_check;
+ALTER TABLE customers ADD CONSTRAINT customers_plan_check CHECK (plan IN ('starter', 'pro', 'growth', 'agency'));
+```
+
+### Documentation Updated
+- `memory/feedback_scaffold_quality.md` — 5 new bug patterns added (17 total)
+- `Knowledge_Base/Learnings_and_Conventions.md` — Auth & Billing section added, E2E test workflow documented
+- `Projects/Welra/State.md` — full status update, remaining steps, e2e script reference
+
+### E2E Test Script — Saved for Reuse
+`~/.claude/workflows/welra-e2e-audit.js` — run with `Workflow({ name: 'welra-e2e-audit' })`
+44 agents, ~8 min, covers: auth flow, checkout (happy/negative), webhook signatures, dashboard states, all public pages.
+
+### What's Next
+Ryan needs to run the 2 SQL migrations, then test the full signup→subscribe flow at welra.io with test card `4242 4242 4242 4242`. Once confirmed, switch to Stripe live mode and flip `REPORT_DRY_RUN=false`.
+
+---
+
+## 2026-06-08 — Welra: State.md Created + Launch In Progress
+
+**From:** Claude Code
+**Read:** ☐
+
+`Projects/Welra/State.md` created — Welra now has a proper vault home alongside Hubitat, Stock Agent, R&R, and AutoBiz. Added to `_Dashboard.md`.
+
+### Current Welra Status
+- DNS: A + CNAME set in Namecheap, Vercel conflict warning is cache lag (will clear)
+- All 6 pages live (login, signup, contact, privacy, terms, eu-waitlist)
+- Contact email updated to ryan@welra.io sitewide (commit ed09c3f)
+- Railway API: green ✅
+- **Blocked on:** Ryan completing Stripe setup and pasting back 9 keys (sk_live, pk_live, whsec, 6 price IDs)
+
+### What Happens After Ryan Pastes Keys
+Claude will set Railway env vars via CLI and add Vercel public keys, then flip `REPORT_DRY_RUN=false`. Site goes live.
+
+### Ryan's Open Items
+- [ ] Complete Stripe setup + paste 9 keys to Claude [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Confirm Vercel domain is green [owner:: ryan] [priority:: high] [status:: open]
+- [ ] Reconnect Railway source to rcn723/welra (repo was transferred from GR3NB org) [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] Refresh META_ACCESS_TOKEN before 2026-06-25 (expires 2026-07-01) [owner:: ryan] [priority:: high] [status:: open]
+
+---
+
+## 2026-06-07 — R&R Strategy Overhaul: Vizsla-Primary Pillar Restructure
+
+**From:** Claude Code
+**Read:** ☐
+
+This session was a full content strategy research and implementation session for Rust & Rainbow. Major changes to `agent.py`, `brand_guide.md`, and vault files.
+
+### What Changed & Why
+
+Ryan flagged that the brand was too focused on the gay dog dad angle and not enough on what makes vizslas uniquely interesting. We ran deep market research (5 angles, 8 sources) and found:
+
+- **43% of the catalog was LGBTQ+-coded** (gay_dog_dad + pride_breed). Niche of a niche.
+- **The vizsla chaos/humor angle is completely unoccupied** by all three main competitors (VizslaSyle, Bird Dog of the Day, AKC Shop).
+- **"Vizsla Mom" and "Coffee and Vizslas"** are active Etsy Star Seller listings — gender-neutral owner identity has proven demand.
+- **TikTok engagement is 7× Instagram** (3.70% vs 0.48%) — chaos/humor content is the highest-performing format for breed-specific accounts.
+- **Breed-specific designs grew 41% 2022–2025** — the vizsla community is tight-knit and spends.
+
+### New Pillar Structure (implemented in agent.py)
+
+| Pillar | Before | After | Notes |
+|---|---|---|---|
+| `velcro_dog` | 3 seeds | 5 seeds | +Personal Space is a Myth, +My Shadow Has Four Legs |
+| `chaos_agent` | 0 | 5 seeds | **NEW** — biggest gap in vizsla merch; TikTok-native |
+| `vizsla_parent` | 0 | 5 seeds | **NEW** — Vizsla Mom/Dad, Coffee and Vizslas, Vizsla Obsessed |
+| `hungarian_chaos` | 2 seeds | 4 seeds | +Hungarian Pointer Crest, +Bred to Hunt Choosing Naps |
+| `pride_breed` | 2 seeds | 3 seeds | +Rust and Rainbow; reframed to color story, not identity-coded |
+| `gay_dog_dad` | 5 seeds | 2 seeds | Kept Two Dads Zero Regrets + Gay Agenda (the two strongest) |
+| `pnw_dog_life` | 1 seed | 0 | Dissolved — too geo-specific |
+
+### Hashtag Changes
+- Core vizsla set expanded: `#magyarvizsla`, `#velcrovizsla`, `#vizslaobsessed`, `#vizslacommunity`, `#vizslalover`, `#vizslaoftheday` added
+- New `sporting_dog` cluster (`#birddog` etc.) — wired to `hungarian_chaos` posts only
+- New `chaos_dog` cluster (`#dogzoomies`, `#zoomies` etc.) — wired to `chaos_agent` posts only
+- `pnw` hashtag set removed
+
+### Files Updated
+- `~/Claude/Projects/side business/Rust & Rainbow/agent.py` — prompts, captions, hashtags, routing, etsy descriptions
+- `~/Claude/Projects/side business/Rust & Rainbow/brand_guide.md` — audience, pillars, hashtag reference
+- `Projects/Rust_and_Rainbow/State.md` — pillar table updated
+- `Worklogs/Claude_Log.md` — session logged
+
+### What Happens Next Automatically
+The next **Sunday 2am generate run** will pull from the new 24-prompt library. First `chaos_agent` and `vizsla_parent` designs will generate and queue for Printify/Etsy. No action needed from Ryan.
+
+### Ryan's Open Items (unchanged from before)
+- [ ] Refresh META_ACCESS_TOKEN by June 25 (expires 2026-07-01)
+- [ ] Delete May 11 Gay Dog Dad Retro from Printify dashboard (ID: `6a025e07...`)
+- [ ] Add ANTHROPIC_API_KEY to .env
+- [ ] Monitor TikTok developer app review (App ID: 7638050043181959175)
 
 ---
 

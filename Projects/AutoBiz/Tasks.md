@@ -47,6 +47,8 @@ tags: [business, tasks, saas]
 ## Phase 0B — Infrastructure Activation (Ryan — Do These to Launch the Build)
 *The codebase is scaffolded at `~/Claude/Projects/side business/Welra/`. These accounts and credentials activate it.*
 
+> **✅ PHASE 0B EFFECTIVELY COMPLETE (2026-06-09).** Railway (welra-production.up.railway.app, deployed via `railway up`), Vercel (www.welra.io), and Stripe test mode (products created — note: at FINAL pricing $19/$69/$129 Starter/Pro/Growth, not the original 8-product plan below; Agency deferred) are all live and e2e-validated. The unchecked boxes below are kept for history; live engineering state is tracked in [[Projects/Welra/State]] and [[Projects/Welra/Tasks]]. Remaining true gaps: GitHub auto-deploy not wired (use `railway up`), Lemon Squeezy backup account, Supabase creds → GR3NB README.
+
 ### Supabase (Database + Auth)
 - [x] Create project at supabase.com (free tier is fine) ✅ 2026-06-06 · project ID: ozhekoiehpajeytwltrv [owner:: ryan] [priority:: high] [status:: done]
 - [x] In Supabase Dashboard → SQL Editor → paste contents of `apps/api/src/lib/db/schema.sql` → Run ✅ 2026-06-06 [owner:: ryan] [priority:: high] [status:: done]
@@ -108,7 +110,7 @@ tags: [business, tasks, saas]
 
 ## Code Quality / Pre-Launch Fixes
 
-- [ ] Decide: rename PlanTier 'growth' → 'multi' in code (packages/types/src/index.ts, reportGenerator.ts TIER_CONFIG, schema, all references) OR rename product tier 'Multi' → 'Growth' in business plan and pricing page. Currently the code says 'growth' but State.md / pricing say 'Multi'. Pick one and apply consistently before any Stripe product is created. [owner:: ryan] [priority:: high] [status:: open]
+- [x] Decide: 'growth' vs 'multi' tier naming — RESOLVED 2026-06-09: **'growth'** everywhere. Code, Stripe products, pricing page already use it; Business_Plan.md and State.md updated to match. [owner:: ryan] [priority:: high] [status:: done]
 - [x] Fix Welra anomaly detector false-positive: zero-revenue check now only fires when revenue drops FROM positive to $0 (not for stores that always had $0). Fixed 2026-06-07. [owner:: claude] [priority:: high] [status:: done]
 
 ## Phase 1 — Core Pipeline (Claude — Week 1–2)

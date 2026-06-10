@@ -38,12 +38,13 @@ Product brand name (DBA): **Welra** (welra.io — registered ✅)
 ❌ EU excluded at launch (GDPR complexity)
 ⏳ EU waitlist captured for future expansion
 
-## Pricing
-- Starter: $19/mo · $182/yr
-- Pro: $49/mo · $470/yr
-- Multi: $99/mo · $950/yr
-- Agency: $299/mo · $2,870/yr
-Annual presented as default on pricing page
+## Pricing (synced to implementation 2026-06-09)
+- Starter: $19/mo · $190/yr (2 months free)
+- Pro: $69/mo · $690/yr (2 months free)
+- Growth: $129/mo · $1,161/yr (3 months free — deliberate hook)
+- Agency: deferred until demand signal (contact-sales path on site)
+Annual presented as default on pricing page.
+See [[Projects/Welra/Strategy_Review_2026-06-09]] — beta users to validate willingness-to-pay.
 
 ## Primary Markets (Tier 1)
 - Etsy: 8.13M sellers, zero reporting tools exist
@@ -131,7 +132,12 @@ Trigger: 10+ paying web customers with proven retention
 - [ ] App Store submission
 
 ## Key Open Decisions
-- None — all planning decisions resolved. Ryan's pre-build legal tasks are next (see Tasks.md Phase 0).
+- Pricing confirmation: docs now assume implemented $19/$69/$129 stands (revert easy pre-launch)
+- Tier naming resolved 2026-06-09: **'growth'** (code, Stripe, and site all use it; business plan updated)
+- Critical path per [[Projects/Welra/Strategy_Review_2026-06-09]]: submit Etsy + Shopify dev apps NOW (4–8 wk lead); build CSV upload; recruit 3–5 beta users before Stripe live mode.
+
+> **Note:** Product/engineering state now lives in [[Projects/Welra/State]] + [[Projects/Welra/Tasks]].
+> This AutoBiz project tracks business/legal/tax only. (Source-of-truth split, 2026-06-09.)
 
 ## Links
 - [[Projects/AutoBiz/Business_Plan]]

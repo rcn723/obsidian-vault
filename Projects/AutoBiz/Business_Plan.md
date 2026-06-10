@@ -27,8 +27,8 @@ tags: [business, saas, autonomous, ai, startup, multi-channel, ecommerce]
 | **Primary ICP** | Multi-channel small sellers: Etsy + WooCommerce + Shopify |
 | **Geographic Scope** | US, Canada, Australia, UK only (EU excluded at launch) |
 | **Revenue Model** | Monthly + Annual SaaS subscription, self-serve |
-| **Pricing (Monthly)** | $19 · $49 · $99 · $299/mo |
-| **Pricing (Annual)** | $182 · $470 · $950 · $2,870/yr (20% discount) |
+| **Pricing (Monthly)** | $19 · $69 · $129/mo (Agency tier deferred) |
+| **Pricing (Annual)** | $190 · $690 · $1,161/yr (2–3 months free) |
 | **Capital to Launch** | ~$500 total |
 | **Monthly OpEx** | ~$100/mo |
 | **Break-even** | 6 paying customers |
@@ -270,23 +270,27 @@ NEVER
 
 ## Pricing
 
+> **Updated 2026-06-09 to match the implemented Stripe products, pricing page, and code**
+> (tiers renamed Multi→Growth; Pro/Growth repriced upward; Agency deferred).
+> See [[Projects/Welra/Strategy_Review_2026-06-09]] for the analysis. Willingness-to-pay
+> at $69/$129 to be validated with beta users before launch.
+
 ### Monthly Tiers
 
 | Tier | Price | Platforms | Reports | Best For |
 |---|---|---|---|---|
 | **Starter** | $19/mo | 1 | Weekly | Etsy-only or WooCommerce-only sellers |
-| **Pro** | $49/mo | 3 | Weekly | Sellers on 2–3 platforms |
-| **Multi** | $99/mo | Unlimited | Weekly + monthly summary | Serious multi-channel sellers |
-| **Agency** | $299/mo | 10 client accounts | White-label, weekly per client | Agencies, VAs |
+| **Pro** | $69/mo | 3 | Weekly | Sellers on 2–3 platforms |
+| **Growth** | $129/mo | Unlimited | Weekly + monthly summary | Serious multi-channel sellers |
+| **Agency** | *deferred* | — | — | Re-add when demand signal appears (contact-sales path live on site) |
 
-### Annual Tiers (20% discount — 2 months free)
+### Annual Tiers
 
-| Tier | Annual Price | Monthly Equivalent | Savings |
+| Tier | Annual Price | Monthly Equivalent | Discount |
 |---|---|---|---|
-| **Starter Annual** | $182/yr | $15.17/mo | $46/yr |
-| **Pro Annual** | $470/yr | $39.17/mo | $118/yr |
-| **Multi Annual** | $950/yr | $79.17/mo | $238/yr |
-| **Agency Annual** | $2,870/yr | $239.17/mo | $718/yr |
+| **Starter Annual** | $190/yr | $15.83/mo | 17% (2 months free) |
+| **Pro Annual** | $690/yr | $57.50/mo | 17% (2 months free) |
+| **Growth Annual** | $1,161/yr | $96.75/mo | 25% (3 months free — deliberate conversion hook on highest-value tier) |
 
 Annual customers churn at 3–5x lower rates than monthly.
 Present annual as default on pricing page — monthly as secondary option.
@@ -296,9 +300,8 @@ Present annual as default on pricing page — monthly as secondary option.
 | Tier | Monthly Price | Claude API cost | Gross Margin |
 |---|---|---|---|
 | Starter | $19 | ~$0.50 | 97% |
-| Pro | $49 | ~$1.50 | 97% |
-| Multi | $99 | ~$3.50 | 96% |
-| Agency | $299 | ~$15.00 | 95% |
+| Pro | $69 | ~$1.50 | 98% |
+| Growth | $129 | ~$3.50 | 97% |
 
 ### Free Trial
 **14-day free trial, credit card required.**
@@ -665,6 +668,26 @@ Conservative. Organic only. No paid ads. Mixed monthly/annual.
 | No onboarding sequence | 🟡 Medium | ✅ Mitigated | 5-email automated sequence (Day 0, 2, 5, 7, 8). |
 | No EU waitlist | 🟢 Low | ✅ Mitigated | EU visitors see waitlist capture, not hard rejection. |
 | Copycat competitor | 🟢 Low | ⚠️ Ongoing | Moat = integrations + historical data + community trust. |
+| **Claude API account out of credits** | 🔴 Critical | 🔴 **ACTIVE (2026-06-10)** | Both local + Railway keys have zero balance — ALL report generation fails. Ryan: add credits at console.anthropic.com, then run `npm run eval`. New rule: usage-billed APIs are verified with a real call, not an env check. |
+
+### ⚠️ Risk Register Audit — 2026-06-10
+
+**A "✅ Mitigated" above is only true if the mitigation is deployed and verified.** Audit against the actual codebase found several rows where the mitigation was prose, not code. Corrected statuses:
+
+| Risk row | Actual status | Reality |
+|---|---|---|
+| Etsy/Shopify API approval delays | 🔴 **NOT EXECUTED** | "Submit Day 1" never happened — applications still unsubmitted. CSV fallback shipped 2026-06-10; WooCommerce integration is a stub. |
+| Dirty data → wrong report | ⚠️ Partial | Sanity checks + spike detection are real (verified in code). Data-confirmation step exists for CSV uploads only. |
+| Claude API outage Sunday night | ⚠️ Unverified | Retry ladder exists in worker.ts but has never executed against a real failure. |
+| OAuth token expiry | ⚠️ Unverified | Token health cron exists; pre-expiry emails never exercised (no OAuth integration is live yet). |
+| Stripe account freeze | 🟡 Planned | Lemon Squeezy backup account not created. |
+| No customer feedback loop | ⚠️ Partial | 👍/👎 route is real (verified). Two-👎 follow-up trigger unverified. |
+| No onboarding sequence | 🟡 Planned | onboarding_emails table exists; the 5-email sequence is not implemented. |
+| No data portability | 🟡 Planned | ZIP export not built; /reports route is a stub. |
+| Claude API cost spike | 🟡 Planned | Per-customer cost cap not implemented. |
+| Silent failures (Sentry) | ⚠️ Partial | Sentry wiring shipped 2026-06-10; activation requires SENTRY_DSN (Ryan). Uptime Robot not set up. |
+
+Open items are tracked in [[Projects/Welra/Tasks]].
 
 ---
 

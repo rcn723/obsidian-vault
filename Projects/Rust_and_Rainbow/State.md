@@ -55,13 +55,17 @@ All agents live in `~/Library/LaunchAgents/` and `~/Claude/Projects/side busines
 **Mac sleep risk:** launchd `StartCalendarInterval` does NOT retry missed jobs if Mac is asleep at fire time. If Mac sleeps at 10am, the post is skipped silently — watchdog catches it at 10:10am.
 
 ## Content Pillars
-| Pillar | Status | Example |
-|---|---|---|
-| pride_breed | ✅ Published | Rainbow Heart Vizsla |
-| pnw_dog_life | ✅ Published | Oregon Vizsla |
-| gay_dog_dad | ✅ Published | Gay Agenda |
-| hungarian_chaos | ✅ Published | Retro Vizsla Poster |
-| velcro_dog | ✅ Published | Velcro Dog Typography |
+*Rebalanced 2026-06-07 — vizsla-primary strategy based on Etsy competitor + TikTok engagement research.*
+
+| Pillar | Status | Target | Notes |
+|---|---|---|---|
+| velcro_dog | ✅ Active | 9–10 designs | Proven Etsy search term, widest appeal |
+| chaos_agent | 🆕 New | 5–6 designs | Biggest gap in vizsla merch; TikTok-native humor |
+| vizsla_parent | 🆕 New | 4–5 designs | "Vizsla Mom" confirmed Star Seller; gender-neutral owner identity |
+| hungarian_chaos | ✅ Expanded | 6–7 designs | Added hunting-humor angle to vintage aesthetic |
+| pride_breed | ✅ Reframed | 3–4 designs | Rainbow aesthetic, not identity-coded |
+| gay_dog_dad | ✅ Reduced | 2–3 designs | Authentic founding voice; kept genuine, not leading |
+| pnw_dog_life | ❌ Dissolved | 0 | Too geo-specific; absorbed into vizsla_parent |
 
 ## Products per Design
 T-shirt, mug, hoodie, sticker (blueprint 400 — Kiss-Cut Stickers)
