@@ -99,7 +99,11 @@ Self-learning loop added 2026-05-22. Runs Mon 7:00am via launchd.
 - TikTok hashtags: use `tiktokSettings.description` (4000-char limit, separate from title) — all tags go here
 - TikTok music: `autoAddMusic: true` in `tiktokSettings` — TikTok picks trending music automatically. No API for specific song IDs.
 - Instagram hashtags: broad reach first (#dogsofinstagram etc.), then niche (#vizsla etc.), then pillar-specific, then POD/shop
-- META_ACCESS_TOKEN: expires 2026-07-01, renew at developers.facebook.com
+- META_ACCESS_TOKEN: expires 2026-07-01, renew at developers.facebook.com. ⚠️ The same token is also pasted into Welra's Instagram integration (welra.io/dashboard/integrations) — when refreshing, update BOTH the NAS agent .env and the Welra card.
+- Meta/Instagram IDs (confirmed 2026-06-12 — not secrets, save the lookup time):
+  - **Instagram Business Account ID: `1041492732390434`** ← the value Graph API calls + Welra's Instagram card need
+  - Facebook Page ID: `1135312136329438` ("Rust and Rainbow")
+  - Meta Business ID: `970811995814374`
 - Printify orders API: NO `limit` param — page-based only (`?page=N`)
 - launchd on modern macOS: `launchctl load` may show "Load failed: 5" but still works — verify with `launchctl list | grep <label>`
 - Zernio TikTok post payload: must include `tiktokSettings.contentPreviewConfirmed: true` and `expressConsentGiven: true` or posts can silently fail

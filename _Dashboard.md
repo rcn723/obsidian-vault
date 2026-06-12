@@ -19,7 +19,7 @@ updated: 2026-06-08
 | [[Projects/Stock_Agent/State\|Stock Agent]] | [[Projects/Stock_Agent/Tasks\|Tasks]] | Paper trading — 3/30 trades to go live |
 | [[Projects/Rust_and_Rainbow/State\|Rust & Rainbow]] | [[Projects/Rust_and_Rainbow/Tasks\|Tasks]] | Live — monitor META token expiry |
 | [[Projects/AutoBiz/State\|AutoBiz (DataBrief)]] | [[Projects/AutoBiz/Tasks\|Tasks]] | Planning — business plan drafted |
-| [[Projects/Welra/State\|Welra]] | [[Projects/Welra/State\|State]] | Launch — awaiting Stripe keys from Ryan |
+| [[Projects/Welra/State\|Welra]] | [[Projects/Welra/Tasks\|Tasks]] | Beta runway — **start at [[Projects/Welra/Continuation_Playbook\|Continuation Playbook]]**; blockers: Anthropic credits, Etsy resubmit 6/25 |
 
 ---
 

@@ -40,3 +40,6 @@ See [[Projects/Rust_and_Rainbow/State]] for platform status, pillars, and cron d
 
 ## Related
 - [[Projects/Rust_and_Rainbow/State]]
+- [x] 🔴 Etsy developer app "rust-and-rainbow" is BANNED — RESOLVED as permanent 2026-06-11: ban was over AI-generated content (t-shirt designs); the API denial appeal came back "we're not able to reconsider this decision." **The R&R Etsy API path (listing analytics, auto-optimize, etsy_auth.py) is permanently dead — remove from roadmap.** Weekly report keeps using Printify order data only. [owner:: ryan] [priority:: high] [status:: done]
+
+- [ ] ⚠️ Verify the R&R Etsy SHOP (not just the API app) is still in good standing — the ban reason was AI-generated content on listings, which is a shop-policy issue, not an API issue. Check the shop dashboard + any emails from Etsy Trust & Safety; if the shop is flagged, listings/sales are at risk. [owner:: ryan] [priority:: high] [status:: open]

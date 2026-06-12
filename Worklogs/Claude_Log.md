@@ -1,5 +1,79 @@
 # Claude Worklog
 
+## 2026-06-12 — Welra Session 10: Shop Radar Scan + Week Cards LIVE; Ryan's action list written
+
+Ryan asked for a step-by-step list of all his open tasks with exact wording → [[Projects/Welra/Ryan_Action_List_2026-06-12]] (Batch A: 7 infrastructure unblocks ~45 min incl. verbatim Termly CSV-retention wording and the Shopify protected-data justification copy; Batch B: press setup batch with Press_Drafts § references; Batch C: calendar/blocked items).
+
+Claude build (Marketing Phase 3 assets #1+#2, both LIVE): **Shop Radar Scan** — public `POST /scan` (no auth, nothing stored, per-IP 4/hr + Redis-backed global 200/day Claude-call cap, stats degrade gracefully if Claude is down, prior-week comparison only when the data covers the FULL prior week) + welra.io/scan (drop zone, headline numbers, daily mini-chart, honesty-rule mini-analysis, Monday CTA; linked from homepage nav + footer). **Week Cards** — 1080×1080 brand PNG per report (trend % + orders only, NO revenue), Puppeteer-rendered, 12-mo signed URL, embedded in every report email with a download CTA; failure never blocks the report; covered by retentionCron.
+
+arch-review (1 blocker fixed pre-deploy): **missing `trustProxy: true` behind Railway's proxy — every per-IP rate limit in the app was actually one shared global bucket** (the 4/hr scan limit would have locked out all visitors; waitlist 5/min was global too). Also fixed: card PNGs missing from retention deletes; partial-prior-week % inflation. Live-test catch: the model mislabeled weekdays derived from raw dates → weekday names now computed server-side. Two new patterns → scaffold memory (33) + arch-review skill. Homepage sample excerpt reworded to the honesty-hardened voice (it still claimed "checkout friction" causes + external benchmarks the product no longer produces).
+
+Deploys: API ×2 green (railway up; health 200, report worker + 3 crons registered), web green (vercel --prod; /scan 200). E2E verified against production incl. a real sonnet analysis — numbers exact, causes only as checks, weekdays correct. Commits d4cc26d + weekday fix queued locally (push still blocked on PAT scope). Next: Mon 6/15 check the 6/14 cron logs; Ryan batch A; beta recruitment.
+
+## 2026-06-11 — Welra Session 9 (later): platform expansion — Printify + Instagram LIVE
+
+Ryan asked for a feasibility pass on Printify/TikTok Shop/Instagram/Facebook + other selling platforms → [[Projects/Welra/Platform_Feasibility_2026-06]]. Built the two inside current boundaries: **Printify** (token-based, no app review; validates token + resolves shop at connect; fetcher hardened with early-exit pagination + cancelled exclusion, fixture-tested; strategically covers R&R's Etsy sales through their own POD data without the Etsy API) and **Instagram** (Graph API engagement add-on; 60-day token expiry tracked). Ryan approved the prod migration (platform CHECK) — and the long-pending waitlist table turned out to already exist with RLS (task closed). TikTok Shop: CSV today, API application post-beta per the no-AI playbook. Facebook sales API: dead at Meta's end. arch-review caught that token-expiry emails linked to a never-built /reconnect route on the cert-less apex — fixed; pattern logged (grep backend-emitted URLs against the frontend route table). Privacy page updated before ship. Both deploys green. **Ryan's next move: paste R&R's Printify token at welra.io/dashboard/integrations — first live fetcher verification + first dogfood beta.**
+
+Also added **Phase 4 — Free press / earned media** to [[Projects/Welra/Marketing_Campaign_2026-06]]: anti-dashboard story angle (never "AI"), source-request services (Qwoted/Featured/SourceBottle — HARO is dead), press kit page, podcast guesting list, compliance-safe data stories (survey + own-shop only), BetaList now → PH/local-press/data-story at launch. 5 new tasks in Tasks.md.
+
+**Session 9 wrap:** Ryan fixed the Supabase Auth config (Site URL localhost→www.welra.io, wildcard redirect allowlist) — a critical catch: auth email links had been falling back to localhost since project creation. All docs updated (State, Tasks, Playbook, Marketing Phase 4, Press Playbook + Drafts, Platform Feasibility), key learnings logged to [[Knowledge_Base/Learnings_and_Conventions]] (judge calibration, synthesis model tier, Supabase go-live checklist, secure email change) + scaffold-quality memory + arch-review skill (31 patterns now). Handoff produced. Open on Ryan: throwaway-signup e2e test, R&R Printify token connect, press profile setup (drafts ready), PAT workflow scope, Sentry DSN, Termly edit. Claude next: Shop Radar Scan page + Week Cards; Monday — check the 6/14 cron's first real report.
+
+**Round 3 (reports + profile editing):** /dashboard/reports list + detail built (sandboxed-iframe render, fresh signed PDF via API) — last dashboard 404 gone. Settings now edits name + timezone (new PATCH /auth/me, IANA-validated; scheduler reads tz fresh per run) and changes email via Supabase secure dual confirmation (both addresses must confirm; customers.email reconciled after). Payment-method changes confirmed handled by the Stripe billing portal. Deploys green (API 200, 4 workers). Ryan check: Supabase Auth redirect allowlist covers www.welra.io/** + Secure email change ON.
+
+**Round 2 (Ryan's tweaks + drafts):** [[Projects/Welra/Press_Drafts]] written — field-by-field paste-ready copy for every Ryan press task (Qwoted/Featured/SourceBottle profiles, full BetaList submission, complete Google Form + no-link distribution post, 3 personalized podcast pitches + generic + follow-up). Web: **/dashboard/settings built** (was 404 — account, plan+status, new Stripe billing portal route POST /checkout/portal, ZIP export, sign out); **brand lockup rollout** — Logo component (icon + "Welra") in all 11 prominent spots, logo SVG wordmark fixed "welra"→"Welra". Both deploys green; /dashboard/reports is the remaining 404 (tasked, next build).
+
+**Press build-out shipped same session:** welra.io/press LIVE (boilerplate, fast facts, founder bio with shop deliberately unnamed, what-Welra-is-NOT, brand asset downloads, footer link) + [[Projects/Welra/Press_Playbook]] written — every Ryan deliverable scripted: source-profile bio + response template with worked example, 10-show podcast list + pitch email + full appearance outline, BetaList paste-ready copy, survey questions verbatim, local-press email (hold for launch), newsjack play, pickup log. Ryan's four next actions tracked in Tasks.md.
+
+## 2026-06-11 — Welra Session 9 (continued): credits in, EVAL 3/3 PASSING — reports unblocked
+
+Ryan purchased Anthropic credits → ran `npm run eval`, iterated 8 rounds to **3/3 passing, stable across 3 consecutive runs**. Two-sided fix: (1) prompts honesty-hardened — causes only as "worth checking whether…", no absent metrics or fabricated comparisons, actions justified only by the seller's own numbers (the old prompt example taught external-benchmark citing); (2) the harness itself measured wrong — haiku judge was run-to-run noise, never saw the pipeline-derived totals it flagged as fabricated, and choked on non-pure-JSON replies. Judge → sonnet + explicit rubric + derived context. **Synthesis → claude-sonnet-4-6** (`REPORT_SYNTHESIS_MODEL` in Railway): haiku fabricated mechanisms every single run. Deployed green (health 200, 4 workers). Sunday 6/14 cron is now a true end-to-end test. Next builds unblocked: Shop Radar Scan page + Week Cards.
+
+## 2026-06-11 — Welra Session 9: Shopify fetcher + dashboard Connect UI shipped
+
+**Built + deployed (API green on Railway, web live on welra.io):** real Shopify fetcher (Admin REST 2025-01 — paid-order aggregation excluding cancelled/test/unpaid, top products, cart abandonment from abandoned-checkout counts, Link-header pagination, store-local day bucketing via shop.json iana_timezone; sessions deliberately absent → ShopifyWeekData fields made optional with a guarded consumer) and the /dashboard/integrations page (Etsy OAuth button, Shopify domain form, WooCommerce ck/cs form, disconnect, OAuth result banners, no-customer-row activation guard, honest Etsy "finishing review" caption).
+
+**Bug fixed (recurrence of a known pattern):** the web dashboard's `as Report[]`/`as Integration[]` casts on raw Supabase rows — would have crashed /dashboard on the first real report and showed the subscribe banner to paying customers. New mapper [[Projects/Welra/State|apps/web/src/lib/rows.ts]]; web no longer selects token columns. Pattern recurrence + new Shopify platform gate logged to memory and the arch-review skill.
+
+**arch-review:** 0 blockers, 6 risks (2 mitigated in-session). Key find → **Ryan task: enable "Protected customer data access" in the Shopify Partner Dashboard before any real-store install** (orders.json 403s without it). Etsy keystring re-pinged: still 403, consistent with the denial — blocked until the 6/25 reapproval.
+
+**Next:** Shopify dev-store install to verify the fetcher; web /dashboard/reports + /settings pages (links currently 404); credits → eval → Radar Scan page. Sunday 6/14: first scheduler cron fire — check Railway logs Monday.
+
+## 2026-06-11 — Welra Session 8 (wrap): Etsy denial handled, strategy suite, continuation playbook
+
+**Etsy:** application denied → full root-cause + reapplication playbook ([[Projects/Welra/Etsy_API_Approval_Strategy]], exact copy ready); welra.io scrubbed of "AI" marketing language ("plain-English" everywhere, Etsy trademark disclaimer in footer) and deployed LIVE via `npx vercel deploy --prod` — which also shipped the whole blocked web backlog (favicon, palette, banner). Resubmit reminder scheduled for 6/25 9am (`etsy-api-resubmit-reminder`). R&R's Etsy app ban confirmed permanent (AI-content) → R&R tasks updated + shop-standing check added.
+
+**Strategy suite (all in vault):** Growth_Plan_2026-06 (G1 launch → G2 data depth → G3 Radar On-Demand for Growth tier → G4 mobile → G5 always-on; gates + architecture deltas; Etsy-data compliance guardrails), Architecture_Roadmap (current baseline, 10 anti-rework invariants, scaling-cliff table with triggers, deliberately-rejected tools, 15-min check-in protocol per gate + decision log), Marketing_Campaign Phase 3 (10 creative ≤$150/mo awareness plays, led by free Shop Radar Scan + shareable Week Cards).
+
+**Continuity:** [[Projects/Welra/Continuation_Playbook]] created as the model-agnostic START-HERE (snapshot, ordered path, operating rules, doc map); Dashboard, State.md, and memory index all repointed to it. Handoff produced for Ryan.
+
+**Waiting on Ryan:** Anthropic credits → `npm run eval`; PAT `workflow` scope → `git push`; Sentry DSN; Termly CSV-retention edit. Claude's next builds: Shopify fetcher (needs a test store), dashboard Connect buttons, Radar Scan page after eval passes.
+
+## 2026-06-10 — Welra Session 8 (evening): Etsy + Shopify keys arrived, OAuth flows shipped
+
+**Goal:** Ryan pasted the Etsy keystring/secret and Shopify client ID/secret/automation token; verify his settings via Chrome and wire up the integrations.
+
+**Shipped (deployed green, smoke-tested — health 200, connect routes 401 unauthenticated, bogus callback state 302s safely):**
+- All credentials stored in Railway (ETSY_CLIENT_ID/SECRET, SHOPIFY_CLIENT_ID/SECRET + redirect URIs, SHOPIFY_CLI_PARTNERS_TOKEN exp 2026-12-10).
+- routes/oauth.ts: Etsy OAuth2+PKCE and Shopify HMAC-verified connect/callback flows; Redis state (10-min TTL, verifier server-side); tokens AES-encrypted into integrations rows with shop name/id. Self-review caught that Etsy's 1-hour access-token expiry would trip tokenHealthCron — token_expires_at now tracks the 90-day refresh horizon instead.
+
+**Found while verifying settings (Chrome):**
+1. ⚠️ The Etsy keystring fails openapi-ping with 403 "not found or not active" (control test: the banned R&R key errors identically). Either the app is still pending activation or the keystring was mistyped — re-test in 24h before building the Etsy fetcher.
+2. 🔴 The Chrome-logged-in Etsy account's only app, "rust-and-rainbow", is BANNED — flagged in R&R Tasks (their Etsy analytics plan is blocked). The Welra app lives on a different Etsy account; its callback-URL settings are unverified.
+3. Shopify Partner dashboard not logged in on this Chrome — redirect-URL setting unverified there too.
+
+**Needs Ryan:** log into the owning Etsy account + partners.shopify.com in Chrome so Claude can verify both apps list the exact callback URLs (`https://welra-production.up.railway.app/integrations/{etsy|shopify}/callback`); re-copy the Etsy keystring if ping still 403s tomorrow. Then Claude builds the real Etsy/Shopify fetchers + dashboard Connect buttons.
+
+## 2026-06-10 — Welra Session 8 (afternoon): brand applied + Founding Seller waitlist shipped
+
+**Goal:** Session 7 handoff's two queued build tasks — apply brand palette to landing page + report email; add Founding Seller beta banner with waitlist capture.
+
+**Shipped (commit 595c01c; API deployed green via `railway up --service welra` — health 200, all 4 crons registered, /waitlist 400-smoke-tested):**
+- **Brand palette applied** — ink/radar/signal across landing page (logo in nav, teal CTAs with ink text per style guide, ink pricing-highlight card, dark ink footer) and the report email (teal revenue card, teal/red deltas, signal-amber highlights). Email footer contact fixed ryan@gr3nb.com → ryan@welra.io.
+- **POST /waitlist** (public, zod-validated, 5/min/IP rate limit, sources `founding-seller`/`eu`) + **Founding Seller banner** on the landing page (offer per campaign plan: free Pro during beta → 50% off 6 months). EU waitlist page converted from the mailto hack to the same endpoint.
+- **⚠️ `waitlist` table migration pending Ryan** — apply_migration was permission-denied (production DB change). DDL is in schema.sql; until applied, signups fall back to an email to RESEND_REPLY_TO (code-reviewed, not live-tested — the live test write was also permission-denied). Ryan: say "apply the waitlist migration".
+- **arch-review caught 1 blocker pre-commit:** next/image returns 400 on SVG sources at runtime (build passes) → nav logo switched to plain `<img>`. Pattern library now 28; skill updated. Low risk logged: Tailwind `slate` token shadows the built-in scale.
+- Re-verified 🔴 Anthropic credits still ZERO (live call). **5 commits** now await the PAT `workflow`-scope fix (or `npx vercel deploy --prod` on Ryan's OK) before the brand reaches welra.io.
+
 ## 2026-06-10 — Welra Session 7 (day): WooCommerce integration + retention job shipped
 
 **Goal:** Continue the pre-launch plan — Claude's two queued build tasks: real WooCommerce integration, then the data retention/deletion job.

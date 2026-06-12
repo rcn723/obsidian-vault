@@ -8,6 +8,8 @@ tags: [welra, etsy, shopify, integrations, applications]
 
 # Etsy + Shopify Developer Applications — Step-by-Step
 
+> ⚠️ **2026-06-10 UPDATE: the Etsy application using this doc's copy-paste pack was DENIED.** The pack's "AI-written… multi-channel" description trips Etsy's prohibited-use pattern matching. For Etsy, this doc is superseded by [[Projects/Welra/Etsy_API_Approval_Strategy]] — use that application copy instead. The Shopify section below remains valid (Shopify approved).
+
 Both are free. Submit both **today** — approval reviews are the long pole (weeks), and nothing else on the critical path can shorten them. Each takes ~15–20 minutes.
 
 Verified against current docs 2026-06-10: [Etsy Open API v3](https://developers.etsy.com/documentation/), [Etsy quick start](https://developers.etsy.com/documentation/tutorials/quickstart/), [Shopify protected customer data](https://shopify.dev/docs/apps/launch/protected-customer-data), [Shopify access scopes](https://shopify.dev/docs/api/usage/access-scopes).

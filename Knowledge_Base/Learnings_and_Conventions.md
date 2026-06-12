@@ -1,7 +1,7 @@
 ---
 title: Learnings and Conventions
 type: knowledge-base
-updated: 2026-06-08
+updated: 2026-06-11
 tags: [deployment, railway, node, supabase, conventions, debugging]
 ---
 
@@ -131,6 +131,27 @@ What it tests (44 agents, ~8 min):
 - Adversarial verification: every HIGH/BLOCKER finding reviewed by a skeptic agent before reporting
 
 Catches: auth trust boundary violations, silent DB update failures, race conditions, missing null checks, enum/constraint drift, unauthenticated endpoints.
+
+---
+
+## LLM Product Quality (added 2026-06-11, Welra eval session)
+
+### A noisy judge makes prompt iteration whack-a-mole
+**Problem:** Welra's report eval used a haiku judge with a terse rubric. It fired inconsistently on edge cases (investigation framing, arithmetic derived from present data), so "passing" was run-to-run luck and prompt fixes chased noise.
+**Rule:** Calibrate the judge before iterating prompts: use a stronger model than feels necessary, write the rubric with explicit NOT-a-violation examples, and give the judge every input the generator received (Welra's judge flagged numbers our own pipeline computed because it never saw them). Then require N consecutive passing runs, not one.
+
+### Small models state invented causes as fact
+**Problem:** haiku synthesis fabricated causal mechanisms in every eval run ("you're losing them at checkout", "your listing changes are working") even after honesty-hardened prompts with examples. Sonnet under the same prompts passed 3/3 consistently.
+**Rule:** For customer-facing narrative where unsupported claims are a product risk, the synthesis model tier is a quality control, not a cost knob. Keep cheap models for extraction/analysis passes; use the stronger tier for the voice that ships. Also: audit your own prompt examples — Welra's action example literally taught the model to cite external benchmarks the judge then flagged.
+
+## Supabase Auth in Production (added 2026-06-11)
+
+### Site URL defaults to localhost and testing never catches it
+**Problem:** Welra ran weeks in production with Auth Site URL = `http://localhost:3000`. Every auth email link without an explicitly allowlisted redirect falls back to Site URL — real users could land on localhost. Tests passed because test flows always sent explicit redirects.
+**Rule:** Go-live checklist item for every Supabase project: Site URL = production domain; redirect allowlist uses `https://domain/**` wildcards (matching is EXACT-path otherwise — `/dashboard` does not cover `/dashboard/settings`); "Secure email change" (dual confirmation) left ON.
+
+### Email changes: use Supabase secure email change, don't build verification
+**Rule:** `supabase.auth.updateUser({ email })` with secure email change sends confirmation to BOTH old and new addresses — takeover-resistant, zero custom code. One thing it doesn't do: update your own `customers.email` column — reconcile app-side after auth reflects the new address.
 
 ---
 
