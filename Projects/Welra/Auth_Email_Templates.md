@@ -2,7 +2,7 @@
 title: Welra Auth Email Templates
 project: Welra
 type: reference
-updated: 2026-06-10
+updated: 2026-06-12
 tags: [welra, brand, email, supabase, auth]
 ---
 
@@ -13,7 +13,8 @@ Palette per [[Projects/Welra/Brand_Identity]]: ink `#0F1E33`, radar teal `#2FD6A
 Claude applies these via Chrome once SMTP is saved.
 
 ## Shared shell
-Every template uses the same wrapper: paper background, white card, ink wordmark header, teal button with ink text, gray footer. Variables are Supabase's Go-template fields (`{{ .ConfirmationURL }}`, `{{ .Token }}`).
+Every template uses the same wrapper: paper background, white card, ink wordmark header, teal button with ink text, gray footer. 
+**2026-06-12 link format change — do not revert to `{{ .ConfirmationURL }}`.** ConfirmationURL produces PKCE links that only work in the exact browser profile where the user typed the form (the code-verifier cookie lives there); opening the email on a phone, in another browser, or via a mail app breaks every link with "confirmation_failed". All action links now use `{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=...&next=...` — verified server-side by the web app's /auth/callback (verifyOtp), works from any device. Reauthentication (#6) still uses the `{{ .Token }}` code, unchanged.
 
 ## 1. Confirm sign up
 **Subject:** `Confirm your email — Welra`
@@ -26,8 +27,8 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">Confirm your email</h2>
       <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">Welcome to Welra — one plain-English report on your business, every Monday. Confirm your email address to finish setting up your account.</p>
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Confirm email</a>
-      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .ConfirmationURL }}" style="color:#0FA47C;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+      <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=signup&next=/dashboard" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Confirm email</a>
+      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=signup&next=/dashboard" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=signup&next=/dashboard</a></p>
     </div>
     <div style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:20px;line-height:1.6;">
       Welra · GR3NB LLC · <a href="https://welra.io" style="color:#9CA3AF;">welra.io</a><br>
@@ -48,8 +49,8 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">You're invited</h2>
       <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">You've been invited to Welra — one plain-English report on your business, every Monday. Accept the invite to create your account.</p>
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Accept invite</a>
-      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .ConfirmationURL }}" style="color:#0FA47C;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+      <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=invite&next=/dashboard" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Accept invite</a>
+      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=invite&next=/dashboard" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=invite&next=/dashboard</a></p>
     </div>
     <div style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:20px;line-height:1.6;">
       Welra · GR3NB LLC · <a href="https://welra.io" style="color:#9CA3AF;">welra.io</a><br>
@@ -70,8 +71,8 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">Sign in to Welra</h2>
       <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">Click the button below to sign in. This link expires shortly and can only be used once.</p>
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Sign in</a>
-      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .ConfirmationURL }}" style="color:#0FA47C;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+      <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=magiclink&next=/dashboard" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Sign in</a>
+      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=magiclink&next=/dashboard" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=magiclink&next=/dashboard</a></p>
     </div>
     <div style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:20px;line-height:1.6;">
       Welra · GR3NB LLC · <a href="https://welra.io" style="color:#9CA3AF;">welra.io</a><br>
@@ -92,8 +93,8 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">Confirm your new email</h2>
       <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">You asked to change the email on your Welra account from {{ .Email }} to {{ .NewEmail }}. Confirm the change below.</p>
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Confirm change</a>
-      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .ConfirmationURL }}" style="color:#0FA47C;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+      <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=email_change&next=/dashboard/settings" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Confirm change</a>
+      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=email_change&next=/dashboard/settings" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=email_change&next=/dashboard/settings</a></p>
     </div>
     <div style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:20px;line-height:1.6;">
       Welra · GR3NB LLC · <a href="https://welra.io" style="color:#9CA3AF;">welra.io</a><br>
@@ -114,8 +115,8 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">Reset your password</h2>
       <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">Click the button below to choose a new password for your Welra account. This link expires shortly.</p>
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Reset password</a>
-      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .ConfirmationURL }}" style="color:#0FA47C;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+      <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=recovery&next=/reset-password" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Reset password</a>
+      <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=recovery&next=/reset-password" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=recovery&next=/reset-password</a></p>
     </div>
     <div style="text-align:center;font-size:12px;color:#9CA3AF;margin-top:20px;line-height:1.6;">
       Welra · GR3NB LLC · <a href="https://welra.io" style="color:#9CA3AF;">welra.io</a><br>

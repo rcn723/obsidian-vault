@@ -2,7 +2,7 @@
 title: AutoBiz State v5
 project: AutoBiz
 type: state
-updated: 2026-06-07
+updated: 2026-06-14
 brand: Welra
 tags: [business, saas, autonomous, multi-channel]
 ---

@@ -1,8 +1,8 @@
 ---
 title: Learnings and Conventions
 type: knowledge-base
-updated: 2026-06-11
-tags: [deployment, railway, node, supabase, conventions, debugging]
+updated: 2026-06-13
+tags: [deployment, railway, node, supabase, dns, domains, conventions, debugging]
 ---
 
 # Learnings and Conventions
@@ -24,6 +24,33 @@ Cross-project lessons. Read this before starting any new build. Every entry cost
 ### Node.js version must match SDK requirements
 **Problem:** `@supabase/supabase-js` v2.39+ requires Node 22+ for native WebSocket, or the `ws` package. On Node 20, the Supabase client throws at module load — zero output, zero port binding, silent crash.
 **Rule:** Use `node:22-slim` as the default base image for all new projects using modern Supabase. Check SDK release notes for minimum Node version before writing a Dockerfile.
+
+---
+
+## DNS, Domains & TLS
+
+Full step-by-step: [[Knowledge_Base/DNS_Domain_Runbook]]. The essentials:
+
+### Diagnose against the authoritative nameserver, never a cache
+**Problem:** During the welra.io apex-SSL fix (2026-06-13), public resolvers (`1.1.1.1`/`8.8.8.8`) and the user's phone kept reporting stale state — they cache NXDOMAIN for the SOA negative-TTL (~1 hour), so they lie for an hour after a fix lands.
+**Rule:** Always `dig +short @<authoritative-ns> <host>` (find it via `dig NS <domain>`). The SOA serial (3rd field) is the health tell: frozen across edits = registrar isn't republishing; differs across nameservers or goes backwards = fleet desynced. Both mean registrar support must force a zone rebuild — stop editing records.
+
+### Namecheap re-injects its parking IP from two places
+**Problem:** `162.255.119.x` kept reappearing on the apex A record after every manual delete. Two separate features cause it: the **Parking Page** AND a **"Redirect Domain"** URL redirect (`welra.io → www`). Each regenerates the record.
+**Rule:** Turn off Parking AND remove any Redirect Domain. The host (Vercel/Netlify) handles apex→www itself — don't use the registrar's redirect.
+
+### Vercel issues one cert for apex + www
+**Problem:** The apex cert wouldn't provision while `www` was NXDOMAIN — Vercel's single cert covers both names, so either one failing validation stalls the whole cert.
+**Rule:** Get BOTH names resolving before expecting a cert. `A @ → 76.76.21.21`; `www` → `cname.vercel-dns.com` (or `A www → 76.76.21.21` if a CNAME won't publish — Vercel routes by hostname, not IP). Never reconfigure Vercel to fix what is a registrar problem. A clean `curl -L https://domain` returning 200 proves the cert (openssl can false-negative on timeout). Don't trust "works on my phone" — usually it's hitting cached `www` while the apex is still broken.
+
+---
+
+## End-user connection walkthroughs
+
+When writing "how to connect <platform>" steps for non-technical users (token/OAuth setup):
+1. **Derive required scopes from the actual fetcher code**, not docs — least privilege. (Welra's Printify code only calls `shops.json` + `orders.json`, so the walkthrough requests Custom scope with exactly those two, not "All scopes (full access)".)
+2. **Verify the menu path against the LIVE UI, not just docs** — docs lag. (Printify's account menu is bottom-left → Connections, not the documented top-right.) If the user is looking at the screen, their report is ground truth.
+3. **Stress "Copy to clipboard — shown once"** on every one-time secret (Printify token, WooCommerce consumer secret, Shopify admin token). OAuth flows with no manual secret are exempt.
 
 ---
 

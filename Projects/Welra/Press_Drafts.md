@@ -26,14 +26,18 @@ Companion to [[Projects/Welra/Press_Playbook]] (the how/when) — this doc is th
 **Expertise tags:** E-commerce · Small Business · Etsy · Shopify · Side Hustles · Entrepreneurship · Retail · Analytics
 **Website:** https://www.welra.io/press
 
-## 2. Featured.com profile (featured.com → Become a contributor)
+## 2. ~~Featured.com~~ → Source of Sources (+ MentionMatch) — UPDATED 2026-06-12
 
-Same name/title/company. Featured works by answering published questions, so the bio is shorter:
+Featured.com is unreachable (site refuses connections — Ryan confirmed, Claude verified). Replacements, both checked live:
 
-**Bio:**
-> Founder of Welra and a working Etsy/print-on-demand seller. Welra turns a small shop's weekly numbers into one plain-English report — so I spend all day looking at what seller data actually means. Happy to give specific, numbers-grounded answers on e-commerce, small business, and side hustles.
+**2a. Source of Sources (sourceofsources.com — Peter Shankman's free HARO successor) — do this one, ~2 min:**
+No profile or bio needed — just name + email on the "Sign up for Free Daily Media Queries" form. You'll get up to 3 digest emails/day of journalist queries; reply directly to the journalist's email when (and only when) a query is squarely in your lane — off-topic replies get you permanently removed, no appeals. Use the response template in [[Projects/Welra/Press_Playbook]] §1 and sign off:
+> Ryan Northam · e-commerce seller & founder, Welra (welra.io) · ryan@welra.io
 
-**Answer style note (for you):** Featured ranks answers — short, declarative first sentence wins. Write the quotable line first, the explanation second.
+**2b. MentionMatch (mentionmatch.com — Help a B2B Writer's rebrand) — opportunistic:**
+"Register as Source" → select expertise areas: **Ecommerce, DTC, SaaS, Analytics**. Banner says "launching soon" — if registration isn't open yet, check back in a few weeks. Same bio as Qwoted §1 if a profile field exists.
+
+**Answer style note (still true everywhere):** short, declarative first sentence wins. Write the quotable line first, the explanation second.
 
 ## 3. SourceBottle profile (sourcebottle.com → I'm a Source)
 

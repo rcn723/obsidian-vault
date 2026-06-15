@@ -2,7 +2,7 @@
 title: Rust & Rainbow Tasks
 project: rust-and-rainbow
 type: tasks
-updated: 2026-06-07
+updated: 2026-06-14
 tags: [etsy, printify, social-media]
 ---
 

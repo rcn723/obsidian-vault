@@ -2,7 +2,7 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-06-07
+updated: 2026-06-14
 tags: [etsy, printify, social-media, python, automation]
 ---
 
@@ -85,6 +85,19 @@ Self-learning loop added 2026-05-22. Runs Mon 7:00am via launchd.
 - History tracked in: `performance_log.json` (appended weekly — never delete)
 - Without `ANTHROPIC_API_KEY`: saves data-only report, paste into Claude.ai for narrative
 - `instagram_manage_insights` permission NOT in current token — reach/impressions unavailable; follower count + posts still tracked
+
+## Week of 2026-06-08 — Post Results (Sunday Assessment 2026-06-14)
+| Date | Design | IG | TikTok | Pinterest |
+|------|--------|-----|--------|-----------|
+| Jun 8 | Rainbow Vizsla Silhouette (pride_breed) | ✓ | ✓ | ✓ |
+| Jun 10 | Hungarian Hunter (hungarian_chaos) | ✓ | ✓ | ✓ |
+| Jun 12 | Oregon Vizsla (pnw_dog_life) | ✓ | ✓ | ✓ |
+All 3 posts this week succeeded on all platforms.
+Note: Oregon Vizsla uses the dissolved pnw_dog_life pillar — existing published designs continue posting; no new designs for that pillar will be generated.
+
+**Code fixes applied 2026-06-14:**
+- `agent.py` Etsy messages updated — "run etsy_auth.py" replaced with permanent-ban notice
+- Welra `instagram.ts` bumped from Graph API v21.0 → v22.0 (sync with R&R's working version)
 
 ## Week of 2026-06-01 — Post Results
 | Date | Design | IG | TikTok | Pinterest |
