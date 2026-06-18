@@ -26,7 +26,7 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     </div>
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">Confirm your email</h2>
-      <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">Welcome to Welra — one plain-English report on your business, every Monday. Confirm your email address to finish setting up your account.</p>
+      <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">Welcome to Welra — one clear report on your business, every Monday. Confirm your email address to finish setting up your account.</p>
       <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=signup&next=/dashboard" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Confirm email</a>
       <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=signup&next=/dashboard" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=signup&next=/dashboard</a></p>
     </div>
@@ -48,7 +48,7 @@ Every template uses the same wrapper: paper background, white card, ink wordmark
     </div>
     <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:32px;">
       <h2 style="font-size:20px;font-weight:700;color:#0F1E33;margin:0 0 12px 0;">You're invited</h2>
-      <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">You've been invited to Welra — one plain-English report on your business, every Monday. Accept the invite to create your account.</p>
+      <p style="font-size:15px;line-height:1.6;color:#374151;margin:0 0 24px 0;">You've been invited to Welra — one clear report on your business, every Monday. Accept the invite to create your account.</p>
       <a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=invite&next=/dashboard" style="display:inline-block;background:#2FD6A6;color:#0F1E33;font-weight:600;font-size:15px;padding:12px 24px;border-radius:8px;text-decoration:none;">Accept invite</a>
       <p style="font-size:13px;line-height:1.6;color:#9CA3AF;margin:24px 0 0 0;">Button not working? Paste this link into your browser:<br><a href="{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=invite&next=/dashboard" style="color:#0FA47C;word-break:break-all;">{{ .SiteURL }}/auth/callback?token_hash={{ .TokenHash }}&type=invite&next=/dashboard</a></p>
     </div>

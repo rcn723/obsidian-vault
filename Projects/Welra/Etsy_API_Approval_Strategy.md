@@ -2,13 +2,28 @@
 title: Etsy API Approval Strategy — post-denial analysis and reapplication plan
 project: Welra
 type: strategy
-updated: 2026-06-10
+updated: 2026-06-15 (session 19 — verified in Etsy console: R&R shop is ACTIVE; only the API app is banned; corrected the shop-ban premise)
 tags: [welra, etsy, api, approval, critical-path]
 ---
 
 # Etsy API Approval Strategy
 
 Denied 2026-06-10. Etsy's stated reasons map to two failure modes: "does not clearly explain the app's use case" and "appears to be submitted on behalf of a third-party app." This doc is the root-cause analysis and the exact reapplication plan. Sources: the full current [API Terms of Use](https://www.etsy.com/legal/api/) (updated 2025-06-16, read in full), Etsy staff guidance in [open-api#675](https://github.com/etsy/open-api/discussions/675) and [open-api#1060](https://github.com/etsy/open-api/discussions/1060), and community denial threads.
+
+## ✅ Verified 2026-06-15 (session 19, live in the Etsy console — corrects the record)
+
+A two-sets-of-eyes check of the live account corrected a wrong premise in this doc:
+- **The R&R shop is ACTIVE and in good standing** — `RustandRainbowCo` (rustandrainbowco.etsy.com), 38 active listings, Shop Advisor "nothing to do," no suspension or violation notice. **R&R was NOT shop-banned over AI content** — the "banned over AI-generated content" framing below is inaccurate and is retained only for history.
+- **What is banned is the API app only.** Etsy developer console → Your Apps → **Banned Apps**: app `rust-and-rainbow`, **Status: Banned** (keystring `jy9g2parfx74q5qsvp1dlx19`). The denial email is pure boilerplate — no reason given, "can't reconsider." There is no obtainable "why," so stop chasing one.
+- **Welra is a separate Etsy account** (different login; not the R&R account). Its API application was denied; its keystring 403s ("not found or not active").
+
+**The R&R *shop* is fine — but BOTH API apps are banned.** Also checked the Welra account (ryan@welra.io, no storefront): app `welra-gr3nb-llc` sits under **Banned Apps**, **Status: Banned** (keystring `b0ka8n8e2888n9esjzdwd7k7`). This is worse than the task notes assumed — they recorded the Welra app as "denied / pending activation / possible typo." It is **Banned**, which is terminal and explains the keystring's 403 ("not found or not active") — not a typo. So **both** the `rust-and-rainbow` AND `welra-gr3nb-llc` apps are Banned, across two same-network accounts. The Railway `ETSY_CLIENT_ID/SECRET` (`b0ka8n8e…`) are dead keys; the Etsy fetcher was never built, so nothing live depends on them.
+
+**Revised 6/25 plan — calibrated after reading BOTH denial emails (they differ in severity):**
+- **R&R's email is terminal:** "not able to approve… *and we're not able to reconsider this decision*." No reasons, no path. `rust-and-rainbow` is dead — leave it; never reuse that identity for Welra.
+- **Welra's email is a SOFT, reviewable denial — this is the key correction.** It gives specific, fixable reasons ("does not clearly explain the app's use case," "appears to be submitted on behalf of a third-party app," "otherwise does not align"), points to the House Rules, and crucially does **NOT** say "can't reconsider." That's a standard decline, not a no-recourse ban — even though the console blunt-labels the app "Banned" (Etsy files all declined apps under "Banned Apps"). **Welra's Etsy path is alive.** The two cited reasons are EXACTLY what the de-AI'd site + the verbatim first-person, single-seller, read-only copy below fix. Etsy reviewed Welra on its own merits (Welra-specific reasons, not "your account is linked to a ban"), so the R&R linkage has not fatally poisoned Welra.
+- **Mechanics are the only open question:** `welra-gr3nb-llc` shows declined/"Banned," so reapplying likely means a NEW app — but don't guess. **Email developer@etsy.com first** (short, builder-voice, no "AI"): acknowledge the decline, restate the compliant use case, explicitly counter the third-party-app impression ("I'm the developer building this directly, not requesting on behalf of another platform"), and ask the cleanest way to reapply (new app? anything specific they need to see). Their reply resolves new-app-vs-reactivate AND makes your case. Then submit ONE clean app with the verbatim copy. **Do NOT dodge the linkage** (VPN/new IP = ban evasion = permanent).
+- Severity for the business is unchanged regardless: the Etsy API is a friction-reducer, **NOT a customer blocker** — CSV + Printify already serve Etsy sellers today. Pursue the reapply, but never let it gate beta or launch.
 
 ## Why we were denied (ranked)
 
@@ -72,7 +87,7 @@ Denied 2026-06-10. Etsy's stated reasons map to two failure modes: "does not cle
 
 ## Status checklist
 
-- [ ] R&R ban reason identified (Ryan: check that account's email) [owner:: ryan] [priority:: high] [status:: open]
+- [x] R&R ban reason identified — RESOLVED 2026-06-15 (s19): no obtainable reason. Email is boilerplate ("can't approve, can't reconsider", no cause); developer console shows app `rust-and-rainbow` Status=**Banned**. The SHOP is active/good-standing (38 listings) — NOT content-banned. [owner:: ryan] [priority:: high] [status:: done]
 - [x] welra.io copy: "AI-written" → "plain-English" sitewide — DONE 2026-06-10, commit de527a5, LIVE (verified on welra.io; AI disclosure retained in privacy policy + terms). Deployed via `npx vercel deploy --prod`, which also took the whole queued brand backlog live. [owner:: claude] [priority:: high] [status:: done]
 - [x] Etsy trademark disclaimer added to site footer — DONE 2026-06-10, live (verified) [owner:: claude] [priority:: high] [status:: done]
 - [ ] Reapply via Chrome with the copy above (Ryan logged into the Welra Etsy account; Claude fills, Ryan reviews + submits) [owner:: ryan] [priority:: high] [status:: blocked]

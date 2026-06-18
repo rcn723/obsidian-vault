@@ -10,7 +10,7 @@ tags: [welra, blog, content, seo, marketing]
 
 A repeatable weekly blog engine for [[Projects/Welra/State|Welra]]. Audience: small,
 multi-channel e-commerce sellers (Etsy, Shopify, WooCommerce, Printify) doing roughly
-$1k–$50k/month. Voice: plain-English, first-person working seller — same as the launch
+$1k–$50k/month. Voice: clear, first-person working seller — same as the launch
 post. **Permanent rule: never lead with "AI"** in any title or copy. Pairs with the
 press engine ([[Projects/Welra/Press_Playbook|Press Playbook]]); syndicate each post to
 LinkedIn + Medium with a canonical link back to `welra.io/blog/…`.
@@ -70,7 +70,7 @@ free report, internal-link to 1–2 prior posts.
 
 | # | Working title | Angle / hook | Search intent |
 |---|---|---|---|
-| 15 | How to actually read your Etsy Stats page | Plain-English walkthrough of every tab | how to read etsy stats |
+| 15 | How to actually read your Etsy Stats page | Clear walkthrough of every tab | how to read etsy stats |
 | 16 | Shopify Analytics: the 6 reports worth your time | Skip the 40 reports, use these | shopify analytics for beginners |
 | 17 | WooCommerce reports without the headache | What to look at, where it lives | woocommerce sales reports guide |
 

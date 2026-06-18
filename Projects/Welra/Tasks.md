@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-06-14 (session 17 — reports unblocked, api.welra.io live, blog+FAQ+content engine)
+updated: 2026-06-17 (session 21 — logged deferred WooCommerce /wc-auth one-click linkage (low-pri, T2); recruitment in progress)
 tags: [welra, tasks, launch]
 ---
 
@@ -11,7 +11,134 @@ tags: [welra, tasks, launch]
 Source of truth for product/engineering work. Business/legal/tax tasks live in [[Projects/AutoBiz/Tasks]].
 Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 
-## Now (start here)
+---
+
+## 🎯 Focus Sheet — week of 2026-06-16 (read THIS, ignore everything else)
+
+> One goal this week: **land beta user #1.** If a task isn't ①, it's background or off-limits. When in doubt, go send a DM.
+
+### ① THE MAIN THING — recruit beta users (most days, ≤4 hrs total for the week)
+> **All copy you need is in the 📋 Outreach copy block directly below this Focus Sheet.** Links = §A, comments = §B, DMs = §C.
+- [ ] **Daily (10 min):** open the 4 hunt links (§A) logged in, sorted *New*, note sellers venting about their stats this week. [status:: open]
+- [ ] **Mon:** post #1 to r/SideProject + r/alphaandbetausers (post template in [[Projects/Welra/Marketing_Campaign_2026-06]] §1). [status:: open]
+- [ ] **Tue–Thu (30 min/day):** answer 2–3 stats questions in r/EtsySellers + 1 FB seller group — give-first, **NO link** (comments §B). Doubles as warming the new account so DMs land. [status:: open]
+- [ ] **Fri:** send **5 DMs** (§C — paste, change the one bracketed line). Offer = free CSV-based weekly report, "tell me if it's any good," **never say "AI."** [status:: open]
+- [ ] **By next Mon:** 2–3 yeses → onboard user #1 end-to-end & ping Claude to watch the first real report. [status:: open]
+
+### ② BACKGROUND — one sitting, then walk away (do NOT rabbit-hole)
+- [ ] **Start Meta Business Verification** (~30 min, then it runs on Meta's side ~a week). Exact 5 steps + what to have ready in [[Projects/Welra/Meta_App_Review_Plan]] Step 1. Kicked off now so it's done by the time beta validates. [owner:: ryan] [status:: open]
+
+### ✅ Already done this session (s20) — momentum, no action needed
+- [x] Instagram demoted to an *optional* add-on in onboarding UI (out of the sales grid).
+- [x] Graph API version bug fixed (oauth v21 → v22, matches fetcher). Ships with next `railway up`.
+- [x] Meta App Review plan written ([[Projects/Welra/Meta_App_Review_Plan]]).
+- [x] Demo sample report built + staged → [[Projects/Welra/Sample_Report_Demo.html]] (see §D). Ready to screenshot for the first "what do you use?".
+
+### 🚫 DO NOT TOUCH this week (these are the rabbit holes)
+- Meta screencast / submission / flipping `NEXT_PUBLIC_INSTAGRAM_OAUTH` — **after** beta user #1.
+- Etsy resubmit — can't before **2026-06-25** (reminder already armed).
+- Stripe live mode + the unenforced plan-cap fix — gated on a *validated* beta user.
+- Anything in **Frozen** or **Archive** below — no user needs it yet.
+
+---
+
+## 📋 Outreach copy — paste-ready (the only thing you need open to do ①)
+
+**The offer (identical everywhere):** Free Pro for an 8-week beta → 50% off 6 months at launch (Founding Seller). Onboarding = upload a CSV (~2 min/week) or connect WooCommerce. Ask in return: 5 min of honest feedback per weekly report. **Never say "AI"** — the benefit is a *clear* read on their shop. Lead founder-as-customer (you run a real Etsy/Printify shop). Fuller context: [[Projects/Welra/Marketing_Campaign_2026-06]].
+
+**Universal rules:** no link in comments · vary the wording every time (identical copy = spam flag, kills a new account) · 1–2 comments/day while warming · mention Welra ONLY if they directly ask what you use · reference what the OP actually said so it reads human.
+
+### A) Find targets — hunt links (reading only, no DM privilege needed)
+
+**⚠️ Reddit-search gotcha (s21):** the `t=` time window only works with `sort=relevance` or `sort=top` — with `sort=new` it's IGNORED, so old threads surface if few recent posts match. Two rules: (1) use **single emotional words** sellers actually type (`no sales`, `slow`, `views`, `dead`) not multi-word phrases — phrases match almost nothing recent; (2) to bound to this week use `sort=relevance&t=week`, NOT `sort=new`.
+
+**Best daily search set (recent + active — paste these):**
+- `reddit.com/r/EtsySellers/search/?q=no+sales&restrict_sr=1&sort=relevance&t=week`
+- `reddit.com/r/EtsySellers/search/?q=views&restrict_sr=1&sort=relevance&t=week`
+- `reddit.com/r/Etsy/search/?q=slow&restrict_sr=1&sort=relevance&t=week`
+- `reddit.com/r/shopify/search/?q=no+sales&restrict_sr=1&sort=relevance&t=week`
+- `reddit.com/r/ecommerce/search/?q=traffic+no+sales&restrict_sr=1&sort=relevance&t=week`
+
+**Even better for the high-volume subs — skip search, just read /new and eyeball:**
+- `reddit.com/r/EtsySellers/new/`
+- `reddit.com/r/EtsySellersAdvice/new/`
+- `reddit.com/r/Etsy/new/`
+- Scan titles for: *"is this normal," "what am I doing wrong," "views but no sales," "should I give up," "slow month."*
+
+**Subreddit pool (most shots on goal):** r/EtsySellers · r/EtsySellersAdvice · r/Etsy · r/shopify · r/ecommerce · r/smallbusiness (filter hard — lots off-topic) · r/Flipping. **Skip r/woocommerce** — too small to produce weekly venting, and Woo sellers aren't the friction-sensitive ICP.
+
+**Filter:** posted last ~7 days · OP is *venting/asking* (not answering) · gripe is about *making sense of their numbers* (skip shipping/fees/bans) · not selling anything.
+
+### B) Give-first COMMENTS (template #2 — warms the account, no link, no pitch)
+Pick the one that fits the thread:
+
+1. **"Views up but no sales / stats don't add up"**
+   > Views without sales almost always comes down to one of three things: the photo isn't stopping the scroll, the price/shipping is scaring people at checkout, or the traffic is the wrong audience (often ad/off-site views that were never going to buy). I'd pull your top 3 viewed listings and check conversion on each separately — usually one is dragging the average down and it's fixable. The overall "views vs sales" number hides which listing is the actual problem.
+
+2. **"Overwhelmed — which stats matter?"**
+   > Honestly most of the dashboard is noise week to week. The five I actually track: revenue vs last week, order count vs last week, top 3 products by sales, conversion rate if the platform shows it, and repeat-customer count. That's it. I write them down every Monday — the *trend* over a few weeks tells you way more than any single day, and it stops you reacting to random spikes.
+
+3. **"Is X views/sales good? Am I doing well?"**
+   > Comparing to other shops' numbers is a trap — different price points, categories, and ad spend make them meaningless. The only benchmark that matters is *you last month*. Are revenue, orders, and conversion trending up vs your own last 4 weeks? A shop doing 5 sales/day at $80 is crushing one doing 20/day at $8.
+
+4. **"Sales dropped this week, don't know why"**
+   > Before assuming it's you, separate the two causes: did fewer people *show up* (traffic down) or did the same traffic *stop buying* (conversion down)? Totally different problems — traffic down is usually search ranking or seasonality, conversion down is usually price, photos, or a competitor undercutting you. Check which number actually moved first; most people panic and change the wrong thing.
+
+5. **"How often should I check stats?"**
+   > Daily checking will drive you insane — single days swing wildly and you'll act on noise. Once a week, same day, is plenty. I do Monday morning: week vs the week before, note anything that moved >~20%, ignore the rest. The discipline is the *trend*, not the daily wiggle.
+
+### C) DIRECT DMs (template #3 — highest yield; send 5/wk once DMs unlock)
+Match the variant to their complaint, change the bracketed line:
+
+- **Generic:**
+  > Saw your post about [their specific frustration]. I'm building exactly this — a tool that emails you one clear weekly report on your shop instead of you digging through tabs. Want a free one based on your last month of sales? You export a CSV (2 min), I send back a real report, and you tell me if it's any good. No signup, not selling anything.
+
+- **"Views but no sales":**
+  > Saw your post about views not turning into sales — that gap is exactly the thing I got fed up staring at on my own Etsy/Printify shop. So I built a tool that emails me one clear weekly read instead: what sold, what changed vs last week, what's worth doing next. Want a free one off your last month of sales? You export a CSV (2 min), I send back a real report, you tell me if it's any good. Not selling anything.
+
+- **"Dashboard overwhelming":**
+  > Saw your post about the analytics being a maze of clicks — same reason I built something for my own shop. It emails me one clear weekly summary so I never open the dashboard. Happy to make you a free one off a CSV of your last month and you tell me if it's useful — no signup, not selling anything.
+
+### D) When they ask "what do you use to track this?"
+That's the opening — and only then:
+> I actually built a little tool for my own shop that emails me this weekly — happy to share if it'd be useful.
+
+**📎 Demo asset (ready now):** [[Projects/Welra/Sample_Report_Demo.html]] — a true-to-product sample weekly report (synthetic Etsy shop, faithful to the real renderer + honest voice). Open in a browser → **screenshot it** to drop into a DM/comment when someone bites, framed as *"here's a sample of what you'd get."* Synthetic data, clearly labeled — never present it as a real customer.
+
+**The yes-path:** a yes → the free CSV report IS the demo + onboarding. Send them the sample above to show the format, then generate their real one at welra.io/scan (instant, ephemeral) or hand their CSV to Claude to run through the full pipeline.
+
+---
+
+## This Week (the live queue — ranked T0→T3)
+
+> **This is the only list that matters.** Everything below the **Archive** line is cold storage — history + someday/maybe, not a queue. Don't read it to plan; read it to look something up.
+> **Scoring rule:** does this task *get, keep, or unblock a paying customer?* — T0 = yes, do now · T1 = first-5-min path a real user hits · T2 = reliability/revenue switch for T0/T1 · T3 = **frozen until ≥3 active users**.
+> **The honest bottleneck (session 19): 0 customers, 0 revenue, Stripe still in TEST mode after ~18 build sessions.** The loop's job this week is to change that — not to write more product code. Re-rank with this rule at the start of every session; promote at most 1–2 items in from the Archive.
+
+### T0 — gets / unblocks a paying customer
+- [ ] **Recruit the first 3–5 beta users** — via CSV / WooCommerce / Printify. **No Etsy API needed** (playbook: Printify covers Etsy POD sales; any seller joins by weekly CSV export). This is THE #1 task — every code task below is worthless until it's done. Use the give-first cadence + 20 DMs in [[Projects/Welra/Marketing_Campaign_2026-06]]. [owner:: ryan] [priority:: high] [status:: open]
+- [ ] **Onboard beta user #1 end-to-end & sit with their first real report** — first time Welra runs on outside seller data. Judge it cold: accurate? honest? worth $19+/mo? This conversation generates your *real* backlog (which replaces most of the Archive). [owner:: ryan+claude] [priority:: high] [status:: open] — gated on the task above
+- [ ] **Etsy approval — fix the REAL risk, not the wording.** The application is DONE and as good as it gets (verbatim copy + de-AI'd site + trademark disclaimer all shipped — see [[Projects/Welra/Etsy_API_Approval_Strategy]]); do NOT re-tinker it (negative EV). You also can't submit before **2026-06-25** (cool-off — early/duplicate submits auto-deny). ✅ Ban-reason dig DONE (s19, verified in the Etsy console): the R&R *shop* is active/good-standing (38 listings) — only the `rust-and-rainbow` *API app* is Banned, with no obtainable reason. 🚩 Both apps show "Banned" in the console, BUT the two denial emails differ in severity (verified s19): R&R's is terminal ("can't reconsider" — dead, leave it); **Welra's is a SOFT, reviewable denial** with specific fixable reasons (use-case clarity + third-party-app impression) and NO "can't reconsider." Welra's Etsy path is ALIVE, and the cited reasons are exactly what the de-AI'd site + verbatim copy fix. 📤 DONE 2026-06-15 (s19): emailed developer@etsy.com (builder-voice, no AI; phone 503-502-5360) to confirm reapply mechanics (new app vs reactivate) + make the compliant-business case — **awaiting reply (~5–6 biz days per prior threads; watch ryan@welra.io)**. Next, per their guidance: submit ONE clean app with the verbatim copy on/after 6/25. Don't dodge the linkage. Still NOT a customer blocker — CSV/Printify serve Etsy sellers today. Reminder `etsy-api-resubmit-reminder` fires 9am Jun 25. ⚠️ Etsy API is a friction-reducer, NOT a customer blocker. [owner:: ryan] [priority:: high] [status:: open]
+
+### T1 — the first-5-minute path a real user walks
+- [ ] **Verify the live onboarding path with a real CSV** — drop a real Etsy/Shopify export at welra.io/scan AND through the in-dashboard uploader; confirm the instant report fires, reads honest, and the email actually sends (`REPORT_DRY_RUN` is now false). This exact path has never been run with real outside data. [owner:: ryan+claude] [priority:: high] [status:: open]
+
+### T2 — revenue switch (a gate, not yet)
+- [ ] **Flip Stripe to live mode** — ONLY after beta user #1 is validated and says they'd pay. Recreate products/prices, swap sk_live/pk_live/price IDs in Railway+Vercel, create the live webhook via API, verify all 6 STRIPE_PRICE_* match live IDs. [owner:: ryan] [priority:: high] [status:: blocked — gated on a validated beta user]
+- [ ] **[BUG s20, HIGH] Platform-connection caps are marketing copy only — NOT enforced.** Homepage sells Starter=1 platform / Pro=up to 3 / Growth=unlimited ([page.tsx:20-75]), but no API route gates connections by `plan`. The `plan` column exists (schema.sql) + Stripe webhook sets it + reportGenerator reads tier for *report depth*, yet `integrations.ts` / `oauth.ts` have ZERO limit logic — a $19 Starter user can connect all 6 platforms today. Harmless during free beta (uncapped by design), but a revenue leak the moment you charge. Fix at go-live: enforce a per-plan connection cap in the connect handlers (count active `integrations` rows for the user vs plan limit; reject with an upgrade prompt). Verify by connecting a 2nd platform as a Starter test user. [owner:: claude] [priority:: high] [status:: open — gated with Stripe go-live]
+- [x] **[DECISION s20] Instagram is NOT mom-and-pop-friendly until Meta App Review clears.** The one-click "Log in with Facebook" button exists but is gated off (`NEXT_PUBLIC_INSTAGRAM_OAUTH=true`) pending Meta App Review + Business Verification; the only live path is the manual long-lived-token + IG-business-account-ID paste form (`ConnectInstagramForm`) — too technical for a casual seller. Positioning call: keep Instagram, but do NOT lead with it and keep it out of beta-user-#1 onboarding. Lead with CSV (zero auth), then Woo/Printify/Shopify. **DONE in UI (s20):** Instagram pulled out of the sales-platform grid in `integrations/page.tsx` into its own "Optional — add your Instagram engagement" section, framed as skippable; sales-grid heading now reads "Connect a sales platform … one is enough to get started." tsc + web build green. [owner:: ryan] [priority:: medium] [status:: done]
+- [ ] **[FUTURE s20] Apply for Meta App Review + Business Verification** so the one-click "Log in with Facebook" Instagram connect can ship (then flip `NEXT_PUBLIC_INSTAGRAM_OAUTH=true`). Long lead-time paperwork, NOT a customer blocker — same class as the Etsy API (manual token + concierge path serves IG today). Pre-reqs: business verification for GR3NB LLC; submit the use-case for the exact scopes the fetcher uses (`instagram_basic`/`pages_show_list`/`instagram_manage_insights` — derive least-privilege from `oauth.ts`/the IG fetcher, do NOT request "all"); apply the no-"AI" platform-copy playbook ([[Knowledge_Base/feedback_platform_api_applications]]). Refresh `META_ACCESS_TOKEN` before 2026-06-25 regardless (separate, already noted). Do AFTER beta user #1 — friction-reducer, not a gate. **Full step-by-step plan: [[Projects/Welra/Meta_App_Review_Plan]]** (incl. must-fix Step 0: align Graph version — oauth.ts is v21, fetcher is v22). [owner:: ryan] [priority:: low] [status:: open]
+- [ ] **[FUTURE s21] WooCommerce one-click connect via `/wc-auth/v1/authorize`** — replace the current manual REST-API-key paste (`access_token = "ck_…:cs_…"`, `shop_id = store URL`) with WooCommerce's built-in authorize-redirect flow: seller clicks Connect → bounced to their own WP admin → approves **read** access to orders & products → Woo auto-generates the keys and POSTs them back. ~1 day of work; NO published WordPress plugin (that path = wordpress.org marketplace review + PHP maintenance + per-theme support = a multi-week trap, explicitly rejected). NOT a customer gate — current key-paste flow works + is verified, the beta offer leads with CSV (zero auth), and Woo sellers are the *least* friction-sensitive segment (they already self-host WP and generate keys for other tools). Same class as Etsy API / Meta App Review: build only when a real Woo user needs it. [owner:: claude] [priority:: low] [status:: open]
+- [ ] **[INFRA s20] Add root-domain SPF for welra.io** — do during the "send as ryan@welra.io" DNS work. welra.io's root has NO SPF, so PrivateEmail sends from ryan@welra.io get SPF=none and pass DMARC (`p=reject`) by DKIM alone — fragile. Fix: TXT on `@` = `v=spf1 include:spf.privateemail.com ~all` (leave send.welra.io alone). Found via Google DMARC aggregate report (s20) — reports are healthy, no spoofing. Detail in [[project-welra-email-monitoring]]. NOT a beta blocker. [owner:: ryan] [priority:: low] [status:: open]
+
+### Frozen (T3 — do NOT build until ≥3 active users)
+Referral friend-side coupon · referral retry cron · referral attribution race · resubscribe UI · Meta/Instagram OAuth app · Google Sheets bridge · Make webhook · OG/social images · dead `sendDay2Email` · Tailwind `slate` rename · Puppeteer consolidation · onboarding greeting capture · lazy-init Resend. *Every one serves customers you don't have yet. They live in the Archive below until a real user actually needs them.*
+
+---
+
+## Archive — full task history (cold storage; the ranked "This Week" above is the live queue)
+
+### Now (historical — superseded by This Week)
 
 - [x] **Cron schedule verified** — there is NO 6am job; the report scheduler is `0 23 * * 0` = **Sunday 23:00 UTC** (reportSchedulerCron.ts). Done 2026-06-14 (s15). A one-time scheduled task `welra-cron-check` is armed (fireAt 2026-06-14T23:30:00Z, app must be open) to pull welra-service logs ~30min after the cron and report pass/fail (knows R&R's 6/8 week is skipped + DRY RUN expected). [owner:: claude] [priority:: high] [status:: done]
 - [ ] **Verify R&R report accuracy vs Printify** — UPDATE 2026-06-14 (s15): `$0/0` PROVEN CORRECT as a code matter (audited via railway run + decrypted token: right connection/shop 27483352, valid token, fetcher math/window/`connected`-filter all correct, **0 orders in the Printify account**). Remaining = confirm whether R&R actually had Etsy sales for wk 6/8 (Printify only shows POD orders IT fulfills, so 0 ≠ no sales). If real sales existed → it's an Etsy↔Printify sync gap on R&R's side (needs Etsy API, blocked till 6/25), NOT a Welra bug. Gates flipping dry-run. [owner:: ryan] [priority:: high] [status:: open]
@@ -164,3 +291,20 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 - [x] Approve + apply the customers-trigger migration (repoint on_auth_user_created → handle_new_auth_user, drop stub, backfill name/plan) — DONE 2026-06-12 (session 11, Ryan approved): trigger repointed, stub dropped, names backfilled; also schema-qualified to public.customers + SET search_path=public to fix "Database error saving new user" (auth fires triggers with search_path=auth). Verified by a real API signup landing name + plan. [owner:: ryan] [priority:: high] [status:: done]
 - [x] **AUTH FIX (session 12, 2026-06-13): password-reset link dead-ended "link expired" → ROOT CAUSE = @supabase/ssr pinned 0.3.0** while all 7 createServerClient sites use the getAll/setAll cookie API from 0.4.0. 0.3.0's get/set/remove are optional, so the unknown-named adapters silently no-op'd → server-side cookie WRITES never happened → verifyOtp returned 200 server-side (auth logs confirmed) but the browser got no session. Fixed: upgraded ssr → ^0.6.1 (peer dep already satisfied by supabase-js 2.107); rewrote auth/callback to write cookies onto the returned NextResponse.redirect (Next 14 route-handler correctness); wrapped all 5 dashboard Server-Component setAll calls in try/catch (0.6.1 invokes setAll on refresh and cookies().set throws in an RSC). tsc+build green, arch-review clean, deployed to www.welra.io, live callback redirects smoke-tested. Patterns #41/#42 logged. [owner:: claude] [priority:: high] [status:: done]
 - [ ] Ryan RETEST (session 12 fix): from any device — (a) fresh signup → email link lands in dashboard, name + plan populated; (b) forgot-password → reset link lands on the "Choose a new password" FORM (not "expired") → set password → dashboard. If anything snags, Claude pulls Supabase auth logs immediately. [owner:: ryan] [priority:: high] [status:: open]
+- [x] **[arch-review s18, HIGH] Scheduler emails unconnected trials a false "technical difficulty" notice.** RESOLVED 2026-06-15: scheduler now skips no-connected customers and sends a SETUP REMINDER email instead; misleading copy removed; catch-up cron added; deployed + verified live. reportSchedulerCron.scheduleWeeklyReports queues a report for every active/trialing customer with NO check for connected integrations → generateReport throws "No data sources" → worker retries 3x → sends sendDelayEmail('technical'), repeats weekly. Live now on ryantest* accounts (status=failed, retry_count=2). Fix: skip scheduling (or branch to a "connect a platform" nudge) when the customer has zero `connected` integrations. [owner:: claude] [priority:: high] [status:: open]
+- [x] **[arch-review s18, MED] Delay emails ignore unsubscribed_at.** RESOLVED 2026-06-15: both delay-email paths now check unsubscribed_at. sendDelayEmail (anomaly path reportGenerator.ts:531, technical path worker.ts:96) doesn't check the opt-out that sendReportEmail honors → an unsubscribed seller still gets delay notices. Add the same unsubscribe guard to both delay-email call sites. [owner:: claude] [priority:: medium] [status:: open]
+- [x] **[arch-review s18, LOW] worker.ts technical-delay email not gated by REPORT_DRY_RUN** RESOLVED 2026-06-15: now gated by dry-run + unsubscribe. (anomaly path at reportGenerator.ts:530 is). Moot while dry-run is off, but fire real emails during any future dry-run testing. Gate it. [owner:: claude] [priority:: low] [status:: open]
+- [ ] **[arch-review s18, LOW] emailService.ts:6 `new Resend(env.RESEND_API_KEY)` at module level** violates lazy-SDK-init rule; safe only because env makes the key required. Wrap in a lazy getter for consistency. [owner:: claude] [priority:: low] [status:: open]
+- [x] **[s18] Fix delivered-status honesty bug** — added reports.email_sent_at (migration applied to ozhekoiehpajeytwltrv); reportGenerator now writes email_sent_at + delivered_at ONLY on a real send (null on dry-run/unsubscribed); status='delivered' kept as "generated & viewable". types + web rows mapper updated; tsc + build green on api/web/types. June 22 check should read email_sent_at IS NOT NULL, not the log. [owner:: claude] [priority:: high] [status:: done]
+- [x] **[s18] Report "didn't run" + self-heal + setup reminder** — Root cause: Sunday cron ran fine; every "failure" was a customer with 0 connected integrations (no data → "No data sources" → retries → misleading "arrives Tuesday" email). Built + DEPLOYED + verified live: (a) scheduler skips no-connected customers and sends a "connect a platform" SETUP REMINDER (options + link, unsubscribe/dry-run gated, 28-day cap); (b) hourly CATCH-UP cron re-delivers any overdue+undelivered report immediately (no waiting a week); (c) late reports get an apology banner + "(a little late)" subject; (d) honest delay copy. Boot log shows `[catchup] Repeatable cron registered: hourly at :15`. [owner:: claude] [priority:: high] [status:: done]
+- [ ] **[s18] (optional) Clean up 8 stuck no-data test reports** (ryantest*/test22 week 2026-06-08, status failed/pending). Harmless (catch-up skips them, they age out of the 3-day window) but clutter the dashboard. Delete reports+report_jobs rows if a clean slate is wanted pre-launch. [owner:: ryan|claude] [priority:: low] [status:: open]
+- [ ] **[s18] Tune setup-reminder cadence if desired** — currently weekly while unconnected, capped to first 28 days post-signup (SETUP_REMINDER_MAX_AGE_DAYS in reportSchedulerCron.ts). Adjust duration/frequency to taste. [owner:: ryan] [priority:: low] [status:: open]
+- [x] **[s18] Marketing email capture — "free sample report" lead magnet** — Built + deployed + verified live. API: `leads` table (RLS on, no policies; migration applied), `POST /leads` (rate-limited, zod-validated), `sendSampleReportEmail` (realistic founder-voice sample report → inbox), optional Resend Audience sync (`addLeadToAudience`, gated on `RESEND_AUDIENCE_ID`), waitlist-style email fallback. Web: `<SampleReportCapture>` on /blog, /faq, and every blog post. E2E tested: POST valid→200+row+sample_sent_at, invalid→400, audience no-op (env unset). Apology threshold set to 2h per Ryan. [owner:: claude] [priority:: medium] [status:: done]
+- [x] **[s18] Enable Resend Audience for the marketing list** — DONE 2026-06-15: created "Welra Leads" audience (id 879d0ab3-34b6-4ec7-9d76-2a427f8e8a6a) via the Railway-injected key, set `RESEND_AUDIENCE_ID` in Railway, redeployed. Verified end-to-end: test lead → resend_contact_id linked + contact appeared in the audience (then cleaned up). New sample-report leads now auto-sync as Resend contacts → ready for Broadcasts. [owner:: claude] [priority:: low] [status:: done]
+- [x] **[s18] Add sample-report capture to homepage** — DONE 2026-06-15: `<SampleReportCapture source="homepage">` added to the #sample section (below the sample excerpt + signup CTA); deployed + verified live on www.welra.io.
+- [ ] **[s18] Marketing next steps** — syndicate each blog post to LinkedIn/Medium w/ canonical link (needs Ryan's accounts — Claude can draft posts); send a periodic "seller tip" Broadcast to the Welra Leads audience now that it's wired. [owner:: ryan|claude] [priority:: low] [status:: open]
+- [x] **[s18] Brand voice: "plain English" → "clear"** — DONE 2026-06-15: swapped across 13 user-facing files (homepage, FAQ, layout meta, press, blog, scan, sample email, capture form, privacy, integrations walkthrough) + the scan AI prompt; adapted per sentence ("a clear read", "clear weekly report", "written clearly"). Deployed web+API, verified live, zero "plain English" remaining (one internal code comment aside). Ryan picked "clear" over no-jargon/written-like-a-human/straight-talk.
+- [x] **[s18] Small-business growth/success emphasis in copy** — DONE 2026-06-15: hero subhead ("built to help small shops grow…the next move to grow your business"), how-it-works H2 ("Less time in dashboards. More time growing your shop."), FAQ what-is ("worth doing next to keep growing"), press boilerplate ("Welra helps small e-commerce sellers grow…make confident decisions"), new footer mission ("On a mission to help small shops grow — one clear decision at a time" — cadence-free so it survives an on-demand app). Deployed + verified live.
+- [x] **[s18] Follow-through / congratulations in the weekly report** — DONE 2026-06-15: synthesis prompt now revisits last week's priority actions and celebrates, BY THE NUMBERS, any whose targeted metric clearly improved — framed strictly as the observable OUTCOME, never "you did X / your change worked" (Welra sees numbers, not actions). Calibrated to clear, meaningful wins only (Ryan's "how warm" left unanswered → chose credible default). Pro+Growth tiers (they get prior-week context; Starter doesn't by design). Eval harness extended to feed a prior week + give the judge that prior report (so legit week-over-week credit isn't mis-flagged) + new golden `etsy-followthrough-week` that would catch false credit. Eval 4/4 honesty-clean (also caught + fixed a growth-tier trend-read hallucination — now guarded to omit multi-week trend language under 3 weeks). Deployed.
+- [ ] **[s18] Follow-through precision upgrade (optional, future)** — store each week's priority actions in a structured field at generation time so next week's follow-through targets the exact metric/listing instead of parsing prior prose. Additive migration + extraction. [owner:: claude] [priority:: low] [status:: open]
+- [ ] **[s18] Decide: follow-through on Starter tier?** — Starter currently gets NO prior-week context (cost/simplicity), so follow-through only runs on Pro/Growth. Enabling it for Starter means feeding previousWeekSynthesis to Starter (slightly more tokens). [owner:: ryan] [priority:: low] [status:: open]

@@ -1,77 +1,56 @@
 ---
 title: To Antigravity
-type: handoff
-updated: 2026-06-14
-tags: [handoff, welra, rust-and-rainbow]
+type: inbox
+updated: 2026-06-16
+tags: [handoff, welra, voice, session-20]
 ---
 
-# Claude -> Antigravity (2026-06-14, Sunday Assessment)
+# To Antigravity — 2026-06-16 (session 20)
 
-Weekly R&R vs Welra autonomous assessment complete.
+**Session 20 — beta-recruitment prep + small fixes (2 files changed, NOT deployed).** Focus stayed on landing beta user #1; the code work was light.
 
-**R&R this week:**
-- All 3 posts succeeded (Jun 8/10/12 — pride_breed, hungarian_chaos, pnw_dog_life)
-- Weekly report generated Mon Jun 8 — 0 orders, correct
-- No posting gaps or failures
+- **Pricing reconciles** (Starter=1 / Pro=3 / Growth=unlimited platforms — "up to 3" is only Pro). **But a real bug:** plan caps are marketing copy only, no connect route enforces them by plan → a $19 Starter user can connect all 6. Harmless in free beta; logged high-pri as a Stripe-go-live gate in [[Projects/Welra/Tasks]].
+- **Instagram demoted** to an "Optional — add your Instagram engagement" section in `dashboard/integrations/page.tsx` (out of the sales grid; CSV leads). The one-click FB-Login is gated behind Meta App Review; manual token path is too technical for mom-and-pop. tsc + web build green, **not deployed**.
+- **Graph API version fix:** `oauth.ts` was v21, fetcher `instagram.ts` was v22 → bumped oauth to v22 + cross-ref comments. API tsc + build green, **ships with next `railway up`**.
+- **Meta App Review plan** → [[Projects/Welra/Meta_App_Review_Plan]]. **Decision: start Meta Business Verification now, in parallel with recruiting** (one sitting, ~a week in background). Screencast/submission/button-flip parked until after beta.
+- **Outreach pack:** Reddit is blocked to all Claude tooling, so a manual hunt recipe (4 `sort=new` URLs + filter), 5 give-first comments, and 3 DM variants are consolidated into a **📋 Outreach copy** block + a **🎯 Focus Sheet** at the top of [[Projects/Welra/Tasks]]. Demo asset [[Projects/Welra/Sample_Report_Demo.html]] built to screenshot for prospects.
+- **DMARC/SPF:** root welra.io has no SPF → PrivateEmail sends pass by DKIM only; fix (`v=spf1 include:spf.privateemail.com ~all` on `@`) logged for the send-as DNS work. Not a blocker.
+- **Learning loop:** 2 new bug patterns logged (entitlement-not-enforced; intra-integration version drift); arch-review SKILL.md + MEMORY.md updated.
+- **The one next action (Ryan-owned, unchanged):** warm the new Reddit account via give-first comments now, send 5 DMs once it unlocks (~1–2 days), start Meta Business Verification. **Still 0 beta users, 0 revenue. Nothing deployed this session.**
 
-**Code fixes applied:**
-- `agent.py`: two Etsy messages updated to reflect permanent ban (not "run etsy_auth.py")
-- Welra `instagram.ts`: API version bumped v21.0 → v22.0 to match R&R's working implementation
+---
 
-**Open Ryan actions (unchanged):**
-- Refresh META_ACCESS_TOKEN by 2026-06-25 (⚠️ high priority — expiry 2026-07-01)
-- Monitor TikTok developer app review at developers.tiktok.com
-- Delete duplicate Gay Dog Dad Retro Printify listing (ID: 6a025e0754291b828c064667)
-- Verify Etsy shop (not API) is still in good standing
+# To Antigravity — 2026-06-15 (session 19)
 
-See [[Worklogs/Claude_Log.md]] for full assessment detail.
+**Session 19 — engineering-loop reframe (no code shipped; planning + tooling).** Ryan asked to "get an engineering loop going for Welra." Pushed back: the product is ~18 sessions mature but has **0 customers / 0 revenue / Stripe still TEST** — so the bottleneck is go-to-market, not engineering throughput. Reframed the loop from backlog-driven to **customer-driven** and adopted a **T0–T3** ranking rule (does it get/keep/unblock a paying customer?).
 
-# Claude -> Antigravity (2026-06-14, session 15)
+- **[[Projects/Welra/Tasks]] restructured:** new ranked **This Week** block (5 items) + **Frozen** list; everything else moved under an **Archive** banner = cold storage. This Week is the only planning surface now. Re-rank it each session; promote ≤1–2 items from Archive.
+- **Etsy:** application is done/as-good-as-it-gets (don't re-tinker), can't submit before 6/25, and is NOT a customer blocker. Real lever = identify why rust-and-rainbow was banned + prep the separate-business case.
+- **R&R:** advised against deleting the R&R developer app before reapply (no separable dev account; won't unlink; destroys ban evidence; evasion optics). Keep the shop.
+- **Tooling:** `~/.claude/commands/welra.md` (`/welra` loop command); reframe mirrored into [[Projects/Welra/Continuation_Playbook]] §2.
+- **The one next action (Ryan-owned):** recruit beta user #1 via CSV/Woo/Printify. The loop flips to customer-driven the moment one real seller's data flows.
 
-Everything documented in [[Projects/Welra/State]] (session 15 entry) + [[Projects/Welra/Tasks]]. Greeting field committed to `main` (`0f8d175`, NOT pushed — PAT lacks scope) and DEPLOYED.
+---
 
-**Verified / resolved this session:**
-1. **Cron schedule** — no 6am job; report scheduler is **Sunday 23:00 UTC** (`0 23 * * 0`). A one-time `welra-cron-check` scheduled task is armed for 23:30 UTC tonight (app must be open to fire).
-2. **synthesis_text persistence** — confirmed LIVE; regenerated R&R `bbf784df` → populated (3924 chars). "One commit behind" note closed.
-3. **Printify `$0/0`** — PROVEN correct (audit: right shop 27483352, valid token, 0 orders in account, fetcher/window/filter all correct). Not a Welra bug. Printify only shows POD orders it fulfills, so 0 ≠ no R&R sales.
-4. **CSV run** — tested e2e via real `/uploads/csv` as ryantest4: Etsy auto-detect → instant report → **$275/8 in-week**, strays excluded. Test data then wiped. ryantest4 Printify dup deleted by Ryan.
+# To Antigravity — 2026-06-15 (session 18, full)
 
-**Shipped + deployed:**
-5. **Dedicated greeting field** — fixes brand-name truncation ("Rust and Rainbow" was greeted "Rust"). `customers.nickname` (nullable, applied live) + `greetingName()` helper across all 9 sites + Settings "What should we call you?" field + `auth.ts` GET/PATCH `/me`. `→name` fallback fixes ALL existing customers now; nickname optional. arch-review 0 blockers; compiled tests 10/10. Deployed: railway `8776add8` (clean boot) + vercel (www.welra.io).
+Big session. All changes are deployed + verified live (web on Vercel, API on Railway `a1593ce2`, Supabase `ozhekoiehpajeytwltrv`). Read [[Projects/Welra/State]] §Session 18 for the blow-by-blow and [[Projects/Welra/Tasks]] for open items.
 
-**Open / next (see Tasks.md "Now"):**
-1. Verify R&R had any real Etsy sales for wk 6/8 (gates flipping `REPORT_DRY_RUN=false`).
-2. Add `api.welra.io` CNAME (Railway dashboard → Namecheap), then Claude flips `API_URL`/`NEXT_PUBLIC_API_URL` + redeploys.
-3. Referral REWARD wiring (Stripe test mode); resubscribe UI; referral trigger-race cookie fix.
-4. Etsy reapply on/after 6/25; refresh META_ACCESS_TOKEN before 6/25 (R&R's NAS agent).
-5. Greeting follow-ups (low): capture nickname at onboarding step; reconcile "Monday 6am" email copy vs Sunday 23:00 UTC schedule; fresh-clone root-build order; remove dead `sendDay2Email`.
+## Shipped this session
+1. **Delivered-status honesty fix** — new `reports.email_sent_at` (the real proof an email sent); `status='delivered'` now means "generated & viewable" only.
+2. **Report self-heal** — scheduler skips customers with no connected data source and sends a "connect a platform" SETUP REMINDER instead (unsubscribe + dry-run gated, 28-day cap); new hourly **catch-up cron** `reportCatchupCron.ts` re-delivers any overdue+undelivered report immediately; late reports get an apology banner + "(a little late)" subject. **Late = past 2h** (catch-up starts recovering at +30min).
+3. **Marketing capture** — "free sample report" lead magnet on homepage, blog, every blog post, and FAQ → `POST /leads` → `leads` table (RLS on) + Resend **"Welra Leads"** audience (`RESEND_AUDIENCE_ID` set, contact sync verified) + sample-report email.
+4. **Follow-through / congratulations** in the weekly report (Pro+Growth) — celebrates measured outcomes on last week's actions, never claims the seller acted. Report eval harness extended + new golden; **eval 4/4 honesty-clean**.
 
-# Claude -> Antigravity (2026-06-14, session 16)
+## ⚠️ VOICE CHANGE — important for any copy you write
+- **Say "clear", NOT "plain English."** "Plain English" reads stock/AI and is retired. Use "a clear read", "clear weekly report", "written clearly". (Ryan's call this session.)
+- **Small-business growth & success is the throughline** — frame benefits around helping small shops grow ("the next move to grow your shop", "help small shops grow", "make confident decisions"). Mission line: **"On a mission to help small shops grow — one clear decision at a time."**
+- **Keep cadence words out of evergreen taglines/mission** (no "weekly"/"Monday"/"one Monday at a time") so they survive an on-demand product. Cadence is fine in feature copy.
+- **Still never lead with "AI."** Honesty rule still absolute (celebrate outcomes, never claim a cause or an action the data can't show).
+- **Canonical source of truth: [[Projects/Welra/Brand_Identity]]** (Voice & language section, updated this session). Marketing/Press/Content-Calendar/Auth-email/Continuation-Playbook docs were all updated to match; historical session logs + completed-task records were intentionally left as-is.
 
-Everything in [[Projects/Welra/State]] (session 16 entry) + [[Projects/Welra/Tasks]]. **All commits now PUSHED to `origin/main`** — the playbook's "push blocked (PAT workflow scope)" only applies to commits touching `.github/workflows`; plain pushes work. Tree clean; API deployed (`railway up`, healthcheck 200, clean boot).
-
-**Shipped this session:**
-1. **Referral SHARER reward ("get a month")** — `a6c7df4`. On the referred friend's first real (non-trial, `amount_paid>0`) payment, the webhook flips `referrals` `pending→qualified` (idempotent conditional UPDATE) then credits the referrer one free month via a negative Stripe `createBalanceTransaction` (priced from their live subscription, annual÷12) → `rewarded`. arch-review clean.
-2. **Friend side ("give a month") deferred** — checkout coupon stacks on the 14-day trial (product decision) + needs a test-mode coupon. Tracked.
-3. **Instagram v22 insights — completed your bump.** Your `v21→v22` change (noted in the earlier handoff) left the account-insights call invalid: v22 **removed `impressions`** and reworked `reach` to need `metric_type=total_value`+`period=day`+`since/until`. The old `reach,impressions&period=week` call now 400s, so reach could never populate (it degraded to 0 silently). Fixed the call to the v22 shape (`f7fd247`); impressions is now a permanent 0. **Heads-up for R&R's agent:** if it shares any account-insights Graph call, apply the same v22 shape.
-
-**Open Ryan actions (carried, unchanged):**
-- Verify R&R real Etsy sales for wk 6/8 → gates `REPORT_DRY_RUN=false`.
-- `api.welra.io` CNAME (Railway dashboard → Namecheap), then Claude flips `API_URL`/`NEXT_PUBLIC_API_URL`.
-- Refresh META_ACCESS_TOKEN before 2026-06-25 (expiry 2026-07-01).
-- Etsy API reapply on/after 2026-06-25.
-
-**New deferred task (high):** ops cron to retry referrals stuck at `status='qualified' AND rewarded_at IS NULL` (no auto-retry if a credit fails).
-
-# Claude -> Antigravity (2026-06-14, session 17)
-
-Everything in [[Projects/Welra/State]] (session 17) + [[Projects/Welra/Tasks]]. All committed + pushed to `origin/main`; API + web both redeployed.
-
-**Go-live + shipped:**
-1. **Reports UNBLOCKED** — `REPORT_DRY_RUN` true→false (verified, API redeployed, health 200). R&R's first REAL email is next Sunday's run (wk 6/15) → Mon 6/22; tonight's 23:00 UTC cron SKIPS R&R (its 6/08-week row already exists → UNIQUE insert fails). One-time check `welra-rr-first-report-delivery-check` (2026-06-22 15:00 UTC) verifies it via Supabase + Railway send-log.
-2. **api.welra.io LIVE** — CNAME + `_railway-verify.api` TXT (Railway needs both), cert issued ~210s; `API_URL` + `NEXT_PUBLIC_API_URL` cut over to `https://api.welra.io`, web redeployed + bundle verified, old railway domain still works.
-3. **Blog + FAQ** — `/faq` (FAQPage JSON-LD), `/blog` + `/blog/[slug]` (Article JSON-LD), 2 cited founder-voice posts. [[Projects/Welra/Content_Calendar]] = 19 topics / 6 pillars for weekly publishing.
-
-**New bug (high, tracked):** reportGenerator marks `status='delivered'` + `delivered_at` regardless of actual email send (dry-run + unsubscribe paths) → DB can't prove delivery; fix to set delivered only after a successful send.
-
-**Open Ryan actions (carried):** friend-side referral coupon; reward-retry cron; Etsy API reapply on/after 6/25; refresh META_ACCESS_TOKEN before 6/25.
+## Open / next
+- Optional: drain leftover no-data test-account retry jobs (Ryan chose "let them finish" — finite, self-terminating). Real customers unaffected.
+- Marketing next: syndicate posts to LinkedIn/Medium (needs Ryan's accounts; Claude can draft), send a Broadcast to the Welra Leads audience.
+- Follow-through precision upgrade (store prior actions structured) + decide if Starter gets follow-through.
+- Etsy API reapply on/after 6/25; refresh META_ACCESS_TOKEN before 6/25.

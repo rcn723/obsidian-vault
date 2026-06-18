@@ -11,7 +11,7 @@ tags: [welra, marketing, press, pr, playbook]
 Companion to Phase 4 of [[Projects/Welra/Marketing_Campaign_2026-06]]. Everything below is the human-shaped work — profiles, responses, pitches, appearances. Claude's pieces (press kit page, this doc, survey questions, BetaList copy) are done and referenced inline. **Time budget: ≤2 hrs/week, in the existing Friday slot.**
 
 **The two iron rules, before anything else:**
-1. **Never say "AI" in any pitch, quote, profile, or appearance.** The story is "plain-English / anti-dashboard." If a journalist asks how it works: *"Software reads the numbers and writes the narrative — the how isn't the interesting part; the interesting part is that sellers stop needing four dashboards."* (Full AI disclosure lives in the privacy policy; you're not hiding it, you're just not leading with it.)
+1. **Never say "AI" in any pitch, quote, profile, or appearance.** The story is "clear / anti-dashboard." If a journalist asks how it works: *"Software reads the numbers and writes the narrative — the how isn't the interesting part; the interesting part is that sellers stop needing four dashboards."* (Full AI disclosure lives in the privacy policy; you're not hiding it, you're just not leading with it.)
 2. **Whether to name Rust & Rainbow is your call, per situation.** "I run my own Etsy and print-on-demand shop" is the credibility line on the public press page (deliberately unnamed). Naming the shop on a podcast is fine and natural; just know that naming it in *print* invites readers to the shop, so make sure you're happy with its current state first.
 
 ---
@@ -23,7 +23,7 @@ Companion to Phase 4 of [[Projects/Welra/Marketing_Campaign_2026-06]]. Everythin
 **Steps:**
 1. Create free source accounts at **Qwoted** (qwoted.com), **Featured** (featured.com), and **SourceBottle** (sourcebottle.com). Use ryan@welra.io.
 2. Paste this bio (tune to taste):
-   > Ryan Northam is a working e-commerce seller (Etsy + print-on-demand) and the founder of Welra, a service that sends multi-channel sellers one plain-English business report every Monday. He can speak to: running a shop across multiple platforms, what seller analytics actually predict (and don't), side-hustle economics, and bootstrapping a software product while running a store.
+   > Ryan Northam is a working e-commerce seller (Etsy + print-on-demand) and the founder of Welra, a service that sends multi-channel sellers one clear business report every Monday. He can speak to: running a shop across multiple platforms, what seller analytics actually predict (and don't), side-hustle economics, and bootstrapping a software product while running a store.
 3. Set alert topics/keywords: *e-commerce, Etsy, Shopify, small business, side hustle, retail, entrepreneurship, solopreneur.*
 4. Headshot: any decent photo. Title: "Founder, Welra · E-commerce seller."
 
@@ -34,7 +34,7 @@ Companion to Phase 4 of [[Projects/Welra/Marketing_Campaign_2026-06]]. Everythin
   >
   > [One concrete example or number from your own selling experience.]
   >
-  > Ryan Northam, founder of Welra (welra.io) — I sell on Etsy and via print-on-demand myself, and Welra sends multi-channel sellers a plain-English weekly report on their shops. Happy to expand on any of this — ryan@welra.io.
+  > Ryan Northam, founder of Welra (welra.io) — I sell on Etsy and via print-on-demand myself, and Welra sends multi-channel sellers a clear weekly report on their shops. Happy to expand on any of this — ryan@welra.io.
 - **Worked example** (request: "How do small sellers know if a slow week is a problem?"):
   > A slow week on its own tells you almost nothing — the question is whether fewer people bought, or the same people spent less. Those have completely different fixes, and most sellers never split them apart because their dashboard doesn't.
   >
@@ -65,7 +65,7 @@ Companion to Phase 4 of [[Projects/Welra/Marketing_Campaign_2026-06]]. Everythin
 **Pitch email script** (subject: `Guest idea: the seller who replaced his dashboards`):
 > Hi [Name],
 >
-> I'm a longtime [Etsy/e-commerce] seller — and I got so tired of spending Monday mornings across four analytics dashboards that I built the thing I wanted instead: one plain-English report, emailed every Monday.
+> I'm a longtime [Etsy/e-commerce] seller — and I got so tired of spending Monday mornings across four analytics dashboards that I built the thing I wanted instead: one clear report, emailed every Monday.
 >
 > For [show name] listeners I could go deep on:
 > - The 3–5 numbers in your shop stats that actually predict anything (and the vanity metrics that don't)
@@ -82,7 +82,7 @@ Companion to Phase 4 of [[Projects/Welra/Marketing_Campaign_2026-06]]. Everythin
 1. **Origin story (3 min):** Monday morning, four dashboards, the moment you realized you'd stopped looking at your own numbers. End with: "so I built the report I wanted to receive."
 2. **The teachable core (15–20 min) — give it ALL away free:** the few numbers that matter (revenue vs. orders vs. AOV — and why the *combination* tells the story, not any one); "fewer buyers vs. same buyers spending less" as the first question of any down week; week-over-week beats month-over-month for small shops; write one sentence about your week every Monday — that habit alone beats any tool.
 3. **One honest war story (5 min):** a week your own numbers fooled you, and what the data actually said. (Specific beats polished.)
-4. **The product (≤2 min, only when asked or at the end):** "It's called Welra — one plain-English report every Monday, $19/month, welra.io. Listeners can grab [the free scan / founding-seller beta]."
+4. **The product (≤2 min, only when asked or at the end):** "It's called Welra — one clear report every Monday, $19/month, welra.io. Listeners can grab [the free scan / founding-seller beta]."
 5. **Prep per show:** listen to one full episode; write 3 question-answers in their format; have your numbers ready (your shop's real stats make every answer concrete).
 
 ---
@@ -93,8 +93,8 @@ Companion to Phase 4 of [[Projects/Welra/Marketing_Campaign_2026-06]]. Everythin
 
 **Copy (paste-ready):**
 - **Name:** Welra
-- **Tagline:** One plain-English report. Every platform. Every Monday.
-- **Description:** Welra reads your Etsy, Shopify, WooCommerce, and Printify numbers and emails you one plain-English business report every Monday — what sold, what changed, and what to do next. No dashboard to learn, nothing to log into. Founding Seller beta: free Pro while we build, 50% off for 6 months at launch.
+- **Tagline:** One clear report. Every platform. Every Monday.
+- **Description:** Welra reads your Etsy, Shopify, WooCommerce, and Printify numbers and emails you one clear business report every Monday — what sold, what changed, and what to do next. No dashboard to learn, nothing to log into. Founding Seller beta: free Pro while we build, 50% off for 6 months at launch.
 - **Link:** https://www.welra.io (waitlist banner is live, signups captured)
 - **Images:** use /brand/og-card.png + a screenshot of the homepage sample-excerpt section.
 
@@ -124,7 +124,7 @@ Find: your city/region's business journal + chamber-of-commerce newsletter + any
 
 > Subject: Local founder launches service for online craft & e-commerce sellers
 >
-> Hi [Name] — I'm a [city]-based founder (and online seller myself). This week I launched Welra, a service that sends small e-commerce sellers one plain-English weekly report on their shops instead of making them learn analytics dashboards. It's used by sellers on Etsy, Shopify, and WooCommerce.
+> Hi [Name] — I'm a [city]-based founder (and online seller myself). This week I launched Welra, a service that sends small e-commerce sellers one clear weekly report on their shops instead of making them learn analytics dashboards. It's used by sellers on Etsy, Shopify, and WooCommerce.
 >
 > Happy to share the story of building it while running my own shop — and the data we've collected on how many hours small sellers lose to their dashboards every week. Press kit: welra.io/press
 >
@@ -135,7 +135,7 @@ Find: your city/region's business journal + chamber-of-commerce newsletter + any
 ## Deliverable 6 — Newsjack play (opportunistic, 2–3×/year)
 
 **Trigger:** Etsy fee/policy change, Shopify earnings, platform outage, marketplace drama.
-**Steps within 24h:** ① Claude drafts a plain-English "what this means for a $5k/mo shop" breakdown → publishes on welra.io + Monday Radar. ② You check Qwoted for journalists covering the story and answer with one sharp, number-grounded quote linking the breakdown. ③ Post the breakdown (helpfully, no link spam) where sellers are discussing it.
+**Steps within 24h:** ① Claude drafts a clear "what this means for a $5k/mo shop" breakdown → publishes on welra.io + Monday Radar. ② You check Qwoted for journalists covering the story and answer with one sharp, number-grounded quote linking the breakdown. ③ Post the breakdown (helpfully, no link spam) where sellers are discussing it.
 
 ---
 

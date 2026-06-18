@@ -2,7 +2,7 @@
 title: Welra Continuation Playbook — START HERE for any new session
 project: Welra
 type: playbook
-updated: 2026-06-12
+updated: 2026-06-15 (session 19 — loop reframed customer-driven; This Week queue is the live planning surface)
 tags: [welra, playbook, onboarding, continuation]
 ---
 
@@ -12,15 +12,17 @@ tags: [welra, playbook, onboarding, continuation]
 
 ## 1. What Welra is
 
-SaaS by Ryan Northam (GR3NB LLC, ryan@welra.io): one **plain-English weekly business report** for e-commerce sellers, emailed every Monday. Pricing $19/$69/$129 (Starter/Pro/Growth; Growth annual 25% off is deliberate). Brand = "weekly radar" (radar-sweep icon, ink-navy/teal/amber palette). **Language rule: never lead with "AI" in marketing or platform-facing copy — "plain-English" is the benefit; AI disclosure lives in the privacy policy only.** This rule exists because Etsy denied our API application partly over AI-flavored surface copy.
+SaaS by Ryan Northam (GR3NB LLC, ryan@welra.io): one **clear weekly business report** for e-commerce sellers, emailed every Monday (on a mission to help small shops grow). Pricing $19/$69/$129 (Starter/Pro/Growth; Growth annual 25% off is deliberate). Brand = "weekly radar" (radar-sweep icon, ink-navy/teal/amber palette). **Language rule: never lead with "AI" in marketing or platform-facing copy; the customer benefit is a *clear* read on their shop — say "clear", not "plain English" (decided s18). AI disclosure lives in the privacy policy only. Canonical voice/style guide: [[Projects/Welra/Brand_Identity]].** This rule exists because Etsy denied our API application partly over AI-flavored surface copy.
 
 ## 2. Where things stand (the honest snapshot)
+
+> **⚠️ The honest bottleneck (session 19): ~18 build sessions in, Welra has 0 customers, 0 revenue, Stripe still in TEST mode.** The product is near-complete; the business hasn't started. The loop is now **customer-driven, not backlog-driven** — every task ranked by "does this get/keep/unblock a *paying customer*?" (T0–T3). The live planning surface is the **This Week** block at the top of [[Projects/Welra/Tasks]] (everything under its Archive line is cold storage — lookup-only). The #1 task is go-to-market and Ryan-owned: **recruit beta user #1 via CSV/Woo/Printify** (the Etsy API is a friction-reducer, NOT a blocker — Printify already covers Etsy sales). Don't build a frozen/T3 task until ≥3 active users need it. Run the loop with `/welra`.
 
 - **Billing:** Stripe TEST mode, fully validated e2e. Live-mode switch deliberately waits for beta validation.
 - **Ingestion that works:** CSV upload + WooCommerce REST + **Printify (LIVE 2026-06-11, token-based — covers R&R's Etsy sales via POD data, no Etsy API needed)** + **Instagram engagement (LIVE, Graph API)**. **Shopify fetcher BUILT but unverified** — needs a dev-store install + "Protected customer data access" toggled in the Partner Dashboard. Etsy fetcher NOT built (blocked on API approval). Dashboard Connect UI live for all of the above (/dashboard/integrations). Platform decisions: [[Projects/Welra/Platform_Feasibility_2026-06]] (TikTok Shop = CSV now/API post-beta; Facebook sales API dead; Square/Gumroad next candidates). **First live verification pending: Ryan pastes R&R's Printify token.**
 - **✅ RESOLVED 2026-06-11: Anthropic credits purchased → eval run + iterated to 3/3 PASSING (3 stable runs).** Key outcome: synthesis runs on `claude-sonnet-4-6` (set in Railway as `REPORT_SYNTHESIS_MODEL` — haiku synthesis hallucinated causal mechanisms in every run; haiku stays for pass-1 source analysis + judge upgraded to sonnet). Prompts hardened: causes only as "worth checking whether…", no absent metrics, no fabricated comparisons, actions justified only by the seller's own numbers. Report generation is UNBLOCKED.
 - **Etsy API: DENIED 2026-06-10.** Reapply on/after **2026-06-25** (scheduled reminder `etsy-api-resubmit-reminder` exists, 9am Jun 25). Exact reapplication copy is in [[Projects/Welra/Etsy_API_Approval_Strategy]] — use it verbatim; do NOT improvise. Related: Ryan's other Etsy identity (rust-and-rainbow, same network) is banned over AI-generated content — never submit anything from that account, never attempt network/identity evasion.
-- **Web:** welra.io is LIVE with the full brand, plain-English copy, Etsy trademark disclaimer, Founding Seller banner. Deployed via `npx vercel deploy --prod` (CLI authed as rcn723).
+- **Web:** welra.io is LIVE with the full brand, clear copy, Etsy trademark disclaimer, Founding Seller banner. Deployed via `npx vercel deploy --prod` (CLI authed as rcn723).
 - **Git pushes WORK as of 2026-06-12** (Ryan added `workflow` scope to the PAT; full backlog incl. CI workflow pushed to rcn723/welra). ⚠️ Pushing still does NOT deploy: API deploys via `railway up --service welra`, web via `npx vercel deploy --prod` (Railway GitHub auto-deploy still unwired — dashboard Settings → Source).
 - **Pending checks:** Sunday cron first-fire 2026-06-14 = first true e2e report test, dry-run ON (check Railway logs Monday); Sentry DSN not set; fresh e2e auth test after the Site-URL fix (throwaway signup + email change — see Tasks); Ryan to connect R&R's Printify token (first live fetcher verification). RESOLVED 6/11: waitlist table (already existed), platform CHECK (printify+instagram migrated), Supabase Site URL localhost→www.welra.io + wildcard redirect allowlist.
 

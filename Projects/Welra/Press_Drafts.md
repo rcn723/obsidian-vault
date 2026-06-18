@@ -18,10 +18,10 @@ Companion to [[Projects/Welra/Press_Playbook]] (the how/when) — this doc is th
 **Job title:** Founder
 **Company:** Welra (welra.io)
 **Headline (the one-liner journalists scan):**
-> E-commerce seller & founder — plain-English analytics for small online shops
+> E-commerce seller & founder — clear analytics for small online shops
 
 **Bio:**
-> I'm a working e-commerce seller (Etsy + print-on-demand) and the founder of Welra, which sends multi-channel sellers one plain-English business report every Monday instead of making them learn four analytics dashboards. I can speak first-hand to: what seller analytics actually predict (and what's vanity), running a shop across Etsy/Shopify/WooCommerce simultaneously, side-hustle economics and pricing, and what it's like to bootstrap a software product while still packing orders. Direct, quotable, fast to reply: ryan@welra.io.
+> I'm a working e-commerce seller (Etsy + print-on-demand) and the founder of Welra, which sends multi-channel sellers one clear business report every Monday instead of making them learn four analytics dashboards. I can speak first-hand to: what seller analytics actually predict (and what's vanity), running a shop across Etsy/Shopify/WooCommerce simultaneously, side-hustle economics and pricing, and what it's like to bootstrap a software product while still packing orders. Direct, quotable, fast to reply: ryan@welra.io.
 
 **Expertise tags:** E-commerce · Small Business · Etsy · Shopify · Side Hustles · Entrepreneurship · Retail · Analytics
 **Website:** https://www.welra.io/press
@@ -43,14 +43,14 @@ No profile or bio needed — just name + email on the "Sign up for Free Daily Me
 
 **Areas of expertise (their checkbox categories):** Business & Finance · Web & Tech · Lifestyle (side hustles fall here)
 **Bio (they allow ~50 words):**
-> Working e-commerce seller (Etsy + print-on-demand) and founder of Welra, a weekly plain-English business report for online sellers. First-hand on multi-channel selling, seller analytics, and bootstrapping software as a solo founder. Fast, quotable replies: ryan@welra.io.
+> Working e-commerce seller (Etsy + print-on-demand) and founder of Welra, a weekly clear business report for online sellers. First-hand on multi-channel selling, seller analytics, and bootstrapping software as a solo founder. Fast, quotable replies: ryan@welra.io.
 
 ## 4. BetaList submission (betalist.com → Submit Startup)
 
 **Startup name:** Welra
-**Tagline (60 chars max):** One plain-English report. Every platform. Every Monday.
+**Tagline (60 chars max):** One clear report. Every platform. Every Monday.
 **Description:**
-> Welra reads your Etsy, Shopify, WooCommerce, and Printify numbers and emails you one plain-English business report every Monday — what sold, what changed, and what to do next. No dashboard to learn, nothing to log into: the report is the product. Connect a platform read-only (or just upload a CSV export) and your first report arrives next Monday. Founding Seller beta: free Pro plan while we build, then 50% off for six months at launch.
+> Welra reads your Etsy, Shopify, WooCommerce, and Printify numbers and emails you one clear business report every Monday — what sold, what changed, and what to do next. No dashboard to learn, nothing to log into: the report is the product. Connect a platform read-only (or just upload a CSV export) and your first report arrives next Monday. Founding Seller beta: free Pro plan while we build, then 50% off for six months at launch.
 **URL:** https://www.welra.io
 **Twitter/X:** [your handle, or leave blank]
 **Topics/categories:** E-commerce, Analytics, SaaS, Email
@@ -88,7 +88,7 @@ No profile or bio needed — just name + email on the "Sign up for Free Daily Me
 ### 6a. How to Sell Your Stuff on Etsy (Lizzie Smiley) — pitch via the contact form on howtosellyourstuff.com
 > Subject: Guest idea: the 5 Etsy stats that actually matter (from a seller who built a tool around them)
 >
-> Hi Lizzie — I'm an Etsy + print-on-demand seller, and I got so tired of Monday mornings spread across four analytics dashboards that I built the thing I wanted instead: one plain-English report, emailed every Monday.
+> Hi Lizzie — I'm an Etsy + print-on-demand seller, and I got so tired of Monday mornings spread across four analytics dashboards that I built the thing I wanted instead: one clear report, emailed every Monday.
 >
 > For your listeners I could go deep on: the 3–5 numbers in Etsy stats that actually predict anything (views vs. visits vs. conversion — and why the combination matters more than any single number), the first question to ask in any down week (fewer buyers, or same buyers spending less? — completely different fixes), and the vanity metrics sellers can safely ignore forever.
 >
@@ -101,7 +101,7 @@ No profile or bio needed — just name + email on the "Sign up for Free Daily Me
 ### 6b. The Side Hustle Show (Nick Loper) — pitch via sidehustlenation.com/contact
 > Subject: Guest idea: built a SaaS while running my Etsy shop — both still alive
 >
-> Hi Nick — longtime listener. I run an Etsy/print-on-demand shop, and last year I started building software on the side of my side hustle: Welra, a service that emails sellers one plain-English weekly report on their shops so they can skip the dashboards.
+> Hi Nick — longtime listener. I run an Etsy/print-on-demand shop, and last year I started building software on the side of my side hustle: Welra, a service that emails sellers one clear weekly report on their shops so they can skip the dashboards.
 >
 > The angle for your audience: what it actually takes to build a product while your first hustle still needs daily attention — what I automated, what I dropped, the real numbers on both businesses, and the mistakes (including getting my API application rejected by a major platform and what I learned about how platforms evaluate small developers).
 >
@@ -114,7 +114,7 @@ No profile or bio needed — just name + email on the "Sign up for Free Daily Me
 ### 6c. eCommerce Badassery (Jessica Totillo Coster) — pitch via ecommercebadassery.com
 > Subject: Guest idea: reading your shop's numbers in 10 minutes a week (no dashboard required)
 >
-> Hi Jessica — I'm a multi-channel seller (Etsy + print-on-demand) and the founder of Welra, which turns a shop's weekly numbers into one plain-English Monday email.
+> Hi Jessica — I'm a multi-channel seller (Etsy + print-on-demand) and the founder of Welra, which turns a shop's weekly numbers into one clear Monday email.
 >
 > Your show is one of the few that actually makes sellers look at their numbers, so here's an episode I think fits: the 10-minute Monday review — exactly which numbers to pull from Etsy/Shopify stats, in what order, and the one-sentence summary habit that beats any tool. Plus: the difference between "fewer buyers" and "smaller carts" weeks, and why most sellers treat them identically (and waste money doing it).
 >
@@ -127,7 +127,7 @@ No profile or bio needed — just name + email on the "Sign up for Free Daily Me
 ### 6d. Generic template (for the rest of the list)
 > Subject: Guest idea: the seller who replaced his dashboards
 >
-> Hi [Name] — I'm a longtime e-commerce seller (Etsy + print-on-demand), and I got so tired of spending Monday mornings across four analytics dashboards that I built the thing I wanted instead: one plain-English report, emailed every Monday.
+> Hi [Name] — I'm a longtime e-commerce seller (Etsy + print-on-demand), and I got so tired of spending Monday mornings across four analytics dashboards that I built the thing I wanted instead: one clear report, emailed every Monday.
 >
 > For [show] listeners I could go deep on:
 > - The 3–5 numbers in shop stats that actually predict anything (and the vanity metrics that don't)
