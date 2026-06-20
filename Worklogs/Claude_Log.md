@@ -1,5 +1,23 @@
 # Claude Worklog
 
+## 2026-06-17 — Welra Session 21: live beta recruitment — Reddit query fixes, CSV export guide, new-account-tax pivot to Facebook groups
+
+Ryan executed recruitment in real time and the session followed his blockers. **No code touched, no deploys** — all work was outreach tooling + docs.
+
+**Reddit query fixes.** His §A hunt links surfaced months/years-old posts. Root cause: Reddit's `t=` time window only works with `sort=relevance`/`sort=top`, NOT `sort=new` (with `new` it's ignored), and multi-word phrases match almost nothing recent. Rewrote §A in [[Projects/Welra/Tasks]] with single-word queries + `sort=relevance&t=week`, the `/new`-feed browse approach for high-volume subs, and a wider subreddit pool (skip r/woocommerce).
+
+**WooCommerce: linkage not an app.** After Ryan read r/woocommerce. Decided: if Woo is ever invested in, use the built-in `/wc-auth/v1/authorize` redirect flow (seller approves read access in their own WP admin, keys POST back) — never a published WordPress plugin (marketplace review + PHP maintenance = trap). Logged low-pri/deferred in Tasks (not a customer gate; CSV leads, Woo sellers are least friction-sensitive).
+
+**Competitor CROtrustify — complementary, not a competitor.** It's a Shopify-only storefront trust/CRO audit (crawls the public site once, grades trust signals into a TrustScore). Welra reads real sales data weekly — opposite end of the funnel, opposite data. Added a §E DM objection-handler ("a scan is a snapshot, Welra is the movie" / "we read what actually sold, not the window display" / "multi-channel not Shopify-only") to Tasks, and a deferred low-pri marketing task to bake the differentiation into the site + start Competitive_Landscape.md. Net takeaway: market validation, not threat.
+
+**CSV export guide (verified, 100%-correct bar).** Ryan needed per-platform export steps to send a seller who says yes; stressed that a wrong step reads as incompetence. Verified Etsy/Shopify/WooCommerce against official docs and wrote [[Projects/Welra/CSV_Export_Guide]]. Key truths: Etsy = Shop Manager→Settings→Options→Download Data→CSV Type "Orders" (desktop only, one month at a time); Shopify = Orders→Export→CSV but 51+/date-range exports are EMAILED to the store owner (#1 confusion); WooCommerce native order CSV = Analytics→Orders→Download (Reports gives summaries only, Tools→Export gives XML), and for Woo the cleaner path is the direct API connect.
+
+**New-account tax → pivot to Facebook.** Ryan's brand-new Reddit account: comments auto-removed by per-sub AutoMod (karma/age thresholds, no universal 30-day rule) and DMs hit a hard rate limit ("take a break"). Pushing past it risks a shadowban. Added a field note to [[Projects/Welra/Marketing_Campaign_2026-06]] and restructured the Focus Sheet: Reddit is warming-only for 1–2 weeks; Facebook groups + Indie Hackers now carry recruiting. Diagnostic given: incognito logged-out profile check for shadowban.
+
+**Drove a live Facebook Groups search (Chrome extension).** Produced a vetted shortlist: Tier 1 Etsy (⭐ Etsy Sellers Only 80K private, Etsy Sellers and Beginners Community 77K, Etsy Sellers Group 173K), Tier 2 Shopify (Shopify for Beginners). Skip any group named Buyers/Promotion/Marketplace/Dropshipping. Wrote membership-question answers (answer as a real seller — he runs Rust & Rainbow) + three FB-voiced give-first comments to the Marketing doc. Left the joins for Ryan to do himself.
+
+**Scoreboard unchanged: 0 beta users, 0 revenue, Stripe TEST. 4 DMs sent, no bites (expected). Nothing deployed (Instagram demote + Graph v22 fix still in working tree from s20).**
+
 ## 2026-06-16 — Welra Session 20: beta-recruitment prep; Instagram demoted; Graph version fix; Meta App Review plan; outreach pack + Focus Sheet
 
 Ryan: do beta recruitment — but first, the pricing offers don't seem to reconcile with the integrations; also how hard is Instagram for mom-and-pop, and should we reword the offers / what if a seller has more than 3 platforms.

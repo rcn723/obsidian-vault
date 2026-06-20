@@ -2,7 +2,7 @@
 title: Welra Marketing Campaign — Beta Recruitment (June 2026)
 project: Welra
 type: plan
-updated: 2026-06-11
+updated: 2026-06-17 (s21 — added new-account-tax field note: Reddit warming runway + parallel FB/Indie Hackers channels)
 tags: [welra, marketing, beta, growth]
 ---
 
@@ -39,6 +39,51 @@ The ask: *"I'll send you a free weekly report on your shop for 8 weeks. In excha
 3. **Indie Hackers + X build-in-public** — Ryan's authentic lane as a solo founder. Weekly build-thread: what shipped, one real chart, one lesson. Slow burn; compounds toward launch. Post the beta ask once pinned to profile.
 4. **Direct outreach (most reliable for 3–5 users)** — 20 personalized DMs/emails to sellers who *publicly complain about their stats* (search Reddit/X for "etsy stats confusing", "shopify analytics overwhelming"). Template: *"Saw your post about [specific thing]. I'm building exactly this — one weekly clear report. Want a free one based on your last month's CSV? Two minutes of your time, no signup needed."* — Note: a one-off sample report is a great hook AND a product demo we can generate manually.
 5. **Etsy/Woo community forums** — Etsy Community forum + WooCommerce Slack/forums; same helpful-first approach.
+
+### ⚠️ Field note — the new-account tax on Reddit (learned the hard way, s21, 2026-06-17)
+
+A brand-new Reddit account (days old, low karma) cannot drive Reddit outreach at volume. Two separate gates hit fast:
+
+- **Comment auto-removals** — each subreddit's **AutoModerator** silently removes comments from accounts under *its own* karma/age threshold. It feels "random" because every sub sets different rules; big spam-magnet subs (r/EtsySellers, r/shopify) are strictest. **There is no universal "30-day" rule** — it's per-sub karma **and/or** age.
+- **DM rate limit** — Reddit throttles messages from new/low-karma accounts. When it says **"take a break," that's a hard limit — obey it.** Pushing past it is the fastest route to a **shadowban or suspension**, which torches all the warming done so far. (4 DMs in, Ryan hit this on day ~4.)
+
+**Fastest diagnostic — removal vs. shadowban:** open your own profile in a **logged-out / incognito** window. Comments visible → just per-sub AutoMod (fine). Comments *missing* logged-out but present logged-in → **shadowbanned**; stop posting and appeal at r/ShadowBan.
+
+**What this means for the plan:**
+1. **Reddit needs a 1–2 week warming runway** before it produces — build genuine, non-promo comment karma in **lower-filter subs first** (r/EtsySellersAdvice is friendlier than r/EtsySellers). Karma + age is the only key; it can't be rushed or forced.
+2. **An aged personal Reddit account** (if one exists) sails through filters a new account can't — use it for *genuine* give-first comments (never link-blasting).
+3. **Do NOT make a new Reddit account the sole channel.** Run channels that don't penalize a new identity **in parallel from day one** — Facebook seller groups (#2 below) and Indie Hackers (#3) are not karma-gated and should carry the load while Reddit warms.
+
+### Facebook group target list — vetted live (s21, 2026-06-17)
+
+Searched FB Groups directly. The **Etsy** groups are the gold mine (core ICP); handmade/POD results were mostly buy/sell/trade marketplaces or local (FB geo-personalizes) — wrong type. Join in this order; answer membership Qs as a real seller (you run Rust & Rainbow), never as a tool vendor.
+
+**Tier 1 — Etsy (join all 3):**
+- ⭐ **Etsy Sellers Only** — *Private · 80K · 70+ posts/day.* Best signal: "Only" = sellers (not buyers), Private = engaged + less spam. Has membership questions → answer authentically.
+- **Etsy Sellers and Beginners Community** — *Public · 77K · 90+/day.* Beginners = exactly the "I don't understand my stats" venting you want to give-first on.
+- **Etsy Sellers Group** — *Public · 173K · 90/day.* Biggest pure-seller group.
+
+**Tier 2 — Shopify (join 1):**
+- **Shopify Community for Store Owners** — *Public · 46K · 20+/day* (lower volume = your comments stay visible longer), or **Shopify for Beginners** — *Public · 92K · 90+/day.*
+
+**Skip (wrong type — low signal / heavy promo rules):** any group with **"Buyers" / "Promote Your Products" / "Promotion" / "Marketplace"** in the name (sell-to-each-other link dumps, not business talk) · **Dropshipping** groups (wrong ICP — not small handmade/multi-channel) · POD + local handmade **buy/sell/trade** groups.
+
+### Facebook give-first comments — paste-ready, FB voice (s21)
+
+Warmer + more first-person than the Reddit §B set (FB rewards personal voice). **Rules:** lead from your real shop (you run Rust & Rainbow — your honest edge), match the comment to what the OP actually said, vary the wording each time, **no link, no pitch.** Mention Welra only if someone directly asks what you use (then → [[Projects/Welra/Tasks]] §D).
+
+**1. "Views but no sales":**
+> I run a small handmade/Printify shop too, so I feel this one. When views aren't turning into sales it's almost always one of three things: the main photo isn't stopping the scroll, the price + shipping is scaring people at checkout, or the views are the wrong traffic (ad/off-site clicks that were never going to buy). What helped me was pulling my top 3 viewed listings and checking each one's conversion separately — usually one listing is dragging the whole average down, and it's a fixable thing on that one. The overall "views vs sales" number hides *which* listing is the actual problem.
+
+**2. "Overwhelmed — which stats actually matter?":**
+> Honestly, most of the dashboard is noise week to week. The five I actually watch on my own shop: revenue vs last week, order count vs last week, my top 3 products, conversion rate, and repeat customers. That's it. I jot them down every Monday — the *trend* over a few weeks tells you way more than any single day, and it stops you reacting to random spikes. Don't let the rest of the numbers stress you out.
+
+**3. "Sales dropped / slow week, panicking":**
+> Before assuming it's something you did, separate the two causes: did fewer people *show up* (traffic down), or did the same traffic *stop buying* (conversion down)? Totally different problems — traffic down is usually search ranking or just seasonality, conversion down is usually price, photos, or a competitor. Check which number actually moved first. I've wasted whole weekends "fixing" the wrong thing because I panicked before I looked.
+
+**Membership-question answers (answer as a real seller):**
+- *Etsy groups:* "I run a small handmade/Printify shop (Rust & Rainbow) and I'm looking to connect with other sellers and get sharper at reading my shop's numbers."
+- *Shopify "for Beginners":* "I run a small e-commerce shop (Etsy + Printify) and I'm exploring Shopify — here to learn from people running their own stores." *(Honest — you don't run a Shopify store, so DON'T claim one; "Beginners" fits a curious multi-channel seller. Skip Shopify groups that require an active Shopify store.)*
 
 ### Weekly cadence (≤4 hrs/wk total)
 - Mon: ship the beta users' reports; post 1 build-in-public update

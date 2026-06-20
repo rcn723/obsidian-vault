@@ -15,15 +15,25 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 
 ## 🎯 Focus Sheet — week of 2026-06-16 (read THIS, ignore everything else)
 
-> One goal this week: **land beta user #1.** If a task isn't ①, it's background or off-limits. When in doubt, go send a DM.
+> One goal this week: **land beta user #1.** If a task isn't ①, it's background or off-limits.
+> ⚠️ **Reddit reality (s21):** the new Reddit account is karma/age-gated — comments get AutoMod-removed and DMs hit a hard rate limit ("take a break" = OBEY it, forcing it = shadowban that torches the account). So **Reddit is warming-only for ~1–2 weeks; Facebook groups + Indie Hackers carry the actual recruiting now.** Full field note: [[Projects/Welra/Marketing_Campaign_2026-06]].
 
 ### ① THE MAIN THING — recruit beta users (most days, ≤4 hrs total for the week)
-> **All copy you need is in the 📋 Outreach copy block directly below this Focus Sheet.** Links = §A, comments = §B, DMs = §C.
-- [ ] **Daily (10 min):** open the 4 hunt links (§A) logged in, sorted *New*, note sellers venting about their stats this week. [status:: open]
-- [ ] **Mon:** post #1 to r/SideProject + r/alphaandbetausers (post template in [[Projects/Welra/Marketing_Campaign_2026-06]] §1). [status:: open]
-- [ ] **Tue–Thu (30 min/day):** answer 2–3 stats questions in r/EtsySellers + 1 FB seller group — give-first, **NO link** (comments §B). Doubles as warming the new account so DMs land. [status:: open]
-- [ ] **Fri:** send **5 DMs** (§C — paste, change the one bracketed line). Offer = free CSV-based weekly report, "tell me if it's any good," **never say "AI."** [status:: open]
-- [ ] **By next Mon:** 2–3 yeses → onboard user #1 end-to-end & ping Claude to watch the first real report. [status:: open]
+> **All copy you need is in the 📋 Outreach copy block directly below this Focus Sheet.** Links = §A, comments = §B, DMs = §C, "how's this different" = §E. Export steps to send a yes → [[Projects/Welra/CSV_Export_Guide]].
+
+**Primary channels NOW (not karma-gated — these land beta users while Reddit warms):**
+- [ ] **Facebook seller groups (daily, ~15 min):** join/post in "Etsy Sellers", "Handmade Sellers", "WooCommerce Help & Share"-type groups — give-first comments (§B), **no link** until asked. Personal voice. This is the warmest channel for a new identity. [status:: open]
+- [ ] **Indie Hackers (2–3×/wk):** build-in-public post + answer founder/seller threads; drop the beta ask on your pinned profile. No karma gate. [status:: open]
+- [ ] **Direct outreach where allowed:** when someone publicly vents about their stats (FB/IH/X), offer the free report (§C / §E). Match the variant to what they posted.
+
+**Reddit = WARMING ONLY this week (builds the account; don't expect signups yet):**
+- [ ] **Daily (10 min):** scan §A (now `sort=relevance&t=week` + the `/new` feeds), note sellers venting this week. [status:: open]
+- [ ] **Genuine give-first comments in LOW-filter subs** (r/EtsySellersAdvice friendlier than r/EtsySellers) — build karma, **no link** (§B). If a personal aged Reddit account exists, use it for genuine comments — it sails past the filters. [status:: open]
+- [ ] **Run the incognito shadowban check** (logged-out profile view) before posting more — confirm comments are visible site-wide, not shadowbanned. [status:: open]
+- [ ] **DMs: ≤5/wk, and STOP the moment Reddit rate-limits you.** (§C — change the one bracketed line, **never say "AI."**) [status:: open]
+- [ ] **Mon:** post #1 to r/SideProject + r/alphaandbetausers (explicitly promo-friendly subs; template in [[Projects/Welra/Marketing_Campaign_2026-06]] §1). [status:: open]
+
+- [ ] **By next Mon:** any yes → send the sample ([[Projects/Welra/Sample_Report_Demo.html]]), get their CSV ([[Projects/Welra/CSV_Export_Guide]]), hand it to Claude → real report same-day → sit with them on whether it's good. [status:: open]
 
 ### ② BACKGROUND — one sitting, then walk away (do NOT rabbit-hole)
 - [ ] **Start Meta Business Verification** (~30 min, then it runs on Meta's side ~a week). Exact 5 steps + what to have ready in [[Projects/Welra/Meta_App_Review_Plan]] Step 1. Kicked off now so it's done by the time beta validates. [owner:: ryan] [status:: open]
@@ -105,7 +115,21 @@ That's the opening — and only then:
 
 **📎 Demo asset (ready now):** [[Projects/Welra/Sample_Report_Demo.html]] — a true-to-product sample weekly report (synthetic Etsy shop, faithful to the real renderer + honest voice). Open in a browser → **screenshot it** to drop into a DM/comment when someone bites, framed as *"here's a sample of what you'd get."* Synthetic data, clearly labeled — never present it as a real customer.
 
-**The yes-path:** a yes → the free CSV report IS the demo + onboarding. Send them the sample above to show the format, then generate their real one at welra.io/scan (instant, ephemeral) or hand their CSV to Claude to run through the full pipeline.
+**The yes-path:** a yes → the free CSV report IS the demo + onboarding. Send them the sample above to show the format, then generate their real one at welra.io/scan (instant, ephemeral) or hand their CSV to Claude to run through the full pipeline. **To tell them how to export their CSV → [[Projects/Welra/CSV_Export_Guide]]** (exact per-platform steps, verified against official docs — Etsy / Shopify / WooCommerce / generic; paraphrase it into the DM, don't paste the whole thing).
+
+### E) If they compare you to another tool / ask "how's this different from [X]?"
+Most "competitors" are **storefront/CRO audit tools** (e.g. CROtrustify) — they crawl your *public website* once and grade trust signals; they never see whether you actually sold anything. Welra is the opposite end: it reads your *real sales data every week*. Two lines that land:
+
+- **Snapshot vs. movie:**
+  > Those tools scan your storefront once and grade it. Welra's the opposite — it reads what *actually sold* and what moved, every week. A scan is a snapshot; this is the movie of your shop.
+
+- **Reads real sales, not the window display:**
+  > The audit tools only look at your public site — they can't tell if you made a single sale. Welra works off your actual orders, so it tells you what sold, what changed vs last week, and what's worth doing next.
+
+- **Multi-channel (if they're not on Shopify):**
+  > A lot of those are Shopify-only. Welra works off a CSV from any platform — Etsy, Printify, whatever you sell on — so you're not locked out.
+
+**Note:** keep the no-leaderboard stance — *"the only benchmark that matters is you last month."* Some audit tools sell "compare to competitors"; Welra deliberately doesn't, and that's a trust point, not a gap.
 
 ---
 
@@ -131,6 +155,7 @@ That's the opening — and only then:
 - [ ] **[FUTURE s21] WooCommerce one-click connect via `/wc-auth/v1/authorize`** — replace the current manual REST-API-key paste (`access_token = "ck_…:cs_…"`, `shop_id = store URL`) with WooCommerce's built-in authorize-redirect flow: seller clicks Connect → bounced to their own WP admin → approves **read** access to orders & products → Woo auto-generates the keys and POSTs them back. ~1 day of work; NO published WordPress plugin (that path = wordpress.org marketplace review + PHP maintenance + per-theme support = a multi-week trap, explicitly rejected). NOT a customer gate — current key-paste flow works + is verified, the beta offer leads with CSV (zero auth), and Woo sellers are the *least* friction-sensitive segment (they already self-host WP and generate keys for other tools). Same class as Etsy API / Meta App Review: build only when a real Woo user needs it. [owner:: claude] [priority:: low] [status:: open]
 - [ ] **[INFRA s20] Add root-domain SPF for welra.io** — do during the "send as ryan@welra.io" DNS work. welra.io's root has NO SPF, so PrivateEmail sends from ryan@welra.io get SPF=none and pass DMARC (`p=reject`) by DKIM alone — fragile. Fix: TXT on `@` = `v=spf1 include:spf.privateemail.com ~all` (leave send.welra.io alone). Found via Google DMARC aggregate report (s20) — reports are healthy, no spoofing. Detail in [[project-welra-email-monitoring]]. NOT a beta blocker. [owner:: ryan] [priority:: low] [status:: open]
 
+- [ ] **[MARKETING s21] Bake the CRO-audit differentiation into the site + marketing + a competitive doc.** Adjacent tools like **CROtrustify** ($24.99 one-time / $11.99-mo, Shopify-only) crawl your *public storefront* once and grade trust signals (TrustScore) — they're CRO/audit tools, NOT a weekly sales-report competitor; they never see whether you sold anything. Three jobs, AFTER beta user #1 (positioning, not a customer gate): (1) **Site copy** — add a "snapshot vs. movie / we read your real sales, not your window display / multi-channel not Shopify-only" angle somewhere on the homepage or a comparison section (don't lead with it; keep the no-leaderboard stance — "the only benchmark that matters is you last month"). (2) **Marketing materials** — fold the same lines into blog/FAQ/outreach (DM objection-handler already live in [[Projects/Welra/Tasks]] §E). (3) **Competitive analysis doc** — start `Projects/Welra/Competitive_Landscape.md` cataloguing adjacent tools (CRO/audit, multi-channel dashboards, Etsy-stats tools), where each sits in the funnel, and Welra's defensible lane (real ongoing sales data + multi-channel + honesty/no-benchmark). Market-validation note: a stranger independently betting that overwhelmed sellers pay $12–25/mo for an automated no-fuss "make my numbers make sense" tool = the Welra thesis confirmed. [owner:: claude] [priority:: low] [status:: open]
 ### Frozen (T3 — do NOT build until ≥3 active users)
 Referral friend-side coupon · referral retry cron · referral attribution race · resubscribe UI · Meta/Instagram OAuth app · Google Sheets bridge · Make webhook · OG/social images · dead `sendDay2Email` · Tailwind `slate` rename · Puppeteer consolidation · onboarding greeting capture · lazy-init Resend. *Every one serves customers you don't have yet. They live in the Archive below until a real user actually needs them.*
 
