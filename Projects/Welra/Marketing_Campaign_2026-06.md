@@ -54,6 +54,16 @@ A brand-new Reddit account (days old, low karma) cannot drive Reddit outreach at
 2. **An aged personal Reddit account** (if one exists) sails through filters a new account can't — use it for *genuine* give-first comments (never link-blasting).
 3. **Do NOT make a new Reddit account the sole channel.** Run channels that don't penalize a new identity **in parallel from day one** — Facebook seller groups (#2 below) and Indie Hackers (#3) are not karma-gated and should carry the load while Reddit warms.
 
+### ⚠️ Field note — Facebook ALSO taxes a brand-new identity (s22, 2026-06-20 — CORRECTS line 55 above)
+
+The s21 note assumed FB seller groups are "not karma-gated" and could carry recruiting while Reddit warms. **Tested live — wrong. Same tax.** Joined 4 groups, switched to a personal profile, posted a clean give-first comment (no link, peer voice) → **auto-declined**. "See feedback" said verbatim: *"Your comment was automatically declined based on certain criteria in this group. Try reaching out to the group admin or try commenting again later."* Root cause: the commenting profile ("Rust Rain") is a **brand-new FB profile** (no friends, no history) → group automod treats it like a new Reddit account. Comment content and identity-type were both correct; **account age is the block**.
+
+Two adjacent traps found same session:
+- You can accidentally **join a group as your Page** instead of your personal profile — tell from the comment box reading "Answer as <Page>". Switching to the personal profile then shows "Join group" again; you must re-join as the personal profile.
+- A brand-new profile pasting a long multi-paragraph comment is a worst-case spam signal — instant decline, and repeated retries risk flagging the account. **Stop after one decline.**
+
+**Implication (the real lesson):** BOTH cold channels — Reddit AND Facebook — penalize a fresh identity. For a new profile, cold seller communities are a **1–2 week warming play, not a today play.** Fastest path to beta user #1 is **WARM**: sellers you already know + an **aged real personal account** if you're willing to use it + Indie Hackers (your own thread, not automod-gated). Don't force comments from new accounts.
+
 ### Facebook group target list — vetted live (s21, 2026-06-17)
 
 Searched FB Groups directly. The **Etsy** groups are the gold mine (core ICP); handmade/POD results were mostly buy/sell/trade marketplaces or local (FB geo-personalizes) — wrong type. Join in this order; answer membership Qs as a real seller (you run Rust & Rainbow), never as a tool vendor.

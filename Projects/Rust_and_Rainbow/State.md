@@ -2,7 +2,7 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-06-14
+updated: 2026-06-21
 tags: [etsy, printify, social-media, python, automation]
 ---
 
@@ -85,6 +85,20 @@ Self-learning loop added 2026-05-22. Runs Mon 7:00am via launchd.
 - History tracked in: `performance_log.json` (appended weekly — never delete)
 - Without `ANTHROPIC_API_KEY`: saves data-only report, paste into Claude.ai for narrative
 - `instagram_manage_insights` permission NOT in current token — reach/impressions unavailable; follower count + posts still tracked
+
+## Week of 2026-06-15 — Post Results (Sunday Assessment 2026-06-21)
+| Date | Design | IG | TikTok | Pinterest |
+|------|--------|-----|--------|-----------|
+| Jun 15 | Velcro Dog Line Art (velcro_dog) | ✓ | ✓ | ✓ |
+| Jun 17 | Gay Dog Dad Retro (gay_dog_dad) | ✓ | ✗ Zernio "All platforms failed" | ✓ |
+| Jun 19 | Rainbow Heart Vizsla (pride_breed) | ✓ | ✓ | ✗ Zernio "All platforms failed" |
+2 partial Zernio failures (platform-side, not R&R code). Designs were stamped last_posted regardless. Retry mechanism task still open.
+
+**Code fixes applied 2026-06-21:**
+- `agent.py` `get_etsy_listing_stats` stale message fixed — "run etsy_auth.py" replaced with permanent-ban notice (the Jun 14 fix only updated `build_data_report`, not this function)
+- Welra `reportGenerator.ts` source model updated — `claude-haiku-4-5` → `claude-haiku-4-5-20251001` (canonical ID; not deployed yet, needs `railway up`)
+
+⚠️ **META_ACCESS_TOKEN URGENT** — expires 2026-07-01, must refresh by **June 25 (4 days)**. See Tasks.
 
 ## Week of 2026-06-08 — Post Results (Sunday Assessment 2026-06-14)
 | Date | Design | IG | TikTok | Pinterest |

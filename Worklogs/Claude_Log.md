@@ -1,5 +1,58 @@
 # Claude Worklog
 
+## 2026-06-21 (Growth Pipeline run) — Welra scheduled growth pipeline, THE ONE = Resend Broadcast
+
+Autonomous pipeline run. Read Growth_Pipeline.md, Continuation_Playbook, Tasks.md, State.md. **Stage 1 (Creative):** added 3 new ideas (#13 BetaList, #14 IH post, #15 Resend Broadcast to leads). **Stage 2 (Validator):** 4 ideas SELECTED; #15 Resend Broadcast named THE ONE (Trust=4, Speed=5, self-selected audience, no identity tax). **Stage 3 (Operator):** drafted final Resend broadcast email + IH build-in-public post — both in the notification. No code changes. Ryan actions: (1) send broadcast via Resend UI, (2) post IH draft, (3) submit BetaList (copy in Press_Drafts §4). Growth_Pipeline.md updated with ranked table + gate results. Tasks.md updated with two new action items.
+
+## 2026-06-21 (Sunday Assessment) — R&R vs Welra weekly review
+
+Autonomous Sunday assessment run. Read all state/task files, compared R&R `agent.py` against Welra integrations and `reportGenerator.ts`, checked `market.log` for the week.
+
+**This week's posts (Jun 15-19):**
+- Jun 15: Velcro Dog Line Art — all 3 platforms ✓
+- Jun 17: Gay Dog Dad Retro — IG ✓, Pinterest ✓, TikTok ✗ (Zernio "All platforms failed")
+- Jun 19: Rainbow Heart Vizsla — IG ✓, TikTok ✓, Pinterest ✗ (Zernio "All platforms failed")
+- 2 Zernio platform failures (not R&R code). Both designs stamped `last_posted` regardless — existing retry-mechanism task covers this.
+
+**Weekly report:** 2026-06-15.md exists (generated Mon Jun 15 at 7am). Shows 0 orders, $0 revenue, 8 followers, 0 posts this week. Correct — report runs before the 10am market post, and Instagram's 7-day lookback timing means the Jun 15 report doesn't count that day's post.
+
+**Bugs found and fixed:**
+- `agent.py` `get_etsy_listing_stats`: stale "run etsy_auth.py" message replaced with permanent-ban notice. The Jun 14 fix only updated `build_data_report`; this function was missed.
+- `Welra/reportGenerator.ts` line 563: `sourceModel` changed from `claude-haiku-4-5` to `claude-haiku-4-5-20251001` (canonical model ID; R&R uses the full ID correctly). Needs `railway up` to deploy.
+
+**R&R vs Welra cross-learnings:**
+- Welra's `instagram.ts` uses `graph.facebook.com/v22.0` (correct); R&R uses `graph.instagram.com/v22.0` (alias, works but not canonical). Not changed — R&R posts are working.
+- Welra has historical context (4-week synthesis feed) and progress detection that R&R lacks. R&R is single-user so lower priority.
+- R&R's `build_tiktok_description` separation (clean hook in title, all tags in description) is a pattern Welra doesn't need (no TikTok posting).
+
+**Urgent: META_ACCESS_TOKEN expires 2026-07-01 — Ryan must refresh by June 25 (4 days).**
+
+**Vault updates:** R&R State.md, AutoBiz State.md, R&R Tasks.md (no new items — all gaps already tracked), this worklog, To_Antigravity.
+
+## 2026-06-20 — Welra Session 22: sample-report page SHIPPED, two report bugs found+fixed+DEPLOYED, arch-review, R&R FB cross-post fix
+
+Long, high-output session. **First real deploys in a while** — API (Railway) + web (Vercel) both shipped. Scoreboard still 0 users / 0 revenue / Stripe TEST, but the product got materially better.
+
+**TikTok dev-app rejection (R&R) — icon brand-consistency.** App submitted under Rust & Rainbow, points to `gr3nb.github.io/rustandrainbow`. Reviewer note "icon does not match brand" was misleading: the real cause = the R&R site had **no favicon and no logo image at all** (text-only header → default globe). TikTok compares app icon vs site favicon/logo; nothing to match = "mismatch." Fixed: added the puppy app-icon as favicon + apple-touch + header logo across all R&R pages, pushed to GR3NB/rustandrainbow (commit fd9562f etc.). Also swapped the contact email on every R&R page + legal docs + SETUP-META from personal `ryan@northamfamily.org` → `rustandrainbow@gmail.com` (it was exposed on a public legal site AND a public repo). Logged a runbook: [[Knowledge_Base/Platform_App_Review_Runbook]] + memory `reference_app_review_branding`. **Ryan still needs to: resubmit TikTok + change the console contact-email field.**
+
+**Recruitment reality check — both cold channels tax a NEW identity.** Ryan joined the 4 FB groups, but FIRST as the R&R *Page* (comment box said "Answer as Rust and Rainbow") — had to re-join as his personal profile. Then his give-first comment was **auto-declined** ("automatically declined based on certain criteria in this group") because "Rust Rain" is a **brand-new FB profile** (no friends/history) — the Facebook version of the Reddit new-account tax. Corrected the s21 assumption that FB isn't gated (it is). **Ryan has NO aged personal account anywhere** (deleted his real FB years ago) and R&R has $0 sales / 3 IG followers — so neither cold communities nor the R&R audience is a fast path. **Decision: warm network (sellers he personally knows, any channel) is the real route to beta user #1**; cold channels are a 1–2 week warming play. Field note added to [[Projects/Welra/Marketing_Campaign_2026-06]].
+
+**Dogfooded the report pipeline → built the sample-report assets.** Wrote `apps/api/scripts/dogfood-report.ts` (runs the REAL production prompts + renderer on any dataset, no DB/queue). Generated `Dogfood_Sample_Report.html` (realistic $4,200 Etsy week) + `Dogfood_RR_Real_Report.html` (R&R's real $0 week). R&R can't be a *showable* demo ($0/3 followers), so the public demo uses sample data, labeled as such.
+
+**Two REAL production bugs found by dogfooding (both FIXED + DEPLOYED):** (1) `reportRenderer.ts` inserted the synthesis `${...}` raw into a `white-space:pre-line` div with NO markdown→HTML step → every report email would show literal `**asterisks**`/`---`. Added `renderSynthesisHtml()`. (2) `new Date(weekStartStr)` parsed as UTC → "Week of May 31" for a June-1 week; parse as local. Go-live blocker for the report itself — fixed before user #1 ever saw a broken email. Pattern logged in `feedback_scaffold_quality`.
+
+**Built `welra.io/sample`** — `apps/web/src/app/sample/page.tsx` + `public/sample-report.html` (in-report links neutralized) + beta CTA. Homepage already had a `#sample` section (excerpt + capture form); the new page shows the FULL real report. **LIVE + verified.**
+
+**arch-review of the WHOLE undeployed tree (~26 uncommitted files) before deploying** — Ryan invoked his own gate. NO BLOCKERS. Key: the 2 migrations (`add_leads`, `add_reports_email_sent_at`) were already APPLIED to prod (DB-verified via Supabase MCP — columns/table exist), only the files were uncommitted; `leads` RLS enabled/0-policy (correct); `env.ts` adds only an optional var (no boot crash); Instagram oauth+fetcher both on v22; catch-up cron double-send-guarded. Deferred items logged to Tasks.
+
+**DEPLOYED both:** committed snapshot `a0933df`, then `railway up --service welra` (healthcheck passed, /health 200, /leads live) and `vercel deploy --prod` from repo root (READY, aliased www.welra.io). Verified live: welra.io/sample renders clean (0 raw markdown), report bugs fixed in prod, leads route + catch-up cron + Instagram-v22 all now in production. **Deploy mechanics CONFIRMED: `railway up --service welra` (CLI authed, project linked) and `npx vercel deploy --prod` from repo root (.vercel linked there, authed rcn723).**
+
+**R&R Instagram→Facebook cross-post fix (diagnosed + coded, uncommitted in R&R repo).** Why IG posts don't appear on the FB Page: agent.py only posts to Instagram (Content Publishing API never auto-crossposts to FB); the `META_FB_PAGE_TOKEN` for FB posting was (a) never read by the code and (b) **expired May 11** (the auto-refresher only renews the IG token — separate auth domain). Built `post_to_facebook()` in agent.py (wired after the IG post, fails gracefully) + `refresh_fb_page_token.py`. **Blocked on Ryan: get a fresh Page token via Graph API Explorer / System User** — he hit a FB "reconnect accounts" loop; parked as off-critical-path.
+
+**Blog cadence: BEHIND but deprioritized.** Content_Calendar = 19 topics/6 pillars, ~4/month. Only 2 posts published, both on launch day 6/14 → ~1 short. Correct call given 0 users (SEO compounds over months); not a fire.
+
+**Process miss Ryan flagged (fixing):** I let the memory loop lapse — a full session of high-impact work without updating State/Worklog/To_Antigravity until he called it out. New rule saved to memory: log the loop after any milestone (esp. a deploy), not only at session end.
+
 ## 2026-06-17 — Welra Session 21: live beta recruitment — Reddit query fixes, CSV export guide, new-account-tax pivot to Facebook groups
 
 Ryan executed recruitment in real time and the session followed his blockers. **No code touched, no deploys** — all work was outreach tooling + docs.

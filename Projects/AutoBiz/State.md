@@ -2,7 +2,7 @@
 title: AutoBiz State v5
 project: AutoBiz
 type: state
-updated: 2026-06-14
+updated: 2026-06-21
 brand: Welra
 tags: [business, saas, autonomous, multi-channel]
 ---
@@ -135,6 +135,8 @@ Trigger: 10+ paying web customers with proven retention
 - Pricing confirmation: docs now assume implemented $19/$69/$129 stands (revert easy pre-launch)
 - Tier naming resolved 2026-06-09: **'growth'** (code, Stripe, and site all use it; business plan updated)
 - Critical path per [[Projects/Welra/Strategy_Review_2026-06-09]]: submit Etsy + Shopify dev apps NOW (4–8 wk lead); build CSV upload; recruit 3–5 beta users before Stripe live mode.
+
+> **Welra build status (as of 2026-06-21, session 22):** API + web both deployed (commit `a0933df`). Two report-email bugs found by dogfooding and fixed (synthesis markdown rendered raw; UTC date parse showed wrong week label). `welra.io/sample` is LIVE — dedicated page with the full real report + beta CTA. Scoreboard: 0 users / 0 revenue / Stripe TEST. Warm-network outreach is the path to beta user #1 (cold channels too new-account-taxed). Stale Continuation_Playbook — needs refresh next session. Welra `reportGenerator.ts` model ID updated to `claude-haiku-4-5-20251001` (canonical) — needs `railway up` to deploy. See [[Projects/Welra/State]] for full session-by-session history.
 
 > **Note:** Product/engineering state now lives in [[Projects/Welra/State]] + [[Projects/Welra/Tasks]].
 > This AutoBiz project tracks business/legal/tax only. (Source-of-truth split, 2026-06-09.)
