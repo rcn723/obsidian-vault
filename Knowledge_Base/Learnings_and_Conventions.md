@@ -1,8 +1,8 @@
 ---
 title: Learnings and Conventions
 type: knowledge-base
-updated: 2026-06-13
-tags: [deployment, railway, node, supabase, dns, domains, conventions, debugging]
+updated: 2026-06-23
+tags: [deployment, railway, node, supabase, dns, domains, conventions, debugging, nas, headless-agents]
 ---
 
 # Learnings and Conventions
@@ -180,6 +180,19 @@ Catches: auth trust boundary violations, silent DB update failures, race conditi
 ### Email changes: use Supabase secure email change, don't build verification
 **Rule:** `supabase.auth.updateUser({ email })` with secure email change sends confirmation to BOTH old and new addresses — takeover-resistant, zero custom code. One thing it doesn't do: update your own `customers.email` column — reconcile app-side after auth reflects the new address.
 
+## Scheduled / Headless Agents (added 2026-06-23, Rust & Rainbow NAS cutover)
+
+### Any cron/launchd/NAS-reachable code path must be headless-safe
+**Problem:** R&R's `agent.py` had `input()` called unconditionally in `review_designs` (approve Y/N) AND `run_monitor` (remove listing Y/N), plus a macOS-only `os.system("open …")`. Under launchd/NAS (no TTY) `input()` raises `EOFError` and the run crashes — `--mode generate` had been dying every weekly run *after* spending Ideogram credits, publishing/logging nothing, and the wrapper still `exit 0` so the watchdog never noticed. It only surfaced when actually run on the headless NAS.
+**Rule:** Before any code a scheduler can reach: never call `input()` without checking `sys.stdin.isatty()` (or an explicit `--yes`/auto_confirm flag) and branching to a non-interactive default; gate OS GUI commands (`open`/`xdg-open`/AppleScript) on `sys.platform` AND interactivity; thread the advertised `--yes` flag all the way into the prompting function. `grep -n "input(" <file>` and audit EVERY call site — the anti-pattern recurs across a file written in one sitting. If the headless default would do something DESTRUCTIVE (delete live listings), the safe non-interactive branch is REPORT-ONLY, never auto-destroy, even under `--yes` (auto-delete ≠ auto-publish). Make the launchd/cron wrapper capture the real `$?` (don't `echo` after the python call and mask the exit code) so a crash trips the watchdog. Dogfood on the actual deployment host — local tests pass while the headless host crashes.
+
+### Scheduling on a Synology NAS without root: a user-space supervisor
+**Problem:** the NAS (DSM) has no `crontab`, `synoschedtask` is root-owned, and `sudo -n` is password-gated, so the only "official" scheduler is DSM Task Scheduler (a root GUI you can't drive over SSH).
+**Rule/pattern:** when you need cron-like scheduling as a non-root user, a small Python supervisor (`rr-supervisor.py`) running under `nohup` works: flock for single-instance, a `while True: sleep 20` loop that fires jobs when local time matches an embedded cron spec, a 30-min heartbeat to a log, and a try/except per tick so one bad tick never kills the loop. Launch via a `…-start.sh` (idempotent — the flock rejects a double start). Caveat: nohup does NOT survive a reboot — add ONE DSM Boot-up Triggered Task running the start script for durability. When migrating a job off another host, disable the old scheduler in the SAME sitting or you double-fire. See [[NAS_RR_Migration_Runbook]].
+
+### LLM idea generation: dedup against the FULL corpus, fail closed, seed trends without a key
+**Rule:** for "don't repeat" generation, build the dedup set from every item ever produced across ALL statuses (not just the published/happy-path subset) + the static fallback list, normalized (case/space/punct), and dedup within the batch too. Make the LLM call fail CLOSED to a static fallback on any error (missing key, import, JSON parse) so a generate run never hard-fails. Persist generated items to the dedup log BEFORE the human-gated step so a crash/skip never causes re-generation. "Adopts trends" can be made key-independent by periodically refreshing the static pool with hand-researched current-trend entries — the LLM layers fresher ideas on top when the key is present.
+
 ---
 
-See also: [[Projects/Rust_and_Rainbow/State]], [[Projects/Welra/State]]
+See also: [[Projects/Rust_and_Rainbow/State]], [[Projects/Welra/State]], [[NAS_RR_Migration_Runbook]], [[project_nas_agents]]

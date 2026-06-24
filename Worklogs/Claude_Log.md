@@ -1,5 +1,9 @@
 # Claude Worklog
 
+## 2026-06-23 (Growth Pipeline run) — Welra scheduled growth pipeline, THE ONE = blog post "15-min Monday review"
+
+Autonomous pipeline run. Read Growth_Pipeline.md, Continuation_Playbook, Tasks.md, State.md, Content_Calendar.md. **Stage 1 (Creative):** added 3 new ideas (#16 blog post "15-min Monday review", #17 Source of Sources signup, #18 sample page share CTA). **Stage 2 (Validator):** 6 SELECTED (incl. 3 carryovers still pending Ryan's action from June 21); #16 blog post named THE ONE (only SELECTED idea the Operator could execute this run; 10/20 score; gives Ryan a shareable FB resource). #18 deferred (redundant priority with #16). **Stage 3 (Operator):** wrote full TSX blog post in `apps/web/src/app/blog/posts.tsx` (slug: `weekly-shop-review-monday-habit`, ~950 words, Pillar C, no "AI," 2 inline links). Validated: `tsc --noEmit` exit 0, `npm run build` clean, `/blog/weekly-shop-review-monday-habit` generated as static page. ESLint not configured in this project (pre-existing). No deploy. Ryan actions: (1) `npx vercel deploy --prod` from repo root to ship blog post, (2) send Resend broadcast (still pending from June 21), (3) post IH draft (still pending), (4) submit BetaList (still pending), (5) Source of Sources signup (2 min). Growth_Pipeline.md, Tasks.md, this worklog, To_Antigravity updated.
+
 ## 2026-06-21 (Growth Pipeline run) — Welra scheduled growth pipeline, THE ONE = Resend Broadcast
 
 Autonomous pipeline run. Read Growth_Pipeline.md, Continuation_Playbook, Tasks.md, State.md. **Stage 1 (Creative):** added 3 new ideas (#13 BetaList, #14 IH post, #15 Resend Broadcast to leads). **Stage 2 (Validator):** 4 ideas SELECTED; #15 Resend Broadcast named THE ONE (Trust=4, Speed=5, self-selected audience, no identity tax). **Stage 3 (Operator):** drafted final Resend broadcast email + IH build-in-public post — both in the notification. No code changes. Ryan actions: (1) send broadcast via Resend UI, (2) post IH draft, (3) submit BetaList (copy in Press_Drafts §4). Growth_Pipeline.md updated with ranked table + gate results. Tasks.md updated with two new action items.
@@ -673,3 +677,32 @@ Fixed the 4 issues Ryan hit clicking the R&R report: dead feedback link (api.wel
 - Follow-through/congratulations in weekly report (Pro+Growth): celebrates measured outcomes on last week's actions, never claims the seller acted. Eval harness extended + new golden; 4/4 honesty-clean; caught+fixed a growth single-week trend hallucination. API a1593ce2 live.
 - Marketing: sample-report capture on homepage too; Resend "Welra Leads" audience created + wired (verified contact sync).
 - Op note: leftover pre-fix retry jobs for no-data test accounts drained on their own (finite, one delay email each); Ryan chose let-them-finish; real customers unaffected. Queue-drain blocked by safety classifier (unauthorized prod deletion) — left as-is.
+
+## 2026-06-23 — Session (R&R): generation v2 — no-repeat, trend-aware, headless-safe
+Goal: "ensure R&R idea/image generation does not repeat, adopts new trends, move the pipeline off the MacBook."
+- ROOT-CAUSE: `--mode generate` had been CRASHING every weekly launchd run — `review_designs()` called `input()` with no TTY → EOFError after Ideogram images were generated (credits spent), publishing/logging nothing. Wrapper still exited 0 → watchdog blind. Generated-but-uncommitted titles were eligible for re-generation = repeat vector + wasted spend.
+- SHIPPED (agent.py, ~/Claude/Projects/side business/Rust & Rainbow):
+  - Headless-safe `review_designs(auto_confirm)` — TTY detection auto-approves; macOS-only `os.system("open")` guarded to darwin+interactive. Threaded `--yes` → run_generate → review.
+  - `generate_design_ideas()` + `_gather_trend_brief()` + `_design_corpus()` + `_normalize_title()`: Claude (claude-sonnet-4-6) proposes fresh, non-repeating concepts steered by seasonal calendar + best-sellers + (optional) live Google Trends. JSON-validated, deduped vs full corpus + in-batch, unknown pillars defaulted, ```json fence stripped. Fails closed to the static library — never hard-fails a run.
+  - Dedup corpus = ALL designs_log statuses + static library, normalized (was published-only → why log has dup titles). All generated designs now persisted to log.
+- Ryan decision: unattended runs AUTO-PUBLISH (reversible to review-queue later).
+- Mac-independence: added `anthropic` to agent-platform/requirements/rust-rainbow.txt. Split migration — market/monitor/report/suggest/refresh_token are Py3.8-safe (Phase 2a, movable now); generate blocked by rembg (Py≥3.10 vs NAS 3.8.12) until Ideogram native-transparent per-concept refactor (Phase 2b). Wrote [[Knowledge_Base/NAS_RR_Migration_Runbook]].
+- VERIFIED: py_compile (3.8 + 3.11); unit tests (normalizer, corpus, dedup, graceful fallback); mocked end-to-end run_generate(auto_confirm=True) → fresh non-repeating concepts, auto-approved, published, CDN saved, all logged (real designs_log untouched, temp copy).
+- arch-review: 0 code blockers; only blocker = missing ANTHROPIC_API_KEY (feature inert without it). New bug pattern logged to feedback_scaffold_quality.md (headless-unsafe scheduled job). 6 DEFERRED → R&R Tasks.md.
+- NOT done (outward-facing / needs Ryan or visual QA): live NAS cutover; transparent-endpoint refactor; the API key.
+
+## 2026-06-23 (cont.) — R&R clause 3 EXECUTED: NAS supervisor cutover
+- After confirming NAS scheduling is root-only (no crontab; synoschedtask root-owned; sudo password-blocked → DSM GUI), Ryan authorized the "NAS supervisor" option.
+- Deployed code to NAS (`./setup.sh rust-rainbow`, Ryan-approved); validated `--mode suggest` + `--mode monitor` both exit 0 on the NAS.
+- Live NAS run surfaced a SECOND copy of the headless input() bug — `run_monitor()` prompted to DELETE listings → fixed to report-only when headless (never auto-delete, even under --yes, since deletion is destructive). Audited ALL input() sites (generate/monitor fixed, market guarded, towels graceful). Redeployed.
+- Built + deployed `rr-supervisor.py` + `rr-supervisor-start.sh` to the NAS: user-space scheduler (admin, nohup ppid 1, flock single-instance, crash-restarting loop, 30-min heartbeat) firing market (M/W/F 10:00), report (Mon 7:00), suggest (Mon 8:00), monitor (Sun 23:00) via run-agent.sh. Verified running (pid 17009) + single-instance lock works.
+- Disabled + archived the 4 Mac launchd jobs (market/monitor/report/suggest) → `~/Library/LaunchAgents/.disabled-rr-nas-cutover-20260623/`. Kept generate/refresh_token/welra_assessment on Mac. No double-post (next market Wed 10:00 PDT, NAS only).
+- RESULT: R&R posting/monitoring/reporting now run on the always-on NAS — the Mac can be closed. generate stays on Mac (rembg/Py3.8 → Phase 2b).
+- Residuals (Ryan, in Tasks): DSM Boot-up task for reboot-durability; repoint/remove Mac watchdog (false-alarms on stale market.log — classifier blocked me removing monitoring unauthorized); sync NAS .env token after 6/25 refresh.
+
+## 2026-06-23 (cont.) — Documentation + key-learnings sweep
+Brought every doc in line with the shipped work (no stale "R&R on Mac"/"launchd sole scheduler" left):
+- Memory: MEMORY.md index line + project_nas_agents.md (frontmatter desc + body) → R&R posting/monitoring migrated to NAS via rr-supervisor.py; platform repo at github.com/rcn723/R-R-private; generate still on Mac. feedback_scaffold_quality.md already carries the headless-job pattern + 2nd-instance note.
+- Vault: State.md "Scheduling Architecture" rewritten to the hybrid NAS+Mac reality (+ Status Summary line + updated date); Tasks.md dates + run_generate.sh fix marked done; _Dashboard.md focus + date; Learnings_and_Conventions.md new "Scheduled / Headless Agents" section (3 conventions: headless-safety, NAS user-space supervisor, LLM no-repeat/trend gen) + date; NAS_RR_Migration_Runbook current.
+- Repo: LESSONS_LEARNED.md #9 ("generate can't run unattended") corrected to FIXED + headless-safety rule; "Current working stack" scheduling rows flagged superseded; run_generate.sh now `exit $rc` (crash no longer masked). Committed + pushed (4b1c8e0).
+- Verified: no stale refs remain; all key docs dated 2026-06-23.

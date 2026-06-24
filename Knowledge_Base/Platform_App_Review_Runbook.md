@@ -38,3 +38,21 @@ Derive favicon/apple-touch by downscaling the *exact same file* used as the app 
 ## Reusable rule
 
 Before submitting ANY developer app for review (TikTok, Meta, future platforms): confirm the **app icon, website header logo, and favicon are the same image**. A bare/legal-only website with no favicon and no logo is the #1 silent cause of "brand mismatch" rejections. This will hit **Meta App Review** identically — pre-check the site before submitting Welra's Meta app.
+
+---
+
+## Rejection: "Website URL has no login entry point" + the deeper "personal use" trap (TikTok, 2026-06-24)
+
+**Symptom.** TikTok rejected a Content Posting API app twice. Reasons: (1) "Your website does not have a login entry point — how can users complete the login process and use the Content Posting API service?"; (2) an earlier rejection for "personal/internal company use." Quote from TikTok: *"does not support personal or internal company use… Not acceptable: Display posts from the TikTok account(s) you or your team manage."*
+
+**Root cause — wrong product on the wrong website.** The app was submitted to *post* a single brand's own content (R&R) from a static legal-only GitHub Pages site. That is the textbook personal-use pattern AND the site had no login. The ACTUAL need was different: a SaaS (Welra) wanting TikTok as a read-only analytics SOURCE its external customers connect.
+
+**The fix that works — submit the integration under the SaaS that actually consumes it, as read-only Login Kit, with the SaaS's real customer-login as the entry point.**
+- **Website URL = the multi-tenant SaaS** (welra.io), where customers sign in and connect sources (Etsy/Shopify/TikTok). The existing "Connect X" dashboard IS the login entry point reviewers want. A brand's static legal page never passes.
+- **Products = Login Kit (+ Display API only if per-video data is truly needed).** DROP Content Posting API — posting scopes trigger the strictest review and the personal-use flag.
+- **Scopes = read-only** (user.info.basic/profile/stats). Frame as "each customer authorizes their OWN account for their own report." That is "apps serving external users" — exactly what TikTok says its APIs are FOR — NOT "accounts you/your team manage."
+- **Avoid the Display-API trap:** TikTok explicitly named "display posts from accounts you manage" as a rejected use case. Lead with Login Kit + user.info.stats; never use "display/embed" language; add video.list only if essential and frame as the customer's own performance metrics.
+- **3-strike rule:** 3 rejections in a row flags the dev account for manual review. After 2 strikes, submit a FRESH app under the correct (SaaS) identity rather than reconfiguring the tainted one, and don't submit until the use case is genuinely demoable on the live site.
+- **Test account:** if the Website URL is behind login, provide a working SaaS test login + steps in Apply Reason, and add the TikTok test account as a sandbox Target User so it can authorize while unaudited.
+
+**Reusable rule.** Match the app's *product + website + scopes* to who actually uses it. An analytics/read need → Login Kit read-only under the consuming SaaS. A posting need for your own brand → use an approved aggregator (Zernio/Buffer), because TikTok rejects single-account self-posting as personal use. Never submit a data-read use case as Content Posting, or a SaaS integration under a single brand's legal-page site.

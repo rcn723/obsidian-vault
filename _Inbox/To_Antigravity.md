@@ -1,35 +1,45 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-06-21
-tags: [handoff, welra, deploy, sample-report, session-22, sunday-assessment]
+updated: 2026-06-23
+tags: [handoff, rust-and-rainbow, generation, nas, mac-independence]
 ---
 
-# To Antigravity — 2026-06-21 (Sunday Assessment)
+# To Antigravity — 2026-06-23 (Welra growth pipeline + R&R NAS deploy)
 
-Autonomous weekly R&R vs Welra assessment completed.
+## Welra — growth pipeline run (2026-06-23)
 
-**R&R posts this week (Jun 15-19):** 2 Zernio partial failures — TikTok on Jun 17 (Gay Dog Dad Retro) and Pinterest on Jun 19 (Rainbow Heart Vizsla). IG succeeded all 3 days. Both failed designs got `last_posted` stamped; retry mechanism task still open.
+Growth pipeline ran autonomously. THE ONE = blog post "The 15-minute Monday review every seller should do" — full TSX written, build-verified (`tsc` exit 0, `/blog/weekly-shop-review-monday-habit` generated), staged in repo, NOT deployed. Ryan to run `npx vercel deploy --prod` from repo root when ready. Gives Ryan a credible give-first shareable for FB groups.
 
-**Two code fixes applied:**
-- `agent.py` `get_etsy_listing_stats`: stale "run etsy_auth.py" message → permanent-ban notice (missed in Jun 14 fix)
-- `Welra/reportGenerator.ts`: `claude-haiku-4-5` → `claude-haiku-4-5-20251001` (canonical model ID) — **needs `railway up` to deploy**
+Pending Ryan actions (in priority order):
+1. Send Resend broadcast (drafted 2026-06-21, still open)
+2. Post IH draft (drafted 2026-06-21, still open)
+3. Deploy new blog post (`npx vercel deploy --prod`)
+4. Submit BetaList (copy in Press_Drafts §4, 20 min)
+5. Source of Sources signup (sourceofsources.com, 2 min)
+6. Warm-intro outreach to sellers Ryan knows personally
 
-**URGENT for Ryan:** META_ACCESS_TOKEN expires 2026-07-01 — refresh by June 25 (4 days). Same token used in both R&R `.env` and Welra's Instagram integration card.
+Growth_Pipeline.md, Tasks.md, and Worklog updated.
 
-**Welra status (unchanged from s22):** 0 users / 0 revenue / Stripe TEST. Warm-network outreach = path to beta user #1. TikTok dev-app resubmit still pending Ryan. Continuation_Playbook stale (session 9).
+---
 
-# To Antigravity — 2026-06-20 (session 22)
+# To Antigravity — 2026-06-23 (R&R generation v2 + NAS deploy)
 
-**Session 22 — shipped a lot. API + web both DEPLOYED (first since s20).** Scoreboard still 0 users / 0 revenue / Stripe TEST, but the report-email is no longer broken and there's now a shareable demo. Commit snapshot `a0933df`.
+Worked the goal: *R&R idea/image generation must not repeat, must adopt new trends, and the pipeline must stop depending on the MacBook being open.*
 
-- **`welra.io/sample` is LIVE** — dedicated page with the FULL real report + beta CTA (`apps/web/src/app/sample/page.tsx` + `public/sample-report.html`). The shareable asset for seller communities; pairs with the homepage `#sample` excerpt.
-- **TWO report-email bugs found by dogfooding → FIXED + DEPLOYED:** (1) synthesis markdown rendered raw (`**`/`---` shown literally) — added `renderSynthesisHtml()` in `reportRenderer.ts`; (2) UTC date parse showed the wrong week label. Go-live blocker for the report itself, fixed before user #1.
-- **New tool `apps/api/scripts/dogfood-report.ts`** — runs the real prompts+renderer on any dataset, no DB. Use it to regenerate samples / catch render bugs.
-- **arch-review of the whole undeployed tree → NO BLOCKERS.** Both s18 migrations (`leads`, `reports.email_sent_at`) were already applied to prod (DB-verified); `leads` RLS correct; no new required env var. s20's Instagram demote + Graph-v22 fix are now deployed too.
-- **Deploy mechanics CONFIRMED:** `railway up --service welra` (authed, linked) + `npx vercel deploy --prod` from repo root (.vercel there, authed rcn723).
-- **TikTok R&R app icon rejection fixed** (site had no favicon/logo → added puppy icon everywhere) + R&R public contact email swapped personal→`rustandrainbow@gmail.com`. Runbook: [[Knowledge_Base/Platform_App_Review_Runbook]].
-- **R&R Instagram→Facebook cross-post:** diagnosed (IG API doesn't crosspost; `META_FB_PAGE_TOKEN` unused + expired May 11) and coded `post_to_facebook()` + `refresh_fb_page_token.py` (uncommitted in R&R repo). Blocked on Ryan minting a fresh Page token.
-- **Recruitment decision:** both cold channels (Reddit + FB) tax a brand-new identity; Ryan has no aged personal account. **Warm network (sellers he knows) is the real path to beta user #1.**
+**Clauses 1 & 2 — DONE & verified:**
+- No-repeat: dedup spans ALL designs_log history + the static library (normalized); all generated designs persisted. Fixed a live crash — `--mode generate` had been dying every weekly launchd run (`EOFError`, no TTY) after spending Ideogram credits.
+- Adopts trends: new Claude generator (`generate_design_ideas`) steered by season + best-sellers + trends; PLUS 9 hand-researched current-trend concepts added to the static pool so trend adoption is live even without an API key.
 
-**Open / Ryan's plate:** warm-network outreach; TikTok resubmit + console contact-email; FB Page token when FB cooperates; incognito Reddit shadowban check. **Do-not-touch: Stripe live mode, Etsy before 6/25, Meta App Review submission.** **Stale: Continuation_Playbook snapshot = session 9 — needs a refresh.**
+**Clause 3 — DONE & EXECUTED (posting is now Mac-independent):**
+- Ryan authorized the deploy + the "NAS supervisor" cutover. `./setup.sh rust-rainbow` → code + `.env` + venv on the NAS; `--mode suggest` + `--mode monitor` both ran exit 0.
+- The live NAS run exposed a SECOND headless crash — `run_monitor()` also prompted `input()` to DELETE listings. Fixed to report-only when headless. Audited all `input()` sites; file headless-clean; redeployed.
+- **Cutover:** NAS scheduling is root-only (DSM GUI), so I deployed `rr-supervisor.py` — a user-space scheduler (admin, nohup/ppid 1, flock, heartbeat) firing market (M/W/F 10:00), report (Mon 7:00), suggest (Mon 8:00), monitor (Sun 23:00). The 4 matching Mac launchd jobs are unloaded + archived. **The Mac can now be closed** and posting still happens. No double-post (next market Wed 10:00, NAS only).
+
+**Residuals (Ryan, documented in Tasks):**
+1. Reboot-durability: add ONE DSM Boot-up Triggered Task → `rr-supervisor-start.sh` (else supervisor dies on NAS reboot).
+2. Mac `watchdog.sh` cron will false-alarm (checks stale Mac market.log) — repoint or remove. (Classifier blocked me from removing monitoring unauthorized — correct.)
+3. After 6/25 META refresh, sync the token into the NAS `.env` (refresh_token still on Mac by Ryan's choice). Token valid to 7/1.
+- `generate` stays on Mac (rembg/Py3.8 → Phase 2b: Ideogram native-transparent refactor).
+
+**Docs:** [[Projects/Rust_and_Rainbow/State]], [[Projects/Rust_and_Rainbow/Tasks]], [[Knowledge_Base/NAS_RR_Migration_Runbook]] (exact cutover commands), scaffold-quality memory (headless-job pattern + 2nd-instance note). Code in `agent.py` + `requirements/rust-rainbow.txt` is uncommitted — pending Ryan's review before commit/push.
