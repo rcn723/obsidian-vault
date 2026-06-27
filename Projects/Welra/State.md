@@ -2,7 +2,7 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-06-20 (session 22)
+updated: 2026-06-26 (s25 — one-click-integrations branch shipped to prod; Printify proven live; git/prod drift fixed)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
@@ -11,6 +11,10 @@ tags: [welra, saas, ecommerce, ai-reports]
 > **New session? Read [[Projects/Welra/Continuation_Playbook]] FIRST** — it's the model-agnostic entry point: current blockers, the ordered path, operating rules, and the doc map.
 
 Welra is a SaaS product delivering clear weekly business reports for multi-channel e-commerce sellers, on a mission to help small shops grow. Built by Ryan Northam (ryan@welra.io). (Voice/style guide → [[Projects/Welra/Brand_Identity]]: never lead with "AI"; say "clear", not "plain English".)
+
+## Session 25 (2026-06-26) — one-click-integrations branch shipped to prod; Printify proven live; git/prod drift landmine fixed
+
+Branch `feature/one-click-integrations` (TikTok read-only source, WooCommerce one-click wc-auth connect, INTEGRATION_READINESS source-of-truth) **pushed + deployed to prod** after Ryan chose "push + deploy". **(1) DISCOVERED + FIXED a git/prod drift landmine.** The branch's working tree carried THREE complete-but-uncommitted changes that were already LIVE (deployed via earlier `railway up`/`vercel`, which deploy the *working tree*, not git): the `@anthropic-ai/sdk` 0.105.0 upgrade (the s23 Railway `ERR_STREAM_PREMATURE_CLOSE` fix), the boot-time report-catchup scan, and the "15-minute Monday review" blog post. **None were in git** — so a clean-checkout deploy would have silently regressed the Railway streaming fix. Committed all three as logical commits (`0b5ff31` SDK, `06fa464` boot catchup, `71b444c` blog post) so prod==git. **Lesson logged to memory:** `railway up`/`vercel` ship the working tree, so a critical fix can be live yet uncommitted → always reconcile the tree before pushing a branch. **(2) DEPLOYED both** — `railway up --service welra` (build green, `/health/` 200, clean boot, all crons registered, boot-time catchup ran on start: "No overdue jobs in window") + `vercel deploy --prod` (Ready, www.welra.io 200; new blog post live at /blog/weekly-shop-review-monday-habit; index shows 3 posts). Satisfies the long-standing P0 "deploy API report fix + blog post." **(3) Printify fetcher PROVEN LIVE.** Ran `scripts/smoke-printify.ts` against the real Printify API with R&R's read-only token → authenticated, returned valid weekly structure ($0/0 = R&R's correct real value). Flipped `INTEGRATION_READINESS.printify` `beta`→`live` (`461afa9`, deployed). Caveat: the Printify card offers token-paste *ungated*, so the flip is bookkeeping accuracy, not a UI change. **(4) Branch now 7 commits ahead of main, pushed to origin; NOT merged to main** (left as a feature branch). **Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.** **Open / next: WooCommerce one-click stays held (`NEXT_PUBLIC_WOO_ONECLICK` off) until `smoke-woocommerce.ts` runs against a real store; Etsy + Stripe fetchers are still STUBS; TikTok/Shopify/Instagram one-click gated on platform approvals; decide whether to merge the branch to main. The #1 business task is unchanged: land beta user #1 via warm network / concierge-Printify offer.**
 
 ## Session 22 (2026-06-20) — welra.io/sample SHIPPED, two report-email bugs found+fixed+DEPLOYED, full arch-review, R&R FB cross-post fix
 

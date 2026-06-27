@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-06-23 (growth pipeline — Priority Queue rewritten with step-by-step instructions; blog post staged)
+updated: 2026-06-26 (s25 — P0 deploy DONE: API+web shipped, blog post live, git/prod drift fixed; Printify proven live)
 tags: [welra, tasks, launch]
 ---
 
@@ -23,8 +23,9 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 
 ### 🔴 P0 — Do these first (blocks everything else)
 
-- [ ] **Deploy the API report fix + new blog post** (~10 min, two commands) [owner:: ryan] [priority:: high] [status:: open]
-  > **Why now:** The report-email markdown bug (raw `**bold**`/`---` in every report) has been fixed in the working tree since s22 but never deployed. Any beta user who gets a report before this ships sees broken formatting. This is a go-live blocker. Pair it with the blog post deploy so you only run the commands once.
+- [x] **Deploy the API report fix + new blog post** (~10 min, two commands) [owner:: claude] [priority:: high] [status:: done]
+  > **DONE 2026-06-26 (s25, Claude).** Deployed API (`railway up --service welra` → healthcheck `/health/` 200, clean boot, all crons registered incl. boot-time catchup which ran on start) + web (`vercel deploy --prod` → Ready, www.welra.io 200). New blog post live at welra.io/blog/weekly-shop-review-monday-habit; index shows 3 posts. Also fixed a git/prod drift landmine: the `@anthropic-ai/sdk` 0.105.0 Railway-streaming fix, the boot-time catchup scan, and this blog post were all LIVE (deployed earlier via `railway up` from the working tree) but never committed — committed so a clean-checkout deploy can't regress them. Branch `feature/one-click-integrations` pushed to origin (now 7 commits ahead of main).
+  > **Why now (orig):** The report-email markdown bug (raw `**bold**`/`---` in every report) has been fixed in the working tree since s22 but never deployed. Any beta user who gets a report before this ships sees broken formatting. This is a go-live blocker. Pair it with the blog post deploy so you only run the commands once.
   >
   > **Step 1 — deploy API fix:**
   > ```
@@ -69,6 +70,27 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   > 5. When someone says yes: send them [[Projects/Welra/CSV_Export_Guide]] for their platform → they export → you run it through the pipeline → report back same day.
   >
   > **Do NOT overthink the pitch.** You know these people. Keep it casual.
+
+- [ ] **Concierge POD offer — DM 3 Printify/POD sellers you know** (~10 min) [owner:: ryan] [priority:: high] [status:: open]
+  > **Why:** For POD sellers specifically, Welra can pull the data without them doing a CSV export — they just share their Printify API token (read-only, revocable). This removes the one step that has stalled warm-intro for weeks. Same-day report, zero setup on their end. Added by growth pipeline 2026-06-25.
+  >
+  > **Target:** People you know personally who sell Printify/POD products (Etsy, own site, anywhere). They already have a Printify account.
+  >
+  > **Variant A (Printify seller):**
+  > > Hey [Name] — quick one. I've been building a tool for my own Printify shop that emails me a weekly summary of sales, what moved, and what to focus on. I want to try it on a few shops that aren't mine — yours would be perfect. You'd just share your Printify API token (read-only, revoke it right after), I run everything, and you get a real report same day. Zero setup on your end. Free, I just want your honest take.
+  >
+  > **Variant B (any seller, CSV path framed as concierge):**
+  > > Hey [Name] — been building a shop-report tool for my own Etsy/Printify setup and want to test it on someone else's numbers. Want a free one? It's a quick CSV export of last month's orders. I walk you through the 2 steps, run the analysis, and send you a real report same day. No signup, nothing to install. Just want to know if it reads right on a shop that isn't mine.
+  >
+  > **Variant C (if they've mentioned their numbers recently):**
+  > > By the way — I built a thing for my shop that emails me a weekly breakdown: what actually sold, what changed, what to look at next. I've been running it on my own Printify numbers but I'd love to try it on someone else's. Want me to make you one? If you're on Printify I can pull it myself (read-only token, revoke it after), or it's a 2-min export if you're on Etsy/Shopify. Takes about 10 minutes, you just tell me if it's useful.
+  >
+  > **When they say yes (Printify path):**
+  > 1. Ask them to sign up free at `welra.io/signup` → connect Printify at `/dashboard/integrations` → report fires automatically on connect.
+  > 2. OR: they DM the token directly → hand to Claude → run via the dogfood-report.ts script.
+  > 3. Deliver same day. Ask: "Does this match what you saw in your Printify dashboard last week? Worth getting every Monday?"
+  >
+  > **When they say yes (CSV path):** send [[Projects/Welra/CSV_Export_Guide]] for their platform → hand CSV to Claude → pipeline → report same day.
 
 ---
 
@@ -228,6 +250,11 @@ Match the variant to their complaint, change the bracketed line:
 - **"Dashboard overwhelming":**
   > Saw your post about the analytics being a maze of clicks — same reason I built something for my own shop. It emails me one clear weekly summary so I never open the dashboard. Happy to make you a free one off a CSV of your last month and you tell me if it's useful — no signup, not selling anything.
 
+- **After a give-first comment leads to a reply — offer the scan (added 2026-06-25):**
+  > If you want to see what your own numbers look like right now, I built a free scan tool — drop your last month's orders as a CSV and it'll give you an instant read on what moved and what didn't. welra.io/scan — no account, nothing saved. Just want to know if it's useful.
+
+  *(Use this in the DM reply AFTER the give-first comment, NOT in the original comment — avoids new-account link filter in FB groups. Works immediately in private DM conversations.)*
+
 ### D) When they ask "what do you use to track this?"
 That's the opening — and only then:
 > I actually built a little tool for my own shop that emails me this weekly — happy to share if it'd be useful.
@@ -279,6 +306,8 @@ Most "competitors" are **storefront/CRO audit tools** (e.g. CROtrustify) — the
 - [ ] **[INFRA s20] Add root-domain SPF for welra.io** — do during the "send as ryan@welra.io" DNS work. welra.io's root has NO SPF, so PrivateEmail sends from ryan@welra.io get SPF=none and pass DMARC (`p=reject`) by DKIM alone — fragile. Fix: TXT on `@` = `v=spf1 include:spf.privateemail.com ~all` (leave send.welra.io alone). Found via Google DMARC aggregate report (s20) — reports are healthy, no spoofing. Detail in [[project-welra-email-monitoring]]. NOT a beta blocker. [owner:: ryan] [priority:: low] [status:: open]
 
 - [ ] **[MARKETING s21] Bake the CRO-audit differentiation into the site + marketing + a competitive doc.** Adjacent tools like **CROtrustify** ($24.99 one-time / $11.99-mo, Shopify-only) crawl your *public storefront* once and grade trust signals (TrustScore) — they're CRO/audit tools, NOT a weekly sales-report competitor; they never see whether you sold anything. Three jobs, AFTER beta user #1 (positioning, not a customer gate): (1) **Site copy** — add a "snapshot vs. movie / we read your real sales, not your window display / multi-channel not Shopify-only" angle somewhere on the homepage or a comparison section (don't lead with it; keep the no-leaderboard stance — "the only benchmark that matters is you last month"). (2) **Marketing materials** — fold the same lines into blog/FAQ/outreach (DM objection-handler already live in [[Projects/Welra/Tasks]] §E). (3) **Competitive analysis doc** — start `Projects/Welra/Competitive_Landscape.md` cataloguing adjacent tools (CRO/audit, multi-channel dashboards, Etsy-stats tools), where each sits in the funnel, and Welra's defensible lane (real ongoing sales data + multi-channel + honesty/no-benchmark). Market-validation note: a stranger independently betting that overwhelmed sellers pay $12–25/mo for an automated no-fuss "make my numbers make sense" tool = the Welra thesis confirmed. [owner:: claude] [priority:: low] [status:: open]
+- [x] **[INTEGRATIONS s25] Printify fetcher proven live → readiness=live.** Ran `apps/api/scripts/smoke-printify.ts` against the REAL Printify API with R&R's token (read-only) on 2026-06-26 — fetcher authenticated and returned a valid weekly-data structure ($0/0 orders, which is R&R's correct real value, not an error). Flipped `INTEGRATION_READINESS.printify` `beta`→`live` in `packages/types/src/index.ts` (committed `461afa9`, deployed). **Note:** the Printify dashboard card renders `ConnectPrintifyForm` (token-paste) *ungated*, so the readiness flip is accurate bookkeeping, not a UI change — Printify connect was already exposed. [owner:: claude] [priority:: medium] [status:: done]
+- [ ] **[INTEGRATIONS s25] Remaining readiness flips are still gated on live smoke tests / approvals.** `woocommerce` stays `beta` + `NEXT_PUBLIC_WOO_ONECLICK` stays OFF until `scripts/smoke-woocommerce.ts` is run against a real Woo store (no creds on hand). `shopify` `beta` needs Shopify protected-data approval + a live run. `etsy` is `coming` — the fetcher is still a **STUB** (real customer blocker for Etsy-direct; CSV/Printify cover Etsy sellers today) + Etsy app approval. `tiktok` `coming` — read-only Login Kit source built but gated on a fresh TikTok app approval under welra.io (NOT Content Posting — see [[Knowledge_Base/Platform_App_Review_Runbook]]). `stripe` `coming` — fetcher is a stub + no connect path; decide whether to build Stripe-as-a-source. [owner:: claude] [priority:: medium] [status:: open]
 ### Frozen (T3 — do NOT build until ≥3 active users)
 Referral friend-side coupon · referral retry cron · referral attribution race · resubscribe UI · Meta/Instagram OAuth app · Google Sheets bridge · Make webhook · OG/social images · dead `sendDay2Email` · Tailwind `slate` rename · Puppeteer consolidation · onboarding greeting capture · lazy-init Resend. *Every one serves customers you don't have yet. They live in the Archive below until a real user actually needs them.*
 

@@ -16,7 +16,7 @@ updated: 2026-06-23
 | Project | State File | Focus |
 |---|---|---|
 | [[Projects/Hubitat/State\|Hubitat]] | [[Projects/Hubitat/Tasks\|Tasks]] | Rule Machine build-out |
-| [[Projects/Stock_Agent/State\|Stock Agent]] | [[Projects/Stock_Agent/Tasks\|Tasks]] | Paper trading — 3/30 trades to go live |
+| [[Projects/Stock_Agent/State\|Stock Agent]] | [[Projects/Stock_Agent/Tasks\|Tasks]] | Momentum-only strategy DEPLOYED to NAS (2026-06-26); forward-testing on live paper → [[Projects/Stock_Agent/Go_Live_Plan\|Go-Live Plan]] |
 | [[Projects/Rust_and_Rainbow/State\|Rust & Rainbow]] | [[Projects/Rust_and_Rainbow/Tasks\|Tasks]] | Live — posting now on NAS (Mac-independent); META token refresh due 6/25 |
 | [[Projects/AutoBiz/State\|AutoBiz (DataBrief)]] | [[Projects/AutoBiz/Tasks\|Tasks]] | Planning — business plan drafted |
 | [[Projects/Welra/State\|Welra]] | [[Projects/Welra/Tasks\|Tasks]] | Beta runway — **start at [[Projects/Welra/Continuation_Playbook\|Continuation Playbook]]**; blockers: Anthropic credits, Etsy resubmit 6/25 |
