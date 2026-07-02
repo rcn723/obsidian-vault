@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-06-26 (s25 — P0 deploy DONE: API+web shipped, blog post live, git/prod drift fixed; Printify proven live)
+updated: 2026-07-02 PM-6 (Ryan's working list moved to vault-root _RYAN_TODO.md; this file = Claude's tracking layer)
 tags: [welra, tasks, launch]
 ---
 
@@ -13,15 +13,39 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 
 ---
 
-## 🎯 Priority Queue — updated 2026-06-23
+## ⭐ Ryan works from [[_RYAN_TODO]] — NOT this file
 
-> **One goal: land beta user #1.** Everything below is ranked by how directly it moves that needle. Do them in order. Stop when you've run out of time, not when the list runs out.
->
-> All outreach copy is in the **📋 Outreach copy** section below — §A = find targets, §B = give-first comments, §C = DMs, §E = objection handler. CSV export steps → [[Projects/Welra/CSV_Export_Guide]].
-
----
+> **As of 2026-07-02:** every outstanding Ryan action lives in `_RYAN_TODO.md` at the vault root, with exact steps and paste-ready copy. THIS file is Claude's tracking layer (full history, strategy links, per-task detail). Claude keeps `_RYAN_TODO.md` current after every session/milestone — if a task exists anywhere else but not there, it is Claude's bug.
 
 ### 🔴 P0 — Do these first (blocks everything else)
+
+- [ ] **TikTok app 'Welra': 3 clicks left, then submit** [owner:: ryan] [priority:: high] [status:: in-progress]
+  > **2026-07-02 PM: Claude built the whole app in the portal with Ryan's login.** Org "Welra" created (ryan@welra.io dev account was CLEAN — zero strikes); app "Welra" (type Other/Login Kit, owned by the org) fully configured and SAVED as draft: category Business, 115-char description, terms/privacy URLs, platform Web + welra.io, Login Kit with BOTH redirect URIs (api.welra.io + Railway host), scopes user.info.basic/profile/stats (video.list deliberately skipped), full read-only apply-reason text in App review.
+  > **Remaining:** (1) Ryan logs into Namecheap (tab already open) → Claude adds TXT `tiktok-developers-site-verification=mGfwbVyOTbWeuR8lCi76WzdoBrksHJJr` → Verify domain (clears 3 of 5 form errors). (2) Ryan drags `~/Desktop/Claude/welra-app-icon-1024.png` onto the App icon box (1024px PNG from the site's own icon, matches favicon per branding rule). (3) Review any remaining error (likely demo video) → Submit for review.
+
+- [x] **WooCommerce smoke: connect the test store** [owner:: ryan] [priority:: high] [status:: done]
+  > **DONE 2026-07-02 PM.** Full wc-auth pipe proven: connect → store approval → server-to-server key callback → validation probe → integration row (`connectMethod: wc-auth`). Readiness → **live** (`7b46fcf`), deployed. Test row deleted from Ryan's account; `woo-smoke` Railway project deleted (store 404s).
+  > **Test store is LIVE:** WordPress 7.0 + latest WooCommerce at `https://wordpress-production-dd31.up.railway.app` (throwaway Railway project `woo-smoke`, delete after). Admin: `welra_admin` / `WooSmoke!2026#welra`. REST API verified live (orders endpoint 401 = auth wall up). `NEXT_PUBLIC_WOO_ONECLICK=true` is DEPLOYED to production web.
+  > **Do:** (1) log into the test store wp-admin in your browser, (2) welra.io dashboard → Integrations → WooCommerce → Connect → paste the store URL, (3) Approve on the WooCommerce screen. Claude then verifies the callback logs + keys and flips woocommerce readiness to live, then tears down the Railway project.
+  > R&R-linked app declined again 2026-07-02 — that identity is done (3-strike rule). Every field, the apply-reason text, and the pre-submission checklist are verbatim in [[Projects/Welra/Integration_Roadmap]]. Create the TikTok account with ryan@welra.io, register at developers.tiktok.com, paste the pack, submit, then hand Claude the client key + secret for Railway.
+
+- [x] **Decide the WooCommerce proving path** [owner:: ryan] [priority:: medium] [status:: done] — Ryan chose the test store; done same day (see above).
+  > One-click is BUILT, gated only on our own smoke-test rule. Option A: wait for the first Woo-using beta prospect (validates on a real store). Option B: tell Claude "build a test store" and it gets proven this week. Either way Claude flips `NEXT_PUBLIC_WOO_ONECLICK` after the smoke passes.
+
+- [ ] **Shopify Partners account + app (optional front-load)** (~20 min) [owner:: ryan] [priority:: medium] [status:: open]
+  > Pack in [[Projects/Welra/Integration_Roadmap]]. Worth front-loading because Partners includes a free dev store, so Claude can prove the whole pipe BEFORE any customer touches it.
+
+
+- [x] **Push main + deploy web — unlocks the live Etsy connect button** [owner:: claude] [priority:: high] [status:: done]
+  > **DONE 2026-07-02 PM (Claude, with Ryan's explicit go-ahead).** Pushed main → origin (`461afa9..ec4145f`, 6 commits) and deployed web to Vercel production (Ready, 44s). Verified live: blog post 200 with the fabricated "I checked" sentence gone, `/sample?name=Test` personalizes, `/sample-report.html` now carries the new human voice + "A moment for you" close (zero em dashes in visible text). Etsy connect button is now live on the dashboard (readiness beta baked into this build).
+  > **Updated 2026-07-02 (s25 resume, PM — Etsy build).** Local main is now **5 commits ahead of origin**: the two staged growth changes (`d3b73d9` personalized /sample, `d74b637` "$0 week" post), s29's anecdote fix (`ab42bca` — the fabricated "I checked" claim is CUT, post is honest end-to-end), and today's Etsy work (`3a5b2d6` real Etsy v3 fetcher + readiness beta, `e4f85b0` human-voice report rules + wellness close). Auto-mode blocked Claude from pushing main and from `vercel deploy --prod`; both are safe to run now.
+  > **API side is DONE and LIVE** (Claude deployed via `railway up` 2026-07-02): Etsy fetcher real, ETSY_CLIENT_ID/SECRET/REDIRECT_URI set in Railway, boot green. The dashboard's Connect Etsy button stays gated until the WEB build ships (readiness flag is baked in at build time).
+  > **Do:** from repo root: `git push origin main` then `npx vercel deploy --prod` (or tell Claude "push and deploy web" — with your explicit ok it goes through).
+  > **Verify live:** dashboard → Integrations → Etsy card shows Connect (not "coming soon"); `welra.io/sample?name=Test` personalizes; `/blog/my-shops-first-welra-report` has no "I checked" sentence.
+
+- [x] **First live Etsy connect + report** [owner:: ryan] [priority:: high] [status:: done]
+  > **DONE 2026-07-02.** Two traps fixed same-day (empty callback list; x-api-key needs keystring:shared_secret — both in [[Knowledge_Base/Platform_App_Review_Runbook]]). Third attempt: clean OAuth connect of the R&R shop → instant GROWTH report with BOTH printify+etsy sources fetched, email sent ("Report email sent" log line = real proof). First multi-source Welra report ever delivered. New voice verified in DB: 1 em dash total (title line only — prompt patched), "A moment for you" close present and well-matched. `INTEGRATION_READINESS.etsy` flipped to **live** (commit `962da54`).
+  > Click Connect Etsy on the dashboard with a real Etsy account (approval 2026-07-02: app `welra-shop-report`). First attempt 2026-07-02 failed with "redirect URL not permitted": the approved app had an EMPTY callback list (Etsy never asks during creation). FIXED same day — Claude added both `https://welra-production.up.railway.app/integrations/etsy/callback` AND `https://api.welra.io/integrations/etsy/callback` via the Welra dev account's Edit-callback-URLs page, verified persisted. Retry the connect (R&R login is the right one for the seller side). A first connect fires an instant report; that's the smoke test. After one clean report, flip `INTEGRATION_READINESS.etsy` to `'live'`. Optional cleanup: add `https://api.welra.io/integrations/etsy/callback` as a second redirect URI in the Etsy app settings, then switch `ETSY_REDIRECT_URI` in Railway.
 
 - [x] **Deploy the API report fix + new blog post** (~10 min, two commands) [owner:: claude] [priority:: high] [status:: done]
   > **DONE 2026-06-26 (s25, Claude).** Deployed API (`railway up --service welra` → healthcheck `/health/` 200, clean boot, all crons registered incl. boot-time catchup which ran on start) + web (`vercel deploy --prod` → Ready, www.welra.io 200). New blog post live at welra.io/blog/weekly-shop-review-monday-habit; index shows 3 posts. Also fixed a git/prod drift landmine: the `@anthropic-ai/sdk` 0.105.0 Railway-streaming fix, the boot-time catchup scan, and this blog post were all LIVE (deployed earlier via `railway up` from the working tree) but never committed — committed so a clean-checkout deploy can't regress them. Branch `feature/one-click-integrations` pushed to origin (now 7 commits ahead of main).
@@ -45,6 +69,27 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 ---
 
 ### 🟠 P1 — Highest-signal outreach (do today, takes <30 min total)
+
+- [x] **Reply to the Qwoted "Ask the Board" request** [owner:: ryan] [priority:: high] [status:: done]
+  > **CANCELLED 2026-07-02 — request was FILLED the same day it was posted** (Ryan tried; too late). **Lesson for every future Qwoted match: the July 7 "deadline" was fiction — these fill in HOURS. Only act on a Qwoted email the same morning it arrives; if it is more than a day old, skip it.** Lesson also applies to HARO-style services generally.
+  > **Why:** Growth pipeline (2026-07-01 PM) found a live, matched Qwoted request sitting unread in ryan@welra.io since June 30: U.S. Chamber of Commerce's CO- site wants small businesses to feature in their "Ask the Board" series. Zero setup — you already have a Qwoted account and this match already exists. This is a real, dated deadline, not a someday item.
+  >
+  > **Steps:**
+  > 1. Open the email "CO- by U.S. Chamber of Commerce: Small businesses to feature in the 'Ask the Board' series" in ryan@welra.io (received 2026-06-30).
+  > 2. Click "Respond to this reporter via Qwoted."
+  > 3. Paste this (edit only if something reads wrong to you):
+  >    - **Business Name:** Welra
+  >    - **Business Website:** welra.io
+  >    - **What does the business do?** Welra reads the numbers small e-commerce sellers already have — Etsy, Shopify, Printify, and similar platforms — and emails them one clear weekly report of what sold, what changed, and what's worth doing next. No dashboard to learn, no analyst to hire.
+  >    - **Advice-driven topic idea:** "The 15-minute weekly habit that catches small-shop problems before they cost you money" — a simple, repeatable Monday-morning review any solo seller can do in 15 minutes, covering what to check and how to read it (full version already published at welra.io/blog/weekly-shop-review-monday-habit if they want a reference).
+  > 4. Submit before **July 7, 2026, 7:49am PDT**.
+  >
+  > **Success:** Confirmation from Qwoted / CO- editor. If it publishes, it's a credible backlink + small-business-owner audience exposure — log the published URL in this file when it lands.
+
+- [ ] **Approve + deploy: R&R honest micro case-study blog post + personalized `/sample` page** — superseded, see the P0 item at the top of this file ("Push + deploy the two staged growth changes") [owner:: ryan] [priority:: high] [status:: open]
+  > **2026-07-02 update:** both changes are now committed on local main (no longer just working-tree edits) and the case-study post's unverified anecdote has been found and fixed. This entry is kept only so the "Use it" note below isn't lost — the actual ship action lives in the P0 item at the top of this file.
+  > **Use it:** once live, drop `welra.io/blog/my-shops-first-welra-report` in any warm-intro/concierge DM as proof the reports are honest even when the numbers are bad — a stronger trust signal than the polished sample report for a skeptical first "yes."
+  > **Use it:** when sending the warm-intro (#1) or concierge (below) DMs, swap the bare `welra.io/sample` link for `welra.io/sample?name=<their first name>&shop=<their shop name>`.
 
 - [ ] **Send the Resend broadcast to Welra Leads** (~5 min) [owner:: ryan] [priority:: high] [status:: open]
   > **Why:** These are people who already signed up to receive a sample Welra report. They self-selected. This is the warmest non-personal-network channel available — warmer than any cold community. The email was drafted by the growth pipeline on 2026-06-21.
@@ -70,6 +115,8 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   > 5. When someone says yes: send them [[Projects/Welra/CSV_Export_Guide]] for their platform → they export → you run it through the pipeline → report back same day.
   >
   > **Do NOT overthink the pitch.** You know these people. Keep it casual.
+  >
+  > **Optional add-on (growth pipeline, 2026-07-02): a small thank-you for the first few responders.** This ask has sat unexecuted 3+ weeks across 4 pipeline runs — not because the idea is wrong, but response rate on a cold "want a free report?" text is inherently a coin flip. If it'd help you actually hit send, close with one line: *"First 5 people who try it and give me honest feedback — I'll send you a $10 gift card, no strings."* Costs at most $50, only if it works, and reframes the ask as "help me test this" (which it genuinely is) rather than a sales pitch. Skip it if it doesn't feel like you — the base ask above stands on its own.
 
 - [ ] **Concierge POD offer — DM 3 Printify/POD sellers you know** (~10 min) [owner:: ryan] [priority:: high] [status:: open]
   > **Why:** For POD sellers specifically, Welra can pull the data without them doing a CSV export — they just share their Printify API token (read-only, revocable). This removes the one step that has stalled warm-intro for weeks. Same-day report, zero setup on their end. Added by growth pipeline 2026-06-25.
@@ -91,12 +138,33 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   > 3. Deliver same day. Ask: "Does this match what you saw in your Printify dashboard last week? Worth getting every Monday?"
   >
   > **When they say yes (CSV path):** send [[Projects/Welra/CSV_Export_Guide]] for their platform → hand CSV to Claude → pipeline → report same day.
+  >
+  > **Optional add-on (growth pipeline, 2026-07-02):** same $10-gift-card-for-first-5-testers line as the warm-intro task above works here too — drop it after "your honest take" in any variant if you want a nudge to actually send these.
+
+- [ ] **One-hop referral ask: 2–3 friends who aren't sellers, asking who THEY know** (~10 min) [owner:: ryan] [priority:: medium] [status:: open]
+  > **Why:** Growth pipeline (2026-07-02) — if the direct warm-intro list (above) turns out smaller than 5–10 names, this widens the same trust channel one hop out without going cold. You're not pitching Welra to these people, you're asking a favor.
+  >
+  > **Ask (text/DM to 2–3 friends, family, or acquaintances — anyone, not just sellers):**
+  > > Random ask — do you know anyone who sells stuff online (Etsy, Printify, their own site, side-hustle, doesn't matter)? I built a free tool that emails shop owners a weekly summary of their numbers and I'm looking for a couple people to try it. Not selling anything, just want honest feedback. If you think of someone, I'd love an intro.
+  >
+  > **When they name someone:** ask for a warm intro (text thread, group chat, "hey do you mind if I connect you two") rather than cold-DMing the seller yourself — the referring friend's trust carries over. Then use the warm-intro ask/CSV flow above.
+  >
+  > **Skip this** if the direct list above already has 5+ names — no need to widen the pool before testing the narrower one.
 
 ---
 
 ### 🟡 P2 — Quick wins (do today or tomorrow, <30 min each)
 
-- [ ] **Post the Indie Hackers build-in-public draft** (~10 min) [owner:: ryan] [priority:: medium] [status:: open]
+- [ ] **[DEFERRED from arch-review] Set up ESLint config for apps/web** (~5 min) [owner:: ryan] [priority:: high] [status:: open]
+  > Found 2026-07-01 (PM growth-pipeline run): `npm run lint` (→ `next lint`) has no ESLint config anywhere in the repo, so it drops into next's interactive "How would you like to configure ESLint?" wizard and can't run non-interactively. Not caused by any recent change — pre-existing gap that blocks the pipeline's own validation loop from running lint (tsc + build still ran clean). Fix: run `cd ~/Claude/Projects/side\ business/Welra/apps/web && npx next lint` once interactively, choose "Strict (recommended)," commit the generated config.
+
+- [ ] **[CONDITIONAL] Scope one active Etsy/POD Discord for give-first participation** (~15 min to scope, no post yet) [owner:: ryan] [priority:: low] [status:: open]
+  > **Why:** Growth pipeline (2026-07-02) — Discord skews lower identity-tax than Reddit/FB (no karma gate, no new-account auto-decline pattern per [[Projects/Welra/Marketing_Campaign_2026-06]]), and 2026 seller communities have migrated there for real-time help. Not yet SELECTED as THE ONE — blocked on picking the actual server (see below) and reading its self-promo rules before any post.
+  > **Candidates found this run:** the largest Etsy-focused Discord (per [Let's Talk Shop's 2026 roundup](https://www.letstalkshop.com/blog/best-etsy-seller-communities-2026)) splits channels by category (digital/handmade/POD) with sub-hour response times; see also their [POD Discord ranking](https://www.letstalkshop.com/blog/best-print-on-demand-communities-2026). DISBOARD's [etsy-tagged](https://disboard.org/servers/tag/etsy) and [print-on-demand-tagged](https://disboard.org/servers/tag/print-on-demand) listings are the fallback if those are dead.
+  > **Steps:** join one, lurk a few days, answer 2–3 real questions with zero mention of Welra, THEN (per that server's self-promo rules — many have a dedicated channel/day) mention it once. This is a 1–2 week warm-up, not a today action.
+
+- [ ] **Post the Indie Hackers build-in-public draft** [owner:: ryan] [priority:: medium] [status:: blocked]
+  > **2026-07-02: IH posting is privilege-gated for new accounts** (moderators grant after a pattern of authentic comments; IH Plus = paid instant unlock, declined). Path: 2 genuine comments/day → check Submit-a-Post every couple days → post [[Projects/Welra/IH_Post_Draft]] when unlocked. Same new-identity tax as Reddit — logged pattern.
   > **Why:** No karma gate, no identity risk. IH has makers who often run side shops. The draft exists from the June 21 pipeline run — this is paste-and-post.
   >
   > **Steps:**
@@ -117,16 +185,14 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   >
   > **Success:** Confirmation email received.
 
-- [ ] **Etsy API resubmit** (~20 min, available 2026-06-25) [owner:: ryan] [priority:: high] [status:: open]
-  > **Why:** Etsy is a friction-reducer for Etsy sellers (they currently join via CSV). Reapply on or after **June 25** — the reminder `etsy-api-resubmit-reminder` fires at 9am that day.
-  >
-  > **Steps (do not improvise — use verbatim copy):**
-  > 1. Log into the **Welra Etsy developer account** (NOT the rust-and-rainbow account — that one is permanently banned)
-  > 2. Open [[Projects/Welra/Etsy_API_Approval_Strategy]] — use the exact application copy in that doc, word for word
-  > 3. Submit ONE clean application. Do not submit from the R&R account, do not network-evade.
-  > 4. Watch ryan@welra.io (via ryannortham3@gmail.com POP import) for their reply.
-  >
-  > **Do NOT resubmit before June 25** — early/duplicate submits auto-deny.
+- [x] **Etsy API resubmit — Phase 1 (Personal)** — DONE on/after 2026-06-25 [owner:: ryan] [priority:: high] [status:: done]
+  > Submitted from the Welra Etsy developer account. Result: Etsy support (Sweety) replied 2026-06-26 — a SOFT request for a more comprehensive, explicitly read-only/no-buyer-PII breakdown, not a new denial. See Round 2 below.
+
+- [x] **Etsy API resubmit — Round 2** — DONE 2026-06-30 [owner:: ryan] [priority:: high] [status:: done]
+  > New app `Welra Shop Report` submitted via the Etsy Developer Portal: Seller Tools, small group of users, non-commercial (Personal-tier equivalent), "Read sales data" only checked. 480-char description leads with read-only scopes (shops_r/listings_r/transactions_r) + no-buyer-PII per Sweety's specific ask. Full copy, reply-to-support text, and the 13-step resubmission process are in [[Projects/Welra/Etsy_API_Approval_Strategy]].
+
+- [ ] **Await Etsy's Round 2 response** (~5–8 days from 2026-06-30) [owner:: ryan] [priority:: high] [status:: open]
+  > Do not resubmit or email developer@etsy.com before then. If approved: re-run openapi-ping, then build the real Etsy fetcher (currently a stub). If declined again: check whether the reason is new before any Round 3 — see checklist in [[Projects/Welra/Etsy_API_Approval_Strategy]].
 
 - [ ] **Source of Sources signup** (~2 min) [owner:: ryan] [priority:: medium] [status:: open]
   > **Why:** Free press pipeline. Journalists post "looking for a source on X" — you respond as a seller/founder. Runs in the background; 2 minutes to set up.

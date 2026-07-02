@@ -154,7 +154,9 @@ A two-sets-of-eyes check of the live account corrected a wrong premise in this d
 - [x] welra.io copy: "AI-written" → "plain-English" sitewide — DONE 2026-06-10, commit de527a5, LIVE (verified on welra.io; AI disclosure retained in privacy policy + terms). Deployed via `npx vercel deploy --prod`, which also took the whole queued brand backlog live. [owner:: claude] [priority:: high] [status:: done]
 - [x] Etsy trademark disclaimer added to site footer — DONE 2026-06-10, live (verified) [owner:: claude] [priority:: high] [status:: done]
 - [x] Phase 1 reapplication submitted on/after 2026-06-25 — Etsy support (Sweety) responded 2026-06-26 with a SOFT request for a more comprehensive, explicitly read-only/no-PII breakdown (not a new denial reason). [owner:: ryan] [priority:: high] [status:: done]
-- [ ] Round 2: reply to Sweety + submit new app with the Round 2 copy and step-by-step process above (Ryan logged into the Welra Etsy account; Claude drafted/reviewed copy, Ryan reviews + submits) [owner:: ryan] [priority:: high] [status:: blocked]
+- [x] Round 2: new app `Welra Shop Report` submitted 2026-06-30 via the Etsy Developer Portal — Seller Tools, small group of users, non-commercial (Personal-tier equivalent), "Read sales data" only checked (no upload/edit listings, no send-email), 480-char description leading with read-only scopes + no-buyer-PII per Sweety's ask. [owner:: ryan] [priority:: high] [status:: done]
+- [ ] Await Etsy response — expect ~5–8 days (community pattern from open-api#675). Do not resubmit or email developer@etsy.com before then. [owner:: ryan] [priority:: high] [status:: blocked]
 - [ ] If approved: re-run openapi-ping, then build the Etsy fetcher [owner:: claude] [priority:: high] [status:: blocked]
+- [ ] If declined again: check whether the new reason is already in "Why we were denied" above — if not, add it before any Round 3 [owner:: claude] [priority:: medium] [status:: blocked]
 
 Related: [[Projects/Welra/Etsy_Shopify_Developer_Applications]] (superseded for Etsy by this doc) · [[Projects/Welra/State]] · [[Projects/Welra/Tasks]]

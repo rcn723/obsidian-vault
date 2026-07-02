@@ -55,4 +55,16 @@ Before submitting ANY developer app for review (TikTok, Meta, future platforms):
 - **3-strike rule:** 3 rejections in a row flags the dev account for manual review. After 2 strikes, submit a FRESH app under the correct (SaaS) identity rather than reconfiguring the tainted one, and don't submit until the use case is genuinely demoable on the live site.
 - **Test account:** if the Website URL is behind login, provide a working SaaS test login + steps in Apply Reason, and add the TikTok test account as a sandbox Target User so it can authorize while unaudited.
 
+**Update 2026-07-02:** the R&R-linked TikTok app was declined AGAIN. Per the 3-strike rule below, that dev identity is now off-limits — the fresh Welra-identity app (full pack in [[Projects/Welra/Integration_Roadmap]]) is the only path forward. Same play that won Etsy round 2.
+
 **Reusable rule.** Match the app's *product + website + scopes* to who actually uses it. An analytics/read need → Login Kit read-only under the consuming SaaS. A posting need for your own brand → use an approved aggregator (Zernio/Buffer), because TikTok rejects single-account self-posting as personal use. Never submit a data-read use case as Content Posting, or a SaaS integration under a single brand's legal-page site.
+
+## Etsy: callback URLs are NOT part of app creation (2026-07-02, Welra)
+Etsy's "Create a New App" flow never asks for callback URLs, and an approved app ships with an EMPTY callback list. First OAuth attempt then fails on the Etsy side with **"An error occurred — The requested redirect URL is not permitted."**
+**Fix (30s):** etsy.com/developers/your-apps → row menu (⋮) on the app → **Edit callback URLs** → add the exact `redirect_uri` your server sends (character-for-character) → Save → verify by reloading the page (Etsy shows no save confirmation).
+Gotchas: the fix lives under the DEVELOPER account that owns the app (for Welra: the ryan@welra.io Etsy identity, never R&R); the seller doing the connect can be any account. Etsy compares exact match, so register every host you'll ever send (Railway host + api.welra.io both registered for `welra-shop-report`).
+
+## Etsy: x-api-key must be "keystring:shared_secret" (2026-07-02, Welra)
+Etsy v3 application endpoints (anything under /v3/application/*) 403 with `{"error":"Shared secret is required in x-api-key header."}` if you send the keystring alone — despite most older docs/examples showing keystring-only. The public token endpoint (/v3/public/oauth/token) still takes client_id only.
+**Fix:** send `x-api-key: <keystring>:<shared_secret>` (colon-joined). Verify in 10 seconds: `curl -H "x-api-key: KEY:SECRET" https://api.etsy.com/v3/application/openapi-ping` → 200 with your application_id.
+Symptom in Welra: OAuth consent + token exchange succeed, then the shop lookup in the callback fails → user bounces to the dashboard with the generic "connection didn't go through" banner. Always read the Railway log line `[oauth:etsy] ...` for the real cause.
