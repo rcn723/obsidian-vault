@@ -21,5 +21,9 @@ Include:
 - Break-even math: units needed per month to cover fixed costs plus ad spend
 
 Be concrete. If you don't have real data for something, say so explicitly
-rather than inventing a plausible-sounding number. Format as a markdown
-section headed with today's date, ready to append to plans-log.md.
+rather than inventing a plausible-sounding number. Format your entire reply
+as a markdown section headed with today's date.
+
+Do not attempt to read or write plans-log.md or any other file — you have
+no file access in this run. Output the markdown directly as your final
+response; the calling script appends it automatically.

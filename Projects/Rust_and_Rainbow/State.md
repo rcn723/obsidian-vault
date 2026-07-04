@@ -2,11 +2,18 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-06-23
+updated: 2026-07-03 evening (Meta double-check: Instagram token genuinely fixed, but found a SEPARATE Facebook Page token expired since May 11 — never covered by auto-refresh)
 tags: [etsy, printify, social-media, python, automation, nas]
 ---
 
 # Rust & Rainbow
+
+## 2026-07-03 evening (cont'd) — Meta double-check: real fix confirmed, real NEW problem found
+
+Ryan asked to double-check the Meta/Instagram token he thought had been refreshed. Didn't trust file-presence or the prior session's note — ran live API calls end to end:
+- **`META_ACCESS_TOKEN` (Instagram Login token): genuinely refreshed and working.** First attempt to validate it against `graph.facebook.com` failed with "Cannot parse access token" — a false alarm caused by hitting the wrong API host. `agent.py` itself documents (and uses) `graph.instagram.com` for this token, not `graph.facebook.com` — they're separate APIs with incompatible token formats. Re-tested against the correct host on both the Mac and the NAS: both returned real live data (`followers_count: 10, media_count: 31`), so Instagram posting is genuinely fine. Also checked Welra's own Supabase `integrations` table — no Instagram row exists there at all currently (only etsy/csv/printify), so the earlier note that "this token is also pasted into Welra's card" turned out not to reflect current reality; nothing to fix on the Welra side.
+- **`META_FB_PAGE_TOKEN` (separate Facebook Page-posting token): confirmed EXPIRED since 2026-05-11**, live, via Facebook's own error message ("Session has expired on Monday, 11-May-26"). This is a different credential from the Instagram one — `agent.py` line 149 already comments that it does NOT auto-refresh the way the Instagram token does (`refresh_meta_token.py` only touches the IG token). It's been silently broken for almost 2 months; any Facebook Page photo post attempted since mid-May would have failed. New task added to `_RYAN_TODO.md`'s 🔴 RIGHT NOW section with the Graph API Explorer steps to get a long-lived Page token.
+- Also confirmed (unrelated, carried over from the prior session): `ANTHROPIC_API_KEY` is genuinely live on both Mac and NAS via a real `anthropic.messages.create()` call — `agent.py`'s static-prompt fallback guard won't trigger anymore. One non-blocking follow-up remains: run `--mode generate` once and eyeball real variety in the output.
 
 Automated Vizsla/LGBTQ+ niche product business. Generates designs, publishes to Printify/Etsy, posts to 3 social platforms.
 Path: `~/Claude/Projects/side business/Rust & Rainbow/`
@@ -14,6 +21,27 @@ GitHub: `https://github.com/GR3NB/rustandrainbow` (transferred from rcn723 2026-
 GitHub Pages (legal docs): `https://gr3nb.github.io/rustandrainbow/`
 
 See [[Projects/Rust_and_Rainbow/Tasks]] for open items.
+
+## 2026-07-03 — Seasonal product expansion (tote/poster/ornament) + visual-style variety enforcement
+
+Ryan's ask: assess trending/seasonal products to add (beach towels, tote bags, etc.) and fix a real lack of design variation ("I don't see much variation... I don't want designs repeated"). Diagnosed and fixed both, in `agent.py` (uncommitted — see below):
+
+1. **Seasonal catalog gap.** `SEASONAL_FORMATS` (the existing month-by-month seasonality calendar) already recommended tote bags (March/June), posters/wall art (January), and ornaments (November) — but `KNOWN_FORMATS` marked all three "NOT in catalog yet." So the pipeline's own `--mode suggest` report was recommending products it had no way to actually publish. Queried the live Printify catalog and wired up real, verified blueprints as new MANUAL (opt-in, same pattern as beach towels — curated, not auto-published to every design): **Tote Bag** (blueprint 720, "Cotton Tote"), **Poster** (blueprint 282, "Matte Vertical Posters"), **Ceramic Ornament** (blueprint 531, "Ceramic Ornament, 4 Shapes", Q4-seasonal). Added print areas/scale/pricing for each (verified against live API responses, not guessed). New CLI modes: `--mode tote`, `--mode poster`, `--mode ornament` — same UX as the existing `--mode towels`. Generalized `run_towels` into a shared `run_manual_addon()` so a 5th seasonal product is a 3-line addition, not a copy-pasted function. `--mode suggest`'s "next action" logic was hardcoded to beach_towel only — generalized to read any manual product's command from `KNOWN_FORMATS` via regex.
+2. **Design variation was real, not perceived.** Ran the new style-tally helper against the actual `designs_log.json` (25 entries): `bold_typographic` 3x + `unclassified` (mostly typographic) 4x in the last 12 designs, vs. 1x each for line-art/vintage-badge/cartoon and **0x** for bootleg-halftone, warning-label, and retro-mascot styles — confirming the log had collapsed toward one look even though titles never literally repeated (the existing title-dedup was already working correctly; style dedup didn't exist at all). Added `STYLE_LIBRARY` (8 named visual styles, all already proven somewhere in the static PROMPTS library) + `_infer_style()` (best-effort classifier for pre-existing designs that predate this field) + `_recent_style_counts()`. `generate_design_ideas()`'s Claude prompt now shows the model its own recent style distribution and explicitly instructs it to favor underused styles and never repeat a style within one batch — this sits alongside the existing pillar variety and title-dedup (`_design_corpus`), not replacing them.
+3. **⚠️ Real blocker surfaced, not fixed by this change:** `ANTHROPIC_API_KEY` is still NOT set in `.env` (confirmed by direct check this session — same gap flagged in [[Projects/Rust_and_Rainbow/Tasks]] since 2026-06-23, unresolved 10 days later). `generate_design_ideas()` returns `[]` immediately without that key, so **the new style-balancing logic never actually runs** — every generate call silently falls back to the static 31-prompt library, which is exactly the repetition problem being fixed. The static-library fallback path now at least tags designs with an inferred style (so future tallies are accurate), but the real fix — Claude actively choosing underused styles — is dead code until the key is added. This is the single highest-priority follow-up; see Tasks.
+4. Verified: `python3 -m py_compile agent.py` clean; `--mode suggest` run live end-to-end (report-only, no side effects) — confirmed beach_towel path unchanged and the new tote/poster/ornament formats now correctly resolve to real `--mode` commands instead of "NOT in catalog yet." Did NOT run `--mode generate` (would publish real products/spend Ideogram+Printify credits) and did NOT commit to git — `agent.py` has pre-existing unrelated uncommitted changes (`.gitignore`, `brand_guide.md`) from before this session; only `agent.py` was touched here, but committing wasn't requested.
+
+## 2026-07-03 (cont'd) — ANTHROPIC_API_KEY added (Mac + NAS) + agent.py deployed to NAS
+
+Ryan supplied a real Anthropic key. Added `ANTHROPIC_API_KEY` to both `.env` files:
+- **Mac** (`~/Claude/Projects/side business/Rust & Rainbow/.env`) — new block appended, confirmed gitignored (never staged).
+- **NAS** (`/volume1/homes/admin/claude-agents/agents/rust-rainbow/.env`) — appended directly over SSH (`admin@192.168.1.2`), verified present without ever printing the raw secret to any log/transcript. Confirmed `anthropic` 0.72.0 already installed in the NAS venv.
+
+**Live-verified the fix actually works**, not just wired: called `generate_design_ideas()` directly with the real key (Anthropic-only, no Ideogram/Printify spend, nothing persisted) — it returned 3 concepts and picked exactly the 3 previously-zero-usage styles from the real log's tally (`bootleg_vintage_halftone`, `warning_label_typographic`, `retro_mascot_badge`) instead of defaulting to typographic again. This is the core fix working end-to-end.
+
+**Deployed `agent.py` to the NAS** via the existing `agent-platform/deploy.sh rust-rainbow` (dry-run checked first — confirmed `.env`/`designs_log.json`/`reports`/`output` are excluded/preserved, only code overlays). Post-deploy verification on the NAS itself: `py_compile` clean under the NAS's actual Python 3.8.12 (not just the Mac's 3.9), `PRINTIFY_BLUEPRINTS_MANUAL`/`KNOWN_FORMATS`/`STYLE_LIBRARY` all confirmed live in the deployed module, `.env` survived the deploy intact (67 lines, key present). The NAS's weekly `--mode suggest`/`--mode report` jobs now run the current code — no more stale "NOT in catalog yet" for tote/poster/ornament.
+
+**Still open (unchanged from above):** `--mode generate` itself still only runs on the Mac (rembg/Py3.10 constraint unchanged) — this deploy doesn't move design generation to the NAS, it just brings the NAS's report/suggest/market/monitor jobs current. First real `--mode generate` run with the new key + style logic is still Ryan's to trigger and review (see Tasks).
 
 ## 2026-06-23 — Generation v2: no-repeat + trend-aware + headless-safe
 

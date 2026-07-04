@@ -2,7 +2,7 @@
 title: Welra Marketing Campaign — Beta Recruitment (June 2026)
 project: Welra
 type: plan
-updated: 2026-06-17 (s21 — added new-account-tax field note: Reddit warming runway + parallel FB/Indie Hackers channels)
+updated: 2026-07-04 (s26 — live-checked both accounts before a second Reddit/FB push; revised target list + fresh comment templates, see new section after the FB field note)
 tags: [welra, marketing, beta, growth]
 ---
 
@@ -63,6 +63,46 @@ Two adjacent traps found same session:
 - A brand-new profile pasting a long multi-paragraph comment is a worst-case spam signal — instant decline, and repeated retries risk flagging the account. **Stop after one decline.**
 
 **Implication (the real lesson):** BOTH cold channels — Reddit AND Facebook — penalize a fresh identity. For a new profile, cold seller communities are a **1–2 week warming play, not a today play.** Fastest path to beta user #1 is **WARM**: sellers you already know + an **aged real personal account** if you're willing to use it + Indie Hackers (your own thread, not automod-gated). Don't force comments from new accounts.
+
+### ⚠️ Field note — live account check before round 2 (s26, 2026-07-04)
+
+Before pushing Reddit/FB again, checked both accounts live rather than assuming 2 weeks of elapsed time had warmed them:
+
+- **Reddit** (`u/ryanatwelra`): 2 weeks old, 1 karma, one lifetime comment — posted in r/ecommerce 16 days ago, **not removed**, but zero replies. Useful signal: r/ecommerce's filter is loose enough to let a thin account through. r/EtsySellers, r/shopify remain untested and are the strictest — still hold off there.
+- **Facebook** (`Rust Rain`): **identical zero-signal state as the June 20 auto-decline** — no profile photo, no cover photo, 0 friends, no real posts (only the auto-generated birthday post). Nothing changed since the decline. Re-entering the same Tier-1 Etsy groups with this profile would very likely repeat the exact same auto-decline for the exact same reason.
+
+**Conclusion:** don't just re-run the old plan — fix the two checkable, free, ~10-minute profile signals first (photo, cover photo, a handful of accepted friend requests, one real timeline post), THEN re-enter groups starting with lower-volume/lower-filter ones, not the strict Tier-1 groups that already burned a decline.
+
+**Revised channel order:**
+- Reddit: keep building in r/ecommerce (proven) + add r/smallbusiness, r/EtsySellersAdvice (lower-filter than the big subs). Hold r/EtsySellers/r/shopify until karma is real. New angle: r/SideProject, r/alphaandbetausers, r/betatests, r/indiebiz — these subs exist *for* "looking for beta testers" posts, so a thin account posting an honest ask reads as on-topic rather than spam.
+- Facebook: fix the profile first. Then start with **Shopify Community for Store Owners** (46K, ~20 posts/day — lower volume, comments stay visible longer, less aggressive filtering) before trying the Tier-1 Etsy groups again.
+- Direct DMs from a 0-friend account read as bot-like — hold DMs until after the profile fix.
+
+**Revised comment templates (deliberately reworded from the s19/s21 set below — reusing identical phrasing across posts is itself a spam signal):**
+
+Reddit — "which stats matter":
+> The stats I actually check every Monday: revenue vs. last week, order count vs. last week, and which 1–2 products are doing the heavy lifting. Everything else is noise unless you're mid-experiment. I write these down by hand now — the week-over-week trend tells you more than any single day's dashboard ever will.
+
+Reddit — "sales dropped, panicking":
+> First thing I'd check before assuming it's you: did traffic drop, or did the same traffic just stop converting? Those point to totally different fixes — traffic is usually seasonality or search ranking, conversion is usually your photos or price. I've burned whole weekends fixing the wrong one because I didn't check which number actually moved first.
+
+Facebook — Shopify for Store Owners, membership question:
+> Run a small multi-channel shop (Etsy + Printify) and I'm poking around Shopify to understand how it compares — here to learn from people actually running stores on it.
+
+Facebook — give-first comment (views/no sales):
+> Same boat with my own shop — high views, flat sales usually traces back to one of three things: the thumbnail isn't stopping the scroll, price/shipping surprises people at checkout, or the traffic itself is low-intent (ad clicks, not buyers). Pull your top 3 listings and check conversion on each separately — it's almost always one listing dragging the average down, not the whole shop.
+
+Beta-tester-subreddit post (r/SideProject etc.) — reworded, not identical to the s19 draft:
+> **Title:** Built a free weekly report tool for e-commerce sellers — need 5 beta testers
+>
+> I run a small Etsy/Printify shop and got tired of digging through separate dashboards every Monday to figure out what actually happened that week. So I built something that reads the numbers for me and emails one clear summary — what sold, what changed, what's worth doing next.
+>
+> Looking for 5 sellers (Etsy, Shopify, or WooCommerce — one-click connect for the first two, no CSV needed) to try it free for 8 weeks. In exchange, just 5 minutes of honest feedback per report — what's useful, what's wrong, what's missing.
+>
+> Not selling anything during the beta. Comment or DM your platform and I'll set you up same day.
+
+Direct DM (only after the FB profile fix):
+> Saw your post about [their specific frustration]. I built exactly this — a tool that emails one clear weekly report on your shop instead of you digging through tabs. Etsy and WooCommerce are one-click now, no file exports. Want a free one? I'll set it up and send the first report same day, no strings.
 
 ### Facebook group target list — vetted live (s21, 2026-06-17)
 

@@ -1,0 +1,8 @@
+=== Dropship pipeline run: 2026-07-03 (mode: generate) ===
+[3/4] Building plan(s) from today's scan (persistence gate bypassed)...
+cost: $1.8025381999999996
+Appended to plans-log.md
+[4/4] Running validator...
+cost: $0.5331591
+Appended to verdicts-log.md
+=== Run complete ===

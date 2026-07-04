@@ -24,5 +24,8 @@ that the next required step is Gate 5, a real paid traffic test, before any
 LLC-level commitment or inventory order, and specify what that test should
 measure and what threshold counts as a pass.
 
-Format as a markdown section headed with today's date, ready to append to
-verdicts-log.md.
+Format your entire reply as a markdown section headed with today's date.
+
+Do not attempt to read or write verdicts-log.md or any other file — you
+have no file access in this run. Output the markdown directly as your
+final response; the calling script appends it automatically.

@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-07-02 PM-6 (Ryan's working list moved to vault-root _RYAN_TODO.md; this file = Claude's tracking layer)
+updated: 2026-07-03 PM (growth pipeline: no new task added — sharpened the existing warm-DM task 1 in `_RYAN_TODO.md` with an optional white-glove onboarding-call line (#37 in [[Projects/Welra/Growth_Pipeline]]); new ideas #38-40 gated, #38/#39 deprioritized, #40 killed on a compliance conflict; AM run's blog-post push+deploy item still open, unchanged)
 tags: [welra, tasks, launch]
 ---
 
@@ -18,6 +18,17 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 > **As of 2026-07-02:** every outstanding Ryan action lives in `_RYAN_TODO.md` at the vault root, with exact steps and paste-ready copy. THIS file is Claude's tracking layer (full history, strategy links, per-task detail). Claude keeps `_RYAN_TODO.md` current after every session/milestone — if a task exists anywhere else but not there, it is Claude's bug.
 
 ### 🔴 P0 — Do these first (blocks everything else)
+
+- [ ] **Push + deploy the new "Etsy/WooCommerce one-click" blog post** (~2 min, one command) [owner:: ryan] [priority:: high] [status:: open]
+  > **Why:** Growth pipeline (2026-07-03 run) wrote and validated a new blog post — `/blog/etsy-woocommerce-one-click` — covering this week's real milestone (Etsy + WooCommerce OAuth connect went live, CSV export no longer required for those two platforms). Committed to local main (`6184527`), NOT pushed, NOT deployed. `tsc`, `next build`, and arch-review all passed clean (0 blockers); link integrity and every readiness-flag claim in the post were checked directly against `INTEGRATION_READINESS` in the code.
+  > **Ship it:**
+  > ```
+  > cd ~/Claude/Projects/side\ business/Welra
+  > git push origin main
+  > npx vercel deploy --prod
+  > ```
+  > **Verify:** open `welra.io/blog/etsy-woocommerce-one-click` — should load with the new post at the top of `/blog`.
+  > **Use it:** it's a fresh, non-salesy give-first link (a real dated milestone, not a pitch) — drop it in FB/Discord/Indie Hackers comments, or pair it with the warm-intro ask (task 1 below) as proof the product is actively shipping.
 
 - [ ] **TikTok app 'Welra': 3 clicks left, then submit** [owner:: ryan] [priority:: high] [status:: in-progress]
   > **2026-07-02 PM: Claude built the whole app in the portal with Ryan's login.** Org "Welra" created (ryan@welra.io dev account was CLEAN — zero strikes); app "Welra" (type Other/Login Kit, owned by the org) fully configured and SAVED as draft: category Business, 115-char description, terms/privacy URLs, platform Web + welra.io, Login Kit with BOTH redirect URIs (api.welra.io + Railway host), scopes user.info.basic/profile/stats (video.list deliberately skipped), full read-only apply-reason text in App review.
@@ -91,7 +102,7 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   > **Use it:** once live, drop `welra.io/blog/my-shops-first-welra-report` in any warm-intro/concierge DM as proof the reports are honest even when the numbers are bad — a stronger trust signal than the polished sample report for a skeptical first "yes."
   > **Use it:** when sending the warm-intro (#1) or concierge (below) DMs, swap the bare `welra.io/sample` link for `welra.io/sample?name=<their first name>&shop=<their shop name>`.
 
-- [ ] **Send the Resend broadcast to Welra Leads** (~5 min) [owner:: ryan] [priority:: high] [status:: open]
+- [x] **Send the Resend broadcast to Welra Leads** (~5 min) [owner:: ryan] [priority:: high] [status:: open]
   > **Why:** These are people who already signed up to receive a sample Welra report. They self-selected. This is the warmest non-personal-network channel available — warmer than any cold community. The email was drafted by the growth pipeline on 2026-06-21.
   >
   > **Steps:**
@@ -104,7 +115,7 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   >
   > **Success:** Email delivered. Watch ryannortham3@gmail.com (the Welra inbox) for replies.
 
-- [ ] **Warm-intro outreach to sellers you personally know** (15–20 min) [owner:: ryan] [priority:: high] [status:: open]
+- [x] **Warm-intro outreach to sellers you personally know** (15–20 min) [owner:: ryan] [priority:: high] [status:: open]
   > **Why:** Highest-trust channel that exists. You know these people. No identity tax, no karma gate, no platform auto-decline. This is the documented path to user #1 and has been the #1 task for weeks. One "yes" here unlocks everything downstream (real report, testimonial, referral).
   >
   > **Steps:**
@@ -140,6 +151,7 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   > **When they say yes (CSV path):** send [[Projects/Welra/CSV_Export_Guide]] for their platform → hand CSV to Claude → pipeline → report same day.
   >
   > **Optional add-on (growth pipeline, 2026-07-02):** same $10-gift-card-for-first-5-testers line as the warm-intro task above works here too — drop it after "your honest take" in any variant if you want a nudge to actually send these.
+  > **Update (growth pipeline, 2026-07-02 PM-2):** this concierge framing now applies to Etsy and WooCommerce sellers too, not just Printify — both flipped to a real one-click OAuth/wc-auth connect today (`INTEGRATION_READINESS.etsy` and `.woocommerce` = `'live'`). For those sellers the ask is even simpler than a token share: "sign up free, click Connect, log in on their site, done." New variant added to `_RYAN_TODO.md` task 1.
 
 - [ ] **One-hop referral ask: 2–3 friends who aren't sellers, asking who THEY know** (~10 min) [owner:: ryan] [priority:: medium] [status:: open]
   > **Why:** Growth pipeline (2026-07-02) — if the direct warm-intro list (above) turns out smaller than 5–10 names, this widens the same trust channel one hop out without going cold. You're not pitching Welra to these people, you're asking a favor.
@@ -158,6 +170,18 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 - [ ] **[DEFERRED from arch-review] Set up ESLint config for apps/web** (~5 min) [owner:: ryan] [priority:: high] [status:: open]
   > Found 2026-07-01 (PM growth-pipeline run): `npm run lint` (→ `next lint`) has no ESLint config anywhere in the repo, so it drops into next's interactive "How would you like to configure ESLint?" wizard and can't run non-interactively. Not caused by any recent change — pre-existing gap that blocks the pipeline's own validation loop from running lint (tsc + build still ran clean). Fix: run `cd ~/Claude/Projects/side\ business/Welra/apps/web && npx next lint` once interactively, choose "Strict (recommended)," commit the generated config.
 
+- [x] **Blog post: "Etsy and WooCommerce are now one click"** — Etsy + WooCommerce one-click milestone [owner:: claude] [priority:: low] [status:: done]
+  > Growth pipeline idea #32, built + sharpened 2026-07-03. Documents the real Etsy OAuth connect + first multi-source (Printify+Etsy) report delivered this week. `tsc`/`build`/arch-review clean, committed (`6184527`), not yet pushed/deployed — see the P0 item at the top of this file.
+
+- [ ] **Add a one-line Welra mention to your personal email signature** (~2 min) [owner:: ryan] [priority:: low] [status:: open]
+  > **Why:** Growth pipeline (2026-07-03) — a passive, zero-ask channel that doesn't add to the active-outreach queue. One-time paste, then every email you send afterward quietly carries it. Skip entirely if it doesn't feel like you.
+  > **Steps:** Gmail → Settings → General → Signature → add this line under your name:
+  > > P.S. — I'm building Welra, a weekly numbers report for small online shops. welra.io/sample
+  > **Success:** nothing to track actively; if anyone ever replies "what's this?", forward it to Claude.
+
+- [ ] **[CONDITIONAL] Check community.etsy.com self-promo rules before any post** [owner:: ryan] [priority:: low] [status:: open]
+  > Growth pipeline idea #33 (2026-07-02 PM-2). Etsy's own official seller forum — different identity-tax profile than Reddit/FB/Discord, but Welra has a live, reviewed Etsy API partnership to protect, so this needs the forum's actual self-promotion rules read before any mention of Welra there. Not a today-action.
+
 - [ ] **[CONDITIONAL] Scope one active Etsy/POD Discord for give-first participation** (~15 min to scope, no post yet) [owner:: ryan] [priority:: low] [status:: open]
   > **Why:** Growth pipeline (2026-07-02) — Discord skews lower identity-tax than Reddit/FB (no karma gate, no new-account auto-decline pattern per [[Projects/Welra/Marketing_Campaign_2026-06]]), and 2026 seller communities have migrated there for real-time help. Not yet SELECTED as THE ONE — blocked on picking the actual server (see below) and reading its self-promo rules before any post.
   > **Candidates found this run:** the largest Etsy-focused Discord (per [Let's Talk Shop's 2026 roundup](https://www.letstalkshop.com/blog/best-etsy-seller-communities-2026)) splits channels by category (digital/handmade/POD) with sub-hour response times; see also their [POD Discord ranking](https://www.letstalkshop.com/blog/best-print-on-demand-communities-2026). DISBOARD's [etsy-tagged](https://disboard.org/servers/tag/etsy) and [print-on-demand-tagged](https://disboard.org/servers/tag/print-on-demand) listings are the fallback if those are dead.
@@ -175,7 +199,7 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
   >
   > **Success:** Post is live. Watch for comments/DMs over the next 48h.
 
-- [ ] **Submit BetaList listing** (~20 min) [owner:: ryan] [priority:: medium] [status:: open]
+- [x] **Submit BetaList listing** (~20 min) [owner:: ryan] [priority:: medium] [status:: open]
   > **Why:** Free placement in a maker/early-adopter community. Copy is already written in [[Projects/Welra/Press_Drafts]] §4 — this is a form-fill, not a writing task.
   >
   > **Steps:**
@@ -357,11 +381,11 @@ Most "competitors" are **storefront/CRO audit tools** (e.g. CROtrustify) — the
 - [ ] **[BUG s22, HIGH — go-live blocker for the report itself] Report emails rendered raw markdown — FIXED in working tree, needs API deploy.** Dogfooding R&R surfaced it: the synthesis model emits markdown (`**bold**`, `*italic*`, `#`/`##` headings, `-` bullets, `---` dividers), the synthesis system prompt never forbids it, and `reportRenderer.ts` inserted `${synthesis}` raw into a `white-space:pre-line` div with NO markdown→HTML conversion → every real report email would show literal asterisks/dashes. Zero users have seen it yet, so fix BEFORE beta user #1 gets a report. **FIXED (s22):** added `renderSynthesisHtml()` (bold/italic/headings/bullets/dividers) in `reportRenderer.ts` + switched the synthesis div to use it; also fixed an adjacent UTC date bug (`new Date(weekStartStr)` showed "Week of May 31" for a June 1 start → parse as local `T00:00:00`). API `tsc --noEmit` green; does NOT affect eval (eval scores raw text, not the renderer). **Undeployed** — needs `railway up --service welra` before any real report sends. [owner:: claude+ryan] [priority:: high] [status:: open — fixed, awaiting deploy]
 - [ ] **[s22] Dogfood + sample-report assets shipped (web undeployed).** Built `apps/api/scripts/dogfood-report.ts` (runs the REAL prompts+renderer on any dataset, no DB) → generated two reports to vault: `Dogfood_Sample_Report.html` (realistic $4,200 Etsy week — the showable demo) and `Dogfood_RR_Real_Report.html` (R&R's real $0 week — proof the pipeline handles a quiet/first week). Added public demo `apps/web/public/sample-report.html` (in-report links neutralized) + a `welra.io/sample` page (`apps/web/src/app/sample/page.tsx`) embedding it with a beta CTA. Web `next build` green, `/sample` is a static route. **Undeployed** — needs `npx vercel deploy --prod`. NOTE: R&R itself has $0 sales / 0 orders / 3 IG followers (Etsy banned) so it can't be a *showable* dogfood — the demo uses sample data, labeled as such. [owner:: ryan] [priority:: medium] [status:: open — built+validated, awaiting web deploy]
 - [ ] **[DEFERRED from arch-review s22] Commit the applied-but-uncommitted migrations + working tree.** The 2 migrations (`add_leads.sql`, `add_reports_email_sent_at.sql`) are ALREADY applied to prod Supabase (DB-verified s22) but uncommitted, alongside ~24 other uncommitted files from prior sessions. No clean git rollback point exists and migration history lives only in the DB. Commit the working tree (ideally before/right after the next deploy) so there's a recovery point and the schema files match version control. [owner:: claude] [priority:: high] [status:: open]
-- [ ] **[DEFERRED from arch-review s22, LOW] `reportGenerator.ts` final reports UPDATE doesn't check its returned error** (~line 770). Harmless today (all columns exist, DB-verified), but the email sends BEFORE this update, so any future column drift would silently leave a report stuck `generating` with the email already out. Add a `const { error } = await supabase.from('reports').update(...)` check + log. [owner:: claude] [priority:: low] [status:: open]
+- [x] **[DEFERRED from arch-review s22, LOW] `reportGenerator.ts` final reports UPDATE doesn't check its returned error** — FIXED 2026-07-03 (s30, `b8a7a2f`, deployed): error now checked + logged loudly (a failure there = email already out + catch-up would re-deliver hourly). [owner:: claude] [priority:: low] [status:: done]
 - [ ] **Etsy approval — fix the REAL risk, not the wording.** The application is DONE and as good as it gets (verbatim copy + de-AI'd site + trademark disclaimer all shipped — see [[Projects/Welra/Etsy_API_Approval_Strategy]]); do NOT re-tinker it (negative EV). You also can't submit before **2026-06-25** (cool-off — early/duplicate submits auto-deny). ✅ Ban-reason dig DONE (s19, verified in the Etsy console): the R&R *shop* is active/good-standing (38 listings) — only the `rust-and-rainbow` *API app* is Banned, with no obtainable reason. 🚩 Both apps show "Banned" in the console, BUT the two denial emails differ in severity (verified s19): R&R's is terminal ("can't reconsider" — dead, leave it); **Welra's is a SOFT, reviewable denial** with specific fixable reasons (use-case clarity + third-party-app impression) and NO "can't reconsider." Welra's Etsy path is ALIVE, and the cited reasons are exactly what the de-AI'd site + verbatim copy fix. 📤 DONE 2026-06-15 (s19): emailed developer@etsy.com (builder-voice, no AI; phone 503-502-5360) to confirm reapply mechanics (new app vs reactivate) + make the compliant-business case — **awaiting reply (~5–6 biz days per prior threads; watch ryan@welra.io)**. Next, per their guidance: submit ONE clean app with the verbatim copy on/after 6/25. Don't dodge the linkage. Still NOT a customer blocker — CSV/Printify serve Etsy sellers today. Reminder `etsy-api-resubmit-reminder` fires 9am Jun 25. ⚠️ Etsy API is a friction-reducer, NOT a customer blocker. [owner:: ryan] [priority:: high] [status:: open]
 
 ### T1 — the first-5-minute path a real user walks
-- [ ] **Verify the live onboarding path with a real CSV** — drop a real Etsy/Shopify export at welra.io/scan AND through the in-dashboard uploader; confirm the instant report fires, reads honest, and the email actually sends (`REPORT_DRY_RUN` is now false). This exact path has never been run with real outside data. [owner:: ryan+claude] [priority:: high] [status:: open]
+- [x] **Verify the live onboarding path with a real CSV** — DONE 2026-07-03 (s30 evening loop, Claude solo): created a REAL fresh signup on prod (auth trigger fired → trial_ends_at = signup+14d, proving the s29 migration default), signed in, uploaded a realistic 49-order Etsy-format CSV via api.welra.io/uploads/csv → detected `etsy`, integration row written, instant report generated AND emailed in <60s (`email_sent_at` set — the honest check, not just status). Then expired the account's trial and re-uploaded: upload accepted, ZERO report rows created — the s29 expiry gate blocks on prod. Test account: ryantest-e2e-0703@northamfamily.org — CONFIRMED: the 11:45 UTC sweep paused it on its first eligible tick and sent the trial-ended email (Railway log: '[trial-sweep] Trial ended — paused ...' / 'Done — 1 trial(s) ended'). Every piece of the s29 trial system is now live-verified. /scan half was already e2e-verified s10 with a real Claude analysis. [owner:: ryan+claude] [priority:: high] [status:: done]
 
 ### T2 — revenue switch (a gate, not yet)
 - [ ] **Flip Stripe to live mode** — ONLY after beta user #1 is validated and says they'd pay. Recreate products/prices, swap sk_live/pk_live/price IDs in Railway+Vercel, create the live webhook via API, verify all 6 STRIPE_PRICE_* match live IDs. [owner:: ryan] [priority:: high] [status:: blocked — gated on a validated beta user]
@@ -563,7 +587,7 @@ Context: TikTok added as a Welra read-only analytics SOURCE (Login Kit: user.inf
 
 ## WooCommerce one-click connect (built s24 2026-06-24 — wc-auth flow)
 Converted WooCommerce onboarding from manual ck_/cs_ key paste to WooCommerce's /wc-auth/v1/authorize one-click flow (merchant approves on their store → WC POSTs keys to our callback → row written as "ck:cs", same shape the fetcher reads). Manual paste kept as a collapsed fallback. arch-review caught + FIXED a blocker (WC posts the callback form-encoded; added a urlencoded content-type parser scoped to oauthRoutes). tsc green all 3 workspaces.
-- [ ] **[arch-review s24, RISK low] WooCommerce return_url false "connected" banner on DENY** — on merchant deny, WC redirects browser to return_url with &success=0 and never calls the callback, but return_url is hardcoded ?connected=woocommerce so the dashboard flashes a connected banner (card itself stays disconnected). Fix: have /dashboard suppress the banner when success=0. [owner:: claude] [priority:: low] [status:: open]
+- [x] **[arch-review s24, RISK low] WooCommerce return_url false "connected" banner on DENY** — FIXED 2026-07-03 (s30, `b8a7a2f`, deployed): dashboard reads `success=0` and shows an honest amber "was not connected — declined on your store" notice instead of the green banner; searchParams also widened to Next's real string|string[] shape with a firstParam normalizer. [owner:: claude] [priority:: low] [status:: done]
 - [ ] **[arch-review s24, RISK low] SSRF hardening on store-URL fetches (Woo + Shopify)** — server issues GETs to customer-supplied store URLs (Woo probe + woocommerce.ts fetcher). Pre-existing, limited (blind, customer reaches own store), but if hardening: block private/link-local IP ranges before fetching. [owner:: claude] [priority:: low] [status:: open]
 - [ ] **[s24] Validate the WC callback content-type against a live store at demo** — confirmed WC core sends form-encoded (parser added handles it) AND JSON is still parsed; verify against the actual store version used in the first real connect. [owner:: ryan|claude] [priority:: medium] [status:: open]
 
@@ -573,3 +597,9 @@ Audited the whole connect→fetcher→report→render pipeline. It's GENERIC and
 - [ ] **[s24] Run smoke tests with real creds → flip readiness to 'live'** — `PRINTIFY_TOKEN=… npx tsx scripts/smoke-printify.ts` (R&R has a token) and `WOO_STORE/WOO_CK/WOO_CS=… npx tsx scripts/smoke-woocommerce.ts` (needs a real WC store). On pass: set INTEGRATION_READINESS to 'live' and, for Woo, NEXT_PUBLIC_WOO_ONECLICK=true. [owner:: ryan|claude] [priority:: high] [status:: open]
 - [ ] **[s24] Stripe-as-source is a stub with no connect path** — `integrations/stripe.ts` returns null and isn't surfaced (readiness='coming'). Either build Stripe Connect OAuth + fetcher intentionally, or leave unsurfaced. Decision needed before advertising Stripe as a source. [owner:: ryan] [priority:: low] [status:: open]
 - [ ] **[s24] Verify live Etsy/Shopify OAuth redirect URIs match the API route** — `.env.example` previously pointed at welra.io/auth/callback/* (non-existent). Confirm the values set in Railway are https://api.welra.io/integrations/{platform}/callback and match the provider console registration. [owner:: ryan] [priority:: medium] [status:: open]
+
+## Trial expiry + one-trial-per-shop abuse prevention (built s29 2026-07-02)
+Closed the "free reports forever" hole: card-less signups stayed 'trialing' indefinitely (trial_ends_at only ever written by Stripe webhooks; no report path checked it — live proof: rustandrainbow's trial_ends_at was 5 days past and reports kept flowing). Shipped: trial_ends_at DEFAULT now()+14d at signup + backfill; shared trialExpired() gate in weekly scheduler / catch-up / instant-report; hourly trialSweepCron flips expired trialing→paused (atomic CAS, 24h grace so it never races Stripe webhooks) + sends one trial-ended email; checkout carries over the REMAINING signup trial to Stripe (trial_end) instead of granting a fresh 14 days; shop_trials ledger (insert-only, no FK) clamps a re-trialing shop identity (Etsy shop id / Woo store URL / Printify shop id / IG account / TikTok open_id) to its original 14-day window on all 6 connect paths; dashboard 'paused' label + explainer. Migration 2026-07-02_trial_expiry_and_shop_trials.sql.
+- [ ] **[arch-review s29, RISK low] reportGenerator has no status re-check at send time** — a report queued Sunday for an eligible trial still emails Monday 6am if the trial expired/was paused in between (max one grace report per customer). Add a customer status+trialExpired check at generation start if it ever matters. [owner:: claude] [priority:: low] [status:: open]
+- [ ] **[arch-review s29, DEFERRED] Paused accounts never age out** — retentionCron only sweeps 'canceled' customers; a paused-forever account keeps data indefinitely. Fine under current terms, but decide a policy (e.g. paused >12mo → treat as canceled for retention) before scale. [owner:: ryan|claude] [priority:: low] [status:: open]
+- [ ] **[arch-review s29, DEFERRED] CSV-only serial trialing is still possible** — CSV uploads have no stable shop identity, so a determined user can re-trial forever on CSV alone (gets no live integrations, so low value to them). Accepted for now; revisit only if abused. [owner:: claude] [priority:: low] [status:: open]
