@@ -1,3 +1,6 @@
+> [!warning] ⚠️ SUPERSEDED (2026-07-06) — historical reference only
+> This guide predates the current setup and contains wrong facts: the vault is at `/Users/ryannortham/MyVault` (NOT `~/Documents/MyVault`), Claude is not limited to vault files, and the per-project Overview.md/Notes.md structure was replaced by State.md/Tasks.md. **Current source of truth: [[Knowledge_Base/Claude_Usage_SOP]]** (session procedure) and [[Knowledge_Base/Automation_Architecture]] (what runs where). Do not follow the instructions below.
+
 # Project Workflow Guide
 ## How GitHub, Obsidian, and Claude Work Together
 

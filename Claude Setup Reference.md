@@ -1,3 +1,6 @@
+> [!warning] ⚠️ SUPERSEDED (2026-07-06) — historical reference only
+> The vault path below is wrong (real vault: `/Users/ryannortham/MyVault`) and the MCP config it documents predates the current Claude Code / Cowork setup. Do not rebuild from this file. **Current source of truth: [[Knowledge_Base/Claude_Usage_SOP]]** and [[Knowledge_Base/Automation_Architecture]].
+
 # Claude + Obsidian + GitHub Setup Reference
 
 ## Key Paths

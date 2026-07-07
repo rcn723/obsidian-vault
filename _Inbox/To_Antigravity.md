@@ -1,9 +1,23 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-03 evening (Shopify redirect URL fully fixed and in sync; billing risk still open)
-tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway]
+updated: 2026-07-06 (Claude usage-system overhaul: lifecycle skills + agents, growth-pipeline gate, Monday brief; SOP + automation inventory in Knowledge_Base)
+tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation]
 ---
+
+# To Antigravity — 2026-07-06 (Claude usage-system overhaul — read the SOP before assuming session conventions)
+
+Claude ran a full usage audit and stood up a standing operating system. What changed that affects you:
+- **New canonical docs:** [[Knowledge_Base/Claude_Usage_SOP]] (session lifecycle + skill map) and [[Knowledge_Base/Automation_Architecture]] (single source of truth for every automation: Claude scheduled tasks, Mac launchd, NAS supervisor, Railway crons — with a change log). If you add/move any automation, update the Architecture doc's inventory + change log in the same session.
+- **Growth pipeline behavior changed:** now 2×/day (8:00/20:00) with a Stage 0 execution-debt gate — while `_RYAN_TODO.md` has ≥5 open Ryan-owned Welra items it runs in maintenance mode and adds NO new ideas. Silence from it is by design.
+- **New weekly automation:** `monday-kickoff` (Mon 7:30am) sends Ryan a read-only top-3 brief from `_RYAN_TODO.md`. Don't create a competing nudge.
+- **Sunday assessment** procedure moved out of `run_welra_assessment.sh` into the versioned `sunday-review` skill (`~/.claude/skills/sunday-review/SKILL.md`); the script is now just a launcher.
+- New Claude-side skills/agents (session-close, deploy-gate, capture-runbook, app-review, adversarial-validator, vault-scribe) — Claude Code concerns, listed here so you don't duplicate their functions.
+No product code changed; no deploys.
+
+**Same-day evening addendum (paths changed):** the Amazon review agent now lives at `~/Claude/amazon-reviews/` (moved out of `~/Desktop/Claude/` — the old path is gone; the move fixed 5 weeks of silent TCC failures). The Mac `com.rustandrainbow.refresh_token` launchd job is disabled/archived — the NAS supervisor solely owns the IG token refresh now. Don't recreate either.
+
+**Same-day adversarial-validator addendum:** vault-root `Project Workflow Guide.md` and `Claude Setup Reference.md` are now stamped ⚠️ SUPERSEDED — they carry a dead vault path (`~/Documents/MyVault`) and an obsolete per-project structure; do NOT follow them, follow the SOP. Also discovered: the amazon-review launchd agent has been dead since ~5/30 (macOS TCC blocks `~/Desktop`), and the Sunday assessment failed its last 2 runs (both pre-rewrite causes); the rewritten launcher's plumbing is smoke-tested green, first full run Sunday 7/12. Growth-pipeline gate counting rules are now explicit and each run logs its queue count to Growth_Pipeline.md.
 
 # To Antigravity — 2026-07-03 evening (Shopify OAuth redirect URL fixed everywhere — don't touch it again)
 

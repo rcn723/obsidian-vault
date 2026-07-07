@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-04 (Shopify client secret rotated + old one revoked, verified live. Reddit/FB round 2 revised after live-checking both accounts — see 🔵 section. R&R: bg-removal bug fixed on 10 designs/34 listings; found META_ACCESS_TOKEN broken — new 🔴 item. New 🐕 Dropship Pipeline section added: Dog Cooling Mats business plan finalized at a <$100 cash cap, true dropship, no Etsy/R&R — Etsy policy bans reselling mass-produced items, confirmed this session)
+updated: 2026-07-06 (Usage-system overhaul: Monday 7:30am kickoff brief now live; growth pipeline throttled to 2×/day with an execution-debt gate so it stops adding asks while your queue is ≥5 deep; new 5-min read item at the bottom. Prior: R&R Facebook Page token fixed; Meta Business Verification 🔴 item stands.)
 tags: [ryan, todo, live]
 ---
 	
@@ -101,7 +101,7 @@ Passive, zero-ask — doesn't compete with anything above.
 ### ✅ 8. Web analytics — DEPLOYED 2026-07-03 evening
 Growth pipeline added Vercel Web Analytics — closes a real blind spot (up to now the only way to know if a shared link ever got clicked was a seller replying). Cookieless, no privacy-policy change needed. You said "deploy the welra analytics," Claude pushed (`3d71eda`) and ran `vercel deploy --prod`, then verified two ways: the live script endpoint (`welra.io/_vercel/insights/script.js` → 200) and an actual browser load of welra.io showing the analytics script firing. It's tracking now.
 
-**Optional — daily nudge experiment:** if the 3-DM ask (task 1) keeps not happening even with the sharpened copy, say the word and Claude will set up a one-time-approved daily push notification pointing straight at task 1, instead of relying on you remembering to open this file. Not set up yet — needs your yes first.
+**✅ Monday brief now live (2026-07-06):** every Monday 7:30am Claude sends you a short notification with your top 3 actions for the week from this file, anything stalled, and any deadlines within 14 days — so you don't have to remember to open this file. (It's read-only; it never adds or changes tasks.) If you'd still like a *daily* nudge on task 1 specifically, say the word and Claude will add it.
 
 ### GR3NB LLC paperwork — one 30-minute sitting, sometime this month
 - [x] Sign + date the Operating Agreement → `~/Documents/GR3NB/Legal/Operating_Agreement_GR3NB_LLC_2026.md`
@@ -113,6 +113,13 @@ Growth pipeline added Vercel Web Analytics — closes a real blind spot (up to n
 
 ## 🐾 RUST & RAINBOW — quick items (the two big ones are up top in 🔴)
 
+- [ ] 🔴 **Start Meta Business Verification for the "RustandRainbow" business portfolio (~15 min)** — needed before Facebook Page posting can work via the API at all. Found 2026-07-04: `pages_manage_posts` isn't just misconfigured, Meta blocks it entirely until the business is verified — checked business.facebook.com and the "RustandRainbow" portfolio has **zero business info filled in** (no legal name, address, phone, or website) and verification has never been started.
+  - a. Go to business.facebook.com → Settings → Business info, click Edit, and fill in GR3NB LLC's legal name + registered address + business phone + website (welra.io or a rustandrainbow one), exactly as they appear on the LLC formation document.
+  - b. Settings → Security Center → Business Verification → Start verification → upload the GR3NB LLC formation doc (or a utility bill matching the address).
+  - c. Submit — this enters Meta's queue, typically days to weeks. Nothing else to do until it clears.
+  - d. Tell Claude once it's approved — the use-case description and screencast script for the `pages_manage_posts` **and** `pages_manage_metadata` permission requests are already drafted and ready to submit together (see 2026-07-04/05 session; `pages_manage_metadata` was added 2026-07-05 after trying to update the Page's website field via API and hitting the same Advanced-Access gate).
+  - Until this clears, Instagram + TikTok posting both work fine — only Facebook Page posting (and any Page-info edits via API) is blocked.
+- [ ] **Update the Facebook Page website field (~2 min, manual — API is blocked, see above)** — Meta Business Suite → Rust and Rainbow Page → Edit Page Info → Website → change from the old `http://etsy.com/shop/RustAndRainbowCo` to `https://rustandrainbowco.etsy.com` → Save. Also add this same link as the Instagram bio website (Instagram app → Edit Profile → Website) — Instagram currently has NO link in bio at all. TikTok bio should get it too if you get a minute; not yet checked what's there now.
 - [x] **`META_ACCESS_TOKEN` (Instagram) fixed — 2026-07-04.** You logged into Instagram and approved the permissions; Claude generated the token via the App Dashboard, copied it straight from the clipboard into `.env` (never typed/shown), and confirmed it live on both Mac and NAS (`rustandrainbowco`, 10 followers, 31 posts, both machines). Turned out the "cannot parse" error was likely just Claude testing against the wrong API host, not real corruption — either way it's confirmed working now. Unblocks fixing the 4 Instagram posts below.
 - [x] **Background-removal bug found and fixed today (2026-07-04)** — rembg was leaving some black text semi-transparent (looked "weird" on shirts, per your report). Root cause confirmed pixel-by-pixel; Adobe's background removal tool doesn't have the bug and costs $0 of your 250 Firefly credits (it's a non-generative feature). All 10 affected designs reprocessed and republished to Etsy — 34 live listings recreated with the fixed artwork, confirmed live. **Still pending your token fix above:** 4 of those designs also need their old Instagram posts deleted + replaced (Velcro Dog Line Art, Rainbow Vizsla Silhouette, Vizsla Puppy Sticker, Pride Flag Vizsla). Their old TikTok videos can't be deleted at all (confirmed — TikTok doesn't allow deleting published posts via API even directly), so those will just stay up; new corrected TikTok posts can still be added once IG is fixed.
 - [x] **Delete the duplicate "Gay Dog Dad Retro" listing in Printify** (~2 min) — May 11 product (ID `6a025e0754291b828c064667`) is the stale one; May 14 (`6a0654c3e556c763050faeed`) is the keeper with the stable mockup. Deleting in Printify auto-unpublishes the Etsy listing too.
@@ -238,3 +245,11 @@ CJ alone came back too expensive — check in this order:
 - **Dropship pipeline entity/compliance checklist** (LLC placement, bank subaccount, resale certificate, real domain) — now has a specific candidate (Dog Cooling Mats) and a full plan, but this checklist is still Phase 5 — only matters after the ad ramp (🐕 section above) reaches a confident CAC read and passes. Nothing to do here yet.
 - **Dropship pipeline CLI login** — ✅ resolved; today's run (2026-07-03) completed clean with real API calls, no more 401s. It's running itself every morning now.
 - **Dropship pipeline supplier order-sync automation** — deferred on purpose until Phase 5 (after the ad ramp passes); the plan uses manual order forwarding during testing so no standing supplier contract exists before there's a validated reason for one.
+
+---
+
+## 🧠 SYSTEM — one 5-minute read (updated 2026-07-06 PM)
+
+- [x] ✅ **Amazon review agent — FIXED (2026-07-06, you authorized in-chat).** It had been silently dead since ~May 30 (macOS blocks launchd from `~/Desktop`). Relocated to `~/Claude/amazon-reviews/`, all paths + plist repointed, and launchd's access to the new location proven with a live test job. Next real run: Sunday 9am — Claude will confirm it in the Sunday review.
+- [x] ✅ **Duplicate Instagram token refresher — DISABLED (2026-07-06, you authorized in-chat).** The Mac's `com.rustandrainbow.refresh_token` job is unloaded and archived with the other NAS-cutover plists. The NAS supervisor is now the single owner of the IG token refresh.
+- [ ] Skim [[Knowledge_Base/Claude_Usage_SOP]] once (~5 min). It's the new operating manual from the full usage audit. The only parts that change YOUR behavior: (1) every Monday 7:30am you get a 3-item week brief from this file — do those three, ignore the rest; (2) the growth pipeline now stays quiet while your queue here is ≥5 deep, so fewer pings = by design, not broken; (3) trigger words that make Claude run its own checklists: **"deploy"** (full pre/post-deploy gate), **"wrap up"** (vault close-out), **"sunday review"** (weekly ops check). Everything else in the SOP is Claude's job, not yours.
