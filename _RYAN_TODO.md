@@ -56,6 +56,23 @@ tags: [ryan, todo, live]
 
 **When anyone says YES:** tell Claude immediately. Printify seller → they sign up at welra.io/signup and connect Printify (report fires automatically). Anyone else → Claude sends you the CSV steps for their platform, they export, Claude runs it, report back SAME DAY. **Whoever says yes first — offer them the 10-minute call above before you do anything else.** Watching them use it live surfaces confusion you'd never catch from a text thread, and it turns "beta tester" into a relationship, which is what actually produces a testimonial later. Then ask them: "Does this match what you saw in your dashboard? Worth getting every Monday?" — their answer is the real product backlog.
 
+### 1b. Strategy refresh — 3 quick words from you unlock everything (new 2026-07-06, ~2 min)
+Full plan: [[Projects/Welra/Brand_Comms_Strategy_2026-07]] (adversarially validated; Move 0 now uses Etsy per your call). The R&R↔Welra flywheel: R&R publicly posts its own real Welra Week Card every Monday ("$0 to first sale, in public"), captioned from real Etsy numbers (favorites, listing views, orders) and ending at your Etsy shop — automated, honest, every episode doubles as a Welra demo. Your part is three one-liners:
+- [x] a. **DMs confirmed sent** (2026-07-06). Reply protocol is now the standing rule: if anyone replies, tell Claude — respond within the hour. No reply in 48–72h → one soft bump with your personalized sample link, then stop.
+- [x] b. **Etsy favorites signal — BUILT + staged** (2026-07-06). Welra's Etsy fetcher now pulls per-listing favorites + view-deltas → R&R's report gets a real rising metric, and every Etsy seller gets a favorites/views trend line. tsc + build + arch-review all clean (0 blockers). **Not deployed yet — see the deploy step below.**
+- [x] c. **Founding page + Monday Radar — BUILT + staged** (2026-07-06). `welra.io/founding` (matches your existing Founding Seller banner terms, adds the 10-min call, one destination the banner now links to) + report email subject renamed "Your Monday Radar." Screenshot-verified, build clean. **Diary job:** the honest caption engine is built + tested (`diary_caption.py`); the rest (a small Welra endpoint + PNG→JPEG + the Monday post) is a bounded follow-up that only makes sense AFTER the Etsy signal has run ~1 week and you approve the caption set — full spec in the strategy doc. Not wired to anything yet (won't post on its own).
+
+### ✅ DEPLOYED — LIVE IN PRODUCTION (2026-07-08)
+Everything from the flywheel build + the diary endpoint shipped and verified live. Nothing left for you here.
+(Bookkeeping note: an autonomous pipeline run had marked this "deployed 2026-07-07," but the pre-deploy git check on 07-08 proved `69e243a` was committed-but-not-actually-deployed — the real deploy happened 07-08. Corrected for the record.)
+- [x] Migration applied to prod FIRST (`reports.metrics` column), verified — then API + web deployed in the safe order.
+- [x] API (`railway up --service welra`, commits `69e243a`+`2c6f08b`): health 200, clean boot, new code confirmed live. Etsy favorites/view-delta signal + "Your Monday Radar" subject + the inert diary endpoint are all live.
+- [x] Web (`vercel --prod`): `welra.io/founding` live (200 + content verified), banner links to it. Origin pushed — no drift.
+- **What to expect:** the Etsy favorites/views numbers appear starting R&R's SECOND report from here — the first one silently records the baseline (by design; no invented numbers).
+### 🐾 Diary poster — DEPLOYED INERT (2026-07-08); live Instagram post still gated on your OK
+The endpoint + poster are live but post NOTHING — the diary endpoint returns 503 until its secrets are set, and `run_diary.py` is `--dry-run` by default and wired to no scheduler.
+- **To turn the diary live when ready, say "make the diary live"** — Claude will: fix the `weekN` streak wording (it currently counts all your past June reports), set DIARY_SECRET + DIARY_CUSTOMER_ID in Railway, pick the public-JPEG host, then run ONE dry-run so you can eyeball the real card + caption. Nothing posts to Instagram until you approve that preview.
+
 ### 2. Indie Hackers — earn posting rights first (~10 min/day for a few days)
 New accounts can't post: moderators grant privileges to people with "a pattern of contributing authentically" (or IH Plus unlocks instantly — skip paying; the comment path also warms your profile so the post lands better).
 - [ ] a. Each day, open indiehackers.com and find 2 threads where you have REAL experience: POD/Printify, Etsy selling, building a first product, getting a first customer, platform app rejections (you have war stories now).

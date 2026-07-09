@@ -161,3 +161,37 @@ I don't have write permission for `verdicts-log.md` in this session either (the 
 ---
 
 **Verdict: ITERATE.** Underlying issue across all three passes is unchanged — thin/negative economics don't survive a 2x CAC miss, and two cheap, zero-research blockers (disclaimer, FTC ad-copy review) have been flagged three times without being closed. That's the actual next action, not more research.
+
+## 2026-07-08 — Adversarial Review: Portable Mini Photo/Sticker Printer (Thermal)
+
+### The assumption that kills this plan if wrong
+Not CAC — the plan already stress-tests that reasonably honestly. The load-bearing assumption is **"organic TikTok content can carry this to a CAC low enough to be profitable, and Ryan (or someone) can produce that content on a 7-day timeline."** Every other lever in this plan (bundle merchandising, consumables LTV) is explicitly gated behind that one creative-output assumption, and the plan never names who films it. If nobody is lined up to shoot ASMR-style journaling UGC by Week 2, the whole 30-day plan collapses back to paid-only CAC math, which the plan itself shows is negative. **This is asserted, not evidenced** — no creator relationship, no past content example, no proof Ryan or a contractor can produce content that reads as native to the #photodiary aesthetic rather than an ad.
+
+### CAC sensitivity — worse than stated
+The plan shows margin near-zero at $18–25 CAC on a $22–28 device cost. Run it at 2x ($36–50), which is the standard stress test for an unverified estimate against **two entrenched incumbents who already own the branded search term and TikTok Shop shelf space**: contribution margin is **-$15 to -$25 per unit**. Incumbent brand + retargeting pressure from Phomemo/PeriPage's own remarketing pools makes 2x CAC a real scenario, not a tail case — new entrants into a category with established branded demand routinely pay a premium because some fraction of "your" clicks are people who were already going to buy the incumbent and are price-comparing. The plan needs this number in the table, not just the 1x case.
+
+### Differentiation — confirmed weak, correctly self-assessed
+The plan is honest that hardware has no moat. But "bundle" and "niche content" are each copyable within days: Phomemo can bundle paper for $5 more, and any dropshipper watching your Spark Ad can clone the bundle SKU by the following week. The only angle with real defensibility is the consumables reorder relationship — and that's a Week-3-earliest, month-3-realistic payoff, not a 30-day one. Correctly flagged in the plan; just make sure the go/no-go decision doesn't get made before there's actually reorder data, not just "organic signal is decent."
+
+### Overlooked legal/liability gap
+Screening didn't catch, and this plan doesn't address: **the device contains a Bluetooth radio and lithium battery.** That means (1) FCC ID / compliance documentation is required for legal import and sale in the US, independent of Amazon's or TikTok Shop's own listing requirements — selling on your own Shopify site puts compliance liability on you as importer of record, and (2) lithium battery goods carry air-freight restrictions and can trigger Stripe/Shopify Payments risk holds for a brand-new store, which would stall the Week 3 ad test's cash flow right when you need it. Get the FCC compliance status and battery shipping classification from the supplier in the same RFQ as pricing — this is a blocker-class gap, not a nice-to-have.
+
+### Scope creep risk in the plan itself
+The plan says "if you can't commit to consumables subscription infra inside 30 days, this is weak." Building actual subscribe-and-save infrastructure (Recharge/Skio, reorder flows) before you know if a single customer will buy the printer once is solving a problem you don't have yet. Drop that from the Week 1–4 build list; a simple post-purchase email capture ("want auto-refill?") is enough signal for Gate 5. Don't spend engineering time on retention infra before acquisition is proven.
+
+### Execution fit
+Ryan needs to either (a) name who shoots UGC content this week, or (b) budget for a creator/UGC service in the $150–300 sample budget line, which isn't currently there. As written, "organic content is load-bearing" but has a $0 line item and no owner.
+
+---
+
+### Verdict: **ITERATE**
+
+Required changes before this becomes a GO:
+1. Add the 2x-CAC case to the unit economics table explicitly, in writing, before spending a dollar.
+2. Resolve FCC/battery-shipping compliance status via the same supplier RFQ — this is a legal blocker, not a deferred risk.
+3. Name the person/service producing UGC content and add their cost to the budget — do not proceed to Week 2 without this.
+4. Cut the subscribe-and-save infrastructure build from the 30-day scope; replace with a manual reorder-interest email capture.
+5. Confirm bundle/ad creative doesn't tread on Phomemo/PeriPage trade dress or name (trademark check, five minutes, before any ad creative ships).
+
+### Next required step regardless of the above
+**Gate 5 — a real paid traffic test — is still required before any LLC-level commitment or inventory order beyond samples.** What it must measure: (a) blended CAC across organic + paid combined, not paid alone; (b) landing page CVR; (c) percentage of buyers who opt into reorder/refill interest at checkout or in a post-purchase email. **Pass threshold: blended CAC ≤ $15 AND ≥15% of buyers signal reorder interest.** If CAC lands at $18–25 with no reorder signal, kill it — that's the plan's own stated failure mode, confirmed here as the correct bar, not one to soften after money is already spent on inventory.

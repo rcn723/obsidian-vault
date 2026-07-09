@@ -1,9 +1,15 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-06 (Claude usage-system overhaul: lifecycle skills + agents, growth-pipeline gate, Monday brief; SOP + automation inventory in Knowledge_Base)
+updated: 2026-07-08 (2nd growth-pipeline run: corrected a stale "not deployed" note on 69e243a — it's confirmed live; diary-poster staging in the working tree confirmed expected, not drift)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation]
 ---
+
+# To Antigravity — 2026-07-06 night (new strategy doc: R&R↔Welra flywheel — don't duplicate, don't pre-build)
+
+**2026-07-07 — flywheel keystone DEPLOYED LIVE (do not re-deploy or duplicate):** the Etsy favorites/view-delta signal (`etsy.ts` + EtsyWeekData `weekFavorites`/`weekViews` deltas, snapshot in `integrations.metadata.lastListingStats`, no migration), the `/founding` page (reconciled to the existing Founding Seller banner — one offer), and the "Your Monday Radar" email subject are all committed (`69e243a`) and LIVE in production (Railway API health 200 + all crons; `welra.io/founding` 200). Etsy favorites/views numbers appear from R&R's SECOND report (first sets the baseline). R&R's `diary_caption.py` is committed (`7aae93e`) but a tested pure function called by nothing yet; the rr-supervisor.py comment fix is committed (`04e8a96`) but NOT deployed to the NAS. Diary POSTER automation is still sequenced AFTER ~1wk of real Etsy data + Ryan's caption approval — don't build it early.
+
+New canonical strategy: [[Projects/Welra/Brand_Comms_Strategy_2026-07]] (adversarially validated, then revised per Ryan's Etsy redirect). Key facts if you touch either project: (1) the R&R Monday "shop diary" flywheel is SEQUENCED — Move 0 (an **Etsy** favorites/view-delta enhancement to `etsy.ts`, NOT the Instagram-token connect, which was refuted — R&R's IGAA token needs graph.instagram.com support Welra lacks) must land before any diary automation, or captions have no honest rising metric beyond "$0, 0 orders"; (2) a `/founding` page must reconcile with the EXISTING live "Founding Seller beta" banner — do not create a second differently-termed founding offer; (3) "Monday"/cadence words stay OUT of the hero/tagline (session-18 fence) — "Monday Radar" is email-subject/feature copy only; (4) R&R's Welra Week Card infra is confirmed real (unconditional generation, durable public URL `api.welra.io/reports/:id/card.png`); (5) Growth_Pipeline now has ideas #44–#47 covering all of this — dedupe against them. All builds await Ryan's 3 one-word approvals in `_RYAN_TODO.md` task 1b.
 
 # To Antigravity — 2026-07-06 (Claude usage-system overhaul — read the SOP before assuming session conventions)
 
@@ -276,3 +282,21 @@ State/Tasks updated (s30). Live onboarding path proven on prod end-to-end includ
 - Etsy is explicitly NOT the sales channel for this (confirmed this session: Etsy bans reselling mass-produced items outside handmade/vintage/craft-supply, tightened 2026 enforcement) — don't suggest routing this through Rust & Rainbow's Etsy shop.
 - Ryan's actual next steps are in `_RYAN_TODO.md` under a new 🐕 DROPSHIP PIPELINE section (supplier price-check across 3 channels, safety docs, bundle sourcing, storefront build, one test order, seed ad round ~$75–100 total, then reinvest-or-stop).
 - [[Projects/Dropship_Pipeline/State]] and [[Projects/Dropship_Pipeline/Tasks]] updated to match. Also fixed a real pipeline bug this session (headless validator agent tried writing files directly, leaked "no write permission" text into 3 production log entries) — cleaned and prevented via `--allowedTools ""` + clearer agent prompts.
+
+## 2026-07-06 — Welra growth pipeline (scheduled, maintenance mode)
+- Queue gate count = 5 → Stage 0 held, no new ideas/no code/no notification this run.
+- Notable: `_RYAN_TODO.md` task 1 (3 warm DMs, the long-stalled #1 ask) is now checked off — sent via texts/IG DM 7/02-7/04, outcome unverified (no email reply, no beta user confirmed yet).
+- Repo/deploy state unchanged and verified clean (3d71eda live in prod).
+- Growth_Pipeline.md updated with a new "Queue gate log" section (per-run count + counted task titles going forward).
+
+## 2026-07-08 — Welra growth pipeline (scheduled, maintenance mode)
+- Queue gate count = 5, unchanged since 7/06 → Stage 0 held again, no new ideas/no code/no notification.
+- Zero new email in 3 days (`ryannortham3@gmail.com`).
+- One new commit since last run (`69e243a`): the 7/06 night flywheel build (Etsy favorites/view-delta signal, `/founding` page, "Monday Radar" email subject) moved from uncommitted-working-tree to committed-on-main — still NOT deployed. This matches `_RYAN_TODO.md`'s existing "▶ ONE action left: deploy the staged work" section exactly, so no drift and nothing new to reconcile.
+- Nothing sharpened (the friction those features remove hasn't gone live for a real visitor yet). Growth_Pipeline.md, Claude_Log.md updated; `_RYAN_TODO.md` unchanged (nothing new to add).
+
+## 2026-07-08 (2nd run) — Welra growth pipeline (scheduled, maintenance mode) — correction + diary-poster staging note
+- **Correction to this morning's entry above:** `69e243a` (Etsy favorites signal + `/founding` page + "Monday Radar" subject) is actually confirmed DEPLOYED — `_RYAN_TODO.md` has it under "✅ DEPLOYED — LIVE IN PRODUCTION (2026-07-07)" (health 200, all 5 crons registered, `/founding` verified 200). The morning run's "still NOT deployed" note was stale by the time this run checked. Only the GitHub push itself (`origin/main` is 1 commit behind) is outstanding — not a live-site gap.
+- Queue gate count = 5, unchanged. Zero new email (`newer_than:1d`).
+- The Welra repo's working tree currently has uncommitted changes (`env.ts`, `server.ts`, `reportGenerator.ts`, a new migration, a new `routes/diary.ts`) — this is the Diary poster work `_RYAN_TODO.md` already documents as "BUILT + staged (2026-07-07), live post gated on your OK." Confirmed expected, not drift — do not commit/deploy it without Ryan's explicit "deploy the diary endpoint" (the migration must apply to prod BEFORE the API deploy, per the arch-review finding already logged in Tasks.md).
+- No new ideas, no notification. Growth_Pipeline.md, Claude_Log.md updated.

@@ -358,3 +358,108 @@ Sources:
 ---
 
 Want me to write this into `plans-log.md`? I'll need write permission granted first — same blocker as the prior two passes today.
+
+## 2026-07-08
+
+### Business Plan: Portable Mini Photo/Sticker Printer (Thermal)
+
+**Note on the screening call:** The feasibility screen marked "no ad saturation evident" for this niche, but my research found two entrenched branded competitors — **Phomemo** and **PeriPage** — who already own this exact product category on Amazon and TikTok Shop, with established reviews, ASIN history, and direct-to-consumer sites. This is not a green field. Positioning below is built around that reality, not around the "moderate saturation" assumption from screening.
+
+---
+
+### Target Customer
+
+Not "gift buyers" broadly. Specific: **women 16–24 who make physical scrapbooks/journals from phone photos** (junk journaling / photo diary niche, active on TikTok under #photodiary, #scrapbooking, #journalwithme) — plus a secondary, smaller segment of **remote-desk "deskcessory" buyers** furnishing a desk setup for Instagram-style flat-lays. These two segments already buy Phomemo/PeriPage today; you are not creating new demand, you are intercepting existing branded-search and TikTok-impulse demand with a cheaper or better-bundled offer.
+
+### Positioning: why buy from Ryan instead of Phomemo/PeriPage/the next dropshipper
+
+Honest assessment: on the printer hardware alone, there is **no defensible reason** — it's the same Shenzhen OEM board in a different shell. The only viable angles are:
+1. **Bundle, not device.** Sell "starter kit" (printer + 3 rolls of paper + stencil set + phone photo app guide) at a bundled price point that beats buying pieces separately from Amazon. This is a merchandising play, not a product play.
+2. **Niche creative content**, not spec sheets — TikTok organic/UGC showing journaling use cases (Phomemo's own marketing is generic/utilitarian; the journaling audience responds to aesthetic, ASMR-style content, which is underserved by the incumbent's own channels).
+3. **Consumables subscription** as the actual margin engine — acquire at breakeven or a slight loss on the printer, make money on repeat paper roll sales. This only works if you can survive Phomemo/PeriPage's price on the initial unit.
+
+If you can't commit to angle 3 (recurring paper sales infrastructure — a subscribe-and-save or reorder flow) inside 30 days, **this is a weak candidate** and I'd flag that honestly rather than dress it up.
+
+### Supplier Options (thermal only, per screening gate)
+
+| Supplier | Source | Est. unit cost (device) | Lead time | MOQ |
+|---|---|---|---|---|
+| Alibaba — Shenzhen/Xiamen OEM (e.g. "Xiamen Apt" listing type) | Alibaba.com | ~$18–25/unit at 50–100 units (58mm Bluetooth thermal, no-ink) | 15–25 days production + 10–20 days sea, or 5–7 days air at higher freight cost | 10–50 units typical; some suppliers show MOQ 1 for sampling |
+| Doba (US-based dropship aggregator, no-MOQ) | doba.com | Listed dropship price, typically marked up vs. Alibaba — need to pull live quote, did not find exact $ in search | Domestic US stock, so 2–5 day fulfillment | No MOQ (per-order dropship) |
+
+**Gap I'm flagging explicitly:** I could not get exact per-unit landed pricing from a live quote request — Alibaba listing prices in search results ($10–32) are asking prices before negotiation and before paper/consumable bundling, and Doba's actual per-unit cost wasn't visible in search results (their pricing is behind login/account). **Before spending money, get 2–3 real quotes** (Alibaba RFQ to 3 suppliers, screenshot Doba's actual per-unit cost) — do not commit budget off the numbers above.
+
+### Unit Economics (estimated — explicitly not verified quotes)
+
+Using $22 landed device cost as a working assumption (mid-point of Alibaba range + est. freight/duty), pending real quotes:
+
+| Line item | Estimate |
+|---|---|
+| Device landed cost (incl. freight/duty, no paper) | ~$22–28 (unverified — get real quotes) |
+| Paper roll consumable cost (bundle of 3, thermal) | ~$3–5 for 3 rolls at bulk |
+| Total landed cost (kit) | ~$25–33 |
+| Target retail price | $49.99 (matches/undercuts Phomemo's ~$50–70 bundle pricing) |
+| Est. ad cost per purchase (CAC), see channel section | $18–25 (estimate, not guarantee) |
+| Contribution margin per unit (retail − landed − CAC − payment processing ~3%) | **~$-3 to +$5** |
+
+**This is the critical finding: at a $49.99 price point with a $18–25 CAC, contribution margin per unit is near zero or negative on the first sale.** The business only works if either (a) the consumables reorder rate is high enough to make LTV, not first-order margin, the real number, or (b) you can get CAC materially below $18 via organic TikTok content instead of paid ads. Do not greenlight this past Gate 5 unless the test data shows one of those two things.
+
+### Marketing Channel Plan
+
+- **Primary: TikTok Shop + Spark Ads.** Rationale: this exact product category over-indexes on TikTok's "aesthetic/journaling" content ecosystem, and TikTok Shop's in-app checkout converts at ~3.7% vs 1.8% for standard in-feed (per 2026 industry benchmarks), which matters given the thin margin above.
+  - **Estimate, not guarantee:** In-feed CPM ~$6–14 (avg ~$9), Spark Ads CPM ~$11–12, CPC ~$0.40–1.20 blended. Source: aggregated 2026 TikTok ad benchmark reports (Triple Whale, DigitalApplied, Lebesgue — see sources below). These are cross-industry averages; gadget/novelty verticals were not broken out separately in available data, so treat as a rough anchor, not a category-specific number.
+- **Secondary: organic TikTok/Reels UGC** showing the journaling use-case — given the thin paid margin above, organic content is not optional, it's load-bearing for this candidate to work at all.
+
+### 30-Day Launch Plan
+
+**Week 1 (Jul 8–14): Supplier lock + asset build**
+- Send RFQs to 3 Alibaba suppliers + get a real Doba account quote; do not proceed on assumed pricing
+- Order 2–3 hardware samples (one from each candidate supplier) for hands-on QA
+- Build landing page (single product, bundle offer, $49.99 price point)
+- Draft 3–5 UGC-style TikTok concepts (journaling demo, unboxing, "day in my life with this")
+
+**Week 2 (Jul 15–21): Content + soft launch**
+- Samples arrive; QA test print quality, Bluetooth pairing reliability, paper jam rate
+- Film and post 3–5 organic TikToks (no paid spend yet) — read organic engagement as a cheap signal before spending on ads
+- Finalize landing page copy based on which organic angle gets traction
+
+**Week 3 (Jul 22–28): Gate 5 test**
+- Place sample-based inventory order (small batch, not full MOQ) if organic signal is decent
+- Launch $500–1,000 TikTok Spark Ads test behind the best-performing organic post
+- Track: CPC, landing page CVR, CAC, and — critically — whether any early buyers reorder paper
+
+**Week 4 (Jul 29–Aug 4): Go/no-go decision**
+- Pull real CAC and contribution margin from the ad test
+- Decision: if CAC ≤ ~$15 and organic is carrying meaningful volume, proceed to full inventory order; if CAC ≥ $20 and margin is negative, kill — the incumbent brands' entrenchment makes this a bad market to fight on paid CAC alone
+
+### Budget: cash to reach a real go/no-go signal
+
+| Item | Cost |
+|---|---|
+| Samples (2–3 units, 2–3 suppliers, incl. shipping) | ~$150–300 |
+| Landing page (if using existing Shopify/tooling — assume near-$0 incremental) | $0–50 |
+| Small test inventory batch (25–50 units, if organic signal justifies it) | ~$700–1,400 |
+| TikTok ad test spend | $500–1,000 |
+| **Total to Gate 5 signal** | **~$1,350–2,750** |
+
+This assumes you do NOT commit to a full production MOQ before the ad test — sample + small batch first. If suppliers force MOQ 50+ before quoting a workable price, the entry cost rises toward $1,500–2,000 just for inventory, which changes the risk calculus.
+
+### Break-Even Math
+
+Assume fixed monthly costs (Shopify/tooling, misc.) ≈ $50–100/month (small operation, no other fixed overhead assumed — flag if you have other fixed costs I'm not aware of).
+
+At $5/unit contribution margin (optimistic case) and $25/month ad spend budget beyond the test:
+- Fixed costs + ongoing ad spend to cover: depends heavily on how much you plan to spend monthly post-test — **not enough information to give a real number without your planned monthly ad budget**.
+- At the **realistic $0–5/unit margin** found above, break-even units needed will be **high relative to typical dropship volume** (likely 100+ units/month just to cover a modest ad budget), because the margin per unit is thin by design in this saturated niche.
+
+**Bottom line:** this candidate's unit economics are borderline before you've even spent a dollar — the honest recommendation is to treat Week 2's organic test as the real go/no-go, not the paid ad test, because the paid math doesn't clearly work at this margin.
+
+Sources:
+- [Mini Thermal Printer - Alibaba](https://www.alibaba.com/showroom/mini-thermal-printer.html)
+- [Verified Supplier Mini Printer - Alibaba](https://www.alibaba.com/showroom/mini-printer.html)
+- [TikTok Ads Benchmarks by Industry - Triple Whale](https://www.triplewhale.com/blog/tiktok-benchmarks)
+- [TikTok Ads Benchmarks 2026 - DigitalApplied](https://www.digitalapplied.com/blog/tiktok-ads-benchmarks-2026-cpc-cpm-cvr-industry)
+- [TikTok Ads Benchmarks for CTR, CR, and CPM - Lebesgue](https://lebesgue.io/tiktok-ads/tiktok-ads-benchmarks-for-ctr-cr-and-cpm)
+- [Portable Printer Dropshipping Guide - Alibaba](https://electronics.alibaba.com/buyingguides/portable-printer-dropshipping-guide)
+- [Thermal Printer Dropshipping - Doba](https://www.doba.com/dropshipping/thermal-printer.html)
+- [Phomemo Mini Printer Collection](https://phomemo.com/collections/mini-printer)
