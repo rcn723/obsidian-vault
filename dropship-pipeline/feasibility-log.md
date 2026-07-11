@@ -149,3 +149,98 @@ All products from 07-06, 07-07, 07-08 not listed above appeared only once or sho
 
 **Only 1 candidate advances:** Portable Mini Printers  
 **Sourcing gate:** Thermal printers only. Validate consumable supply chain (film/paper sourcing, margin viability) before unit commitment. Recommend $5K–$10K test campaign (remote work, travel, scrapbooking audience targeting) before scaling.
+
+## 2026-07-09
+
+**Screening Result: No Candidates Advanced**
+
+No products appear across all 3 of the last 3 daily scans (2026-07-07 through 2026-07-09). The strongest persistence signals show only 2-day recurrence:
+
+| Product | Days Present | Status |
+|---------|-------------|--------|
+| Portable Mini Printers | 7/7, 7/8 | Insufficient persistence, not screened |
+| 4K AI Security Cameras | 7/7, 7/8 | Insufficient persistence, not screened |
+| Korean Skincare Sets | 7/8, 7/9 | Insufficient persistence, not screened |
+| Fibermaxxing Products | 7/8, 7/9 | Insufficient persistence, not screened |
+| Magnetic/Wireless Chargers | 7/8, 7/9 | Insufficient persistence, not screened |
+| Massage Products | 7/7, 7/9 | Insufficient persistence, not screened |
+
+**All remaining products appear in single-day scans only.**
+
+---
+
+**Recommendation:** Extend scanning window. For daily scans to identify persistent candidates, a 3-entry minimum creates a high bar (requires 100% overlap across days). Consider either: (1) accumulating 5-7 day windows to flag candidates with ≥3 appearances, or (2) lowering threshold to products appearing in ≥2 of 3 days with rising intensity signals in each reappearance.
+
+Looking at the last 3 daily entries (2026-07-08, 07-09, 07-10), I'll identify persistent candidates first, then score them.
+
+**Persistence filter (2+ appearances across 07-08, 07-09, 07-10):**
+1. Fibermaxxing — 07-08, 07-09, 07-10 ✓
+2. Black Sesame — 07-08, 07-10 ✓
+3. Hugo Spritz — 07-08, 07-10 ✓
+4. Korean Skincare Sets — 07-08, 07-09 ✓
+5. Dual-Ended Eyeliner Stamp — 07-08, 07-10 ✓
+
+**Single-appearance (insufficient persistence, not screened):**
+Jelly Blush, Mouth Tape, Gummy Bear Aesthetic, Cordless Vacuums, Liquid Vitamins, Smart Pet Enrichment, AI Chatbots, Projection Lamps, Y2K Fashion, Luxury Dupes, Fishing Traps.
+
+---
+
+## 2026-07-10
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/TM Risk | Saturation & Returns | Durability | **VERDICT** |
+|---|---|---|---|---|---|---|---|
+| **Fibermaxxing** | ✓ 3-4x viable | ✓ Powders ship well | ✓ Supplement ads OK if claims substantiated | ✓ Generic | HIGH RISK: Major CPG brands (Pepsi, Nestlé, Olipop) already launching; return rates 20-30% for GI-focused products; "Fibermaxxing" trend name suggests 90-day window. Data notes "nutritionists warning about rushed adoption" → expect churn. | POOR — 90-day trend cycle, major brand CAC competition | **KILL** — CPG incumbents dominating, margin compression imminent (30%+ CAC), high returns will cannibalize bottom 20-30%. Window closing August. |
+| **Hugo Spritz** | ✓ 2-3x on kits | **✗ HARD FAIL: Alcohol shipping** — Cross-state shipment illegal without federal importation license; regulatory barrier insurmountable. | N/A | N/A | N/A | N/A | **KILL** — Non-negotiable regulatory blocker. Cannot execute as dropship model. |
+| **Black Sesame** | ✓ 3-5x margin | ✓ Dry goods | ✓ Food/beverage no claims | ✓ Generic ingredient | HIGH: Retail already captured (Starbucks, Whole Foods, specialty shops visible per data); supply chains controlled by food distributors; "early adopters already saturated (NYC specialty shops)". Trend rising but market access blocked. | MODERATE — Ingredient has staying power but trend moving to mainstream/mature phase | **KILL** — Retail distribution moat insurmountable for dropship. Specialty sourcing advantages not portable to DTC. TAM consolidating into established players. |
+| **Korean Skincare Sets** | ✓ 2-3.5x | ✓ Cosmetics ship OK | ✓ Beauty ads allowed | MEDIUM — Branded products risk infringement | VERY HIGH RISK: 15-25% return rates per data ("high returns due to sensitivity/allergies"); already peaking (07-08 Rising → 07-09 Peaking → declining trajectory); 50+ established competitors (Yesstyle, Stylevana, Amazon). Returns math: 20% returns at $25 retail = $5 margin loss + 25-30% CAC = unit margin inverts negative. | POOR — Peaking trend, inherent high-return category | **KILL** — Return rate exposure too high; trend declining; saturation complete. Margin math fails with standard return rates. |
+| **Dual-Ended Eyeliner Stamp** | ✓ 3-4x margins | ✓ Plastic tools durable | ✓ Beauty tools OK | MARGINAL — Knockoff flood likely | CRITICAL TIMING ISSUE: "Copycat saturation within 2-4 weeks per 07-10 data"; requires constant viral influencer maintenance ($3-10k/day); profit window 14-28 days maximum. After 3wk, identical copies kill differentiation. Total addressable revenue ~$20-30k gross before margin collapse. | VERY POOR — Trend viral-dependent, 2-week execution window | **KILL** — Margin cliff timeline too aggressive. 2-wk window before copycat flood eliminates advantage. Influencer CAC ($3-10k/day) unsustainable for 14-28-day runway. Setup/operational complexity not justified. |
+
+---
+
+**FINAL DECISION: ADVANCE 0 / TOP 3: NONE**
+
+All five persistent candidates fail on core viability:
+- **Hugo Spritz**: HARD regulatory fail (alcohol shipping)
+- **Fibermaxxing**: Major brand saturation + 20-30% return rates + 90-day trend window
+- **Black Sesame**: Retail market capture complete; supply chain moat unbreakable
+- **Korean Skincare**: 15-25% return rates (negate margins) + declining trend + 50+ competitors
+- **Eyeliner Stamp**: 2-week profit window before copycat floor, unsustainable CAC
+
+**Market Context**: July 10 scans show market-wide saturation across persistent signals. Major incumbents (CPG, retail, established DTC) have pre-empted all strong early signals. Copycat manufacturing latency <4 weeks. No isolated opportunities in current dataset.
+
+**Recommendation**: Hold for next scan window (07-13 or 07-15). Seek: (a) no major brand entry, (b) supply chain isolation, (c) <20% competitive ad density, (d) >60-day trend durability.
+
+## 2026-07-11 Feasibility Screen
+
+**Persistence analysis across 07-09 → 07-10 → 07-11:**
+
+| Candidate | Entry 1 | Entry 2 | Entry 3 | Persistence |
+|---|---|---|---|---|
+| Fibermaxxing Products | ✓ | ✓ | ✓ | 3/3 — ADVANCED |
+| Black Sesame Products | — | ✓ | ✓ | 2/3 — insufficient |
+| Hugo/Spritz Products | — | ✓ | ✓ | 2/3 — insufficient |
+| All other candidates | Single entry only | — | — | 1/3 — insufficient |
+
+---
+
+### FIBERMAXXING PRODUCTS
+**Verdict: KILL**
+
+| Criterion | Assessment | Pass/Fail |
+|---|---|---|
+| **Unit Economics** | Fiber supplements source $2–4, retail $15–25 = 3.75–6.25x markup. Viable margins. | ✓ PASS |
+| **Shipping Practicality** | Lightweight powder, no fragile items, no special handling required. | ✓ PASS |
+| **Ad Platform Compliance** | **[HARD]** Fiber + health claims = FTC/FDA minefield. "Digestive health," "gut support," "bowel regularity" are heavily regulated. Major CPG brands (Coca-Cola, Nestlé) navigate this with legal teams; dropshippers cannot. Risk of account suspension on Meta/Google for unverified health claims. | ✗ FAIL |
+| **IP/Trademark Risk** | No trademark risk; generic category. | ✓ PASS |
+| **Return Rate Risk** | High. Fiber products = efficacy expectations + GI sensitivity. Returns likely 8–15% if product underperforms or causes issues. | ⚠ MODERATE RISK |
+| **Competitive Saturation** | **Major brand saturation already visible.** Coca-Cola Simply Pop (6g prebiotic), Nestlé protein shake, PepsiCo Smartfood Fiber Pop all launched Q2–Q3 2026. Entry 07-10 notes: "trend is validating but may be peaking." CPG players with better sourcing/marketing are already capturing volume. | ✗ KILL |
+| **Durability Beyond Trend** | Durable; fiber/digestive health is ongoing wellness need, not viral fad. Major brand backing validates sustainability. | ✓ PASS |
+
+**Specific Reasons to Kill:**
+1. **Regulatory complexity [HARD]:** Any fiber product marketed for digestive/GI benefit triggers FDA scrutiny. Health claims must be substantiated; dropshippers lack resources for compliance infrastructure that established brands have.
+2. **Saturated by CPG majors:** Coca-Cola, Nestlé, PepsiCo entering simultaneously signals peak/saturation. These brands have distribution, marketing, and cost advantages that dropshippers cannot match.
+3. **Return rate + quality variance:** Fiber products are sensitive to sourcing quality. Supplier variance on ingredient efficacy will drive returns; managing that at dropship margins is not viable.
+
+---
+
+**All other candidates (Black Sesame, Hugo Spritz, etc.):** Insufficient persistence (2/3 or 1/3 entries only). Not screened.

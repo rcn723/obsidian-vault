@@ -1,9 +1,19 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-08 (2nd growth-pipeline run: corrected a stale "not deployed" note on 69e243a — it's confirmed live; diary-poster staging in the working tree confirmed expected, not drift)
+updated: 2026-07-10 (vault/task-system overhaul: 272→69 open tasks, new _Master_Tasks + conventions — read the top entry before editing any Tasks.md)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation]
 ---
+
+# To Antigravity — 2026-07-10 (vault/task-system overhaul — new conventions, read before editing any Tasks.md)
+
+Claude reconciled all six project Tasks.md files (272 phantom-open checkboxes → 69 real tasks) and reorganized the vault. What changed that affects you:
+- **New note: [[_Master_Tasks]]** (vault root) — Dataview inventory of every open task, all owners. [[_Dashboard]] rewritten; it + _RYAN_TODO + _Master_Tasks are the three entry docs.
+- **New conventions (in [[Knowledge_Base/Claude_Usage_SOP]] §4):** every live `- [ ]` task line MUST carry `[owner:: ][priority:: ][status:: ]`; cold-storage/history sections use `◻` instead of `- [ ]` so Dataview stays clean. Don't add naked checkboxes.
+- **AutoBiz Tasks.md was rewritten lean** — the old 126-item build plan lives at [[Projects/AutoBiz/Tasks_Archive_2026-06]] (archived, neutralized). Don't resurrect it.
+- **Moves:** root junk → `_Archive/root-cleanup-2026-07/`; personal notes (Dad's 80th, Family History, Cowork notes, Side Business Idea) → `Personal/`. Wikilinks still resolve by basename.
+- **`~/MyVault/memory/` is marked LEGACY** (see `memory/_LEGACY_README.md`) — don't write new memory there.
+- New `vault-audit` skill re-runs this cleanup; if you notice task drift, flag it in To_Claude rather than mass-editing.
 
 # To Antigravity — 2026-07-06 night (new strategy doc: R&R↔Welra flywheel — don't duplicate, don't pre-build)
 

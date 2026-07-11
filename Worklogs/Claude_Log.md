@@ -1,5 +1,17 @@
 # Claude Worklog
 
+## 2026-07-10 — Welra growth pipeline ran in maintenance mode, queue at 5
+
+Scheduled `welra-growth-pipeline` run. Queue gate = 5 (unchanged from 2026-07-09) → maintenance mode, no Stage 1 ideas added. Checked ryannortham3@gmail.com (`newer_than:1d`/`newer_than:7d`) — only Qwoted press-request digests (WSJ/Reuters, MoneyLion, Informa TechTarget, CSOonline, Vending Times), an Indie Hackers newsletter, and Etsy marketing — zero seller/outreach replies. Repo clean and in sync with origin (`2c6f08b`) — no new commits since 2026-07-09. Nothing broken, nothing sharpened, no notification.
+
+## 2026-07-09 (2nd run) — Welra growth pipeline ran in maintenance mode again, queue at 5
+
+Scheduled `welra-growth-pipeline` run. Queue gate = 5 (unchanged from this morning) → maintenance mode, no Stage 1 ideas added. Checked ryannortham3@gmail.com (`newer_than:1d`, welra/beta/weekly-report/shop/etsy/printify keywords, 6 threads) — zero seller/outreach replies, just Qwoted digests on unrelated topics. Repo clean and in sync with origin (`2c6f08b`) — no new commits since the AM run. Nothing broken, nothing sharpened, no notification.
+
+## 2026-07-09 — Welra growth pipeline ran in maintenance mode, queue at 5
+
+Scheduled `welra-growth-pipeline` run. Queue gate = 5 (unchanged) → maintenance mode, no Stage 1 ideas added. Checked ryan@welra.io (`newer_than:3d`, welra/beta/weekly-report keywords, 23 threads) — zero seller/outreach replies, just Qwoted/IH/Etsy marketing noise and a BetaList submission-reminder nudge. Repo clean and in sync with origin (`2c6f08b`) — no drift from the 07-08 deploy. Nothing broken, nothing sharpened, no notification.
+
 ## 2026-07-03 — Welra growth pipeline: "Etsy/WooCommerce one-click" milestone post built + staged; new idea (mine Ryan's contacts) found genuinely blocked
 
 Scheduled `welra-growth-pipeline` run. Checked ryan@welra.io (`newer_than:5d`, 33 threads) — zero seller/beta/Stripe activity, all Qwoted digest spam/Etsy account notifications/TikTok's own PIN. `git log` confirmed a concurrent session (Session 30, "evening loop") had already landed and pushed `b8a7a2f` since the last pipeline run.
@@ -1004,3 +1016,22 @@ Ryan: "go ahead and deploy." Ran the deploy-gate procedure end-to-end (harness h
 - Pushed origin (`3d71eda..2c6f08b`) — origin now == deployed state, no drift.
 - **Gated as chosen:** diary endpoint ships INERT (503) — DIARY_SECRET/DIARY_CUSTOMER_ID unset, nothing posts. Live diary post still needs: set secrets + fix weekN streak + public-JPEG host + dry-run preview + Ryan's caption approval (all in _RYAN_TODO + Welra Tasks).
 - **Live now for users:** every Etsy seller's report gains a favorites/views trend (from the 2nd report — 1st sets the baseline); subject line "Your Monday Radar"; welra.io/founding as the one founding destination. Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.
+
+## 2026-07-10 — Vault + task-system overhaul (goal session: optimize process, Obsidian org, one master to-do)
+
+Full-vault audit and cleanup. Nothing deployed; no code repos touched.
+- **Task-drift reconciliation:** the 6 project Tasks.md files carried 272 "open" checkboxes; ~200 were stale, superseded, or cold storage — the Dashboard's Dataview queries (the designated session entry point) were unusable. Closed provably-done items WITH evidence: Welra blog post + /founding live-verified via curl (200 behind the www 308 redirect), Etsy Round 2 approved 7/2, s22 report-markdown fix deployed s25, /sample deployed 7/2, migrations-commit resolved by the 7/8 "origin pushed no drift" check, delivered-status bug fixed s18/verified 7/6, R&R duplicate-listing + shop-standing synced from _RYAN_TODO ✅ marks, DSM boot task done 6/25, Meta Business Verification deduped to the single R&R canonical item.
+- **Cold-storage neutralization:** Welra Tasks' `## Archive` section (71 boxes) → `◻` so Dataview skips it; AutoBiz's 126-item pre-build plan (product's been live for a month) archived to `Projects/AutoBiz/Tasks_Archive_2026-06.md` (type: archive, boxes neutralized) and Tasks.md rewritten lean (6 real items). **Result: 272 → 69 real open tasks** (Welra 21 · Hubitat 17 · R&R 11 · Stock 7 · Dropship 7 · AutoBiz 6). Field lint clean — all 70 carry owner/priority/status.
+- **New: [[_Master_Tasks]]** — Dataview-powered complete inventory (Ryan high-pri / Ryan rest / Claude+auto / blocked / per-project counts) + a static snapshot section, positioned as the audit safety-net vs _RYAN_TODO the curated workbench. **[[_Dashboard]] rewritten** (was 2 weeks stale, never linked _RYAN_TODO): two-doc table, refreshed focus lines, scoped queries.
+- **Org cleanup:** root junk (3 Untitled canvases, 2 Untitled bases, 2 empty daily notes, a stray nested "Obsidian Vault/.obsidian") moved to `_Archive/root-cleanup-2026-07/`; 5 personal notes moved to `Personal/`; legacy `memory/` folder marked with `_LEGACY_README.md` (superseded by Claude Code memory + Knowledge_Base — its "read all files at session start" CLAUDE.md is stale).
+- **New skill: `vault-audit`** (~/.claude/skills/) — encodes today's 5 checks (drift scan vs the 69-task baseline, cold-storage neutralization, field lint, _RYAN_TODO reciprocity, clutter/staleness sweep). Wired into `sunday-review` (new step 6: full audit first Sunday of month, quick count otherwise) and `session-close` (new step 3b: refresh the _Master_Tasks snapshot). SOP skill map + standing rules updated (new task-system contract rule).
+- **_RYAN_TODO:** zero new Ryan asks (execution-first rule); fixed the stale blog-post caveat (it's live), added a no-action ✅ note in 🧠 SYSTEM.
+- Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.
+
+## 2026-07-11 — Welra growth pipeline (scheduled, MAINTENANCE MODE)
+
+Pipeline ran in maintenance mode, queue at 5 (unchanged from 2026-07-10). No seller/beta reply in ryannortham3@gmail.com (22 threads swept, all Qwoted digests/Etsy marketing/newsletters, zero seller replies). Repo clean, HEAD unchanged at `2c6f08b`, no drift. Nothing broken, no sharpening applied, no notification. Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.
+
+## 2026-07-11 — Welra growth pipeline (2nd scheduled run today, MAINTENANCE MODE)
+
+Pipeline ran in maintenance mode, queue at 5 (unchanged). No seller/beta reply in ryannortham3@gmail.com (newer_than:2d in:inbox — zero threads). Repo clean, HEAD unchanged at `2c6f08b`, no drift. Nothing broken, no sharpening applied, no notification. Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.

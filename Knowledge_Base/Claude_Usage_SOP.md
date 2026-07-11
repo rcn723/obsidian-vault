@@ -2,7 +2,7 @@
 title: Claude Usage SOP — how Ryan and Claude work together
 project: cross-project
 type: sop
-updated: 2026-07-06
+updated: 2026-07-10
 tags: [sop, process, claude, skills, automation]
 ---
 
@@ -60,6 +60,7 @@ Every working session follows: **Open → Work → Milestone → Close.**
 | Pre-prod Welra deep test | `welra-e2e-audit` workflow |
 | Plan/recommendation about to be presented | `adversarial-validator` agent |
 | Vault bookkeeping mid-flow | `vault-scribe` agent |
+| Dashboard/task queries noisy · monthly hygiene · "are the task lists right?" | `vault-audit` (added 2026-07-10) |
 
 ## 4. Standing rules (unchanged, restated for one-stop reference)
 
@@ -71,6 +72,7 @@ Every working session follows: **Open → Work → Milestone → Close.**
 - Never lead with "AI" in customer/platform-facing copy; "clear," not "plain English."
 - First-person content claims must trace to a vault artifact (s28 fabrication lesson).
 - Code bugs → `feedback_scaffold_quality.md` + arch-review skill; ops incidents → runbooks. Different homes.
+- **Task-system contract (added 2026-07-10):** [[_RYAN_TODO]] = Ryan's curated workbench; [[_Master_Tasks]] = the complete Dataview-powered inventory (all owners); project Tasks.md = Claude's per-project layer. Every live task line carries `owner/priority/status` fields; cold storage uses `◻` not `- [ ]` so queries stay clean (2026-07-10 overhaul cut 272 phantom-open tasks to 69 real ones). Drift → `vault-audit`.
 
 ## 5. Ryan's usage changes (the short list)
 

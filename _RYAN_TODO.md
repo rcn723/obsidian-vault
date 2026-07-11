@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-06 (Usage-system overhaul: Monday 7:30am kickoff brief now live; growth pipeline throttled to 2×/day with an execution-debt gate so it stops adding asks while your queue is ≥5 deep; new 5-min read item at the bottom. Prior: R&R Facebook Page token fixed; Meta Business Verification 🔴 item stands.)
+updated: 2026-07-10 (Vault/task-system overhaul: all 6 project task files reconciled — 272 phantom-"open" tasks cut to 69 real ones, stale items closed with evidence; new [[_Master_Tasks]] auto-inventory + refreshed [[_Dashboard]]; nothing new for you to do — see the one-line note in 🧠 SYSTEM. Prior: usage-system overhaul 7/6; flywheel deploy 7/8.)
 tags: [ryan, todo, live]
 ---
 	
@@ -50,7 +50,7 @@ tags: [ryan, todo, live]
 **Optional add-ons (use if they help you hit send):**
 - Sample link, personalized: `welra.io/sample?name=Sarah&shop=Sarahs%20Candles` (greets them by name — live now)
 - Proof-of-honesty link: `welra.io/blog/my-shops-first-welra-report` (the report on YOUR $0 week)
-- Proof-it's-shipping link (once you push it above): `welra.io/blog/etsy-woocommerce-one-click` (this week's real milestone — good for Etsy/WooCommerce sellers specifically)
+- Proof-it's-shipping link (LIVE, verified 7/10): `welra.io/blog/etsy-woocommerce-one-click` (a real dated milestone — good for Etsy/WooCommerce sellers specifically)
 - Nudge line: *"First few people who try it and give me honest feedback — I'll send a $10 gift card, no strings."*
 - White-glove line (use if they seem interested but busy/unsure how): *"Happy to just hop on a quick call and set it up live with you — 10 minutes, I'll walk you through it."* Costs you nothing extra to offer, removes the last bit of setup friction, and if they take you up on it you get to watch someone use Welra for the first time — which is worth more than any survey.
 
@@ -265,7 +265,9 @@ CJ alone came back too expensive — check in this order:
 
 ---
 
-## 🧠 SYSTEM — one 5-minute read (updated 2026-07-06 PM)
+## 🧠 SYSTEM — one 5-minute read (updated 2026-07-10)
+
+- [x] ✅ **Vault + task-system overhaul — DONE (2026-07-10, no action needed).** The six project task files had drifted to 272 "open" checkboxes (~200 stale — e.g. "await Etsy response" from a July-2 approval, an entire pre-build AutoBiz plan for a product that's been live for a month). All reconciled: 69 real open tasks remain, junk files archived to `_Archive/`, personal notes grouped into `Personal/`, and there's a new [[_Master_Tasks]] note that auto-lists every open task across every project (yours + Claude's) so nothing can silently fall through again. **Your workflow doesn't change: this file is still the only doc you work from.** A new `vault-audit` skill re-runs this cleanup automatically (folded into the Sunday review).
 
 - [x] ✅ **Amazon review agent — FIXED (2026-07-06, you authorized in-chat).** It had been silently dead since ~May 30 (macOS blocks launchd from `~/Desktop`). Relocated to `~/Claude/amazon-reviews/`, all paths + plist repointed, and launchd's access to the new location proven with a live test job. Next real run: Sunday 9am — Claude will confirm it in the Sunday review.
 - [x] ✅ **Duplicate Instagram token refresher — DISABLED (2026-07-06, you authorized in-chat).** The Mac's `com.rustandrainbow.refresh_token` job is unloaded and archived with the other NAS-cutover plists. The NAS supervisor is now the single owner of the IG token refresh.

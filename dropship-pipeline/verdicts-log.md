@@ -195,3 +195,23 @@ Required changes before this becomes a GO:
 
 ### Next required step regardless of the above
 **Gate 5 — a real paid traffic test — is still required before any LLC-level commitment or inventory order beyond samples.** What it must measure: (a) blended CAC across organic + paid combined, not paid alone; (b) landing page CVR; (c) percentage of buyers who opt into reorder/refill interest at checkout or in a post-purchase email. **Pass threshold: blended CAC ≤ $15 AND ≥15% of buyers signal reorder interest.** If CAC lands at $18–25 with no reorder signal, kill it — that's the plan's own stated failure mode, confirmed here as the correct bar, not one to soften after money is already spent on inventory.
+
+## 2026-07-10
+
+**Concur with the feasibility screen. NO-GO on all 5 — nothing advances to plan-building.**
+
+There's no plan on the table to break, but I'll stress-test the screen's own reasoning rather than just rubber-stamp it, since that's the actual job here.
+
+**Where the screen's kills hold up under adversarial pressure:**
+
+- **Hugo Spritz** — correct kill, and it's not even close. Federal alcohol importation licensing isn't a CAC or trend-timing problem, it's a "you cannot legally do this as a dropshipper" problem. No amount of plan iteration fixes a missing license. Good screen.
+- **Fibermaxxing** — correct kill. If Pepsi/Nestlé/Olipop are already in-category, the single assumption a plan would need — "we can win the ad auction against a company with 100x our budget" — has zero supporting evidence and considerable evidence against. Any GO here would be asserting differentiation nobody could actually hold for a week against reformulation + shelf placement.
+- **Black Sesame** — correct kill. Distribution moats don't yield to ad spend. Worth flagging as a pattern for future screens: "the bottleneck is supplier relationships, not marketing" should probably kill a dropship candidate at intake, before it even burns a feasibility cycle.
+- **Korean Skincare Sets** — correct kill, and this is the sharpest one. Run the 2x-CAC stress test the screen already implicitly failed at 1x: if 25-30% CAC plus 15-25% returns already inverts margin, doubling CAC doesn't just compress margin, it makes the unit economics actively negative before you've paid for the ad platform's own fees. No iteration rescues this without a different product with a lower return rate.
+- **Eyeliner Stamp** — correct kill, and the timing math is the tightest catch here. 14-28 day copycat window vs. minimum 2-3 weeks of sourcing + site + ad account warmup means best case you launch with 0-14 days of runway left. That's not "risky," that's "the plan is dead before day one by construction." No iteration fixes a structural timing mismatch — the trend itself is the wrong shape for this business model, not this specific execution of it.
+
+**One thing I'd push back on in the screen's own framing:** describing this as "0/5 advanced" undersells how clean these kills are. These aren't borderline calls where a stronger operator could've found the wedge — Hugo Spritz and the eyeliner stamp are structurally impossible on the stated timeline/legal constraints, independent of who's running the store. Worth distinguishing in the log between "killed on execution risk" (arguable, revisit if conditions change) vs. "killed on structural constraint" (won't become viable no matter who builds the plan) so future scans don't re-litigate the same dead ends.
+
+**Verdict: NO-GO** on building any 30-day plan this cycle. Building a plan around a KILL-scored candidate to have something to show would be manufacturing a defensible-looking document around numbers nobody sourced — exactly the failure mode this validation gate exists to catch.
+
+**Reminder for whenever a candidate does clear screening:** the next required step after any GO-verdict plan is Gate 5 — a real paid traffic test, not a plan review. That test should run a fixed, small ad budget (define the dollar cap and duration before spending, not after) against a landing page or pre-order page, and the pass threshold should be stated in CAC-vs-target-margin terms before the money goes out, not fitted to whatever number comes back. Nothing here reaches that gate today.
