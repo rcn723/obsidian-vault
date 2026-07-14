@@ -1,9 +1,51 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-10 (vault/task-system overhaul: 272→69 open tasks, new _Master_Tasks + conventions — read the top entry before editing any Tasks.md)
-tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation]
+updated: 2026-07-12 pm (Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified; Meta Business Verification submitted/pending. Earlier: Photo_Archive full consolidation)
+tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
 ---
+
+# To Antigravity — 2026-07-12 pm (Welra deployed live; R&R Pinterest fixed; Meta verification pending; one claim didn't check out)
+
+Follow-up to this morning's sunday-review findings — Ryan authorized the deploy and reported 3 fixes done in one message. Verified each independently rather than trusting the report:
+
+- **Welra — the report-scheduler week-boundary fix (`weekBoundaries.ts` etc.) is now DEPLOYED and LIVE**, not just staged. Committed `18d0dfc`, pushed, `railway up --service welra` ran clean (fresh container, all 5 crons registered, `/health` 200). Don't re-diagnose or re-fix this — it's done. The 10-day R&R report gap is closed going forward.
+- **R&R — Pinterest is reconnected and verified live** against Zernio's own API (`isActive: true`, connected 2026-07-12 17:23 UTC, token valid to 08-11). All 3 platforms posting again. `State.md`'s status line corrected back to all-working.
+- **R&R — Meta Business Verification is submitted**, confirmed `verification_status: "pending"` via a direct Graph API check on the business portfolio. In Meta's queue now; nothing to do until it clears.
+- **⚠️ One claim did NOT check out:** Ryan said he'd "linked my etsy account to my facebook account" (presumably the long-standing Facebook Page website field / Instagram bio link task). A live check right after showed neither field actually changed — Page website is still the old link, Instagram bio still has none. Flagged in Tasks.md/`_RYAN_TODO.md` rather than marked done. If you touch this next, verify current live state before assuming it's fixed — don't just trust the last session's note (including this one, until re-verified).
+
+Everything updated: [[Projects/Welra/State]], [[Projects/Welra/Tasks]], [[Projects/Rust_and_Rainbow/State]], [[Projects/Rust_and_Rainbow/Tasks]], `_RYAN_TODO.md`, `Worklogs/Claude_Log.md`.
+
+---
+
+# To Antigravity — 2026-07-12 pm (Photo_Archive: one definitive media area now exists — don't "reorganize" it)
+
+Photo_Archive milestone 2, executed + verified per Ryan's request:
+- **`/Volumes/My Passport/_ORGANIZED/` is now THE complete media collection** — 79,433 files / 607 GB, duplicate-free, mirroring original folder names, with an `_README.txt` explaining the layout. Treat it as canonical; don't restructure it or re-run any dedup against it.
+- **The Mac is intentionally EMPTY of loose media** (0 files outside app libraries/project dirs; 452 GB free) and the old folder trees on the Passport are media-empty shells — that emptiness is the end-state, not data loss. Everything judged duplicate/leftover is in `_DELETE_CANDIDATES/` (42,441 files / 265 GB, subfolders `passport/`, `mac/`, `consolidation/`, `consolidation-mac/`, `old-delete-folder/`), fully journaled (`~/Desktop/Claude/photo-dedup/consolidation_manifest.csv` + `CONSOLIDATION_MANIFEST.csv` on the drive) — leave it untouched until Ryan's review.
+- **Lightroom catalog was repointed via direct SQLite update** (6 relocated roots → `_ORGANIZED/` paths); backup at `NorthamJonesPhotos-3-2-v13-3.lrcat.backup-20260712-142700`, 150/150 sampled files verified. Safe to open Lightroom; don't re-fix the roots.
+- Note: the unarchived portion of the collection now exists ONLY on the Passport — nothing should be moved off that drive except the planned verified NAS archive. Excire init on the collection is still pending (relayed as planned tonight).
+
+# To Antigravity — 2026-07-12 (Welra: real bug found + fixed, staged not deployed; R&R: Pinterest broken for weeks)
+
+Autonomous headless Sunday review. Two things worth knowing if you touch either repo:
+
+**Welra — `apps/api/src/lib/weekBoundaries.ts` is a NEW file, plus edits to `jobs/reportSchedulerCron.ts` and `services/reportGenerator.ts`, all staged in the working tree, uncommitted, NOT deployed.** These fix a real bug: a "last completed week" date calculation only worked correctly when called on a Sunday, so the on-connect instant-report path (fires any day) mislabeled a report and silently blocked the following Sunday's real report for the same customer — the one real active customer (R&R) went 10 days without a report. Don't re-author these files or re-diagnose the same symptom — the fix is written and verified (tsc/build clean, checked against the 3 real timestamps that exposed it). It's waiting on Ryan's go-ahead to deploy (`_RYAN_TODO.md` top section) — if you have deploy access and Ryan gives the go-ahead in a session you're in, ship it via `git add`/`commit`/`push` + `railway up --service welra`, then verify the Logs tab.
+
+**Rust & Rainbow — Pinterest posting via Zernio is broken, confirmed via the NAS's real log (`logs/rust-rainbow.log`, not the stale Mac `market.log`).** Has been failing on every run for weeks; account shows as "disconnected" as of 07-08. Needs Ryan to manually reconnect via Zernio's dashboard — not a code fix, nothing to build. `State.md`'s old "3-platform posting: all working" claim is now corrected.
+
+Also: `Welra/State.md` and `Rust_and_Rainbow/State.md` had both gone stale since 2026-07-03 (a real memory-loop lapse — this session found and closed it). Full detail in each State.md and in today's `Claude_Log.md` entry.
+
+---
+
+# To Antigravity — 2026-07-11 (NEW project: Photo_Archive — Passport hands-off warning now LIFTED)
+
+Claude stood up a new personal project today: `Projects/Photo_Archive/` — [[Projects/Photo_Archive/State]], [[Projects/Photo_Archive/Tasks]], [[Projects/Photo_Archive/Photo_Workflow_SOP]], [[Projects/Photo_Archive/NAS_Gaps_and_Process_Report]]. What you need to know:
+
+- **✅ UPDATE ~2:15pm — the dedup execution COMPLETED with zero unresolved errors; the earlier hands-off constraint on `/Volumes/My Passport` is LIFTED (safe to touch again).** Final numbers: 18,284 keepers copied+verified into `_ORGANIZED/` (117 GB); 13,273 Passport + 13,241 Mac losers moved into `_DELETE_CANDIDATES/` (144 GB); 4,338 Mac hardlink files skipped by design; ~60 GB freed on the Mac; Passport now 1.9 TB used / 1.8 TB free. Journal: `~/Desktop/Claude/photo-dedup/execution_manifest.csv` (copy at `/Volumes/My Passport/_DELETE_CANDIDATES/MANIFEST.csv`). One standing courtesy: leave `_ORGANIZED/` and `_DELETE_CANDIDATES/` unmodified until Ryan finishes his review — nothing was deleted, every move is journal-reversible.
+- **drive-watch LaunchAgent installed** (`com.ryannortham.drivewatch`, source `~/Desktop/Claude/drive-watch/`) — notifies during macOS silent exFAT repairs. Don't duplicate it; ops detail in [[Knowledge_Base/Mac_External_Drive_Runbook]] (already written — don't recreate).
+- **NAS constraint:** the photo volume is 86% full (791 GB free) and a 510 GB unarchived backlog is queued to land there — don't park anything large on the NAS photo share, and the NAS-side duplicate scan (Claude, high) must run first.
+- `_RYAN_TODO.md` gained a 📷 PHOTOS section (dedup review after completion, 2 Lightroom toggles, treat-the-Passport-gently warning). Worklog + State/Tasks all updated; `_Master_Tasks` snapshot refreshed with the new project.
 
 # To Antigravity — 2026-07-10 (vault/task-system overhaul — new conventions, read before editing any Tasks.md)
 

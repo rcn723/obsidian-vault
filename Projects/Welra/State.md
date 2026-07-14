@@ -2,11 +2,29 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-07-03 evening (session 35: Shopify OAuth redirect URL fixed in BOTH Shopify and Railway — Ryan authorized the Railway half, new container verified green; client secret refresh deliberately left for its own explicit ask)
+updated: 2026-07-12 pm (report-scheduler week-boundary fix DEPLOYED + verified live — closes the 10-day R&R report gap)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-07-12 pm — Report-scheduler fix DEPLOYED + verified live
+
+Ryan said "deploy the welra fix." Ran the `deploy-gate` skill: `git status` showed the 3 files from this morning's sunday-review still staged in the working tree, no drift vs origin. `tsc --noEmit` and `npm run build` both clean (no schema/auth/payment surface touched, so arch-review wasn't re-run). Committed (`18d0dfc`), pushed to `origin/main`, deployed via `railway up --service welra`. Verified live: fresh container (`fe92bde9257e`) booted clean, all 5 crons registered (token-health, scheduler, catchup, retention, trial-sweep), `/health` → 200. The 10-day silent report gap for Rust & Rainbow (the one real active customer) is now closed for any future mid-week platform connect. Welra Tasks.md P0 item marked done.
+
+## 2026-07-12 (sunday-review, am) — Found + fixed a 10-day silent report gap; State.md memory-loop lapse closed
+
+**This entry closes a memory-loop gap.** State.md sat untouched since session 35 (2026-07-03 evening) while the worklog recorded continuous activity through 2026-07-11: the R&R↔Welra flywheel (Etsy favorites/view-delta signal, `/founding` page, "Your Monday Radar" subject) and the diary-poster endpoint both DEPLOYED to production 2026-07-08 (`69e243a`, `2c6f08b`), and a full vault/task-system overhaul landed 2026-07-10. Full detail for that gap lives in the worklog (`## 2026-07-07`/`## 2026-07-08` entries) and `_RYAN_TODO.md`; not re-duplicated here.
+
+**Today's finding (live-verified via the Supabase REST API, not file claims):** the one real active customer — Rust & Rainbow, `subscription_status: trialing`, the shop that connected Etsy 2026-07-02 — has received **zero weekly reports since 2026-07-02**, a 10-day silent gap with no error anywhere in the logs. Root cause: `weekEnd = endOfWeek(subDays(now, 1), {weekStartsOn:1})` — used independently in THREE places (`reportSchedulerCron.ts`'s cron path and instant-report path, plus `reportGenerator.ts`'s actual data-fetch window) — only computes the correct "last completed Mon–Sun week" when called on a Sunday. The on-connect instant-report path fires whenever a customer connects a new platform, any day of the week. R&R connected Etsy on **Thursday** 07-02, so the instant report was created labeled `week_end_date: 2026-07-05` — three days in the future at generation time — which then silently blocked that Sunday's real cron report from being created for the same week via the `UNIQUE(customer_id, week_start_date)` constraint. Confirmed by querying `reports` directly: last row `created_at: 2026-07-02T16:05`, nothing since.
+
+**Fix (staged, NOT deployed — headless session, no deploy authorization):** extracted a single day-of-week-agnostic `getLastCompletedWeek(now, timezone)` helper into a new `apps/api/src/lib/weekBoundaries.ts` (deliberately placed in `lib/`, not `jobs/`, to avoid a `jobs/ → services/ → jobs/` circular import between the scheduler and the generator). All three call sites now use it. Verified against the three real historical timestamps that exposed the bug — Thu 07-02 instant (now correctly computes 06-22→06-28), Sun 07-05 cron (06-29→07-05), Mon 07-06 06:00 ET generation (06-29→07-05) — all correct. `tsc --noEmit` and `npm run build` both clean. Ran `arch-review` inline on the change: 0 blockers, 1 low-priority risk noted (see below), confirmed the atomic-claim fix from the 2026-06-22 duplicate-delivery bug is still intact and all email sends still consistently gated by `REPORT_DRY_RUN` + `unsubscribed_at`.
+
+**Deferred (tracked in Tasks.md, not fixed this session):** `reportGenerator.ts` still recomputes the week from "now" at generation time rather than reading the report row's own stored `week_start_date`/`week_end_date` — correct for same-day generation and same-week retries (verified), but could still drift if the hourly catch-up cron ever recovers a report stuck long enough to cross a Sunday boundary. Needs its own test pass; low urgency today (single customer, no history of week-old stuck reports).
+
+**Git/deploy status:** working tree clean except this fix (3 files: 2 modified + 1 new, all staged in the working tree, not committed). `git log origin/main..HEAD` empty otherwise — no other undeployed commits. Health endpoint (`api.welra.io/health/`) 200, Railway service Online, no drift. Growth pipeline ran in maintenance mode all week (queue gate=5, unchanged) — nothing new to report there.
+
+**Scoreboard, stated plainly:** 0 paying users, $0 revenue, Stripe test mode. One trialing customer (R&R, self-referential dogfood use) who will not have received a report in 10 days until this fix ships.
 
 ## Session 35 (2026-07-03 evening) — Shopify Partners: found the existing app, fixed the real bug, both halves now in sync
 

@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-10 (Vault/task-system overhaul: all 6 project task files reconciled — 272 phantom-"open" tasks cut to 69 real ones, stale items closed with evidence; new [[_Master_Tasks]] auto-inventory + refreshed [[_Dashboard]]; nothing new for you to do — see the one-line note in 🧠 SYSTEM. Prior: usage-system overhaul 7/6; flywheel deploy 7/8.)
+updated: 2026-07-12 pm (Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
 tags: [ryan, todo, live]
 ---
 	
@@ -24,7 +24,17 @@ tags: [ryan, todo, live]
 
 ✅ **ANTHROPIC_API_KEY on Rust & Rainbow — DONE**, confirmed live on both machines. The one remaining follow-up (run `--mode generate` once and eyeball the results) lives in the Rust & Rainbow section below — a nice-to-have check, not blocking.
 
-**Nothing actively broken right now.**
+---
+
+## ✅ RESOLVED TODAY (2026-07-12) — Welra report fix deployed, Pinterest reconnected, Meta verification submitted
+
+**1. Welra report fix — DEPLOYED + VERIFIED.** You said "deploy the welra fix." Committed, pushed, deployed via `railway up --service welra` — fresh container booted clean, all 5 crons registered, `/health` returns 200. The 10-day silent report gap for R&R is closed for any future mid-week platform connect.
+
+**2. Rust & Rainbow Pinterest — RECONNECTED + VERIFIED.** You reconnected via Zernio; Claude confirmed live against Zernio's own API (didn't wait for the next scheduled market run): the account shows active, connected today, token valid to 08-11. All 3 platforms (Instagram/TikTok/Pinterest) posting again.
+
+**3. Meta Business Verification — SUBMITTED, confirmed "pending" via live API.** In Meta's queue now (typically days–weeks). Nothing to do until it clears — Claude will watch and let you know when the already-drafted `pages_manage_posts`/`pages_manage_metadata` App Review request can go in.
+
+**4. One thing that didn't check out: "linked Etsy to Facebook."** Claude live-checked the Facebook Page website field and the Instagram bio right after you said this was done — neither shows the `rustandrainbowco.etsy.com` link yet. The Page website field is still the old `etsy.com/shop/RustAndRainbowCo`, and Instagram's bio still has no website set at all. If you did something on Etsy's own side (like a "connect social accounts" setting), that's a different thing and wouldn't show up in these two fields — but if you meant the Page/bio edit, it doesn't look like it saved. Exact manual steps are still in the R&R section below if you want to redo it.
 
 ---
 
@@ -130,13 +140,8 @@ Growth pipeline added Vercel Web Analytics — closes a real blind spot (up to n
 
 ## 🐾 RUST & RAINBOW — quick items (the two big ones are up top in 🔴)
 
-- [ ] 🔴 **Start Meta Business Verification for the "RustandRainbow" business portfolio (~15 min)** — needed before Facebook Page posting can work via the API at all. Found 2026-07-04: `pages_manage_posts` isn't just misconfigured, Meta blocks it entirely until the business is verified — checked business.facebook.com and the "RustandRainbow" portfolio has **zero business info filled in** (no legal name, address, phone, or website) and verification has never been started.
-  - a. Go to business.facebook.com → Settings → Business info, click Edit, and fill in GR3NB LLC's legal name + registered address + business phone + website (welra.io or a rustandrainbow one), exactly as they appear on the LLC formation document.
-  - b. Settings → Security Center → Business Verification → Start verification → upload the GR3NB LLC formation doc (or a utility bill matching the address).
-  - c. Submit — this enters Meta's queue, typically days to weeks. Nothing else to do until it clears.
-  - d. Tell Claude once it's approved — the use-case description and screencast script for the `pages_manage_posts` **and** `pages_manage_metadata` permission requests are already drafted and ready to submit together (see 2026-07-04/05 session; `pages_manage_metadata` was added 2026-07-05 after trying to update the Page's website field via API and hitting the same Advanced-Access gate).
-  - Until this clears, Instagram + TikTok posting both work fine — only Facebook Page posting (and any Page-info edits via API) is blocked.
-- [ ] **Update the Facebook Page website field (~2 min, manual — API is blocked, see above)** — Meta Business Suite → Rust and Rainbow Page → Edit Page Info → Website → change from the old `http://etsy.com/shop/RustAndRainbowCo` to `https://rustandrainbowco.etsy.com` → Save. Also add this same link as the Instagram bio website (Instagram app → Edit Profile → Website) — Instagram currently has NO link in bio at all. TikTok bio should get it too if you get a minute; not yet checked what's there now.
+- [x] 🔶 **Meta Business Verification — SUBMITTED 2026-07-12, confirmed "pending" via live API check.** Queued in Meta's system now (typically days–weeks). Nothing to do until it clears — Claude will watch for the status change. Once approved: tell Claude — the use-case description and screencast script for the `pages_manage_posts` **and** `pages_manage_metadata` permission requests are already drafted and ready to submit together (see 2026-07-04/05 session). Until it clears, Instagram + TikTok + Pinterest posting all work fine — only Facebook Page posting (and any Page-info edits via API) is blocked.
+- [ ] **Update the Facebook Page website field + Instagram bio link (~2 min, manual — API is blocked, see above)** — you reported this done on 2026-07-12, but a live check right after showed neither field had actually changed: the Facebook Page website is still `http://etsy.com/shop/RustAndRainbowCo`, and the Instagram bio still has no website link at all. If you did something Etsy-side instead (a "connect social accounts" setting) that's fine and just doesn't show up here — but if you meant this specific edit, it didn't save. Steps: Meta Business Suite → Rust and Rainbow Page → Edit Page Info → Website → change to `https://rustandrainbowco.etsy.com` → Save. Instagram app → Edit Profile → Website → same link. TikTok bio too if you get a minute; not yet checked what's there now.
 - [x] **`META_ACCESS_TOKEN` (Instagram) fixed — 2026-07-04.** You logged into Instagram and approved the permissions; Claude generated the token via the App Dashboard, copied it straight from the clipboard into `.env` (never typed/shown), and confirmed it live on both Mac and NAS (`rustandrainbowco`, 10 followers, 31 posts, both machines). Turned out the "cannot parse" error was likely just Claude testing against the wrong API host, not real corruption — either way it's confirmed working now. Unblocks fixing the 4 Instagram posts below.
 - [x] **Background-removal bug found and fixed today (2026-07-04)** — rembg was leaving some black text semi-transparent (looked "weird" on shirts, per your report). Root cause confirmed pixel-by-pixel; Adobe's background removal tool doesn't have the bug and costs $0 of your 250 Firefly credits (it's a non-generative feature). All 10 affected designs reprocessed and republished to Etsy — 34 live listings recreated with the fixed artwork, confirmed live. **Still pending your token fix above:** 4 of those designs also need their old Instagram posts deleted + replaced (Velcro Dog Line Art, Rainbow Vizsla Silhouette, Vizsla Puppy Sticker, Pride Flag Vizsla). Their old TikTok videos can't be deleted at all (confirmed — TikTok doesn't allow deleting published posts via API even directly), so those will just stay up; new corrected TikTok posts can still be added once IG is fixed.
 - [x] **Delete the duplicate "Gay Dog Dad Retro" listing in Printify** (~2 min) — May 11 product (ID `6a025e0754291b828c064667`) is the stale one; May 14 (`6a0654c3e556c763050faeed`) is the keeper with the stable mockup. Deleting in Printify auto-unpublishes the Etsy listing too.
@@ -248,6 +253,31 @@ CJ alone came back too expensive — check in this order:
 - [ ] **Shows promise:** tell Claude — it reinvests that round's revenue into the next ad round automatically, per the plan's ramp rules. No new cash needed from you from this point on.
 
 **Total new cash needed, steps 6–7: ~$75–100. Everything past that point runs on sales revenue, not your wallet.**
+
+---
+
+## 📷 PHOTOS — archive overhaul (updated 2026-07-12: everything is now in ONE place)
+
+**Where things stand after this weekend:** the Passport got rescued (7/11), the duplicate cleanup ran clean, and then — per your "one definitive area" request — **every photo and video you own is now consolidated into `/Volumes/My Passport/_ORGANIZED/`** (79,433 files, 607 GB, duplicate-free, original folder names preserved; there's a `_README.txt` inside explaining the layout). **Work from `_ORGANIZED/` from now on.** Your Mac is now clear of loose media (452 GB free), and the old photo folders on the Passport are just empty shells — don't be alarmed when they look cleaned out. **Lightroom is safe to open:** the 6 moved folder roots were repointed to `_ORGANIZED/` (catalog backed up first; 150 random files verified resolving). Still pending tonight: Excire initialization on the new collection. Full picture: [[Projects/Photo_Archive/State]] · [[Projects/Photo_Archive/NAS_Gaps_and_Process_Report]] · [[Projects/Photo_Archive/Photo_Workflow_SOP]].
+
+> ⚠️ **Until the NAS backlog lands: treat the Passport gently — it now matters MORE.** With the Mac cleared, `_ORGANIZED/` on the Passport is the ONLY copy of everything not yet on the NAS — including **2024 Japan/South Korea, 2025 Disneyland, 2025 Yellowstone, and Dad's 80th**. **Always eject the drive properly** (Finder eject button, or drag to Trash) before unplugging — the 7/11 50-minute outage was one skipped eject. If a drive ever looks dead right after plugging in, don't yank it: the drive-watch app will notify you if macOS is silently repairing it — just let it finish.
+
+### 1. Review the delete candidates (~20–30 min — ✅ READY NOW)
+Everything that was judged a duplicate (or a leftover after consolidation) lives in `_DELETE_CANDIDATES/` on the Passport — now 42,441 files / 265 GB, sorted into subfolders by where it came from: `passport/`, `mac/`, `consolidation/`, `consolidation-mac/`, `old-delete-folder/`. Nothing was deleted — every move is journaled and reversible (journal copies live on the drive itself: `_DELETE_CANDIDATES/MANIFEST.csv` and `CONSOLIDATION_MANIFEST.csv`).
+- [ ] a. Open `/Volumes/My Passport/_DELETE_CANDIDATES/` in Finder and spot-check ~20 files across the subfolders — confirm they really are duplicates of photos you still have in `_ORGANIZED/`.
+- [ ] b. Skim `~/Desktop/Claude/photo-dedup/review_manifest.csv` (double-click, opens in Numbers) — each row shows the keeper and the duplicates it beat, so you can see how winners were chosen.
+- [ ] c. Tell Claude **"dedup review done"** — or flag anything that looks wrong; the journals can reverse any individual move.
+
+### 2. Two Lightroom toggles (~2 min total, do anytime — protects all your face/GPS/keyword work)
+Open Lightroom Classic, then:
+- [ ] a. **Lightroom Classic menu → Catalog Settings → Metadata tab → check "Automatically write changes into XMP."** From then on your tags live inside the photo files, not only the catalog — they survive any catalog disaster and digiKam/Synology can read them.
+- [ ] b. Same window → **File Handling tab → set "Automatically Discard 1:1 Previews" to "After 30 Days."** Stops the previews cache from ballooning.
+
+### 3. Small catalog cleanup (~5 min, whenever — 3a is gated on a quick Claude check)
+- [ ] a. Say to Claude: **"verify the dead Lightroom roots"** — it confirms C:/, D:/, and the two 2017 //NORTHAM-JONES shares hold nothing unique. Then in Lightroom's Folders panel, right-click each of those four dead roots → Remove. (Kills years of phantom "missing folder" noise.)
+- [ ] b. In Finder, drag `~/Pictures/TempCatalog` to the Trash — already verified empty (0 images). One catalog = one truth.
+
+**Later, no rush (low priority):** face backfill on the big trips (Vietnam → Madagascar → 2014 Africa → Peru) via Lightroom's People view or digiKam — the NAS already has digiKam's face-recognition database, so this is free whenever you feel like an evening of naming faces. It's tracked in [[Projects/Photo_Archive/Tasks]]; Claude will bring it back once the important stuff above is done.
 
 ---
 

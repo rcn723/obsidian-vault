@@ -1,7 +1,7 @@
 ---
 title: Master Tasks — every open task, every project, every owner
 type: tasks-index
-updated: 2026-07-10
+updated: 2026-07-12
 tags: [tasks, master, live]
 ---
 
@@ -60,18 +60,19 @@ SORT length(filter(file.tasks, (t) => !t.completed)) DESC
 
 ---
 
-## 📌 Snapshot — 2026-07-10 (static, for reading outside Obsidian)
+## 📌 Snapshot — 2026-07-12 (static, for reading outside Obsidian)
 
-*Claude refreshes this section whenever `vault-audit` or `session-close` runs. Counts after the 2026-07-10 cleanup:*
+*Claude refreshes this section whenever `vault-audit` or `session-close` runs. Counts after the 2026-07-12 sunday-review (quick count, not a full audit — next first-Sunday-of-month audit due 2026-08-02):*
 
 | Project | Open | What's actually live |
 |---|---|---|
-| **Welra** (21) | Beta user #1 outreach (DMs sent, watch replies) · IH warm-up · Resend broadcast · TikTok demo video → submit · Shopify readiness flip + smoke test · BetaList · gated go-live items (Stripe live mode, connection caps) | [[Projects/Welra/Tasks]] |
+| **Welra** (23) | 🔴 **NEW:** deploy the report-scheduler week-boundary fix (staged, not deployed — 10-day silent report gap found + fixed this session) · beta user #1 outreach (DMs sent, watch replies) · IH warm-up · Resend broadcast · TikTok demo video → submit · Shopify readiness flip + smoke test · BetaList · gated go-live items | [[Projects/Welra/Tasks]] |
 | **Hubitat** (17) | All Ryan-in-app: fix presence/ThinQ/Ecobee blockers, then build the 8 rules — no deadline | [[Projects/Hubitat/Tasks]] |
-| **Rust & Rainbow** (11) | 🔴 Meta Business Verification · FB/IG bio website fields · first real `--mode generate` review · TikTok review watch · blank-cost check · commit agent.py changes | [[Projects/Rust_and_Rainbow/Tasks]] |
-| **Stock Agent** (7) | Forward-test reporter deploy (one `./deploy.sh stock`) · watch 30-trade gate (auto) · strategy repairs (Claude, low) | [[Projects/Stock_Agent/Tasks]] |
-| **Dropship** (7) | Vercel tier check · 3-channel supplier pricing · gel safety docs · bundle item · then storefront build | [[Projects/Dropship_Pipeline/Tasks]] |
-| **AutoBiz/GR3NB** (6) | Home-office worksheet + photo · 3 calendar reminders · trademark decision (deferrable) · Supabase creds → README | [[Projects/AutoBiz/Tasks]] |
+| **Rust & Rainbow** (13) | 🔴 Meta Business Verification · **NEW:** reconnect Pinterest via Zernio (failing every run for weeks, untracked until now) · 2 designs pending Adobe bg-removal (headless-queued) · FB/IG bio website fields · TikTok review watch | [[Projects/Rust_and_Rainbow/Tasks]] |
+| **Photo_Archive** (10) | ✅ 7/12: ALL media consolidated into `_ORGANIZED/` (607 GB, one definitive area), Mac cleared, LR catalog repointed — Ryan: review `_DELETE_CANDIDATES` (ready now) + 2 LR toggles + dead-roots cleanup · Excire init tonight · NAS dup scan → then the 510 GB backlog (blocked) | [[Projects/Photo_Archive/Tasks]] |
+| **Stock Agent** (7) | Healthy: paper_mode true, 29/30 trades closed, gate correctly failing (Sharpe 0.15) · forward-test reporter deploy still pending | [[Projects/Stock_Agent/Tasks]] |
+| **Dropship** (7) | Daily pipeline running clean (no gaps this week) · Vercel tier check · 3-channel supplier pricing · gel safety docs · bundle item → then storefront build | [[Projects/Dropship_Pipeline/Tasks]] |
+| **AutoBiz/GR3NB** (6) | Home-office worksheet + photo · 3 calendar reminders · trademark decision (deferrable) | [[Projects/AutoBiz/Tasks]] |
 
 **Cross-project daily habits (from [[_RYAN_TODO]]):** 2 give-first comments/day (IH counts) · Reddit/FB round 2 gated on fixing the FB profile first.
 

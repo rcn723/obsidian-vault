@@ -244,3 +244,45 @@ All five persistent candidates fail on core viability:
 ---
 
 **All other candidates (Black Sesame, Hugo Spritz, etc.):** Insufficient persistence (2/3 or 1/3 entries only). Not screened.
+
+## 2026-07-12
+
+**Persistence Screening Results**
+
+Only 3 candidates appeared across all 3 daily entries (2026-07-10 through 2026-07-12):
+1. Fibermaxxing Products (High-Fiber Foods/Supplements)
+2. Black Sesame Desserts/Products
+3. Hugo Spritz Products (Elderflower Liqueur Kits)
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/TM | Return Risk | Saturation | Durability | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|
+| **Fibermaxxing** | ✅ PASS (2.5–3x markup viable at $2–5 landed cost) | ✅ PASS | ❌ **FAIL** | ✅ PASS | ❌ FAIL | ❌ FAIL | ⚠ MIXED | **KILL** | Medical claims liability + unverified health claims trigger Google/Meta ad blocks. High return rates due to GI complaints (documented "bloating/cramping" warnings). Major brands (PepsiCo, Nestlé, Coca-Cola) already saturating market; mainstream retail penetration confirmed at Whole Foods. |
+| **Black Sesame** | ⚠ MARGINAL (ingredient OK; finished food tight) | ❌ **HARD FAIL** | ✅ PASS | ✅ PASS | ❌ FAIL | ❌ FAIL | ⚠ MIXED | **KILL** | **Perishable shipping logistics are disqualifying** — ice cream/cookies require cold chain; dropshipping data explicitly flags "difficult perishable/fresh logistics." Spoilage + return rates spike for food products. Already in mainstream chains (Bibble & Sip, specialty retailers); saturation documented. Trend comparison to matcha signals short durability window. |
+| **Hugo Spritz** | ❌ MARGINAL (tight alcohol margins) | ❌ **HARD FAIL** | ⚠ CONDITIONAL | ❌ CONDITIONAL FAIL | ❌ FAIL | ❌ FAIL | ❌ FAIL | **KILL** | **Alcohol DTC shipping restrictions are disqualifying** — federal law prohibits direct-to-consumer spirits shipping in most US states; requires licensed distributor. Trademark risk on "Hugo" branding (Campari owns). High returns inherent to alcohol category + seasonal summer-only window ensures trend collapse post-August. Campari/Aperol/major brands already launching pre-made spritz products. |
+
+**Final Result:** 0 candidates advance. All three persistent candidates fail on at least one HARD criterion (shipping practicality or ad compliance), plus multiple secondary criteria. No further investigation warranted.
+
+Looking at the last 3 daily scan entries, I need to identify candidates appearing in **all 3 entries** with persistent or rising interest.
+
+Matching across 2026-07-11, 07-12, and 07-13:
+
+1. **Fibermaxxing** — appears in all 3 entries ✓
+2. **Black Sesame** — appears in all 3 entries ✓  
+3. **Hugo Spritz / Spritz Cocktails** — appears in all 3 entries (07-11 as "Spritz Cocktail Products", 07-12 as "Hugo Spritz", 07-13 as "Hugo Spritz / Premixed") ✓
+
+All other candidates (LED Face Masks, Jelly Slides, Portable Projectors, etc.) appear in only 1–2 entries. Screening those now:
+
+---
+
+## 2026-07-13 Feasibility Screen
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/TM Risk | Return Rate | Saturation | Durability | Decision | Reason |
+|-----------|---|---|---|---|---|---|---|---|---|
+| **Fibermaxxing** | 2.5–3x gross (viable) | ✓ Non-hazmat | ⚠️ HARD FAIL | ✓ Commodity | High (20–30%) | Incoming (Pepsi/Nestle/Whole Foods) | Trend-driven | **KILL** | FDA/FTC health-claims scrutiny blocking most ad platforms + major CPG players entering market compressing margins + 20–30% return rate from GI side effects and unmet expectations undermines unit economics |
+| **Black Sesame** | 1.5–2x (thin) | **HARD FAIL** | ✓ Allowed | ✓ Commodity | High (25–35%) | Moderate (Starbucks testing) | Seasonal | **KILL** | Food dropshipping requires FDA/customs licensing + phytosanitary certs dropshippers cannot obtain; polarizing niche flavor + seasonal summer trend = high return rate and decline cliff post-August |
+| **Hugo Spritz** | 1.5–2x (thin) | **HARD FAIL** | ⚠️ Age-gated | **HARD FAIL** | Moderate (10–15%) | High (Bacardi, Campari, CPG) | Seasonal | **KILL** | Alcohol shipping restricted to USPS + surcharge ($15–30/unit) makes dropshipping unviable; Hugo is Bacardi trademark—selling under that name = infringement; RTD cocktail category already dominated by major brands with heavy ad spend |
+
+**No candidates advance.** All three persistent candidates fail hard-criteria gates:
+- Fibermaxxing: FDA compliance + incoming CPG competition
+- Black Sesame: Food licensing/customs (dropshipping blocker)
+- Hugo Spritz: Alcohol shipping logistics + trademark infringement + saturation

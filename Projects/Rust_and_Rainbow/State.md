@@ -2,11 +2,31 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-07-03 evening (Meta double-check: Instagram token genuinely fixed, but found a SEPARATE Facebook Page token expired since May 11 — never covered by auto-refresh)
+updated: 2026-07-12 pm (Pinterest reconnected + verified live; Meta Business Verification submitted, confirmed pending; FB Page website / IG bio link update NOT confirmed live despite Ryan's report)
 tags: [etsy, printify, social-media, python, automation, nas]
 ---
 
 # Rust & Rainbow
+
+## 2026-07-12 pm — Pinterest fixed, Meta Business Verification submitted, one discrepancy flagged
+
+Ryan reported three things done in one message: Pinterest reconnected, Meta Business Verification submitted, and the Etsy shop link connected to Facebook. Verified each independently against live APIs rather than taking the report at face value:
+
+- **Pinterest: confirmed reconnected.** Zernio's `/v1/accounts` shows the `rustandrainbow` Pinterest account `isActive: true`, `platformStatus: "active"`, `connectedAt: 2026-07-12T17:23:47Z`, token valid to 2026-08-11. This morning's Sunday-review finding (disconnected since ~06-19, explicit "Please reconnect" error from 07-08 on) is resolved. Corrected the Status Summary line below back to all-3-platforms-working.
+- **Meta Business Verification: confirmed submitted, status "pending."** Queried the "RustandRainbow" business portfolio (ID `970811995814374`) directly via Graph API: `verification_status: "pending"`. This is a real submission in Meta's queue, not just a UI action that silently failed. Nothing to do until it clears (days–weeks); the `pages_manage_posts` + `pages_manage_metadata` App Review request is already drafted and ready the moment it does.
+- **"Linked Etsy to Facebook" — could NOT confirm live.** Checked both fields the original task named: the Facebook Page's `website` field is still the old `http://etsy.com/shop/RustAndRainbowCo` link (not the intended `https://rustandrainbowco.etsy.com`), and the Instagram bio still has no website link at all. Whatever Ryan did, it isn't reflected in either of these two API-visible fields — possibly an Etsy-side "connected accounts" setting instead, which wouldn't show up here. Flagged in Tasks.md rather than marked done, since the live check contradicts the report.
+
+## 2026-07-12 (sunday-review, am) — Pinterest posting broken for weeks, found via the NAS's real log (not the stale Mac one); State.md memory-loop lapse closed
+
+**This entry closes a memory-loop gap.** State.md sat untouched since 2026-07-03 evening despite the NAS cutover being the authoritative posting path since 2026-06-23 — the Mac's local `market.log` (checked by past sessions and by the Mac watchdog cron) hasn't been written to since 2026-06-22 and was never going to reflect reality again. This session checked the NAS's actual log instead: `/volume1/homes/admin/claude-agents/logs/rust-rainbow.log` (the real destination — `run-agent.sh` writes to `logs/$AGENT.log`, not the legacy per-agent `market.log` path).
+
+**Supervisor health: good.** Heartbeat current (last logged at time of check), and every scheduled job fired on time all week: market Mon/Wed/Fri 10:00 (06-29, 07-01, 07-03, 07-06, 07-08, 07-10 all confirmed), report + suggest Monday, monitor Sunday 23:00, refresh weekly Tuesday. Instagram and TikTok posted successfully on every single run this week.
+
+**Found (untracked until now): Pinterest posting via Zernio has failed on every sampled run for weeks.** Earlier runs (06-19 through 07-06) got `403 {"error":"One or more accounts do not belong to this user"}`. Starting with the 07-08 run the error changed to something more actionable: `403 {"error":"Account 6a064dd25e333c05296d3130 (pinterest \"rustandrainbow\") is disconnected and cannot be posted to. Pinterest authorization error. Please reconnect your Pinterest account."}` — meaning the Pinterest connection itself needs re-authorizing via Zernio's dashboard, not a code fix. This directly contradicts the "3-platform posting: ✅ all working" line that had been sitting in the Status Summary below since at least 2026-06-23 — corrected there now. New Ryan task added to Tasks.md + `_RYAN_TODO.md`.
+
+**Also checked (headless-safe): `bgfix.py --scan`.** 2 designs still pending the Adobe background-removal pass — **Pride of the Pack** (4 live products) and **Official Sand Inspector** (3 live products), both still on buggy rembg output. Per the standing headless protocol, these are tasked for the next interactive session (Adobe login required), not attempted here.
+
+**Meta/Facebook Page posting:** still blocked on `pages_manage_posts` App Review (unchanged, already tracked in `_RYAN_TODO.md`'s 🔴 item — Meta Business Verification never started). Confirmed via the same live NAS logs: every market run's Facebook Page post attempt fails with the same `403 (#200)` permission error, consistent with the known, already-tracked blocker — nothing new here.
 
 ## 2026-07-03 evening (cont'd) — Meta double-check: real fix confirmed, real NEW problem found
 
@@ -65,7 +85,7 @@ Goal worked: *"idea/image generation does not repeat, adopts new trends, move th
 
 ## Status Summary
 - Scheduling: ✅ HYBRID (2026-06-23) — market/monitor/report/suggest run on the **NAS** (`rr-supervisor.py`); generate/refresh_token/welra_assessment stay on **Mac launchd**. See Scheduling Architecture below.
-- 3-platform posting: ✅ Instagram + TikTok + Pinterest all working
+- 3-platform posting: ✅ Instagram + TikTok + Pinterest all working (Pinterest was broken 06-19 through 07-12, reconnected + verified live 2026-07-12 pm)
 - TikTok music: ✅ `autoAddMusic: true` enabled 2026-05-28 — TikTok adds trending music automatically
 - TikTok hashtags: ✅ Moved to `tiktokSettings.description` (4000 chars) — title is now pure hook
 - Instagram hashtags: ✅ Capped at 28 (brand tag #rustandrainbow always first; 2-tag safety margin under API's 30-tag hard limit). Tag pool is 30–42 per pillar before trimming.
