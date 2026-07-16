@@ -5,6 +5,12 @@ updated: 2026-07-12 pm (Welra report fix DEPLOYED live; R&R Pinterest reconnecte
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
 ---
 
+# To Antigravity — 2026-07-15 (2nd Welra growth-pipeline run today — maintenance mode, no change)
+
+Routine scheduled `welra-growth-pipeline` run. Queue gate still 5 (unchanged from the earlier run today) → maintenance mode, no new ideas, no code, no outreach. Checked email (zero new threads in 24h) and the Welra repo (`git status` clean, HEAD unchanged at `18d0dfc`) — no drift, nothing broken. Nothing for you to pick up from this run; see [[Projects/Welra/Growth_Pipeline]] queue gate log for the full trace.
+
+---
+
 # To Antigravity — 2026-07-12 pm (Welra deployed live; R&R Pinterest fixed; Meta verification pending; one claim didn't check out)
 
 Follow-up to this morning's sunday-review findings — Ryan authorized the deploy and reported 3 fixes done in one message. Verified each independently rather than trusting the report:
@@ -352,3 +358,12 @@ State/Tasks updated (s30). Live onboarding path proven on prod end-to-end includ
 - Queue gate count = 5, unchanged. Zero new email (`newer_than:1d`).
 - The Welra repo's working tree currently has uncommitted changes (`env.ts`, `server.ts`, `reportGenerator.ts`, a new migration, a new `routes/diary.ts`) — this is the Diary poster work `_RYAN_TODO.md` already documents as "BUILT + staged (2026-07-07), live post gated on your OK." Confirmed expected, not drift — do not commit/deploy it without Ryan's explicit "deploy the diary endpoint" (the migration must apply to prod BEFORE the API deploy, per the arch-review finding already logged in Tasks.md).
 - No new ideas, no notification. Growth_Pipeline.md, Claude_Log.md updated.
+
+## 2026-07-15 — from Claude
+New automation: `welra-daily-prospect-radar` (Claude app scheduled task, daily 8:05am). Finds fresh seller pain posts, writes 2–3 leads + drafted replies into a marker block in `_RYAN_TODO.md` (replaced daily), archives history to `Projects/Welra/Prospect_Radar.md`. Logged in [[Knowledge_Base/Automation_Architecture]] change log + Claude worklog. Don't edit inside the `<!-- PROSPECT_RADAR_START/END -->` markers in _RYAN_TODO — the task owns that block.
+
+## 2026-07-15 — from Claude (WordBloom)
+New project born: **WordBloom** — cozy daily word-garden game prototype at `~/Desktop/Claude/wordbloom/` (playable, browser-verified). Rationale: US top-100 grossing iPhone games contain zero F2P word games with IAP+ads (only NYT subscription) — full analysis in `wordbloom/docs/market-analysis.md`. Vault: [[Projects/WordBloom/State]] + Tasks (parked pending Ryan's go/park decision). No deploy, no code touched in other projects.
+
+## 2026-07-15 (later) — from Claude (Petal Words)
+WordBloom renamed **Petal Words** (name collision). Full ship-execution done: adversarially-reviewed plan → 17-test suite green → Capacitor iOS project generated (SwiftPM) → RevenueCat/AdMob adapters (fail-closed) → arch-review found+fixed 3 blockers. App-Store-ready up to the Xcode boundary; ordered Ryan/Claude task split in [[Projects/WordBloom/Tasks]]. Key docs: wordbloom/docs/ship-plan.md (v2), docs/arch-review-2026-07-15.md, store/listing.md.

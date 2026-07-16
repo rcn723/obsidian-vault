@@ -215,3 +215,52 @@ There's no plan on the table to break, but I'll stress-test the screen's own rea
 **Verdict: NO-GO** on building any 30-day plan this cycle. Building a plan around a KILL-scored candidate to have something to show would be manufacturing a defensible-looking document around numbers nobody sourced — exactly the failure mode this validation gate exists to catch.
 
 **Reminder for whenever a candidate does clear screening:** the next required step after any GO-verdict plan is Gate 5 — a real paid traffic test, not a plan review. That test should run a fixed, small ad budget (define the dollar cap and duration before spending, not after) against a landing page or pre-order page, and the pass threshold should be stated in CAC-vs-target-margin terms before the money goes out, not fitted to whatever number comes back. Nothing here reaches that gate today.
+
+## 2026-07-15 — Validation: Personalized Pet Accessories
+
+### Single assumption that kills the plan
+Everything rests on **actual CAC landing near $10–15** when the plan's own honest, unsourced estimate is **$35–45**. That's not a downside scenario — it's the base case in the document itself. The only evidence offered for why real CAC might come in dramatically lower is "pet content over-indexes on organic engagement and cheap UGC-style ads" — a directional industry stat, not evidence about *this* SKU, *this* creative, or *this* account's actual auction performance. There is no comp, no analog campaign, no prior Meta account history cited. This is an assertion standing in for a number. Treat the whole 30-day plan as existing to answer exactly one question — nothing else in this plan should be treated as settled until that number comes back.
+
+### CAC stress test
+Running the "2x" test on the *hoped-for* number is more informative than on the already-dead back-of-envelope number: if real CAC lands at $20–30 (a plausible, not extreme, miss on the $10–15 go-bar), the single-SKU $24.99/~$10-margin bandana is still underwater on every paid unit. The plan already acknowledges this ("this SKU is not break-even on paid traffic alone at any volume" at the current estimate) — but the go-threshold of ≤$15 requires beating the plan's own estimate by 2.5–3x, not a modest calibration miss. That's a steep bar to hang a go/no-go decision on with 20 days of low spend.
+
+### Statistical validity of the test itself — this is the part the plan is missing
+At $600–800 total spend, $0.60–0.90 CPC, and 1.53% CVR: ~700–1,300 clicks → **roughly 11–20 total purchases** across the entire test. That is not enough volume to:
+- Exit Meta's learning phase (~50 conversions/week per ad set is the standard benchmark) — at $30–50/day and this CVR, the account likely never exits learning phase, meaning the CPMs/CAC observed during the test will systematically run *worse* than what a properly-scaled campaign would show.
+- Produce a CAC number with tight enough error bars to trust a "kill" decision. A ±5-purchase swing at this volume moves blended CAC by a huge margin.
+
+Net effect: the plan risks spending $600–800 to get a noisy, structurally-biased-high CAC reading, then killing a business that might have worked at real scale. This is the actual methodological risk in the plan — bigger than the CAC assumption itself, because it means even a well-calibrated go-bar can't be trusted against this sample size.
+
+### Differentiation reality check
+Correctly self-assessed as non-defensible ("any competitor copies in a week") — fine for a 30-day test, not a claim of moat. But the stated differentiator — "real before/after with real pets in the first 3 seconds" — depends on Ryan or friends actually having accessible pets to shoot *this week*. That's asserted, not confirmed. If that supply doesn't exist trivially, the creative reverts to the same generic stock-photo ads every copycat runs, and the one claimed edge disappears before Week 1 ends.
+
+### Trend timing vs. build timeline
+Two separate issues:
+1. **No trend evidence is actually in this document.** The framing ("every other dropshipper who saw the same trend spike this week") implies a decaying trend, but the sourced data (Etsy demand pattern, pet-content engagement rates) describes an *evergreen* niche, not a spiking one. If it's evergreen, the 30-day urgency framing is unearned — worth 10 minutes on Google Trends/TikTok Creative Center before treating this as a race.
+2. **Schedule has no slack against confirmed supplier data.** Printful's own confirmed lead time (2–5 business days production + 3–8 days transit) tops out at 13 business days. Ordering samples on Day 1 (Jul 15) could mean they don't arrive until early August in the worst case — but the plan's Week 2 (Jul 22–28) assumes samples in hand for creative shoot + soft launch. This is an internal inconsistency using the plan's own confirmed numbers, not a hypothetical risk.
+
+### Legal/liability
+Low risk at this stage. No CPSC children's-product exposure (pet product, not human/child). Sales-tax nexus is not a near-term concern — economic nexus thresholds (~$100k rev / 200 transactions per state) won't be hit during a $750–1,000 test. Flag for Gate 6 (post-validation scale), not a blocker now.
+
+### Is Ryan positioned to execute this?
+Two unconfirmed dependencies the plan surfaces but doesn't resolve: (1) whether a Shopify store/Meta ad account already exists and is warmed, vs. starting cold — a new pixel/account adds review and learning-phase drag that eats into the already-thin 2-week paid window; (2) actual access to real pets for the core creative angle. Neither is a skills gap, both are same-week confirmable — resolve before Week 1 spend, not during it.
+
+---
+
+### Verdict: **ITERATE**
+
+Required changes before this plan is fund-worthy:
+1. **Fix the schedule against the plan's own supplier data** — order samples Day 1, do not commit a soft-launch or paid-spend start date until samples are physically confirmed in hand. Don't let a 13-business-day worst case collide with a Week 2 promise.
+2. **Confirm real pet-subject access today** — if Ryan/friends can't produce authentic UGC-style footage this week, source 2–3 licensed/UGC clips as a backup before Week 1 ends, since this is the plan's only claimed differentiator.
+3. **Confirm Shopify/Meta account status now** — if either is new, budget separate warm-up/review time outside the 20 ad-spend days, don't let it silently eat the test window.
+4. **Widen the sample before trusting the CAC read** — at $600–800 spend the purchase count (~11–20) is too small to distinguish "bad creative" from "bad CAC" from "still in learning phase." Either raise the test budget to ~$1,200–1,500 to get to ~25–30+ purchases, or explicitly label the 30-day result as directional-only and require a second, confirmatory spend tranche before treating any CAC read as final.
+5. **Verify the trend claim** — a 10-minute Google Trends / TikTok Creative Center check to confirm this is actually decaying rather than evergreen. If evergreen, drop the 30-day urgency framing; it isn't buying anything and it's compressing decisions that don't need to be compressed.
+
+None of these kill the plan — they're fixable in a day, and the underlying unit-economics logic (single flagship SKU, POD to avoid MOQ risk, Printful as primary) is sound. But as written, the plan risks spending real money to generate a noisy, schedule-compromised signal on the one number that matters.
+
+### Gate 5 (sharpened)
+The next required step, and the *only* thing that can justify an LLC filing or any inventory commitment (CJdropshipping/Alibaba bulk), is a real paid-traffic test that measures **blended CAC and CVR from actual Meta spend on this SKU, at a sample size large enough to trust** — i.e., the $1,200–1,500 version of the budget in item 4 above, not the $600–800 version as currently scoped.
+
+- **Pass threshold:** blended CAC ≤ $15 with CVR ≥ 1%, sustained (not a single good day) across the final 10 days of spend, on a minimum of ~25 purchases.
+- **Fail threshold:** CAC consistently > $25 after $1,000+ spend with no improving trend across at least 2 creative iterations, OR insufficient volume/conversions to exit Meta's learning phase entirely (a null result, not a fail result — distinguish these two before killing the SKU).
+- **Do not** order any bulk/Alibaba/CJ inventory, form an LLC, or increase daily spend beyond the test budget until this threshold is met. The 30-day plan is Gate 5, not a launch.

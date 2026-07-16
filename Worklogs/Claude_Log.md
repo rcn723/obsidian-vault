@@ -1,5 +1,9 @@
 # Claude Worklog
 
+## 2026-07-15 (2nd run today) — Welra growth pipeline ran in maintenance mode again, queue at 5
+
+Scheduled `welra-growth-pipeline` run. Queue gate = 5, unchanged from the earlier run today → maintenance mode, no Stage 1 ideas added. Checked email (`newer_than:1d in:inbox`, excluding Qwoted/SourceBottle) — zero threads, no reply signal. Repo clean and in sync with origin, HEAD still `18d0dfc` — no commits since the earlier run today, no drift. Nothing broken, nothing sharpened, no notification.
+
 ## 2026-07-12 (pm, later) — Welra report fix deployed live; R&R Pinterest reconnected + verified; Meta Business Verification submitted; one discrepancy flagged
 
 Ryan said "deploy the welra fix," and separately reported Pinterest fixed, Meta Business Verification submitted, and the Etsy shop link connected to Facebook. Verified each against live systems rather than taking the reports at face value:
@@ -1088,3 +1092,37 @@ Pipeline ran in maintenance mode, queue at 5 (unchanged from 2026-07-10). No sel
 ## 2026-07-11 — Welra growth pipeline (2nd scheduled run today, MAINTENANCE MODE)
 
 Pipeline ran in maintenance mode, queue at 5 (unchanged). No seller/beta reply in ryannortham3@gmail.com (newer_than:2d in:inbox — zero threads). Repo clean, HEAD unchanged at `2c6f08b`, no drift. Nothing broken, no sharpening applied, no notification. Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.
+
+## 2026-07-15 — New automation: Welra Prospect Radar (daily prospecting scout)
+
+Ryan asked for a daily routine that scours the web for people with problems Welra solves and hands him links + recommended responses. Created Claude scheduled task `welra-daily-prospect-radar` (daily 8:05am): sweeps Reddit seller subs / Etsy community / IndieHackers for posts <3 days old, live-verifies URLs, delivers 2–3 leads with paste-ready replies (Ryan's voice, value-first, never leads with "AI", no invented anecdotes) into a replaced-daily block in `_RYAN_TODO.md`; full history in Projects/Welra/Prospect_Radar.md. Drafts only — Ryan posts. Logged in Automation_Architecture change log. First run unproven until it completes once.
+
+## 2026-07-15 — Welra growth pipeline (scheduled, MAINTENANCE MODE)
+
+Pipeline ran in maintenance mode, queue at 5 (unchanged since 2026-07-11; no run fired 07-12–07-14 despite the 2x/day schedule). No seller/beta reply (7d email sweep, non-Qwoted/SourceBottle senders = only Etsy marketing/BetaList/Indie Hackers newsletters). Repo HEAD moved to `18d0dfc` since last check but traced to the 2026-07-12 sunday-review's report-boundary fix — already deployed and logged that day, not unreconciled drift. Nothing broken, no sharpening applied, no notification. Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.
+
+## 2026-07-15 (later) — Prospect Radar first sweep (inline, on Ryan's ask)
+
+Ryan asked to bypass the manual "Run now" — no tool can trigger a scheduled task, so ran the sweep inline instead. Found reddit.com is blocked for WebFetch/curl/sandboxed browser; used Claude-in-Chrome (Ryan's Chrome, read-only) — the scheduled task will need the same route. Delivered 2 verified leads into _RYAN_TODO (r/EtsySellers 200-visits-0-sales posted same day, value-only per sub rules; r/ecommerce "Spreadsheet hell" Jul 14, soft mention OK). Rejected 2 (stale/astroturf). Log created at Projects/Welra/Prospect_Radar.md.
+
+## 2026-07-15 (later) — Prospect Radar: both leads replied
+
+Ryan replied to both first-sweep leads (r/EtsySellers 200-visits-0-sales, r/ecommerce "Spreadsheet hell"). Flipped both to `[status:: done]` in Prospect_Radar.md. First real signal on whether this channel converts to beta signups — worth checking back in a few days for replies/DMs.
+
+## 2026-07-15 — WordBloom: top-grossing chart analysis → new game prototype (goal session)
+
+Goal: analyze iPhone top-grossing games, find an unserved niche, build a monetizable F2P game to fill it.
+- **Analysis:** pulled US top-100 grossing games (Apple RSS) + free top-25. Census: 25 match/sort puzzle, 16 casino, 14 4X-war, 9 gacha, 8 merge-story… and only **2 word/brain titles (NYT Games #28, Chess.com #72), both subscription** — zero F2P word game with IAP+ads in the entire top-100 grossing, while cozy (Tiny Bookshop #12 free) and daily-ritual mechanics are proven elsewhere. That's the gap.
+- **Built WordBloom** (`~/Desktop/Claude/wordbloom/`): cozy daily word-garden — Spelling-Bee-style letter flower, 6 growth tiers grow a persistent garden (one plant/day), streaks, petals+gems dual currency, shop (gem packs $1.99–14.99, cosmetics, remove-ads $2.99), hints via petals or rewarded ad, practice mode ad-gated. 400 pre-balanced daily puzzles + 93k-word ENABLE dict precomputed. All monetization behind a single `monetize.js` seam → swap stubs for StoreKit/AdMob without touching gameplay.
+- **Verified in browser end-to-end** (tap entry "walks", pangram "catwalks" +15, Sprout tier-up modal, ad-hint granted after 3s stub, 550-gem purchase sheet→confirm, dusk theme+butterfly equipped and rendering, remove-ads hides banner, state survives reload). Mobile-viewport screenshots taken.
+- Docs: `wordbloom/docs/market-analysis.md` (chart census + positioning) and `docs/monetization.md` (4 revenue streams, ship plan, honest prototype-deltas list). New vault project: [[Projects/WordBloom/State]].
+- Not run: arch-review (no backend/schema/env/deploy surface — static client prototype with simulated purchases). No deploy. Zero new Ryan asks beyond an optional playtest task.
+- **2026-07-15 (3rd growth-pipeline run today)** — pipeline ran in maintenance mode, queue at 5. No reply, no drift, nothing broken.
+
+## 2026-07-15 (later) — Petal Words: ship-plan → adversarial review → execution → arch-review (goal session cont.)
+
+Ryan asked for the full App Store path: plan, review the plan, execute, test until clean, delegating to cheaper models where sensible.
+- **Plan reviewed adversarially BEFORE execution** (adversarial-validator agent): REFUTED 4 of my claims — "WordBloom" name is taken (→ renamed **Petal Words**, iTunes-API-verified free), "NPA ads = zero privacy declarations" wrong (GMA SDK disclosure still required + UMP consent + GADApplicationIdentifier-or-crash), FrequencyWords is CC-BY-SA (attribution added), and `cap add ios` actually works without CocoaPods (SwiftPM). CONFIRMED a live DST bug (day rolled at 1am half the year) + found 4 collateral bugs (hash-collision duplicate dailies wasting 86 seeds, practice-mode answer pre-farming, ad-stub granting on dismiss, stale streak display). All fixed.
+- **Executed**: logic.js extraction (17 unit tests, all green, incl. all-400-seed validation + DST boundary), two-layer dictionary (accept 93k ENABLE / count 23.6k curated — honest totals), 400 rebalanced puzzles w/ curated pangrams, sequential schedule, **Bloom Words** mechanic (3 secret daily words → gems; 4.3-spam differentiation), Capacitor iOS project (SwiftPM, 3 plugins), Info.plist ad keys, PIL icon + capacitor/assets fan-out, store collateral via **Sonnet subagent** (listing/privacy/support, char-limit-verified).
+- **arch-review (gate)**: found 3 BLOCKERS at the native seam — fail-open stub fallback = free IAP + fake payment sheet on device, fabricated StoreProduct violating the RevenueCat contract (verified vs installed .d.ts), missing Restore Purchases (Guideline 3.1.1) — all fixed in-session + re-verified (tests green, e2e zero console errors). New pattern logged to feedback_scaffold_quality.md ("fail-open stub fallback reaches production devices" + 3 companions). DEFERRED items promoted to Projects/WordBloom/Tasks.md.
+- Remaining = console/credential steps only (Xcode, Apple Dev enrollment, ASC/RevenueCat/AdMob ids, UMP, hosting the 2 HTML pages) — all ordered in Tasks.md. No _RYAN_TODO additions (queue at 50, execution-first rule); project stays parked pending Ryan's playtest.

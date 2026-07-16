@@ -479,3 +479,108 @@ Quick sanity check on why each was correctly killed, since it's worth confirming
 - **Eyeliner Stamp** — the 14-28 day copycat window is shorter than the 30-day plan horizon itself. By the time a plan executes, the opportunity is gone.
 
 **Recommendation:** hold. The screening data itself flags what to look for in the next window — "no major brand entry, supply chain isolation, <20% competitive ad density, >60-day trend durability." When the next scan (07-13 or 07-15) produces a candidate that clears those bars, I'll build the full target-customer / positioning / supplier / unit-economics / launch-plan package against real numbers rather than inventing suppliers or CAC assumptions for a trend the screen already flagged as unviable.
+
+## 2026-07-15 — 30-Day Launch Plan
+
+Only **one** candidate cleared feasibility screening today (Personalized Pet Accessories); the other five hit hard kills. One plan below.
+
+---
+
+# Personalized Pet Accessories
+
+## Target Customer
+
+Not "pet owners." Specifically: **women 28–45 who already treat their dog/cat as a household member** — buys the dog a birthday cake, has a "dog mom" tumbler, follows pet influencer accounts. She buys gifts for the pet, not just gear for it. Best-fit occasions: new-pet onboarding (first 90 days of ownership), pet birthdays, holidays (already-confirmed Etsy demand pattern for "dog mom" gifting), and human-gift-giving-for-a-pet-person (the buyer isn't always the owner).
+
+## Positioning
+
+Ryan isn't competing with Chewy or Amazon on price or selection — he's competing with **every other dropshipper who saw the same trend spike this week** and will list an identical product within days. The only defensible angle in a fast-copy niche like this is **speed-to-market plus a narrower, better-executed offer**: one flagship SKU (not a 40-item store), genuinely fast turnaround messaging, and creative built around a specific pet (not generic "add your pet's name here" ad copy — actual before/after with real pets in the first 3 seconds of the ad). This is a trend-surfing play, not a defensible brand moat — the 30-day window exists precisely because the differentiation decays fast once competitors catch up.
+
+## Supplier Options (confirmed via search today)
+
+| Supplier | Product | Base Cost | MOQ | Lead Time | Notes |
+|---|---|---|---|---|---|
+| **Printful** | Custom pet bandana (name/text personalization) | $9.95 base | None (POD) | ~2–5 business days production + 3–8 days domestic transit | Confirmed pricing. Shipping: accessories category first-item rate is $4.29 (2026 rate, confirmed) — but I did **not** confirm this exact rate applies to the bandana SKU specifically; verify on product page before locking budget. |
+| **Printify** | Custom pet bandana | $13.67 base | None (POD) | Varies by connected print provider (not confirmed) | Higher base cost than Printful for the same category; useful as a backup/fulfillment-redundancy provider, not primary. |
+| **CJdropshipping** | Custom embossed pet collars / tags (bulk, non-POD) | **Not confirmed** — search did not return a per-unit price | ~100 units | Not confirmed | Only a viable option post-validation (Phase 2 scale), given the MOQ. Requires a direct quote request before committing cash. |
+| **Alibaba (multiple suppliers)** | Blank/custom-engraved stainless steel pet ID tags | $0.08–$1.00/unit depending on tier (one listing cited a 900-pc MOQ at $0.08) | 1–3,000+ units, varies by supplier | ~7–14 business days after art approval | Wide price range because it spans multiple unverified listings — treat as a rough band, not a quote. Also unclear if engraving/customization is included in that per-unit price or billed separately.
+
+**Recommendation:** Run the 30-day test on **Printful POD** (no MOQ, real confirmed base cost, fastest to launch). Do not commit to CJdropshipping or Alibaba bulk buys until Printful data validates demand — those only make sense once you're confident in the SKU and want to compress margin.
+
+## Unit Economics
+
+| Line | Value | Confidence |
+|---|---|---|
+| Base product cost (Printful) | $9.95 | Confirmed today |
+| Domestic shipping (fulfillment) | ~$4.29 | Confirmed as accessories-category rate; **not confirmed for this specific SKU** |
+| **Landed cost** | **~$14.24** | Estimate — verify exact bandana shipping line before spending |
+| Target retail price | $24.99 | Based on Etsy comps found today ($17–$21 for similar personalized bandanas); pricing above comps to buy margin room, not confirmed as optimal |
+| Payment processing (~3%) | ~$0.75 | Standard assumption, not looked up today |
+| **Contribution margin per unit (before ad cost)** | **~$10.00** | Derived from above |
+| Pets-vertical Meta CPM | $9.56 | Confirmed today (industry benchmark source) |
+| Pets-vertical conversion rate | 1.53% | Confirmed today, but **the source did not clarify whether this is landing-page CVR or click-through-to-purchase** — treat as directional, not precise |
+| Estimated CPC (derived, not sourced directly) | ~$0.60–$0.90 | Calculated from CPM/CTR assumptions, flagged as estimate |
+| **Estimated CAC at cold-traffic paid social** | **~$35–$45** | **Back-of-envelope, not a real number** — this is the critical risk in the plan below |
+| Target CAC (to stay profitable on this single SKU) | ≤$10–12 | Required to match contribution margin |
+
+**The honest problem:** a single $24.99 bandana with a ~$10 margin cannot absorb a ~$40 cold-traffic CAC. Either the real CAC comes in far below this estimate (plausible — pet content over-indexes on organic engagement and cheap UGC-style ads per today's research), or this SKU needs a bundle (bandana + tag) to raise AOV before it's ad-spend-viable. **Do not scale ad spend on faith that CAC will land near target — the 30-day test exists to measure real CAC, not to assume it.**
+
+## Marketing Channel Plan
+
+**Primary: Meta (Facebook/Instagram) ads.** Why: pet content has the highest UGC share rate of any vertical tested today (3.4x other verticals) and strong video completion (71% vs 43% ecommerce avg) — cheap organic-feeling creative should outperform typical ecommerce benchmarks here. CPM ~$9.56 (confirmed today), CPC roughly $0.60–$0.90 (derived, flagged as estimate, not a guarantee).
+
+**Secondary: TikTok organic + Spark Ads.** Not benchmarked today (no TikTok-specific CPM data pulled) — treat as a zero-cost organic test running in parallel to Meta paid, not a second paid channel in the initial budget.
+
+## 30-Day Launch Plan
+
+**Week 1 (Jul 15–21) — Build & sample**
+- Set up Shopify/landing page for single SKU (assumes a store shell doesn't already exist — confirm before duplicating spend)
+- Order 3–5 physical samples from Printful across different dog breeds/name lengths to check quality and real turnaround time
+- Draft 5–8 ad creative concepts (UGC-style, real pet reveal)
+
+**Week 2 (Jul 22–28) — Creative + soft launch**
+- Samples arrive; shoot/collect creative (own pets, friends' pets, or licensed UGC)
+- Launch landing page live, no paid traffic yet — seed with organic TikTok/IG posts
+- Set up Meta ad account, pixel, and a $20/day test budget
+
+**Week 3 (Jul 29–Aug 4) — Paid test, phase 1**
+- Run $30–40/day across 3–4 ad variants, broad targeting (pets vertical, 25–54)
+- Kill anything with CPC >$1.50 or 0 add-to-carts after $50 spend
+- Track actual CVR and CAC daily — this is the core data point the whole test is for
+
+**Week 4 (Aug 5–11) — Paid test, phase 2 + decision**
+- Reallocate budget to winning creative/audience only
+- Push spend to $50/day on the surviving angle
+- By Aug 11: compare actual CAC to the $10–12 target. Go/no-go decision point.
+
+## Budget for Gate 5 Signal
+
+| Item | Cost |
+|---|---|
+| Shopify (1 month) | ~$39 |
+| Samples (5 units, Printful landed cost) | ~$71 |
+| Ad spend (Week 2 soft + Week 3–4 test, ~20 days) | $600–800 |
+| Creative production (DIY/UGC, minimal cash cost) | $0–100 |
+| **Total cash needed for a real go/no-go signal** | **~$750–1,000** |
+
+## Break-Even Math
+
+- Fixed costs: ~$40/month (Shopify)
+- Contribution margin per unit: ~$10 (at $24.99 retail, Printful landed cost)
+- **Units to cover fixed costs alone:** 4/month
+- **Units to cover fixed costs + realistic ad spend** (using the estimated, unconfirmed ~$40 CAC): each paid-acquired unit currently *loses* ~$30 rather than contributing — meaning at the estimated CAC, this SKU is not break-even on paid traffic alone at any volume. The 30-day test's real purpose is to find out whether actual CAC lands closer to $10–15 (viable) or stays near $40 (kill signal — pivot to bundle/AOV increase or abandon).
+
+**Go signal at end of 30 days:** blended CAC ≤ $15 with CVR ≥1%, positioning to bundle toward $12 CAC before scaling spend.
+**No-go signal:** CAC consistently >$25 after $600+ spend with no improving trend across creative iterations.
+
+Sources:
+- [The 9 best print-on-demand pet products to sell in 2026](https://printify.com/blog/print-on-demand-pet-products/)
+- [Design and sell custom dog bandanas with Printify](https://printify.com/custom-dog-bandanas/)
+- [Custom Pet Products - Create, Buy & Sell | Printful](https://www.printful.com/custom/pet-products/personalized)
+- [Best Dropshipping Pet Products Supplier – CJdropshipping](https://cjdropshipping.com/list/wholesale-pet-supplies-l-2409110611570657700.html)
+- [Wholesale Dog Tags - Customizable and High Quality (Alibaba)](https://www.alibaba.com/showroom/wholesale-dog-tags.html)
+- [Custom Stainless Steel Dog Tags product listing (Alibaba)](https://www.alibaba.com/product-detail/Custom-Stainless-Steel-Dog-Tags-Titanium-1601209319573.html)
+- [Facebook Ad Benchmarks by Industry (Triple Whale)](https://www.triplewhale.com/blog/facebook-ads-benchmarks)
+- [Dog Bandana Personalized - Etsy](https://www.etsy.com/market/dog_bandana_personalized)
+- [Shipping Speeds & Pricing | Printful](https://www.printful.com/shipping)
+- [Printful Shipping Cost: Full Breakdown for POD Sellers](https://podvector.ai/articles/printful/costs-and-charges/printful-shipping-cost-full-breakdown-for-pod-sellers)

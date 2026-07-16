@@ -286,3 +286,47 @@ All other candidates (LED Face Masks, Jelly Slides, Portable Projectors, etc.) a
 - Fibermaxxing: FDA compliance + incoming CPG competition
 - Black Sesame: Food licensing/customs (dropshipping blocker)
 - Hugo Spritz: Alcohol shipping logistics + trademark infringement + saturation
+
+Reading the last 3 daily entries (July 12, 13, 14), I'll identify candidates appearing across all 3 with persistent interest.
+
+**Persistence screening:**
+- **Fibermaxxing**: July 12, 13, 14 ✓
+- **Black Sesame**: July 12, 13, 14 ✓
+- **Hugo Spritz**: July 12, 13, 14 ✓
+- **Jelly Slides**: July 12, 13, 14 ✓
+
+All others (LED face masks, personalized pet accessories, travel gear) appear in only 2 of 3 entries — insufficient persistence, not screened.
+
+---
+
+## 2026-07-14
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/TM Risk | Return Risk | Saturation | Durability | **DECISION** | Reason |
+|---|---|---|---|---|---|---|---|---|---|
+| **Fibermaxxing** | PASS (3x markup feasible at $20–30 retail) | PASS (powder: lightweight, compact) | PASS (no restricted category) | PASS (generic ingredient) | **FAIL** | SATURATING | **FAIL** | **KILL** | Mainstream brands (Pepsi, Olipop, Nestle) already entering; digestive supplements carry high return risk ("does it actually work" claims); narrow durability once hype wanes after Jan 2026 health-trend peak. |
+| **Black Sesame** | PASS (3x markup at $18–25 retail) | **HARD FAIL** | PASS | PASS (generic ingredient) | FAIL | Moderate | **FAIL** | **KILL** | If ready-to-drink or fragile dessert: liquid food shipping is cost-prohibitive ($8–15 per unit). Powder format possible but polarizing flavor drives high return rates. Seasonal dessert trend (will crater post-August). Already featured by Starbucks; durability poor beyond summer novelty. |
+| **Hugo Spritz** | **HARD FAIL** | **HARD FAIL** | **HARD FAIL** | **HARD FAIL** | — | — | — | **KILL** | Alcohol shipping requires hazmat license + specialized carrier (adds $12–20/unit, eroding margins below 2.5x threshold). Ad platform hard blocks: Meta, TikTok, Google Ads all restrict alcohol. Trademark risk: St-Germain, Campari, Aperol all branded. +2,200% search spike = viral moment, not sustainable trend; seasonal summer peak with cliff in September. |
+| **Jelly Slides** | PASS (3x markup at $15–25 retail) | PASS (lightweight PVC, durable) | PASS (no restrictions) | PASS (generic style, design not protected) | MODERATE (apparel-normal returns) | **SATURATING** | **FAIL** | **KILL** | Peaking fashion trend (July 12–14 marks peak; typical fashion cycle 6–12 weeks). Will decline sharply post-Q3 as summer footwear demand evaporates. Already at major retailers (Havaianas, Amazon bestsellers); competitor ad density rising. Not a problem-solver or repeat-purchase category. No durability beyond seasonal window. |
+
+**Summary:** All 4 persistent candidates **KILL**. No candidates advance. Recommendation: broaden scan for sub-7-day rising patterns or multi-category combinations (e.g., summer + problem-solver + low saturation).
+
+## 2026-07-15
+
+### Persistent Candidates Screened
+
+| Product | Unit Economics | Shipping | Ad Compliance | IP Risk | Return Rate | Saturation | Durability | **Decision** | **Reason** |
+|---|---|---|---|---|---|---|---|---|---|
+| Personalized Pet Accessories | ✓ (40–60% margins) | ✓ | ✓ | ✓ Low | Low (custom items) | Lower competition noted (E2) | Good (repeat/gifting demand) | **ADVANCE** | Multi-entry rising signal, strong margins, manageable POD fulfillment, confirmed lower competitive intensity, durable category across customer lifecycle. |
+| Fibermaxxing Products | Tight | ✓ | **✗ [HARD]** | ✓ | High | High (CPG brands entering) | Declining | **KILL** | Ad platform compliance is immediate blocker—supplements cannot make health claims on Meta/TikTok/Google without FDA oversight (flagged in E1). Market fragmentation and mainstream CPG entry (Pepsi, Nestlé) kill margin durability. |
+| Hugo Spritz | ✓ | **✗ [HARD]** | **✗ [HARD]** | **✗ [HARD]** | N/A | Saturating fast | Poor | **KILL** | Triple hard fail: (1) alcohol restricted on Meta/TikTok, regulated on Google; (2) trademark infringement risk on branded "Hugo Spritz" product; (3) age-gated shipping + customs/state compliance overhead. E1 notes "+2,200% spike = viral moment, not sustained demand." One-hit seasonal trend. |
+| Black Sesame Products | Tight | Fragile if frozen | ✓ | ✓ | Moderate | Mainstream coverage (Starbucks testing) | Poor | **KILL** | Seasonal summer dessert peak (E1 notes cliff post-fall). E2 flags "unclear if drives standalone product demand"—ingredient-level trend, not validated as standalone SKU. Narrow, polarizing flavor appeal limits TAM. Product-market fit unproven. |
+| Jelly Slides & Wedge Flip Flops | ✓ | ✓ | ✓ | ✓ | **✗ [HARD]** | High (Havaianas + majors saturating) | Poor | **KILL** | Fashion footwear return rates disqualify—fit/sizing issues endemic to category. Both entries mark as **Peaking**, not Rising; E1 notes saturation by established brands and 6–12 week fashion lifecycle. Post-Q3 cliff confirmed. |
+| Handheld Turbo Fans | Tight | ✓ | ✓ | ✓ | Low | High (already saturated $10–20 tier, E1) | Poor | **KILL** | E1 explicitly: "High saturation in $10–20 tier; many competing brands already heavy on ads." Seasonal July–Sep peak with August cliff. E3 reconfirms rising signal but doesn't address saturation decay—this is late-mover, not emerging. Margins compressed by competition. |
+
+---
+
+### Candidates Not Screened
+
+**Insufficient persistence (single-entry only):**
+
+Pet Cooling Mats, U-Shaped Window Air Conditioners, Portable Electric Kitchen Gadgets, Pickleball Equipment, Magnetic Wireless Power Banks, Travel Packing Organizers, Ready-to-Drink Cocktails (Beyond Hugo), Yard & Lawn Games, Natural Digestion Supplements, Personalized Travel Accessories, Beach Fashion & Lingerie, Amphibious Water Shoes, Reading Lifestyle Gadgets, Anti-Wind Beach Parasol, Peel-Off Nail Polish, Yellow Accessories, Smart Home Motion Sensor Lights, Snail Slime Skincare, CinePocket Mini Projector, FluidBeat Speaker, SteamForce Steam Cleaner, Dual-Ended Eyeliner Stamp, Handheld Portable Vacuum Sealer, Hexagon 3D Mirror Stickers, Smart Pet Feeder, Spaceman LED Light, GreenLock Storage Bags, PureBreeze Air Purifier, Magnetic Eyelashes, Posture Corrector, Privacy Glass Protector, Portable Camping Gas Stove.

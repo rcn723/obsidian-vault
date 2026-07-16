@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-12 pm (Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
+updated: 2026-07-15 (NEW — 📡 Prospect Radar live: 2 fresh Welra leads with paste-ready replies at the top of the Welra section, refreshed daily 8:05am. Prior: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
 tags: [ryan, todo, live]
 ---
 	
@@ -39,6 +39,38 @@ tags: [ryan, todo, live]
 ---
 
 ## 🅦 WELRA — beta user #1 is the whole game
+
+<!-- PROSPECT_RADAR_START -->
+### 📡 Today's Welra prospects (2026-07-15) — reply as yourself, ~5 min each
+
+**1. New Etsy seller, 200 visits / 0 sales, asking for an honest diagnosis — posted TODAY, only 3 comments so far**
+🔗 https://www.reddit.com/r/EtsySellers/comments/1uxdnd8/new_etsy_shop_200_visits_etsy_ads_running_still_0/
+Who: u/clacapasso, brand-new shop, running Etsy Ads, can't tell if it's a traffic or listing problem.
+⚠️ r/EtsySellers has a ZERO-TOLERANCE rule on promoting seller tools — do NOT mention Welra. Pure value builds the account; if OP replies to you, offer the tool in a DM only if they ask what you use.
+
+> 200 visits with 0 sales isn't automatically a disaster — typical Etsy conversion is roughly 1–3%, so your first sale statistically lands somewhere in the 100–300 visit range. You're in it.
+>
+> The more useful question is where the visits came from. Stats → Traffic sources: if most of the 200 are from Etsy Ads, that traffic is much colder than search traffic and converts worse. Also check favorites — if people visit and don't favorite, the listing itself (first photo, price) isn't landing; if you're getting favorites but no sales, it's usually total price with shipping at checkout.
+>
+> One more thing worth 2 minutes: are the 200 visits spread across all listings or concentrated on one or two? Concentrated visits tell you which design has pull — put your effort (more variations, better photos) behind that one instead of spreading evenly.
+>
+> I run a small POD shop myself and I'm early days too — the habit that's helped me most is checking those three things weekly (traffic source, favorites vs visits, which listings pull) instead of staring at the total number. If you post the shop link (rule 2 allows it for critiques), people here can get a lot more specific.
+
+**2. "Spreadsheet hell" — EU/UK ecommerce seller asking if a spreadsheet ever gave you the wrong answer — posted July 14**
+🔗 https://www.reddit.com/r/ecommerce/comments/1uw2y7h/spreadsheet_hell/
+Who: u/Accomplished_Box_483, sells into EU/UK, juggling product cost + VAT + duties + fees + 3PL across spreadsheets/Shopify/accounting.
+✅ OP explicitly asked for workflows/tools — one soft Welra mention is fine here. Value first.
+
+> Honest answer on the "one workflow" question: I don't think one exists, because these are two different jobs that go wrong when they live in the same spreadsheet.
+>
+> Job 1 is unit economics — product cost, VAT/duties per destination, DDP, payment fees, a returns allowance. It changes rarely, so it deserves a careful sheet you only touch when a cost actually changes. Doing this per SKU per destination once beats re-deriving it monthly.
+>
+> Job 2 is the weekly pulse — what sold, what moved, which channel did it. This one doesn't need decimals; it needs to be current, and it's the tab everyone (me included) lets go stale, which is exactly when the spreadsheet starts giving you wrong answers — you're making decisions off numbers from three weeks ago.
+>
+> I ended up automating job 2 for my own small shop — a tool that emails me one clear weekly summary so the pulse doesn't depend on my discipline (it became welra.io, free right now). But tool or no tool, the split is the fix: separate the sheet that must be precise from the report that must be current, and never let one pretend to be the other.
+
+*(When you've replied, tick the lead in Projects/Welra/Prospect_Radar.md or just tell Claude. Tomorrow 8:05am this block gets replaced with fresh leads.)*
+<!-- PROSPECT_RADAR_END -->
 
 ### 1. Send 3 warm DMs (~15 min) — THE task
 - [x] a. Open your texts + Instagram DMs and scroll. Write down the first 3 people you see who **sell or make things** (Etsy, POD, craft fairs, side hustle — anything). Don't brainstorm, just scan. 3 sent beats 10 planned.
