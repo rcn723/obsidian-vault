@@ -2,7 +2,15 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-07-12 pm (Pinterest reconnected + verified live; Meta Business Verification submitted, confirmed pending; FB Page website / IG bio link update NOT confirmed live despite Ryan's report)
+updated: 2026-07-17 (🔴 "My Person Watercolor" — the design Ryan banned 2026-07-12 — re-posted live to IG/Pinterest/TikTok via a stale NAS designs_log.json; root cause fixed, 3 posts need Ryan's manual deletion; prior: 2026-07-12 pm — Pinterest reconnected + verified live; Meta Business Verification submitted, confirmed pending; FB Page website / IG bio link update NOT confirmed live despite Ryan's report)
+
+## 2026-07-17 — "My Person Watercolor" re-posted: Mac/NAS designs_log.json drift
+
+Ryan reported the AI-drawn "my person" design (banned 2026-07-12 for looking wrong/obviously AI-generated) had been posted again. Traced it: the 2026-07-12 removal only patched the **Mac's** local `designs_log.json` — that edit never made it to the **NAS's** separate copy, which still had `status: "published"`. The NAS is the actual posting host since the 2026-06-23 cutover, so its normal Friday 10:00am market run picked this design in the vizsla_parent pillar rotation and posted it live to Instagram (post `Da5tAerGt89`), Pinterest, and TikTok (Facebook failed on its pre-existing permission error, so no cleanup needed there).
+
+**Fixed this session:** NAS `designs_log.json` patched to `status: "removed"` (backup kept); the static prompt deleted outright from `agent.py`'s PROMPTS library on both Mac and NAS (compiles clean on both); confirmed via live Printify API the 4 original product listings are still genuinely 404. Attempted automated deletion on all 3 platforms — every one rejected it (Instagram: unsupported delete; Pinterest: "published posts cannot be deleted"; TikTok: post not found via the delete endpoint) — this is a hard platform limitation, not a bug on our side. Manual deletion steps handed to Ryan in Tasks.md and `_RYAN_TODO.md`.
+
+**Open structural gap:** the two `designs_log.json` copies (Mac authors via `generate`, NAS posts via `market`) have no sync mechanism — any future manual removal must be applied to both by hand or it can silently resurface exactly like this. Tracked in Tasks.md as unresolved.
 tags: [etsy, printify, social-media, python, automation, nas]
 ---
 

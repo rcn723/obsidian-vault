@@ -1,9 +1,30 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-12 pm (Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified; Meta Business Verification submitted/pending. Earlier: Photo_Archive full consolidation)
+updated: 2026-07-17 (Blog post staged (revenue-vs-profit-bestseller) pending Ryan's deploy approval; blog cadence gap fixed with new welra-weekly-blog scheduled task; standing double-review rule established for all external comms. Prior: Prospect Radar 2 leads delivered, 4 rejected. Earlier: 2026-07-16 — 1 lead, 7 rejected. Earlier still: 2026-07-12 pm — Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified.)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
 ---
+
+# To Antigravity — 2026-07-17 (evening) — Blog post staged, blog cadence fixed, double-review rule established
+
+Ryan asked for a blog post drawing on a pattern from today's prospect-radar sweep, reviewed for AI-sounding phrasing, plus a fix so the weekly cadence stops silently slipping.
+
+- **New post staged, NOT deployed:** `revenue-vs-profit-bestseller` in `apps/web/src/app/blog/posts.tsx`. Took 3 rounds of independent agent review — round 1 caught a backwards factual claim (Etsy Offsite Ads $10k threshold was reversed in the draft; verified correct against Etsy's own help pages: crossing $10k = mandatory 12% no opt-out, under $10k = optional 15% default-on) plus repeated AI-sounding tricolon lists; rounds 2–3 caught word repetition and mirrored sentence templates. `tsc`/`build` clean, dev-server-verified render + both internal links 200. **Ryan needs to approve and run `npx vercel deploy --prod` from the repo root** — added to `_RYAN_TODO.md` and `Projects/Welra/Tasks.md` P0.
+- **Same factual error found and fixed in a live artifact:** the paste-ready Reddit reply already sitting in `_RYAN_TODO.md` from today's prospect-radar run (r/EtsySellers fees question) had the identical backwards Offsite Ads claim — corrected in place before Ryan could post it.
+- **Blog cadence gap:** Content_Calendar.md's publish log had been stale since 2026-06-14 (missing 3 real posts) and the real gap between posts had quietly grown to 14 days with nothing catching it. Fixed the list, and created a new scheduled task `welra-weekly-blog` (Thursdays 8:24am) that picks the next topic, drafts, runs the mandatory double-review gate, validates, and stages weekly — never auto-deploys, always notifies, and won't pile up a second draft if the prior week's is still unapproved.
+- **New standing rule (Ryan's explicit request):** every future blog post and external comms draft needs 2+ independent fresh-agent AI-phrasing review passes before shipping. Saved as a durable memory (`feedback_double_review_external_comms.md`) and wired into both the new weekly-blog task and the existing `welra-growth-pipeline`'s content step.
+
+Everything updated: [[Projects/Welra/State]], [[Projects/Welra/Tasks]], [[Projects/Welra/Content_Calendar]], `_RYAN_TODO.md`, `Worklogs/Claude_Log.md`.
+
+---
+
+# To Antigravity — 2026-07-17 (Prospect Radar daily sweep — 2 leads delivered)
+
+Scheduled `welra-daily-prospect-radar` run. Swept all 8 target subreddits (community.etsy.com and IndieHackers skipped re-check, per prior day's finding that they were login-walled / stale). Found 2 fresh, on-pain leads with paste-ready value-only replies now sitting in `_RYAN_TODO.md`'s Welra section: r/shopify "How are you calculating profit when the costs live outside Shopify?" and r/EtsySellers "About 25% of profits going to fees?". The r/shopify thread carries an explicit automod warning — 2 comments in that exact thread were already auto-removed for containing "services, sites, or terms," so the drafted reply has zero brand mention. Logged in [[Projects/Welra/Prospect_Radar]] along with 4 rejected candidates (one was the OP's own covert tool-promo post; one was a likely pain-farming repeat of an already-surfaced 2026-07-15 lead by the same author). Noted a recurring theme worth a future blog post: two independent sellers this week asked specifically about tracking true profit when costs/ad-spend live outside their storefront platform — close to Welra's core pitch. Nothing else for you to pick up from this run.
+
+# To Antigravity — 2026-07-16 (Prospect Radar daily sweep — 1 lead delivered)
+
+Scheduled `welra-daily-prospect-radar` run. Swept all 8 target subreddits + IndieHackers + Etsy's own community forum (login-walled, skipped). Found 1 genuinely fresh, on-pain lead — r/EtsySellers "Very low views and sales" — with a paste-ready value-only reply now sitting in `_RYAN_TODO.md`'s Welra section. Logged in [[Projects/Welra/Prospect_Radar]] along with 7 rejected candidates (one flagged as likely AI-astroturf content marketing). Nothing else for you to pick up from this run.
 
 # To Antigravity — 2026-07-15 (2nd Welra growth-pipeline run today — maintenance mode, no change)
 
@@ -367,3 +388,9 @@ New project born: **WordBloom** — cozy daily word-garden game prototype at `~/
 
 ## 2026-07-15 (later) — from Claude (Petal Words)
 WordBloom renamed **Petal Words** (name collision). Full ship-execution done: adversarially-reviewed plan → 17-test suite green → Capacitor iOS project generated (SwiftPM) → RevenueCat/AdMob adapters (fail-closed) → arch-review found+fixed 3 blockers. App-Store-ready up to the Xcode boundary; ordered Ryan/Claude task split in [[Projects/WordBloom/Tasks]]. Key docs: wordbloom/docs/ship-plan.md (v2), docs/arch-review-2026-07-15.md, store/listing.md.
+
+## 2026-07-17 — from Claude (Petal Words v2)
+Failure-mode-driven redesign shipped: Bloom Book (56-species deterministic flora collection — the anti-content-exhaustion meta, pacing validated by simulation over the real schedule), spoiler-free share card, rewarded-ad streak repair, onboarding. 24/24 tests, e2e clean, iOS bundle synced. Design + validation: wordbloom/docs/design-v2.md. State/Tasks unchanged otherwise; still parked at the Xcode boundary.
+
+## 2026-07-17 (2nd growth-pipeline run today) — from Claude
+Maintenance mode again, queue unchanged at 6 (same items as the earlier run today). No reply, no drift, nothing broken (welra.io + api.welra.io/health both verified 200; staged blog post confirmed still not live). No notification. Growth_Pipeline.md + Claude_Log.md updated.

@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-07-12 (sunday-review: new P0 item — deploy the report-scheduler week-boundary fix that closes a 10-day silent report gap for the one real customer; DEFERRED architectural follow-up tracked. Prior: 2026-07-10 vault overhaul.)
+updated: 2026-07-17 (new P0 item — approve + deploy the staged "revenue vs. profit" blog post; blog cadence fixed with the new welra-weekly-blog scheduled task. Prior: 2026-07-12 sunday-review report-scheduler fix.)
 tags: [welra, tasks, launch]
 ---
 
@@ -19,6 +19,7 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 
 ### 🔴 P0 — Do these first (blocks everything else)
 
+- [ ] **Approve + deploy the new blog post: "Your bestseller might be lying to you: revenue vs. profit"** (`revenue-vs-profit-bestseller`, staged in `apps/web/src/app/blog/posts.tsx`, 2026-07-17) — review it, then `npx vercel deploy --prod` from the repo root. Passed 3 rounds of independent AI-phrasing/fact review (a backwards Etsy Offsite Ads claim was caught and fixed), `tsc`+`build` clean, both internal links verified 200. [owner:: ryan] [priority:: high] [status:: open]
 - [x] **Deploy the report-scheduler week-boundary fix (`railway up --service welra`)** — DEPLOYED + VERIFIED 2026-07-12 (Ryan said "deploy the welra fix"). Committed (`18d0dfc`), pushed to origin/main, deployed via `railway up --service welra`. Fresh container booted clean (new hostname, all 5 crons registered, `/health` → 200). The 10-day report gap for R&R is now closed going forward. [owner:: claude] [priority:: high] [status:: done]
   > **Found in the 2026-07-12 Sunday review, live-verified against Supabase, not deployed (headless session, no deploy authorization).** The one real active customer (Rust & Rainbow, `subscription_status: trialing`) has received **zero reports since 2026-07-02** — a 10-day silent gap. Root cause: `weekEnd = endOfWeek(subDays(now, 1), {weekStartsOn:1})` (duplicated in `reportSchedulerCron.ts` twice and `reportGenerator.ts` once) only computes the correct "last completed week" when called on a Sunday. The on-connect instant-report path fires on WHATEVER day a customer connects a platform — R&R connected Etsy on Thursday 07-02, so the instant report was created with `week_end_date=2026-07-05`, three days in the future at generation time, and then blocked that Sunday's real cron report from being created for the same week (`UNIQUE(customer_id, week_start_date)`).
   > **Fix (already made, staged, not deployed):** new `apps/api/src/lib/weekBoundaries.ts` exports a day-of-week-agnostic `getLastCompletedWeek(now, timezone)`; both `reportSchedulerCron.ts` call sites and `reportGenerator.ts`'s date calc now use it. Verified against the three real historical timestamps that exposed the bug (Thu 07-02 instant, Sun 07-05 cron, Mon 07-06 06:00 ET generation) — all three now compute correctly. `tsc --noEmit` + `npm run build` both clean. `arch-review` run: 0 blockers, 1 low-priority architectural risk noted below.

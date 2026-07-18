@@ -2,7 +2,7 @@
 title: WordBloom State
 project: WordBloom
 type: state
-updated: 2026-07-15
+updated: 2026-07-17
 tags: [wordbloom, game, prototype, state]
 ---
 
@@ -10,7 +10,10 @@ tags: [wordbloom, game, prototype, state]
 
 **One-liner:** ("Petal Words" — renamed from WordBloom, name-collision found by adversarial review.) Cozy daily word-garden game (F2P: rewarded ads + gem IAP + remove-ads) filling a verified top-grossing-chart gap — zero F2P word games with IAP+ads in the US iPhone top-100 grossing (only NYT Games, subscription).
 
-## Current state (2026-07-15 evening — App-Store-ready to the Xcode boundary)
+## Current state (2026-07-17 — v2 redesign shipped: unique-game iteration)
+- **v2 keyed to documented failure modes** (docs/design-v2.md): Bloom Book 56-species collection (deterministic word→species, pangram→Legendary, procedural SVG flora, 4th tab), spoiler-free share card, rewarded-ad streak repair (once/streak), 3-card onboarding, and a **learn-as-you-grow** layer — a real, fact-checked one-line botanical fact per species (shown on discovery + tappable in the Book; cozy+educational hook). Draft 24-species catalog refuted by pacing simulation (complete in 29d = content exhaustion); shipped 56 = final Legendary ~day 104 casual. 24/24 tests, e2e clean, www+iOS synced.
+
+## Prior state (2026-07-15 evening — App-Store-ready to the Xcode boundary)
 - **Ship-plan executed after adversarial review** (4 claims refuted incl. name + ATT-privacy shortcut; DST day-boundary bug + 4 collateral bugs found → ALL fixed): logic extracted to logic.js with **17 green unit tests**, two-layer dictionary (93k accept / 23.6k curated), 400 rebalanced puzzles with curated pangrams, sequential collision-free schedule, Bloom Words mechanic (differentiation vs 4.3 spam), Capacitor iOS project generated + synced (SwiftPM, NO CocoaPods needed), RevenueCat+AdMob adapters (fail-closed on native), Restore Purchases + entitlement re-sync, icon/splash in asset catalog, store collateral written (store/), arch-review run → 3 blockers found & fixed in-session, 0 open.
 - Docs: docs/ship-plan.md (v2 findings log), docs/arch-review-2026-07-15.md, store/listing.md.
 

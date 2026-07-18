@@ -2,7 +2,7 @@
 title: Rust & Rainbow Tasks
 project: rust-and-rainbow
 type: tasks
-updated: 2026-07-12 pm (Pinterest reconnected + verified live; Meta Business Verification submitted, confirmed "pending" via API; Facebook Page website field / Instagram bio link still NOT updated live despite Ryan's report — flagged for clarification)
+updated: 2026-07-17 (🔴 "My Person Watercolor" re-posted live via a stale NAS log — root cause fixed, 3 manual platform deletions still needed by Ryan; prior: 2026-07-12 pm — Pinterest reconnected + verified live; Meta Business Verification submitted, confirmed "pending" via API; Facebook Page website field / Instagram bio link still NOT updated live despite Ryan's report — flagged for clarification)
 tags: [etsy, printify, social-media, nas]
 ---
 
@@ -11,6 +11,18 @@ tags: [etsy, printify, social-media, nas]
 See [[Projects/Rust_and_Rainbow/State]] for platform status, pillars, and cron details.
 
 ## High Priority
+
+- [ ] **🔴 "My Person Watercolor" re-posted live 2026-07-17 — 3 platforms need MANUAL deletion (API deletion is blocked everywhere)** [owner:: ryan] [priority:: high] [status:: open]
+  > **Root cause found + fixed same session.** The 2026-07-12 removal (below) only patched the Mac's local `designs_log.json` (status → "removed") — that edit was never synced to the NAS's separate copy, which still said `status: "published"` with the 4 (already-deleted) Printify product IDs. Today's normal 10:00am NAS-scheduled market run (Friday rotation) picked it as the least-recently-posted design in the vizsla_parent pillar and posted it live to Instagram, Pinterest, and TikTok (Facebook post failed on its own known `pages_manage_posts` permission error — nothing to clean up there).
+  >
+  > **Fixed (Claude, 2026-07-17):** (1) NAS's `designs_log.json` patched to `status: "removed"` — matches the Mac now, can never be re-selected by `run_market()` again (backup saved as `designs_log.json.bak-20260717`). (2) The static prompt itself deleted outright from `agent.py`'s PROMPTS library, on **both** the Mac and the NAS copies (second line of defense — even a full log wipe couldn't regenerate this exact design), replaced with a do-not-re-add comment. Both files re-verified `py_compile` clean. (3) Confirmed via live Printify API: all 4 product IDs still 404 — the Printify/Etsy side is genuinely still gone, only today's fresh social posts are live. (4) Attempted automated deletion on all 3 platforms — all rejected: Instagram Graph API `400 Unsupported delete request`, Pinterest via Zernio `400 Published posts cannot be deleted`, TikTok via Zernio `404 Post not found`. No API path exists; manual deletion is the only option (consistent with the already-documented TikTok limitation from the 2026-07-04 background-removal incident below).
+  >
+  > **Ryan's manual cleanup (~5 min):**
+  > - **Instagram** — direct link: https://www.instagram.com/p/Da5tAerGt89/ → ⋯ menu → Delete.
+  > - **Pinterest** — go to the rustandrainbow Pinterest profile (or zernio.com dashboard → Posts) → find today's pin, caption starts "Vizsla owner. Fully owned by vizsla..." posted ~10:02am → delete.
+  > - **TikTok** — go to the rustandrainbowco TikTok profile → today's video (same caption hook) → delete. (Per the 2026-07-04 finding below, some TikTok posts genuinely can't be removed even manually within certain windows — if the delete option isn't available, tell Claude and we'll note it as permanently stuck like the earlier 4.)
+  >
+  > **Still open / structural gap not yet fixed:** nothing currently keeps the Mac and NAS copies of `designs_log.json` in sync after a manual removal — any future "delete this design" action must be applied to BOTH copies by hand (Claude will remember this going forward) until a proper sync step exists. Consider: making the NAS the single source of truth and having `--mode generate` push its output there instead of keeping two independently-edited copies.
 
 - [x] **"My Person Watercolor" deleted from Printify/Etsy — 2026-07-12, Ryan's call ("obviously AI-generated, doesn't make sense").** Found the design in `designs_log.json` (published 2026-07-04, 4 live products: t-shirt, mug, hoodie, sticker). Verified zero sales two ways before deleting — the log's own `sales: 0` field, cross-checked independently against Printify's real order history (0 orders across all 4 product IDs). Removed all 4 via `agent.py`'s existing `remove_listing()` (same code path as the earlier bg-removal cleanup) — Printify auto-unpublishes the matching Etsy listing on delete. Verified gone: all 4 product IDs now return 404. `designs_log.json` entry marked `status: "removed"` with reason, not deleted from the log (keeps dedup history intact so this title/concept won't be regenerated). [owner:: ryan] [priority:: high] [status:: done]
 

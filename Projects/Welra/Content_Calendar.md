@@ -2,7 +2,7 @@
 title: Welra Content Calendar
 project: Welra
 type: content-plan
-updated: 2026-06-14
+updated: 2026-07-17
 tags: [welra, blog, content, seo, marketing]
 ---
 
@@ -18,6 +18,12 @@ LinkedIn + Medium with a canonical link back to `welra.io/blog/…`.
 Published so far:
 - ✅ `market-analysis-small-business-advantage` — "The numbers were always there…" (launch post, 2026-06-14)
 - ✅ `how-to-read-your-etsy-stats` — "How to actually read your Etsy Stats page" (Pillar E #15, 2026-06-14)
+- ✅ `weekly-shop-review-monday-habit` — "The 15-minute Monday review every seller should do" (Pillar C #8, 2026-06-23)
+- ✅ `my-shops-first-welra-report` — "I ran Welra on my own $0 week..." (Pillar F founder/trust, 2026-07-01)
+- ✅ `etsy-woocommerce-one-click` — "Etsy and WooCommerce are now one click..." (product milestone, 2026-07-03)
+- ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, 2026-07-17)
+
+⚠️ **Gap found 2026-07-17:** this list had gone stale since 2026-06-14 — 3 real posts had shipped without ever being logged here, and the cadence itself had silently slipped to a 14-day gap (2026-07-03 → 2026-07-17) despite being planned as weekly. No scheduled task was actually enforcing "weekly." See the new `welra-weekly-blog` scheduled task (created 2026-07-17) — this file is now its source of truth for "what's next," so keep it current every time a post ships.
 
 ## How to run it (cadence)
 
@@ -38,7 +44,7 @@ free report, internal-link to 1–2 prior posts.
 |---|---|---|---|
 | 1 | What actually matters in your weekly numbers (and what's just noise) | The 4–5 metrics a seller should watch; ignore the rest | ecommerce metrics that matter for small business |
 | 2 | Conversion rate, explained without the jargon | What it is, what's "normal," how to nudge it | what is a good conversion rate etsy / shopify |
-| 3 | Your bestseller might be lying to you: revenue vs. profit | Why top-line sales hide thin margins | revenue vs profit ecommerce |
+| 3 | ✅ Your bestseller might be lying to you: revenue vs. profit (published 2026-07-17, slug `revenue-vs-profit-bestseller`) | Why top-line sales hide thin margins | revenue vs profit ecommerce |
 | 4 | Three numbers that warn you a product is dying | Early-decline signals before it's too late | signs a product is declining in sales |
 
 ## Pillar B — Multi-channel selling

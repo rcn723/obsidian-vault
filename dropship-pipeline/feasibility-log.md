@@ -330,3 +330,17 @@ All others (LED face masks, personalized pet accessories, travel gear) appear in
 **Insufficient persistence (single-entry only):**
 
 Pet Cooling Mats, U-Shaped Window Air Conditioners, Portable Electric Kitchen Gadgets, Pickleball Equipment, Magnetic Wireless Power Banks, Travel Packing Organizers, Ready-to-Drink Cocktails (Beyond Hugo), Yard & Lawn Games, Natural Digestion Supplements, Personalized Travel Accessories, Beach Fashion & Lingerie, Amphibious Water Shoes, Reading Lifestyle Gadgets, Anti-Wind Beach Parasol, Peel-Off Nail Polish, Yellow Accessories, Smart Home Motion Sensor Lights, Snail Slime Skincare, CinePocket Mini Projector, FluidBeat Speaker, SteamForce Steam Cleaner, Dual-Ended Eyeliner Stamp, Handheld Portable Vacuum Sealer, Hexagon 3D Mirror Stickers, Smart Pet Feeder, Spaceman LED Light, GreenLock Storage Bags, PureBreeze Air Purifier, Magnetic Eyelashes, Posture Corrector, Privacy Glass Protector, Portable Camping Gas Stove.
+
+Looking at the last 3 daily entries for products appearing in all 3 scans...
+
+**Persistence check:** Only **Portable Handheld Turbo Fan** appears across all 3 days (2026-07-14 rank #6; 2026-07-15 listed; 2026-07-16 identified as "clearest demand signal"). All other products are single- or dual-entry, failing the persistence bar.
+
+---
+
+## 2026-07-16
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP Risk | Return Risk | Saturation | Durability Beyond Trend | Verdict | Reason |
+|-----------|---|---|---|---|---|---|---|---|---|
+| Portable Handheld Turbo Fan | PASS ($8 landed → $39 retail, 35%+ margin) | PASS (300g, no fragility) | PASS (consumer electronics) | PASS (generic product) | MODERATE (performance expectations) | HIGH (fan category oversaturated, fragmented suppliers, low margins per data) | **FAIL** | **KILL** | 100% seasonal summer-only trend (heatwave-driven); inventory cliff Sept–March; 2026-07-15 flags "oversaturation likely high for fan category" + "risk of inventory issues post-summer"; 2026-07-16 confirms "seasonal play, low profit margins." This is a single-season liquidation, not a durable product line. |
+
+**No candidates advance.** Single persistent candidate fails durability screen.

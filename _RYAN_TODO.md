@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-15 (NEW — 📡 Prospect Radar live: 2 fresh Welra leads with paste-ready replies at the top of the Welra section, refreshed daily 8:05am. Prior: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
+updated: 2026-07-17 evening (NEW — 🅦 New P0: approve + deploy the staged blog post "Your bestseller might be lying to you: revenue vs. profit" (`npx vercel deploy --prod`); also corrected a backwards Etsy Offsite Ads fact in today's prospect-radar Reddit reply below before it could be posted. Prior (same day, morning): 📡 Prospect Radar refreshed — 2 fresh Welra leads with paste-ready replies (a Shopify multi-channel profit-tracking thread + a new Etsy seller's fees question), refreshed daily 8:05am. Earlier: 2026-07-16 — 1 lead. Earlier still: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
 tags: [ryan, todo, live]
 ---
 	
@@ -13,6 +13,18 @@ tags: [ryan, todo, live]
 > **This file now spans every active project**, not just Welra — consolidated 2026-07-03 evening from all 6 project Tasks.md files. Welra stays first because it's the one with a revenue clock running.
 
 **North star behind everything: land beta user #1 for Welra.** Task 1 in the Welra section is the one that does it. Everything else is support — except the item just below, which is real and currently broken, unrelated to that goal.
+
+---
+
+## 🔴 RIGHT NOW — delete 3 live posts of the banned "My Person" design (~5 min)
+
+You flagged that the AI-drawn "my person" design (the one you banned 2026-07-12 — "obviously AI-generated, doesn't make sense") got posted again. Found it: the July 12 fix only updated the Mac's copy of the design log, never the NAS's — so today's normal Friday market run picked it back up and posted it live. Root cause is now fixed on both machines so this specific design can never be selected or regenerated again. The Printify/Etsy listings are still genuinely deleted (verified live, all 404) — only today's 3 fresh social posts are live. I tried deleting them via each platform's API first; all three refused (Instagram/Pinterest/TikTok all block deleting a published post through their APIs) — manual deletion in the apps is the only path:
+
+- [ ] **Instagram** — open this exact post and delete it: https://www.instagram.com/p/Da5tAerGt89/ → tap ⋯ → Delete.
+- [ ] **Pinterest** — open the rustandrainbow Pinterest profile, find today's pin (posted ~10:02am, caption starts "Vizsla owner. Fully owned by vizsla...") → delete.
+- [ ] **TikTok** — open the rustandrainbowco TikTok profile, find today's video (same caption hook, posted ~10:02am) → delete. If TikTok won't let you delete it (this has happened before with older posts), tell Claude — it'll get logged as permanently stuck rather than something to keep chasing.
+
+[owner:: ryan] [priority:: high] [status:: open]
 
 ---
 
@@ -40,36 +52,30 @@ tags: [ryan, todo, live]
 
 ## 🅦 WELRA — beta user #1 is the whole game
 
+### 0. Review + deploy the new blog post (~5 min)
+A new post is staged (written, reviewed, built clean) but NOT live yet: **"Your bestseller might be lying to you: revenue vs. profit"**, slug `revenue-vs-profit-bestseller`, in `apps/web/src/app/blog/posts.tsx`. It went through 3 rounds of independent AI-phrasing review before landing — the first draft actually had the Etsy Offsite Ads fee threshold backwards, which review caught and fixed.
+- [ ] a. Open `apps/web/src/app/blog/posts.tsx` (or just view it locally / on a preview) and skim the `revenueVsProfit` post for anything you'd want changed.
+- [ ] b. If it looks good: `cd ~/Claude/Projects/side\ business/Welra && npx vercel deploy --prod` from the repo root ships it.
+- [ ] c. If you want changes, just tell Claude what to adjust.
+
 <!-- PROSPECT_RADAR_START -->
-### 📡 Today's Welra prospects (2026-07-15) — reply as yourself, ~5 min each
+### 📡 Today's Welra prospects (2026-07-17) — reply as yourself, ~5 min each
 
-**1. New Etsy seller, 200 visits / 0 sales, asking for an honest diagnosis — posted TODAY, only 3 comments so far**
-🔗 https://www.reddit.com/r/EtsySellers/comments/1uxdnd8/new_etsy_shop_200_visits_etsy_ads_running_still_0/
-Who: u/clacapasso, brand-new shop, running Etsy Ads, can't tell if it's a traffic or listing problem.
-⚠️ r/EtsySellers has a ZERO-TOLERANCE rule on promoting seller tools — do NOT mention Welra. Pure value builds the account; if OP replies to you, offer the tool in a DM only if they ask what you use.
+**1. Shopify merchant asking how to track true profit when costs live outside Shopify — posted yesterday**
+🔗 https://www.reddit.com/r/shopify/comments/1uyeutu/how_are_you_calculating_profit_when_the_costs/
+Who: u/IncreaseNegative4614 — ad spend scattered across platforms, product costs change, refunds land late; asking how merchants connect it all without another fragile spreadsheet.
+⚠️ AutoModerator in this exact thread has already deleted 2 comments for containing "services, sites, or terms" — treat as value-only, do NOT name Welra or link anything here or the reply likely gets auto-removed.
 
-> 200 visits with 0 sales isn't automatically a disaster — typical Etsy conversion is roughly 1–3%, so your first sale statistically lands somewhere in the 100–300 visit range. You're in it.
->
-> The more useful question is where the visits came from. Stats → Traffic sources: if most of the 200 are from Etsy Ads, that traffic is much colder than search traffic and converts worse. Also check favorites — if people visit and don't favorite, the listing itself (first photo, price) isn't landing; if you're getting favorites but no sales, it's usually total price with shipping at checkout.
->
-> One more thing worth 2 minutes: are the 200 visits spread across all listings or concentrated on one or two? Concentrated visits tell you which design has pull — put your effort (more variations, better photos) behind that one instead of spreading evenly.
->
-> I run a small POD shop myself and I'm early days too — the habit that's helped me most is checking those three things weekly (traffic source, favorites vs visits, which listings pull) instead of staring at the total number. If you post the shop link (rule 2 allows it for critiques), people here can get a lot more specific.
+> I ran into the same wall on my own shop. Ad spend's in one place, product cost changes, refunds land days later, and by the time you piece it together the month's basically over. What helped was picking one number to check weekly instead of the full P&L — profit per unit sold that week. Doesn't need to be exact to the penny, just close enough to catch a bad week early. The spreadsheet still exists honestly, it's just smaller now.
 
-**2. "Spreadsheet hell" — EU/UK ecommerce seller asking if a spreadsheet ever gave you the wrong answer — posted July 14**
-🔗 https://www.reddit.com/r/ecommerce/comments/1uw2y7h/spreadsheet_hell/
-Who: u/Accomplished_Box_483, sells into EU/UK, juggling product cost + VAT + duties + fees + 3PL across spreadsheets/Shopify/accounting.
-✅ OP explicitly asked for workflows/tools — one soft Welra mention is fine here. Value first.
+**2. Brand-new Etsy sticker seller asking if losing 25% of profit to fees is normal — posted TODAY**
+🔗 https://www.reddit.com/r/EtsySellers/comments/1uyst22/about_25_of_profits_going_to_fees/
+Who: u/bacarruda53 — 2 months in, 30 orders, $157 revenue, posted their own Shop Stats screenshot.
+⚠️ r/EtsySellers has a ZERO-TOLERANCE rule on promoting seller tools — do NOT mention Welra. Pure value only.
 
-> Honest answer on the "one workflow" question: I don't think one exists, because these are two different jobs that go wrong when they live in the same spreadsheet.
->
-> Job 1 is unit economics — product cost, VAT/duties per destination, DDP, payment fees, a returns allowance. It changes rarely, so it deserves a careful sheet you only touch when a cost actually changes. Doing this per SKU per destination once beats re-deriving it monthly.
->
-> Job 2 is the weekly pulse — what sold, what moved, which channel did it. This one doesn't need decimals; it needs to be current, and it's the tab everyone (me included) lets go stale, which is exactly when the spreadsheet starts giving you wrong answers — you're making decisions off numbers from three weeks ago.
->
-> I ended up automating job 2 for my own small shop — a tool that emails me one clear weekly summary so the pulse doesn't depend on my discipline (it became welra.io, free right now). But tool or no tool, the split is the fix: separate the sheet that must be precise from the report that must be current, and never let one pretend to be the other.
+> 25% sounds high but it happens once Offsite Ads gets involved. Base Etsy fees run about 8-10% (listing plus transaction plus payment processing). Offsite Ads is on by default under $10k in trailing sales — there's a toggle to turn it off in Shop Manager > Settings > Offsite Ads, a lot of new sellers never find it. If any of those 30 orders went through an offsite ads click, that's another 15% on just those orders, and it adds up fast on a small order count. Check Shop Manager > Finances > Payment account to see which orders carried the fee. Worth noting: once a shop crosses $10k in trailing sales it becomes mandatory for good (drops to 12% but no more opting out), so it's worth turning off now if you don't want it, not later.
 
-*(When you've replied, tick the lead in Projects/Welra/Prospect_Radar.md or just tell Claude. Tomorrow 8:05am this block gets replaced with fresh leads.)*
+*(2 leads today — swept all 8 target subs; rejected a margin-calculator self-promo post, a likely-same-user repeat "spreadsheet scenarios" cross-post already covered 2026-07-15, and an off-pain career-strategy post. Quality over quota. When you've replied, tick the lead in Projects/Welra/Prospect_Radar.md or just tell Claude. Tomorrow 8:05am this block gets replaced with fresh leads.)*
 <!-- PROSPECT_RADAR_END -->
 
 ### 1. Send 3 warm DMs (~15 min) — THE task

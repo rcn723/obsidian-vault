@@ -2,11 +2,29 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-07-12 pm (report-scheduler week-boundary fix DEPLOYED + verified live — closes the 10-day R&R report gap)
+updated: 2026-07-17 (blog cadence fix — welra-weekly-blog scheduled task created; first post under the new mandatory double-review rule staged, not deployed)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-07-17 — Blog cadence gap found + fixed; new post staged (not deployed); standing double-review rule established
+
+Ryan asked for a blog post to be written from a pattern spotted in that day's prospect-radar sweep (two independent Reddit threads about tracking true profit when costs live outside the storefront platform), reviewed for AI-sounding phrasing, and for the cadence itself to be made reliable going forward.
+
+**Cadence gap found:** Content_Calendar.md's "Published so far" list had been stale since 2026-06-14 — 3 real posts had shipped without ever being logged there — and the actual gap between posts had quietly grown to 14 days (2026-07-03 → 2026-07-17) with nothing catching it. The calendar was planned as "weekly" but no scheduled task ever enforced that; posts only happened when the growth pipeline opportunistically picked "content" as an idea type.
+
+**Post staged (NOT deployed):** `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3), added to `posts.tsx`. Took 3 rounds of independent agent review to actually get clean: round 1 caught a **backwards factual claim** — the draft had Etsy's Offsite Ads $10k threshold reversed (verified against Etsy's own help pages: crossing $10k in trailing-12-month sales means mandatory enrollment at 12% no opt-out; staying under $10k means it's optional, default-on, at 15% — the draft had this exactly backwards) — plus repeated tricolon-list constructions. Round 2 (on the "fixed" draft) still found overuse of "actually" (7x), a duplicated "smaller deposit" phrase, and a mirrored "nothing's wrong" sentence template. Round 3 found two more subtle echoes. `tsc --noEmit` and `npm run build` both clean; dev-server-verified the rendered page and both internal links (200, zero console errors). Left uncommitted in the working tree per the stage-and-notify convention — **Ryan needs to review and run `npx vercel deploy --prod` from the repo root to ship it.**
+
+**Fixed:** Content_Calendar.md now lists all 5 real published posts correctly, with a note flagging the gap so it doesn't silently recur.
+
+**New standing rule (Ryan's explicit request):** every future blog post and external comms draft must pass at least 2 independent fresh-agent review passes for AI-sounding phrasing + primary-source fact-checking before shipping. Saved as [[feedback_double_review_external_comms]] (in Claude's cross-session memory) and wired directly into both the new `welra-weekly-blog` scheduled task and the existing `welra-growth-pipeline`'s content-routing step.
+
+**New scheduled task:** `welra-weekly-blog` (cron: Thursdays 8:24am local). Each run: checks for an already-staged-but-unapproved post first (won't pile up a second draft), picks the next Content_Calendar.md topic (rotating pillars), drafts, runs the mandatory double-review gate, validates (tsc/build/link-check/dev-server render check), stages in `posts.tsx`, and always notifies — never auto-deploys.
+
+**Incidental, self-resolved:** while verifying the post in a browser preview, an errant `cat > launch.json` command (mine) truncated `/Users/ryannortham/Desktop/Claude/.claude/launch.json` to empty before it had been read — a read-before-write miss on my part. It appears to have been repaired/restored by something outside this session (a system reminder showed it back with its prior `wordbloom` entry intact plus a corrected `welra-web` entry) — noting for the record, no vault action needed.
+
+**Scoreboard unchanged: 0 users / 0 revenue / Stripe TEST.**
 
 ## 2026-07-12 pm — Report-scheduler fix DEPLOYED + verified live
 
