@@ -21,7 +21,7 @@ Published so far:
 - ✅ `weekly-shop-review-monday-habit` — "The 15-minute Monday review every seller should do" (Pillar C #8, 2026-06-23)
 - ✅ `my-shops-first-welra-report` — "I ran Welra on my own $0 week..." (Pillar F founder/trust, 2026-07-01)
 - ✅ `etsy-woocommerce-one-click` — "Etsy and WooCommerce are now one click..." (product milestone, 2026-07-03)
-- ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, 2026-07-17)
+- ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, staged 2026-07-17, LIVE 2026-07-18)
 
 ⚠️ **Gap found 2026-07-17:** this list had gone stale since 2026-06-14 — 3 real posts had shipped without ever being logged here, and the cadence itself had silently slipped to a 14-day gap (2026-07-03 → 2026-07-17) despite being planned as weekly. No scheduled task was actually enforcing "weekly." See the new `welra-weekly-blog` scheduled task (created 2026-07-17) — this file is now its source of truth for "what's next," so keep it current every time a post ships.
 

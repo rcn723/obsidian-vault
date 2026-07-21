@@ -2,11 +2,15 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-07-17 (blog cadence fix — welra-weekly-blog scheduled task created; first post under the new mandatory double-review rule staged, not deployed)
+updated: 2026-07-18 (blog post "revenue vs. profit" DEPLOYED live — first post shipped under the new welra-weekly-blog cadence + double-review rule)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-07-18 — Blog post deployed live: "Your bestseller might be lying to you: revenue vs. profit"
+
+Ryan said "deploy it" after the weekly-blog task's approval packet. Ran the deploy-gate: no git drift (working tree matched origin/main aside from the staged post), committed the post (`c8c336f`) rather than deploying an uncommitted working tree, `tsc --noEmit` clean, `npm run build` green with `/blog/revenue-vs-profit-bestseller` in the route output. Deployed via `npx vercel deploy --prod`, aliased to `www.welra.io`. Verified live: `welra.io/blog/revenue-vs-profit-bestseller` 308→200 with correct title/content, both internal links (`how-to-read-your-etsy-stats`, `weekly-shop-review-monday-habit`) resolve 200. Pushed the commit to origin so git and production are back in sync. This is the first post shipped under the new `welra-weekly-blog` scheduled task + the mandatory double-review rule.
 
 ## 2026-07-17 — Blog cadence gap found + fixed; new post staged (not deployed); standing double-review rule established
 

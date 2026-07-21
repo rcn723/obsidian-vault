@@ -1,5 +1,21 @@
 # Claude Worklog
 
+## 2026-07-20 — Growth pipeline ran in maintenance mode, queue at 5 (unchanged)
+
+Scheduled `welra-growth-pipeline` run. Queue gate = 5 (same 5 tasks as prior runs: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). No Stage 1 ideation. Checked email (`newer_than:2d in:inbox`, zero threads), repo (clean, HEAD `c8c336f`, no drift), and live site (welra.io, api.welra.io/health, blog post all 200). Nothing broken, nothing to sharpen, no notification.
+
+## 2026-07-19 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep + IndieHackers/community.etsy.com); 15 rejected
+
+No post cleared the pain/quality bar today. Full sweep of r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce plus IndieHackers and community.etsy.com searches. Closest misses: a Shopify-app-developer tracking their own SaaS MRR (wrong audience), a checkout/conversion-funnel debugging thread (right sub, wrong pain shape), and a 2mo-old exact-match post outside the freshness window. Carried the 2 unanswered 2026-07-17 leads (Shopify profit-tracking, Etsy fee-shock) forward in `_RYAN_TODO.md` rather than orphaning them. Full rejected list in [[Projects/Welra/Prospect_Radar]].
+
+## 2026-07-18 (later) — Blog post deployed live: "Your bestseller might be lying to you: revenue vs. profit"
+
+Ryan said "deploy it." Ran the `deploy-gate` skill: Phase 1 found no drift vs origin/main (only the already-known uncommitted `posts.tsx` change) — committed it (`c8c336f`) instead of shipping an uncommitted working tree. Phase 2: `tsc --noEmit` clean, `npm run build` green with `/blog/revenue-vs-profit-bestseller` in the route list. Phase 3: `npx vercel deploy --prod` from the repo root, aliased to `www.welra.io`. Verified live — `welra.io/blog/revenue-vs-profit-bestseller` (apex 308→www 200) renders the correct title/content, both internal links (`how-to-read-your-etsy-stats`, `weekly-shop-review-monday-habit`) resolve 200. Pushed the commit to origin so git and prod match. Updated Content_Calendar.md (marked LIVE), Tasks.md P0 item closed, State.md. This is the first post shipped end-to-end under the new `welra-weekly-blog` cadence task and the mandatory double-review rule.
+
+## 2026-07-18 — Weekly blog task ran, found last week's post still unshipped, skipped (Step 0 gate)
+
+Scheduled `welra-weekly-blog` run. Step 0 check found `revenue-vs-profit-bestseller` still sitting uncommitted in `apps/web/src/app/blog/posts.tsx` (staged 2026-07-17, not yet deployed) — confirmed via `git status`/`git diff` on the Welra repo. Per this task's execution-debt guard, did not draft a second post on top of an unshipped one. No files needed correction: Content_Calendar.md, Tasks.md, State.md, and `_RYAN_TODO.md` (item 0) already all correctly reflect the staged-not-live state from the 2026-07-17 session. Nothing else changed. Next run should re-check the same gate before drafting anything new.
+
 ## 2026-07-17 (later) — Growth pipeline ran in maintenance mode again, queue at 6 (unchanged)
 
 Second scheduled `welra-growth-pipeline` run today. Queue gate unchanged at 6 (same items as the earlier run today, including the still-unresolved task 0 blog-post deploy). No seller/beta reply. Repo unchanged — same accounted-for uncommitted `posts.tsx`. Verified live sites healthy (welra.io 200, api.welra.io/health 200) and the staged blog post still correctly not live. Nothing broken, no new ideas, no notification. Full detail: [[Projects/Welra/Growth_Pipeline]] queue gate log.
@@ -1186,3 +1202,27 @@ Ryan picked support email games@welra.io. Filled into store/privacy.html + suppo
 ## 2026-07-17 (evening) — "My Person Watercolor" re-posted: root cause found + fixed
 
 Ryan flagged that the AI-drawn "my person" design (banned 2026-07-12) had been posted again. Root cause: the 2026-07-12 removal only patched the Mac's designs_log.json — never synced to the NAS's separate copy, which still said "published." Today's normal Friday 10am NAS market run picked it up and posted it live to Instagram, Pinterest, and TikTok (Facebook failed on its own pre-existing permission error). Fixed: NAS designs_log.json patched to status=removed (backup kept); static prompt deleted outright from agent.py on both Mac and NAS (compiles clean); confirmed via live Printify API the original 4 listings are still 404. Attempted automated deletion on all 3 platforms — all rejected (hard platform limitation, not our bug). Manual deletion steps (with direct IG link) handed to Ryan at the top of _RYAN_TODO.md. Open structural gap logged in Tasks.md: no sync mechanism between the Mac's and NAS's designs_log.json copies — any future manual removal must be applied to both by hand until that's built.
+
+## 2026-07-18 — Welra growth pipeline scheduled run (maintenance mode, queue at 5)
+
+Queue gate count dropped to 5 (from 6 on 2026-07-17) now that "Send 3 warm DMs" is fully checked off and the revenue-vs-profit blog post deploy is done. Maintenance mode per Stage 0 gate: no new ideas generated. Verified no drift (repo clean at `c8c336f`), no beta/seller email replies, and nothing broken (welra.io, api.welra.io/health, and the new blog post all confirmed live at 200). No notification sent — nothing to approve, no reply, nothing broken.
+
+## 2026-07-19 — Welra growth pipeline scheduled run (maintenance mode, queue at 5)
+
+Queue gate count unchanged at 5 from 2026-07-18. Maintenance mode per Stage 0 gate: no new ideas generated. Verified no drift (repo clean at `c8c336f`, in sync with origin), no beta/seller email replies (`newer_than:2d in:inbox`, zero threads), and nothing broken (welra.io, api.welra.io/health, and the blog post all confirmed live at 200 — one transient curl blip on the health check resolved on retry). No notification sent — nothing to approve, no reply, nothing broken.
+
+## 2026-07-19 — Welra growth pipeline 2nd scheduled run (maintenance mode, queue at 5)
+
+Queue gate count unchanged at 5 from the earlier run today. Maintenance mode per Stage 0 gate: no new ideas generated. Verified no drift (repo clean at `c8c336f`, in sync with origin), no beta/seller email replies (`newer_than:2d in:inbox`, zero threads), and nothing broken (welra.io, api.welra.io/health, and the blog post all confirmed live at 200 — apex-domain 308→www redirects are expected, not errors). No notification sent — nothing to approve, no reply, nothing broken.
+
+## 2026-07-20 — Welra Prospect Radar (scheduled task)
+
+Prospect Radar: 0 leads delivered (Reddit 8-sub sweep + IndieHackers + community.etsy.com); ~15 rejected across sources (repeats, wrong pain shape, competitor self-promo, wrong scale/audience). 2nd consecutive zero-new-lead day. The 2 unanswered leads from 2026-07-17 carried forward in `_RYAN_TODO.md` one final time (now 3-4 days old) — last day before Claude drops them as stale if unanswered. No recurring pain theme distinct enough this sweep to flag for a blog post.
+
+## 2026-07-20 — Welra growth pipeline 2nd scheduled run (maintenance mode, queue at 5)
+
+Queue gate count unchanged at 5 from the earlier run today. Maintenance mode per Stage 0 gate: no new ideas generated. Verified no drift (repo clean at `c8c336f`, in sync with origin), no beta/seller email replies (`newer_than:1d in:inbox`, zero threads), and nothing broken (welra.io, api.welra.io/health, and the blog post all confirmed live at 200). No notification sent — nothing to approve, no reply, nothing broken.
+
+## 2026-07-20 — Welra growth pipeline 3rd scheduled run (maintenance mode, queue at 5)
+
+Queue gate count unchanged at 5 from the earlier two runs today (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Maintenance mode per Stage 0 gate: no Stage 1 ideation. Verified no drift (repo clean at `c8c336f`, in sync with origin), no beta/seller email replies (`newer_than:1d in:inbox`, zero threads), and nothing broken (welra.io and the blog post both 308→200 expected redirect, api.welra.io/health 200 direct). No notification sent — nothing to approve, no reply, nothing broken.

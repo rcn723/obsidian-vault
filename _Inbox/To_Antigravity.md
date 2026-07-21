@@ -1,9 +1,13 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-17 (Blog post staged (revenue-vs-profit-bestseller) pending Ryan's deploy approval; blog cadence gap fixed with new welra-weekly-blog scheduled task; standing double-review rule established for all external comms. Prior: Prospect Radar 2 leads delivered, 4 rejected. Earlier: 2026-07-16 — 1 lead, 7 rejected. Earlier still: 2026-07-12 pm — Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified.)
+updated: 2026-07-18 (Blog post "revenue vs. profit" DEPLOYED live — welra.io/blog/revenue-vs-profit-bestseller verified 200, both internal links working, commit pushed to origin. First post shipped under the new welra-weekly-blog cadence task. Prior: 2026-07-17 — post staged, blog cadence gap fixed with new welra-weekly-blog scheduled task, standing double-review rule established for all external comms. Prior: Prospect Radar 2 leads delivered, 4 rejected. Earlier: 2026-07-16 — 1 lead, 7 rejected. Earlier still: 2026-07-12 pm — Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified.)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
 ---
+
+# To Antigravity — 2026-07-18 — Blog post DEPLOYED live
+
+Ryan said "deploy it" in response to the weekly-blog task's approval packet. Ran the `deploy-gate` skill: no drift vs origin/main (only the known uncommitted `posts.tsx` change, which was committed — `c8c336f` — rather than deployed straight from a dirty working tree), `tsc`/`build` clean, `npx vercel deploy --prod` from the repo root, aliased to `www.welra.io`. **Verified live:** `welra.io/blog/revenue-vs-profit-bestseller` (apex 308 → www 200) renders the correct title/content; both internal links (`how-to-read-your-etsy-stats`, `weekly-shop-review-monday-habit`) resolve 200. Pushed the commit to origin so git and prod match — nothing outstanding on this post anymore. Updated [[Projects/Welra/State]], [[Projects/Welra/Tasks]], [[Projects/Welra/Content_Calendar]], `_RYAN_TODO.md`, `Worklogs/Claude_Log.md`. This is the first post to go all the way from draft → double-review → stage → deploy under the new `welra-weekly-blog` scheduled task.
 
 # To Antigravity — 2026-07-17 (evening) — Blog post staged, blog cadence fixed, double-review rule established
 
@@ -394,3 +398,9 @@ Failure-mode-driven redesign shipped: Bloom Book (56-species deterministic flora
 
 ## 2026-07-17 (2nd growth-pipeline run today) — from Claude
 Maintenance mode again, queue unchanged at 6 (same items as the earlier run today). No reply, no drift, nothing broken (welra.io + api.welra.io/health both verified 200; staged blog post confirmed still not live). No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-18 (growth-pipeline scheduled run) — from Claude
+Maintenance mode, queue dropped to 5 (from 6) now that "Send 3 warm DMs" and the blog-post deploy are both fully done. No reply, no drift (repo clean at `c8c336f`), nothing broken (welra.io, api.welra.io/health, and the new blog post all verified 200). No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-20 (Prospect Radar scheduled run) — from Claude
+0 new leads today (2nd zero day in a row) after a full 8-sub Reddit sweep + IndieHackers/community.etsy.com. The 2 carried leads from 2026-07-17 are on their last day in `_RYAN_TODO.md` before being dropped as stale. Prospect_Radar.md, `_RYAN_TODO.md`, Claude_Log.md updated.
