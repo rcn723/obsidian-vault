@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-20 (📡 Prospect Radar: 2nd zero-new-lead day in a row — full 8-sub sweep, nothing cleared the bar. The 2 carried leads from 07-17 are on their last day before being dropped as stale. Prior (2026-07-18): 🅦 Blog post "Your bestseller might be lying to you: revenue vs. profit" DEPLOYED live at your "deploy it" — item 0 closed, nothing to do there anymore. Prior (2026-07-17 evening): 📡 Prospect Radar refreshed — 2 fresh Welra leads with paste-ready replies (a Shopify multi-channel profit-tracking thread + a new Etsy seller's fees question), refreshed daily 8:05am. Earlier: 2026-07-16 — 1 lead. Earlier still: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
+updated: 2026-07-21 (📡 Prospect Radar: 3rd zero-new-lead day in a row — full 8-sub sweep, nothing cleared the bar. The 2 carried leads from 07-17 are now dropped as stale, unanswered too long. Prior (2026-07-18): 🅦 Blog post "Your bestseller might be lying to you: revenue vs. profit" DEPLOYED live at your "deploy it" — item 0 closed, nothing to do there anymore. Prior (2026-07-17 evening): 📡 Prospect Radar refreshed — 2 fresh Welra leads with paste-ready replies (a Shopify multi-channel profit-tracking thread + a new Etsy seller's fees question), refreshed daily 8:05am. Earlier: 2026-07-16 — 1 lead. Earlier still: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. One item to double check: the Facebook Page website / Instagram bio link update didn't show up in a live check. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
 tags: [ryan, todo, live]
 ---
 	
@@ -56,24 +56,8 @@ You flagged that the AI-drawn "my person" design (the one you banned 2026-07-12 
 You said "deploy it." Live now at [welra.io/blog/revenue-vs-profit-bestseller](https://welra.io/blog/revenue-vs-profit-bestseller), verified 200 with correct content, both internal links working. Nothing left to do here.
 
 <!-- PROSPECT_RADAR_START -->
-### 📡 Today's Welra prospects (2026-07-20) — reply as yourself, ~5 min each
-*No new leads cleared the bar again today — full 8-sub sweep + IndieHackers/community.etsy.com, nothing fresh matched. These 2 are now 3-4 days old — last call before Claude drops them as stale. Worth 5 min today if you can.*
-
-**1. Shopify merchant asking how to track true profit when costs live outside Shopify — posted 4 days ago**
-🔗 https://www.reddit.com/r/shopify/comments/1uyeutu/how_are_you_calculating_profit_when_the_costs/
-Who: u/IncreaseNegative4614 — ad spend scattered across platforms, product costs change, refunds land late; asking how merchants connect it all without another fragile spreadsheet.
-⚠️ AutoModerator in this exact thread has already deleted 2 comments for containing "services, sites, or terms" — treat as value-only, do NOT name Welra or link anything here or the reply likely gets auto-removed.
-
-> I ran into the same wall on my own shop. Ad spend's in one place, product cost changes, refunds land days later, and by the time you piece it together the month's basically over. What helped was picking one number to check weekly instead of the full P&L — profit per unit sold that week. Doesn't need to be exact to the penny, just close enough to catch a bad week early. The spreadsheet still exists honestly, it's just smaller now.
-
-**2. Brand-new Etsy sticker seller asking if losing 25% of profit to fees is normal — posted 3 days ago**
-🔗 https://www.reddit.com/r/EtsySellers/comments/1uyst22/about_25_of_profits_going_to_fees/
-Who: u/bacarruda53 — 2 months in, 30 orders, $157 revenue, posted their own Shop Stats screenshot.
-⚠️ r/EtsySellers has a ZERO-TOLERANCE rule on promoting seller tools — do NOT mention Welra. Pure value only.
-
-> 25% sounds high but it happens once Offsite Ads gets involved. Base Etsy fees run about 8-10% (listing plus transaction plus payment processing). Offsite Ads is on by default under $10k in trailing sales — there's a toggle to turn it off in Shop Manager > Settings > Offsite Ads, a lot of new sellers never find it. If any of those 30 orders went through an offsite ads click, that's another 15% on just those orders, and it adds up fast on a small order count. Check Shop Manager > Finances > Payment account to see which orders carried the fee. Worth noting: once a shop crosses $10k in trailing sales it becomes mandatory for good (drops to 12% but no more opting out), so it's worth turning off now if you don't want it, not later.
-
-*(0 new leads today — 2nd zero-lead day in a row. These 2 carried from 2026-07-17 are now on their last day before Claude drops them as stale and unanswered. See Projects/Welra/Prospect_Radar.md for the full rejected list each day. When you've replied, tick the lead in Projects/Welra/Prospect_Radar.md or just tell Claude. Tomorrow this block gets replaced with fresh leads.)*
+### 📡 Today's Welra prospects (2026-07-22) — nothing today
+*4th consecutive zero-lead day. Full 8-sub Reddit sweep + IndieHackers + community.etsy.com, nothing fresh matched the pain criteria closely enough — see rejected list in Projects/Welra/Prospect_Radar.md for the 2026-07-22 entry. Closest calls: an r/ecommerce "profit per product" thread (real pain, but OP turned out to be a dev doing market research, and the thread was already flooded with 3+ competing DIY-tool pitches) and an r/smallbusiness order-intake thread (real pain, wrong category — not analytics). Nothing actionable here today.*
 <!-- PROSPECT_RADAR_END -->
 
 ### 1. Send 3 warm DMs (~15 min) — THE task
