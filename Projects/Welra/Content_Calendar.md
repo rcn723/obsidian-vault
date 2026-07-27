@@ -2,7 +2,7 @@
 title: Welra Content Calendar
 project: Welra
 type: content-plan
-updated: 2026-07-17
+updated: 2026-07-24
 tags: [welra, blog, content, seo, marketing]
 ---
 
@@ -21,9 +21,12 @@ Published so far:
 - ✅ `weekly-shop-review-monday-habit` — "The 15-minute Monday review every seller should do" (Pillar C #8, 2026-06-23)
 - ✅ `my-shops-first-welra-report` — "I ran Welra on my own $0 week..." (Pillar F founder/trust, 2026-07-01)
 - ✅ `etsy-woocommerce-one-click` — "Etsy and WooCommerce are now one click..." (product milestone, 2026-07-03)
-- ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, staged 2026-07-17, LIVE 2026-07-18)
+- ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, LIVE 2026-07-18)
+- ✅ `printify-profit-margin-math` — "Print-on-demand math: what Printify's dashboard won't tell you" (Pillar B #6, LIVE 2026-07-24 — Ryan said "ship it" same day)
 
 ⚠️ **Gap found 2026-07-17:** this list had gone stale since 2026-06-14 — 3 real posts had shipped without ever being logged here, and the cadence itself had silently slipped to a 14-day gap (2026-07-03 → 2026-07-17) despite being planned as weekly. No scheduled task was actually enforcing "weekly." See the new `welra-weekly-blog` scheduled task (created 2026-07-17) — this file is now its source of truth for "what's next," so keep it current every time a post ships.
+
+Reconciled 2026-07-24: cross-checked this list against the actual `posts` array in `posts.tsx` — the two agreed (6 posts, no drift) before this run added the 7th.
 
 ## How to run it (cadence)
 
@@ -52,7 +55,7 @@ free report, internal-link to 1–2 prior posts.
 | # | Working title | Angle / hook | Search intent |
 |---|---|---|---|
 | 5 | Selling on Etsy and Shopify at once: what to track on each | Each channel's job; don't read them the same way | selling on etsy and shopify at the same time |
-| 6 | Print-on-demand math: what Printify's dashboard won't tell you | Calculating true POD margin after fees | printify profit margin tracking |
+| 6 | ✅ Print-on-demand math: what Printify's dashboard won't tell you (LIVE 2026-07-24, slug `printify-profit-margin-math`) | Calculating true POD margin after fees | printify profit margin tracking |
 | 7 | When to add a new sales channel — and when it's a trap | A simple test before you spread yourself thin | should i sell on multiple platforms |
 
 ## Pillar C — The weekly operating habit

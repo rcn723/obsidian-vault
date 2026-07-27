@@ -1,9 +1,17 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-07-18 (Blog post "revenue vs. profit" DEPLOYED live — welra.io/blog/revenue-vs-profit-bestseller verified 200, both internal links working, commit pushed to origin. First post shipped under the new welra-weekly-blog cadence task. Prior: 2026-07-17 — post staged, blog cadence gap fixed with new welra-weekly-blog scheduled task, standing double-review rule established for all external comms. Prior: Prospect Radar 2 leads delivered, 4 rejected. Earlier: 2026-07-16 — 1 lead, 7 rejected. Earlier still: 2026-07-12 pm — Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified.)
+updated: 2026-07-26 (Prospect Radar: 0 leads, 8th consecutive zero-lead day — one full week plus one at zero. community.etsy.com now confirmed dead via two separate URL approaches. Streak note now recommends Ryan make an explicit call on the daily sweep, 4th day running. Prior (2026-07-25): 7th zero-lead day, one full week at zero. Prior: 2026-07-18 — Blog post "revenue vs. profit" DEPLOYED live — welra.io/blog/revenue-vs-profit-bestseller verified 200, both internal links working, commit pushed to origin. First post shipped under the new welra-weekly-blog cadence task. Prior: 2026-07-17 — post staged, blog cadence gap fixed with new welra-weekly-blog scheduled task, standing double-review rule established for all external comms. Prior: Prospect Radar 2 leads delivered, 4 rejected. Earlier: 2026-07-16 — 1 lead, 7 rejected. Earlier still: 2026-07-12 pm — Welra report fix DEPLOYED live; R&R Pinterest reconnected + verified.)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
 ---
+
+# To Antigravity — 2026-07-26 — Prospect Radar: 8th zero-lead day, one full week plus one at zero
+
+Scheduled `welra-daily-prospect-radar` run. Full sweep of all 8 target subs (2 query variations each this time) + IndieHackers + community.etsy.com — nothing cleared the pain/quality bar. Closest misses: an r/smallbusiness order-intake-dedup thread (real, specific pain — shipped a duplicate order from spreadsheet confusion — but the fix is a CRM/order-queue problem, not sales analytics, so it's not a Welra fit) and an r/woocommerce ad-spend-tracking thread (exact pain shape but 1mo old, already thoroughly answered, and agency-scale 4-platform ad attribution rather than a solo seller's weekly summary). `community.etsy.com` is now confirmed dead via two separate URL approaches (search endpoint + direct forum-browse URL, both 404); IndieHackers' search returns an empty client-rendered shell. Updated [[Projects/Welra/Prospect_Radar]], `_RYAN_TODO.md`, `Worklogs/Claude_Log.md`. The streak note (now written 4 days running) recommends Ryan make an explicit decision next time he's in this file: keep the sweep as-is, loosen the bar, add sources, or pause/redirect — rather than letting it continue unchanged at zero.
+
+# To Antigravity — 2026-07-25 — Prospect Radar: 7th zero-lead day, one full week at zero
+
+Scheduled `welra-daily-prospect-radar` run. Full sweep of all 8 target subs + IndieHackers + community.etsy.com — nothing cleared the pain/quality bar. Closest misses: an r/smallbusiness jewelry-inventory thread (real pain, wrong shape — per-item COGS not multi-channel sales analytics — thread already flooded with 3+ competing tool pitches incl. a likely alt-account self-promo) and a one-off Printify pop-up-shop wedding-shirt shipping question (wrong scale entirely). `community.etsy.com`'s search URL 404'd for the 3rd sweep running — that source is effectively dead until someone finds a working entry point. Updated [[Projects/Welra/Prospect_Radar]], `_RYAN_TODO.md`, `Worklogs/Claude_Log.md`. The streak note (now written 3 days running) recommends Ryan make an explicit decision next time he's in this file: keep the sweep as-is, loosen the bar, add sources, or pause/redirect — rather than letting it continue unchanged at zero.
 
 # To Antigravity — 2026-07-18 — Blog post DEPLOYED live
 
@@ -413,3 +421,30 @@ Projects/Welra/Prospect_Radar.md and _RYAN_TODO.md updated: 4th consecutive zero
 
 ## 2026-07-22 (2nd growth-pipeline run today) — from Claude
 Maintenance mode again, queue unchanged at 5 (same items as the earlier run today). No reply, no drift, nothing broken (welra.io, api.welra.io/health, blog post all verified 200). No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-23 — Welra Prospect Radar update
+Projects/Welra/Prospect_Radar.md, _RYAN_TODO.md, and Claude_Log.md updated: 5th consecutive zero-lead day, no leads carried forward. Flagged a decision point for Ryan (keep sweeping / loosen bar / expand sources / redirect effort) rather than deciding unilaterally. No action needed from Antigravity side, just a state sync.
+
+## 2026-07-23 (2nd growth-pipeline run today) — from Claude
+Maintenance mode again, queue unchanged at 5 (same 5 items as the earlier run today — Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). No reply, nothing broken (welra.io, api.welra.io/health, blog post all verified). One new signal: repo now has an uncommitted +153-line draft blog post (`printify-profit-margin-math`, dated today) in `apps/web/src/app/blog/posts.tsx` with no matching trace in State/Tasks/Claude_Log — flagged, not touched, doesn't affect the live site (HEAD unchanged, in sync with origin). No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-24 — Welra Prospect Radar update
+Projects/Welra/Prospect_Radar.md, _RYAN_TODO.md, and Claude_Log.md updated: 6th consecutive zero-lead day, no leads carried forward. Streak flag reinforced for Ryan (keep sweeping / loosen bar / expand sources / redirect effort) rather than deciding unilaterally. No action needed from Antigravity side, just a state sync.
+
+## 2026-07-24 (growth-pipeline run) — from Claude
+Maintenance mode again, queue unchanged at 5 since 2026-07-18 (Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). No reply, nothing broken (welra.io, api.welra.io/health, blog post all verified 200). The uncommitted `printify-profit-margin-math` draft in `apps/web/src/app/blog/posts.tsx` (first flagged 2026-07-23) is still untraced in State/Tasks/Claude_Log — now a 3rd consecutive run flagging it, still untouched (belongs to `welra-weekly-blog`'s authorship+review gate, not this pipeline; live site unaffected). No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-24 (weekly-blog run) — from Claude
+This run's Step 0 found the Welra repo clean (HEAD `c8c336f`, in sync with origin, no uncommitted `posts.tsx` diff) — which does NOT match the last 3 growth-pipeline entries above flagging an untraced uncommitted `printify-profit-margin-math` draft at that same HEAD. Either that earlier draft was cleaned up before this run started, or those flags were themselves mistaken; not resolved with certainty, noted for the record. This run authored its own new draft from scratch — same slug, coincidentally, since it's the deterministic next pillar-rotation pick — went through 6 independent AI-phrasing/fact-check review passes (not the full required 2-consecutive-clean; 6 real issues found and fixed but the confirming pass wasn't completed), validated clean (`tsc`, build, links, render), and is now staged uncommitted in the Welra repo awaiting Ryan's approve+deploy. Content_Calendar.md, Tasks.md, State.md, Claude_Log.md, and `_RYAN_TODO.md` (item 0) all updated. The "untraced draft" flag in the growth-pipeline's chain should now be considered resolved/superseded by this entry.
+
+## 2026-07-24 (deploy) — from Claude
+Welra blog post "Print-on-demand math: what Printify's dashboard won't tell you" is now LIVE at welra.io/blog/printify-profit-margin-math (Ryan said "ship it," deploy-gate run, verified 200 with both internal links working). Content_Calendar.md, Tasks.md, State.md, Claude_Log.md, and `_RYAN_TODO.md` all updated to reflect live status — supersedes this morning's "staged, awaiting approval" entries.
+
+## 2026-07-25 (growth-pipeline run) — from Claude
+Maintenance mode again, queue unchanged at 5 since 2026-07-18 (Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). No reply, nothing broken (welra.io, api.welra.io/health, both blog posts all verified 200). The previously-flagged untraced draft is now fully resolved: committed (`f974c93`), deployed live 2026-07-24, traced in every vault file — no further action needed on that thread. No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-26 (growth-pipeline run) — from Claude
+Maintenance mode again, queue unchanged at 5 since 2026-07-18 (Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo clean at `f974c93`, no drift since 2026-07-25. Email checked (`newer_than:3d in:inbox`) — zero threads of any kind this time, no reply signal. Nothing broken (welra.io, api.welra.io/health, latest blog post all verified). No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-07-26 evening (growth-pipeline run) — from Claude
+Next scheduled firing same day, same result: maintenance mode, queue = 5 (unchanged since 2026-07-18, same 5 tasks). Repo still clean at `f974c93`. Email checked (`newer_than:1d in:inbox`) — zero threads. Nothing broken (welra.io 308, api.welra.io/health 200). No notification. Growth_Pipeline.md + Claude_Log.md updated.

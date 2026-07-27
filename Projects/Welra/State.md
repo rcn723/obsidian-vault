@@ -2,11 +2,25 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-07-18 (blog post "revenue vs. profit" DEPLOYED live — first post shipped under the new welra-weekly-blog cadence + double-review rule)
+updated: 2026-07-24 (blog post "Print-on-demand math" DEPLOYED live — Ryan said "ship it")
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-07-24 (later) — Blog post deployed live: "Print-on-demand math: what Printify's dashboard won't tell you"
+
+Ryan said "ship it." Ran the deploy-gate: `git status` clean (only the one staged file), no drift either direction against origin/main. Committed the post (`f974c93`), re-ran `tsc --noEmit` and `npm run build` clean on the committed state — no arch-review needed (content-only change, no schema/env/auth/payments/Dockerfile touched) and no first-person claims to trace (post stays in general seller voice throughout). Pushed to origin/main, deployed via `npx vercel deploy --prod`, aliased to `www.welra.io`. Verified live: `welra.io/blog/printify-profit-margin-math` 308→200 with the correct title, both internal links (`revenue-vs-profit-bestseller`, `etsy-woocommerce-one-click`) 200, slug present on the blog index. This is post #7 under the `welra-weekly-blog` cadence and the second post shipped since the double-review rule was established.
+
+## 2026-07-24 (earlier) — Blog post staged (not deployed): "Print-on-demand math: what Printify's dashboard won't tell you"
+
+Weekly `welra-weekly-blog` scheduled task run. Step 0 check was clean — working tree matched origin/main, no prior week's post sitting unapproved, and `posts.tsx`'s 6 slugs matched Content_Calendar.md's "Published so far" list exactly (no drift). Picked Pillar B #6 ("Print-on-demand math," search intent "printify profit margin tracking") — Pillar A was the immediately prior post so it was excluded by the rotation rule, and Prospect_Radar.md had an explicit "recurring theme worth a future blog post" note about profit-per-product/multi-channel cost pain, which Pillar B (unused until now) directly answers.
+
+Every external fact was fetched live from primary sources before writing: printify.com/pricing (no % commission, Premium $39/mo or $24.99/mo annual with up to 33% off base costs), printify.com/blog/t-shirt-pricing-calculator (the calculator explicitly excludes platform transaction fees, payment processing, and subscription costs; 40% margin is the 2026 apparel benchmark; recommends a 5–8% buffer), and shopify.com/pricing (Basic/Grow/Advanced online card rates 2.9%/2.7%/2.5%, all +30¢). Etsy's 6.5% + ~3%+$0.25 figures reused from the already-cited `revenue-vs-profit-bestseller` post for internal consistency.
+
+**Double-review gate — ran long, cut short before the standing bar was fully met.** 6 independent fresh-agent passes ran (not the required minimum of 2 — the draft kept surfacing new issues): pass 1 caught a real arithmetic error (the worked example's margin math didn't match Printify's own cost÷(1−margin) formula) plus an unverifiable first-person anecdote and repeated list constructions — all fixed. Pass 2 caught "actually" used 7x (including in 2 of 5 headings) and a repeated "Printify's screen" metaphor 4x — fixed. Pass 3 caught "Printify's own [noun]" repeated 5x — fixed. **Pass 4 came back a clean PASS** — first clean read, with facts/arithmetic independently re-verified and confirmed correct. Pass 5, run to get the required second consecutive clean pass, instead caught a real factual error: the draft said Printify "earns its money on the markup between what it charges you and what you charge your customer" — this describes the *seller's* markup, not Printify's, and contradicts Printify's own pricing-page language ("margin on the product fulfillment price") cited one sentence earlier. Fixed. Pass 6 came back FAIL again, this time on style only (facts/math re-confirmed clean a third time) — a repeated "...is yours" sentence ending, three sections all closing on the same "___, not ___" contrastive beat, and a tricolon list shape reused 3x. All were fixed. **A pass 7 was starting when the session was told to move on**, so the standing "two consecutive clean passes" bar was not formally closed — the post has been through 6 real fixes (the last one purely stylistic, not factual) but not the confirming second clean read. Flagged plainly in Tasks.md so this isn't silently treated as fully gated.
+
+`tsc --noEmit` clean, `npm run build` succeeded with `/blog/printify-profit-margin-math` in the static route output, dev server confirmed both internal links (`/blog/revenue-vs-profit-bestseller`, `/blog/etsy-woocommerce-one-click`) return 200, zero console errors, screenshot confirmed correct rendering matching house style. Left uncommitted in the working tree per the stage-and-notify convention. Content_Calendar.md updated: Pillar B #6 marked ✅, "Published so far" list now has 7 entries with `printify-profit-margin-math` noted as STAGED, and the list was re-reconciled against `posts.tsx` (agreed before this run added the 7th).
 
 ## 2026-07-18 — Blog post deployed live: "Your bestseller might be lying to you: revenue vs. profit"
 

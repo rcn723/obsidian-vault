@@ -1,5 +1,17 @@
 # Claude Worklog
 
+## 2026-07-26 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep, 2 query variations each + IndieHackers/community.etsy.com); 8th zero-lead day in a row
+
+No post cleared the pain/quality bar today — a full week plus one at zero now. Full sweep with two query variations per subreddit. Closest misses: an r/smallbusiness order-intake-dedup thread (real, specific pain — shipped a duplicate order from spreadsheet confusion — but the fix is a CRM/order-queue problem, not sales analytics) and an r/woocommerce ad-spend-tracking thread (exact pain shape but 1mo old, already answered, and agency-scale 4-platform attribution rather than a solo seller's weekly summary). Confirmed community.etsy.com dead via two separate URL approaches (search + direct forum browse, both 404); IndieHackers' search returns an empty client-rendered shell. Streak note in `_RYAN_TODO.md` and [[Projects/Welra/Prospect_Radar]] raises the same flag for the 4th consecutive day — recommending Ryan pick an explicit option (keep as-is / loosen bar / add subreddits / pause) rather than letting it run unchanged.
+
+## 2026-07-25 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep + IndieHackers/community.etsy.com); 7th zero-lead day in a row
+
+No post cleared the pain/quality bar today — a full week at zero now. Full sweep of r/EtsySellers, r/Etsy, r/printify, r/printondemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce plus IndieHackers and community.etsy.com. Closest misses: an r/smallbusiness jewelry-inventory-tracking thread (real pain, wrong shape — per-item COGS not multi-channel sales analytics — and already flooded with 3+ competing tool pitches incl. a likely alt-account self-promo) and a one-off Printify pop-up-shop shipping question (wedding order, not an ongoing shop). community.etsy.com's search URL 404'd for the 3rd straight sweep — that source is effectively broken. Streak note in `_RYAN_TODO.md` and [[Projects/Welra/Prospect_Radar]] now recommends Ryan make an explicit call on continuing as-is vs. adjusting the sweep.
+
+## 2026-07-23 — Growth pipeline ran in maintenance mode, queue at 5 (unchanged)
+
+Scheduled `welra-growth-pipeline` run. Queue gate = 5, unchanged from 2026-07-22 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). No Stage 1 ideation. Checked email (`newer_than:1d in:inbox` and a `newer_than:2d` pass excluding Qwoted/SourceBottle — zero threads either way, no reply signal). Repo clean, HEAD still `c8c336f`, in sync with origin, no drift since 2026-07-22. Live-site check: welra.io 308→200, api.welra.io/health 200, blog post 308→200 — all resolve past the expected apex redirect. Nothing broken, nothing to sharpen, no notification.
+
 ## 2026-07-20 — Growth pipeline ran in maintenance mode, queue at 5 (unchanged)
 
 Scheduled `welra-growth-pipeline` run. Queue gate = 5 (same 5 tasks as prior runs: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). No Stage 1 ideation. Checked email (`newer_than:2d in:inbox`, zero threads), repo (clean, HEAD `c8c336f`, no drift), and live site (welra.io, api.welra.io/health, blog post all 200). Nothing broken, nothing to sharpen, no notification.
@@ -1246,3 +1258,59 @@ Pipeline ran in maintenance mode, queue at 5. Same 5 tasks unchanged from 2026-0
 ## 2026-07-22 — Welra growth pipeline 2nd scheduled run (maintenance mode, queue at 5)
 
 Queue gate count unchanged at 5 from the earlier run today (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Maintenance mode per Stage 0 gate: no Stage 1 ideation. Verified no drift (repo clean at `c8c336f`, in sync with origin), no beta/seller email replies (`newer_than:1d in:inbox`, zero threads), and nothing broken (welra.io, api.welra.io/health, and the blog post all confirmed live at 200). No notification sent — nothing to approve, no reply, nothing broken.
+
+## 2026-07-23 — Welra Prospect Radar (scheduled task run)
+
+Prospect Radar: 0 leads delivered (full sweep of r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce + IndieHackers + community.etsy.com); ~20 candidates rejected (repeats, off-target pain shapes, or already-saturated/well-answered threads). 5th consecutive zero-lead day. Flagged a decision point in Prospect_Radar.md for Ryan: keep sweeping as-is, loosen the bar, expand sources, or redirect the daily radar effort — not decided unilaterally.
+
+## 2026-07-23 — Welra growth pipeline 2nd scheduled run (maintenance mode, queue at 5)
+
+Queue gate count unchanged at 5 from the earlier run today (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList; the earlier 2026-07-23 run's queue-gate-log entry exists in Growth_Pipeline.md but was never mirrored here — noting the gap, not backfilling it). Maintenance mode per Stage 0 gate: no Stage 1 ideation. Repo check surfaced something new: `apps/web/src/app/blog/posts.tsx` now has an uncommitted +153-line draft post (`printify-profit-margin-math`, dated today), not present at the earlier run today and with no matching entry in State.md/Tasks.md/this log — unlike the 2026-07-17 precedent where a similar mid-run draft was fully traceable to a logged, reviewed session. Left untouched (content authorship is `welra-weekly-blog`'s job, and the standing double-review-before-staging rule means an untraced draft shouldn't be assumed clean); HEAD unchanged at `c8c336f`, in sync with origin, so the live site is unaffected. No beta/seller email replies (`newer_than:7d in:inbox`, zero threads), and nothing broken (welra.io + blog post both 308 expected redirect, api.welra.io/health 200). No notification sent — nothing to approve, no reply, nothing broken; the untraced draft is flagged in Growth_Pipeline.md for whoever picks up `welra-weekly-blog`'s thread next.
+
+## 2026-07-24 — Welra Prospect Radar (scheduled task run)
+
+Prospect Radar: 0 leads delivered (full sweep of r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce + IndieHackers + community.etsy.com); ~28 candidates rejected. Two closest calls both fell short on verification: an r/EtsySellers "why does it never show views" thread was a stats-terminology mixup already answered, and an r/smallbusiness tracking post was posted by an analytics-consultant account and reads as content marketing, not genuine pain. 6th consecutive zero-lead day. Reinforced (not just repeated) the streak flag in Prospect_Radar.md for Ryan to decide: keep sweeping as-is, loosen the bar, expand sources, or redirect the daily radar effort.
+
+## 2026-07-24 — Welra Growth Pipeline (scheduled task run)
+
+Queue gate count unchanged at 5, same as every run since 2026-07-18 (Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Maintenance mode per Stage 0 gate: no Stage 1 ideation. Repo unchanged from the 2026-07-23 runs — same one uncommitted `apps/web/src/app/blog/posts.tsx` draft (`printify-profit-margin-math`), still with no matching entry in State.md/Tasks.md/this log; now flagged untraced for a 3rd consecutive run. Left untouched — that content's authorship and double-review gate belong to `welra-weekly-blog`, not this pipeline. HEAD unchanged at `c8c336f`, in sync with origin; live site unaffected (welra.io 200, api.welra.io/health 200, blog post 200 — nothing broken). No beta/seller email replies (`newer_than:2d in:inbox`, zero threads). No notification sent — nothing to approve, no reply, nothing broken. Full detail: [[Projects/Welra/Growth_Pipeline]] queue gate log.
+
+## 2026-07-24 — Welra Weekly Blog (scheduled task run): "Print-on-demand math" staged
+
+Step 0 check was clean: `git status` in the Welra repo showed a clean working tree, in sync with origin/main at `c8c336f`, no uncommitted `posts.tsx` diff — so this run proceeded to draft a new post rather than stopping. **Note for Ryan:** the prior 3 growth-pipeline log entries in this file (2026-07-23 ×2, 2026-07-24) flagged an untraced uncommitted `posts.tsx` draft with this exact same slug (`printify-profit-margin-math`) sitting in the working tree at HEAD `c8c336f` — the same commit this run also found clean. Either that earlier draft was cleaned up (by you or another session) before this run started, or those observations were themselves mistaken; this run's draft was authored from scratch this session and is not a continuation of whatever the growth pipeline saw. Flagging rather than asserting either explanation.
+
+Picked Pillar B #6 ("Print-on-demand math: what Printify's dashboard won't tell you," search intent "printify profit margin tracking") — excluded Pillar A since it was the immediately-prior post, and chose Pillar B over Pillar D (both unused) because `Prospect_Radar.md` had an explicit "recurring theme worth a future blog post" note about profit-per-product/multi-channel cost pain that Pillar B answers directly. Every external fact was fetched live before writing (printify.com/pricing, printify.com/blog/t-shirt-pricing-calculator, shopify.com/pricing); Etsy's fee figures reused from the already-cited `revenue-vs-profit-bestseller` post.
+
+**Double-review gate took 6 passes, not the standing minimum of 2, and wasn't formally closed.** Pass 1: arithmetic error in the worked example (didn't match Printify's own cost÷(1−margin) formula) + unverifiable first-person anecdote + repeated lists — fixed. Pass 2: "actually" used 7×, a repeated "Printify's screen" metaphor 4× — fixed. Pass 3: "Printify's own [noun]" repeated 5× — fixed. Pass 4: clean PASS, facts/arithmetic independently re-verified. Pass 5 (run to confirm the required second consecutive clean pass): caught a real factual error — the draft described Printify's earnings as the seller's retail markup rather than Printify's own base-cost markup, contradicting the source cited one sentence earlier — fixed. Pass 6: FAIL again, style only (facts/math re-confirmed clean a third time) — a repeated "...is yours" sentence ending, three sections closing on the same "___, not ___" beat, and a reused tricolon shape — fixed. A pass 7 was starting when this session was told to move on, so **the standing "two consecutive clean passes" bar was not formally met** — 6 real fixes landed (the last purely stylistic), but the confirming second clean read never completed. Logged plainly in Tasks.md so Ryan doesn't treat this as fully gated.
+
+Also caught and fixed a dating slip: the draft and all vault entries initially used 2026-07-23 instead of today's actual 2026-07-24; corrected throughout (post metadata, Content_Calendar.md, Tasks.md, State.md) before finishing.
+
+`tsc --noEmit` clean, `npm run build` succeeded with `/blog/printify-profit-margin-math` in the route output, dev server confirmed both internal links 200 with zero console errors, screenshot confirmed correct rendering. Staged uncommitted in the Welra repo per convention — not committed, not deployed. Content_Calendar.md, Tasks.md, and State.md updated; `_RYAN_TODO.md` and `_Inbox/To_Antigravity.md` next.
+
+## 2026-07-24 (later) — Welra blog post deployed live: "Print-on-demand math"
+
+Ryan said "ship it." Ran the deploy-gate: `git status` clean (only the staged post, no drift against origin/main in either direction). Committed (`f974c93`), re-verified `tsc --noEmit` and `npm run build` clean on the committed state (no arch-review needed — content-only change, nothing touching schema/env/auth/payments/Dockerfile; no first-person claims to trace since the post stays in general seller voice). Pushed to origin/main, deployed via `npx vercel deploy --prod`, aliased to `www.welra.io`. Verified live: `welra.io/blog/printify-profit-margin-math` redirects 308→200 with the correct title, both internal links (`revenue-vs-profit-bestseller`, `etsy-woocommerce-one-click`) return 200, and the slug appears on the blog index.
+
+This is the 7th post under the `welra-weekly-blog` cadence and the 2nd shipped since the double-review rule was established. Scoreboard note (Welra, honest): still 0 paying customers / 0 revenue / Stripe test mode — this run was a content/cadence milestone, not a growth milestone. Standing process note carried forward from the staging entry earlier today: the double-review gate ran 6 passes instead of the required 2-consecutive-clean, and the formal close-out was never completed (session moved to deploy instead) — facts/arithmetic were independently re-confirmed clean 3 times, so the deployed content is well-scrutinized, but worth remembering that an interrupted review loop should be explicitly waived by Ryan next time rather than quietly treated as satisfied.
+
+Content_Calendar.md, Tasks.md, State.md, `_RYAN_TODO.md` (item 0), and `_Master_Tasks.md`'s Welra snapshot row all updated to reflect LIVE status. Git/deploy drift check clean post-deploy (`git status` empty, no commits ahead/behind origin).
+
+## 2026-07-25 — Welra growth pipeline: maintenance mode, drift resolved, no notification
+
+Scheduled run. Queue gate = 5 (unchanged since 2026-07-18) → maintenance mode, no Stage 1 ideas added. Confirmed the blog-draft drift flagged for 3 consecutive prior runs is now fully resolved: committed (`f974c93`), deployed live 2026-07-24 by the concurrent `welra-weekly-blog` session, traced in all vault files. Git clean, in sync with origin. Live-site check clean (welra.io, api.welra.io/health, both blog posts all 200). Email check: zero threads in the last 48h, no reply signal. Nothing broken, nothing to ship — exited quietly.
+
+## 2026-07-25 — Welra growth pipeline: 2nd run same day, no change, no notification
+
+Second scheduled run today (recurring every 6h). Queue gate re-checked = 5 → maintenance mode confirmed. Repo still clean at `f974c93`, in sync with origin. Email still zero threads in the last 48h. No drift, nothing broken, nothing new — exited quietly, no notification.
+
+## 2026-07-25 — Welra growth pipeline: 3rd run same day, no change, no notification
+
+Third scheduled run today (recurring every 6h). Queue gate re-checked = 5 → maintenance mode confirmed. Repo still clean at `f974c93`, in sync with origin, no concurrent-session commits. Email checked (17 unread, last 3 days) — all Qwoted/SourceBottle/BetaList newsletter noise, zero beta signups or outreach replies. Nothing broken, nothing new — exited quietly, no notification.
+
+## 2026-07-26 — Welra growth pipeline: maintenance mode, no change, no notification
+
+Scheduled run. Queue gate re-checked = 5 (unchanged since 2026-07-18) → maintenance mode, no Stage 1 ideas added. Repo clean at `f974c93`, 0 ahead/behind origin, no drift since 2026-07-25. Email checked (`newer_than:3d in:inbox`) — zero threads of any kind this time, no reply signal, no noise either. Live-site check clean (welra.io 308, api.welra.io/health 200, latest blog post 308 — all expected). Nothing broken, nothing to ship — exited quietly.
+
+## 2026-07-26 evening — Welra growth pipeline: maintenance mode, no change, no notification
+
+Next scheduled firing same day. Queue gate re-checked = 5, same 5 tasks as the morning run. Repo still clean at `f974c93`, in sync with origin. Email checked (`newer_than:1d in:inbox`) — zero threads. Live-site check clean (welra.io 308, api.welra.io/health 200). Nothing broken, nothing new since the morning run — exited quietly, no notification.

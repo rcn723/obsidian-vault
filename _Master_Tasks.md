@@ -60,13 +60,13 @@ SORT length(filter(file.tasks, (t) => !t.completed)) DESC
 
 ---
 
-## 📌 Snapshot — 2026-07-17 (static, for reading outside Obsidian)
+## 📌 Snapshot — 2026-07-24 (static, for reading outside Obsidian)
 
-*Claude refreshes this section whenever `vault-audit` or `session-close` runs. Welra row updated 2026-07-17 (session-close, +1 open task, not a full recount); other rows still reflect the 2026-07-12 sunday-review — next first-Sunday-of-month audit due 2026-08-02:*
+*Claude refreshes this section whenever `vault-audit` or `session-close` runs. Welra row updated 2026-07-24 (session-close, net task count unchanged — a P0 blog-deploy task opened and closed within the same session); other rows still reflect the 2026-07-12 sunday-review — next first-Sunday-of-month audit due 2026-08-02:*
 
 | Project | Open | What's actually live |
 |---|---|---|
-| **Welra** (24) | 🔴 **NEW:** approve + deploy the staged "revenue vs. profit" blog post (`npx vercel deploy --prod`) · beta user #1 outreach (DMs sent, watch replies) · IH warm-up · Resend broadcast · TikTok demo video → submit · Shopify readiness flip + smoke test · BetaList · gated go-live items | [[Projects/Welra/Tasks]] |
+| **Welra** (24) | ✅ "Print-on-demand math" blog post deployed live (7th post under the weekly cadence) · beta user #1 outreach (DMs sent, watch replies) · IH warm-up · Resend broadcast · TikTok demo video → submit · Shopify readiness flip + smoke test · BetaList · gated go-live items | [[Projects/Welra/Tasks]] |
 | **Hubitat** (17) | All Ryan-in-app: fix presence/ThinQ/Ecobee blockers, then build the 8 rules — no deadline | [[Projects/Hubitat/Tasks]] |
 | **Rust & Rainbow** (13) | 🔴 Meta Business Verification · **NEW:** reconnect Pinterest via Zernio (failing every run for weeks, untracked until now) · 2 designs pending Adobe bg-removal (headless-queued) · FB/IG bio website fields · TikTok review watch | [[Projects/Rust_and_Rainbow/Tasks]] |
 | **Photo_Archive** (10) | ✅ 7/12: ALL media consolidated into `_ORGANIZED/` (607 GB, one definitive area), Mac cleared, LR catalog repointed — Ryan: review `_DELETE_CANDIDATES` (ready now) + 2 LR toggles + dead-roots cleanup · Excire init tonight · NAS dup scan → then the 510 GB backlog (blocked) | [[Projects/Photo_Archive/Tasks]] |
