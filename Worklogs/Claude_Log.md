@@ -1,5 +1,9 @@
 # Claude Worklog
 
+## 2026-07-28 — Prospect Radar: 1 lead delivered (r/EtsySellers); 9-day zero-lead streak broken
+
+Full 8-subreddit sweep (r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce) plus IndieHackers + community.etsy.com. One clean lead: r/EtsySellers "Getting Etsy data via API for reporting?" — a genuine seller stuck manually exporting CSVs to compare margins across Shopify/Etsy/Amazon, exact fit for Welra's core pain, value-only reply drafted (sub bans tool promotion outright). 2 rejected. Confirmed astroturf on r/ecommerce (OP username named an AI-automation company, self-promo already called out by another commenter) and two real-but-wrong-shape pain threads (r/smallbusiness branding-pivot question, r/shopify province-tax-filing question already crowded with a competitor's own pitch). community.etsy.com search 404'd again (6th straight sweep, confirmed dead); IndieHackers search still returns an empty client-rendered shell. Delivered into `_RYAN_TODO.md`, logged in `Projects/Welra/Prospect_Radar.md`. The multi-day "pick a direction" streak flag is now moot since a lead landed today — left as-is, no process change made.
+
 ## 2026-07-26 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep, 2 query variations each + IndieHackers/community.etsy.com); 8th zero-lead day in a row
 
 No post cleared the pain/quality bar today — a full week plus one at zero now. Full sweep with two query variations per subreddit. Closest misses: an r/smallbusiness order-intake-dedup thread (real, specific pain — shipped a duplicate order from spreadsheet confusion — but the fix is a CRM/order-queue problem, not sales analytics) and an r/woocommerce ad-spend-tracking thread (exact pain shape but 1mo old, already answered, and agency-scale 4-platform attribution rather than a solo seller's weekly summary). Confirmed community.etsy.com dead via two separate URL approaches (search + direct forum browse, both 404); IndieHackers' search returns an empty client-rendered shell. Streak note in `_RYAN_TODO.md` and [[Projects/Welra/Prospect_Radar]] raises the same flag for the 4th consecutive day — recommending Ryan pick an explicit option (keep as-is / loosen bar / add subreddits / pause) rather than letting it run unchanged.
@@ -1314,3 +1318,31 @@ Scheduled run. Queue gate re-checked = 5 (unchanged since 2026-07-18) → mainte
 ## 2026-07-26 evening — Welra growth pipeline: maintenance mode, no change, no notification
 
 Next scheduled firing same day. Queue gate re-checked = 5, same 5 tasks as the morning run. Repo still clean at `f974c93`, in sync with origin. Email checked (`newer_than:1d in:inbox`) — zero threads. Live-site check clean (welra.io 308, api.welra.io/health 200). Nothing broken, nothing new since the morning run — exited quietly, no notification.
+
+## 2026-07-27 — Welra growth pipeline: maintenance mode, no change, no notification
+
+Scheduled run. Queue gate re-checked = 5 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok demo video, Shopify Partners optional step, BetaList listing) → maintenance mode, no Stage 1 ideas added. Repo clean at `f974c93`, 0 ahead/behind origin, no concurrent-session drift. Email checked (`newer_than:2d in:inbox`) — zero threads, no beta/outreach replies. Live-site check clean (welra.io 200/308 expected redirect, api.welra.io/health 200 healthy across supabase/redis/stripe). Nothing broken, nothing to ship — exited quietly, no notification.
+
+## 2026-07-27 — Welra Prospect Radar: 0 leads (Reddit + IndieHackers + community.etsy.com); 9th consecutive zero-lead day
+
+Scheduled daily sweep. Full 8-subreddit search (r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce) plus IndieHackers + community.etsy.com; nothing fresh cleared the pain-match bar. Rejected list logged in Projects/Welra/Prospect_Radar.md. Two new near-miss patterns flagged (not decided): "Repost"-tagged threads consistently turn out to be already-answered or brag posts; TikTok Shop creator/affiliate-coordination pain recurring in r/ecommerce and r/shopify but wrong shape for Welra (influencer management, not product/channel profitability). community.etsy.com search confirmed dead for the 5th straight sweep. Streak note (5th consecutive day) again recommends Ryan pick a direction: keep as-is / loosen freshness bar / add subreddits / pause-redirect — flagged in _RYAN_TODO.md, not decided unilaterally.
+
+## 2026-07-27 (2nd run) — Welra growth pipeline: maintenance mode, no change, no notification
+
+Second scheduled run today. Queue gate re-checked = 5 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok demo video, Shopify Partners optional step, BetaList listing) → maintenance mode, no Stage 1 ideas added. Repo clean at `f974c93`, in sync with origin, no concurrent-session drift since the earlier run today. Email checked (`newer_than:2d in:inbox`) — zero threads, no beta/outreach replies. Live-site check clean (welra.io 200, api.welra.io/health 200). Nothing broken, nothing to ship — exited quietly, no notification.
+
+## 2026-07-28 — Welra growth pipeline: maintenance mode, no change, no notification
+
+Queue gate re-checked = 5 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok demo video, Shopify Partners optional step, BetaList listing) → maintenance mode, no Stage 1 ideas added. Repo clean at `f974c93`, in sync with origin, no concurrent-session drift since 2026-07-27. Email checked (`newer_than:2d in:inbox`) — zero threads, no beta/outreach replies. Live-site check clean (welra.io 308→200, api.welra.io/health 200, both blog posts 308→200). Nothing broken, nothing to ship — exited quietly, no notification.
+
+## 2026-07-28 evening — Welra growth pipeline: 3rd run today, maintenance mode, no change, no notification
+
+Queue gate re-checked = 5 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok demo video, Shopify Partners optional step, BetaList listing) → maintenance mode, no Stage 1 ideas added. Repo clean at `f974c93`, in sync with origin, no concurrent-session drift since the earlier run today. Email checked (`newer_than:2d in:inbox`) — zero threads, no beta/outreach replies. Live-site check clean (welra.io 308→200 apex→www redirect, api.welra.io/health 200 all-green, both blog posts 308→200). Nothing broken, nothing to ship — exited quietly, no notification.
+
+## 2026-07-29 — Prospect Radar: 0 new leads (Etsy, PrintOnDemand, ecommerce, smallbusiness, shopify, woocommerce, IndieHackers); 1 rejected
+
+Full 8-subreddit sweep plus IndieHackers + community.etsy.com; nothing fresh cleared the pain-fit bar. Closest near-miss (rejected): r/Printify "Shopify was overstating my Printify profit by ~25%" — real pain, on-topic, but the OP already solved it himself via a technical DIY reconciliation setup in the comments, so no help-me ask to reply into. Carried yesterday's still-unanswered r/EtsySellers lead (u/International-Ad9279, Etsy API data pull) forward in `_RYAN_TODO.md` for one more day rather than dropping it. IndieHackers and community.etsy.com search remain broken (7th straight sweep for both). Full notes in `Projects/Welra/Prospect_Radar.md` under 2026-07-29.
+
+## 2026-07-29 — Welra growth pipeline: maintenance mode, no change, no notification
+
+Pipeline ran in maintenance mode, queue at 5. Same 5 counted tasks: Indie Hackers, Resend broadcast, TikTok demo video, Shopify Partners optional step, BetaList listing. Repo clean at `f974c93`, working tree clean, no concurrent-session drift since 2026-07-28. Email checked (`newer_than:14d`) — 201 threads, all Qwoted/SourceBottle/Etsy newsletter noise, zero beta/outreach replies. Live-site check clean (welra.io 308, api.welra.io/health 200 all-green, both blog posts 308). Nothing broken, nothing to ship — exited quietly, no notification.
