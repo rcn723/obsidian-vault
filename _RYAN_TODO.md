@@ -2,7 +2,7 @@
 title: RYAN'S TODO — the only document Ryan works from
 project: cross-project (Welra, Rust & Rainbow, Hubitat, Stock Agent, Dropship Pipeline, AutoBiz/GR3NB)
 type: tasks
-updated: 2026-07-29 (📡 Prospect Radar — 0 new leads today, yesterday's 07-28 Etsy-API lead carried forward unanswered. Prior (2026-07-28): streak broken — 1 new lead after 9 zero-lead days. Prior (2026-07-27): 9th zero-new-lead day in a row — streak note recommended an explicit Ryan decision for the 5th day running. Prior (2026-07-26): 8th zero-new-lead day, a full week +1 at zero. Prior (2026-07-25): 7th zero-new-lead day, one full week at zero. Prior: 🅦 Welra blog post "Print-on-demand math: what Printify's dashboard won't tell you" DEPLOYED live — you said "ship it," item 0 closed. Prior (2026-07-23): 5th zero-new-lead day. Prior (2026-07-21): 3rd zero-new-lead day, 2 carried leads from 07-17 dropped as stale. Prior (2026-07-18): 🅦 Blog post "Your bestseller might be lying to you: revenue vs. profit" DEPLOYED live. Earlier: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
+updated: 2026-08-02 (📡 Prospect Radar — 0 new leads today, 5th zero-lead day in a row since the 07-28 lead; unusually quiet sweep, nothing pain-shaped posted at all. Prior (2026-08-01): 0 new leads, the 07-28 Etsy-API lead dropped as stale after 4 unanswered days (as flagged yesterday). Prior (2026-07-31): 0 new leads, the 07-28 Etsy-API lead carried forward unanswered for a 4th day, likely last carry. Prior (2026-07-30): 🅦 Welra blog post "Raise, hold, or discount?" STAGED, ~2 min to approve + ship — item 0. Prior: 📡 Prospect Radar — 0 new leads, the 07-28 Etsy-API lead carried forward unanswered for a 3rd day. Prior (2026-07-29): 0 new leads, 07-28 lead carried forward once already. Prior (2026-07-28): streak broken — 1 new lead after 9 zero-lead days. Prior (2026-07-27): 9th zero-new-lead day in a row — streak note recommended an explicit Ryan decision for the 5th day running. Prior (2026-07-26): 8th zero-new-lead day, a full week +1 at zero. Prior (2026-07-25): 7th zero-new-lead day, one full week at zero. Prior: 🅦 Welra blog post "Print-on-demand math: what Printify's dashboard won't tell you" DEPLOYED live — you said "ship it," item 0 closed. Prior (2026-07-23): 5th zero-new-lead day. Prior (2026-07-21): 3rd zero-new-lead day, 2 carried leads from 07-17 dropped as stale. Prior (2026-07-18): 🅦 Blog post "Your bestseller might be lying to you: revenue vs. profit" DEPLOYED live. Earlier: 2026-07-12 pm — Welra report fix deployed + verified live; R&R Pinterest reconnected + verified; Meta Business Verification submitted, confirmed pending. Also: 📷 PHOTOS — EVERYTHING is now in ONE place, `_ORGANIZED/` on the Passport (79,433 files, 607 GB, duplicate-free); Mac clear of loose media; Lightroom safe to open. _DELETE_CANDIDATES review still open.)
 tags: [ryan, todo, live]
 ---
 	
@@ -52,26 +52,33 @@ You flagged that the AI-drawn "my person" design (the one you banned 2026-07-12 
 
 ## 🅦 WELRA — beta user #1 is the whole game
 
-### 0. ✅ Blog post deployed live (2026-07-24) — "Print-on-demand math: what Printify's dashboard won't tell you"
+### 0. 🆕 New blog post staged — "Raise, hold, or discount? What sellers are actually doing right now" (~2 min to approve + ship)
+Weekly blog task picked Pillar D (tough-economy tactics, never used before) since costs/tariffs are in the news. Cites two real surveys, both independently fact-checked: NFIB's June 2026 numbers (38% of small businesses raised prices, the most since Jan 2023) and the Fed's 2025 Small Business Credit Survey (most sellers are doing a mix of raising and absorbing costs, not picking one lane). Went through 4 rounds of independent review and closed clean (2 clean passes in a row, the full standing bar this time — unlike the printify post two weeks ago).
+
+Read it first if you want: it's staged in the code, not live yet. If it reads right, ship it:
+```
+cd ~/Claude/Projects/side\ business/Welra
+git add apps/web/src/app/blog/posts.tsx
+git commit -m "Add blog post: pricing in a downturn"
+git push origin main
+npx vercel deploy --prod
+```
+Then check `welra.io/blog/pricing-in-a-downturn` loads.
+
+### 0a. ✅ Blog post deployed live (2026-07-24) — "Print-on-demand math: what Printify's dashboard won't tell you"
 You said "ship it." Live now at [welra.io/blog/printify-profit-margin-math](https://welra.io/blog/printify-profit-margin-math), verified 200 with correct content, both internal links working. Nothing left to do here. (For the record: this post went through 6 independent AI-phrasing/fact-check review passes rather than the standing minimum of 2, and facts/arithmetic were confirmed clean 3 separate times — but the formal "two consecutive clean passes" close-out was interrupted before finishing. Content is well-scrutinized; just flagging that the process didn't fully close.)
 
 ### 0b. ✅ Prior post deployed live (2026-07-18) — "Your bestseller might be lying to you: revenue vs. profit"
 You said "deploy it." Live now at [welra.io/blog/revenue-vs-profit-bestseller](https://welra.io/blog/revenue-vs-profit-bestseller), verified 200 with correct content, both internal links working. Nothing left to do here.
 
 <!-- PROSPECT_RADAR_START -->
-### 📡 Today's Welra prospect (carried from 2026-07-28) — reply as yourself, ~5 min
+### 📡 Today's Welra prospects (2026-08-02) — nothing new, 5th zero-lead day in a row
 
-No new lead cleared the bar in today's (2026-07-29) sweep — carrying yesterday's still-unanswered lead forward one more day rather than dropping it.
+No lead cleared the bar today. Full sweep of all 8 target subs — unusually quiet day overall, several subs had barely 2-4 fresh posts total and none were pain-shaped (mostly buyer disputes, platform bugs, and unrelated business questions). Nothing to reply to today.
 
-**r/EtsySellers** — u/International-Ad9279, posted 2026-07-28
-🔗 https://www.reddit.com/r/EtsySellers/comments/1v8yfbj/getting_etsy_data_via_api_for_reporting/
-⚠️ value-only — r/EtsySellers bans tool promotion outright, don't mention Welra even softly
+No leads carried forward (none outstanding).
 
-Their post: *"I'm trying to pull orders + listings into a spreadsheet/warehouse so I can analyze margins across shopify, etsy and amazon. Anyone have a setup that works or is everyone manually exporting CSVs?"* — this is the exact pain Welra solves (can't see margins across channels, stuck on manual spreadsheets), from a genuine seller, not a developer or astroturf account. One comment already suggested syncing via API into a database — the reply below adds something more useful than that.
-
-> Etsy's API is genuinely fine for this, way better than manual CSVs. That part's the easy half honestly. The part that never goes away is margins — none of the three platforms track your actual cost per SKU, so you're stuck attaching that yourself no matter how you pull the data. I just feed a simple sheet from a small script instead of building an actual warehouse, way less to maintain for one person. Amazon's reporting API has more hoops than Etsy's btw, worth knowing before you start there.
-
-*Today's sweep closest near-miss: r/Printify "Shopify was overstating my Printify profit by ~25%" — real pain, exact subject matter Welra's own blog covers, but the OP is a technical expert who'd already solved it himself in the comments at a level of precision beyond a weekly summary, so it's not a lead. Full sweep notes + everything rejected today are in Projects/Welra/Prospect_Radar.md under 2026-07-29.*
+*community.etsy.com and IndieHackers were skipped again — both have now failed 8+ straight sweeps via multiple technical approaches. Still awaiting your call: drop them as sources, or supply a working search URL. Full sweep notes + everything rejected today are in Projects/Welra/Prospect_Radar.md under 2026-08-02.*
 <!-- PROSPECT_RADAR_END -->
 
 ### 1. Send 3 warm DMs (~15 min) — THE task

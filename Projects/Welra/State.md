@@ -2,11 +2,21 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-07-24 (blog post "Print-on-demand math" DEPLOYED live — Ryan said "ship it")
+updated: 2026-07-30 (blog post "Raise, hold, or discount?" STAGED, awaiting Ryan approval + deploy)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-07-30 — Blog post staged (not deployed): "Raise, hold, or discount? What sellers are actually doing right now"
+
+Weekly `welra-weekly-blog` scheduled task run. Step 0 check was clean — working tree matched origin/main (last commit `f974c93`, the printify post), no prior week's post sitting unapproved. Content_Calendar.md's 7 "Published so far" entries matched `posts.tsx` exactly (no drift) both before and after this run's addition. Picked Pillar D #11 ("Pricing in a downturn: raise, hold, or discount?") — Pillar D (Tough-economy tactics) had never been used and the last post was Pillar B, so rotation ruled that out; Pillar F (founder/trust) isn't due for another post or two.
+
+Both external stats were verified against primary sources before writing, with two independent `WebFetch` calls each (not just search snippets): NFIB's June 2026 Small Business Economic Trends survey (38% of owners raised average selling prices, highest since January 2023, 4th consecutive month; 21% cited inflation as top problem, up 3 points, a level last seen October 2024 — nfib.com blocks direct WebFetch with a 403/bot-block, but the exact press-release URL and figures were cross-confirmed via multiple independent search results); and the Federal Reserve Banks' 2025 Small Business Credit Survey via the New York Fed's Liberty Street Economics blog (direct WebFetch succeeded — 6,500 firms fielded fall 2025, ~80% of goods/retail firms passed on at least some tariff-driven cost increases, ~60% absorbed some, 36% of goods firms / 43% of retail firms did both).
+
+**Double-review gate — 4 passes, standing bar met cleanly this time.** Pass 1 and pass 2 (independent, run in parallel with no shared context) both came back FAIL, converging tightly on the same real issues despite being separate agents: an unverifiable "every seller I talk to" opening anecdote (the same fabricated-first-person-claim pattern flagged in this project's memory before), a stock "Here's the part that surprised me" transition opener, em-dash chaining (3 in one paragraph, twice), a duplicated "product by product" / "the price tag" phrase pair, and 5-6x overuse each of "honest(ly)," "actually," and "real cost(s)." Both passes independently verified the two external stats as accurate. Applied every fix named. Round 2 (2 more independent fresh passes) found the core fixes held but caught residual issues: one pass FAILed on a lingering tricolon-list habit (5 restated "X, Y, and Z" triads) plus a fresh instance of the same unverifiable-anecdote pattern ("I've had that exact debate with myself about my own shop"); the other PASSed with the same two items flagged as minor polish, plus a duplicated "highest share since [date]" template. Cut the anecdote line entirely rather than trying to make it traceable, collapsed 2 of the repeated triads, and varied the duplicated date-qualifier phrase. Round 3 (2 more independent fresh passes): **both came back clean PASS**, closing the standing 2-consecutive-clean bar formally (unlike the printify post's session, which ran 6 passes but stopped one short of a confirmed close).
+
+`tsc --noEmit` clean across both workspaces (`npm run typecheck`), `npm run build` succeeded with `/blog/pricing-in-a-downturn` in the static route output. Dev server (`next dev` on :3000) confirmed the rendered page matches house style, zero console errors, and both internal links (`/blog/revenue-vs-profit-bestseller`, `/blog/weekly-shop-review-monday-habit`) plus the `/blog` index all return 200. Left uncommitted in the working tree per the stage-and-notify convention — **Ryan needs to review and run `npx vercel deploy --prod` from the repo root to ship it** (no `git add`/commit needed first this time, since only one file changed and no prior drift exists to reconcile — though the deploy-gate skill should still confirm that at ship time). Content_Calendar.md updated: Pillar D #11 marked ✅, "Published so far" list now has 8 entries with `pricing-in-a-downturn` noted as STAGED, re-reconciled against `posts.tsx` before and after.
 
 ## 2026-07-24 (later) — Blog post deployed live: "Print-on-demand math: what Printify's dashboard won't tell you"
 

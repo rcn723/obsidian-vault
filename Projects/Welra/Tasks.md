@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-07-24 (deployed the "print-on-demand math" blog post live — Ryan said "ship it" same session it was staged. Prior: 2026-07-18 deploy of "revenue vs. profit".)
+updated: 2026-07-30 (staged the "raise, hold, or discount?" pricing blog post — awaiting Ryan approval + deploy. Prior: 2026-07-24 deploy of "print-on-demand math". Prior: 2026-07-18 deploy of "revenue vs. profit".)
 tags: [welra, tasks, launch]
 ---
 
@@ -18,6 +18,18 @@ Priorities set by [[Projects/Welra/Strategy_Review_2026-06-09]].
 > **As of 2026-07-02:** every outstanding Ryan action lives in `_RYAN_TODO.md` at the vault root, with exact steps and paste-ready copy. THIS file is Claude's tracking layer (full history, strategy links, per-task detail). Claude keeps `_RYAN_TODO.md` current after every session/milestone — if a task exists anywhere else but not there, it is Claude's bug.
 
 ### 🔴 P0 — Do these first (blocks everything else)
+
+- [ ] **Deploy the new blog post: "Raise, hold, or discount? What sellers are actually doing right now"** (`pricing-in-a-downturn`) [owner:: ryan] [priority:: high] [status:: open]
+  > **STAGED 2026-07-30** via the weekly `welra-weekly-blog` scheduled task. Pillar D #11 (Tough-economy tactics, first use of this pillar). Cites NFIB's June 2026 Small Business Economic Trends survey (38% raised prices, highest since Jan 2023) and the Federal Reserve Banks' 2025 Small Business Credit Survey via NY Fed Liberty Street Economics (~80% of goods/retail firms passed on some tariff costs, ~60% absorbed some) — both independently verified against primary sources by 2 separate review agents. Went through **4 independent review passes, closed clean** (2 fails with real fixes applied — a fabricated "every seller I talk to" anecdote, a stock opener, em-dash chaining, word repetition — then 2 consecutive clean passes). `tsc --noEmit` + `npm run build` both clean, `/blog/pricing-in-a-downturn` in the static route output, dev-server-verified zero console errors and both internal links (`revenue-vs-profit-bestseller`, `weekly-shop-review-monday-habit`) return 200.
+  > **Ship it:**
+  > ```
+  > cd ~/Claude/Projects/side\ business/Welra
+  > git add apps/web/src/app/blog/posts.tsx
+  > git commit -m "Add blog post: pricing in a downturn"
+  > git push origin main
+  > npx vercel deploy --prod
+  > ```
+  > **Verify:** open `welra.io/blog/pricing-in-a-downturn` — should load with the new post at the top of `/blog`.
 
 - [x] **Deploy the new blog post: "Print-on-demand math: what Printify's dashboard won't tell you"** (`printify-profit-margin-math`) — DEPLOYED + VERIFIED 2026-07-24 (Ryan said "ship it" the same session it was staged). Committed (`f974c93`), pushed to origin/main, deployed via `npx vercel deploy --prod`. Live at welra.io/blog/printify-profit-margin-math (308→200, correct title), both internal links verified 200, slug present on the blog index. Pillar B #6 (multi-channel/POD), picked because Prospect_Radar.md logged a recurring "profit-per-product/multi-channel cost" pain signal and Pillar B had never been used. Facts verified live against printify.com/pricing, printify.com/blog/t-shirt-pricing-calculator, shopify.com/pricing. **Standing review-gate note (kept for the record, not swept under the deploy):** the post went through 6 independent fresh-agent review passes, not the required 2-consecutive-clean — passes 1–3 and 5–6 each found and fixed a real issue (including a genuine arithmetic error and a factual mischaracterization of how Printify earns money), pass 4 alone came back a clean PASS, and the confirming 7th pass was never completed before the session moved to deploy. Facts/arithmetic were independently re-verified clean across 3 separate passes (4, 5, 6), so the deployed content is well-scrutinized — but the formal two-consecutive-clean bar wasn't met. Worth remembering next time this task runs long: the review loop should either be let run to completion or explicitly waived by Ryan, not silently treated as satisfied. [owner:: claude] [priority:: high] [status:: done]
 - [x] **Deploy the new blog post: "Your bestseller might be lying to you: revenue vs. profit"** (`revenue-vs-profit-bestseller`) — DEPLOYED + VERIFIED 2026-07-18 (Ryan said "deploy it"). Committed (`c8c336f`), pushed to origin/main, deployed via `npx vercel deploy --prod`. Live at welra.io/blog/revenue-vs-profit-bestseller (200, correct content), both internal links verified 200. [owner:: claude] [priority:: high] [status:: done]
