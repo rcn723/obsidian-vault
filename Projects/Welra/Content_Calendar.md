@@ -23,13 +23,15 @@ Published so far:
 - ✅ `etsy-woocommerce-one-click` — "Etsy and WooCommerce are now one click..." (product milestone, 2026-07-03)
 - ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, LIVE 2026-07-18)
 - ✅ `printify-profit-margin-math` — "Print-on-demand math: what Printify's dashboard won't tell you" (Pillar B #6, LIVE 2026-07-24 — Ryan said "ship it" same day)
-- ✅ `pricing-in-a-downturn` — "Raise, hold, or discount? What sellers are actually doing right now" (Pillar D #11, **STAGED not live**, weekly `welra-weekly-blog` task run 2026-07-30 — awaiting Ryan approval + deploy)
+- ✅ `pricing-in-a-downturn` — "Raise, hold, or discount? What sellers are actually doing right now" (Pillar D #11, LIVE 2026-08-08 — Ryan approved, deployed same day)
 
 ⚠️ **Gap found 2026-07-17:** this list had gone stale since 2026-06-14 — 3 real posts had shipped without ever being logged here, and the cadence itself had silently slipped to a 14-day gap (2026-07-03 → 2026-07-17) despite being planned as weekly. No scheduled task was actually enforcing "weekly." See the new `welra-weekly-blog` scheduled task (created 2026-07-17) — this file is now its source of truth for "what's next," so keep it current every time a post ships.
 
 Reconciled 2026-07-24: cross-checked this list against the actual `posts` array in `posts.tsx` — the two agreed (6 posts, no drift) before this run added the 7th.
 
 Reconciled 2026-07-30: cross-checked again before drafting — the 7 live posts matched `posts.tsx` exactly, no drift. This run added the 8th (`pricing-in-a-downturn`) as an uncommitted working-tree change only — not yet in `posts.tsx` on any committed branch until Ryan deploys.
+
+Reconciled 2026-08-08: `pricing-in-a-downturn` deployed live — Ryan approved, committed (`47d95d3`), pushed, and deployed via `npx vercel deploy --prod`. Verified 200 with correct title, both internal links resolving, slug present on the blog index. 8 posts now live, matching `posts.tsx` exactly.
 
 ## How to run it (cadence)
 

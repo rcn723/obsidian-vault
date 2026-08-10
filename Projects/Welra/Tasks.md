@@ -2,7 +2,7 @@
 title: Welra Tasks
 project: Welra
 type: tasks
-updated: 2026-07-30 (staged the "raise, hold, or discount?" pricing blog post — awaiting Ryan approval + deploy. Prior: 2026-07-24 deploy of "print-on-demand math". Prior: 2026-07-18 deploy of "revenue vs. profit".)
+updated: 2026-08-08 ("raise, hold, or discount?" pricing blog post confirmed DEPLOYED LIVE (found this run, HEAD `47d95d3`). Prior: 2026-07-24 deploy of "print-on-demand math". Prior: 2026-07-18 deploy of "revenue vs. profit".)
 tags: [welra, tasks, launch]
 ---
 

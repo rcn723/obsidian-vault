@@ -2,11 +2,15 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-07-30 (blog post "Raise, hold, or discount?" STAGED, awaiting Ryan approval + deploy)
+updated: 2026-08-08 (blog post "Raise, hold, or discount?" confirmed DEPLOYED LIVE — repo HEAD `47d95d3`, welra.io/blog/pricing-in-a-downturn returns 200. Found by the growth-pipeline scheduled run; no other state change.)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-08-08 — Blog post confirmed deployed live: "Raise, hold, or discount?"
+
+Growth-pipeline scheduled run's repo/live-site check found HEAD had moved from `f974c93` to `47d95d3` since the prior run (2026-08-07) — the item-0 post that had sat staged-uncommitted since 2026-07-30 was committed, pushed, and deployed. Working tree clean, 0 ahead/behind origin/main. Verified live: `welra.io/blog/pricing-in-a-downturn` → 200 (real content). `_RYAN_TODO.md` task 0 and `Projects/Welra/Growth_Pipeline.md` updated to match. No other product/engineering change this run — queue gate still at 5 (maintenance mode), no beta/outreach replies, nothing broken.
 
 ## 2026-07-30 — Blog post staged (not deployed): "Raise, hold, or discount? What sellers are actually doing right now"
 

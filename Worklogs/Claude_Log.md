@@ -1,5 +1,17 @@
 # Claude Worklog
 
+## 2026-08-08 (growth pipeline) — Maintenance mode; confirmed the staged blog post shipped since the last run
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18 → maintenance mode, no Stage 1 ideation. Repo check found real drift since 2026-08-07: HEAD moved `f974c93` → `47d95d3`, the item-0 "Raise, hold, or discount?" blog post (staged since 2026-07-30) is now committed, pushed, and deployed — verified live at `welra.io/blog/pricing-in-a-downturn` (200, real content). This was Ryan executing the exact command block already staged in `_RYAN_TODO.md`, not new work from this run. Updated `_RYAN_TODO.md` task 0, `Growth_Pipeline.md`, `State.md`, and `Tasks.md` to match reality. Email checked (`newer_than:2d`, 13 threads): zero beta/outreach replies, all Qwoted/SourceBottle noise. Live site green (welra.io 200, api.welra.io/health 200). Nothing broken, nothing new to build or stage — no notification sent.
+
+## 2026-08-08 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep via old.reddit.com); 1 astroturf account caught cross-posting
+
+Full sweep of all 8 target subs, paged to the 3-day boundary via old.reddit.com's `/new` listing (new access route this sweep — rendered full lists without JS-scroll issues; r/smallbusiness via in-sub search due to volume). Caught `u/owoxInc` (named for the analytics vendor OWOX) posting the identical "which platform's sales number do I trust" question verbatim to both r/ecommerce and r/shopify same day — rejected on astroturf and wrong-shape grounds. No leads carried forward (none outstanding from 08-06). Skipped community.etsy.com and IndieHackers again — that decision is now 12+ days open, still awaiting Ryan's call. Note: no sweep was logged for 2026-08-07 either, a second gap day after 08-03 — worth checking the scheduled task is firing reliably.
+
+## 2026-08-04 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep via Claude-in-Chrome); 1 rejected as a repost of a prior lead
+
+Full sweep of all 8 target subs — a notably thin day, most subs had only 2-4 fresh posts total. Closest near-miss: r/ecommerce "I reconciled 3 months of orders against what my fulfillment supplier actually charged me" (u/leddo1972) looked like an exact pain match (Shopify dashboard understating real costs) until checking the OP's post history showed it's a near-verbatim repost of the already-rejected 2026-07-29 r/printify lead, reposted to a new sub a week later — rejected as repeat/content-marketing behavior. No leads carried forward (none outstanding). Skipped community.etsy.com and IndieHackers again per the 2026-07-31 recommendation (now over a week without Ryan's call on dropping them). Note: no sweep was logged for 2026-08-03.
+
 ## 2026-08-01 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep via Claude-in-Chrome); 1 confirmed AI-generated meta-post, 1 dropped as stale
 
 Full sweep of all 8 target subs. Nothing fresh cleared the pain bar. Closest near-misses: a r/woocommerce post analyzing 32 other people's Google Merchant-feed support threads, where the OP admitted "I don't run a store myself" and in-thread comments already called it out as likely AI-generated research content; and a r/smallbusiness family-business-succession post (real pain, wrong shape — not analytics). Skipped re-attempting community.etsy.com and IndieHackers this sweep — both have now failed 8 straight days via multiple technical approaches, re-trying added no new signal. The 2026-07-28 Etsy-API lead (r/EtsySellers u/International-Ad9279) is now dropped as stale after 4 unanswered days, per yesterday's "last carry" flag — the drafted reply is preserved in Prospect_Radar.md if Ryan wants it revived.
@@ -1396,3 +1408,39 @@ Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged sinc
 ## 2026-08-02 — Welra growth pipeline ran in maintenance mode, queue at 5 (unchanged, 3rd run today)
 
 Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo unchanged (HEAD `f974c93`, in sync with origin, same single uncommitted staged blog post "Raise, hold, or discount?"). Email checked (`newer_than:1d in:inbox`): zero threads, no beta/outreach replies. Nothing broken, nothing to sharpen. No notification.
+
+## 2026-08-03 — Welra growth pipeline ran in maintenance mode, queue at 5 (unchanged)
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo unchanged (HEAD `f974c93`, last real commit 2026-07-24, same single uncommitted staged blog post "Raise, hold, or discount?"). Email checked with a broadened 3-day query: 9 threads, all newsletters/notifications, zero beta/outreach replies. Live-site spot check: welra.io 308 (expected redirect), api.welra.io/health 200 — both green. Nothing broken, nothing to sharpen. No notification.
+
+## 2026-08-03 — Welra growth pipeline ran in maintenance mode, queue at 5 (unchanged, 2nd run today)
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged from the earlier run today and since 2026-07-18 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo unchanged (HEAD `f974c93`, in sync with origin, same single uncommitted staged blog post "Raise, hold, or discount?") — full live-site verification skipped since repo unchanged since the earlier run today. Email checked (`newer_than:3d`): 10 threads, all newsletters/notifications (Qwoted x6, SourceBottle, BetaList, Etsy win-back), zero beta/outreach replies. Nothing broken, nothing to sharpen. No notification.
+
+## 2026-08-04 — Welra growth pipeline ran in maintenance mode, queue at 5 (unchanged)
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo unchanged (HEAD `f974c93`, in sync with origin, same single uncommitted staged blog post "Raise, hold, or discount?"). Email checked (`newer_than:3d`): 12 threads, all newsletters/notifications, zero beta/outreach replies. Live-site spot check: welra.io 308 (expected redirect), api.welra.io/health 200 — both green. Nothing broken, nothing to sharpen. No notification.
+
+## 2026-08-04 (2nd run) — Welra growth pipeline ran in maintenance mode, queue at 5 (unchanged)
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged from the earlier run today and since 2026-07-18 (same 5 tasks: Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo unchanged since the earlier run today (HEAD `f974c93`, in sync with origin, same single uncommitted staged blog post "Raise, hold, or discount?"). Email checked (`newer_than:2d`, plus a broader 5-day sweep for real replies): 14 threads, all newsletters/notifications (Qwoted, SourceBottle, BetaList, Etsy re-engagement, DMARC report), zero beta/outreach replies. Live-site spot check: welra.io 308 (expected redirect), api.welra.io/health 200 — both green. Nothing broken, nothing to sharpen. No notification.
+
+## 2026-08-05 — Prospect Radar: 0 leads delivered (8 subs swept), 8 rejected
+
+Scheduled `welra-daily-prospect-radar` run. Full sweep of r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce via Claude-in-Chrome search (sort=new, t=week). 8 candidates opened and verified, all rejected: off-topic (branding, mindset, one-off attribution question, stale product-feedback thread), an r/Etsy "sales went dead then spiked" thread that turned out to be about search-algorithm variance not tracking, a confirmed 3rd-instance repost by the same author (leddo1972) already logged 2026-08-04, and an enterprise-audience conversion-optimization post wrongly adjacent to Welra's pitch. 7th consecutive zero-lead sweep since 2026-07-28 (08-03 still unlogged). Flagged the leddo1972 repost campaign as a possible future blog-post angle (platform profit numbers vs. real profit). Full detail in Projects/Welra/Prospect_Radar.md under 2026-08-05.
+
+## 2026-08-06 — Prospect Radar: 0 leads delivered (8 subs swept), 0 near-misses
+
+Scheduled `welra-daily-prospect-radar` run. Full sweep of r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce via Claude-in-Chrome search (sort=new, t=week). No candidates cleared even a near-miss bar today — closest were wrong-shape pain (inventory/stockout, SaaS-subscription-sprawl tracking, multi-platform inventory-sync), not analytics/profit-tracking asks. 8th consecutive zero-lead sweep since 2026-07-28 (08-03 still unlogged). community.etsy.com/IndieHackers skipped again — the standing recommendation to drop or replace these two dead sources is now 10+ days open, the oldest unresolved item in this log. Full detail in Projects/Welra/Prospect_Radar.md under 2026-08-06.
+
+## 2026-08-06 — Weekly blog task: skipped, prior post still unapproved (7 days)
+
+Scheduled `welra-weekly-blog` run. Step 0 check found the 2026-07-30 post ("Raise, hold, or discount? What sellers are actually doing right now", slug `pricing-in-a-downturn`) still sitting uncommitted in `posts.tsx` — not approved or deployed, 7 days later. Per task rules, did not draft a second post on top of it. No changes made. Flagging in `_RYAN_TODO.md` is unchanged (already present); this is now the 2nd weekly-blog run in a row that found the same item unresolved.
+
+## 2026-08-07 — Growth pipeline ran in maintenance mode, queue at 5
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked at 5 (unchanged since 2026-07-18) → maintenance mode, no new ideas. Repo unchanged since the 2026-08-04 run (same staged blog post, 0 ahead/behind origin/main). Live site green (welra.io 308, api.welra.io/health 200). Email swept (`newer_than:4d`, 33 threads) — zero beta/outreach replies, all Qwoted/SourceBottle/Etsy marketing noise. Nothing broken, nothing to sharpen. No notification sent.
+
+## 2026-08-08 — Weekly blog post deployed live: "Raise, hold, or discount?"
+
+Ryan approved deploying the post staged since 2026-07-30 (session initially blocked by the auto-mode permission classifier on `vercel deploy`; Ryan said "approved go ahead / try again" to clear it). Ran the deploy-gate: `git status`/`log origin/main..HEAD` clean, no drift. Committed (`47d95d3`), `tsc --noEmit` clean both workspaces, `npm run build` green with `/blog/pricing-in-a-downturn` in the static route output — no arch-review needed (content-only, no schema/env/auth/Dockerfile touched). Pushed to origin/main, deployed via `npx vercel deploy --prod` (the CLI's own deploy call returned a spurious `"Not authorized"` JSON error post-upload, but `vercel ls` confirmed the deployment actually completed and went Ready in Production 40s later — worth noting as a CLI quirk, not a real auth failure, since `vercel whoami`/`teams ls`/`project ls` all resolved correctly throughout). Verified live: `www.welra.io/blog/pricing-in-a-downturn` 200 with correct title, both internal links (`revenue-vs-profit-bestseller`, `weekly-shop-review-monday-habit`) 200, slug present on the blog index. Content_Calendar.md, State.md, and `_RYAN_TODO.md` all updated to LIVE. This is post #8 under the `welra-weekly-blog` cadence.

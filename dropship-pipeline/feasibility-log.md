@@ -344,3 +344,59 @@ Looking at the last 3 daily entries for products appearing in all 3 scans...
 | Portable Handheld Turbo Fan | PASS ($8 landed → $39 retail, 35%+ margin) | PASS (300g, no fragility) | PASS (consumer electronics) | PASS (generic product) | MODERATE (performance expectations) | HIGH (fan category oversaturated, fragmented suppliers, low margins per data) | **FAIL** | **KILL** | 100% seasonal summer-only trend (heatwave-driven); inventory cliff Sept–March; 2026-07-15 flags "oversaturation likely high for fan category" + "risk of inventory issues post-summer"; 2026-07-16 confirms "seasonal play, low profit margins." This is a single-season liquidation, not a durable product line. |
 
 **No candidates advance.** Single persistent candidate fails durability screen.
+
+# 2026-08-03
+
+## Persistent Candidates (2+ entries): Screening Results
+
+| Candidate | Appearances | Trend Trajectory | Unit Economics | Shipping | Ad Compliance | IP Risk | Returns | Saturation | Durability | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Handheld Vacuum Sealers** | Entry 1 & 2 | Rising → Peaking | ❌ HARD FAIL: 1.5–2x net after costs | ✅ Compact | ✅ Allowed | ✅ Generic | ⚠️ Moderate | ❌ Heavily marketed | ⚠️ Peaking | **KILL** | Marginal unit economics (impulse price point $20–50, cost $3–8, shrinks to 1.5–2x after 20–30% ads + platform fees + shipping). Market saturation already visible with existing demo ads (Entry 2). Trend showing peak momentum loss. |
+| **Handheld Turbo Fans** | Entry 1 & 2 | Rising | ❌ HARD FAIL: "Low profit margins" | ✅ Lightweight | ✅ Allowed | ✅ Generic | ⚠️ Moderate | ❌ Oversaturated | ❌ Extreme seasonality (July–Aug only) | **KILL** | Oversaturated supplier base (explicitly "highly fragmented" per Entry 2). Margins below 2.5x threshold noted in source. Extreme seasonality risk: 5–month peak (May–Aug) collapses to near-zero Sept–March. Post-summer inventory cliff unavoidable. |
+| **Eco-Friendly Food Storage Bags** | Entry 1 & 2 | Rising | ⚠️ Marginal: 1.5–2x net after costs | ✅ Compact | ✅ Allowed | ⚠️ Incumbent competition (Stasher) | ⚠️ Moderate | ❌ Crowded with incumbents | ✅ Solves ongoing need | **KILL** | Market explicitly "crowded competitive landscape" (Entry 2) with established Ziploc/Stasher alternatives saturating. SellTheTrend data ($53K monthly) indicates maturity. Differentiation required but no clear angle. Margins: $1–3 cost, $15–30 retail = 5–10x gross, shrinks to 1.5–2x net. Below 2.5x threshold. |
+| **Pet Cooling Mats & Water Fountains** | Entry 2 & 3 | Rising → Peaking | ⚠️ Marginal: 40–65% margins noted (2–2.6x net) | ❌ HARD FAIL: "Oversized/fragile shipping costs" | ✅ Allowed | ✅ Generic | ⚠️ Moderate (pet abandonment = returns) | ❌ Visible saturation on Amazon Movers & Shakers | ❌ Extreme seasonality (May–July peak, Sept–March collapse) | **KILL** | Shipping economics kill viability: oversized/heavy items (mats 12–18") incur dimensional weight charges. Entry 2 explicitly: "oversized/heavy (shipping cost killer)." Saturation already visible on Amazon's trending charts. Extreme seasonality: 5-month window (heatwave May–Aug) collapses post-Labor Day. Seasonal inventory cliff unavoidable. |
+| **Dietary Fiber Supplements (Fibermaxxing)** | Entry 2 & 3 | Rising | ⚠️ Marginal: 2–3x after high ad spend | ✅ Lightweight | ❌ **HARD FAIL: Supplement platform restrictions** | ✅ Emerging trend, untraded | ❌ **HARD FAIL: Supplements = high returns** ("does it actually work" category) | ⚠️ Saturated; weak signal (Google Trends only, cross-platform validation lacking per Entry 2) | ⚠️ Trend-driven; "may peak then decline" with annual health resolutions (Entry 3) | **KILL** | **[HARD] Ad compliance blocker:** Facebook/Instagram have strict supplement pre-approval gates; Google Ads restricts supplement categories; TikTok Shop approvals spotty. **[HARD] Returns risk:** Supplement category inherently high-return (claims verification, customer results expectations). Entry 2 flags as "Single-source signal (Google Trends only)" lacking cross-platform validation. Trend durability tied to cyclical health resolution window (Jan–Mar; collapses thereafter). |
+
+---
+
+## Insufficient Persistence (Single Entry Only): Not Screened
+
+- CinePocket Mini Projector
+- FluidBeat Speaker
+- SteamForce Steam Cleaner
+- Dual-Ended Eyeliner Stamp
+- Hexagon 3D Mirror Wall Stickers
+- Smart 2L Automatic Pet Feeder
+- Spaceman Galaxy LED Projection Light
+- PureBreeze Air Purifier
+- Magnetic Eyelashes
+- Posture Corrector
+- Privacy Tempered Glass Screen Protector
+- Portable Camping Gas Stove
+- Collagen Kits
+- Lip Stains (Wonderskin-Style)
+- Personalized Pet Accessories
+- Squishy Toys
+- Portable Mini Photo Printers
+- Smart Fitness Wearables
+- Cordless Handheld Vacuums
+- BBQ Grill Cleaning Brush
+- Smart Home Security Cameras
+- Hugo Spritz Cocktail Kits
+- Perfume/Fragrance Products
+- Digital Planners (GoodNotes/Notability)
+- Ultrasonic Glasses Cleaners
+- Multi-Device Wireless Charging Stations
+- Storage/Organizational Bins & Containers
+- Statement/Comically Large Bows
+- Smart Home Devices (Matter Ecosystem)
+- Frozen Yogurt/Ice Cream Makers
+- 4K AI Security Cameras
+- Cake Decorating Kits & Piping Bags
+- High-Waist Wide-Leg Jeans
+
+---
+
+## Final Recommendation
+
+**No candidates advance.** All 5 persistent candidates failed hard criteria (unit economics, shipping practicality, or platform compliance). Vacuum sealers and food storage bags are margin-crushed by established players; turbo fans and pet cooling mats face insurmountable seasonality; dietary supplements hit platform ad and returns compliance walls. All single-entry products lack sufficient persistence signal to merit screening effort.
