@@ -400,3 +400,105 @@ Looking at the last 3 daily entries for products appearing in all 3 scans...
 ## Final Recommendation
 
 **No candidates advance.** All 5 persistent candidates failed hard criteria (unit economics, shipping practicality, or platform compliance). Vacuum sealers and food storage bags are margin-crushed by established players; turbo fans and pet cooling mats face insurmountable seasonality; dietary supplements hit platform ad and returns compliance walls. All single-entry products lack sufficient persistence signal to merit screening effort.
+
+Looking at the last 3 daily entries (2026-07-16, 2026-08-03, 2026-08-10), I need to identify products appearing across all 3 scans with persistent interest.
+
+**Scanning for persistence across all 3 entries:**
+
+After cross-referencing all entries, I find only **three product categories** appearing in 2+ entries:
+
+1. **Eco-Friendly/Sustainable Storage** (Entry 1: Eco-Friendly Reusable Food Storage Bags; Entry 2: Storage/organizational bins; Entry 3: Sustainable/Eco-Friendly Storage Products) — all 3 entries, rising trend
+2. **Smart Home/AI-Powered Devices** (Entry 1: Smart Home Security Cameras; Entry 2: Matter ecosystem devices + 4K AI cameras; Entry 3: AI-Powered Smart Home Gadgets) — all 3 entries, rising trend  
+3. **Pet Cooling Products** (Entry 1: Pet Cooling Mats; Entry 2: Pet cooling mats & water fountains) — 2 entries, rising then peaking
+
+All other products from the three entries appear in only one scan and are **insufficient persistence, not screened**.
+
+---
+
+## Feasibility Screening Results
+
+### **Eco-Friendly / Sustainable Storage Products** — **KILL**
+- **Unit Economics [HARD]:** Marginal. Margins compressed throughout all 3 entries ("lower margins due to eco-positioning," "margins compressed by sustainability requirements"). Requires tight <30% spend ratio for ads/fees/shipping to hit 2.5-3x markup. Achievable only with $5–7 landed + $20–25 retail with zero waste. **RISKY THRESHOLD**
+- **Shipping Practicality [HARD]:** Products not fragile, but Entry 2 flags "shipping costs high for volume" — dimensional weight concern reduces margin cushion further. **MARGINAL PASS**
+- **Ad Platform Compliance [HARD]:** Clean category. **PASS**
+- **IP/Trademark Risk [HARD]:** Generic, but GreenLock/Stasher brand presence exists; knockoff risk with careless sourcing. **PASS**
+- **Return Rate Risk:** Low (5–8%). **PASS**
+- **Competitive Saturation:** Extreme — "crowded competitive landscape" (Entry 1), "heavily commoditized" (Entry 2), "30% new eco launches by 2027" (Entry 3). Saturation visible across Amazon/Etsy/AliExpress.
+- **Durability Beyond Trend:** Strong; 15–20% sustained growth, solves ongoing waste-reduction need, not viral spike.
+
+**Reason:** Saturation + unit economics collapse. Entry 3 explicitly notes margin compression; Entry 1 confirms crowded landscape. Even with 3-entry persistence, profitability at scale is not viable.
+
+---
+
+### **Smart Home / AI-Powered Devices** — **KILL**
+- **Unit Economics [HARD]:** **FAIL.** Premium positioning ($200–2,000+) required; high capital inventory. Entry 1 notes "dropship margins compressed by brand control." Entry 3 confirms low margins on commodity devices. Not achievable at 2.5–3x after costs.
+- **Shipping Practicality [HARD]:** **FAIL.** Fragile electronics, dimensional weight, warranty risk. Entry 3: "complex logistics/shipping (fragile electronics + heavy)."
+- **Ad Platform Compliance [HARD]:** Compliant, but privacy-sensitive messaging required. **PASS**
+- **IP/Trademark Risk [HARD]:** **FAIL.** Brand-locked ecosystem (Ring, Nest, Samsung, Apple); patent minefield.
+- **Return Rate Risk:** High (15–25%); electronics + setup complexity. **FAIL**
+- **Competitive Saturation:** Dominated by major manufacturers; dropship viability destroyed.
+- **Durability Beyond Trend:** Strong underlying need, but as dropship play, market consolidating toward incumbent brands.
+
+**Reason:** Multiple hard failures (unit economics, shipping, IP, returns). Not viable as dropship model.
+
+---
+
+### **Pet Cooling Products** — **KILL**
+- **Unit Economics [HARD]:** Entry 2 reports 40–65% margins available; $8–12 landed sourcing supports 2.5–3x retail ($20–35). **PASS** (if year-round)
+- **Shipping Practicality [HARD]:** Mats lightweight; fountains fragile + heavy electronics. Entry 1: "oversized/fragile shipping costs." Dimensional weight kills margins. **MARGINAL**
+- **Ad Platform Compliance [HARD]:** Clean category. **PASS**
+- **IP/Trademark Risk [HARD]:** Generic product, no obvious patent issues. **PASS**
+- **Return Rate Risk:** Medium (10–12%); efficacy skepticism. **PASS**
+- **Competitive Saturation:** Saturated; "numerous competitors," "saturation visible on Amazon Movers & Shakers."
+- **Durability Beyond Trend:** **CRITICAL FLAW.** Entry 1: "Highly seasonal (summer only), sales cliff likely Sept–March." Entry 2 confirms cyclical pattern. 9-month dead period makes year-round unit economics unworkable.
+
+**Reason:** Seasonality is fatal. Summer-only demand (May–August peak) means 9 months of losses. Margins can't absorb fixed costs and inventory carrying across 3 quarters.
+
+---
+
+## Summary
+
+**Candidates Advanced:** None  
+**All Persistent Candidates Rejected:** The three product categories meeting persistence criteria (2+ entries, rising/stable trend) all fail fundamental hard requirements or show structural flaws that render them unviable:
+- Eco-storage: saturation + margin collapse
+- Smart home: unit economics + shipping + IP + returns
+- Pet cooling: seasonal collapse (fatal)
+
+All other candidates show **insufficient persistence, not screened** — appeared in only one daily scan.
+
+I need to carefully identify candidates persisting across at least 3 of these entries. Looking at the data labeled 2026-08-03, 2026-08-10, and 2026-08-11, let me trace which products appear consistently with rising/stable trends rather than spikes.
+
+Scanning for cross-entry presence:
+- **Pet products** (smart litter boxes, water fountains, interactive toys): all 3 entries ✓
+- **Charging/power products** (wireless stations, power banks, USB-C): all 3 entries ✓
+- **LED lighting** (aesthetic strips, ring lights, desk lamps): 08-10 + 08-11 only
+- **Fiber supplements**: 08-03 + 08-11 only (skips 08-10)
+- **Mini projectors**: 08-10 + 08-11 only (no 08-03)
+
+Most single-product categories only show up 1-2 times. The few that persist across multiple dates or entries are broad categories, which I'll need to instantiate as specific candidates for screening.
+
+I'll screen: **Smart Cat Litter Boxes**, **Fiber Supplements**, **Portable USB-C Power Banks**, **LED Lighting (Desk Lamps)**, and **Mini Projectors** based on their cross-entry presence or strong multi-source signals.
+
+---
+
+## 2026-08-11
+
+### Persistent Candidates Screened
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/TM Risk | Return Rate | Saturation | Durability | **DECISION** |
+|---|---|---|---|---|---|---|---|---|
+| **Fiber Supplements / Fibermaxxing** | Marginal (2-2.5x; need 2.5-3x) | ✓ Pass | ⚠ Conditional (health claims scrutiny) | ✓ Pass | ✓ 10-15% acceptable | 🔴 KILL: Major brands (Pepsi, Nestlé, Olipop) entering market; margins compressed | Trend-cyclical (peaks New Year, falls after) | **KILL** — Major brand saturation entering at same moment, health-claim ad risk, peak timing ending (Fibermaxxing tied to resolution trend). Margins cannot compete with Nestlé distribution. |
+| **Smart Cat Litter Boxes** | Marginal (1.5-2.5x after shipping) | ⚠ Heavy + fragile electronics; 20-30% shipping cost | ✓ Pass | ⚠ Patent risk (Litter-Robot dominance) | 🔴 HARD FAIL: 15-25% return rate (mechanical failures, customer expectations) | Established but not saturated (Litter-Robot, Catlink, PetSafe) | Durable (solves ongoing need) | **KILL** — **[HARD FAIL]** return rates (15-25%) destroy margins; shipping complexity + electronics fragility + warranty burden make unprofitable. |
+| **Mini Projectors** | 2-3.3x pre-cost; collapses post-shipping | 🔴 **[HARD FAIL]**: Dimensional weight ($15-25/unit); optics fragility | ✓ Pass | ⚠ Design risk | ⚠ 15-20% (damage in transit) | Saturated (Anker Nebula, Instax, multiple viral gadget lists) | Viral gadget trend (2-4 mo peak) | **KILL** — **[HARD FAIL]** dimensional weight + optics fragility makes unit economics 1.5-2x (below 2.5-3x threshold). High saturation on viral gadget lists. |
+| **LED Lighting (Desk Lamps, RGB, Aesthetic Strips)** | 1.8-2.3x (below threshold) | ✓ Pass | ✓ Pass | ✓ Pass | ⚠ 10-15% (quality variance from imports) | 🔴 KILL: Ring lights (Neewer 65K+ reviews dominates); Amazon saturated; back-to-school retail (Target, Walmart) discounting | Moderate (functional desk lamps durable; aesthetic trends cyclical; back-to-school highly seasonal) | **KILL** — Tight margins (1.8-2.3x vs 2.5-3x required), extreme saturation (Neewer dominates ring lights; major retailers discounting back-to-school), seasonal/trend-dependent lifespans. |
+| **Portable USB-C Chargers / Power Banks** | 🔴 **[HARD FAIL]**: 1.8-2.3x (below threshold) | ✓ Pass | ✓ Pass | ✓ Pass | ✓ 5-8% (reliable product) | 🔴 KILL: Commodity market; Anker, Energizer, Samsung dominance; razor-thin margins; extreme price competition | Durable (essential ongoing need) | **KILL** — **[HARD FAIL]** unit economics 1.8-2.3x (need 2.5-3x); **[HARD FAIL]** commodity saturation with entrenched competitors; price wars make dropship margins impossible. |
+
+---
+
+### Insufficient Persistence — Not Screened
+
+**Single-entry candidates (insufficient cross-entry confirmation):**
+
+- Hugo Spritz cocktail kits, Perfume/fragrance products, Digital planners, Ultrasonic glasses cleaners, Statement bows, Frozen yogurt/ice cream makers, 4K AI security cameras, Cake decorating kits, High-waist wide-leg jeans, Hydrogen water bottles & tablets, Weighted breathing plush toys, Sunset projection lamps (peaking/declining per 08-10), DIY miniature book nook kits, Smart posture correctors, PDRN skincare products, Cold plunge ice bath tubs, Resistance band sets, Custom/personalized phone accessories, Wireless charging desk lamps, Snack bag sealers, Coquette aesthetic apparel, Minecraft-themed back-to-school gear, 3D/impasto art prints, Electric interactive cat toys, Recordable pet communication buttons, Google Home Speaker (Gemini AI), Red light therapy devices.
+
+**Result:** Zero candidates advance. All persistent multi-entry categories failed on hard economic or logistics constraints (dimensional weight, return rates, saturated margins, brand competition). Market window has closed for major signals (fiber/supplements by brand entry, litter boxes by mechanics risk, projectors by shipping costs, LED by saturation, chargers by commodity pricing).
