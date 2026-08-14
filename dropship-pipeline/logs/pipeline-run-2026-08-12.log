@@ -1,0 +1,14 @@
+=== Dropship pipeline run: 2026-08-12 ===
+[1/4] Running trend scanner...
+cost: $0.5174766000000001
+Appended to scan-log.md
+[2/4] Running feasibility screener...
+cost: $0.13434839999999998
+Appended to feasibility-log.md
+[3/4] Building plan(s)...
+cost: $0.9385881
+Appended to plans-log.md
+[4/4] Running validator...
+cost: $0.2582502
+Appended to verdicts-log.md
+=== Run complete ===

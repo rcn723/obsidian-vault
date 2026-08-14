@@ -584,3 +584,153 @@ Sources:
 - [Dog Bandana Personalized - Etsy](https://www.etsy.com/market/dog_bandana_personalized)
 - [Shipping Speeds & Pricing | Printful](https://www.printful.com/shipping)
 - [Printful Shipping Cost: Full Breakdown for POD Sellers](https://podvector.ai/articles/printful/costs-and-charges/printful-shipping-cost-full-breakdown-for-pod-sellers)
+
+# 2026-08-12 — Lean 30-Day Plans: Qi2 Wireless Charging Desk Pads & Sustainable Reusable Water Bottles
+
+Two candidates advanced from today's feasibility screen. Below are execution-ready 30-day plans for each. Supplier and ad-cost figures are pulled from live web search today (2026-08-12) and are marked **[ESTIMATE]** where I could not get a direct quote — treat those as planning inputs to validate in Week 1, not locked numbers.
+
+---
+
+## Candidate 1: Qi2 Wireless Charging Desk Pads
+
+### Target customer
+Not "gamers" broadly — **21–35 year old WFH/streaming setup builders who post or browse "battlestation" content** (r/battlestations, desk-setup TikTok/Instagram, gaming-desk mat buyers). They already own an iPhone 15/16/17 or recent Qi2-certified Android and have bought at least one desk accessory (mat, monitor arm, RGB strip) in the last 6 months. They are not the mainstream "any phone charger" buyer — they buy for aesthetic + desk-cable-management reasons, not just charging need.
+
+### Positioning
+Generic Qi/MagSafe pads are commodity — dozens of stores will list the same factory item within weeks of the trend rising. Ryan's angle can't be "we found it first." It has to be:
+- **Desk-specific form factor**: sized/shaped to sit under a keyboard or mouse mat, not a standalone circular puck — solves the actual cable-clutter problem the target customer has, which most generic wireless-charger listings ignore.
+- **Qi2 certification called out explicitly** (magnetic alignment, higher/safer wattage vs Qi1) as the reason to upgrade now, tied to the current device cycle.
+- **UGC from desk-setup creators**, not generic product-shot ads — this audience actively distrusts obvious dropship ads and responds to real desk photos/videos.
+
+This is a real, defensible reason to buy from Ryan over another store selling the same factory SKU — but only if the creative and bundling (pad + cable + mat compatibility angle) are actually built, not just claimed.
+
+### Supplier options
+Both found via Alibaba search today — **neither has been directly quoted or sampled; treat as leads to contact this week, not confirmed terms.**
+
+1. **Shenzhen Yitongjie** (Alibaba, Shenzhen) — listed for fast response (≤1h), **MOQ as low as 50 pcs**, full OEM customization. General Qi2.2 bulk pad pricing on the platform runs **$3.60–$18/unit** depending on spec (entry single-pad vs. multi-device/aluminum finish). Good fit for a low-commitment sample+first-batch order.
+2. **Shenzhen Jingwei Legend** (Alibaba, Shenzhen) — higher-end customization (touch rotation, semiconductor cooling), positioned for brand customization — likely higher MOQ (need to confirm) and higher unit cost, better fit for a v2 batch once the core SKU is validated, not the Week-1 sample.
+
+**Action for Week 1**: message both for a quoted price on a specific desk-pad-shaped SKU (not a puck) at 20–50 unit sample MOQ, plus lead time. Do not commit cash until a quote is in hand.
+
+### Unit economics **[ESTIMATE — validate in Week 1]**
+| Line | Value |
+|---|---|
+| Unit cost (mid-spec desk pad, ~50 MOQ) | $9.00 |
+| DDP shipping (air, small parcel, ~0.3kg incl. packaging) | $3.50/unit |
+| Packaging/insert | $1.00 |
+| **Landed cost** | **~$13.50** |
+| Target retail price | $36.99 |
+| Payment processing (~3%) | $1.11 |
+| **Contribution margin before ad spend** | **~$22.38 (60%)** |
+| Ad cost assumption (see below) | — |
+| **Target CAC** | **$15** (aspirational — see flag below) |
+| **Contribution margin after target CAC** | **~$7.38/unit** |
+
+**Flag**: TikTok ecommerce CPC benchmarks today run $0.74–$1.50, and cold-traffic landing page conversion for a new dropship store typically runs 1–3%. At CPC $1.00 / CVR 2%, blended CAC lands closer to **$40–50**, not $15 — well above the contribution margin. The $15 target CAC is achievable only with strong organic/UGC-boosted traffic (lower effective CPC via engagement) or native TikTok Shop conversion (higher on-platform CVR). This gap is exactly what the Gate 5 ad test needs to answer — don't scale spend until actual CAC is measured.
+
+### Marketing channel plan
+- **Primary: TikTok Spark Ads** boosting organic desk-setup UGC (not static product ads) — this audience lives on TikTok desk-tour content, and Spark Ads let you boost real creator posts, which fits the trust problem above. CPM benchmark **[ESTIMATE, per industry data today]**: $4.80–$13.26 depending on established-brand vs. new-account rates; CPC $0.74–$1.50.
+- **Secondary: Instagram Reels** (Meta) as a retarget layer once pixel data exists — Meta CPM ~$14.19, CPC ~$0.78 blended average across industries today **[ESTIMATE]**. Use for retargeting site visitors, not cold prospecting (too expensive at this budget).
+
+### 30-day launch plan
+- **Week 1**: Contact both suppliers for quotes; order 20–30 unit sample batch (express); build Shopify landing page (single product, desk-pad angle, not generic charger copy); source or commission 2–3 desk-setup UGC clips (creator gifting or Ryan's own desk).
+- **Week 2**: Samples arrive — QA check (fit, charging speed, Qi2 cert marking); finalize product photography/video with samples in hand; set up TikTok Business account, pixel, Spark Ads structure; soft-launch page (no paid traffic) to catch bugs.
+- **Week 3**: Launch $300–400 of TikTok Spark Ads testing 3–4 creative angles (desk-fit, cable-clutter-solved, Qi2-upgrade-reason, unboxing); track CPC/CVR/CAC daily; kill losing creatives by day 3.
+- **Week 4**: Push remaining budget into winning creative; hit Gate 5 decision — real CAC vs. $22.38 contribution margin ceiling. If CAC stays under ~$18–20, green light to reorder inventory; if not, kill or pivot creative/audience before spending more.
+
+### Budget to reach a real go/no-go signal
+| Item | Cost |
+|---|---|
+| Sample order (20–30 units, landed) | ~$300 |
+| Express sample shipping premium | ~$60 |
+| Shopify (1 month) | $39 |
+| Ad spend (Weeks 3–4 test) | $500–700 |
+| **Total cash to Gate 5 signal** | **~$900–1,100** |
+
+### Break-even math
+Fixed costs (Shopify + apps, no paid team): ~$100/month.
+At contribution margin **before** ad spend ($22.38/unit), break-even on fixed costs alone = **5 units/month**.
+At a realistic (not target) CAC of $35–45, contribution margin after ad spend drops to roughly **-$5 to +$0** per unit — meaning at current benchmark ad costs, this product does not clear profitability without either a lower CAC than typical cold-traffic benchmarks or a higher retail price. This is the specific thing the Week 3–4 test must prove or disprove before any inventory reorder.
+
+---
+
+## Candidate 2: Sustainable Reusable Water Bottles
+
+### Target customer
+Not "eco-conscious people" broadly — **women 25–40 already active in sustainable-fashion/wellness content on Pinterest and Instagram**, who have bought from Hydro Flask, Owala, or S'well before and are shopping for a bottle that signals a specific values-story (not just "reusable"), typically browsing gift/self-care/routine content rather than searching generically for "water bottle."
+
+### Positioning
+S'well, Hydro Flask, and Owala own "premium reusable bottle" as a category. Generic dropship bottles compete on price and lose to Amazon. The only defensible lane: **a verifiable, narrow sustainability claim** — e.g., a specific % of proceeds tied to a give-back (1% for the Planet-style, or ocean-plastic-removal partner), paired with a visible certificate (FSC packaging, Carbon Trust, or documented material sourcing) on the product page. This matters because vague "eco-friendly" claims are exactly what draws FTC greenwashing scrutiny (flagged in today's screen) — a specific, substantiated claim is both a legal safety measure and the actual differentiation. Without a concrete give-back or certification story, this is just another commodity bottle competing on price against Amazon.
+
+### Supplier options
+1. **Everich Hydro / Everich Commerce Group** (Hangzhou, Zhejiang; 20+ years, manufacturing across China/Thailand/Cambodia) — found via Alibaba search today. Listed FOB pricing **$2.80–$3.20/unit at 10-unit MOQ** for certain stainless steel models; note that **custom-design insulated bottles typically require ~3,000-unit MOQ per design**, though smaller runs can be negotiated with a customization fee. For a Week-1 test, use one of their **existing stock designs** (not a custom mold) to stay at low MOQ.
+2. **Generic Alibaba "bulk buy reusable water bottles" suppliers** (multiple, Trade Assurance-verified) — insulated stainless steel models from **~$3.99–$6/unit at scale**, with sample-friendly MOQs starting around 100–300 units for standard (non-custom) designs, 1-piece samples available from most listings.
+
+**Action for Week 1**: order 1-piece samples from 2–3 Everich stock SKUs plus 1–2 generic suppliers before committing to any bulk order — confirm actual wall insulation performance and finish quality, which varies significantly at this price point.
+
+### Unit economics **[ESTIMATE — validate in Week 1]**
+| Line | Value |
+|---|---|
+| Unit cost (20oz insulated stainless, stock design, custom label) | $5.00 |
+| DDP shipping (air, ~0.5kg incl. packaging) | $4.00/unit |
+| Packaging/insert | $1.00 |
+| **Landed cost** | **~$10.00** |
+| Target retail price | $32.99 |
+| Payment processing (~3%) | $0.99 |
+| **Contribution margin before ad spend** | **~$22.00 (67%)** |
+| Target CAC | $15–18 |
+| **Contribution margin after target CAC** | **~$4–7/unit** |
+
+**Flag**: Pinterest CPC benchmarks today ($0.50–$1.00 for retail/ecommerce, $7–8 CPA cited for retail vertical broadly) make the $15–18 target CAC more plausible on Pinterest than on Meta (blended CPC $0.78, CPA benchmark ~$30 for ecommerce broadly) — this is why Pinterest is the primary channel recommendation below, not Meta.
+
+### Marketing channel plan
+- **Primary: Pinterest ads.** Pinterest's retail/ecommerce benchmark CPC is $0.50–$0.70 with a cited **$7–8 CPA for retail** **[ESTIMATE, per industry data today]** — meaningfully cheaper than Meta or TikTok for this vertical, and Pinterest's audience (self-care/routine/gift boards) matches the target customer's actual browsing behavior better than TikTok's trend-driven feed. Pinterest is also reported at ~40% lower CPC than Meta with higher average order value on Pinterest-driven purchases.
+- **Secondary: Meta retargeting** for cart abandoners and page visitors once pixel data exists (CPM ~$14.19, CPC ~$0.78 **[ESTIMATE]**) — not cold prospecting, too expensive relative to Pinterest at this budget.
+
+### 30-day launch plan
+- **Week 1**: Order 1-piece samples from Everich + 1 generic supplier; draft the specific give-back/certification claim and confirm it's substantiable (don't launch an unverifiable eco claim — FTC risk flagged in screening); build Shopify page with the sourcing/certificate story front and center.
+- **Week 2**: Samples arrive — QA (insulation test, leak test, finish); order 100–150 unit test batch from the winning supplier; shoot product photography; set up Pinterest Business account + tag.
+- **Week 3**: Launch $300–400 Pinterest ad test across 3 creative angles (give-back story, lifestyle/routine shot, comparison-vs-Hydro-Flask value angle); track CPC/CVR/CAC; kill underperforming creative by day 3.
+- **Week 4**: Scale spend into winner; hit Gate 5 decision against the $22/unit contribution ceiling.
+
+### Budget to reach a real go/no-go signal
+| Item | Cost |
+|---|---|
+| Samples (1-piece x 3 suppliers, express) | ~$150 |
+| Test batch (100–150 units, landed) | ~$1,000–1,500 *(only order after sample QA passes — can defer to post-Gate-5 if testing ads with sample units + pre-order/waitlist model instead)* |
+| Shopify (1 month) | $39 |
+| Ad spend (Weeks 3–4 test) | $500–700 |
+| **Total cash to Gate 5 signal (samples + ads only, no bulk batch yet)** | **~$700–900** |
+
+Note: I've deferred the bulk test batch cost out of the Gate 5 number — the ad test itself can run on pre-order/waitlist collection against sample photography rather than committing $1,000+ to inventory before demand is proven. If Ryan wants physical fulfillment during the test window instead, add the ~$1,000–1,500 batch cost.
+
+### Break-even math
+Fixed costs: ~$100/month.
+At contribution margin before ad spend ($22/unit), break-even on fixed costs alone = **5 units/month**.
+At target CAC $15–18 (plausible on Pinterest, per benchmark above, but unconfirmed until tested), net contribution ~$4–7/unit → need **15–25 units/month** to clear fixed costs plus reinvest in ad spend at a sustainable pace.
+
+---
+
+## If running both in the same 30 days
+Combined cash need: **~$1,600–2,000** if run in parallel with two ad budgets, vs. **~$900–1,100** if run sequentially (test one, get the Gate 5 signal, then decide whether to spend on the second). Given the CAC uncertainty flagged in both plans — actual benchmarks suggest achievable CAC may sit above the target contribution margin ceiling for at least the wireless charging pad — **recommend running the water bottle test first**: it has the more plausible CAC-to-channel fit (Pinterest benchmark undercuts the contribution margin by more headroom than TikTok does for the charging pad) and a clearer, more defensible differentiation story that doesn't depend on outrunning every other store to the same trend.
+
+---
+
+Sources:
+- [Best Cheap Qi2.2 Wireless Chargers for Bulk Sourcing](https://electronics.alibaba.com/product/cheap-wireless-charger?page=3)
+- [Qi2 Wireless Charging Supplier Guide](https://electronics.alibaba.com/supplier/qi2-wireless-charging-review)
+- [2026 Wireless Charger Buying Guide for B2B Buyers](https://electronics.alibaba.com/product/new-arrival-wireless-charger)
+- [Eco Friendly Water Bottle Manufacturer | Alibaba](https://www.alibaba.com/supplier/eco-friendly-water-bottle-manufacturer.html)
+- [Bulk Buy Reusable Water Bottles | Alibaba](https://www.alibaba.com/supplier/bulk-buy-reusable-water-bottles.html)
+- [Wholesale Water Bottle Manufacturer & Supplier in China - Everich Hydro](https://www.everichhydro.com/wholesale-water-bottle-manufacturer/)
+- [Wholesale Insulated Bottle Manufacturer - Everich Hydro](https://www.everichhydro.com/wholesale-insulated-bottle-manufacturer/)
+- [TikTok Ads Benchmarks for CTR, CR, and CPM - 2026 Update (Lebesgue)](https://lebesgue.io/tiktok-ads/tiktok-ads-benchmarks-for-ctr-cr-and-cpm)
+- [TikTok Ads Cost for Ecommerce: CPM, CPC, ROAS Benchmarks (2026)](https://aiadvantageagency.com/tiktok-ads-cost-for-ecommerce/)
+- [2026 TikTok Marketing Benchmarks (WebFX)](https://www.webfx.com/blog/social-media/tiktok-benchmarks/)
+- [Facebook Ads CPM by Country: 2026 Ecommerce Benchmarks (Lebesgue)](https://lebesgue.io/facebook-ads/facebook-cpm-by-country)
+- [Meta Ads Benchmarks for Ecommerce 2026 (MHI Growth Engine)](https://mhigrowthengine.com/blog/meta-ads-benchmarks-ecommerce-2026/)
+- [Meta Ads Benchmarks 2026: CPM, CPC, CPA & CTR by Industry (get-ryze.ai)](https://www.get-ryze.ai/blog/meta-ads-cost-benchmarks-by-industry-2026)
+- [Pinterest Ads Cost for Ecommerce: CPC, CPM, ROAS Benchmarks (2026)](https://aiadvantageagency.com/pinterest-ads-cost-for-ecommerce/)
+- [Pinterest Ads Cost in 2026: CPC, CPM & Budget Guide (Trackbee)](https://www.trackbee.io/blog/pinterest-ads-cost)
+- [DDP Shipping Rates China to USA - AEB Logistics](https://aeblogistics.com/ddp-shipping-rates-china-to-usa/)
+- [Shipping Cost from China to USA in 2026 (DFH Logistics)](https://dfhlogistics.com/shipping-costs-from-china-to-usa/)
