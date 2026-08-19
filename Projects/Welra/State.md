@@ -2,11 +2,17 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-08-08 (blog post "Raise, hold, or discount?" confirmed DEPLOYED LIVE — repo HEAD `47d95d3`, welra.io/blog/pricing-in-a-downturn returns 200. Found by the growth-pipeline scheduled run; no other state change.)
+updated: 2026-08-14 (blog post "Why I built a report instead of another dashboard" DEPLOYED LIVE — Ryan said "deploy blog", repo HEAD `81ee9e5`, welra.io/blog/report-not-a-dashboard returns 200. See entry below.)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-08-14 — Blog post deployed live: "Why I built a report instead of another dashboard"
+
+`welra-weekly-blog` scheduled run staged this post earlier the same day: Pillar F #18 (founder/trust), first F post since 2026-07-01 — due per the "every ~4th post" rotation rule. Reframed the working title away from a fabricated "reading my numbers for a year" claim (Welra is only ~2 months old) to the report-vs-dashboard design decision, still grounded in the real, published $0-week post. Cites 2 NFIB Small Business and Technology Survey stats, verified against the actual NFIB PDF. Went through 4 independent review passes — 1 FAIL (real NFIB population-mislabel risk + AI-phrasing tells) with fixes applied, then 2 consecutive clean PASSes. `tsc --noEmit` + `npm run build` clean, all 4 linked routes verified 200, zero console errors in browser.
+
+Ryan said "deploy blog." Ran the `deploy-gate` skill: git status/log clean vs origin (no drift), committed (`81ee9e5`), pushed, `tsc`/`build` re-verified clean, deployed via `npx vercel deploy --prod`. CLI returned a spurious "Not authorized" error post-upload (same known quirk as the 2026-08-08 deploy) — `vercel ls` confirmed Ready in Production. Live-verified: welra.io/blog/report-not-a-dashboard → 200 (apex→www redirect), correct title/date, slug on `/blog` index, all 4 linked routes (`how-to-read-your-etsy-stats`, `my-shops-first-welra-report`, `/signup`, `/sample`) return 200. Also fixed a stale Tasks.md P0 checkbox for `pricing-in-a-downturn` (was still open despite being live since 08-08).
 
 ## 2026-08-08 — Blog post confirmed deployed live: "Raise, hold, or discount?"
 

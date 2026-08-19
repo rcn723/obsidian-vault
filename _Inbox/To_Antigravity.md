@@ -1,9 +1,23 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-08-12 (Prospect Radar — 0 leads, 3-day scheduled-task gap flagged. See entry below.)
+updated: 2026-08-15 (Prospect Radar — 0 new leads, 13th zero-lead sweep since 07-28. Two confirmed vendor-astroturf near-misses. See entry below.)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
 ---
+
+# To Antigravity — 2026-08-15 — Prospect Radar: 0 leads, two near-misses were vendors using near-Welra-verbatim pitch language
+
+Ran the scheduled `welra-daily-prospect-radar` task. 0 new leads cleared the bar (13th zero-lead sweep since the 07-28 lead) — full detail in `Projects/Welra/Prospect_Radar.md` and today's block in `_RYAN_TODO.md`. Worth a glance: today's two closest near-misses were both confirmed vendor self-promo, and both used phrasing close enough to Welra's own pitch to be worth noting as a competitive signal — an r/smallbusiness post opened with "not knowing your numbers in real time... QuickBooks is a rearview mirror" before disclosing a competing tool (LightSignal), and an r/shopify post pitching a cart-abandonment app ("BuyWhen") got called out by other commenters as unclear before the OP admitted it wasn't even their own app. Last unambiguous genuine lead remains 07-28 (18 days ago). community.etsy.com/IndieHackers Ryan-decision still open, now 15+ days — still the oldest unresolved item in the log.
+
+# To Antigravity — 2026-08-14 — Welra weekly blog: new post deployed live
+
+`welra-weekly-blog` scheduled run staged a new post earlier today: "Why I built a report instead of another dashboard" (Pillar F, founder/trust), slug `report-not-a-dashboard`. Went through the full review gate — 4 independent AI-phrasing/fact-check passes, 1 real fail (an NFIB stat population-mislabel risk plus filler-word/rhetorical-template tells) fixed, then 2 consecutive clean passes — and full validation (`tsc --noEmit`, `npm run build`, dev-server route checks, zero console errors).
+
+Ryan then said "deploy blog" in the same session. Ran the `deploy-gate` skill: git state clean vs. origin, committed (`81ee9e5`), pushed, `tsc`/`build` re-verified, deployed via `npx vercel deploy --prod`. Worth flagging again since it's now happened twice: the Vercel CLI returned a spurious `{"status":"error","message":"Not authorized"}` right after upload (same as the 2026-08-08 deploy) — `vercel ls` confirmed the deployment actually went Ready in Production both times. This looks like a recurring CLI quirk specific to this project/account, not a one-off — worth not trusting that error message at face value on future deploys, always cross-check with `vercel ls`. Live-verified: welra.io/blog/report-not-a-dashboard → 200, correct content, all linked routes 200.
+
+Also found and fixed a real state-drift bug while reconciling before the deploy: `Projects/Welra/Tasks.md`'s P0 checkbox for the *previous* post (`pricing-in-a-downturn`) was still marked `[ ] open`, even though it had been live in production since 2026-08-08 — both `Content_Calendar.md` and `_RYAN_TODO.md` already had it correctly marked done. Tasks.md was the one file that hadn't been updated when that post shipped. Fixed now; worth a general note that Tasks.md doesn't always get touched by the same flow that closes out `_RYAN_TODO.md` after a deploy.
+
+Also found and fixed a real state-drift bug while reconciling: `Projects/Welra/Tasks.md`'s P0 checkbox for the *previous* post (`pricing-in-a-downturn`) was still marked `[ ] open`, even though it had been live in production since 2026-08-08 — both `Content_Calendar.md` and `_RYAN_TODO.md` already had it correctly marked done. Tasks.md was the one file that hadn't been updated when that post shipped. Fixed now; worth a general note that Tasks.md doesn't always get touched by the same flow that closes out `_RYAN_TODO.md` after a deploy.
 
 # To Antigravity — 2026-08-12 — Prospect Radar: 0 leads, but the task itself missed 3 straight days (08-09/08-10/08-11)
 
@@ -500,3 +514,18 @@ New blog post staged (not deployed): "Raise, hold, or discount? What sellers are
 
 ## 2026-08-13 (growth-pipeline run, 2nd today) — from Claude
 Maintenance mode again, queue unchanged at 5 (same since 2026-07-18): Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList. Repo unchanged since the 01:20 run today (HEAD `47d95d3`, clean, in sync with origin) — full live-site check skipped as a result. Email checked (`newer_than:1d in:inbox`) — zero threads, no beta/outreach replies. Nothing broken, nothing to sharpen. No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-08-14 (growth-pipeline run) — from Claude
+Maintenance mode, queue unchanged at 5 since 2026-07-18 (Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList). Repo changed since the last pipeline run: HEAD `47d95d3` → `81ee9e5` — the weekly blog post staged this morning by the `welra-weekly-blog` session was shipped (concurrently deployed, not by this pipeline). Verified live at welra.io/blog/report-not-a-dashboard (200) and api.welra.io/health (200). `_RYAN_TODO.md` task 0 + `Growth_Pipeline.md` updated to reflect deployed status. Email checked — zero beta/outreach replies. Nothing broken. No notification.
+
+## 2026-08-16 (growth-pipeline run, 2nd today) — from Claude
+Maintenance mode again, queue unchanged at 5 (same since 2026-07-18): Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList. Repo unchanged since this morning's run today (HEAD `81ee9e5`, clean). Email checked (`newer_than:2d in:inbox`) — zero threads, no beta/outreach replies. Nothing broken, nothing to sharpen. No notification. Growth_Pipeline.md + Claude_Log.md updated.
+
+## 2026-08-16 (prospect-radar run) — from Claude
+0 new leads today across all 8 subreddits (community.etsy.com / IndieHackers still skipped, 16+ days awaiting a decision). 14th zero-lead sweep since 2026-07-28 — last unambiguous lead is now 19 days old. Closest near-miss was an r/ecommerce post from someone validating a dashboard-service business idea (wrong shape — not a seller's own pain), rest of the sweep skewed vendor self-promo (ReviewLift, a Gumroad profit calculator, repeat-offender accounts mau_berg/Pixogate99). `_RYAN_TODO.md`, `Projects/Welra/Prospect_Radar.md`, and `Claude_Log.md` all updated.
+
+## 2026-08-18 (prospect-radar run) — from Claude
+0 new leads today across all 8 subreddits (community.etsy.com / IndieHackers still skipped, 18+ days awaiting a decision). 15th zero-lead sweep since 2026-07-28 (08-17 unlogged — gap flagged, widened today's window to cover it). More candidates than usual were opened and rejected (4): an Etsy-fee-tracking post on r/smallbusiness that turned out to be the poster's own market research (subreddit's AutoModerator flagged it directly), a WhatsApp-revenue post on r/ecommerce from an agency person discussing a client's store, a returns-CSV-audit post on r/shopify about a friend's store, and a genuine-but-wrong-shape Instagram-DM-attribution question on r/woocommerce. `_RYAN_TODO.md`, `Projects/Welra/Prospect_Radar.md`, and `Claude_Log.md` all updated.
+
+## 2026-08-18 (growth-pipeline run) — from Claude
+Maintenance mode again, queue unchanged at 5 (same since 2026-07-18): Indie Hackers, Resend broadcast, TikTok video, Shopify Partners optional flag, BetaList. Repo unchanged (HEAD `81ee9e5`, clean, no diff vs origin/main since 2026-08-14). Email checked (`newer_than:2d in:inbox`) — zero threads, no beta/outreach replies. Nothing broken, nothing to sharpen. No notification. Growth_Pipeline.md + Claude_Log.md updated.

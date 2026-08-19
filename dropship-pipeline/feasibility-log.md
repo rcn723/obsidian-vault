@@ -547,3 +547,119 @@ Hugo Spritz, Fiber Snacks, Mini Projectors, Cat Toys, Water Fountains, Snack Sea
 ---
 
 **Summary:** **No candidates advance.** Both persistent products fail hard criteria. LED lamps: sub-2x unit economics + extreme retail saturation + 2–3 week August peak collapse. Heated lunch box: sub-1x margins + 20–30% electronics return rates + electrical compliance friction + seasonal 4–6 week window. Market window closed for both; August back-to-school and seasonal peaks are structural constraints, not opportunities.
+
+# 2026-08-14
+
+## Screening Results
+
+| Candidate | Persistence | Unit Economics | Shipping | Compliance | Saturation | Trend Durability | **Decision** | **Reason** |
+|---|---|---|---|---|---|---|---|---|
+| RGB/LED Desk Lamps | 3/3 entries (Aug 12, 13, 14) | **FAIL** – sub-1x net markup | ✓ PASS | ✓ PASS | **EXTREME** (50+ identical clones on Amazon) | Seasonal collapse post–Labor Day | **KILL** | **Unit economics fail [HARD]:** At $30–50 retail with $12 COGS, ads (20%), platform fees (10%), and $5 shipping, net profit = $4–18; markup = 0.3–1.5x vs. required 2.5–3x. Extreme competitive saturation and back-to-school seasonal peak (window closing Aug 14). No durability beyond Sept. |
+| Electric Heated Lunch Boxes | 3/3 entries (Aug 12, 13, 14) | **FAIL** – sub-1x net markup | **FAIL [HARD]** – FCC certification required | ⚠ Borderline (food/heating claims) | Niche (commuter-only use case) | Seasonal back-to-school collapse post–Labor Day | **KILL** | **Unit economics fail [HARD]:** $50 retail, $20 COGS yields 0.35x markup after ads/fees/shipping. **Shipping practicality fail [HARD]:** Electrical product requires FCC certification; fragile heating element; high safety/liability risk with food transport. Quality variance from China suppliers. High return rates (electronics + safety). Window closing. |
+
+## Insufficient Persistence, Not Screened
+
+All other candidates (SnuggleSafari Travel Pillow, GlowScrub Bath Pads, Fibermaxxing, Hugo Spritz, Bendy Gummy Phone Cases, Portable Laptop Monitors, Magnetic Shelves, Crochet Kits, etc.) appear in ≤2 of 3 entries. No recommendations to advance.
+
+---
+
+**Summary:** Both persistent candidates killed on [HARD] failures—unit economics compressed below viability by extreme saturation (lamps) and regulatory burden (heated boxes). Back-to-school seasonal window (Aug 14) is closing; expect post-Labor Day collapse. **No candidates advance.**
+
+Looking at the last 3 daily entries for persistence (appearing in 3 of 3 days with stable/rising interest):
+
+**Candidates meeting persistence threshold:**
+- **LED/RGB Desk Lamps (with wireless charging)**: 08-13 (LED Desk Lamp - Wireless Charging Base), 08-14 (RGB/LED Desk Lamps), 08-17 (Wireless Charging Desk Lamps)
+- **Electric Heated Lunch Boxes**: 08-13 (Electric Heated Lunch Box), 08-14 (Electric Heated Lunch Boxes - bento), 08-17 (Mini Electric Lunch Boxes)
+
+All other products appeared in only 1-2 of the 3 entries.
+
+---
+
+## 2026-08-17 Feasibility Screening
+
+| Candidate | Unit Economics | Shipping | Compliance | IP/Trademark | Return Rate | Saturation | Durability | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|
+| LED/RGB Desk Lamps (Wireless Charging) | **FAIL** [HARD] | Pass | Pass | Pass | Moderate (10-15%) | Extreme (50+ sellers, identical clones) | Seasonal peak (Aug-Sept) | **KILL** | Unit economics fail: $12-18 landed cost vs. $10-12 net after platform fees (30%), ads, shipping. Negative or break-even margin at 2.5-3x target. Oversaturated category with brutal price competition eliminates recovery path. |
+| Electric Heated Lunch Boxes | **FAIL** [HARD] | Risky | Conditional | Low-moderate | **High (15-20%+)** [HARD] | Moderate | Seasonal + practical repeat | **KILL** | Unit economics fail: $15-22 cost vs. $13-15 net after fees/ads/shipping. High return rate (electronics + food storage + heating safety) creates liability and margin compression. Electrical safety certification burden. Back-to-school seasonality with weak Sep-May velocity. |
+
+**Result:** Zero candidates advance. Both fail hard criteria (unit economics + additional critical risks). No advanced recommendations.
+
+Looking at the last 3 daily entries (2026-08-14, 2026-08-17, 2026-08-18), I'll cross-reference products for consistency.
+
+**PERSISTENCE ANALYSIS:**
+
+Only 2 products/categories appear across all 3 entries with stable or rising interest:
+
+1. **Fragrance/Perfume/Scent Stacking Products** (08-14: Scent Stacking Kits | 08-17: Niche Perfume Blending Kits + Fragrance Collection Curation | 08-18: Fragrance/Perfume Collection Curation)
+2. **Wireless Charging Devices/Stations** (08-14: LED Desk Lamp w/ Wireless Charging Base | 08-17: Wireless Charging Desk Lamps | 08-18: Multi-Device Wireless Charging Stations Qi2)
+
+All other products appear in fewer than 3 of the last 3 entries — insufficient persistence, not screened.
+
+---
+
+## 2026-08-18 Feasibility Screening
+
+| Product | Persistence | Unit Economics | Shipping | Compliance | IP Risk | Return Rate | Saturation | Durability | Decision | Reason |
+|---------|-------------|-----------------|----------|-----------|---------|-------------|-----------|-----------|----------|--------|
+| **Fragrance/Perfume Collection & Scent Stacking Kits** | ✓ (3/3) | ⚠ Feasible | **[KILL]** | ✓ Pass | ⚠ Low | ✗ High | ⚠ Saturated | ✓ Repeatable | **KILL** | **Shipping blocker [HARD FAIL]**: Perfume oils/fragrances are flammable; USPS/UPS hazmat fees ($10-15/order) destroy margins below 2.5x markup target. 08-18 also flags "already saturated dropshipping category, high return rates." |
+| **Wireless Charging Multi-Device Stations (Qi2)** | ✓ (3/3) | **[KILL]** | ✓ Pass | ✓ Pass | ✓ Pass | ⚠ Moderate (5-10%) | **[KILL]** | ✓ Repeatable | **KILL** | **Unit economics [HARD FAIL]**: Saturated market; price compression active. 08-18 states "established players (Apple, Anker, Belkin), low differentiation, price compression ongoing." AliExpress knockoffs: $8-15 landed. Achievable retail price $25-35 in compressed market = 1.8-2.1x net margin after shipping/fees/ads. Below 2.5-3x threshold. Competing against brand incumbents non-viable. |
+
+---
+
+**CANDIDATES ADVANCING: 0**
+
+No persistent candidates survive hard-requirement screening. Both fail on separate [HARD] blockers: fragrance on shipping complexity destroying margins, wireless charging on unit economics compressed by mature competitive saturation.
+
+## 2026-08-19
+
+### Screened Candidates (3-of-3 Persistence)
+
+| Candidate | Unit Econ | Shipping | Ad Compliance | IP/TM Risk | Return Rate | Saturation | Durability | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|
+| **Scent Stacking / Niche Perfume Curation** | Possible with luxury positioning | ✗ HARD FAIL | OK (beauty) | OK (DIY) | High | Saturated | Trend-dependent | **KILL** | Hazmat shipping blocker: perfume oils/fragrance concentrates = Class 3 Flammable Liquids, cannot ship via air, requires DOT/hazmat certification, severely limits dropship viability. Secondary blockers: category already saturated with ads, high return rates (subjective scent preference), supplies hard to source at scale. |
+
+### Insufficient Persistence (Single Appearance — Not Screened)
+
+All other products from 2026-08-17, 2026-08-18, and 2026-08-19 scans appeared in only one daily entry and do not meet the 3-of-3 persistence threshold:
+
+- Blue Light Therapy Skincare/Tools: insufficient persistence, not screened
+- Jelly Blush & Gummy Aesthetic Accessories: insufficient persistence, not screened
+- Snail Mucin Skincare: insufficient persistence, not screened
+- PDRN Skincare: insufficient persistence, not screened
+- Toe Spacers: insufficient persistence, not screened
+- Mouth Tape: insufficient persistence, not screened
+- Hair Repair Masks + Red Light Therapy Caps: insufficient persistence, not screened
+- Portable POV Cameras: insufficient persistence, not screened
+- Mini Electric Lunch Boxes: insufficient persistence, not screened
+- 4K AI Security Cameras: insufficient persistence, not screened
+- Smart Eyewear: insufficient persistence, not screened
+- Wireless Charging Desk Lamps: insufficient persistence, not screened
+- Afrobohemian Home Decor: insufficient persistence, not screened
+- Rubber/Bendy Phone Cases: insufficient persistence, not screened
+- LED Galaxy Projector: insufficient persistence, not screened
+- Smart Plant Monitoring: insufficient persistence, not screened
+- Portable Air Conditioning: insufficient persistence, not screened
+- Multi-Device Wireless Charging Stations: insufficient persistence, not screened
+- Aesthetic Room Decor Kit (RGB Strip Lighting): insufficient persistence, not screened
+- Cold Plunge/Contrast Therapy Tubs: insufficient persistence, not screened
+- All-in-One Creator Gear Kits: insufficient persistence, not screened
+- Smart Irrigation/Auto-Watering Systems: insufficient persistence, not screened
+- Mini Portable Projectors: insufficient persistence, not screened
+- Fitness Recovery Tools: insufficient persistence, not screened
+- Back-to-School Tech Bundle: insufficient persistence, not screened
+- Electric Heated Blankets: insufficient persistence, not screened
+- Sustainable/Eco Product Line: insufficient persistence, not screened
+- Portable Mini Lawn Mower: insufficient persistence, not screened
+- Magnetic Eyeliner + Liner-Free Magnetic Lashes: insufficient persistence, not screened
+- Pet Safety Vests: insufficient persistence, not screened
+- Blue Light Blocking Glasses: insufficient persistence, not screened
+- Draped Skirts: insufficient persistence, not screened
+- Bento / Cute Lunch Boxes: insufficient persistence, not screened
+- GlowScrub Bath Pads: insufficient persistence, not screened
+- Mutalk 2 Bluetooth Microphone: insufficient persistence, not screened
+- BeeGlow Solar Lights: insufficient persistence, not screened
+- SnuggleSafari Travel Pillow: insufficient persistence, not screened
+- Magnetic Shelf Units: insufficient persistence, not screened
+- UV Resin Crafting Kits: insufficient persistence, not screened
+- Portable Laptop Monitor Stands: insufficient persistence, not screened
+- Label Makers & Back-to-School Organization: insufficient persistence, not screened

@@ -2,7 +2,7 @@
 title: Welra Content Calendar
 project: Welra
 type: content-plan
-updated: 2026-07-30
+updated: 2026-08-14
 tags: [welra, blog, content, seo, marketing]
 ---
 
@@ -24,6 +24,7 @@ Published so far:
 - ✅ `revenue-vs-profit-bestseller` — "Your bestseller might be lying to you: revenue vs. profit" (Pillar A #3, LIVE 2026-07-18)
 - ✅ `printify-profit-margin-math` — "Print-on-demand math: what Printify's dashboard won't tell you" (Pillar B #6, LIVE 2026-07-24 — Ryan said "ship it" same day)
 - ✅ `pricing-in-a-downturn` — "Raise, hold, or discount? What sellers are actually doing right now" (Pillar D #11, LIVE 2026-08-08 — Ryan approved, deployed same day)
+- ✅ `report-not-a-dashboard` — "Why I built a report instead of another dashboard" (Pillar F #18, LIVE 2026-08-14 — Ryan said "deploy blog", deployed same day)
 
 ⚠️ **Gap found 2026-07-17:** this list had gone stale since 2026-06-14 — 3 real posts had shipped without ever being logged here, and the cadence itself had silently slipped to a 14-day gap (2026-07-03 → 2026-07-17) despite being planned as weekly. No scheduled task was actually enforcing "weekly." See the new `welra-weekly-blog` scheduled task (created 2026-07-17) — this file is now its source of truth for "what's next," so keep it current every time a post ships.
 
@@ -32,6 +33,10 @@ Reconciled 2026-07-24: cross-checked this list against the actual `posts` array 
 Reconciled 2026-07-30: cross-checked again before drafting — the 7 live posts matched `posts.tsx` exactly, no drift. This run added the 8th (`pricing-in-a-downturn`) as an uncommitted working-tree change only — not yet in `posts.tsx` on any committed branch until Ryan deploys.
 
 Reconciled 2026-08-08: `pricing-in-a-downturn` deployed live — Ryan approved, committed (`47d95d3`), pushed, and deployed via `npx vercel deploy --prod`. Verified 200 with correct title, both internal links resolving, slug present on the blog index. 8 posts now live, matching `posts.tsx` exactly.
+
+Reconciled 2026-08-14: cross-checked before drafting — the 8 live posts matched `posts.tsx` exactly, no drift. This run added the 9th (`report-not-a-dashboard`) as an uncommitted working-tree change only — not yet in `posts.tsx` on any committed branch until Ryan deploys. Chose Pillar F (#18, founder/trust) since the prior 3 pillar-tagged posts (A, B, D) hadn't included one and the rotation guidance calls for F roughly every 4th post; reframed the working title's "reading my numbers for a year" angle to "why a report instead of a dashboard" since Welra/the founder's own dogfooding is only ~2 months old and "a year" would have been a fabricated claim. Went through 4 independent review passes: pass 1 FAILED (found a real NFIB stat population-mislabel plus AI-phrasing filler-word/rhetorical-template tells), fixes applied, then 2 consecutive clean PASSes closed the gate. `tsc --noEmit` + `npm run build` both clean, `/blog/report-not-a-dashboard` in the static route output, dev-server-verified zero console errors and all 4 linked routes (`how-to-read-your-etsy-stats`, `my-shops-first-welra-report`, `/signup`, `/sample`) return 200.
+
+Deployed 2026-08-14: Ryan said "deploy blog." Ran the `deploy-gate` skill — git status/log clean vs origin (no drift), committed (`81ee9e5`), pushed, `tsc --noEmit` + `npm run build` re-verified clean, deployed via `npx vercel deploy --prod`. The CLI returned a spurious `{"status":"error","message":"Not authorized"}` right after upload (same known quirk as the 2026-08-08 deploy) — `vercel ls` confirmed the deployment actually went Ready in Production. Verified live: welra.io/blog/report-not-a-dashboard → 200 (following the apex→www redirect), correct title/date, slug present on `/blog` index, all 4 linked routes return 200. 9 posts now live, matching `posts.tsx` exactly.
 
 ## How to run it (cadence)
 
@@ -92,7 +97,7 @@ free report, internal-link to 1–2 prior posts.
 
 | # | Working title | Angle / hook |
 |---|---|---|
-| 18 | What I learned reading my own shop's numbers for a year | Honest story, lessons, a few mistakes |
+| 18 | ✅ Why I built a report instead of another dashboard (LIVE 2026-08-14, slug `report-not-a-dashboard`) | Honest story, lessons, a few mistakes |
 | 19 | Why I built a report instead of another dashboard | The POV/manifesto behind Welra |
 
 ---
