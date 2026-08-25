@@ -663,3 +663,26 @@ All other products from 2026-08-17, 2026-08-18, and 2026-08-19 scans appeared in
 - UV Resin Crafting Kits: insufficient persistence, not screened
 - Portable Laptop Monitor Stands: insufficient persistence, not screened
 - Label Makers & Back-to-School Organization: insufficient persistence, not screened
+
+# 2026-08-21
+
+## Screening Results
+
+### Persistent Candidates (Appearing 2+ of Last 3 Days)
+
+| Candidate | Persistence | Economics | Shipping | Ad Compliance | Return Rate | Saturation | Durability | Decision | Kill Reason |
+|---|---|---|---|---|---|---|---|---|---|
+| **Lunch Box Variants** (Cute/Bento/Electric/Mini Electric) | 3/3 days | Marginal (1.6–2.2x post-ads) | **HARD FAIL** ✗ | Pass ✓ | Moderate | High | Seasonal | **KILL** | Oversized electrical devices with heating elements + variable power/safety certifications by region + customs hold risk on electronics. Shipping costs ($8–10) erode thin margins to 1.2–1.6x after all fees, missing 2.5x target. |
+| **Scent Stacking / Niche Perfume Blending Kits** | 2/3 days | Marginal (2.5–3x pre-ads) | **HARD FAIL** ✗ | **HARD FAIL** ✗ | High | Extreme | Declining | **KILL** | (1) Fragrance is hazmat—liquid shipping restrictions, international customs holds routine; (2) Unverified wellness claims ("mood-blending") trigger Facebook/TikTok platform bans; (3) Trend maturation evident—market already saturated with dropshippers. |
+| **Snail Mucin Skincare Products** | 2/3 days | Pass (3–5x pre-ads) | Pass ✓ | Pass ✓ | Moderate | **EXTREME** ✗ | **Declining** ✗ | **KILL** | Passes hard criteria but kills on merit: 50–100+ competitors already running ads (TikTok beauty, Reddit, Shopify). 08-21 data flags "innovation shift to vegan alternatives suggests maturation"—trend peaked 2022–24, now migrating. Zero differentiation in saturated category. |
+| **Wireless Charging Desk Lamps** | 2/3 days | Borderline (1.5–2.5x post-ads) | **HARD FAIL** ✗ | Pass ✓ | Moderate | **HIGH** ✗ | Limited | **KILL** | Oversized (2–3 lbs), fragile electronics. Shipping cost ($8–12) consumes margin; lands at 1.2–2x post-ads, below 2.5x threshold. Mature category with major brand dominance (Philips, IKEA, Baseus, Amazon FBA saturation). |
+
+### Non-Persistent Candidates
+
+**Insufficient persistence, not screened:**  
+All single-day appearances (1/3): Jelly Blush Gummy Accessories, PDRN, Toe Spacers, Mouth Tape, Hair Repair Masks + Red Light Caps, POV Cameras, 4K Security Cameras, Smart Eyewear, Afrobohemian Decor, Rubber Phone Cases, Magnetic Eyeliner/Lashes, Pet Safety Vests, Blue Light Glasses, Draped Skirts, GlowScrub Pads, Mutalk 2, Solar Lights, Travel Pillow, Magnetic Shelves, UV Resin Kits, Laptop Stands, Label Makers, HoverAir Drones, Mini Cooling Fans, Red Light Therapy Devices, Medicube Masks, LED Face Masks, Dual-Ended Eyeliner Stamp, Mushroom Coffee, Pet Smart Bowls, Phone Stands, Hydrogen Water Bottles, Mini Massage Guns.
+
+## Summary
+
+**Result:** 0 advances, 4 persistent candidates all eliminated.  
+**Root causes:** Hard failures in shipping practicality (oversized/fragile/electrical hazmat) and regulatory compliance (unverified claims). All survivors face extreme competitive saturation and trend maturation signals.

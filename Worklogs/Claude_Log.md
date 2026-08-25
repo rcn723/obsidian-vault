@@ -1,5 +1,37 @@
 # Claude Worklog
 
+## 2026-08-23 — Growth pipeline scheduled run: maintenance mode, queue at 5, no change since 2026-08-22
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18 (1-day gap since the last run on 2026-08-22). Repo unchanged (HEAD still `81ee9e5`, same uncommitted concurrent-session `posts.tsx` draft, still untouched); zero email threads (`newer_than:2d in:inbox`) — no beta/outreach replies. Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-22 (5th run) — Growth pipeline scheduled run: maintenance mode, queue at 5, no change since 2nd run today
+
+Scheduled `welra-growth-pipeline` run, third growth-pipeline firing today. Queue gate re-checked = 5, unchanged. Repo and inbox state identical to the 2nd run today (HEAD still `81ee9e5`, same uncommitted concurrent-session draft in `posts.tsx`, untouched; zero email threads `newer_than:2d in:inbox`). Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-22 (4th run) — welra-weekly-blog: staged "Shopify Analytics: the 6 reports worth your time" (5 review passes, 3 real catches)
+
+`welra-weekly-blog` scheduled task. Working tree was clean at start (no leftover unshipped post from last week). Picked Pillar E #16 (platform guide) — first Pillar E post since the June 14 launch, rotated off Pillar F since the last post (2026-08-14) was founder/trust. Six real Shopify reports covered plus the built-in Benchmarks feature (median/25th/75th percentile vs similar stores), all verified against help.shopify.com rather than SaaS-blog secondary sources.
+
+Took 5 independent review passes to close, not the usual 2: pass 1 FAILED — 3 of 6 named Shopify reports were paraphrased instead of exact, and one ("New vs returning customers") was described as splitting revenue when Shopify's own docs confirm it only counts customers. Pass 2 FAILED — near-duplicate description/intro sentence, filler-word overuse ("worth"/"actually"/"genuinely"), a mechanical H2 template, and — caught independently mid-pass — the central report was cited under a name Shopify has since deprecated ("Online store conversion over time," corrected to current "Conversion rate over time"). Pass 3 FAILED — a Statista citation didn't actually support its claim (linked stat was a US year-over-year self-report survey, not a global conversion-rate figure); pulled the stat and its footnote entirely rather than force a weaker citation, since no defensible primary source turned up. Passes 4 and 5 came back clean.
+
+`tsc --noEmit` + `npm run build` clean, `/blog/shopify-analytics-six-reports` in the static route output, dev-server-verified zero console errors and all 5 linked routes 200. Left uncommitted in `posts.tsx` per the stage-don't-deploy rule. Updated Content_Calendar.md (marked #16 ✅ staged, flagged a stale duplicate Pillar F #19 title for next time), State.md, and mirrored the approve+deploy action to `_RYAN_TODO.md` item 0 with the exact command.
+
+## 2026-08-22 (3rd run) — Prospect Radar: 0 leads delivered (Reddit, 8 subs); 2 rejected
+
+Prospect Radar: 0 leads delivered (r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce via Claude-in-Chrome); 2 candidates rejected as exact-account repeats of already-flagged not-a-prospect posts (r/Printify JealousSpeaker5398 — competitor building own tool, previously rejected twice; r/PrintOnDemand Pixogate99 — flagged repeat engagement-bait account), plus 3 more rejected as wrong-shape (listing-quality feedback, inventory sync, plugin question). 18th consecutive zero-lead sweep since 2026-07-28. community.etsy.com/IndieHackers skipped again, decision now 22+ days open. Full notes in Projects/Welra/Prospect_Radar.md under 2026-08-22.
+
+## 2026-08-22 (2nd run) — Growth pipeline scheduled run: maintenance mode, queue at 5; noticed an in-progress blog draft, left untouched
+
+Queue gate = 5, unchanged from this morning's run and since 2026-07-18 → Stage 1 skipped. Repo check found a change since this morning: an uncommitted, mid-write draft of a new blog post (`shopifySixReports` — "Shopify Analytics: the 6 reports worth your time," Content_Calendar backlog #16) sitting in `apps/web/src/app/blog/posts.tsx`, HEAD still `81ee9e5` (nothing committed). Not this pipeline's work and not finished, so left entirely alone — not committed, not validated, not staged as an approval packet. Reads as a concurrent live/other-automation session actively writing it (today's Saturday, not the weekly-blog job's Thursday slot). Email checked — zero threads in the last 2 days, no beta/outreach replies. Nothing broken, nothing to sharpen. No notification.
+
+## 2026-08-22 — Growth pipeline scheduled run: maintenance mode, queue at 5, nothing to report
+
+Queue gate = 5 (Indie Hackers, Resend broadcast, TikTok demo, Shopify Partners, BetaList), unchanged since 2026-07-18 → Stage 1 skipped per the execution-debt gate. Repo re-verified clean (HEAD `81ee9e5`, in sync with origin, no drift since 2026-08-14). Email checked — zero threads in the last day, no beta/outreach replies. Nothing to sharpen, nothing broken. No notification.
+
+## 2026-08-21 — Prospect Radar: 0 leads delivered (full 8-sub Reddit sweep); 3 near-misses opened and rejected; 1-day gap flagged
+
+Full sweep of all 8 target subs via old.reddit.com `/new` listings (r/smallbusiness via in-sub search, same as prior sweeps since its `/new` feed churns too fast for a straight listing to reach 3 days). 0 leads cleared the bar — 17th zero-lead sweep since the 07-28 lead. No logged sweep for 2026-08-20 (one-day gap, joining the 08-09/10/11 and 08-17 gaps already on record). Three candidates opened and verified: an r/ecommerce sales-swing-diagnosis post (idle curiosity, already thoroughly answered, plus a cluster of AutoMod-removed low-karma comments suggesting bait activity); an r/shopify cash-position post (genuine pain but PO-affordability cash-flow forecasting, not product/channel profit visibility — wrong problem for Welra, already drew an unsolicited DM-pitch from a competing builder); and an r/shopify customer-motivation post (CRO research, OP explicitly ruled out analytics tools as the ask). Also caught the same free margin-calculator tool (Magicbones666's "PromoStrat") self-promoted identically in both r/ecommerce and r/smallbusiness same day. community.etsy.com/IndieHackers decision remains open, now 21+ days. Updated Prospect_Radar.md, _RYAN_TODO.md (block + frontmatter).
+
 ## 2026-08-18 — Welra growth pipeline: maintenance mode, no change
 
 Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18. Repo unchanged (HEAD still `81ee9e5`, clean, no diff vs origin); zero email threads (`newer_than:2d in:inbox`). Nothing new to sharpen, nothing broken. No notification.
@@ -1512,3 +1544,39 @@ Scheduled `welra-growth-pipeline` run, third firing today. Queue gate re-checked
 ## 2026-08-17 — Welra growth pipeline: maintenance mode, no change
 
 Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18. Repo unchanged (HEAD still `81ee9e5`, clean, no diff vs origin); zero email threads (`newer_than:2d in:inbox`). Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-19 — Welra Prospect Radar: 0 leads delivered (Reddit, 8 subs), 4 rejected
+
+Prospect Radar: 0 leads delivered (Reddit: r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/smallbusiness, r/shopify, r/woocommerce); 4 rejected (Etsy international-shipping-fee question — already resolved in-thread; Printify profit-tracking question — OP is a would-be competitor validating a tool to build, not a prospect, 3rd such instance since 08-06; r/ecommerce slow-weeks question — demand-cycle/marketing shape, not analytics; r/shopify payout-timing bug report — platform issue, not a pain Welra solves). 16th zero-lead sweep since 07-28. community.etsy.com/IndieHackers decision still open, 19+ days.
+
+## 2026-08-20 — Welra growth pipeline: maintenance mode, queue unchanged
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18 (2-day gap since the last run on 2026-08-18). Repo unchanged (HEAD still `81ee9e5`, clean, no diff vs origin); zero email threads (`newer_than:3d in:inbox`) — no beta/outreach replies. Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-20 (2nd run) — Welra growth pipeline: maintenance mode, no change (same-day re-check)
+
+Scheduled `welra-growth-pipeline` run, second firing today. Queue gate re-checked = 5, unchanged. Repo and inbox state identical to this morning's run (HEAD still `81ee9e5`, clean, no diff vs origin; zero email threads `newer_than:2d in:inbox`). Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-24 — Welra growth pipeline: maintenance mode, no change
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18. Repo unchanged (HEAD still `81ee9e5`, same uncommitted `posts.tsx` draft awaiting Ryan's approve+deploy); zero email threads (`newer_than:2d in:inbox`) — no beta/outreach replies. Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-24 — Prospect Radar: 1 lead delivered (r/EtsySellers), 2 rejected
+
+Prospect Radar: 1 lead delivered (r/EtsySellers — u/PerkySundays, per-order Etsy fee/cost visibility pain); 2 rejected (r/smallbusiness international-fee post — sub actively suspicious of tool-promo replies; r/woocommerce pricing-cadence post — turned out to be agency market research, not a personal seller). Breaks a 19-sweep, 26-day zero-lead streak. IndieHackers spot-checked via WebSearch — still only surfaces SEO content, not genuine pain posts; community.etsy.com decision request still open at 25+ days.
+
+## 2026-08-24 (2nd run) — Welra growth pipeline: maintenance mode, no change (same-day re-check)
+
+Scheduled `welra-growth-pipeline` run, second firing today. Queue gate re-checked = 5, unchanged from this morning's run. Repo state identical (HEAD still `81ee9e5`, same uncommitted `posts.tsx` draft awaiting Ryan's approve+deploy, no diff vs origin); email identical (`newer_than:2d in:inbox` — zero threads, no beta/outreach replies). Noted for the record only: the separate `welra-daily-prospect-radar` task delivered a genuine lead today (r/EtsySellers, breaking a 19-sweep zero-lead streak) — already logged in `_RYAN_TODO.md` by that task, nothing for this pipeline to act on. Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-24 (3rd run) — Welra growth pipeline: maintenance mode, no change (same-day re-check)
+
+Scheduled `welra-growth-pipeline` run, third firing today. Queue gate re-checked = 5, unchanged from the 2nd run today. Recomputed from scratch: confirmed task 1 ("Send 3 warm DMs") and 1b are fully checked in `_RYAN_TODO.md` (completed 2026-07-06, not new — consistent with every prior log never counting task 1 among the 5). Repo state identical (HEAD still `81ee9e5`, same uncommitted `posts.tsx` draft awaiting Ryan's approve+deploy, no diff vs origin); email identical (`newer_than:2d in:inbox` — zero threads, no beta/outreach replies). Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-25 — Welra growth pipeline: maintenance mode, no change
+
+Scheduled `welra-growth-pipeline` run. Queue gate re-checked = 5, unchanged since 2026-07-18: Indie Hackers, Resend broadcast, TikTok demo video, Shopify Partners readiness-flag flip, BetaList listing. Repo state identical (HEAD still `81ee9e5`, same uncommitted `posts.tsx` draft awaiting Ryan's approve+deploy, no diff vs origin); email identical (`newer_than:1d` and `newer_than:2d in:inbox` — zero threads, no beta/outreach replies). Nothing new to sharpen, nothing broken. No notification.
+
+## 2026-08-25 — Prospect Radar: 0 leads delivered (Reddit sweep of 8 subs), 0 rejected as astroturf/repeat (near-misses noted, not rejected-as-junk)
+
+Scheduled `welra-daily-prospect-radar` run, 20th zero-lead sweep since 2026-07-28. Swept r/EtsySellers, r/Etsy, r/printify, r/PrintOnDemand, r/ecommerce, r/shopify, r/woocommerce via old.reddit.com `/new`, plus r/smallbusiness in-sub search — nothing cleared the pain-match bar. Closest misses: an r/smallbusiness batch/inventory-labeling post, a QuickBooks reconciliation post, and a founder cash-runway post — all wrong shape or wrong audience for Welra's "which products/channels make money" pitch. IndieHackers/community.etsy.com skipped again per the still-open 07-31 decision request (25+ days). PerkySundays (08-24 lead) remains unanswered and stays live in `_RYAN_TODO.md`. Full notes in `Projects/Welra/Prospect_Radar.md` under 2026-08-25.

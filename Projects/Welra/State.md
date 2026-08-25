@@ -2,11 +2,19 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-08-14 (blog post "Why I built a report instead of another dashboard" DEPLOYED LIVE — Ryan said "deploy blog", repo HEAD `81ee9e5`, welra.io/blog/report-not-a-dashboard returns 200. See entry below.)
+updated: 2026-08-22 (blog post "Shopify Analytics: the 6 reports worth your time" STAGED via welra-weekly-blog scheduled task — uncommitted in repo, awaiting Ryan approve + deploy. See entry below.)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 
 # Welra — Project State
+
+## 2026-08-22 — Blog post staged: "Shopify Analytics: the 6 reports worth your time"
+
+`welra-weekly-blog` scheduled run. Pillar E (platform guide, slug `shopify-analytics-six-reports`) — first Pillar E post since the June 14 launch post; rotated off Pillar F since the immediately prior post (2026-08-14) was founder/trust. Six real Shopify reports covered (Total sales over time, Total sales by referrer, Conversion rate over time, New vs returning customers, Products by sell-through rate, Average order value over time), plus Shopify's built-in Benchmarks feature (median/25th/75th percentile comparison vs similar stores).
+
+Went through 5 independent review passes to close the gate, not the usual 2 — 3 caught real problems: pass 1 found 3 of 6 report names were loosely paraphrased instead of exact, plus one report ("New vs returning customers") mischaracterized as a revenue split when Shopify's own docs confirm it's a customer-count report; pass 2 found prose repetition (near-duplicate description/intro sentence, filler-word overuse, mechanical H2 template) and, independently mid-round, that the post's central report was cited under a name Shopify has since **deprecated** ("Online store conversion over time" → corrected to current "Conversion rate over time"); pass 3 found a Statista citation that didn't actually support its claim (the linked stat was a US year-over-year self-report survey, not a global conversion-rate figure) — removed rather than patched, since no defensible primary-source global benchmark turned up in research. Passes 4 and 5 came back clean.
+
+`tsc --noEmit` + `npm run build` both clean, `/blog/shopify-analytics-six-reports` in the static route output, dev-server-verified zero console errors, all 5 linked routes (`how-to-read-your-etsy-stats`, `revenue-vs-profit-bestseller`, `/signup`, `/sample`, `/blog` index) return 200. Sitting as an uncommitted working-tree change in `apps/web/src/app/blog/posts.tsx` — not committed, pushed, or deployed. Mirrored to `_RYAN_TODO.md` item 0 with the exact deploy command. Content_Calendar.md updated (Pillar E #16 marked ✅ staged) — also flagged a stale duplicate Pillar F #19 working title (same as the already-published #18) worth a fresh angle next time F comes due.
 
 ## 2026-08-14 — Blog post deployed live: "Why I built a report instead of another dashboard"
 
