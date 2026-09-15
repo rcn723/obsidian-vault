@@ -686,3 +686,106 @@ All single-day appearances (1/3): Jelly Blush Gummy Accessories, PDRN, Toe Space
 
 **Result:** 0 advances, 4 persistent candidates all eliminated.  
 **Root causes:** Hard failures in shipping practicality (oversized/fragile/electrical hazmat) and regulatory compliance (unverified claims). All survivors face extreme competitive saturation and trend maturation signals.
+
+## 2026-09-07
+
+**Result: No candidates met the persistence threshold.**
+
+All products identified across the three daily scan entries (2026-08-19, 2026-08-21, 2026-09-07) appear fewer than 3 times and therefore do not qualify for detailed screening.
+
+**Products showing highest recurrence (2 appearances):**
+- **Hydrogen Water Bottles** — insufficient persistence (08-21: Early, 09-07: Rising), not screened
+- **Pet products** (different SKUs) — insufficient persistence (08-19: Safety Vests, 08-21: Smart Bowls), not screened
+
+**All single-entry products:** Insufficient persistence, not screened.
+
+**Conclusion:** The scan entries show broad category churn (different product subcategories within pet, skincare, water bottles) rather than persistent demand for specific product-trend clusters. Recommend collecting additional daily scans (4–7 entries) to establish true trend momentum and filter out daily noise.
+
+Looking at the last 3 daily entries (2026-08-21, 2026-09-07, 2026-09-09), I've cross-referenced all 46 unique candidates for persistence.
+
+**Persistence Check Result:**
+
+No candidates meet the threshold of appearing across at least 3 of the last 3 entries. 
+
+Products with partial persistence (insufficient for screening):
+- **Hydrogen Water Bottles** — appeared 2026-08-21 and 2026-09-07, insufficient persistence, not screened
+- **Dual-Ended Eyeliner Stamp / Precision Beauty Tools** — appeared 2026-08-21 (as "Dual-Ended Eyeliner Stamp") and 2026-09-09 (as "Precision Beauty Tools variant"), insufficient persistence, not screened
+
+All remaining 44 candidates appeared only once across the 3 entries — **insufficient persistence, not screened**.
+
+---
+
+## 2026-09-09
+
+**No candidates advanced to feasibility scoring.** The 3-entry scan window shows fragmented signals—individual products spike briefly then drop from subsequent reports, indicating trend churn rather than stable rising interest. Recommend extending the observation window to 4-5 entries to identify genuine sustained demand patterns that clear the single-entry-spike filter.
+
+# 2026-09-12 Feasibility Screening
+
+## Persistence Analysis
+
+Scanning the last 3 daily entries (2026-09-07, 09-09, 09-12) for candidates appearing across **at least 3 of the 3 entries** with stable or rising interest:
+
+### Screening Results
+
+| Candidate | Persistence | Unit Economics | Shipping | Ad Compliance | IP/TM Risk | Returns | Saturation | Durability | Decision | Reason |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Functional/Health Supplements & Beverages** (Mushroom Coffee, Immune Support, Adaptogens, Protein) | ✓ All 3 entries | PASS (3-5x markup) | PASS | ⚠ CONDITIONAL (health claims scrutiny) | MODERATE (Four Sigmatic dominance) | MODERATE-HIGH (food/consumable) | **FAIL** — Mushroom coffee saturated, dominance noted; protein extremely competitive; adaptogenic beverages oversaturated on Shopify | Mixed (mushroom/protein evergreen, adaptogens cyclical) | **KILL** | Extreme competitive saturation + established brand dominance (Four Sigmatic, major supplement players) squeezes dropship margins. Food product return/chargeback liability. Heavy existing ad presence. |
+| **Beauty/Skincare/Wellness Personal Care Tools** (PDRN, Snail Mucin, LED Masks, Eyeliner Stamp, Gua Sha, Scalp Massagers) | ✓ All 3 entries | PASS (4-6x markup) | PASS | ⚠ CONDITIONAL (avoid medical claims) | MODERATE (brand confusion on K-beauty copycats; design patent risk on specific tools) | MODERATE-HIGH (skincare allergies, gadget durability) | **FAIL** — Gua sha noted as "thousands of sellers on Amazon"; PDRN/snail mucin "already had major prior trend"; eyeliner stamp "likely already oversaturated"; LED masks "already heavily marketed" | Mixed (tools evergreen, skincare trends cyclical; snail mucin maturation signals present) | **KILL** | High saturation across all sub-products. Skincare trend cycles and return liability. Eyeliner stamp is TikTok-driven novelty with questionable repeat-purchase durability. Substantial ad saturation already visible on platforms. |
+
+---
+
+## All Other Products
+
+**Insufficient persistence (appearing in 1-2 of 3 entries only) — NOT SCREENED:**
+
+Mouth Tape (2 entries), Cooling Neck Fans (2 entries), Water Bottles/Smart Water Bottles (2 entries), Smart Home/IoT Devices (2 entries), Pet Products (2 entries), All remaining single-entry products (HoverAir drones, red light therapy, electric lunch boxes, gaming peripherals, projectors, keyboards, etc.)
+
+---
+
+## Summary
+
+**Advance: 0 candidates**
+
+Both persistent candidates (appearing all 3 entries) scored KILL on competitive saturation. No candidates advanced to next stage.
+
+Looking at the last 3 daily scan entries (09-09, 09-12, 09-13), I need to identify products appearing across multiple days.
+
+**Persistence Check:**
+
+After cross-referencing all three lists, only **two products appear in multiple entries**:
+
+1. **Mouth Tape / Sleep Products** – appears in 09-09 and 09-12
+2. **Portable LED Strip Lights** – appears in 09-12 and 09-13
+
+All other products in the 09-13 list appear only once and are therefore listed as **insufficient persistence, not screened**.
+
+---
+
+## 2026-09-13
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/Trademark | Return Risk | Saturation | Trend Durability | **Decision** | **Reason** |
+|---|---|---|---|---|---|---|---|---|---|
+| **Mouth Tape (Sleep)** | OK (est. 5-8x) | ✓ Light/small | **FAIL** | Moderate (Hostage brand leader) | HIGH | Established (media coverage, brand leader) | LOW (trend-driven) | **KILL** | **[HARD FAIL]** Ad platform compliance: unverified health claims, safety liability (sleep apnea risk, medical controversy in 09-2026 press). Liability exposure too high for profitable operation. |
+| **Portable LED Strip Lights** | **MARGINAL** (2-2.5x, price compression since 2023) | ✓ Light/small | ✓ Standard tech | Moderate (ecosystem lock-in) | Moderate | **VERY HIGH** (Amazon/Alibaba direct, heavy ad saturation) | **PEAKING** (declining margins, seasonal) | **KILL** | Combination of extreme saturation, active price compression (2023–present), and peaking trend stage creates negative entry environment. Margins already squeezed; no differentiation vector. |
+
+---
+
+### All other products (2026-09-13 except above two):
+
+**Insufficient persistence, not screened:**
+- Mahjong Sets & Supplies
+- Headache Relief Caps
+- Fibermaxxing (High-Fiber Snacks/Bars)
+- Run Club Accessories
+- Air Cushion Loafers
+- Strawberry Legs Treatment
+- Crochet/Knitting Supplies & Kits
+- Digital Detox Products
+- Medicube PDRN Collagen Balm
+- Mini Electric Garlic Choppers
+- Afrobohemian Home Decor
+- Circus-Inspired Home Decor
+- Lace-Focused Beauty/Fashion
+- Pet Supplies (Bath Hammocks, Innovative Harnesses)
+
+**Summary:** Zero candidates advance. Both persistent products fail hard constraints (health/compliance liability, margin compression + saturation). Recommend returning to scan-log tomorrow for fresh persistent cohort.

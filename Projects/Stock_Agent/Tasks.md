@@ -2,7 +2,7 @@
 title: Stock Agent Tasks
 project: stock-agent
 type: tasks
-updated: 2026-06-25
+updated: 2026-09-13 (sunday-review — NAS unreachable via SSH this session, could not re-verify paper_mode/trade count/reporter-deploy status live; everything below is UNVERIFIED since 2026-06-25/26, not confirmed stale)
 tags: [stock, trading, python]
 ---
 
@@ -12,6 +12,8 @@ See [[Projects/Stock_Agent/State]] for portfolio and strategy details.
 Log: NAS `logs/stock.log`; local backtests: `~/Claude/Projects/Stock/checkpoints/`.
 
 ## Action Required (Ryan)
+
+- [ ] **Re-verify live status once NAS SSH is restored** — 2026-09-13 sunday-review couldn't reach the NAS (`ssh 192.168.1.2` connection refused, see [[Knowledge_Base/NAS_SSH_Runbook]]). Local Mac `config.yaml` still shows `paper_mode: true` (unchanged since 06-26) but this is the staged value, not a live NAS read — **confirm paper_mode is still true the moment SSH is back**, and get the real closed-trade count from the NAS trade log rather than trusting the 23/30 figure below (last confirmed 2026-06-25/26, 80 days stale). [owner:: claude] [priority:: medium] [status:: open]
 
 - [ ] **Deploy the forward-test self-reporter** (1 more `./deploy.sh stock`). Staged + validated on the Mac (config `forward_test.start_date` + `_report_forward_test` in agent.py; smoke tests green) but NOT on the NAS yet — the one-time deploy auth was consumed by the strategy deploy. Once deployed, every 14:00 PDT run logs `[forward-test] since 2026-06-26: trades=N/30 … → GATE PASS/not yet` to `logs/stock.log`, so the go-live milestone is visible without `--checkpoint`. NOTE: until then, Mac canonical source is 1 commit ahead of the live NAS bot (NAS has the strategy, not the reporter). [owner:: ryan] [priority:: medium] [status:: open]
 

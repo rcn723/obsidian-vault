@@ -2,7 +2,7 @@
 title: Welra State
 project: Welra
 type: state
-updated: 2026-08-22 (blog post "Shopify Analytics: the 6 reports worth your time" STAGED via welra-weekly-blog scheduled task — uncommitted in repo, awaiting Ryan approve + deploy. See entry below.)
+updated: 2026-09-13 (sunday-review — infra verified clean: health 200, git clean/0-ahead-behind (HEAD `81ee9e5`, only the known staged blog draft uncommitted), all crons firing (scheduler/catchup/token-health/retention), last Sunday's report (09-06→09-07) confirmed actually delivered via the real "Sending report email…Report email sent" log lines, not just a status flag. Honest scoreboard unchanged: 1 free beta customer (R&R), $0 revenue, Stripe test mode. Staged blog post now 22 days un-shipped.)
 tags: [welra, saas, ecommerce, ai-reports]
 ---
 

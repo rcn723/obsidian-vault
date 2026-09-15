@@ -2,7 +2,19 @@
 title: Rust & Rainbow State
 project: rust-and-rainbow
 type: state
-updated: 2026-07-17 (🔴 "My Person Watercolor" — the design Ryan banned 2026-07-12 — re-posted live to IG/Pinterest/TikTok via a stale NAS designs_log.json; root cause fixed, 3 posts need Ryan's manual deletion; prior: 2026-07-12 pm — Pinterest reconnected + verified live; Meta Business Verification submitted, confirmed pending; FB Page website / IG bio link update NOT confirmed live despite Ryan's report)
+updated: 2026-09-13 (sunday-review — first live check in 2 months; the automated Sunday review job was silently broken 07-19→09-06 on a headless CLI auth failure, see Headless_Claude_Runbook. NAS unreachable via SSH this session (connection refused, DSM itself healthy) — blocked posting-log/supervisor/report verification. Mac-side token checks (Instagram, FB Page, Zernio Pinterest+TikTok) all live and healthy. bgfix queue grew 2→16 pending designs, confirming it only clears in an interactive Adobe session.)
+
+## 2026-09-13 — Sunday review resumes after an 8-week gap; NAS SSH found down
+
+This is the first real live check on R&R since 2026-07-12 — the automated Sunday-review launchd job (`com.rustandrainbow.welra_assessment`) silently failed 8 of the last 9 Sundays with an expired headless-CLI refresh token (`OAuth session expired and could not be refreshed`), invisible because it only logs to a local file nobody was tailing. Full incident write-up in `~/MyVault/Knowledge_Base/Headless_Claude_Runbook.md`.
+
+**Blocked this session:** NAS SSH refused connections on both port 22 and 2222 while the DSM web UI stayed fully healthy — sshd itself is off, not a network/key issue. This blocks the posting log, `rr-supervisor` heartbeat, and weekly `reports/*.md` verification. Fix + diagnostic: `~/MyVault/Knowledge_Base/NAS_SSH_Runbook.md` Incident log.
+
+**Confirmed healthy from the Mac side:** `META_ACCESS_TOKEN` (Instagram, via `graph.instagram.com`) and `META_FB_PAGE_TOKEN` (via `graph.facebook.com`) both live; Zernio shows Pinterest active (token valid to 2026-10-10) and TikTok active. Caveat: these are Mac `.env` values — the Mac and NAS copies are known to drift (see 2026-07-17 below), so this doesn't confirm what the NAS is actually running.
+
+**New finding:** the Adobe background-removal queue grew from 2 pending designs (2026-07-12) to 16, confirming the queue only clears with an interactive Adobe login — it's been untouched for 2 months. Full list + fix steps in Tasks.md.
+
+**Still unresolved from 2026-07-17 (unverified this session, NAS down):** the 3 manual platform deletions for the re-posted "My Person Watercolor" design may still be outstanding — no way to confirm live post status without NAS/API access this session.
 
 ## 2026-07-17 — "My Person Watercolor" re-posted: Mac/NAS designs_log.json drift
 

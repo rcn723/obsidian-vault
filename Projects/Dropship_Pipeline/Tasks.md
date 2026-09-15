@@ -2,7 +2,7 @@
 title: Dropship Pipeline — Tasks
 project: Dropship_Pipeline
 type: tasks
-updated: 2026-07-04
+updated: 2026-09-13 (sunday-review — confirmed running daily with real API spend since 07-04, no real gaps; fixed a small exit-127 retry bug)
 tags: [dropship, automation]
 ---
 
@@ -12,7 +12,7 @@ tags: [dropship, automation]
 - [ ] **Business plan revised to a <$100 cash-cap bootstrap ramp** — [[Projects/Dropship_Pipeline/Business_Plan_Dog_Cooling_Mats]]: Shopify dropped for a $0-hosting Vercel+Stripe storefront (reusing Welra's Vercel account, a NEW separate Stripe account — not Welra's, which stays untouched per its standing do-not-touch), initial cash ~$75-100 (test order + Round 1 ad seed), every round after funded by prior-round revenue. Start at Phase 0 [owner:: ryan] [priority:: high] [status:: open]
 - [ ] Confirm Welra's Vercel account plan tier (Pro/Team vs. Hobby) before building the storefront there — Hobby tier's terms restrict commercial use — Phase 1, Step 7 of the business plan [owner:: ryan] [priority:: high] [status:: open]
 - [ ] **Compare 3 dropship channels, not just CJ** (CJ read too expensive) — check Alibaba's own Dropshipping Center first (dropship-tagged suppliers, likely cheapest, ~20-40% below AliExpress/CJ per general research), then AliExpress, then CJ as fallback. All three block automated price-checking — must log in manually. Get real per-unit + shipping cost for the mat AND the bundle upsell item — Phase 1, Steps 1–4 of the business plan [owner:: ryan] [priority:: high] [status:: open]
-- [ ] Check `dropship-pipeline/logs/launchd-stdout.log` weekly for the first month to confirm the 7am job actually fires (SETUP step 3) [owner:: ryan] [priority:: medium] [status:: open]
+- [x] Check `dropship-pipeline/logs/launchd-stdout.log` weekly for the first month to confirm the 7am job actually fires (SETUP step 3) — CONFIRMED 2026-09-13: daily logs present 07-04 through 09-13 with real API cost, no unexplained gaps. Found + fixed 2 fresh failures (09-08, 09-10, `exit 127` coinciding with a CLI self-update) with a 5s retry in `run_claude()`; a separate 09-11 failure was the Mac sleeping mid-run (environmental, no code fix). [owner:: ryan] [priority:: medium] [status:: done]
 - [ ] [DEFERRED from arch-review] Before any Gate-5 ad spend: work the entity/compliance checklist in `dropship-pipeline/SETUP.md` (LLC placement decision, bank subaccount, resale certificate; nexus + insurance are post-traction) [owner:: ryan] [priority:: high] [status:: open]
 - [ ] [DEFERRED from arch-review] Per-stage checkpointing for agents 2–4: a retry after a stage-3/4 failure re-runs and re-appends stage 2 (token cost + duplicate log entries; gates unaffected — scan-log is guarded) [owner:: claude] [priority:: low] [status:: open]
 - [ ] [DEFERRED from arch-review] Obsidian Git will auto-commit `logs/` + `.last-run` daily — harmless noise; gitignore if it bothers [owner:: claude] [priority:: low] [status:: open]

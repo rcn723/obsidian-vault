@@ -49,9 +49,18 @@ MODEL_VALIDATOR="sonnet"
 # Wraps a headless claude call: on failure, writes the actual error into the
 # run log instead of dying silently (a 401/expired-auth failure is otherwise
 # invisible in an unattended run). Also logs per-call cost.
+#
+# Retries once on exit 127 ("command not found") — seen 2026-09-08/09-10
+# coinciding with the claude CLI self-updating its binary mid-run; a 5s
+# pause clears the race without masking a genuinely missing binary (the
+# retry would just fail again and still surface the error).
 run_claude() {
   local raw status=0
   raw="$(claude -p "$@" --output-format json)" || status=$?
+  if [[ $status -eq 127 ]]; then
+    sleep 5
+    raw="$(claude -p "$@" --output-format json)" || status=$?
+  fi
   # The CLI exits non-zero on API errors but still prints the error JSON,
   # so try to extract the real message either way.
   if [[ $status -ne 0 || "$(jq -r '.is_error // false' <<<"$raw" 2>/dev/null)" == "true" ]]; then

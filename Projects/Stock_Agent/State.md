@@ -2,7 +2,7 @@
 title: Stock Agent State
 project: stock-agent
 type: state
-updated: 2026-06-25
+updated: 2026-09-13 (sunday-review — NAS unreachable via SSH this session, connection refused on both 22 and 2222 while DSM web UI stayed healthy; could not confirm live paper_mode, real trade count, or forward-test-reporter deploy status. Everything below is last-confirmed 2026-06-25/26, unverified since — not confirmed changed, just not re-checked. See Knowledge_Base/NAS_SSH_Runbook Incident log.)
 tags: [stock, trading, python, automation]
 ---
 

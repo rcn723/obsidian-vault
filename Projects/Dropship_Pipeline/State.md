@@ -2,11 +2,19 @@
 title: Dropship Pipeline — State
 project: Dropship_Pipeline
 type: state
-updated: 2026-07-04
+updated: 2026-09-13 (sunday-review — first live check since 07-04; pipeline has run daily and clean this whole time. Latest verdicts, 2026-08-12: Qi2 charging pads ITERATE, reusable water bottles NO-GO — both stalled, no candidate has advanced since Dog Cooling Mats. Fixed a small exit-127 retry bug.)
 tags: [dropship, automation, launchd, claude-headless]
 ---
 
 # Dropship Pipeline — State
+
+## 2026-09-13 — Sunday review: pipeline healthy, 2 exit-127s fixed with a retry
+
+First live check since 2026-07-04 (the automated Sunday-review job was itself silently broken 07-19 through 09-06 — see `Knowledge_Base/Headless_Claude_Runbook.md`). Good news: this pipeline runs on its own launchd job, independent of that broken one, and never stopped. `logs/pipeline-run-*.log` shows daily runs from 07-04 through today with real API spend ($0.07–$0.51/agent), no unexplained gaps.
+
+Found 2 fresh failures — `claude call failed (exit 127): no error detail` on 09-08 and 09-10 — coinciding with the `claude` CLI binary auto-updating (the npm-global symlink's mtime moved during this very session). Fixed: `run_claude()` in `run-pipeline.sh` now retries once after a 5s sleep specifically on exit 127, without masking a genuinely missing binary (a real absence just fails the same way on retry). Syntax-checked (`bash -n`), not yet live-verified against a real recurrence. A separate 09-11 failure ("computer went to sleep mid-response") is an environmental hazard, not a code bug — no fix applied, just noted.
+
+No new candidate has advanced past screening since Dog Cooling Mats (07-03). The 2026-08-12 adversarial review killed both of that round's candidates: Qi2 wireless charging pads (ITERATE — needs a cheap CAC pre-test before the full ad spend, real Qi2 certification docs, not just a listing claim) and reusable water bottles (NO-GO — the differentiation claim doesn't exist yet and the category is Stanley/Hydro-Flask saturated). Dog Cooling Mats itself hasn't progressed past the business-plan stage — see Tasks.md, still waiting on Ryan's 3-channel supplier pricing check.
 
 ## What it is
 Daily automated product-research pipeline: 4 chained headless `claude -p` agents (trend scanner → feasibility screener → plan builder → validator/devil's-advocate) appending to markdown logs in `~/MyVault/dropship-pipeline/`. Feeds the existing LLC; a GO verdict means "worth a Gate 5 paid-traffic test", not a validated business. Source unpacked from `~/Downloads/dropship-pipeline`.

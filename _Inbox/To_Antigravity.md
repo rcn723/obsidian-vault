@@ -1,8 +1,40 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-08-22 (welra-weekly-blog — staged "Shopify Analytics: the 6 reports worth your time," Pillar E, uncommitted in repo awaiting Ryan approve+deploy. See entry below.)
-tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive]
+updated: 2026-09-13 (Sunday review — first REAL one in 2 months; automated weekly job was silently broken 8 of 9 weeks on an expired headless-CLI refresh token. NAS SSH found down (blocks R&R/Stock Agent checks), R&R bg-removal queue grew 2→16, Welra infra fully healthy, Dropship pipeline healthy with a small retry fix applied. See top entry.)
+tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive, stock-agent, nas]
+---
+
+# To Antigravity — 2026-09-13 — Sunday review resumes after 2-month automation gap; NAS SSH down
+
+## 2026-09-13 — Sunday review: 8-week automation gap closed, NAS SSH outage found
+
+**Headline:** the automated Sunday-review launchd job (`com.rustandrainbow.welra_assessment`) silently failed **8 of the last 9 Sundays** (2026-07-19 through 2026-09-06) with `OAuth session expired and could not be refreshed` — a refresh-token failure mode distinct from the plain-401 case already in the runbook. It only logged to a local file nobody was tailing, so 2 months of "clean Sunday reviews" were actually 2 months of the review not running at all. Full incident + mitigation in `Knowledge_Base/Headless_Claude_Runbook.md`; practical takeaway: an interactive Claude Code session seems to be what keeps the refresh token alive, so a 2+ week stretch without one is a real risk window for every headless launchd job on this Mac.
+
+**New blocker found today:** NAS SSH refused connections (both port 22 and 2222) while the DSM web UI stayed fully healthy — sshd itself is off, not a key/network issue. This blocked live verification of Rust & Rainbow's posting log/supervisor heartbeat and Stock Agent's paper_mode/trade count. New 🔴 RIGHT NOW item in `_RYAN_TODO.md`; diagnostic+fix in `Knowledge_Base/NAS_SSH_Runbook.md` Incident log.
+
+**Per-project:**
+- **Welra:** infra fully healthy (health 200, git clean, all crons firing, last Sunday's report delivery confirmed via real log lines not just a status flag). Scoreboard unchanged: 1 free beta customer, $0 revenue, Stripe test. Staged blog post now 22 days un-shipped.
+- **Rust & Rainbow:** Mac-side tokens (Instagram, FB Page, Zernio Pinterest+TikTok) all live. bg-removal queue grew 2→16 pending designs over the 2-month gap — confirms it only clears with an interactive Adobe session. NAS-side state (posting log, supervisor) unverified.
+- **Stock Agent:** fully unverified — NAS down. Last confirmed state is 2026-06-25/26 (23/30 trades, gate correctly failing). Not confirmed changed, just not re-checked.
+- **Dropship pipeline:** running clean daily since 07-04 with real API spend, no real gaps. Found + fixed 2 fresh `exit 127` failures (09-08, 09-10) coinciding with a `claude` CLI self-update — added a 5s retry to `run_claude()` in `run-pipeline.sh`. Latest verdicts (08-12) both stalled (Qi2 charging pads ITERATE, water bottles NO-GO).
+
+Files updated: State.md + Tasks.md for Welra/Rust_and_Rainbow/Stock_Agent/Dropship_Pipeline, `_RYAN_TODO.md`, `_Master_Tasks.md` Snapshot, `Knowledge_Base/Headless_Claude_Runbook.md` + `NAS_SSH_Runbook.md`, `Worklogs/Claude_Log.md`, and the Desktop-Claude project memory (reference_headless_claude_ops, reference_nas_ssh_ops, project_dropship_pipeline, MEMORY.md index).
+
+`welra-daily-prospect-radar` scheduled run. Reddit sweep could not run — Claude in Chrome not connected (`list_connected_browsers` empty, `tabs_context_mcp` "not connected"), same as 2026-09-08. No other route to reddit.com. Non-Reddit fallbacks all dead ends again (community.etsy.com 404, IndieHackers JS-gated, WebSearch only listicles). The carried r/shopify u/Samskihero lead (surfaced 09-06) dropped as stale — 4 days old, unanswered since 09-06, unverifiable with Chrome down; drafted value-reply preserved in `Projects/Welra/Prospect_Radar.md` (09-06/09-07 entries). 0 new leads, 0 rejections. Reliability is now the dominant issue: 2 straight Chrome-outage days + the 09-01→09-05 5-day task-firing gap; radar has surfaced 1 lead in 16 days and it went unanswered. `_RYAN_TODO.md` block now carries an explicit Ryan decision ask: fix the Chrome extension (reinstall + sign in side panel) or drop the radar to ~2×/week / pause. Standing 2026-07-31 cadence/scope decision 40+ days overdue. Updated: `Prospect_Radar.md`, `_RYAN_TODO.md` (block + frontmatter), `Claude_Log.md`.
+
+---
+
+# To Antigravity — 2026-09-05 — growth pipeline: maintenance mode, no change
+
+`welra-growth-pipeline` scheduled run. Stage 0 gate = queue at 5, so maintenance mode (no new ideas). ~6-day gap since the last logged run on 2026-08-30 — no runs recorded 08-31 through 09-04 (worth a glance at whether the scheduled task is firing reliably). Welra repo HEAD still `81ee9e5`, working tree unchanged (the 2026-08-22 staged Shopify Analytics blog post — item 0 in `_RYAN_TODO.md` — is still uncommitted and un-shipped 14 days on; weekly blog cadence paused on Ryan's approve+deploy). Inbox zero threads (`in:inbox newer_than:4d`), no beta/outreach replies. Nothing broken, nothing staged, no notification. Updated: `Growth_Pipeline.md` (queue gate log + date), `State.md` (date), `Claude_Log.md`.
+
+---
+
+# To Antigravity — 2026-08-29 (2nd run) — growth pipeline: maintenance mode, no change
+
+`welra-growth-pipeline` scheduled run, 2nd today. Stage 0 gate = queue at 5, so maintenance mode (no new ideas). Same-day re-check: Welra repo HEAD still `81ee9e5`, working tree unchanged (the 2026-08-22 staged Shopify Analytics blog post — item 0 in `_RYAN_TODO.md` — is still uncommitted and un-shipped 7 days on; weekly blog cadence paused on Ryan's approve+deploy). Inbox zero threads, no beta/outreach replies. Nothing broken, nothing staged, no notification. Updated: `Growth_Pipeline.md` (queue gate log + date), `Claude_Log.md`.
+
 ---
 
 # To Antigravity — 2026-08-22 — welra-weekly-blog: staged Shopify Analytics post, 5 review passes (3 real catches)
@@ -566,3 +598,54 @@ Scheduled pipeline re-ran same-day, maintenance mode again (queue gate = 5, reco
 
 ## 2026-08-25 (prospect-radar run) — from Claude
 0 new leads today, 20th zero-lead sweep since 07-28. Nearest misses were an r/smallbusiness batch/inventory post, a QuickBooks reconciliation post, and a founder cash-runway post — none matched Welra's product/channel-profit-visibility shape. PerkySundays (08-24 lead) is still unanswered and stays live in `_RYAN_TODO.md`, only 1 lead outstanding (well under the 6-lead backlog threshold). IndieHackers/community.etsy.com decision request still open (25+ days, unchanged). `_RYAN_TODO.md`, `Projects/Welra/Prospect_Radar.md`, and `Claude_Log.md` all updated.
+
+## 2026-08-25 (2nd run) — Welra growth pipeline: no change
+Scheduled pipeline re-ran same-day, maintenance mode again (queue gate = 5, unchanged since 2026-07-18). Repo/email identical to this morning's run (HEAD `81ee9e5`, same uncommitted `posts.tsx` draft; zero email threads). Cross-checked today's Prospect Radar run (0 new leads) — nothing for this pipeline to act on. Nothing else changed, no notification.
+
+## 2026-08-26 (growth-pipeline scheduled run) — from Claude
+Maintenance mode — queue gate still at 5 (Indie Hackers, Resend broadcast, TikTok demo, Shopify Partners, BetaList), unchanged since 2026-07-18. Stage 1/2 skipped, no new ideas. Repo unchanged (HEAD `81ee9e5`, same uncommitted `posts.tsx` draft — item 0's staged Shopify blog post, still awaiting Ryan's approve+deploy). Email checked (`newer_than:1d` and `newer_than:3d in:inbox`) — zero threads, no beta/outreach replies. Cross-checked today's Prospect Radar run (21st zero-lead sweep, PerkySundays still open). Nothing broken, nothing to sharpen. No notification. `Projects/Welra/Growth_Pipeline.md` and `Claude_Log.md` updated.
+
+## 2026-08-26 (2nd run) — Welra growth pipeline: no change
+Scheduled pipeline re-ran same-day, maintenance mode again (queue gate = 5, unchanged). Repo/email identical to this morning's run (HEAD `81ee9e5`, same uncommitted `posts.tsx` draft; zero email threads on `newer_than:1d`/`3d`). Nothing changed, nothing broken, no notification. `Growth_Pipeline.md` + `Claude_Log.md` updated.
+
+## 2026-08-27 (2nd run) — Welra growth pipeline: no change
+Scheduled pipeline re-ran same-day, maintenance mode again (queue gate = 5, unchanged since 2026-07-18). Repo/email identical to this morning's run (HEAD `81ee9e5`, same uncommitted `posts.tsx` Shopify-blog draft; zero email threads on `newer_than:3d`). Nothing changed, nothing broken, no notification. `Growth_Pipeline.md` + `Claude_Log.md` updated.
+
+## 2026-08-28 (prospect-radar run) — from Claude
+0 new leads, 23rd zero-lead sweep since 07-28. PerkySundays (08-24 r/EtsySellers lead) DROPPED as answered-by-others — 4 days old, thread filled in with every drafted-reply point, OP confirmed she can see her per-order payout. One near-miss rejected: r/smallbusiness "is my business failing?" — new seller asking what to track, but hobby-scale (~$52 sales) consignment paint-kit operation with no online shop, already 33 comments deep with the right answer. `_RYAN_TODO.md` PROSPECT_RADAR block now a no-action status note; `Projects/Welra/Prospect_Radar.md` 2026-08-28 section + `Claude_Log.md` updated. Standing IndieHackers/community.etsy.com + cadence/scope decision now 28 days open. Heads-up unchanged: ryanatwelra Reddit account shows 1 unread message worth a manual check.
+
+## 2026-08-28 (welra-weekly-blog scheduled run) — from Claude
+No new blog post drafted. Last week's staged post (`shopify-analytics-six-reports`, staged 2026-08-22) is still un-shipped 6 days on — uncommitted in the Welra working tree, 404 on welra.io. Per the task's Step 0 (no stacking a second draft on an un-shipped one), this run stopped and flagged rather than drafting. Weekly cadence is now paused on Ryan's approve+deploy of the staged post. Updated `Content_Calendar.md`, `Projects/Welra/Tasks.md` (staged post added as open P0 — was only tracked in `_RYAN_TODO.md` before), `_RYAN_TODO.md` item 0, `Claude_Log.md`. Repo unchanged: HEAD `81ee9e5`, 9 live posts match committed `posts.tsx`.
+
+## 2026-08-28 (growth-pipeline scheduled run) — from Claude
+Maintenance mode — queue gate still at 5 (Indie Hackers, Resend broadcast, TikTok demo, Shopify Partners, BetaList), unchanged since 2026-07-18. Stage 1/2 skipped, no new ideas. Repo unchanged (HEAD `81ee9e5`, same uncommitted `posts.tsx` draft = item 0's staged Shopify blog post, still awaiting Ryan's approve+deploy). Email `newer_than:3d in:inbox` → zero threads, no beta/outreach replies. Nothing broken, nothing to sharpen. No notification. `Projects/Welra/Growth_Pipeline.md` + `Claude_Log.md` updated.
+
+## 2026-08-29 — Welra growth pipeline (maintenance mode)
+- Stage 0 gate: queue at 5, unchanged since 2026-07-18 → no Stage 1, no new ideas.
+- Signal checks clean: Welra repo HEAD 81ee9e5, working tree = only the uncommitted posts.tsx staged Shopify blog post (item 0), 0 ahead/behind origin/main. Gmail newer_than:3d in:inbox → zero threads.
+- Item 0 (Shopify analytics blog post) now 7 days staged/un-shipped; weekly blog cadence paused on Ryan's approval. No Ryan-action created or changed.
+- Updated: Growth_Pipeline.md (date + queue gate log), Projects/Welra/State.md (date), Worklogs/Claude_Log.md. No notification.
+
+## 2026-08-29 (3rd run) — Welra growth pipeline: no change
+Scheduled pipeline re-ran same-day, maintenance mode again (queue gate = 5, unchanged since 2026-07-18). Repo/email identical to the two earlier runs today (HEAD `81ee9e5`, same uncommitted `posts.tsx` Shopify-blog draft = item 0, now 7 days un-shipped; zero email threads on `newer_than:3d`). Nothing changed, nothing broken, no notification. `Growth_Pipeline.md` + `State.md` + `Claude_Log.md` updated.
+
+## 2026-08-30 — Welra growth pipeline: no change
+Scheduled pipeline ran, maintenance mode (queue gate = 5, unchanged since 2026-07-18) → no Stage 1, no new ideas. Signal checks clean: Welra repo HEAD `81ee9e5`, working tree = only the uncommitted `posts.tsx` staged Shopify blog post (item 0), 0 ahead/behind `origin/main`, no concurrent-session drift. Gmail `newer_than:3d in:inbox` → zero threads, no beta/outreach replies. Item 0 now 8 days staged/un-shipped; weekly blog cadence paused on Ryan's approval. No Ryan-action created or changed. Updated: `Growth_Pipeline.md` (date + queue gate log), `Projects/Welra/State.md` (date), `Worklogs/Claude_Log.md`. No notification.
+
+## 2026-08-30 (2nd run) — Welra growth pipeline: no change
+Scheduled pipeline re-ran same-day, maintenance mode again (queue gate = 5, unchanged since 2026-07-18). Repo/email identical to this morning's run (HEAD `81ee9e5`, same uncommitted `posts.tsx` Shopify-blog draft = item 0, 8 days un-shipped; zero email threads on `newer_than:3d in:inbox`). No concurrent-session drift. Nothing changed, nothing broken, no notification. `Growth_Pipeline.md` + `State.md` + `Claude_Log.md` updated.
+
+## 2026-09-06 — Welra growth pipeline: no change
+Scheduled pipeline ran, maintenance mode (queue gate = 5, unchanged since 2026-07-18) → no Stage 1, no new ideas. Signal checks clean: Welra repo HEAD `81ee9e5`, working tree = only the uncommitted `posts.tsx` staged Shopify blog post (item 0), 0 ahead/behind `origin/main`, no concurrent-session drift. Gmail `in:inbox newer_than:9d` → 1 thread, a personal family email (e-sim/phone service for a trip), not a beta/outreach reply. Item 0 now 15 days staged/un-shipped; weekly blog cadence paused on Ryan's approval. No Ryan-action created or changed. Updated: `Growth_Pipeline.md` (date + queue gate log), `Projects/Welra/State.md` (date), `Worklogs/Claude_Log.md`. No notification.
+
+## 2026-09-06 (Prospect Radar scheduled run) — from Claude
+1 lead delivered — first since PerkySundays (08-24). r/shopify u/Samskihero, "Where can I see total fees and costs incurred on my Shopify store?" (posted 09-05) — genuine Shopify seller (filmmaker, 1+ yr running his store) trying to see true all-in cost; Finance summary only shows Payments/FX, plan/apps/shipping/duties bill separately. Value-only reply drafted in `_RYAN_TODO.md` Welra section (thread already has a downvoted −2 self-promo comment, so no Welra mention in-thread; DM mention OK only if OP engages). ~7 rejected (hostile-OP Shopify payout thread, an "Accio Work" self-promo, an Etsy-ads-strategy thread, Pixogate99 repeat). **Flag: `welra-daily-prospect-radar` did not fire 09-01–09-05 — 5-day silent gap, largest yet; worth checking it's still registered.** Standing 07-31 cadence/scope decision now 37 days overdue. Updated: `Projects/Welra/Prospect_Radar.md` (2026-09-06 entry), `_RYAN_TODO.md` (PROSPECT_RADAR block + frontmatter), `Worklogs/Claude_Log.md`.
+
+---
+**2026-09-06 (Welra growth-pipeline, 2nd run today) — maintenance mode, no changes.** Queue gate = 5 (unchanged since 2026-07-18), Stage 1 stayed gated off. Welra repo HEAD `81ee9e5`, no drift, `posts.tsx` blog draft (item 0) still uncommitted / un-shipped 15 days. Inbox clean, no outreach replies. Prospect Radar's 1 lead today (r/shopify u/Samskihero) is tracked in `_RYAN_TODO.md`, not actioned here. Files touched: Growth_Pipeline.md (gate log + date), State.md (date), Claude_Log.md (worklog line). No notification.
+
+## 2026-09-08 (Prospect Radar scheduled run) — from Claude
+Reddit sweep **did not run** — Claude in Chrome is offline (`list_connected_browsers` empty, `tabs_context` "not connected" on retries) and reddit.com has no other route from this environment. Non-Reddit fallbacks empty (community.etsy.com 404, IndieHackers JS-gated, WebSearch no fresh threads). 0 new leads, 0 rejections. The 09-06 r/shopify u/Samskihero lead carried one more day in the `_RYAN_TODO.md` block but not re-verified today — 3 days old, likely last carry. **Reliability degrading on two axes: task didn't fire 09-01→09-05 (5-day gap), Chrome down on a day it did.** Standing 07-31 cadence/scope decision 39+ days overdue. Updated: `Projects/Welra/Prospect_Radar.md` (2026-09-08 entry), `_RYAN_TODO.md` (PROSPECT_RADAR block + frontmatter), `Worklogs/Claude_Log.md`.
+
+## 2026-09-10 (Prospect Radar scheduled run) — from Claude
+Chrome reconnected after 2 offline days (09-08, 09-09) — full sweep ran. **1 lead delivered.** r/printondemand u/Late-Zombie-8119, "Printify restricts Insights unless you hit 20 orders/month, and small sellers should know this" (posted 09-09). Verified genuine seller via 5+ yrs of unrelated post history; small Etsy+Printify side-hustle, does own bookkeeping, lost his production-vs-shipping cost view when Printify gated Insights behind 20 orders/month. Squarely Welra's domain. Thread wide open (1 downvoted self-promo reply). Value-first reply drafted in `_RYAN_TODO.md` Welra section with an optional soft Welra mention (r/printondemand allows it; Ryan can cut the last paragraph if it feels like piling on). ~10 rejected (hannahb_23 channel/tools pair, Pixogate99 repeats, Otherwise_Primary123 astroturf, dataform self-promo, etc.). Chrome dropped ~6× mid-sweep, self-recovered each time — flaky but functional. Standing 07-31 cadence/scope decision 41+ days overdue, but today shows the daily sweep still works when Chrome cooperates. Updated: `Projects/Welra/Prospect_Radar.md` (2026-09-10 entry + frontmatter), `_RYAN_TODO.md` (PROSPECT_RADAR block + frontmatter), `Worklogs/Claude_Log.md`.

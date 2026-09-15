@@ -2,7 +2,7 @@
 title: Headless Claude CLI Runbook (401s, launchd pipelines)
 project: Knowledge_Base
 type: runbook
-updated: 2026-07-02
+updated: 2026-09-13
 tags: [runbook, claude-cli, launchd, headless, automation]
 ---
 
@@ -33,6 +33,20 @@ Facts learned 2026-07-02 (dropship pipeline install):
 - Plist `EnvironmentVariables.PATH` must include the claude install dir (here `~/.npm-global/bin`); Homebrew on Apple Silicon is `/opt/homebrew/bin` and is NOT in default paths.
 - Don't `grep` LLM free text loosely for control flow: `GO` is a substring of `NO-GO`; `-i "ADVANCE"` matches "no candidates advanced". Match structural tokens (`\bADVANCE\b` case-sensitive, `verdict[^a-zA-Z0-9]*GO\b`) and have the SCRIPT write deterministic markers (date headings) rather than trusting the model's formatting.
 - Marker-file dedup (`.last-run` written only on success) + `RunAtLoad` is a sound self-retry pattern — but guard per-stage appends so a same-day retry doesn't duplicate earlier stages' output (fake-persistence corruption).
+
+## New failure mode (2026-09-13): refresh token itself expires, not just the access token — 8 straight weekly failures, silent
+
+The `~/Claude/Projects/side business/Rust & Rainbow/run_welra_assessment.sh` launchd job (fires every Sunday 9am, invokes `claude --print --dangerously-skip-permissions`) failed **8 of 9 consecutive Sundays** (2026-07-19 through 2026-09-06) with `Failed to authenticate: OAuth session expired and could not be refreshed` — a different, worse error than the plain 401 documented above. The keychain diagnostic in this runbook only checks `expiresAt` on the short-lived access token; it says nothing about whether the underlying **refresh token** is still valid. When the refresh token itself lapses, the access token can't self-renew, headless calls fail every time, and — because this job only logs to a local file (`welra_assessment.log`) that nothing else reads — **it produced zero visible signal for two months.** This is exactly why the automated Sunday review silently stopped running real checks after 2026-07-12.
+
+**How it silently self-resolved:** by 2026-09-13 the CLI was authenticating again with no explicit `/login` logged anywhere. The most likely mechanism: any *interactive* `claude` session (Claude Code opened normally, not headless) re-establishes/refreshes the stored credential as a side effect of normal use. A refresh token appears to need periodic interactive use to stay alive — pure headless/cron usage alone does not keep it refreshed indefinitely.
+
+**Fastest diagnostic (do this before assuming it's just a plain expired-access-token 401):**
+```bash
+tail -30 "/Users/ryannortham/Claude/Projects/side business/Rust & Rainbow/welra_assessment.log"
+```
+If you see `Failed to authenticate: OAuth session expired and could not be refreshed` (not a `401 Invalid authentication credentials`), this is the refresh-token variant — `/login` fixes it immediately, but so does just using Claude Code interactively for anything else.
+
+**The real fix is detection, not the login step itself:** nothing was watching this log, so 8 failures cost 2 months of "clean" Sunday reviews that were actually never running. Until a proper alert exists, the cheapest mitigation is: **any time Ryan opens an interactive Claude Code session, that's enough to keep the refresh token alive for the following week's cron** — so an extended stretch (2+ weeks) without opening Claude Code interactively at all is the actual risk window for every headless launchd job on this Mac (Sunday assessment, dropship pipeline, amazon-review-agent), not just this one.
 
 ## Related
 [[Projects/Dropship_Pipeline/State]] · [[Knowledge_Base/NAS_SSH_Runbook]]

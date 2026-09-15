@@ -1,7 +1,7 @@
 ---
 title: Synology NAS SSH / Agent-Sync Troubleshooting Runbook
 type: runbook
-updated: 2026-06-22
+updated: 2026-09-13
 tags: [nas, synology, ssh, rsync, agents, sync, runbook, ops]
 ---
 
@@ -83,3 +83,7 @@ ssh admin@192.168.1.2 'tail -20 /volume1/claude-agents/logs/rust-rainbow.log'   
 ```
 
 Expect the first R&R sync to overwrite the NAS `designs_log.json` (social-rotation `last_posted` resets once — harmless). Confirm the NAS now has current `agent.py` (e.g. `grep -c run_suggest` on the NAS copy).
+
+## Incident log
+
+- **2026-09-13 (sunday-review):** `ssh 192.168.1.2` on both port 22 and 2222 returned **connection refused** (not a timeout) — an active rejection, meaning sshd itself was down, not a network/firewall drop or key issue. Confirmed isolated to SSH: DSM web ports (5000/5001/80/443) all accepted connections and the NAS answered ping, so this was a service-level outage, not a NAS outage. This blocked every NAS-side check that Sunday review depends on (R&R posting log, weekly reports, `rr-supervisor` heartbeat, Stock Agent healthcheck/paper_mode/trade count) — first time this exact "connection refused" variant (vs. the 2026-06-22 "permission denied" key-rejection variant already documented above) has been hit. **Fix is the same Fix path above, Step 2** (SSH toggled off in DSM Control Panel → Terminal & SNMP, or the port changed) — re-enable it there, no key/permission work needed for this variant. Not yet confirmed fixed as of this writing; tracked as a high-priority Ryan task in `_RYAN_TODO.md`.
