@@ -789,3 +789,88 @@ All other products in the 09-13 list appear only once and are therefore listed a
 - Pet Supplies (Bath Hammocks, Innovative Harnesses)
 
 **Summary:** Zero candidates advance. Both persistent products fail hard constraints (health/compliance liability, margin compression + saturation). Recommend returning to scan-log tomorrow for fresh persistent cohort.
+
+# Feasibility Screening Results — 2026-09-14
+
+No candidates meet the persistence threshold for screening.
+
+**Persistence analysis:** Scanning all products across 2026-09-12, 2026-09-13, and 2026-09-14:
+
+- **Mouth Tape for Sleep**: 2 entries (09-12, 09-14) — insufficient persistence
+- **Travel Pants**: 2 entries (09-12, 09-14) — insufficient persistence  
+- **Posture Correctors**: 2 entries (09-12, 09-14) — insufficient persistence
+- **Portable Printers**: 2 entries (09-12, 09-14) — insufficient persistence
+- **All other candidates**: 1 entry only — insufficient persistence
+
+**Result:** Zero candidates qualify for scoring. Each major trend appeared in a maximum of 2 of the 3 recent entries; the screening threshold requires stable/rising interest across all 3 consecutive days to filter for genuine momentum versus daily noise. 
+
+**Recommendation:** Hold this batch. Re-run screening once 3+ consecutive days show overlap on candidates with 2+ appearances (e.g., if Posture Correctors or Portable Printers appear again in 2026-09-15, they qualify for round 2 evaluation).
+
+## 2026-09-15
+
+### Persistence Filter
+
+**Candidates with 2+ appearances (not one-day spikes):**
+- Mouth Tape (09-14, 09-15)
+- LED Strip Lights / Portable LED Strip Lights (09-13, 09-15)
+
+**Insufficient persistence (1 appearance only):**
+Mahjong Sets, Headache Relief Caps, Fibermaxxing, Run Club Accessories, Air Cushion Loafers, Strawberry Legs Treatment, Crochet/Knitting, Digital Detox, Medicube Collagen Balm, Garlic Choppers, Afrobohemian Décor, Circus Décor, Lace Products, Posture Correctors, Mini Printers, Coatigan, Eyeliner Stamp, Lab-Grown Diamonds, AI Planners, Chess Sets, Back-to-School Storage, Compression Leggings, Travel Pants, Sauna Blankets, Press-On Nails, Hair Repair Masks, Blue Light Therapy, Collagen Dog Chews, Portable Ice Makers, Premium Dog Food, Air Purifiers, Mini Projectors, Collagen Skincare Supplements, Smart Pet Feeders, Wireless Charging Lamps, Hydrogen Water Bottles, Heatless Curling Rods, PDRN Skincare, Matcha Coffee, Magic Jellykins.
+
+### Screening Results
+
+| Candidate | Unit Economics | Shipping | Ad Compliance | IP/Trademark | Return Risk | Saturation | Durability | **Decision** | **Specific Reason** |
+|-----------|---|---|---|---|---|---|---|---|---|
+| **Mouth Tape** | ✓ PASS (est. 3–4x margin) | ✓ PASS | ⚠ CAUTION* | ✓ PASS | MOD (8–15%) | MOD–LOW (emerging) | MEDIUM–HIGH | **ADVANCE** | 134% YoY growth sustained across 2 scans; multi-source validation (Google Trends + Reddit problem-solving communities); addresses real ongoing need (sleep optimization/mouth breathing correction), not viral moment. Unit economics support 3–4x markup ($10–18 retail, $0.75–1.50 cost). **Risk:** Medical claims substantiation required in ad copy; requires careful messaging compliance. |
+| **LED Strip Lights** | ✗ FAIL (est. 1.5–2x actual) | ✓ PASS | ✓ PASS | ✓ PASS | MOD (10–15%) | HIGH (flagged peaking 09-13; mature 09-15) | COMPRESSED | **KILL** | Flagged "peaking" (09-13) and "mature category with heavy feature churn; price compression ongoing since 2023" (09-15); both scans note high saturation (Amazon/Alibaba direct competition). Estimated landed unit economics: $5–8 wholesale → $25–35 retail (compressed) → $1–6 net margin after ads/fees/shipping = 1.2–1.4x markup, **fails hard economics threshold** of 2.5x. Holiday Q4 seasonality spike insufficient to justify margin compression. |
+
+**Tally: 1 ADVANCE (Mouth Tape), 1 KILL (LED Lights). Maximum 3 advanced—only 1 viable.**
+
+---
+
+*Mouth Tape risk note: Ad platforms (Meta, Google, TikTok) restrict unverified medical/health claims. Compliant angles: "breathwork optimization," "sleep hygiene," "athletic recovery"—avoid "cures snoring" or efficacy claims without clinical sourcing.*
+
+# 2026-09-16
+
+## Persistent Candidates Screened (2+ entries)
+
+| Candidate | Appears | Trend | Unit Econ | Ship | Ads | IP | Returns | Saturation | Durability | Verdict | Reason |
+|-----------|---------|-------|-----------|------|-----|----|----|---|---|---|--|
+| **Mouth Tape for Sleep** | E1, E2 | Rising | ✓ PASS | ✓ PASS | ✓ PASS | ✓ PASS | Moderate | Low | Evergreen (solves real problem) | **ADVANCE** | 134% YoY growth (Entry 2), sustained multi-source signal (Trends + Reddit), no ad restrictions, consumable repeat purchase model, entry window still open |
+| **PDRN & Peptide Skincare** | E2, E3 | Rising | ✓ PASS | ✓ PASS | ✓ PASS | ✓ PASS | Mod-High | High | 2-3yr ingredient trend | **ADVANCE** | Rising in both entries, emerging K-beauty subcategory, no [HARD] failures, but requires differentiation to compete with incumbents |
+| **Hydrogen Water Bottles** | E1, E2 | Rising | Marginal | ⚠ RISK | ✗ FAIL | ✓ PASS | Mod-High | Moderate | Low (hype-driven) | **KILL** | **[HARD] Failure:** Unverified health claims rejected by Meta/Google Ads; Entry 1 flags regulatory scrutiny + low repeat purchase likelihood; fragile/electrical shipping risk |
+| **Back-to-School** | E1, E3 | Peaking | DEPENDS | DEPENDS | ✓ PASS | ✓ PASS | Mod-High | Very High | Seasonal only | **KILL** | **[HARD] Failure:** Already mid-purchase window (Sept 14, Entry 1); tech segment dominated by major retailers (Best Buy, Amazon); storage is saturated; inventory arriving Oct+will miss Dec window |
+| **Pet Products** (Category) | E2, E3 | Rising | Mixed | ✓ PASS | ✗ FAIL | DEPENDS | Mod | High | Moderate | **KILL** | **[HARD] Failure:** Pet CBD fails ad compliance (Meta/TikTok restrict hemp ads for all animals); Collagen chews flagged as "increasingly saturated"; Dog food requires differentiation vs. Royal Canin/Hill's incumbents |
+| **Sensory Toys/Fidgets** | E2, E3 | Peaking | ✓ PASS | ✓ PASS | ✓ PASS | Moderate | Mod-High | Red Ocean | **FAIL: 2-4 wk** | **KILL** | Peaking (declining), toy trends collapse in 2–4 week cycles per Entry 2, already oversaturated with listings per both entries, entry too late for dropship timing |
+| **K-Beauty Skincare** | E2, E3 | Rising | ✓ PASS | ✓ PASS | ✓ PASS | Low-Mod | Mod-High | **Red Ocean** | Moderate | **KILL** | Entry 3 explicit: "Established brands dominating; requires product-market fit." TikTok Shop already $142M in skincare (7 of 10 top brands Korean); new entrant faces incumbent lock-in |
+| **LED/Ambient Lighting** | E2, E3 | Peaking | ✓ PASS | Fragile | ✓ PASS | Moderate | Mod-High | **Red Ocean** | Short lifecycle | **KILL** | Entry 3: "Massive TikTok saturation already; low-cost item easily replicated." Both entries flag peaking stage + short product lifecycle; mature category with feature churn; by arrival, trend declining |
+
+---
+
+## Insufficient Persistence (Single Entry Only—Not Screened)
+Collagen Chews for Dogs, Portable Ice Makers, Premium Dog Food, Air Purifiers, Mini Wireless Projectors, Collagen Skincare Supplements, Smart Pet Feeders, Wireless Charging Desk Lamps, Heatless Curling Rods, Matcha & Mushroom Coffee Blends, Magic Jellykins Squishy Toys, Crochet Plushies/Amigurumi, Gunpla Model Kits, DIY Terrariums, iPhone Ultra Accessories, Bag Charms, Electric Pepper Grinders, Memory Foam Cushions, Cordless Power Tools, Microwave Popcorn Maker, and all Entry 1–only products (Posture Correctors, Photo Printers, Coatigan, Eyeliner Stamp, Lab-Grown Diamond Jewelry, AI Planners, Magnetic Chess, Compression Leggings, Travel Pants, Sauna Blankets, Press-On Nails, Hair Masks, Blue Light Therapy).
+
+---
+
+## Advancement Summary
+- **Top 1:** Mouth Tape for Sleep (multi-source signal, evergreen problem, no [HARD] failures, low saturation entry window)
+- **Top 2:** PDRN & Peptide Skincare (rising in both entries, emerging niche, but high incumbent competition noted)
+
+**Three-candidate max:** Only 2 of 8 persistent candidates pass screening without [HARD] failures or terminal durability issues.
+
+# 2026-09-17 Persistence Screening
+
+## Summary
+
+**No candidates advanced.** Screening yielded zero products meeting the persistence threshold: zero candidates appeared across all 3 daily entries (2026-09-15, 2026-09-16, 2026-09-17) with stable or rising interest.
+
+## Insufficient Persistence (Not Screened)
+
+| Product | Appearances | Trend Pattern | Reason |
+|---------|------------|---------------|--------|
+| **Mouth Tape** | 2/3 (09-15, 09-17) | Rising | Single-day absence (09-16); peak saturation risk noted in 09-17 |
+| **PDRN & Peptide Skincare** | 2/3 (09-15, 09-16) | Rising | Missing from 09-17 scan; early-stage category lacks repeat-purchase signal |
+| **Smart Pet Fountains / Smart Pet Feeders** | 2/3 (09-15, 09-17) | Rising→Early | One-day gap (09-16); water-based products carry damage-return risk |
+| **All other 43 products** | 1/3 | Varies | Single-day appearance; insufficient persistence for qualified screening |
+
+**Recommendation:** Continue scanning through 2026-09-20 to capture 3-day persistent patterns before advancing to feasibility review. Current dataset lacks required overlap.

@@ -1,8 +1,16 @@
 ---
 title: To Antigravity
 type: inbox
-updated: 2026-09-13 (Sunday review — first REAL one in 2 months; automated weekly job was silently broken 8 of 9 weeks on an expired headless-CLI refresh token. NAS SSH found down (blocks R&R/Stock Agent checks), R&R bg-removal queue grew 2→16, Welra infra fully healthy, Dropship pipeline healthy with a small retry fix applied. See top entry.)
+updated: 2026-09-15 (Growth pipeline scheduled run — maintenance mode, no change. See entry below and top entry for the 09-13 Sunday review.)
 tags: [handoff, welra, rust-and-rainbow, growth-pipeline, dropship-pipeline, report-design, todo, shopify, railway, sop, automation, photo-archive, stock-agent, nas]
+---
+
+# To Antigravity — 2026-09-15 — Growth pipeline maintenance mode (no change)
+
+## 2026-09-15 — Growth pipeline scheduled run: maintenance mode, nothing to act on
+
+Queue gate re-checked = 5 (unchanged since 2026-07-18) → Stage 1 (new ideas) skipped per the execution-debt gate. Checked for outreach replies (zero in the last 9 days) and repo drift (Welra repo unchanged, HEAD `81ee9e5`, same uncommitted staged blog draft from 08-22, now 24 days un-shipped) — nothing to process, nothing broken. The 09-13 Sunday review already confirmed Welra infra healthy in this window, so no re-check was needed. `Projects/Welra/Growth_Pipeline.md` queue-gate log and Worklog updated; no new Ryan-action created.
+
 ---
 
 # To Antigravity — 2026-09-13 — Sunday review resumes after 2-month automation gap; NAS SSH down
@@ -649,3 +657,18 @@ Reddit sweep **did not run** — Claude in Chrome is offline (`list_connected_br
 
 ## 2026-09-10 (Prospect Radar scheduled run) — from Claude
 Chrome reconnected after 2 offline days (09-08, 09-09) — full sweep ran. **1 lead delivered.** r/printondemand u/Late-Zombie-8119, "Printify restricts Insights unless you hit 20 orders/month, and small sellers should know this" (posted 09-09). Verified genuine seller via 5+ yrs of unrelated post history; small Etsy+Printify side-hustle, does own bookkeeping, lost his production-vs-shipping cost view when Printify gated Insights behind 20 orders/month. Squarely Welra's domain. Thread wide open (1 downvoted self-promo reply). Value-first reply drafted in `_RYAN_TODO.md` Welra section with an optional soft Welra mention (r/printondemand allows it; Ryan can cut the last paragraph if it feels like piling on). ~10 rejected (hannahb_23 channel/tools pair, Pixogate99 repeats, Otherwise_Primary123 astroturf, dataform self-promo, etc.). Chrome dropped ~6× mid-sweep, self-recovered each time — flaky but functional. Standing 07-31 cadence/scope decision 41+ days overdue, but today shows the daily sweep still works when Chrome cooperates. Updated: `Projects/Welra/Prospect_Radar.md` (2026-09-10 entry + frontmatter), `_RYAN_TODO.md` (PROSPECT_RADAR block + frontmatter), `Worklogs/Claude_Log.md`.
+
+## 2026-09-14 (Prospect Radar scheduled run) — from Claude
+Chrome connected cleanly, no drops. Full sweep of all 8 target subs (r/EtsySellers, r/Etsy 2 pages each; r/printify, r/PrintOnDemand, r/ecommerce, r/shopify 1-2 pages; r/woocommerce 1 page; r/smallbusiness in-sub search) — **0 new leads.** Closest near-miss was a card-shop owner's multi-channel-visibility ask, rejected on scale (physical storefront + employees + inventory turnaround, not Welra's solo-online-seller shape). The 09-10 lead (u/Late-Zombie-8119, r/printondemand) dropped as stale — 5 days old, still no real answer in-thread. **Gap flag: no sweep logged 09-11 through 09-13 (3 days silent).** Standing 07-31 cadence/scope decision now 45+ days overdue — since 07-28 the radar has surfaced 3 leads total and all 3 went stale unanswered, which is the strongest argument yet that either the cadence or the delivery format needs to change. Updated: `Projects/Welra/Prospect_Radar.md` (2026-09-14 entry + frontmatter), `_RYAN_TODO.md` (PROSPECT_RADAR block + frontmatter), `Worklogs/Claude_Log.md`.
+
+## 2026-09-15 (Prospect Radar scheduled run) — from Claude
+Chrome connected but dropped ~6× mid-sweep (one drop was actually a one-time reddit.com domain-permission prompt, not a true outage), self-recovered each time. Full sweep of all 8 target subs via /new listings plus targeted in-sub searches on r/EtsySellers, r/ecommerce, and r/smallbusiness — **0 new leads**, 2nd zero-lead sweep in a row. Near-misses split into two buckets: builder/tool self-promo posing as genuine pain (an r/shopify "ad profitability" post pitching the OP's own paid teardown service, plus several r/smallbusiness "I'm building X" pitches) and one real seller whose pain is adjacent but not Welra-shaped (a protein-ball Etsy/Bakesy seller's backward-looking, single-channel bookkeeping-reconstruction crisis, not an ongoing weekly-numbers ask). **New pattern flagged:** an r/ecommerce post ended with leaked AI-agent meta-text ("Updated the session log doc to match... tell me which way and I'll take another pass") — confirms it as automated astroturf content, a clean mechanical tell distinct from the usual self-promo phrasing, worth watching for in future sweeps. Standing 07-31 cadence/scope decision now 46+ days overdue, unchanged. Updated: `Projects/Welra/Prospect_Radar.md` (2026-09-15 entry + frontmatter), `_RYAN_TODO.md` (PROSPECT_RADAR block + frontmatter), `Worklogs/Claude_Log.md`.
+
+## 2026-09-17 — Welra growth pipeline: no change
+Scheduled pipeline ran, maintenance mode (queue gate = 5, unchanged since 2026-07-18) → no Stage 1, no new ideas. Signal checks clean: repo HEAD `81ee9e5`, only the uncommitted `posts.tsx` staged blog post (item 0, now 26 days un-shipped), 0 ahead/behind origin/main, no concurrent-session drift. Gmail `in:inbox newer_than:1d` → empty, no beta/outreach reply. No Ryan-action created or changed. Updated: Growth_Pipeline.md (date + queue gate log), Claude_Log.md. No notification.
+
+## 2026-09-17 (2nd run) — Welra growth pipeline: no change
+Same-day re-check after this morning's run. Maintenance mode, queue at 5 (unchanged since 2026-07-18). Repo HEAD still `81ee9e5`, same uncommitted `posts.tsx` staged blog post (item 0, now 26 days un-shipped), 0 ahead/behind `origin/main`, no concurrent-session drift. Gmail `in:inbox newer_than:1d` → empty, no beta/outreach reply. Nothing broken, nothing to sharpen. Updated: Growth_Pipeline.md (date + queue gate log), Claude_Log.md. No notification.
+
+## 2026-09-17 — Welra weekly blog: still blocked on Ryan's approval, no new draft
+`welra-weekly-blog` scheduled run's Step 0 check found `shopify-analytics-six-reports` (STAGED 2026-08-22) still uncommitted/unpushed/404 — 26 days, not the "6 days" the tracking files still showed (stale since 08-28). Did not draft a second post per the no-stacking rule. Corrected the staleness figures in `_RYAN_TODO.md` item 0, `Tasks.md`, and added a reconciliation note to `Content_Calendar.md`. No content, no review, no validation this run. Updated: State.md, Tasks.md, Content_Calendar.md, Claude_Log.md, `_RYAN_TODO.md`. Notified Ryan directly.

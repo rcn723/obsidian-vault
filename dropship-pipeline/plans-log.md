@@ -734,3 +734,239 @@ Sources:
 - [Pinterest Ads Cost in 2026: CPC, CPM & Budget Guide (Trackbee)](https://www.trackbee.io/blog/pinterest-ads-cost)
 - [DDP Shipping Rates China to USA - AEB Logistics](https://aeblogistics.com/ddp-shipping-rates-china-to-usa/)
 - [Shipping Cost from China to USA in 2026 (DFH Logistics)](https://dfhlogistics.com/shipping-costs-from-china-to-usa/)
+
+## 2026-09-15 — 30-Day Launch Plan: Mouth Tape
+
+Only one candidate cleared screening (Mouth Tape — LED Strip Lights was killed on margin/saturation), so this is a single deep plan rather than three shallow ones.
+
+---
+
+### Target Customer
+
+Not "people who snore." Specific segment: **women 24–38 who already spend money on a "nighttime routine" as a category** — skincare slugging, magnesium/sleep gummies, silk pillowcases, gua sha. They're on TikTok/IG following sleep-optimization and "that girl" routine creators, not searching medical snoring forums. This matters for compliance too: targeting the routine/aesthetic buyer instead of the "I have a snoring problem" buyer keeps ad copy away from medical-claims territory (see risk note below).
+
+Secondary, smaller segment: athletes/biohackers following recovery-focused creators (Huberman-adjacent audiences) who tape for nasal-breathing during workouts and sleep.
+
+### Positioning — why buy from Ryan, not the next store that finds this trend
+
+Be honest about the commodity problem: the tape itself is undifferentiated — dozens of stores will source the same $0.03–0.08/strip factory product within weeks. Differentiation has to come from **brand and offer, not product**:
+
+1. **Aesthetic-first packaging and content**, not medical-device framing — positions as a routine ritual product (like a jade roller or silk scrunchie), which also sidesteps the ad-compliance risk on medical claims.
+2. **Bundle/subscription structure**, not single-box sales — a "30-Night Reset" 2–3 box bundle with a reusable travel case. This is also load-bearing for unit economics (see below): single-unit sales likely don't clear CAC.
+3. **Speed and responsiveness in the TikTok comments/DMs loop** — UGC-driven categories reward brands that reply fast and restitch trending sounds within days, not weeks. This is an execution advantage Ryan can actually own; a bigger competitor with slower approval chains can't move as fast.
+
+This is a first-mover content/offer race, not a product moat. If Ryan can't commit to daily content iteration in weeks 2–4, this candidate's edge disappears.
+
+### Supplier Options
+
+Real search results, with real gaps flagged rather than invented numbers:
+
+| Supplier | Source | Price signal found | MOQ signal found | Gap |
+|---|---|---|---|---|
+| **Quanzhou Maxtop Group Co., Ltd** | [Global Sources listing](https://www.globalsources.com/Snoring-aid/Mouth-Tape-1206492784p.htm) | $0.03/piece at factory price | Not stated in listing | Unclear if "piece" = single strip or packaged box — must confirm by inquiry before ordering |
+| **Viva Tape** (OEM/ODM, China) | [vivatape.com](https://vivatape.com/wholesale-mouth-tapes/) | Not listed publicly | Not listed publicly | Full OEM/ODM (custom color/size/fabric/packaging) — good for branded bundle, but pricing/MOQ requires a direct quote request, not searchable |
+| **Alibaba marketplace suppliers** (aggregate, via [Alibaba mouth tape supplier directory](https://www.alibaba.com/supplier/mouth-tape.html)) | Shenzhen Chuangshixin cited at $0.08/piece (PE film); Hebei/Anji-region suppliers at $30–100 piece MOQ tiers | MOQ range 2–100 pieces reported across different sellers | Same ambiguity on "piece" unit; also unverified whether "MOQ 2" means 2 units or 2 boxes — Alibaba listing pages regularly misreport this | 
+
+**Action before any money moves**: Week 1 must include direct message/quote requests to 2–3 of these (Maxtop, Viva Tape, one Alibaba mid-MOQ supplier) to nail down real per-box pricing, MOQ, and lead time — I don't have confirmed landed-cost data, only strip-level price signals from search. Typical China-to-US lead time for this product class is commonly cited as 2–4 weeks by air, but I did not confirm this specifically for these three suppliers, so treat it as a working assumption to verify, not a fact.
+
+### Unit Economics
+
+Using the screening's own passed range ($0.75–1.50 raw unit cost) cross-checked against the $0.03–0.08/strip factory pricing found above (30 strips/box → $0.90–2.40 raw material before packaging/freight):
+
+| Line item | Estimate | Confidence |
+|---|---|---|
+| Raw material (30-strip box) | $0.90–2.40 | From search, ambiguous unit — **flagged** |
+| Custom packaging + branding | $0.30–0.60 | Estimate, not sourced |
+| Freight/duty allocation (small-batch air) | $0.30–0.80 | Estimate, not sourced |
+| **Landed cost per box** | **~$1.50–3.00** | Blended estimate |
+| Target retail, single box | $16.99–18.99 | Grounded in market data: budget mouth tape retails ~$8.99 (60 strips), premium brands $25–35/30-day supply — $17 sits mid-market |
+| Payment processing (~3%) | ~$0.55 | Standard |
+
+**The CAC problem — stated plainly**: blended ad benchmarks below put CPC around $1.00–1.50 with an assumed cold-traffic landing page conversion rate of ~1.5–2.5% (this conversion rate is my estimate, not sourced — I found no benchmark for this specific product's CVR). That implies **CAC in the $15–20+ range**, which nearly consumes the entire margin on a single $17 box. **A single-box offer is close to unprofitable at these CACs.**
+
+This is why the bundle isn't just a positioning idea — it's load-bearing for the model:
+
+| | Single box | 2-box bundle |
+|---|---|---|
+| Retail price | $17.99 | $27.99 |
+| Landed cost | ~$2.25 | ~$4.50 |
+| Processing | ~$0.55 | ~$0.85 |
+| Est. CAC | ~$15–18 | ~$15–18 (same ad, higher AOV) |
+| **Contribution margin/order** | **~$0 to +$1** | **~$5 to +$8** |
+
+**Recommendation: launch with the bundle as the default offer, not the single box.** The single box should exist only as a low-friction entry SKU for retargeting/upsell math, not the primary ad destination.
+
+### Marketing Channel Plan
+
+**Primary: TikTok Spark Ads.** Health & wellness CPMs on TikTok run roughly $6–13, CPCs $0.80–1.50, with Spark Ads reportedly ~1.9x better CTR than standard in-feed ($6–13 CPM figure and Spark Ads comparison per [Triple Whale TikTok Benchmarks](https://www.triplewhale.com/blog/tiktok-benchmarks) and [Web Tonic Health & Wellness TikTok stats](https://www.webtonic.io/blog/health-wellness-tiktok-ads-statistics) — **these are aggregated 2026 benchmark reports, explicitly flagged as estimates, not a guarantee for this specific product**). TikTok fits because this category's proof-of-concept content (satisfying morning peel-off, "sleepy girl routine" aesthetic) is native to the platform and organic UGC can be repurposed directly into Spark Ads.
+
+**Secondary/retargeting only: Meta.** Beauty & Health is the *most expensive* vertical on Meta — CPM ~$12–22, CTR ~2.7% (per [Triple Whale Facebook Ads Benchmarks](https://www.triplewhale.com/blog/facebook-ads-benchmarks) and [get-ryze.ai Meta Ads Benchmarks](https://www.get-ryze.ai/blog/meta-ads-cost-benchmarks-by-industry-2026), same estimate caveat). Don't lead with Meta cold prospecting given these costs relative to the thin margin above — use it for retargeting site visitors/cart abandons only, where CVR is much higher and CAC drops.
+
+### 30-Day Launch Plan
+
+**Week 1 — Sourcing & foundation**
+- Send quote/sample requests to Maxtop, Viva Tape, and 1 Alibaba mid-tier supplier; confirm real per-box landed cost, MOQ, lead time
+- Register domain, spin up Shopify store (skeleton), set up TikTok Business Manager + pixel
+- Draft 3 ad angles that stay in "routine/aesthetic" territory, explicitly avoiding "cures/stops snoring" language (compliance)
+
+**Week 2 — Product & content**
+- Samples arrive; pick supplier, place small initial inventory order (couple hundred units — not thousands) once real landed cost is confirmed, not the estimate above
+- Build bundle-first landing page (2-box default offer, single box as secondary)
+- Film 4–6 UGC-style videos in-house; reach out to 2–3 micro-creators for gifted-product content
+
+**Week 3 — Ad test**
+- Launch Spark Ads at modest daily spend (~$25–40/day) across the 3 ad angles
+- Watch CTR/CPC/landing-page CVR daily; kill losing angles within 48–72 hours of clear signal
+- Layer in Meta retargeting once there's real site-visitor volume to retarget
+
+**Week 4 — Gate 5 decision**
+- Compile actual CAC, CVR, and contribution margin from the test against the estimates above
+- Go/no-go: scale spend only if blended CAC lands meaningfully under the ~$15–18 breakeven-ish threshold calculated above; kill or re-angle if not
+
+### Budget — Cash to Reach a Real Go/No-Go Signal
+
+| Item | Estimate |
+|---|---|
+| Supplier samples (2–3 suppliers) | $50–150 |
+| Initial inventory (small batch, pending confirmed landed cost) | $400–800 |
+| Shopify + apps (first month) | $100 |
+| Domain | $15 |
+| Creator seeding (2–3 micro-creators, gifted + small fee) | $100–300 |
+| Ad spend (enough to exit learning phase — commonly cited as needing ~50 conversions for TikTok's algorithm to stabilize, which at ~$15–18 CAC implies roughly this range; not a confirmed platform minimum for this account) | $750–900 |
+| Contingency | $100 |
+| **Total** | **~$1,500–2,350** |
+
+### Break-Even Math
+
+Two different breakeven questions, kept separate on purpose:
+
+1. **Monthly overhead breakeven** (fixed platform costs only, since ad spend is already netted into the CAC-adjusted contribution margin above): Shopify + apps + domain amortized ≈ $150–200/month. At an estimated $5–8 contribution margin per bundle order, that's **~25–40 bundle orders/month (roughly 1/day)** just to keep the store's fixed costs covered — before any of the launch budget above is recovered.
+
+2. **Recovering the one-time launch budget** ($1,500–2,350): at the same $5–8 margin per order, that's **~190–470 bundle orders** — this will not happen inside 30 days at test-level ad spend, and isn't meant to. The 30-day budget above is explicitly a Gate 5 signal-generation cost, not a break-even-in-30-days plan.
+
+**Bottom line**: the product clears feasibility screening, but the margin is thin enough that the entire plan depends on (a) the bundle offer actually holding CAC math together, and (b) the real supplier quote coming in at or below the $1.50–3.00 landed-cost estimate used here. Both are currently estimates, not confirmed numbers — Week 1's supplier quotes are the first real checkpoint on whether this plan is viable at all.
+
+---
+
+Sources:
+- [Alibaba: Mouth Tape Supplier Directory](https://www.alibaba.com/supplier/mouth-tape.html)
+- [Alibaba: Wholesale Private Label Mouth Tape](https://www.alibaba.com/showroom/wholesale-private-label-mouth-tape.html)
+- [Global Sources: Quanzhou Maxtop Group Mouth Tape Listing](https://www.globalsources.com/Snoring-aid/Mouth-Tape-1206492784p.htm)
+- [Viva Tape: Wholesale Mouth Tapes OEM/ODM](https://vivatape.com/wholesale-mouth-tapes/)
+- [Triple Whale: TikTok Ads Benchmarks by Industry (2026)](https://www.triplewhale.com/blog/tiktok-benchmarks)
+- [Web Tonic: Health & Wellness TikTok Ads Statistics](https://www.webtonic.io/blog/health-wellness-tiktok-ads-statistics)
+- [Triple Whale: Facebook Ad Benchmarks by Industry (2026)](https://www.triplewhale.com/blog/facebook-ads-benchmarks)
+- [get-ryze.ai: Meta Ads Benchmarks 2026](https://www.get-ryze.ai/blog/meta-ads-cost-benchmarks-by-industry-2026)
+- [CNN Underscored: 9 Best Mouth Tape for Sleep of 2026](https://www.cnn.com/cnn-underscored/health-fitness/mouth-taping-for-sleep)
+- [Accio: Mouth Tape for Sleeping Best Sellers](https://www.accio.com/business/mouth-tape-for-sleeping-best-sellers)
+
+# 2026-09-16 — 30-Day Launch Plans
+
+Two candidates cleared feasibility screening today. Below is an executable plan for each, built to reach a real go/no-go signal within 30 days and a fixed budget — not a theoretical business plan.
+
+---
+
+## Candidate 1: Mouth Tape for Sleep
+
+### Target Customer
+Not "people who snore." Specifically: **women 28–45 who already use a nighttime skincare/wellness routine** (retinol, mouth guards, sleep trackers) and found mouth tape through a wellness/biohacking creator, not a doctor. This is the buyer already primed by "sleep optimization" content (Oura ring, magnesium, red light) — they're used to buying unproven-but-plausible wellness products and don't need convincing that sleep quality matters. Secondary: partners of snorers who are buying to solve a shared-bed problem, not their own health.
+
+### Positioning
+This category has zero product differentiation — it's tape. Ryan doesn't win on the tape. He wins on **trust and framing at the point of sale**, because the category has real, valid safety objections (nasal breathing obstruction, anxiety, skin irritation) that most $12 Amazon/TikTok Shop listings ignore entirely. The wedge: be the listing/page that visibly addresses "is this safe for me" (contraindications: sleep apnea, nasal congestion, facial hair, skin sensitivity) with a real FAQ and a gentler hypoallergenic material claim, instead of a generic "reduce snoring instantly" ad. That's a trust play, not a product play — it's copyable by competitors, so the window is the next 60–90 days, not a durable moat.
+
+### Suppliers (from Alibaba search, 2026-09-16 — verify with direct quote requests before ordering)
+| Supplier | Est. Unit Cost | MOQ | Lead Time | Notes |
+|---|---|---|---|---|
+| Henan Like Health | Not confirmed — request quote | 100–300 pcs | Not confirmed | Lowest MOQ found, good for a true test batch; ISO-certified per listing, ≤1hr response time claimed |
+| Shenzhen Chuangshixin | ~$0.08/unit (lowest quoted) | Not confirmed | Not confirmed | PE film, budget-tier material — verify hypoallergenic claims before using in ads, since that's the differentiation |
+| Hebei Yuanrun | Not confirmed | 2,000 units | Not confirmed | Scale option once validated, not for the test batch |
+
+**I do not have confirmed landed unit cost, lead time in days, or shipping cost to a US address for any of these** — Alibaba listing pages don't reliably surface this without a direct RFQ. Before committing budget, get 3 actual quotes via Alibaba messaging (unit cost at 300pcs, unit cost at 2,000pcs, EXW vs DDP, production lead time, sample cost/time) and treat the numbers below as planning assumptions only.
+
+### Unit Economics (assumptions, not confirmed)
+- Assumed landed cost: **$0.60–$1.20/unit** (product + packaging + air freight for a small test batch — freight dominates at low volume, this is a rough planning range, not a quote)
+- Target retail price: **$16.99** (30-strip pack), consistent with the $12–$22 market range found
+- Assumed CPA (TikTok beauty/wellness median): **$12.80**, with IQR $7.40–$21.10 (source: AdLiftr 2026 benchmark, via Triple Whale/Hawky aggregation) — **this is a category median across all DTC beauty, not specific to mouth tape, treat as a rough anchor**
+- Target CAC ceiling: **$8.50** (50% of retail) to leave room for returns/refunds and payment processing
+- Contribution margin per unit at target CAC: $16.99 − $1.00 (landed) − $8.50 (CAC) − ~$0.85 (payment processing, ~5%) − ~$1.50 (fulfillment/packaging/shipping to customer, unconfirmed) ≈ **$5.14/unit**, *if* CAC lands near target. If CAC lands at the IQR high end ($21.10), this candidate loses money per unit — that's the real risk, not the product cost.
+
+### Marketing Channel Plan
+**Primary: TikTok (organic-first, then Spark Ads on winning organic posts).** Why: this category sells on demonstration + before/after sleep-quality framing, which is TikTok's native format, and the benchmarks favor it — TikTok beauty/wellness CPM ~$3.92–$7.10, CPC ~$0.74, roughly half Meta's beauty CPC of $1.81 (source: Triple Whale, Hawky, mbadv 2026 benchmark aggregations — **these are blended beauty-vertical numbers, not mouth-tape-specific, flagged as estimates**). Secondary: Meta retargeting only, once there's a pixel with real traffic — don't cold-prospect on Meta at these CPCs with a $17 product.
+
+### 30-Day Launch Plan
+**Week 1 (Sep 16–22):** Send RFQs to 3+ Alibaba suppliers above, request samples (expect 7–14 days transit). Build a one-product landing page (Shopify) with the safety/contraindications FAQ as the core differentiator. Draft 5 organic TikTok scripts built around "is this actually safe" + demonstration angles.
+**Week 2 (Sep 23–29):** Samples arrive — test personally, confirm material/adhesive quality matches listing claims (this is a go/no-go checkpoint on its own: if the sample is bad, stop before ordering inventory). Film and post 5–8 organic TikToks (no ad spend yet) to see if any creative gets organic traction.
+**Week 3 (Sep 30–Oct 6):** Place inventory order (test batch, 300–1,000 units per confirmed MOQ) with the best-quoted supplier. Start $30–50/day Spark Ads boosting whichever organic post(s) got the best engagement. Track CAC daily.
+**Week 4 (Oct 7–13):** Inventory arrives (assuming 10–14 day production + transit — **unconfirmed, get this from the supplier RFQ**). Fulfill first orders. By day 30 (~Oct 16), evaluate: blended CAC vs. $8.50 target, organic-to-paid conversion, return/refund rate.
+
+### Budget to Go/No-Go Signal
+- Landing page (Shopify + app stack): **$100** (1 month)
+- Samples (2–3 suppliers): **$50–100** + shipping
+- Test inventory order (300–500 units @ ~$1/unit est.): **$300–500**
+- Ad spend (organic-first, then ~3 weeks of paid testing at $30–50/day): **$450–700**
+- Domain, misc tools: **$50**
+- **Total: ~$950–1,450** to reach a real signal (confirmed CAC against a live pixel, confirmed landed cost, confirmed sample quality)
+
+### Break-Even Math
+Assume fixed costs (Shopify, apps, domain) ≈ **$130/month**. At $5.14 contribution margin/unit (using assumption-based CAC): **breakeven ≈ 26 units/month** just to cover fixed costs — trivial if CAC holds near target. The real breakeven question is CAC-sensitive: at the IQR-high CAC of $21.10, contribution margin goes negative and no volume fixes it — the product must be killed or the funnel re-engineered (cheaper acquisition channel, higher price point) before scaling spend.
+
+---
+
+## Candidate 2: PDRN & Peptide Skincare
+
+### Target Customer
+Not "K-beauty shoppers." Specifically: **women 25–40 who already buy $30+ serums and follow K-beauty/skinfluencer content on TikTok/Instagram, and have graduated past basic retinol/vitamin C toward "next ingredient" content** (they know what niacinamide and retinol do already and are actively looking for the next thing). This is a higher-intent, higher-AOV buyer than the mouth tape customer, but she's also the buyer every other new PDRN entrant is targeting — this category has no easy underserved segment.
+
+### Positioning
+This is the harder problem, and the screening notes say so explicitly: TikTok Shop skincare is already a $142M category with 7 of the top 10 brands Korean and incumbent brands (Medicube, Anua, Torriden, etc.) with real formulation credibility and existing audience trust. **Ryan does not win here on trust or price** — he loses both to incumbents. The only viable wedge in 30 days is a **narrow sub-claim incumbents haven't claimed yet** (e.g., PDRN specifically for a use-case like post-microneedling recovery, or a PDRN + peptide combo stick/patch format rather than a serum, avoiding direct serum-vs-serum comparison). This needs real ingredient research and possibly a dermatologist/esthetician consult before launch — **this is not a "list and run ads" candidate**, it requires more upfront differentiation work than the 30-day window comfortably allows. Recommend treating this as a slower, higher-diligence track relative to Candidate 1.
+
+### Suppliers (from search, 2026-09-16 — not verified beyond public listing claims)
+| Supplier | Est. Unit Cost | MOQ | Lead Time | Notes |
+|---|---|---|---|---|
+| CALLA Skincare | Not confirmed — request quote | 2,000 bottles (full custom); smaller with stock packaging | Not confirmed | Claims FDA registration, ISO 22716, GMPC certs — verify directly, these are compliance-critical claims |
+| Metro Private Label | Not confirmed | "Flexible," possibly 500–800 with stock packaging | Not confirmed | Positions as lower entry point for pilot launches |
+
+**No confirmed pricing, lead time, or sample cost for either supplier.** PDRN as an ingredient also carries **regulatory ambiguity I have not verified** — polydeoxyribonucleotide is used in injectable/medical contexts in Korea and some claims made by PDRN skincare marketers blur cosmetic vs. medical claims territory. Before ordering anything, confirm with the supplier that the specific formulation is cleared for cosmetic (topical, non-injectable) sale and shipping into the US, and avoid any regenerative/wound-healing claim in ad copy — this is exactly the kind of unverified-health-claim risk that got Hydrogen Water Bottles killed in today's screening.
+
+### Unit Economics (assumptions, not confirmed)
+- Assumed landed cost: **$3–6/unit** (serum/ampoule format, small-batch — genuinely uncertain, private-label skincare landed cost varies widely by formulation and packaging)
+- Target retail price: **$28–36** (consistent with mid-tier K-beauty PDRN serums)
+- Ad cost assumption: Meta beauty CPC ~$1.81, TikTok beauty CPM ~$3.92–$7.10 / CPC ~$0.74 (same caveats as above — blended beauty vertical, not PDRN-specific)
+- Target CAC ceiling: **$14–16** (accounting for higher price point than mouth tape)
+- Contribution margin per unit: roughly **$8–14**, *before* accounting for the higher CAC this category likely commands given incumbent competition for the same ad inventory — **I don't have a PDRN-specific CAC benchmark; this is the single biggest unknown in this plan.**
+
+### Marketing Channel Plan
+Same TikTok-primary logic as Candidate 1, but expect **higher effective CAC** than the blended benchmark because incumbents are already bidding this exact audience up. TikTok Shop's affiliate/creator model (send product to micro-creators for commission-only content) may be a lower-cash-outlay entry than paid ads here, given the incumbent ad pressure — flagged as a recommendation, not a benchmarked number.
+
+### 30-Day Launch Plan
+**Week 1:** Ingredient/compliance research — confirm cosmetic-vs-medical claim boundary for PDRN in target formulation; request quotes + samples from CALLA and Metro Private Label; identify 2–3 more Korean OEM options via direct outreach (search results surfaced these two most clearly).
+**Week 2:** Samples arrive, test personally and against 2–3 incumbent competitor products bought retail for comparison. Draft the specific sub-claim/positioning (format or use-case, not "better serum"). Build landing page.
+**Week 3:** Place small private-label order if samples pass. Begin micro-creator seeding (5–10 creators, product + small fee, commission on TikTok Shop) instead of cold paid ads, given incumbent CAC pressure.
+**Week 4:** Evaluate creator content performance and any organic signal before committing paid ad budget — this category's 30-day window likely ends at "do we see any organic traction" rather than a full paid CAC test, given the compliance and differentiation work eating into the timeline.
+
+### Budget to Go/No-Go Signal
+- Samples + compliance/ingredient research time: **$150–300**
+- Landing page: **$100**
+- Small private-label test order (500–800 units @ ~$4/unit est.): **$2,000–3,200**
+- Creator seeding (10 creators, product + small flat fee): **$500–1,000**
+- Reserve for paid ads only if organic/creator signal is positive: **$300–500**
+- **Total: ~$3,050–5,100** — notably higher than Candidate 1, and slower to a real signal because of the compliance/differentiation step.
+
+### Break-Even Math
+Fixed costs ≈ **$130/month**. At ~$10/unit contribution margin (midpoint estimate): **breakeven ≈ 13 units/month** for fixed costs alone — low bar. The real constraint is the private-label order size (500–800 units, ~$2,000–3,200 cash tied up) versus an unverified CAC in a category already crowded with incumbents; the breakeven that matters is recovering that inventory investment within a reasonable sell-through window, which this plan cannot size without a real CAC data point from Week 4.
+
+---
+
+## Recommendation Given the Two Plans
+Candidate 1 (Mouth Tape) reaches a real go/no-go signal in ~30 days on <$1,500 with low compliance risk. Candidate 2 (PDRN) requires meaningfully more cash (~$3-5K), carries an unverified regulatory question that needs resolving before any inventory order, and faces harder incumbent competition — it's a legitimate candidate but not a clean 30-day dropship test in the way Candidate 1 is. If cash and attention are constrained, sequence Mouth Tape first and treat PDRN as a Week 3+ parallel research track rather than an equal-weight simultaneous launch.
+
+Sources:
+- [Wholesale Private Label Mouth Tape - Alibaba](https://www.alibaba.com/showroom/wholesale-private-label-mouth-tape.html)
+- [China Customized Mouth Tape Sleep Strips Suppliers - chinabandages.com](https://www.chinabandages.com/tapes-and-plasters/tapes/mouth-tape-sleep-strips.html)
+- [Top 8 Private Label PDRN Skincare Manufacturer - Xiran Skincare](https://xiranskincare.com/top-8-pdrn-skincare-manufacturer-a-practical-oem-private-label-guide/)
+- [CALLA PDRN Pink Peptide Serum | OEM Wholesale Skincare](https://callaskincare.com/products/pdrn-pink-peptide-serum-wholesale/)
+- [Metro Private Label : Private Label PDRN Skincare](https://www.metroprivatelabel.com/private-label-pdrn-skincare/)
+- [TikTok Ads Benchmarks by Industry (2026 Data) - Triple Whale](https://www.triplewhale.com/blog/tiktok-benchmarks)
+- [Beauty & Skincare TikTok Ads Statistics - Web Tonic](https://www.webtonic.io/blog/beauty-skincare-tiktok-ads-statistics)
+- [Skincare Advertising Benchmarks 2026 - Pennock](https://www.pennock.co/blog/skincare-advertising-benchmarks-2026-meta-tiktok-amp-google-roas-cpm-amp-cpa-data-for-dtc-skincare-brands)
+- [TikTok Ads Benchmarks by Industry (2026 Data) - Hawky](https://hawky.ai/blog/tiktok-ads-benchmarks)
