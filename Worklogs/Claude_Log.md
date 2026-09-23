@@ -1737,3 +1737,19 @@ Standing 2026-07-31 cadence/scope decision now 41+ days overdue, but today is ev
 **2026-09-17 — Welra growth pipeline (scheduled, maintenance mode):** queue at 5, unchanged since 09-16; no beta/outreach reply (inbox 1d window empty), repo unchanged (HEAD `81ee9e5`, same uncommitted posts.tsx draft, now 26 days un-shipped). No notification.
 
 **2026-09-17 — Welra weekly blog (scheduled task):** Step 0 check — `shopify-analytics-six-reports` (STAGED 2026-08-22) is still sitting uncommitted/unpushed/404, now 26 days un-shipped, not the "6 days" the tracking files still said (last touched the week it was found, 08-28). Per Step 0, did not draft a new post on top of it. Corrected the staleness figure in `_RYAN_TODO.md` item 0, `Tasks.md`, and `Content_Calendar.md` (added a 09-17 reconciliation note). No drafting, no review passes, no validation this run — nothing to ship. Notified Ryan directly that the approval, not the content pipeline, is the bottleneck.
+
+**2026-09-18 — Welra growth pipeline (scheduled, maintenance mode):** queue at 5; Ryan shipped the staged Shopify blog post (`e63fe18`), verified live 200, item 0 closed in `_RYAN_TODO.md`, weekly blog cadence unblocked. No replies, no notification.
+
+- 2026-09-18 Prospect Radar: 0 leads delivered (Reddit blocked by Chrome safety restriction; WebSearch/IndieHackers fallback only); 3 rejected
+- 2026-09-18 — Welra growth pipeline (2nd run) ran in maintenance mode, queue at 5; no replies, repo unchanged.
+- 2026-09-19 — Welra growth pipeline ran in maintenance mode, queue at 5; no replies, repo unchanged.
+- 2026-09-19 Prospect Radar: 0 leads delivered (Reddit blocked by Chrome safety restriction again; WebSearch fallback only); 1 rejected
+- 2026-09-20 — Welra growth pipeline ran in maintenance mode, queue at 5; no replies, repo unchanged.
+- 2026-09-20 (2nd run) — Welra growth pipeline ran in maintenance mode, queue at 5; no replies, repo unchanged.
+
+- 2026-09-20 Prospect Radar: 0 leads delivered (Reddit blocked in Chrome 3rd day; WebSearch fallback only); 0 rejected posts (template listings only)
+- 2026-09-20 (3rd run) — Welra growth pipeline ran in maintenance mode, queue at 5; no replies, repo unchanged.
+
+- 2026-09-20 Sunday review (headless): NAS SSH still down (R&R posting and Stock Agent unverified, 2nd week). IG token live. bgfix queue 19 (up from 16), tasked and not attempted. Welra health 200, repo clean at e63fe18. Dropship runs OK 09-14 to 09-20, with a `claude: command not found` stderr line on 09-19. No code fixes were made and nothing was deployed.
+
+- 2026-09-21 Prospect Radar: 0 leads delivered (Reddit blocked in Chrome, WebSearch fallback empty); 0 rejected

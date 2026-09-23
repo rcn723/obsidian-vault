@@ -248,3 +248,8 @@ Note: Oregon Vizsla uses the dissolved pnw_dog_life pillar — existing publishe
 ## Related
 - [[Projects/Rust_and_Rainbow/Tasks]]
 - [[memory/Learnings_and_Conventions]]
+
+## 2026-09-20 — Sunday review (headless)
+- NAS SSH still down: ports 22 and 2222 both refused from the Mac (DSM otherwise reachable per 09-13). `market.log`, rr-supervisor heartbeat and weekly report on the NAS are UNVERIFIED for a second week. The Mac-local `market.log` last entry is 2026-06-22, so it is stale, not evidence.
+- `META_ACCESS_TOKEN` live: graph.instagram.com returned @rustandrainbowco. `META_FB_PAGE_TOKEN` debug_token call returned an empty body, so it is inconclusive. It does not auto-refresh and was expired as of 06-22.
+- bgfix queue: 19 pending, up from 16. Not attempted headlessly. Tasks.md item updated.

@@ -450,3 +450,6 @@ Run any time before a deploy or after major changes:
 Workflow({ name: 'welra-e2e-audit' })
 ```
 Tests: auth flow, checkout (happy + negative), webhook signatures, dashboard states, all public pages, adversarial verification of every HIGH/BLOCKER finding.
+
+## 2026-09-20 — Sunday review
+`api.welra.io/health` returned 200 and welra.io returned 308 (redirect to www). Repo is clean at HEAD `e63fe18` (Shopify analytics post, live), with no uncommitted drift. I did not check Railway logs or the Sunday 23:00 UTC report cron, because it hasn't fired yet today and the Railway CLI wasn't used headlessly. Scoreboard: 1 free beta customer, $0 revenue. Prospect Radar has had 0 leads for days because Chrome blocks Reddit.

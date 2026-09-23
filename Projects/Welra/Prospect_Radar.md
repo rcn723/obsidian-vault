@@ -2,7 +2,7 @@
 title: Welra Prospect Radar
 project: Welra
 type: log
-updated: 2026-09-17
+updated: 2026-09-22
 tags: [welra, prospecting]
 ---
 
@@ -613,3 +613,41 @@ r/smallbusiness search otherwise returned mostly off-topic noise (a motel-purcha
 **Standing decision now 48+ days open (since 2026-07-31):** cadence/scope of this radar. Unchanged options: keep daily / drop to ~2×/week / pause until it's producing more consistently.
 
 **Streak note:** 4th straight zero-lead sweep (09-14 through 09-17). Today's two closest near-misses (the card-margin curiosity post and the burnt-out dropshipper) both broke on shape — one is idle curiosity about others, not personal pain; the other is a single-channel ad-funnel crisis, not multi-channel profit visibility. The third near-miss (pandeykartikey's Shopify reporting post) is the clearest instance yet of the developer-market-research pattern, caught in real time by another Redditor rather than inferred after the fact — useful confirmation the tell (structured, content-marketing-shaped bullet lists of named pain points) is a reliable signal, not just this task's pattern-matching. Chrome's new "long but not total" instability gradient today is itself worth watching — if it recurs, it may be worth explicitly logging outage duration rather than just drop count.
+
+## 2026-09-18 (scheduled task run — Reddit sweep NOT run, Chrome blocks reddit.com; 0 leads)
+
+New failure mode: the Claude-in-Chrome extension is connected (tab group created fine) but every reddit.com AND old.reddit.com navigation returned "This site is not allowed due to safety restrictions." Not an outage — a site-level block, so retrying won't help. Reddit is now unreachable by every route this task has (WebFetch, curl, Claude Browser, Chrome). Nothing outstanding to carry (last leads dropped as stale).
+
+Fallback sweep (non-Reddit): WebSearch for Etsy/multi-channel profit-tracking pain returned only Etsy spreadsheet-template listings and tracker product pages. IndieHackers/community.etsy.com search surfaced: "Built a 'Decision Layer' for Etsy sellers" (builder feedback-seeking post, not a seller pain), the Monday5 weekly-email-for-Etsy product (a direct Welra-shaped competitor, worth knowing about), and old evergreen Etsy community threads. No dateable fresh individual pain post to verify.
+
+Rejected this sweep: IndieHackers "Built a 'Decision Layer' for Etsy sellers" (builder market-research post); IndieHackers "How to see revenue problems before they get worse" (generic content post); all Etsy marketplace template listings (products, not pain).
+
+**Flag for Ryan:** if the Chrome reddit.com block is a new policy rather than a glitch, this radar cannot function at all until it's lifted or the source changes. Standing cadence/scope decision (open since 2026-07-31) is now moot-ish: Reddit is the only productive source. Also: Monday5 (weekly Etsy email) is a competitor worth a look for positioning.
+
+
+## 2026-09-19 (scheduled task run — 0 leads, Reddit blocked)
+
+Claude-in-Chrome refused reddit.com again ("site not allowed due to safety restrictions"), so no Reddit sweep. One WebSearch fallback returned only Etsy template listings and generic spreadsheet guides. No leads; nothing outstanding.
+
+Rejected this sweep: Etsy sales-tracker spreadsheet listings and blog guides (products/content, not pain posts).
+
+**Flag for Ryan:** 2nd consecutive day of the Reddit block. Lift the site block in the extension or pause/redirect the radar.
+
+
+## 2026-09-20 (scheduled task run — 0 leads, Reddit blocked)
+
+Claude-in-Chrome refused reddit.com a 3rd day running ("site not allowed due to safety restrictions"), so no Reddit sweep. One WebSearch fallback returned only Etsy sales-tracker template listings and guides. No leads; nothing outstanding.
+
+Rejected this sweep: Etsy spreadsheet templates / SheetLink / Craftybase pages (products, not pain posts).
+
+**Flag for Ryan:** 3 days of Reddit block. Lift the site block in the extension or pause/redirect the radar.
+
+## 2026-09-21 (scheduled task run — 0 leads, Reddit blocked, 4th day)
+
+Claude-in-Chrome navigation to reddit.com returned "This site is not allowed due to safety restrictions" again. WebSearch fallback (non-Reddit) returned only Etsy spreadsheet-template listings and seller guides, no fresh individual pain post. Nothing carried in. Decision still needed from Ryan: lift the Chrome site block, pause the task, or change the source.
+
+## 2026-09-22 (scheduled task run — 0 leads, Reddit blocked, 5th consecutive day)
+
+Confirmed the block is still active: `navigate` to a r/EtsySellers search URL returned "This site is not allowed due to safety restrictions" (same error text as the prior 4 days — this is a persistent Chrome-extension site-permission block, not an intermittent outage). Ran 3 WebSearch fallback queries (community.etsy.com pain-post search, IndieHackers Etsy/Printify/Shopify profit-tracking search, general "which products/channels make money" phrase search) — all returned only product pages (EtsyHunt profit calculator, Printify integration pages, app listings) and old/evergreen forum threads, nothing resembling a fresh individual pain post with a verifiable date. No leads; nothing outstanding to carry forward (none were open from 09-21).
+
+**Flag for Ryan — now 5 straight days blocked, unchanged from yesterday's ask:** this task cannot do its actual job (finding and verifying live Reddit threads) without Reddit access. Three options, still open: (1) reinstall/reconnect Claude-in-Chrome's site permissions for reddit.com so the block lifts, (2) pause `welra-daily-prospect-radar` until that's fixed rather than running a fallback sweep that structurally can't find what this task is for, or (3) tell Claude to point the daily sweep at a different reachable source. Recommending (2) if this isn't fixed within the next day or two — a 5th straight WebSearch-only day producing nothing is a stronger signal than one-off gaps flagged in this log's history.

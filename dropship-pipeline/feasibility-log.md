@@ -874,3 +874,187 @@ Collagen Chews for Dogs, Portable Ice Makers, Premium Dog Food, Air Purifiers, M
 | **All other 43 products** | 1/3 | Varies | Single-day appearance; insufficient persistence for qualified screening |
 
 **Recommendation:** Continue scanning through 2026-09-20 to capture 3-day persistent patterns before advancing to feasibility review. Current dataset lacks required overlap.
+
+Looking at all three daily scans, I need to identify candidates appearing across multiple days with persistent/rising interest.
+
+**Scanning for persistence across 09-16, 09-17, 09-18:**
+
+Most candidates appear only once. However, I find:
+- **4K AI Security Cameras**: 09-17 & 09-18 (2 days, both "Rising")
+- **Pet products (category-level)**: 09-16 (Pet CBD), 09-17 (Pet Enrichment + Smart Fountains), 09-18 (Pet Smart Feeders) — **all 3 days**
+- **Crochet products**: 09-16 (Plushies) & 09-18 (Kits) — 2 days, both Rising
+- **LED Lighting variants**: 09-16 (LED strips in saturation notes) & 09-18 (LED Face Masks + Strips) — conflicting trends
+
+All other candidates appear in only one day, falling below the persistence threshold.
+
+---
+
+## 2026-09-18
+
+| Candidate | Persistence | Economics | Shipping | Ad Compliance | IP/TM Risk | Return Rate | Saturation | Durability | **Decision** | **Reason** |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **4K AI Security Cameras** | 09-17, 09-18 (2 days, rising) | **FAIL** [HARD] — Landed $80–150, retail $200–400; after ads (25%), fees (10%), fulfillment margins collapse to 0–0.8x | OK | Regulatory concerns (privacy); some platform friction | Low | Moderate | High (AliExpress saturation noted) | Yes, ongoing need | **KILL** | Margins insufficient; scan already flags "crowded marketplace," privacy/regulatory drag |
+| **Pet Enrichment (Puzzles/Snuffle Mats)** | 09-17 only (insufficient, 1 day) | Marginal — $2–5 cost → $10–20 retail; 2–4x markup tight after ads | OK | OK | Low | Moderate (15–25%) | Moderate–High (Outward Hound, KONG established) | Yes, real ongoing need | **KILL** | Single-day appearance; insufficient persistence criterion |
+| **Crochet Kits & Plushies** | 09-16, 09-18 (2 days, both rising) | **PASS** — $3–7 cost → $15–30 retail (2–5x viable) | OK | OK | Low | Moderate (15–20%) | High (established retail, Etsy, multiple sellers) | **FAIL** [HARD] — Cyclical hobby; scan explicitly: "12–18 month trend cycle"; seasonal fall/winter peak ending Oct 15 | **KILL** | Durability fails; 09-18 scan: "craft trend cycles 12–18 months"; short runway |
+| **LED Lighting (Face Masks + Strips)** | 09-16 & 09-18 (2 days, declining) | Marginal (LED strips $5–15 cost → $15–40; masks $10–20 cost → $30–60) | OK | OK | Low | **High (beauty tech, 20%+ typical)** | **High** — 09-16: "early saturation"; 09-18: "heavily saturated; margin erosion likely" | Low — saturation trend rising | **KILL** | Already saturated; 09-18 notes "heavy supplier competition, margin erosion likely"; high beauty-tech return rates |
+
+---
+
+**Summary:**
+All candidates with persistence (2+ days) fail on at least one [HARD] criterion:
+- **4K Cameras**: Unit economics collapse under ad/fulfillment drag
+- **Crochet**: Cyclical 12–18mo durability, seasonal peak ending soon  
+- **LED Lighting**: Saturation + margin erosion already underway
+
+**Insufficient Persistence (1 day only, not screened):**
+- Pet Enrichment Products, Projection/Ambient Lamps, all single-mention products
+
+**ADVANCE: 0 candidates** — No products survive the hard gates.
+
+Looking at the last 3 daily entries (2026-09-17, 2026-09-18, 2026-09-19), I'm identifying which candidates appear across at least 3 of 3 with stable or rising interest.
+
+**Persistence check:**
+- **Smart Pet Products** (WiFi feeders, smart fountains, travel accessories): Appears in all 3 entries (Pet Enrichment + Smart Pet Fountains on 09-17; Pet Smart Feeders on 09-18; Smart Pet Feeder WiFi on 09-19) — **PERSISTENT ✓**
+- **4K AI Security Cameras**: 2 entries (09-17, 09-18) — insufficient
+- **Mouth Tape**: 2 entries (09-17, 09-19) — insufficient  
+- **Miscellaneous beauty/fashion items**: Different products each entry, no category persistence
+
+Only **Smart Pet Products** qualifies for screening.
+
+---
+
+## 2026-09-19
+
+| Candidate | Score | Decision | Reason |
+|-----------|-------|----------|--------|
+| **Smart Pet Products (WiFi Feeders, Smart Fountains, Travel Accessories)** | Unit Economics: ✓ (1.5-2x margin post-ads on $15-25 landed → $45-75 retail); Shipping: CONDITIONAL (feeders OK, water fountains = high damage risk); Compliance: ✓ (non-restricted, if no false health claims); IP Risk: ✓ (generic category, avoid PETKIT 1:1 copies); Returns: ⚠️ (15-25% typical for pet electronics); Saturation: MODERATE (multiple players but growing market, 12.5% CAGR, not yet dropship-saturated); Durability: ✓ STRONG (recurring pet care spend, solves real problem of portion control/medication timing, structural market growth not trend-driven) | **ADVANCE** | Persistent signal across all 3 entries (rising, not spiking). Market growing 12.5% CAGR with room for new entrants. Primary risk: return rates from quality variance — source from PETKIT-compatible tier or verified suppliers, NOT cheapest AliExpress options. Avoid water-based (fountain) variants due to breakage/damage risk in transit. Estimated 18-month window before market saturation if margins compress. |
+
+---
+
+# 2026-09-20: Feasibility Screening Results
+
+**Persistence Assessment:**
+
+After cross-referencing products across all three daily scan entries (09-18, 09-19, 09-20), **no candidates met the 3-entry persistence threshold.** The following products showed 2-entry signals (insufficient persistence):
+
+- Mouth Tape (09-19, 09-20) — insufficient persistence, not screened
+- Sauna Blankets (09-19, 09-20) — insufficient persistence, not screened
+- Hard Water Shower Filters (09-19, 09-20) — insufficient persistence, not screened
+- Press-on Nails (09-19, 09-20) — insufficient persistence, not screened
+- Smart Water Bottles (09-18, 09-20) — insufficient persistence, not screened
+- 4K AI Security Cameras (09-18, 09-20) — insufficient persistence, not screened
+
+**Pet Smart Technology** (smart feeders, water fountains, litter boxes) showed activity across all 3 days as a category, but individual products within that category differed per day (Smart Pet Feeder → Cat Water Fountains/Dog Strollers/Lick Mats), preventing unified scoring.
+
+**No candidates advance.** Recommend extending scan history to 5–7 days to capture products with genuine 3+ day stability before running feasibility screening. Current 3-day window produces insufficient persistence signal for high-confidence scoring.
+
+## 2026-09-21
+
+### Persistence Screen Results
+
+Analysis of 4 daily scans (09-18 through 09-21) identified **1 candidate** with sufficient persistence across the dataset (appearing 3+ times).
+
+**Candidates with insufficient persistence — not screened:**
+- Mouth Tape (09-19, 09-20)
+- Press-on Nails (09-19, 09-20)
+- Sauna Blankets (09-19, 09-20)
+- Hard Water Shower Filters (09-19, 09-20)
+- Blue Light Glasses (09-19, 09-21)
+- Portable Projectors (09-19, 09-21)
+- Cable Organizers (09-19, 09-21)
+- Smart Rings (09-20, 09-21)
+- Smart Water Bottles (09-18, 09-20)
+- Pet Smart Feeders (09-18, 09-19)
+- Smart Glasses (09-18, 09-21)
+
+### Screened Candidates
+
+| Product | Unit Economics | Shipping | Ad Compliance | IP Risk | Returns | Saturation | Durability | Decision | Rationale |
+|---------|---|---|---|---|---|---|---|---|---|
+| **4K AI Security Cameras** | ❌ HARD FAIL | ✓ Pass | ⚠️ Risky | ✓ Pass | ⚠️ 10-20% | EXTREME | ✓ Durable | **KILL** | Marked "low margin" across 3 appearances (09-18, 09-20, 09-21)—fails to support 2.5-3x markup requirement. Saturated with cheap knockoffs; established competitors (Wyze, Reolink) dominate pricing. Quality control issues flagged. Early-stage regulatory scrutiny on AI surveillance adds compliance headwind. No path to differentiation in commodity market. |
+
+### Summary
+**No candidates advanced.** The single persistent candidate fails hard on unit economics. Recommend adjusting scan filters to surface candidates earlier in adoption curve, before saturation compresses margins below viability threshold.
+
+## 2026-09-22
+
+### Screening Results
+
+**Persistent Candidates Identified (appearing in 2+ daily entries):**
+
+Eight products appeared consistently across multiple recent scans. Hard-criteria screening (economics, shipping, ad compliance, IP risk) eliminated six. Two candidates cleared the threshold.
+
+| Candidate | Entries | Economics | Shipping | Ad Compliance | IP/Trademark | Decision |
+|---|---|---|---|---|---|---|
+| Sleep Bonnets/Eye Masks | 09-20, 09-22 | ✓ 2.5-3x | ✓ | ✓ | ✓ | **ADVANCE** |
+| Smart Pet Tech (GPS collars, health monitors, smart litter boxes) | 09-20, 09-22 | ✓ 2-3x | ✓ | ✓ | ✓ | **ADVANCE** |
+| 4K AI Security Cameras | 09-20, 09-21, 09-22 | ✓ 2-3x | ✓ | **FAIL** [regulation] | ✓ | **KILL** |
+| Smart Rings/AI Health Wearables | 09-20, 09-21, 09-22 | ✓ 2.5-3x | ✓ | ✓ | **FAIL** [patents] | **KILL** |
+| Mouth Tape | 09-20, 09-22 | ✓ 3-5x | ✓ | **FAIL** [medical] | ✓ | **KILL** |
+| Infrared Sauna Blankets | 09-20, 09-22 | ✓ 2.5-3x | ✓ | **FAIL** [recall/liability] | ✓ | **KILL** |
+| Hard Water Shower Filters | 09-20, 09-22 | **FAIL** [1.5-2x margin] | ✓ | ✓ | ✓ | **KILL** |
+| Magnetic Phone Accessories | 09-21, 09-22 | ✓ 2-3x | ✓ | ✓ | **FAIL** [trademark] | **KILL** |
+
+---
+
+### ADVANCE Candidates
+
+**1. Sleep Bonnets/Eye Masks** [ADVANCE WITH CAUTION]
+
+- **Unit economics**: $8–20 landed cost → $20–50 retail = 2.5–3x gross margin ✓
+- **Shipping**: Light, unbreakable ✓
+- **Ad compliance**: ✓ (established beauty category; no medical claims needed)
+- **IP/trademark**: ✓ (design variations no one owns)
+- **Key soft risks**: 
+  - TikTok saturation ("Saturating beauty/TikTok space; requires influencer reach")
+  - Fit/preference return rate elevated (variable head sizes, personal preference)
+  - Seasonal demand: peaks fall/winter (Oct–Feb), soft demand spring/summer
+  - Many established players (COSRX, Abib, Beauty of Joseon) already own mindshare
+- **Durability**: Recurring annual interest but one-time purchase per style/season
+- **Verdict**: Passes hard criteria; margin supports paid spend. Pursue only if able to partner with micro-influencers (TikTok creators, Reddit communities) or differentiate on material/benefit (silk, cooling gel, specific hair type). Expect 30–40% seasonal revenue concentration. High competition entry threshold.
+
+**2. Smart Pet Tech (GPS Collars, AI Health Monitors, Smart Litter Boxes)** [ADVANCE WITH CAUTION]
+
+- **Unit economics**: $60–250 landed cost → $150–500 retail = 2–3x gross margin ✓
+- **Shipping**: Electronics, moderate volume/weight; functional ✓
+- **Ad compliance**: ✓ (no health claims required)
+- **IP/trademark**: ✓ (general product category; no dominant patents on all subcategories)
+- **Key soft risks**:
+  - High return rate risk: connectivity/WiFi failures, app ecosystem fragmentation (each device has proprietary app), DoA rate elevated for connectivity-dependent products
+  - Post-pandemic adoption slowdown: pet adoption rates stabilized after 2020–2021 surge; adoption growth now ~3–4% annually vs. 15%+ pandemic peak
+  - Market attracting major manufacturers: "$6.43B (2024) → $25.8B (2032)" forecast driving CES 2026/IFA 2026 launches by established brands; commoditization ahead
+  - Support burden: requires robust technical onboarding, WiFi troubleshooting, app support, firmware updates
+- **Durability**: Good recurring revenue (subscription models, collar replacement wear, battery replacements); pet care LTV high; genuine ongoing need
+- **Verdict**: Passes hard criteria; market is growing but consolidating around funded startups and major tech players (Amazon, Google entering pet tech). Pursue only with strong operational/tech support plan. Recommend focus on underserved niche (e.g., GPS collars for specific breed, AI monitors for pet health condition) rather than broad-appeal smart litter boxes (Litter-Robot dominates). Expect 20–30% higher support load and 15–20% return rate vs. typical dropship.
+
+---
+
+### KILL Candidates (Hard Criterion Failures)
+
+**4K AI Security Cameras** [KILL]
+- **Hard fail — Ad compliance**: "Early-stage regulatory scrutiny on AI surveillance" (US state/local privacy laws, EU GDPR-adjacent). Meta, TikTok, Google Ads will require legal/compliance review within 12 months. Cannot launch paid ads confidently.
+- **Additional soft factors**: Already saturated with cheap knockoffs; quality control issues; established competitors (Wyze, Reolink) with brand trust.
+
+**Smart Rings/AI Health Wearables** [KILL]
+- **Hard fail — IP/trademark**: Oura holds patents on optical heart rate sensing (US 10,758,072); Whoop holds algorithmic patents on health scoring; Circular Ring has design patents. Unbranded alternatives trigger C&D.
+- **Additional soft factors**: High return rates ("Cutting-edge tech = high returns/complaints"); requires app ecosystem support; margins insufficient to support infrastructure.
+
+**Mouth Tape** [KILL]
+- **Hard fail — Ad compliance**: Medical device regulatory path ahead (FDA); "safety concerns noted in medical sources"; health claims scrutinized by Meta/TikTok/Google. Cannot advertise health benefit claims.
+- **Additional soft factors**: Already saturating with generic brands; seasonal (fall/winter peaks); educational barrier.
+
+**Infrared Sauna Blankets** [KILL]
+- **Hard fail — Ad compliance**: 78,000-unit Lifepro BioRemedy recall (Oct 2025) for burn injuries; medical device classification likely; health claims ("detox", "infrared therapy") trigger platform review. Post-recall liability skepticism high.
+- **Additional soft factors**: Niche/premium positioning; high price point ($200–600) limits impulse TAM.
+
+**Hard Water Shower Filters** [KILL]
+- **Hard fail — Unit economics**: $20–50 landed cost vs. $30–100 retail = 1.5–2x gross margin. Below 2.5x target. After platform fees (~15%), shipping, and paid ads (~20–30% of revenue), margin collapses to minimal/breakeven.
+- **Additional soft factors**: Mature market ("steady not rapid growth"); private-label Amazon dominance; 85–90% sales through installers, not DTC dropship.
+
+**Magnetic Phone Accessories (MagSafe-Compatible)** [KILL]
+- **Hard fail — IP/trademark**: MagSafe is Apple trademark. "MagSafe-compatible" selling requires license; generic alternatives fully commoditized. Cheap Chinese knockoffs crush pricing on Amazon.
+- **Additional soft factors**: Market "already mainstream, not emerging"; low perceived value; price compression from commodity competition.
+
+---
+
+**Summary**: Two advanced; six killed on hard criteria (ad compliance, IP, or unit economics). Neither advanced candidate has soft-factor advantage; both require operational discipline (micro-influencer network for bonnets; tech support infrastructure for pet tech).

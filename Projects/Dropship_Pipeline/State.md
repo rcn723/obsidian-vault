@@ -49,3 +49,6 @@ Days 1–2: scan entries only (screener correctly kills everything — needs 3 d
 
 ## Related
 [[Knowledge_Base/Headless_Claude_Runbook]] · [[Projects/Dropship_Pipeline/Tasks]] · Gate-5 entity/compliance checklist lives in `dropship-pipeline/SETUP.md`.
+
+## 2026-09-20 — Sunday review
+Daily runs completed 09-14 through 09-20 with non-empty logs. 09-20 stopped after the screener with no candidates advanced. `launchd-stderr.log` shows `claude: command not found` at run-pipeline.sh line 54 (dated 09-19 07:06). The 09-19 run still completed all four stages at 07:20, so this looks like an earlier retry. Worth watching; PATH in the launchd env may be fragile.

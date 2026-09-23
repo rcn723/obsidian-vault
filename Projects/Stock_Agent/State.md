@@ -95,3 +95,6 @@ min_closed_trades 30 · min_sharpe 1.0 · max_drawdown 20% · max_p_value 0.10
 ## Related
 - [[Projects/Stock_Agent/Tasks]]
 - [[project_nas_agents]] · [[Knowledge_Base/Learnings_and_Conventions]]
+
+## 2026-09-20 — Sunday review
+NAS SSH still refused (22/2222), so healthcheck, paper_mode and trade count are unverified. Last confirmed 06-25/26: 23/30 trades. Nothing changed.

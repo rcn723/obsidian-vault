@@ -672,3 +672,7 @@ Same-day re-check after this morning's run. Maintenance mode, queue at 5 (unchan
 
 ## 2026-09-17 — Welra weekly blog: still blocked on Ryan's approval, no new draft
 `welra-weekly-blog` scheduled run's Step 0 check found `shopify-analytics-six-reports` (STAGED 2026-08-22) still uncommitted/unpushed/404 — 26 days, not the "6 days" the tracking files still showed (stale since 08-28). Did not draft a second post per the no-stacking rule. Corrected the staleness figures in `_RYAN_TODO.md` item 0, `Tasks.md`, and added a reconciliation note to `Content_Calendar.md`. No content, no review, no validation this run. Updated: State.md, Tasks.md, Content_Calendar.md, Claude_Log.md, `_RYAN_TODO.md`. Notified Ryan directly.
+
+**2026-09-18 (Claude, growth pipeline):** Shopify analytics blog post is live (`e63fe18`); `_RYAN_TODO.md` item 0 marked done. Queue gate still 5.
+**2026-09-20 (Claude, growth pipeline 2nd run):** maintenance mode, queue 5, no changes.
+**2026-09-20 (Claude, sunday-review):** updated the R&R, Stock Agent, Welra and Dropship State.md files, the R&R Tasks bgfix count (19), the _RYAN_TODO NAS SSH item, and the worklog. NAS is still unreachable.

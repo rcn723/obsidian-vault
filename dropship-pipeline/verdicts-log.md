@@ -389,3 +389,153 @@ The plan's own text concedes this doesn't fit a 30-day window ("requires more up
 - **Candidate 2: NO-GO** for this cycle as budgeted. Spend only on the compliance question; do not place the inventory order or start creator seeding until that's resolved.
 
 **Required next step regardless of the above: Gate 5.** Neither candidate is validated by this plan — it's a screening pass. Gate 5 is a real paid-traffic test on Candidate 1 only (Candidate 2 is not cleared to reach Gate 5 this cycle): run Spark Ads against the best-performing organic post(s) at $30–50/day for a minimum of 5–7 days of spend (not the full 30), measuring blended CAC against a **$12 hard ceiling** (not the original $8.50 target — $12 is the level at which contribution margin is still positive after payment processing and fulfillment). Pass = blended CAC at or under $12 with at least one creative showing a stable or improving trend over the test window. Fail = CAC trending above $12 with no improving creative — kill spend immediately, do not average toward day 30 hoping it recovers. No LLC formation, no full inventory order beyond the test batch already budgeted, and no scale-up spend until this threshold is met.
+
+## 2026-09-18
+
+**Verdict on the day's screening run: no plan to validate — and that's the correct output.**
+
+There is nothing here to break, because nothing was submitted. I'll validate the screening decisions themselves instead, since that's the actual claim on the table today.
+
+### 4K AI Security Cameras — NO-GO confirmed
+The single assumption that kills this is margin after CAC and fulfillment, and the screening already shows it failed: 0–0.8x margin multiple means a meaningful fraction of orders are break-even or lose money *before* accounting for returns, chargebacks, or customer support load on a technical hardware product. Security cameras also carry an FCC/wireless-compliance and data-privacy angle (cloud storage, app account creation) that adds support burden this margin can't absorb. Nothing to iterate — correctly killed at the gate.
+
+### Crochet Kits & Plushies — NO-GO confirmed, but check the date math
+Screening states trend cycle ends ~2026-10-15, roughly 4 weeks out. The stated build lead time (sourcing, site build, ad account warmup) is 2-3 weeks *in the best case*. That leaves maybe 1-2 weeks of live selling before the trend curve is already declining, and ad account warmup during a declining trend means CPMs paid during ramp-up don't get recouped during the shrinking sell window. Correctly killed — this isn't a marginal call, the timeline arithmetic just doesn't work regardless of the margin story.
+
+### LED Lighting (masks + strips) — NO-GO confirmed
+Saturation kills on its own without needing the margin-erosion detail: a heavily saturated market means CAC is already being bid up by incumbents, so "differentiation" would have to be real and defensible to justify testing anyway — and nothing in the screening claims a defensible angle exists. High beauty-tech return rates compound this (return shipping + refund processing directly erodes an already-thin margin, and beauty-adjacent devices can trigger platform policy scrutiny around safety claims). Correctly killed.
+
+### Process check
+The one thing worth flagging: three NO-GOs in a row on hard gates (economics, durability, saturation) is a legitimate outcome, not a pipeline failure — but if this becomes a pattern across multiple consecutive scan cycles, the sourcing/discovery step feeding the screener is the thing to interrogate, not the gates themselves. Don't loosen the gates to manufacture a candidate.
+
+**No plan reaches Gate 5 today.** Gate 5 remains: no LLC formation, no inventory order, no plan gets a paid-traffic test until a candidate actually clears feasibility screening on unit economics, durability, and saturation simultaneously.
+
+**Action for Ryan: none.** Pipeline should keep scanning. Do not promote any of today's three candidates to Tasks.md as pending or "revisit" — they failed on structural criteria (economics, cycle timing, saturation) that won't change by waiting, not on borderline scores worth rechecking later.
+
+## 2026-09-19: Validation, Smart Pet Feeder (4L WiFi feeder, single SKU)
+
+**Overall verdict: ITERATE.** Coherent, but the plan's own numbers say it likely fails Gate 5. Fix the items below before spending on ads.
+
+**Data caveat:** The plan has no verified supplier quotes, CPMs or conversion rates, and I had no search or file access. Everything below is checked against the plan's own math and general category knowledge.
+
+### The assumption that kills the plan
+**"CAC can land under about $28 on a $59 item from cold traffic."** The plan asserts this but gives no evidence. It also concedes that realistic benchmarks (about $1.20 CPC and 2% conversion) give a CAC of about $60, more than double the break-even. A plan whose base case loses money on every sale is a hypothesis with a low prior, not a plan.
+
+### Attacks
+
+**1. Unit economics are worse than shown**
+- The $24 landed cost is a Tier B estimate. It probably excludes duties, and the plan never confirms whether the price is for the target market.
+- The returns reserve is $5. At a 15–25% return rate, "half of cost lost" is optimistic. Returns on electronics usually cost the full outbound shipping, return shipping (or a refund with no product recovery), and the processing fee, which Stripe and Shopify Payments don't refund. A reserve of $8–12 is more realistic.
+- Support labor is unpriced. A 12-month warranty plus a fast-response promise means Ryan's time, or replacement units at $24 each.
+- **At 2x CAC ($36):** contribution is about −$8 per sale, and the plan can't recover from that with any volume. At $18 CAC the margin is 17%. Small changes in reserve or landed cost push it to break-even.
+- **Price ceiling:** $59 sits against well-known branded feeders (the plan itself cites PETKIT), plus cheap Amazon feeders at $30–45 with thousands of reviews. A cold-traffic visitor has no reason to trust an unknown store at $59.
+
+**2. The differentiation is weak and easy to copy**
+- "Keeps feeding when WiFi drops" describes what most app feeders are designed to do. Local schedule storage and battery backup are common features, not a moat. Any competitor can add the same claim to an ad in a day.
+- The plan sells a claim the seller hasn't verified. It depends entirely on the sample passing, which is honest, but it also means the positioning may not exist yet.
+- The "support moat" is a promise from a new store with no reviews or history, and support is a cost, not a defensible advantage.
+- The offline and backup spec on a customized OEM unit is often unrealistic at 50–200 MOQ. The supplier may agree in chat and ship a firmware that behaves differently.
+- The plan never says whether the dropship Tier B product has these features at all. If it doesn't, the test on Tier B doesn't test the positioning. That is a **structural flaw**: the ads promise something the test SKU may not deliver.
+
+**3. Legal and liability gaps**
+- **Electrical certification:** The plan says "confirm plug and voltage". It should also require the market's certification: UL/ETL and FCC in the US, RCM in Australia. A mains or battery-powered device without valid certification is a safety and platform-policy problem. Meta and payment processors can act on it, and insurers may refuse claims.
+- **Battery backup:** D-cell or power bank adds battery-shipping restrictions (lithium) and a possible battery-safety rule set.
+- **Pet-safety exposure:** A jammed or malfunctioning feeder can starve or overfeed a pet, especially one on a vet diet. The target segment is the most exposed. The plan has no liability insurance, no disclaimers and no product-liability position.
+- **Food-contact materials:** Plastic parts touching pet food need material declarations. Ask the supplier for proof.
+- **Sales tax and GST:** The plan hasn't decided the market, so it can't identify economic nexus (US) or GST registration thresholds (AU). Under $80 a month in fixed costs it looks small now, but it has to be settled before launch.
+- **Advertising claims:** "Never fails" style claims can breach advertising standards. Keep the claims to what the sample test showed.
+
+**4. Timing and trend risk**
+- The plan runs Week 1 to Week 4 with a 15–25 day production run at Supplier A. Samples take 7–10 days plus shipping. Realistically the Gate 5 test starts 3–4 weeks out, and a scale-up order arrives about 6–8 weeks later.
+- Pet feeders are an evergreen category, not a fad, which helps. But that also means the competition is entrenched, so "an 18-month window" doesn't mean an opening. The screening's own saturation flag deserves more weight than the plan gives it.
+- **Test on Tier B still needs a sample**, so the ad test can't start before Week 3. That is workable, but sourcing slips easily and nothing in the plan accounts for slippage.
+
+**5. Ryan's positioning and capacity**
+- The plan needs sample testing (72-hour offline run), filming demo video, building a store, running Meta ads and handling support, in parallel with a Welra build and other projects. The plan flags the filming question but never resolves it.
+- Per the execution-first rule, `_RYAN_TODO.md` had 5+ open Ryan-owned items in the recent pipeline runs. This plan adds at least six new Ryan tasks in Week 1 alone. The rule says to shrink the queue, not grow it. **Check the queue before approving.**
+- The plan has no pet-owner relationships, no vet channel and no existing audience. Every customer is paid for.
+
+**6. Gate 5 design problems**
+- **Budget vs threshold:** $200–300 of spend at $1.20 CPC gives about 170–250 clicks. The kill rule needs 400+ clicks, which is about $480 at that CPC. The plan's budget can't reach its own kill threshold. And the "go" rule of ≥6 purchases at 2% conversion needs about 300 clicks, so it barely fits.
+- **Statistical weakness:** 6 purchases is a thin sample. Meta learning also needs about 50 conversions per ad set to stabilize, so a $20–25 a day test will show noisy, unstable results.
+- **Two go conditions are inconsistent:** "CAC ≤ $30 with ≥ 6 purchases" allows a CAC above the $28 break-even. The threshold should sit at or under break-even, with a margin of safety.
+- **Add-to-cart ≥ 6% with conversion ≥ 2%** is not a purchase signal. Add-to-cart is cheap and can be inflated by curiosity.
+- **Store trust:** A cold site with no reviews and an unbranded product will convert below category norms. A test on a new domain and a new ad account (the plan doesn't mention warm-up) may also hit account restrictions.
+
+### Required changes for a GO
+1. **Fix the structure:** Test the Tier B unit only if the sample proves the offline and battery claims. If it doesn't, either switch the SKU or drop the positioning. Don't advertise a feature the test SKU lacks.
+2. **Raise price or bundle:** Test $69–79 with a spare-parts bundle, or otherwise lift contribution above about $40 pre-ads. At $59 the plan has no room for error.
+3. **Rewrite the Gate 5 thresholds** so they are consistent with the budget (see below).
+4. **Price in the missing costs:** duties, return shipping, replacement units, certification, insurance and a support allowance. Re-run the break-even.
+5. **Sort out certification and market** before the first ad: US, AU or other, with the matching electrical and battery compliance.
+6. **Settle Ryan's capacity:** Either budget $100–200 for a UGC creator now, or decide the demo video is something Ryan will genuinely do. Check `_RYAN_TODO.md` first.
+
+### Gate 5 (required next step)
+**A GO verdict is not validation.** Before any LLC-level commitment or inventory order, run **Gate 5: a real paid traffic test.**
+
+**Suggested design:**
+- **Budget:** Fund about $450–600 of ad spend, not $200–300, so the test can reach the kill threshold. If that is too much, don't run the test.
+- **Structure:** One campaign, 3 creatives, one Meta pixel-tracked landing page with a real checkout, and a pre-order or "ships in X days" offer. No inventory purchased.
+- **What to measure:** Clicks, landing-page-view rate, add-to-cart rate, checkout initiation, purchases, and blended CAC. Track return intent through post-purchase survey answers if you get any buyers.
+
+**Pass thresholds:**
+- **Pass:** ≥ 6 purchases at CAC ≤ $25 (a safety margin under the $28 break-even) after 400+ clicks, and conversion ≥ 2%.
+- **Kill:** CAC > $40 after 400+ clicks, or fewer than 3 purchases after 500 clicks.
+- **Ambiguous** (between the two): don't scale. Change one variable (price, creative or offer) and run one more capped round.
+- **Do not count** add-to-cart as a pass.
+- **Do not pre-buy inventory or form an LLC** until a pass. Even after a pass, the first order should be small (50 units or fewer).
+
+**Prior:** On the plan's own benchmarks, I expect a Gate 5 fail. Spend the money only if the price, bundle and structure fixes above raise the odds. Otherwise the cheapest move is to kill it now and not spend the $450–600.
+
+**Verdict: ITERATE.** Change price and bundle, resolve certification and market, fix the Gate 5 thresholds, then resubmit.
+
+## 2026-09-22 — Validation Review: Sleep Bonnet Bundle & GPS Collar
+
+---
+
+### Candidate 1: Silk Bonnet + Eye Mask Bundle
+
+**Single assumption that kills the plan if wrong:** CAC can be held to $12–15 via organic/creator content, against a stated TikTok blended benchmark of $32.74. This is *asserted*, not evidenced — there's no data showing curly-hair-niche creator content actually converts at 2x+ better than the platform average. The plan's own lower beauty-CPC figure ($0.74) supports cheaper *reach*, not cheaper *CAC*; CPC and CAC are being conflated as if lower cost-per-click automatically implies the CAC target.
+
+**2x CAC stress test:** At $34.99 retail, ~$10 landed cost, ~$1.50 fees, contribution margin at target CAC ($13) is ~$10.49/unit. At 2x CAC (~$26–30), margin goes to **roughly –$2 to –$4/unit** — the plan flips from profitable to loss-making on every sale. This is a real cliff, not a gentle degradation, and the plan has no explicit CAC ceiling defined *before* the bulk order decision (see below).
+
+**Differentiation:** "Bundle + niche creator content" is copyable in days, not weeks — any competitor can pair a $2 eye mask with a $3 bonnet immediately; the actual moat, if any, is the specific creator relationships and content library, which the plan doesn't treat as the asset to protect/scale.
+
+**Legal/liability:** Low-to-moderate. Watch two things: (1) any implied hair-health/protective-styling *claims* in creator scripts need substantiation exposure checked (FTC), and (2) standard economic-nexus sales tax obligations kick in once state revenue thresholds are crossed — immaterial at this volume but should be tracked from day one, not retrofitted.
+
+**Trend-decay risk:** Low — this is an evergreen need (nightly hair protection), not a fad, so the "is it already past peak by launch" risk that kills trend-chasing plans doesn't really apply here. That's a genuine strength of this candidate relative to most dropship picks.
+
+**Execution fit:** No evidence Ryan has an existing creator network in this niche. Cold outreach to 15–20 micro-influencers realistically yields a much smaller commit rate than needed to hit "5–10 creators live by week 2" — and creator turnaround (ship product → film → edit → post) routinely runs 2–3 weeks on its own, which eats most of the 30-day window. The timeline is optimistic, not fatal.
+
+**The real flaw:** the plan explicitly acknowledges 15–20 paid conversions is "statistically thin" — then uses that exact threshold as the trigger to place the Alibaba **bulk MOQ, custom-branded order**. That's a contradiction: don't self-diagnose a signal as too weak to trust and then spend real capital on it in the same paragraph.
+
+**Verdict: ITERATE.**
+Required change: decouple the "creator content works" signal from the "commit real inventory capital" decision. Keep fulfilling via CJdropshipping (no-MOQ) until CAC is validated across a larger sample — target at least ~50 paid conversions, or extend the Spark Ads test budget/window, before placing any Alibaba custom-branded bulk order. Also widen the creator outreach pool to 30–40 contacts, not 15–20, to realistically land 5–10 live pieces of content inside 30 days.
+
+**Gate 5 requirement:** Even after iteration, the next required step before any LLC-level commitment or inventory order is a real paid-traffic test at meaningful scale — minimum ~$1,500–2,000 in Spark Ads spend or ~50 tracked conversions, whichever comes first. **Pass threshold: blended CAC ≤ $18 sustained across that spend** (leaves margin buffer above the $10.49 break-even-neutral point even if costs drift). Below that bar, do not convert from CJ dropship fulfillment to owned Alibaba inventory.
+
+---
+
+### Candidate 2: Smart Pet Tech — GPS Collar
+
+**Single assumption that kills the plan if wrong:** that a white-label vendor (TIZE or equivalent) delivers workable landed cost + subscription/SIM economics at a price supporting $150–200 retail. Correctly flagged as unverified by the plan itself — but the plan still budgets and schedules a Week 3–4 Meta ad test that is *contingent* on this unresolved number, meaning the "30-day launch plan" is structurally a two-stage plan disguised as one.
+
+**Missing gate — FCC certification.** Neither the plan nor the supplier research addresses whether the cellular/LTE hardware from Alibaba or TIZE holds FCC certification for sale/use on US networks. A cellular-radio-emitting consumer device sold in the US without FCC ID certification is a compliance blocker, not a risk — it can mean the product cannot legally be marketed as-is. This needs to be an explicit Week 1 question to every supplier, on equal footing with "does the app work."
+
+**Missing gate — subscription/recurring-billing compliance.** This is a subscription hardware product. Auto-renewal disclosure laws (e.g., California's ARL and similar state laws) impose specific cancellation-flow and notice requirements. Not addressed anywhere in the plan; needs to be resolved before any checkout page goes live, not after.
+
+**2x CAC stress test:** Can't be meaningfully run — no CAC estimate exists because landed cost is unconfirmed. The break-even placeholder using $30 CAC borrows from a "pet products 4.8x ROAS" benchmark that is almost certainly dominated by low-ticket SKUs (toys, food, treats) — applying a category-blended ROAS to a $150+ subscription hardware device is optimistic and shouldn't be treated as directional.
+
+**Differentiation:** Weak. "White-label + breed-specific creative" is not a real wedge — Fi in particular already markets specifically to escape-prone breeds and has years of app reliability, retail presence, and brand trust that a no-name white-label competitor cannot replicate by ad targeting alone. For a safety-adjacent purchase (a lost pet), buyer trust in reliability is the actual product; a first-time no-name brand starts at a structural disadvantage that creative alone doesn't fix.
+
+**Execution fit — the biggest gap:** Running a subscription hardware business means ongoing support for connectivity failures, app bugs, hardware defects/returns, and billing/dunning — a fundamentally different operational load than a dropshipped bonnet. Nothing in the plan or prior context indicates Ryan has run (or has time for) this kind of ongoing support obligation. This is a bigger "is Ryan positioned to execute this" red flag than anything in the unit economics.
+
+**Verdict: NO-GO on ad spend for this cycle.** The Week 1–2 supplier-quote/vetting sprint (near-zero cash cost) is fine to run as pure information-gathering. But do not release the $700–1,000 test budget, and do not build a landing page or run any Meta test, until *all three* of the following are independently confirmed in writing from a supplier: (1) real landed cost, (2) real subscription/SIM cost structure, (3) FCC certification status for the specific hardware SKU being sourced. If any one of these three comes back unresolved or unfavorable by end of Week 2, kill the candidate — per the plan's own stated logic, which this validation affirms.
+
+**Gate 5 requirement (only if the vetting gate passes):** A real paid-traffic test of at least $1,000 spend against a narrow escape-prone-breed interest audience, measuring CAC against a fully-loaded contribution margin (hardware + first-month subscription cost, not hardware alone). **Pass threshold: CAC ≤ 40% of first-year customer contribution** (hardware margin + expected subscription revenue net of churn) — this number cannot be set precisely until Week 1's quotes return, so treat any CAC target stated before that as provisional. No LLC formation or bulk hardware order until this test passes *and* FCC/subscription-compliance items are closed.
+
+---
+
+### Bottom Line
+- **Bonnet bundle** is the stronger candidate — low capital, reversible, evergreen demand — but the plan currently lets a statistically thin signal (15–20 conversions) trigger a real inventory commitment. Fix that sequencing gap before spending on the Alibaba MOQ.
+- **GPS collar** is not a 30-day launch plan; it's a vetting sprint wearing a launch plan's clothes, and it's missing two compliance gates (FCC certification, subscription-billing law) that could independently kill it regardless of unit economics. No ad dollars until the vetting sprint closes clean.

@@ -970,3 +970,230 @@ Sources:
 - [Beauty & Skincare TikTok Ads Statistics - Web Tonic](https://www.webtonic.io/blog/beauty-skincare-tiktok-ads-statistics)
 - [Skincare Advertising Benchmarks 2026 - Pennock](https://www.pennock.co/blog/skincare-advertising-benchmarks-2026-meta-tiktok-amp-google-roas-cpm-amp-cpa-data-for-dtc-skincare-brands)
 - [TikTok Ads Benchmarks by Industry (2026 Data) - Hawky](https://hawky.ai/blog/tiktok-ads-benchmarks)
+
+Based on the feasibility screening output provided, **zero candidates advanced today** — all persistent candidates (4K AI Security Cameras, Crochet Kits & Plushies, LED Lighting) failed on hard gates (unit economics collapse, cyclical durability, or saturation/margin erosion).
+
+## 2026-09-18
+
+**No candidates cleared feasibility screening today.**
+
+Per the screening summary: 4K AI Security Cameras failed on unit economics (margins collapse to 0–0.8x after ads and fulfillment fees), Crochet Kits & Plushies failed on durability (12–18 month trend cycle with the seasonal peak ending ~2026-10-15), and LED Lighting (masks + strips) failed on saturation (explicitly flagged as "heavily saturated; margin erosion likely" with high beauty-tech return rates).
+
+I have no candidates to build 30-day launch plans for. I'm not going to manufacture a plausible-sounding plan for a product that didn't pass the gate — that would defeat the purpose of the screening step.
+
+**No action needed from Ryan on this run.** The pipeline should continue scanning for new persistent candidates; nothing here should be promoted to Tasks.md or treated as a go signal.
+
+## 2026-09-19: Business Plan, Smart Pet Feeder (WiFi/app-connected automatic feeder)
+
+**Scope decision:** The screened candidate is a broad category. This plan covers one SKU, a **4L WiFi automatic feeder for cats and small dogs**. It drops fountains because the screening flagged transit damage, and drops travel accessories because they have no persistence signal.
+
+**Data-quality warning:** This run had no web search and no file access. Every supplier cost, lead time, MOQ, CPM and CPC below is an **unverified estimate** from general category knowledge. It is not a quote or live data. Verify each figure in the Week 1 tasks before spending money. The target market and currency weren't specified, so I assume USD and US/AU-style English-speaking traffic.
+
+---
+
+### 1. Target customer
+- **Who:** Cat owners aged 28–45 who work outside the home 8+ hours a day. They have one or two indoor cats, and often a vet has told them to control portions (overweight cat, urinary or diet food, or a medication schedule).
+- **Trigger moment:** They have already been bitten by a cheap feeder that jammed or lost WiFi, or a vet has told them to portion-control.
+- **Excluded:** Dog owners with large breeds (jam and kibble-size issues) and anyone wanting a camera feeder (a different, pricier SKU).
+
+### 2. Positioning
+The screening notes that many stores will find this same trend, so "smart feeder" alone is not a reason to buy from Ryan. The most common complaint about cheap feeders is unreliability: they jam, and the schedule fails when WiFi drops. The proposed angle is:
+
+- **"The feeder that keeps feeding when your WiFi doesn't."** Schedules are stored on the device, and there is a battery backup (D-cell or power bank) plus a jam-resistant auger.
+- **Portion-control framing for owners on a vet diet.** Use gram-level portions and never make health claims (no "prevents obesity" or "cures").
+- **Support as the moat:** a clear 12-month warranty, a fast-response email, and a spare-parts (auger and lid) offer.
+- **Precondition:** This angle only holds if the sample proves offline schedules and backup power actually work. If the sample fails, the positioning fails and the plan is a no-go.
+
+### 3. Supplier options (all unverified)
+| Option | Type | Est. unit cost | Lead time | MOQ | Notes |
+|---|---|---|---|---|---|
+| A. Verified Alibaba manufacturer (Shenzhen/Dongguan pet-tech OEM, Gold or Trade Assurance) | Direct/OEM | $12–20 ex-ship | 7–10 days samples, 15–25 days production | 50–200 typically | Best margin, can request offline-schedule and backup-battery spec and light branding. |
+| B. CJ Dropshipping or a similar agent with a US/AU warehouse | Dropship | $22–32 landed | 3–8 days (local warehouse) | None | Lowest cash risk and fastest test. Weaker quality control and margin. |
+| C. PETKIT authorized distributor/wholesale | Branded wholesale | $45–65 (unconfirmed) | Unknown | Unknown | The screening says avoid 1:1 copies, so this is a benchmark and quality-tier option, not a copy target. Needs a distributor agreement. |
+
+**Recommendation:** Order 1 sample each from A and B in Week 1, and run the test on B (no inventory) if A can't beat $22 landed with real quality.
+
+### 4. Unit economics (per unit, assumptions)
+| Line | Amount |
+|---|---|
+| Target retail | $59 |
+| Landed cost (B tier, incl. shipping) | $24 |
+| Payment processing (~2.9% + $0.30) | $2.01 |
+| Returns/warranty reserve (15–25% return rate from screening, roughly half of cost lost) | $5 |
+| **Contribution before ads** | **$27.99** |
+| Target CAC | $18 |
+| **Contribution after ads** | **$9.99 (~17%)** |
+
+**The break-even CAC is about $28.** The screening's "1.5–2x margin post-ads" is optimistic at this price. The math only works if CAC stays under $28, and $18 is the target.
+
+### 5. Marketing channel plan
+- **Primary:** Meta (Instagram/Facebook Reels) with short demo videos: the WiFi drops, the feeder still dispenses. Visual problem-solution demos are what this category responds to.
+- **Secondary (Week 3+ if signal):** TikTok organic UGC-style posts from Ryan's own sample. No paid TikTok until the Meta signal is proven.
+- **Estimated benchmarks (not guarantees):** CPM $10–25, CTR 0.8–1.5%, CPC $0.80–2.00, and store conversion 1–2.5% for a $59 electronics item from cold traffic.
+- **Reality check:** At $1.20 CPC and 2% conversion, CAC is about $60, more than double the $28 break-even. To hit $18 CAC you would need roughly $0.60 CPC and 3.3% conversion. **The most likely Gate 5 outcome is "no-go on cold paid traffic" unless the creative and offer beat category norms.** The test is designed to find that out cheaply.
+
+### 6. 30-day launch plan
+- **Week 1: Validate.** Order samples from A and B. Get written quotes (MOQ, unit price, warranty, and the offline-schedule and backup-battery spec). Confirm the market and shipping rates. Set up the domain and Shopify store (or a landing page). Check the compliance basics: a safe plug and voltage for the target market, and no health-claim copy.
+- **Week 2: Build and test the product.** Samples arrive. Test 72 hours of offline operation, jam behavior with 2–3 kibble types, and app setup time. Film the demos. If the offline claim fails, stop here (no-go).
+- **Week 3: Gate 5 ad test.** Publish the landing page and 3 creative variants, and run $20–25 per day on Meta for 7–10 days. Track add-to-cart, checkout initiation, and CAC. Do not pre-buy inventory.
+- **Week 4: Decide.** Apply the go/no-go rules below. Go means placing a small Supplier A order (50–100 units) or scaling the dropship test. No-go means killing the test and logging the results.
+
+**Go/no-go thresholds:** Go only if CAC is ≤ $30 with ≥ 6 purchases, or add-to-cart ≥ 6% with conversion ≥ 2%. Kill if CAC is > $45 after 400+ clicks.
+
+### 7. Budget to reach a Gate 5 signal (estimates)
+| Item | Cost |
+|---|---|
+| 2 samples + shipping | $100–150 |
+| Shopify first months + domain | $40–60 |
+| Apps (reviews, email) | $0–30 |
+| Ad test spend (7–10 days) | $200–300 |
+| Contingency | $50 |
+| **Total** | **~$450–600** |
+
+### 8. Break-even math
+- **Fixed costs (assumed):** Shopify ~$39, apps ~$30, and misc ~$10, or about **$80/month**.
+- **Contribution before ads:** $27.99 per unit.
+
+| CAC | Contribution per unit | Units/month to cover $80 fixed |
+|---|---|---|
+| $18 | $9.99 | ~8 |
+| $25 | $2.99 | ~27 |
+| $28+ | ≤ $0 | Never breaks even |
+
+At any CAC above $28, no volume breaks even. Repeat purchases (spare parts and accessories) and a bundle price could lift contribution, but that is untested.
+
+### 9. Key risks
+- **Returns and quality variance:** A 15–25% return rate could erase the margin. The mitigation is sample testing and choosing a verified supplier.
+- **CAC above break-even:** The most likely failure. The mitigation is to cap test spend, stop early, and not scale before the signal.
+- **Market saturation:** The screening estimated an ~18-month window. That is another reason to test now instead of over-planning.
+- **Compliance:** Confirm the plug and voltage certification for the target market, and avoid any medical claims.
+
+### 10. Open items before spending
+- Verify supplier prices, lead times and MOQs with real quotes (none confirmed here).
+- Confirm the target market and currency, and recompute shipping and tax.
+- Decide whether Ryan has the time to film demos in Week 2. If not, the plan needs a UGC creator budget of about $100–200.
+
+## 2026-09-22 — Lean Launch Plans
+
+Two candidates cleared feasibility screening: **Sleep Bonnets/Eye Masks** and **Smart Pet Tech (GPS Collars)**. Below are concrete 30-day execution plans for each. Where I don't have verified real-world data, I've flagged it explicitly rather than inventing numbers.
+
+---
+
+## Candidate 1: Silk Sleep Bonnet + Eye Mask Bundle
+
+### Target Customer
+Not "people who like sleep accessories." Specific target: **women 25–45 with curly/coily or chemically-treated hair (protective styling, silk press, extensions) who already buy overnight hair care** — searchable via TikTok/IG hashtags like #satinbonnet #protectivestyle #curlyhairroutine. This is narrower than general "beauty," and it's a group with a recurring reason to buy (styles change, bonnets wear out, gifting).
+
+### Positioning
+Ryan doesn't win by being "another silk bonnet store" — that market is saturated with COSRX/Abib/Beauty of Joseon-adjacent generic listings. The wedge: **sell the bonnet + matching cooling-gel eye mask as one "overnight recovery" bundle**, marketed specifically to the curly-hair community rather than generic "self-care" audience, with UGC content from micro-influencers in that niche showing real hair-texture results (not stock studio photography). Single-SKU bonnet stores compete on price; a bundle with a specific before/after use-case competes on relevance.
+
+### Suppliers (real candidates found via search)
+1. **Alibaba — multiple silk/satin sleep mask & bonnet manufacturers** (e.g., listings under "Custom Silk Sleep Mask," Taihu Snow Silk, Sinyoo Silk, Zhigeng Silk). Custom silk sleep masks start around **$2.08/unit** at scale; MOQs range from as low as 10 pcs up to 300+ depending on supplier; custom logo/packaging MOQs typically start at 30–50 units. Lead time 10–25 days. [Alibaba custom silk sleep masks](https://www.alibaba.com/showroom/custom-silk-sleep-mask.html), [Taihu Snow Silk](https://taihusnow.com/wholesale-silk-eye-mask.html), [Sinyoo Silk](https://sinyoosilk.com/silk-eyemask/)
+2. **CJdropshipping** — has an existing "Silk Bonnet for Sleeping" SKU already listed with no-MOQ dropship fulfillment and a sourcing-agent service for custom bundling. **I could not get an exact per-unit price from search** — this needs a direct account login to CJ's platform to confirm; treat any cost estimate for this supplier as unverified until pulled from the actual dashboard. [CJdropshipping bonnet listing](https://cjdropshipping.com/product/new-silk-bonnet-for-sleeping-women-satin-bonnet-hair-bonnet-night-sleep-cap-scarf-wrap-for-curly-hair-with-tie-band-for-curly-hair-p-2407140638471615000.html)
+
+**Recommendation**: Alibaba for a custom-branded bundle (better margin, slower), CJdropshipping as a no-inventory fallback to test demand in week 1 before committing to an Alibaba MOQ.
+
+### Unit Economics
+| Line | Estimate | Source |
+|---|---|---|
+| Bonnet landed cost | $3–4 | Alibaba per-unit range |
+| Eye mask landed cost | $2–3 | Alibaba per-unit range |
+| Bundle packaging | ~$1 | Assumption — not verified |
+| Freight (DDP, per unit at low volume) | $2–3 | Assumption — not verified |
+| **Total landed cost** | **~$8–11** | Within screening's $8–20 range |
+| Target retail (bundle) | $32.99–$34.99 | Assumption based on 3x target |
+| Gross margin | ~$22–26 (≈70%) | Before ad spend/fees |
+
+**Ad cost reality check (this is the important flag):** TikTok's 2026 blended benchmark CPA across all advertisers is **$32.74** (Triple Whale, full-year 2025 data) — that's higher than this bundle's entire retail price. A broad "Conversions" objective campaign at benchmark rates would lose money on every sale. Beauty-category CPC specifically is lower ($0.74 vs $1.02 blended average), which helps, but the realistic path to profitability is **not** a broad paid-conversion campaign — it's creator/UGC-led content (organic + TikTok Spark Ads boosting existing creator posts) plus narrow retargeting, targeting a CAC of **$12–15**, well under the platform average. This is achievable but not guaranteed — it depends on finding creators whose organic content converts, which the 30-day plan needs to test cheaply before scaling paid spend.
+
+- **Target CAC**: $12–15 (aggressive vs. $32.74 blended benchmark — flagged as the key execution risk)
+- **Contribution margin per unit** (at $34.99 retail, $10 landed, $13 CAC, ~$1.50 payment/platform fees): **≈$10.49/unit**
+
+### Marketing Channel Plan
+**Primary: TikTok**, organic-first via micro-influencer seeding (5–10 creators in the curly-hair niche, product-for-content or low flat fee $50–150/post), then Spark Ads boosting the top 1–2 performing organic posts. **Why TikTok over Meta**: beauty CPC is lowest of any TikTok vertical ($0.74), and the curly-hair/haircare community is TikTok-native with strong organic discovery — this reduces reliance on paid reach entirely, which matters given the CPA math above.
+- TikTok CPM range: **$4.80–$16.20** depending on objective (Reach $4.10 median, Conversions $16.20 median) — explicitly an estimate range, not a guarantee, and will vary by creative and audience.
+- Secondary: Instagram Reels reposting the same creator content organically (no ad spend in month 1).
+
+### 30-Day Launch Plan
+- **Week 1**: List bundle via CJdropshipping (no inventory risk) on Shopify. Reach out to 15–20 curly-hair micro-influencers (5k–50k followers) offering product + $50–100 flat fee for 1 TikTok video. Build a simple landing page with the bundle story (not generic "silk bonnet" copy).
+- **Week 2**: First creator content goes live. Track organic views/engagement, not sales yet. Place Alibaba sample order (3 suppliers, 1–2 units each) to evaluate quality before committing to MOQ.
+- **Week 3**: Boost the 1–2 best-performing creator videos with $300–500 in Spark Ads. Measure actual CAC against the $12–15 target. If CAC is tracking above $25, stop spend and reassess creative/targeting rather than scaling.
+- **Week 4**: If CAC target is hit on at least 15–20 paid conversions (statistically thin but directional), place the Alibaba bulk order for custom branding. If not hit, kill or pivot creative/audience — do not scale broad conversion campaigns given the benchmark CPA problem above.
+
+### Budget to Reach Go/No-Go Signal
+| Item | Cost |
+|---|---|
+| Landing page (Shopify, existing theme) | $0–39 (Shopify plan, likely already owned) |
+| Creator seeding (10 creators × product + $75 avg fee) | ~$750 + product cost (~$100) |
+| Alibaba samples (3 suppliers) | ~$100 |
+| Spark Ads test spend | $400–500 |
+| **Total cash to Gate 5 signal** | **~$1,350–1,450** |
+
+### Break-Even Math
+Fixed costs (Shopify, apps, misc) ≈ $75/month. At $10.49 contribution margin/unit, break-even on fixed costs alone = **~8 units/month**. To also cover the $1,350 test budget as a one-time recoverable cost within 60 days: **~130 additional units** at full contribution margin — this is the real bar for "is this working," not just monthly fixed-cost coverage.
+
+---
+
+## Candidate 2: Smart Pet Tech — GPS Collar (Escape-Prone Small Breeds Niche)
+
+### Important upfront flag
+Unlike the bonnet, a GPS collar is **not a simple dropship SKU** — it requires ongoing cellular data (SIM/IoT connectivity) and an app backend. Screening's own soft-risk notes said this needs "strong operational/tech support plan." My research confirms this is the binding constraint, not unit economics. I'm flagging this clearly: **a 30-day plan for this candidate is really a supplier/infrastructure vetting sprint, not a full sales launch**, unless a white-label vendor's existing app+SIM program is used as-is.
+
+### Target Customer
+Not "pet tech buyers" broadly. Specific target: **owners of small escape-prone breeds (Chihuahuas, Dachshunds, terriers) and senior/anxious dogs** in suburban/rural areas — a segment with a recurring, high-anxiety trigger (a lost pet) rather than general pet-tech curiosity. Avoid the smart-litter-box subcategory entirely per screening notes (Litter-Robot dominance).
+
+### Positioning
+Generic GPS collar dropshippers compete on price against Tractive, Fi, and Whistle, all of which have brand trust and years of app reliability. Ryan doesn't win head-on. The wedge, if pursued: **white-label through a vendor that already owns the app/SIM infrastructure** (so support burden is the vendor's problem, not Ryan's), and position narrowly around breed-specific escape scenarios in ad creative rather than general "track your pet" messaging.
+
+### Suppliers (real candidates found via search)
+1. **TIZE Technology (tizecollar.com)** — explicitly offers white-label mobile app (logo/branding/UI) + OEM hardware, and supports either your own SIM or their global IoT SIM solution. This solves the subscription-infrastructure problem directly. **No specific pricing was returned by search** — requires direct outreach/quote request before this is usable. [TIZE Collar](https://www.tizecollar.com/pet-tracker)
+2. **Alibaba — mixed tier, wide price variance**: SUZHOU JIUKESHU E-COMMERCE TECH CO. lists basic GPS/LBS tracker modules at **$4.86–6.76/unit, MOQ 5 pcs** (no app/subscription infrastructure — bare hardware only). Shenzhen Yixie Electronics lists a higher-spec unit at **~$110, MOQ 1 "bag"** (likely includes LTE/4G support). **These two price points are not comparable products** — the cheap one is a bare tracker chip, the expensive one likely includes cellular hardware. Neither confirms whether an app/subscription layer is included — this needs a direct quote to clarify. [Alibaba GPS collar suppliers](https://www.alibaba.com/showroom/wholesale-gps-dog-tracker-collar.html)
+
+**Recommendation**: Do not commit budget to Alibaba bare-hardware suppliers without first confirming TIZE (or a similar white-label-with-app vendor) can deliver working app + SIM connectivity — that's the actual gating question for this candidate, not unit cost.
+
+### Unit Economics
+| Line | Estimate | Confidence |
+|---|---|---|
+| Landed cost (white-label, hardware+app) | $60–110 | **Unverified** — no confirmed quote yet; screening range was $60–250 |
+| Target retail | $150–200 | Assumption in line with screening's $150–500 range, kept conservative for a first breed-niche SKU |
+| Ongoing SIM/data cost per active user | Unknown | **Not found** — must be confirmed with TIZE before pricing a subscription model |
+| Gross margin (hardware only, before subscription costs) | ~2x | Below the 2–3x screening estimate at the low end |
+
+I'm not going to invent a subscription-fee number or a confirmed landed cost — this is exactly the kind of "plausible-sounding but fake" data the brief asked me to avoid. **This must be resolved with a real vendor quote before any ad spend goes out.**
+
+### Marketing Channel Plan
+**Primary: Meta (Facebook/Instagram)**, not TikTok. Reasoning: pet-product buyers on Meta skew toward homeowners with disposable income (the demographic most likely to buy a $150+ device), and Meta shows the strongest category-specific ROAS signal found — pet products reported at **4.8x ROAS** in 2026 benchmarks, vs. a cold-audience pet CPM range of **$18–38** (both explicitly flagged as estimates, not guarantees, and benchmark sources disagreed with each other by a wide margin — one source put pet CPM as low as $9.56, so treat this as a $9–38 range until tested directly). Video creative (breed-specific escape scenario) outperforms static by 40–60% on cold Meta audiences per the same benchmark data.
+
+### 30-Day Launch Plan
+- **Week 1**: Request direct quotes + sample units from TIZE Technology and 2 Alibaba suppliers. Confirm: does the white-label option include app support and a workable SIM/data cost structure? This is the go/no-go gate before anything else.
+- **Week 2**: If a viable supplier confirms workable economics, order 3–5 sample units for hands-on testing (does the app actually work, GPS accuracy, battery life). If no supplier confirms workable app+SIM economics by end of week 2, **kill this candidate** — do not proceed to paid ads on unverified infrastructure.
+- **Week 3** (only if Week 2 gate passes): Build landing page targeting the escape-prone-breed niche. Produce 2–3 short video ads using sample-unit footage. Launch a small Meta test campaign ($300–400) to a narrow interest audience (small-breed owners).
+- **Week 4**: Evaluate CAC against target. Given the unverified cost base, do not place a bulk hardware order yet — this month is entirely a validation sprint.
+
+### Budget to Reach Go/No-Go Signal
+| Item | Cost |
+|---|---|
+| Sample units (3–5, mixed suppliers) | $300–550 (estimate, unconfirmed pricing) |
+| Landing page | $0–39 |
+| Meta ad test | $350–400 |
+| **Total cash to Gate 5 signal** | **~$700–1,000**, with the caveat that this figure assumes sample pricing that hasn't been confirmed by a real quote |
+
+### Break-Even Math
+Cannot be computed responsibly yet — contribution margin depends on the unconfirmed subscription/SIM cost structure. Placeholder using the low end ($150 retail, $80 landed, no subscription pass-through, $30 CAC): contribution margin ≈ $40/unit → **~2 units/month** to cover a $75 fixed-cost base. This number is **not reliable** until Week 1's supplier quotes come back — treat it as illustrative only.
+
+---
+
+### Bottom Line
+- **Bonnet bundle**: economics and channel are both concrete enough to spend real money in week 1. Main risk is CAC discipline against a high platform-average benchmark — mitigated by an organic/creator-first approach rather than broad paid conversion.
+- **GPS collar**: the 30-day plan is legitimately a supplier-vetting sprint, not a launch. Do not spend ad budget until TIZE (or equivalent) confirms real landed cost and subscription economics in Week 1–2. If that gate fails, recommend killing this candidate rather than forcing a launch on unverified numbers.
+
+Sources:
+- [Alibaba — Custom Silk Sleep Mask](https://www.alibaba.com/showroom/custom-silk-sleep-mask.html)
+- [Taihu Snow Silk — Wholesale Silk Eye Mask](https://taihusnow.com/wholesale-silk-eye-mask.html)
+- [Sinyoo Silk — Silk Eyemask](https://sinyoosilk.com/silk-eyemask/)
+- [CJdropshipping — Silk Bonnet Listing](https://cjdropshipping.com/product/new-silk-bonnet-for-sleeping-women-satin-bonnet-hair-bonnet-night-sleep-cap-scarf-wrap-for-curly-hair-with-tie-band-for-curly-hair-p-2407140638471615000.html)
+- [Alibaba — Wholesale GPS Dog Tracker Collar](https://www.alibaba.com/showroom/wholesale-gps-dog-tracker-collar.html)
+- [TIZE Collar — GPS Pet Tracker Wholesale/OEM](https://www.tizecollar.com/pet-tracker)
+- [Triple Whale — TikTok Ads Benchmarks 2026](https://www.triplewhale.com/blog/tiktok-benchmarks)
+- [Triple Whale — Facebook Ad Benchmarks 2026](https://www.triplewhale.com/blog/facebook-ads-benchmarks)
+- [AdLibrary — Meta Ad Benchmarks Pet Care 2026](https://adlibrary.com/posts/meta-ad-benchmarks-pet-care-2026)
