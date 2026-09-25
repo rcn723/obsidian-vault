@@ -1058,3 +1058,118 @@ Eight products appeared consistently across multiple recent scans. Hard-criteria
 ---
 
 **Summary**: Two advanced; six killed on hard criteria (ad compliance, IP, or unit economics). Neither advanced candidate has soft-factor advantage; both require operational discipline (micro-influencer network for bonnets; tech support infrastructure for pet tech).
+
+## 2026-09-23
+
+**No candidates met the persistence threshold.** All products appeared in 2 or fewer of the last 3 daily scans (2026-09-21/22/23). To advance to screening, a candidate must demonstrate stable or rising interest across all 3 entries.
+
+**Insufficient persistence, not screened:**
+- Portable Mini Projectors (2026-09-21, 2026-09-23 only)
+- Under-eye Patches (2026-09-21, 2026-09-23 only)
+- Cable Management Organizers (2026-09-21, 2026-09-23 only)
+- Magnetic Phone Accessories/Mounts (2026-09-21, 2026-09-22 only)
+- Sleep Tech Products (2026-09-22, 2026-09-23 only)
+- Pet Care Products (2026-09-22, 2026-09-23 only)
+- Supplements/Gummies (2026-09-22, 2026-09-23 only)
+- All single-entry-only candidates
+
+**Recommendation:** Consider consolidating daily scans into rolling 3-day windows or adjusting persistence threshold to 2+ entries if current three-daily-snapshot approach continues to fragment candidate signals.
+
+# 2026-09-24
+
+## Insufficient Persistence, Not Screened
+
+The following candidates appeared in only a single daily entry and do not meet the persistence threshold:
+
+| Product | Appeared | Reason |
+|---------|----------|--------|
+| Mouth Tape | 09-22 | Insufficient persistence; overlaps with "Sleep Tech" but appears once as standalone |
+| Infrared Sauna Blankets | 09-22 | One entry only; major recall red flag (78,000-unit Lifepro recall Oct 2025) |
+| Hard Water Shower Filters | 09-22 | One entry only; mature market, not emerging |
+| Magnetic Phone Accessories | 09-22 | One entry only; flagged as commoditized/mainstream |
+| AI-Powered Home Gadgets | 09-22 | One entry only (specific product; smart home category persists but product absent 09-23, 09-24) |
+| Premium Supplements & Gummy Vitamins | 09-22 | One entry only; already heavily saturated |
+| Compact Space-Saving Fitness Equipment | 09-22 | One entry only; high return rates and shipping costs |
+| Home Organization Products | 09-22 | One entry only; highly saturated niche |
+| AI-Powered Smart Ovens | 09-22 | One entry only; ultra-premium pricing, slow adoption |
+| Eco-Friendly Pet Products | 09-22 | One entry only; niche audience, lower search volume |
+| Sleep Tech & Sleep Aids | 09-22 | One entry only; overlaps with Mouth Tape |
+| PlantSenso & Gamified Plant Care | 09-22 | One entry only; very early-stage, delivery risk (Kickstarter) |
+| Compact Magnetic Charging Solutions | 09-22 | One entry only; fragmented, commoditized |
+| Toe Spacers | 09-23 | One entry only; nascent category |
+| Smart Posture Correctors | 09-23 | One entry only; early adopter window narrowing |
+| Pet Cooling Mats | 09-23 | One entry only; highly seasonal (peaked May 2026, declining Sept) |
+| Blue Light Therapy Devices | 09-23 | One entry only; extreme early stage |
+| Scent Beads / Laundry Fragrance | 09-23 | One entry only; consumable, trending but insufficient history |
+| Smart Sleep Masks / Circadian Lighting | 09-23 | One entry only; very nascent, limited real-world data |
+| Air Fryer Silicone Liners & Accessories | 09-23 | One entry only; dependent on existing air fryer ownership |
+| Cable Management Organizers | 09-23 | One entry only; commodity market, low repeat purchase |
+| Under-Eye Patches | 09-23 | One entry only; ingredient innovation limited, crowded |
+| Beet Gummies / Heart-Health Supplements | 09-23 | One entry only; regulatory uncertainty, crowded field |
+| African Net Sponges | 09-23 | One entry only; low durability, niche adoption |
+| Insta360 X6 Action Camera | 09-23 | One entry only; niche market, $1K+ price point |
+| Back-to-School & Halloween Seasonal | 09-23 | One entry only; already saturated by week 3 Sept; 6-8 week window only |
+| Red Light Therapy Devices | 09-23 | One entry only; oversaturated, mature market |
+| Smart Rings | 09-24 | One entry only; 1-2 week shelf life before hype cycles; high SKU fragmentation |
+| Mahjong Sets & Supplies | 09-24 | One entry only; grandmillennial trend may have peaked |
+| Mini/Portable Projectors (galaxy) | 09-24 | One entry only (but note: "Portable 4K/Laser" appeared 09-23—see persistence candidate) |
+| Pet Grooming Vacuum Systems | 09-24 | One entry only (part of persistent pet category, but this specific product new 09-24) |
+| Collapsible/Multifunctional Furniture | 09-24 | One entry only; early stage, high price points |
+| Run Club Apparel | 09-24 | One entry only; activewear already saturated |
+| Fascia Ring Mini Massage Devices | 09-24 | One entry only; single Amazon spike, 1-2 month lifecycle likely |
+| Ninja Cordless Blender | 09-24 | One entry only; single-source signal (TikTok), unclear timeline |
+| Balletcore Fashion | 09-24 | One entry only; already mainstream saturated, typical 6-12 mo lifecycle |
+| Korean Skincare "Bloom Skin" | 09-24 | One entry only; "glass skin" trend explicitly fading, category rollover incoming |
+| Creator/Streaming All-in-One Kits | 09-24 | One entry only; niche audience (serious creators), high price |
+| Knitting/Needlepoint Supplies | 09-24 | One entry only; early stage, requires community/social element |
+
+---
+
+## Persistence Threshold Met — Candidates Screened
+
+| Candidate | Persistence Signal | Trend Stage | Unit Economics | Shipping | Ad Compliance | IP Risk | Return Rate | Saturation | Durability | Verdict | Reason |
+|-----------|-------------------|------------|-----------------|----------|---------------|---------|------------|-----------|-----------|---------|--------|
+| **Smart Pet Tech (GPS collars, AI health monitors, smart litter boxes)** | All 3 days: Smart Pet Tech (09-22), Pet Cooling Mats (09-23), Pet Grooming Vacuum (09-24) | Rising | ❌ HARD FAIL | ⚠️ MEDIUM | ✓ Pass | ✓ Pass | ⚠️ Medium | ⚠️ Saturating | ✓ Durable | **KILL** | Hardware-heavy products ($200–500+) cannot support 2.5–3x markup after connectivity infrastructure costs, customer support, firmware updates, and platform fees. Market already shows adoption saturation post-pandemic; connectivity dependency and proprietary ecosystem fragmentation create sourcing and returns friction. Connectivity requirement (cloud sync, GPS, WiFi) adds operational complexity unsuitable for dropship. |
+| **Plant-Based Skincare** | 2 days: Under-Eye Patches/Blue Light context (09-23), Plant-Based Skincare main entry (09-24) | Rising | ⚠️ MEDIUM | ✓ Pass | ✓ Pass | ✓ Pass | ⚠️ Medium-High | ❌ HARD FAIL | ✓ Durable | **KILL** | Market data strong ($8.7B→$23B, 11.4% CAGR) but segment is already densely crowded with incumbents (Herbivore, The Ordinary, Youth to the People, P50). "Natural" positioning fatigue evident; customer education costs required to differentiate compress margins below 2.5x. Requires brand positioning + sustained content spend to break through noise. Extremely high return rates typical in beauty (30–40%+ for skincare). Ad platform saturation on Facebook/Instagram/TikTok already high; CPA rising. Not a differentiation opportunity for dropship. |
+| **Portable Projectors (4K/Laser, mini/galaxy variants)** | 2 consecutive days: Portable 4K/Laser Mini Projectors (09-23), Mini/Portable Projectors galaxy (09-24) | Rising | ⚠️ MEDIUM | ⚠️ HARD FAIL | ⚠️ Borderline | ✓ Pass | ⚠️ Medium-High | ❌ HARD FAIL | ✓ Durable | **KILL** | Shipping risk (fragile optics, $400–800 price point makes damage high-impact; return rates running 25–35% for entertainment gadgets). Already saturated with established brands (XGIMI, Anker, Boribim) and Amazon generics; impossible to achieve 2.5x markup with ad spend. Customer expectations high; image quality complaints endemic. Margin compression from 3x → 1.8–2.1x due to ad saturation and commoditization. Gadget category shows 1–3 month product lifecycle before margin collapse. Not viable for sustainable margins. |
+
+---
+
+**Summary:** All three persistence-qualified candidates fail on hard criteria (unit economics, shipping risk, or market saturation). **Advance: NONE.** The pet-tech category shows connectivity/ecosystem complexity unsuitable for dropship. Skincare is saturated with education-heavy customer acquisition. Projectors face fragility + optics complexity shipping risk and margin compression from entrenched competitors. **Recommendation:** Expand scan to products with lower hardware cost, faster logistics, and less competitive saturation (e.g., consumables, apparel, simple accessories). Current 3-day window shows no viable dropship candidates.
+
+## 2026-09-25
+
+### Persistence Screen
+
+**Candidates appearing 2+ of the last 3 daily entries with stable/rising interest:**
+- Smart Pet Tech (Days 1, 2, 3 — multiple product types)
+- Sleep Tech / Wellness Devices (Days 1, 3)
+- Portable / Mini Projectors (Days 1, 2)
+- Skincare / Beauty (Days 1, 2)
+- Fashion / Apparel (Days 2, 3)
+
+**Candidates appearing 1 day only but flagged multi-source in initial research:**
+- Mouth Tape (Day 3 + multi-source confirmed)
+- Clear Backpacks (Day 3 + 3-platform signal)
+- Tamagotchi & Retro Collectibles (Day 3 + 3-platform signal)
+- Home Organization (Day 1 + multi-source confirmed)
+
+**Insufficient persistence (single day, no multi-source flag):** Toe Spacers, Blue Light Therapy, Beet Gummies, African Net Sponges, Smart Rings, Touchless Toilets, Mahjong, Fascia Rings, Ninja Blender, 4K Security Cameras, Knitting Supplies, Smart Water Bottles, Freeze-Dried Candy, Spicy Dill Pickle Chips, and all other single-day-only products.
+
+---
+
+### Feasibility Screening
+
+| Candidate | Unit Econ | Shipping | Ad Compliance | IP/TM Risk | Return Rate | Saturation | Trend Durability | **DECISION** | **Notes** |
+|-----------|-----------|----------|---------------|------------|-------------|-----------|------------------|-----------|-----------|
+| **Smart Pet Tech** | 2.5–5x ✓ | ⚠ (electronics/vacuum risk) | ✓ | ✓ | ⚠ (vacuum: high) | ✓ (early-stage) | ✓ (evergreen) | **ADVANCE** | Multi-source confirmed, persistent across all 3 days. Recommend Smart Pet Feeders + ID Tags sub-verticals; deprioritize grooming vacuums (flagged for high returns and shipping damage) and cooling mats (seasonal May peak, declining by Sept). Monitor saturation threshold noted for feeders. |
+| **Sleep Tech** | 2.5–8x ✓ | ✓ | **✗ HARD FAIL** | ⚠ | ⚠ (moderate) | ✓ (nascent) | ⚠ (efficacy-dependent) | **KILL** | Medical device regulatory territory blocks health claims on Meta/Google/TikTok. Positioning as prescription medical device requires clinical validation + prescriber channels unsuitable for dropship model. |
+| **Portable Projectors** | 2.5–5x ✓ | ✓ | ✓ | ⚠ (XGIMI, Anker dominance) | **✗ HIGH** | **✗ SATURATED** | ✗ (trend-driven) | **KILL** | High return rate risk: image quality/brightness performance gaps between budget pricing expectations and delivery (noted "common complaints"). Established brands control 60%+ market; trend-driven (galaxy/aesthetic appeal, not functional need). Early-mover window closed. |
+| **Skincare / Beauty** | 2.5–10x ✓ | ✓ | ✓ | ⚠ | ✓ | **✗ SATURATED** | ⚠ (trend-shifting) | **KILL** | Crowded segment with ingredient innovation limited ("natural fatigue" competitor noted). Day 3 signals show Korean skincare shifting away from "glass skin"—suggests category rollover. Plant-based sub-vertical noted at $23B CAGR but requires education spend and competes with established brands (Herbivore, Dermalogica, Tatcha). |
+| **Fashion / Apparel** | 2.5–5x ✓ | ✓ (low weight) | ✓ | ✓ | **⚠ HIGH** | **✗ SATURATED** | **✗ SHORT-CYCLE** | **KILL** | Inherently trend-dependent with 3–6-month lifecycle per specific item. Run Club Apparel already has cult following (Bandit, Satisfy drops sell out, suggesting peak saturation); Balletcore heavily marketed by luxury brands (Miu Miu, Repetto, Royal Ballet collabs). Oversized hoodies flagged as "niche (couples focus), high return rates likely." Fashion fads not suitable for 90+ day inventory holding. |
+| **Mouth Tape** | 30–100x ✓✓ | ✓✓ | ⚠ (medical claims) | ⚠ (Nasalite, Somnifix established) | ⚠ (moderate) | **✗ HIGH** | **✗ TREND-DEPENDENT** | **KILL** | Unit economics excellent but hard fails on durability: market in saturation phase (1.7M+ units/month by Nasalite alone); medical efficacy debate ongoing (lack of peer-reviewed backing noted); regulatory pressure evident; positioned on viral sleep-optimization hype rather than fundamental need. Day 1 notes "Medical efficacy debate; lack of scientific backing; potential regulatory pressure." |
+| **Clear Backpacks** | 2.5–6.5x ✓ | ✓ | ✓ | ✓ | ✓ | ✗ (saturated Aug–Sept) | **✗ HARD FAIL** | **KILL** | Hard fail on trend durability: policy-driven demand (clear-bags-only school mandates vary by region and district). Narrow 6–8-week seasonal window (Aug–Sept peak, drops sharply Oct–July). Non-recurring annual spike unsuitable for sustainable dropship business. Demand cliff predictable and imminent (mid-October 2026). |
+| **Tamagotchi & Retro Collectibles** | 2.5–5x (licensing margin cut) | ✓ | ✓ | **✗ HARD FAIL #1** | ✓ | ✗ (Bandai saturated) | **✗ HARD FAIL #2** | **KILL** | Hard fail #1: Licensed product (Bandai IP) — dropship model requires licensing agreement; unauthorized sales risk legal action. Hard fail #2: Anniversary-driven spike (30th anniversary Sept 2026) — non-recurring event; demand cliff after Sept 2026. Oversaturated with official Bandai merchandise already present on Amazon, Shopify. |
+| **Home Organization** | 2.5–10x ✓ | ⚠ (oversized items) | ✓ | ✓ | ✓ | **✗ HIGH** | ✓ (evergreen) | **KILL** | Mature market with high ad saturation limits differentiation opportunity. Incumbents (Container Store, IKEA, Amazon Basics, Rubbermaid) control paid discovery. Evergreen need exists but saturated landscape makes unit-economics positive on scale with low ad ROI. Market already peaked (noted "already peaked / high ad saturation"). |
+
+**Final Result: 1 ADVANCE**

@@ -1,0 +1,8 @@
+=== Dropship pipeline run: 2026-09-24 ===
+[1/4] Running trend scanner...
+cost: $0.67247635
+Appended to scan-log.md
+[2/4] Running feasibility screener...
+cost: $0.13720759999999999
+Appended to feasibility-log.md
+No candidates advanced today. Stopping here.

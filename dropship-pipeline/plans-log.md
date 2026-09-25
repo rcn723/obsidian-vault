@@ -1197,3 +1197,127 @@ Sources:
 - [Triple Whale — TikTok Ads Benchmarks 2026](https://www.triplewhale.com/blog/tiktok-benchmarks)
 - [Triple Whale — Facebook Ad Benchmarks 2026](https://www.triplewhale.com/blog/facebook-ads-benchmarks)
 - [AdLibrary — Meta Ad Benchmarks Pet Care 2026](https://adlibrary.com/posts/meta-ad-benchmarks-pet-care-2026)
+
+## 2026-09-25 — Lean 30-Day Plan: Smart Pet Tech
+
+Only one candidate advanced through feasibility screening today: **Smart Pet Tech**. Per the screening notes, I'm building the executable plan around the **Smart WiFi Pet Feeder** as the lead SKU (better margin ceiling, cleaner supply chain, no companion-software burden) and treating **Smart Pet ID Tags** as a fast-follow test only if the feeder clears Gate 5 — not a parallel launch. Running both cold in month one splits a $1,500 test budget below the level needed to get a real signal on either.
+
+---
+
+### Why Feeder leads over ID Tag
+
+Smart/NFC pet ID tags need a companion digital profile (scan → hosted pet page with owner contact info). That's real product infrastructure (a hosted page system, not just a physical tag), not something sourced off a supplier catalog. The feasibility table didn't flag this — it's a deferred build item, not a 30-day dropship SKU. Flagging it now so it doesn't surface as a surprise blocker later. Feeder has no such dependency: WiFi app control is handled by the manufacturer's white-label app (standard for this category).
+
+---
+
+## Product 1: Smart WiFi Pet Feeder (lead test)
+
+### Target customer
+Not "pet owners." Specifically: **dog/cat owners aged 28–45 who work full-time or travel regularly and already searched or engaged with "pet camera," "pet feeder," or "WFH pet guilt" content.** This is a guilt/convenience purchase, not a novelty purchase — the buyer is solving "I feel bad leaving my pet all day," not "this is a cool gadget." Meta/TikTok interest+behavior targeting should stack pet ownership signals with remote-work or frequent-travel signals, not just "pet lovers" (too broad, too saturated).
+
+### Positioning — why buy from Ryan, not the next store selling the same AliExpress unit
+This is the hard part, and I want to be honest about it: **a generic WiFi feeder dropshipped from the same factory has no defensible moat.** Anyone can list the identical unit within a week. The actual differentiation available in 30 days is not product, it's packaging of the offer:
+1. **Bundle + guarantee, not the bare unit.** Sell "Never Miss a Feeding Kit" (feeder + portion guide + 90-day workmanship guarantee + real US-based support) at a price the bare-unit competitors don't bother matching because they're competing on price, not service.
+2. **Content-led trust, not just paid reach.** Short-form video showing the actual failure mode competitors ignore (jams, app disconnects, portion inaccuracy) and how support/replacement works if it happens — this is the credibility gap in a market where Amazon reviews for budget smart feeders are full of jam/malfunction complaints.
+3. Realistically: this is a 60–90 day differentiation project, not a day-1 moat. In month one, positioning is "best-supported version of the trend," not "unique product." Say that plainly to set expectations — the 30-day test is about proving demand and margin exist, not about winning a defensible category position yet.
+
+### Supplier options (real candidates, verify pricing directly before ordering — Alibaba/CJ listing prices shown in search results are frequently outdated or tier-gated behind login)
+
+| Supplier | Product | Est. wholesale cost | MOQ | Lead time | Notes |
+|---|---|---|---|---|---|
+| **PawsAsia (pawsasia.com)** | "PETCOME" 4L WiFi + app + voice + camera feeder, factory dropship | Not published — request quote; comparable camera-enabled units run **$60–$99** wholesale per Alibaba electronics category data | **No stated MOQ** — advertised as dropship-ready | Not confirmed — request from supplier | Best fit for a no-inventory 30-day test since it's explicitly marketed for dropshipping, not bulk wholesale. Verify actual per-unit price and per-order shipping cost before committing ad spend. |
+| **CJdropshipping — "3L Smart Pet Feeder"** listing | Basic WiFi/app 3L feeder | Price not visible without CJ account login — **unconfirmed, flag as unknown** until logged in | Dropship model — effectively 1 unit | CJ typically ships from CN or US-based warehouse stock; confirm which for this SKU | CJ's advantage is per-order fulfillment (no inventory risk), but I could not verify actual landed cost from public search — this needs a direct account check before the plan is final. |
+| **Alibaba wholesale (e.g., Shenzhen Tianzheng United, Foshan Mobipeet, or similar verified suppliers)** | Basic WiFi feeder (no camera) | **$15–$29** wholesale per Alibaba electronics sourcing data | Varies by supplier — one cited example (Shanghai Kuiguan) requires **500 units MOQ**; others may offer sample/small-batch pricing on request | Standard is 15–30 days production + 20–45 days sea freight, or 7–12 days air | Cheapest per-unit cost but the 500-unit MOQ example is too much inventory risk for a Gate 5 test — only use this tier if a supplier confirms a small sample-order option (many will do 10–50 units for a "test order" at a price premium). |
+
+**Bottom line on sourcing: I do not have confirmed, verified per-unit pricing for a specific SKU yet.** The $15–$115 range reflects the spread across feature tiers (basic WiFi vs. camera+AI) from aggregate Alibaba category data, not a quote for one product. Before spending ad dollars, get 2–3 direct supplier quotes (PawsAsia + one Alibaba verified supplier) for the exact unit you'll list — this is a same-week task, not a blocker to starting the landing page.
+
+### Unit economics (planning assumptions — landed cost is an estimate until suppliers quote back)
+
+| Line | Value | Basis |
+|---|---|---|
+| Wholesale/landed unit cost | **$32** (assumed mid-tier WiFi+app, no camera) | Midpoint of the $15–$29 basic-tier range + ~$5–8 estimated per-unit freight (air, small batch) — **estimate, not a quote** |
+| Retail price | **$79.99** | Positions below camera-enabled competitors ($99–150 retail) but above bare basic units (~$50) to fund the bundle/guarantee positioning |
+| Payment processing (~3%) | $2.40 | Standard Shopify Payments rate |
+| Returns/damage reserve (~6%) | $4.80 | Feasibility screening flagged elevated pet-electronics return risk — reserving above typical 3–4% ecommerce baseline |
+| Packaging/misc | $2.00 | Insert card, poly mailer/box upgrade |
+| **Total cost per unit** | **$41.20** | |
+| **Gross margin before ad spend** | **$38.79** | 2.4x markup on landed cost — within the 2.5–5x range the screening flagged as viable, slightly conservative |
+| Target CAC | **$20–$24** | Standard heuristic: CAC ≤ ~55–60% of pre-ad gross margin, leaving contribution margin buffer for returns/support |
+| **Contribution margin per unit (after target CAC)** | **~$15–$19** | |
+
+### Marketing channel plan
+
+**Primary: Meta (Facebook/Instagram) Advantage+ or manual conversion campaign.**
+Why: pet products reportedly benchmark as one of the most efficient Meta verticals — cited figures were **~$11 average CPM, ~$0.73 average CPC, ~1.5% CTR** for the pet category. **I need to flag this clearly: these numbers came from SEO/benchmark-aggregator sites (adriselab.com, visiblefactors.com, lebesgue.io), not Meta's own published data or a named, audited source — treat these as directional estimates only, not guarantees.** For a cold-audience ecommerce launch, expect **CPM realistically in the $15–$35 range** and CPC **$0.80–$1.50**, which is more consistent with what cold DTC pet launches typically see.
+
+Secondary/test: **TikTok Spark Ads**, using UGC-style demo video. Cited 2026 benchmarks: CPM **$4.80–$13.26** depending on objective, CPC **~$0.62–$1.02** median — same caveat: aggregator-sourced, directional only, verify against your own Ads Manager estimates once the account is live.
+
+**Reality check on CAC math:** at an assumed 2% landing-page conversion rate (reasonable for a cold-traffic $80 gadget with a bundle offer) and $1.00 blended CPC, cost-per-purchase ≈ **$50** — well above the $20–24 target CAC. This is the single biggest risk in this plan. The Gate 5 test exists specifically to find out whether real CVR and real CPC land closer to target, or whether this SKU dies here. Do not scale spend past the test budget until CAC is confirmed at or below target from actual data, not benchmark estimates.
+
+### 30-day launch plan
+
+**Week 1 (Sourcing + build):**
+- Request direct quotes from PawsAsia + 1 Alibaba verified supplier (exact unit, per-unit cost, sample-order pricing, lead time) — target: quotes back within 3–5 days.
+- Order 3–5 sample units via air/express for content creation and to physically verify build quality/jam issues before committing spend.
+- Build Shopify landing page (single-product store): hero video slot, bundle offer, 90-day guarantee copy, reviews placeholder.
+- Register domain, set up Meta Business Manager + TikTok Business account, install pixel.
+
+**Week 2 (Content + soft launch):**
+- Samples arrive — shoot UGC-style demo + "what happens if it jams" support-credibility video.
+- Launch small-budget Meta campaign ($15–20/day) purely for CTR/CPC data — not sales volume yet.
+- Set up email capture for anyone who visits but doesn't buy (retarget pool for week 3–4).
+
+**Week 3 (Real ad test — the Gate 5 signal):**
+- Scale to $40–60/day across 2–3 ad sets (interest stacking test described above).
+- Run for a minimum 5–7 days at this spend to get a statistically usable CVR/CAC read (below this, data is noise).
+- Track: CPC, landing page CVR, actual CAC, refund/complaint rate on the 3–5 units already in customers' hands or your own testing.
+
+**Week 4 (Go/no-go decision):**
+- Compare actual CAC vs. $20–24 target and actual contribution margin vs. $15–19 target.
+- **Go** if CAC ≤ $30 and complaint/return signal is low → place a real inventory order (negotiate a small first batch, 50–100 units, not the 500-unit MOQ tier).
+- **No-go** if CAC is materially above $35–40 or return/jam complaints are high in your own sample testing → kill before committing to bulk inventory.
+
+### Budget to reach a real go/no-go signal
+
+| Item | Cost |
+|---|---|
+| Shopify (1 month) | $39 |
+| Domain | $15 |
+| Sample order (3–5 units, express shipping) | $200–$350 (estimate — pending supplier quote) |
+| Landing page apps/theme (optional) | $0–$50 |
+| Ad spend, weeks 2–3 combined | $500–$700 |
+| Ad spend, week 3 real test (Gate 5) | $350–$500 |
+| Contingency (10%) | $110–$165 |
+| **Total cash needed** | **~$1,200–$1,800** |
+
+### Break-even math
+
+Using assumed contribution margin of **$17/unit** (midpoint of the $15–19 range) and monthly fixed costs of **~$70** (Shopify + apps + domain amortized) plus an assumed steady-state ad spend of **$1,500/month** once past the test phase:
+
+- Units needed to cover fixed costs + ad spend: (1,500 + 70) / 17 ≈ **93 units/month** (~3.1/day)
+- This is meaningfully higher than the ~42 units/month a naive "just cover overhead" calc would suggest, because ad spend at this CAC is the dominant cost, not fixed overhead. **If actual CAC comes in at $50 (the more realistic cold-traffic estimate above) instead of $20–24, contribution margin drops to roughly $-11 per unit — a loss on every sale.** This is why the week 3 real ad test is the actual go/no-go gate, not the assumptions in this table.
+
+---
+
+### Product 2: Smart Pet ID Tag — fast-follow only, not month-one
+
+Not building a full plan for this now — it depends on the feeder test validating the audience and ad economics, and it has an unresolved infrastructure gap (hosted scan-to-profile page) that the feasibility screening didn't price in. Two supplier data points worth keeping for later:
+
+- **RFIDSilicone** — factory NFC pet tag, ~$0.48–0.49/unit, MOQ 500 units. This is raw tag hardware cost only — not a finished, packaged, branded product.
+- **Chengdu Pivot U Card Technology** — ~$0.08/unit at 10,000+ units, MOQ 100 units — cheaper at volume but same caveat: component cost, not finished product cost.
+
+Before this becomes a real candidate, the open question is whether the "smart" scan-to-profile feature can be built on a no-code hosted page (e.g., a simple templated public profile page) instead of custom software — that's a scoping question for a later session, not a 30-day dropship test.
+
+---
+
+Sources:
+- [Best smart pet feeder dropshipping suppliers for 2026](https://electronics.alibaba.com/supplier/smart-pet-feeder-dropshipping-supplier)
+- [Buy Pet Feeder Manufacturer | Smart Automatic Feeders](https://www.alibaba.com/supplier/pet-feeder-manufacturer.html)
+- [PAWS ASIA Factory Dropshipping WiFi Smart Auto Pet Feeder](https://pawsasia.com/products/petcome-factory-dropshipping-durable-wifi-4l-phone-app-remote-control-voice-camera-smart-auto-pet-feeder-bowl)
+- [CJdropshipping 3L Smart Pet Feeder](https://cjdropshipping.com/product/3l-smart-pet-feeder-automatic-cat-food-dog-food-feeding-machine-p-2406220519431603000.html)
+- [Wholesale Smart Tag Bluetooth — Alibaba](https://www.alibaba.com/showroom/wholesale-smart-tag-bluetooth.html)
+- [RFIDSilicone NFC Pet Tag Supplier](https://www.rfidsilicone.com/product/nfc-tags/nfc-pet-tag/)
+- [Meta Ad Benchmarks Pet Care 2026](https://adlibrary.com/posts/meta-ad-benchmarks-pet-care-2026)
+- [Pet Products Meta Ads Benchmarks 2026 — adriselab](https://adriselab.com/data/meta-ads-benchmarks-2026/pet-products)
+- [TikTok Ads Benchmarks 2026 — Triple Whale](https://www.triplewhale.com/blog/tiktok-benchmarks)
+- [TikTok Ads Benchmarks 2026 — Digital Applied](https://www.digitalapplied.com/blog/tiktok-ads-benchmarks-2026-cpc-cpm-cvr-industry)
