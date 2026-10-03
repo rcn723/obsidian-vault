@@ -1321,3 +1321,83 @@ Sources:
 - [Pet Products Meta Ads Benchmarks 2026 — adriselab](https://adriselab.com/data/meta-ads-benchmarks-2026/pet-products)
 - [TikTok Ads Benchmarks 2026 — Triple Whale](https://www.triplewhale.com/blog/tiktok-benchmarks)
 - [TikTok Ads Benchmarks 2026 — Digital Applied](https://www.digitalapplied.com/blog/tiktok-ads-benchmarks-2026-cpc-cpm-cvr-industry)
+
+# 2026-09-26 — 30-Day Lean Launch Plan
+
+## Screening outcome: only 1 of 3 candidates cleared
+
+Per today's feasibility table, **Smart Pet Feeders** was the only `ADVANCE`. Smart Rings and Gaming RGB Mousepads were `KILL`, and Under-Eye Patches was `INSUFFICIENT` (declining trend stage). This plan covers Smart Pet Feeders only — I'm not building parallel plans for the killed candidates, since that would just be theoretical exercise against products already screened out.
+
+---
+
+## Smart Pet Feeders
+
+### Target customer
+Not "pet owners" — specifically: **dog and cat owners, 28–45, full-time or hybrid workers who are out of the house 8+ hours/day, feeding 1–2x daily, who already own at least one other app-controlled home device** (Ring doorbell, Nest, smart plug). Secondary sub-segment worth testing as the primary ad hook: **owners of a pet on a vet-recommended weight-management or portion-control diet** — this group has a sharper pain point (missed/inconsistent portions matter medically, not just conveniently) and higher willingness to pay than the generic "I forget to feed my cat" buyer.
+
+### Positioning
+The category is crowded (Petlibro, Petnet, WOPET, Arf, Petgeek all have ad spend and Amazon review counts Ryan can't match in 30 days). Competing head-on with "convenience/never forget to feed" is a losing message against incumbents with more reviews and lower CAC. The defensible angle for a new, unbranded store is **precision portion control for weight/health management**, not general convenience:
+- Messaging: "Exact portions, every time — for pets on a vet-recommended diet" rather than "never forget to feed your pet."
+- This narrows the audience (a real drawback for scale) but justifies a $65–80 price point instead of racing to the bottom against $40 Amazon listings, and gives a distinct creative angle (before/after weight photos, "my vet recommended a feeder" UGC) that incumbents' generic convenience ads don't use.
+- This is a hypothesis, not a proven wedge — it's the cheapest differentiated angle I can identify from the search data, not a validated one.
+
+### Suppliers (from Alibaba/CJdropshipping search — verify before ordering)
+| Supplier | Product tier | Est. unit cost | MOQ | Notes |
+|---|---|---|---|---|
+| Foshan Mobipeet | 6L, HD camera, AI recognition | ~$80/unit | 30 pcs | Trial-run-friendly MOQ; camera add-on likely overkill for a 30-day test |
+| Shenzhen Chongxin Technology | WiFi + microchip recognition, no camera | Not confirmed in search — request quote | Dropship-friendly per listing | Explicitly supports dropshipping fulfillment, which removes inventory risk for the test |
+| Dongguan Spark | Broad catalog, basic WiFi timer feeder | Not confirmed in search | As low as 1 pc | Best MOQ flexibility found; price needs direct quote |
+| CJdropshipping (multiple listings: "3L Smart Pet Feeder," "Automatic Pet Feeder Smart Food Dispenser") | Basic WiFi timer, no camera | **Not returned by search — I could not find a specific unit price.** Retail comps (Walmart) for similar basic WiFi feeders run $32–$50, which is a market reference point, not a wholesale cost. | Varies | CJ's dropship model (no MOQ, ships direct to customer) is the lowest-risk fulfillment path for a 30-day test — confirm actual per-unit cost and shipping time in their dashboard before committing |
+
+**I do not have a verified wholesale unit cost.** The one hard number from search (Taizhou, <$5/unit) is almost certainly for a basic non-smart bowl, not a WiFi/app-controlled feeder, and requires a 500+ unit MOQ for custom molds — wrong fit for a test. Treat every cost below as an estimate pending actual supplier quotes.
+
+### Unit economics (explicitly labeled as estimates)
+- **Landed cost estimate**: $30–40/unit (basic WiFi timer feeder, no camera, + CJ international shipping). Not verified against an actual quote.
+- **Target retail price**: $65–69.99. General market comp, not a verified current listing.
+- **Ad cost assumption**: cold-audience Meta CPM $18–38, CTR 1.2–3.6% for pet vertical, blended ecommerce CPC $0.60–0.90. Sourced from aggregated ad-benchmark sites (Triple Whale, Adverge Media, etc.), not Meta's own reporting — treat as directional, not guaranteed.
+- **CVR assumption**: 1.5–2.5% for a cold-traffic $60+ dropship landing page. This is a general ecommerce assumption, not category-specific data — I have no smart-pet-feeder-specific CVR benchmark.
+- **CAC math** (CPC ÷ CVR): $0.75 ÷ 0.02 = **~$37.50 base-case CAC**. Range: $24 (best case: $0.60 CPC, 2.5% CVR) to $60 (worst case: $0.90 CPC, 1.5% CVR).
+- **Contribution margin per unit before ad spend**: $65 price − $35 landed cost − $2 payment processing − $2 packaging = **$26**.
+
+**Honest flag**: base-case CAC ($37.50) exceeds pre-ad contribution margin ($26). At these generic benchmarks, the unit economics are underwater before accounting for the 15–18% return rate the feasibility screen already flagged. Two levers to fix this before spending real money: (1) push retail price to $75–80 if the weight-management positioning can support it, and/or (2) drive CVR above the generic 2% assumption with stronger UGC/testimonial creative. If neither moves, this candidate fails the Gate 5 test on economics, not on demand.
+
+### Marketing channel plan
+- **Primary: Meta (Facebook/Instagram) ads.** Reasoning: mature ecommerce ad tooling (Advantage+), best-documented CPM/CPC benchmarks for this category, and format supports the product-demo + UGC creative this positioning needs.
+- **Secondary/free: TikTok organic.** Pet content performs well organically; use it to generate low-cost UGC-style footage that can be repurposed as a paid Meta creative variant. Do not budget paid TikTok spend in the 30-day test — no category-specific CPM data was found for it, so adding it would be guessing on top of a guess.
+
+### 30-day launch plan
+- **Week 1 (Sep 29–Oct 5)**: Lock a single SKU (basic WiFi timer feeder, no camera, to hold landed cost down). Request quotes + samples from Dongguan Spark, Shenzhen Chongxin, and CJdropshipping. Order 1 sample. Build single-product Shopify landing page with weight-management positioning copy. Set up Meta Business Manager + pixel.
+- **Week 2 (Oct 6–12)**: Sample arrives — shoot product photos, app-demo video, feeding-demo video. Write 3 ad creative variants (UGC-style testimonial, problem/solution, vet-angle). Finalize landing page. Submit Meta ad account for review. Confirm CJ dropship fulfillment SLA (or place a 10–20 unit sample order if going the inventory route).
+- **Week 3 (Oct 13–19)**: Launch Meta ads at $20–30/day across 3–4 creatives, 2 audiences. Kill any ad with no add-to-cart after $15–20 spend. Track actual CPC/CTR/CVR daily against the assumptions above.
+- **Week 4 (Oct 20–26)**: If real CAC is tracking under $26–30, scale winners to $50–75/day. If not, pause spend and diagnose (creative vs. landing page vs. price vs. audience) rather than scaling a losing number. End of week: tally total spend, orders, actual CAC vs. contribution margin, and make the Gate 5 go/no-go call.
+
+### Budget to reach a real go/no-go signal
+| Item | Est. cost |
+|---|---|
+| Shopify subscription (1 month) | $39 |
+| Domain | $15 |
+| Sample order (2–3 units, landed cost unverified — using $30–80/unit range) | $150–240 |
+| Ad spend (21 days of active testing @ ~$25/day) | $525 |
+| Creative/misc tools (Canva, etc.) | $50–100 |
+| **Total** | **~$780–920** |
+
+This is an estimate built on unverified supplier costs and generic ad benchmarks — actual cash needed could move meaningfully once real supplier quotes and Meta CPMs come in during Week 1–3.
+
+### Break-even math
+- Fixed monthly costs (Shopify + apps, domain amortized): **~$70/month**.
+- Base-case scenario ($65 price, $37.50 CAC, $26 pre-ad contribution): **margin is negative (-$11.50/unit)** — literally cannot break even at these assumptions; more volume makes it worse, not better.
+- Improved scenario ($79.99 price, same $35 landed cost, same $37.50 CAC): contribution before ad = $79.99 − $35 − $2 − $2 = $40.99; after CAC = **+$3.49/unit**. Break-even units to cover the $70 fixed cost at this margin: **~21 units/month** — before any allowance for the 15–18% return rate, which would push the real break-even meaningfully higher.
+
+**Bottom line**: the numbers only work if the price moves to ~$80 and/or the positioning drives a better-than-generic CVR. The 30-day test's real job is to find out which of those is true — not to confirm a plan that already pencils out, because right now, on generic benchmarks, it doesn't.
+
+Sources:
+- [Buy Pet Feeder Manufacturer | Smart Automatic Feeders for Dogs & Cats](https://www.alibaba.com/supplier/pet-feeder-manufacturer.html)
+- [Smart Pet Feeders - Automatic Dog Feeders & Cat Feeders](https://www.alibaba.com/showroom/automatic-dog-feeder.html)
+- [Best smart pet feeder dropshipping suppliers for 2026](https://electronics.alibaba.com/supplier/smart-pet-feeder-dropshipping-supplier)
+- [Innovative Solutions for smart pet feeder suppliers with Quality and Durability](https://www.alibaba.com/smart-pet-feeder-suppliers.html)
+- [Automatic Pet Feeder Smart Food Dispenser For Cats Dogs Timer Stainless Steel Bowl Auto Dog Cat Pet Feeding Pets Supplies - CJdropshipping](https://cjdropshipping.com/product/automatic-pet-feeder-smart-food-dispenser-for-cats-dogs-timer-stainless-steel-bowl-auto-dog-cat-pet-feeding-pets-supplies-p-1602564551227224064.html)
+- [3L Smart Pet Feeder Automatic Cat Food Dog Food Feeding Machine](https://cjdropshipping.com/product/3l-smart-pet-feeder-automatic-cat-food-dog-food-feeding-machine-p-2406220519431603000.html)
+- [Meta Ad Benchmarks Pet Care 2026: CTR, CPM, CPC](https://adlibrary.com/posts/meta-ad-benchmarks-pet-care-2026)
+- [Facebook Ad Benchmarks by Industry (Updated 2026 Data) | Triple Whale](https://www.triplewhale.com/blog/facebook-ads-benchmarks)
+- [Facebook & Instagram Ads Benchmarks 2026 (Real Agency Data) | Adverge Media](https://advergemedia.com/blog/facebook-ads-benchmarks-2026)
+- [Meta Ads Benchmarks for Ecommerce 2026: CPM, CPC, CTR, and ROAS by Vertical | MHI Growth Engine](https://mhigrowthengine.com/blog/meta-ads-benchmarks-ecommerce-2026/)
